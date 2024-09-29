@@ -1,0 +1,24 @@
+{
+    "compilerOptions": {
+        "outDir": "./dist/",
+        // specify an explicit type
+        "noImplicitAny": true,
+        "module": "ESNext",
+        "target": "es5",
+        "jsx": "react-jsx",
+        // the compiler processes not only ts files, but also js
+        "allowJs": true,
+        "moduleResolution": "node",
+        "baseUrl": ".",
+        // allows you to import packages not through commonjs, but as regular packages
+        "esModuleInterop": true,
+        // allows using default exports
+        "allowSyntheticDefaultImports": true,
+        "plugins": [{ "name": "typescript-plugin-css-modules" }]
+    },
+    "ts-node": {
+        "compilerOptions": {
+            "module": "CommonJS"
+        }
+    }
+}
