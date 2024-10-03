@@ -1,0 +1,40 @@
+.Sidebar {
+    position: relative;
+    display: flex;
+    flex-grow: 1;
+    background-color: var(--bg-inverted);
+    height: 100%;
+    max-width: var(--sidebar-width);
+    transition: max-width var(--ui-transition) ease;
+    padding: var(--padding-offset);
+
+    &.collapsed {
+        max-width: var(--sidebar-collapsed-width);
+    }
+}
+
+.SidebarBtn {
+    position: absolute;
+    bottom: var(--padding-offset);
+    background-color: var(--bg-inverted);
+    padding: 5px;
+    right: calc(0px - var(--btn-sidebar-collapse-size));
+
+    svg {
+        transition: transform var(--ui-transition) ease;
+        transform: scaleX(1);
+    }
+
+    &.collapsed svg {
+        transform: scaleX(-1);
+    }
+}
+
+.swithers {
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: auto;
+    display: flex;
+    gap: var(--gap-mini);
+}

@@ -7,26 +7,47 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
         test: /\.(woff|woff2)$/i,
     }
 
+    const svgLoader = {
+        test: /\.svg$/,
+        use: ['@svgr/webpack'],
+    }
+
     const fileLoader = {
-        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        test: /\.(png|jpe?g|gif)$/i,
+        use: [
+            {
+                loader: 'file-loader',
+            },
+        ],
+    }
+
+    const babelLoader = {
+        test: /\.(js|jsx|tsx)$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader",
+          options: {
+            presets: ['@babel/preset-env']
+          }
+        }
     }
 
     const styleLoader = {
         test: /\.s[ac]ss$/i,
         use: [
-          options.isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
-          {
-            loader: "css-loader",
-            options: {
-                modules: {
-                    auto: (resPath: string) => Boolean(resPath.includes('.module')),
-                    localIdentName: options.isDev
-                    ? '[name]--[hash:base64:5]'
-                    : '[hash:base64:5]'
-                },
-            }
-          },
-          "sass-loader",
+            options.isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
+            {
+                loader: "css-loader",
+                options: {
+                    modules: {
+                        auto: (resPath: string) => Boolean(resPath.includes('.module')),
+                        localIdentName: options.isDev
+                            ? '[name]--[hash:base64:5]'
+                            : '[hash:base64:5]'
+                    },
+                }
+            },
+            "sass-loader",
         ],
     }
 
@@ -37,9 +58,11 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
     }
 
     return [
+        babelLoader,
         tsLoader,
         styleLoader,
         fontLoader,
-        fileLoader
+        svgLoader,
+        fileLoader,
     ]
 }

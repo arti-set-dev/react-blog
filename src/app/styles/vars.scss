@@ -1,0 +1,27 @@
+:root {
+    // base
+    --font-family: "Inter", sans-serif;
+    --content-width: 1170px;
+    --container-offset: 15px;
+    --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
+  
+    // colors
+    --light-color: #fff;
+    --bg-color: #f0efef;
+    --primary-color: #232323;
+    --secondary-color: #f0efef;
+    // font-sizes
+    --font-size-m: 16px;
+    --font-size-m: 18px;
+    // sizes
+    --header-offest: 20px;
+    --sidebar-width: 300px;
+    --sidebar-collapsed-width: 100px;
+    --btn-sidebar-collapse-size: 30px;
+    // transitions
+    --ui-transition: 0.3s;
+    // offset
+    --gap: 20px;
+    --gap-mini: 10px;
+    --padding-offset: 20px;
+  }
