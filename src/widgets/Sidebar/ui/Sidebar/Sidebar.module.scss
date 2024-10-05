@@ -1,40 +1,40 @@
 .Sidebar {
-    position: relative;
-    display: flex;
-    flex-grow: 1;
-    background-color: var(--bg-inverted);
-    height: 100%;
-    max-width: var(--sidebar-width);
-    transition: max-width var(--ui-transition) ease;
-    padding: var(--padding-offset);
+  position: relative;
+  display: flex;
+  flex-grow: 1;
+  padding: var(--padding-offset);
+  height: 100%;
+  max-width: var(--sidebar-width);
+  background-color: var(--bg-inverted);
+  transition: max-width var(--ui-transition) ease;
 
-    &.collapsed {
-        max-width: var(--sidebar-collapsed-width);
-    }
+  &.collapsed {
+    max-width: var(--sidebar-collapsed-width);
+  }
 }
 
 .SidebarBtn {
-    position: absolute;
-    bottom: var(--padding-offset);
-    background-color: var(--bg-inverted);
-    padding: 5px;
-    right: calc(0px - var(--btn-sidebar-collapse-size));
+  position: absolute;
+  right: calc(0px - var(--btn-sidebar-collapse-size));
+  bottom: var(--padding-offset);
+  padding: 5px;
+  background-color: var(--bg-inverted);
 
-    svg {
-        transition: transform var(--ui-transition) ease;
-        transform: scaleX(1);
-    }
+  svg {
+    transform: scaleX(1);
+    transition: transform var(--ui-transition) ease;
+  }
 
-    &.collapsed svg {
-        transform: scaleX(-1);
-    }
+  &.collapsed svg {
+    transform: scaleX(-1);
+  }
 }
 
 .swithers {
-    width: 100%;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: auto;
-    display: flex;
-    gap: var(--gap-mini);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: auto;
+  width: 100%;
+  gap: var(--gap-mini);
 }

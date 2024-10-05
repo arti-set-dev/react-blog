@@ -1,0 +1,2 @@
+build/**/*.css
+src/app/styles/normalize.scss

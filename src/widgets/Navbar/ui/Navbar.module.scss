@@ -1,19 +1,19 @@
 .Navbar {
-    padding: var(--header-offest) 0;
-    background-color: var(--bg-inverted);
+  padding: var(--header-offest) 0;
+  background-color: var(--bg-inverted);
 }
 
 .container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .Nav {
-    margin-left: auto;
+  margin-left: auto;
 }
 
 .NavList {
-    display: flex;
-    gap: 20px;
+  display: flex;
+  gap: 20px;
 }

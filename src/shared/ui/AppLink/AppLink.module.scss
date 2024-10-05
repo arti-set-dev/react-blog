@@ -1,14 +1,14 @@
 .AppLink {
-    font-size: var(--font-size-m);
-    color: var(--primary-color);
-    font-weight: 400;
-    line-height: 100%;
+  font-weight: 400;
+  font-size: var(--font-size-m);
+  line-height: 100%;
+  color: var(--primary-color);
 }
 
 .inverted {
-    color: var(--primary-color-inverted);
+  color: var(--primary-color-inverted);
 }
 
 .red {
-    color: red;
+  color: #f00;
 }
