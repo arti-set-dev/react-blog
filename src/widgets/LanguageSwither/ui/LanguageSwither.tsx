@@ -1,7 +1,7 @@
-import { FC } from "react";
-import { useTranslation } from "react-i18next";
-import { classNames } from "shared/lib/classNames/classNames";
-import { Button } from "shared/ui/Button/Button";
+import { FC } from 'react';
+import { useTranslation } from 'react-i18next';
+import { classNames } from 'shared/lib/classNames/classNames';
+import { Button } from 'shared/ui/Button/Button';
 import cls from './LanguageSwither.module.scss';
 
 interface LanguageSwitherProps {
@@ -13,10 +13,13 @@ export const LanguageSwither:FC<LanguageSwitherProps> = ({ className }) => {
 
     const toggleLanguage = () => {
         i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru');
-    }
+    };
 
     return (
-        <Button onClick={toggleLanguage} className={classNames(cls.LanguageSwither, {}, [className])}>
+        <Button
+            onClick={toggleLanguage}
+            className={classNames(cls.LanguageSwither, {}, [className])}
+        >
             {t('Language')}
         </Button>
     );

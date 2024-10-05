@@ -1,3 +1,3 @@
-import { LanguageSwither } from "./ui/LanguageSwither";
+import { LanguageSwither } from './ui/LanguageSwither';
 
-export {LanguageSwither};
+export { LanguageSwither };

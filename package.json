@@ -5,7 +5,9 @@
   "scripts": {
     "start": "webpack serve  --env port=3000",
     "build": "webpack --env mode=production",
-    "dev": "webpack --env mode=development"
+    "dev": "webpack --env mode=development",
+    "lint": " eslint \"**/*.{ts,tsx}\"",
+    "lint:fix": " eslint \"**/*.{ts,tsx}\" --fix"
   },
   "keywords": [],
   "author": "Roman Kovtun",
