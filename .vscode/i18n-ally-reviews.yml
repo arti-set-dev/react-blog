@@ -3,3 +3,14 @@
 reviews:
   about.text:
     description: ''
+  not-found.Not found page:
+    locales:
+      ru:
+        comments:
+          - user:
+              name: roman
+              email: r_kovtun@lweb.pro
+            id: 9jmyljuTlpogULBJlADtc
+            type: approve
+            comment: ''
+            time: '2024-10-09T08:20:10.800Z'

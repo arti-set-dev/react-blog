@@ -4,6 +4,7 @@ import { Button, ThemeButton } from 'shared/ui/Button/Button';
 import ArrIcon from 'shared/assets/icons/arrow-icon.svg';
 import { ThemeSwither } from 'widgets/ThemeSwither';
 import { LanguageSwither } from 'widgets/LanguageSwither';
+import { useTranslation } from 'react-i18next';
 import cls from './Sidebar.module.scss';
 
 interface SidebarProps {
@@ -11,6 +12,7 @@ interface SidebarProps {
 }
 
 export const Sidebar: FC<SidebarProps> = ({ className, children }) => {
+    const { t } = useTranslation();
     const [collapsed, setCollapsed] = useState(false);
 
     const toggleSidebar = () => {
@@ -28,7 +30,7 @@ export const Sidebar: FC<SidebarProps> = ({ className, children }) => {
                 className={classNames(cls.SidebarBtn, { [cls.collapsed]: collapsed })}
                 theme={ThemeButton.SIDE}
                 onClick={toggleSidebar}
-                aria-label="toggle Sidebar"
+                aria-label={t('toggle Sidebar')}
             >
                 <ArrIcon />
             </Button>

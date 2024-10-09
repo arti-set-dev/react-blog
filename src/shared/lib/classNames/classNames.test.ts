@@ -1,4 +1,4 @@
-import { classNames } from "./classNames"
+import { classNames } from './classNames';
 
 describe('classNames', () => {
     test('with only first param', () => {
@@ -12,16 +12,16 @@ describe('classNames', () => {
 
     test('with mods', () => {
         const expacted = 'someClass class1 class2 hovered focused';
-        expect(classNames('someClass', {hovered: true, focused: true}, ['class1', 'class2'])).toBe(expacted);
+        expect(classNames('someClass', { hovered: true, focused: true }, ['class1', 'class2'])).toBe(expacted);
     });
 
     test('with mods false', () => {
         const expacted = 'someClass class1 class2 hovered';
-        expect(classNames('someClass', {hovered: true, focused: false}, ['class1', 'class2'])).toBe(expacted);
+        expect(classNames('someClass', { hovered: true, focused: false }, ['class1', 'class2'])).toBe(expacted);
     });
 
     test('with mods false', () => {
         const expacted = 'someClass class1 class2 hovered';
-        expect(classNames('someClass', {hovered: true, focused: undefined}, ['class1', 'class2'])).toBe(expacted);
+        expect(classNames('someClass', { hovered: true, focused: undefined }, ['class1', 'class2'])).toBe(expacted);
     });
-})
+});

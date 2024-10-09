@@ -18,7 +18,6 @@ export const ThemeSwither:FC<ThemeSwitherProps> = ({ className }) => {
             onClick={toggleTheme}
             className={classNames(cls.ThemeSwither, {}, [className])}
         >
-            toggleTheme
             <ThemeIcon />
         </Button>
     );

@@ -1,0 +1,76 @@
+.Loader {
+  position: relative;
+  left: -100px;
+  display: inline-block;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  color: #fff;
+  animation: shadow-rolling 1.8s linear infinite;
+}
+
+@keyframes shadow-rolling {
+  0% {
+    box-shadow:
+      0 0 rgba(255, 255, 255, 0),
+      0 0 rgba(255, 255, 255, 0),
+      0 0 rgba(255, 255, 255, 0),
+      0 0 rgba(255, 255, 255, 0);
+  }
+
+  12% {
+    box-shadow:
+      100px 0 var(--bg-inverted),
+      0 0 rgba(255, 255, 255, 0),
+      0 0 rgba(255, 255, 255, 0),
+      0 0 rgba(255, 255, 255, 0);
+  }
+
+  36% {
+    box-shadow:
+      120px 0 var(--bg-inverted),
+      110px 0 var(--bg-inverted),
+      100px 0 var(--bg-inverted),
+      0 0 rgba(255, 255, 255, 0);
+  }
+
+  50% {
+    box-shadow:
+      130px 0 var(--bg-inverted),
+      120px 0 var(--bg-inverted),
+      110px 0 var(--bg-inverted),
+      100px 0 var(--bg-inverted);
+  }
+
+  62% {
+    box-shadow:
+      200px 0 rgba(255, 255, 255, 0),
+      130px 0 var(--bg-inverted),
+      120px 0 var(--bg-inverted),
+      110px 0 var(--bg-inverted);
+  }
+
+  75% {
+    box-shadow:
+      200px 0 rgba(255, 255, 255, 0),
+      200px 0 rgba(255, 255, 255, 0),
+      130px 0 var(--bg-inverted),
+      120px 0 var(--bg-inverted);
+  }
+
+  87% {
+    box-shadow:
+      200px 0 rgba(255, 255, 255, 0),
+      200px 0 rgba(255, 255, 255, 0),
+      200px 0 rgba(255, 255, 255, 0),
+      130px 0 var(--bg-inverted);
+  }
+
+  100% {
+    box-shadow:
+      200px 0 rgba(255, 255, 255, 0),
+      200px 0 rgba(255, 255, 255, 0),
+      200px 0 rgba(255, 255, 255, 0),
+      200px 0 rgba(255, 255, 255, 0);
+  }
+}

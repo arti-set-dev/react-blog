@@ -4,6 +4,7 @@ import './styles/index.scss';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Navbar } from 'widgets/Navbar';
 import { Sidebar } from 'widgets/Sidebar/ui';
+import { Loader } from 'shared/ui/Loader';
 import { AppRouter } from './providers/router';
 import { useTheme } from './providers/ThemeProvider';
 
@@ -12,11 +13,13 @@ const App = () => {
 
     return (
         <div className={classNames('App', {}, [theme])}>
-            <Suspense fallback={<div>loading...</div>}>
+            <Suspense fallback={<Loader />}>
                 <Navbar />
                 <div className="page-content">
                     <Sidebar />
-                    <AppRouter />
+                    <div className="page-wrapper">
+                        <AppRouter />
+                    </div>
                 </div>
             </Suspense>
         </div>

@@ -1,3 +1,14 @@
 {
-    "Language": "English"
+  "Language": "English",
+  "not-found": {
+    "Not found page": "Not found page"
+  },
+  "home": "Home",
+  "about": "about",
+  "toggle Sidebar": "toggle Sidebar",
+  "Something went wrong": "Something went wrong",
+  "An unhappy error occurred": "An unhappy error occurred",
+  "Return to Home page": "Return to Home page",
+  "Reload page": "Reload page",
+  "throw error": "throw error"
 }

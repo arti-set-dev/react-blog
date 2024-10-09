@@ -1,3 +1,14 @@
 {
-    "Language": "Русский"
+  "Language": "Русский",
+  "not-found": {
+    "Not found page": "Страница не найдена"
+  },
+  "home": "Главная",
+  "about": "о нас",
+  "toggle Sidebar": "переключить боковую панель",
+  "Something went wrong": "Что-то пошло не так",
+  "An unhappy error occurred": "Произошла непредвиденная ошибка",
+  "Return to Home page": "Вернуться на главную страницу",
+  "Reload page": "Обновить страницу",
+  "throw error": "ошибка выброса"
 }
