@@ -20,13 +20,14 @@ export const Sidebar: FC<SidebarProps> = ({ className, children }) => {
     };
 
     return (
-        <aside className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [className])}>
+        <aside data-testid="sidebar" className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [className])}>
             {children}
             <div className={cls.swithers}>
                 <LanguageSwither />
                 <ThemeSwither />
             </div>
             <Button
+                data-testid="sidebar-collapse"
                 className={classNames(cls.SidebarBtn, { [cls.collapsed]: collapsed })}
                 theme={ThemeButton.SIDE}
                 onClick={toggleSidebar}

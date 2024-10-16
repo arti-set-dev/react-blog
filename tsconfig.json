@@ -11,17 +11,23 @@
         "moduleResolution": "node",
         "baseUrl": ".",
         "paths": {
-            "*": ["./src/*"]
+            "*": [
+                "./src/*"
+            ]
         },
         // allows you to import packages not through commonjs, but as regular packages
         "esModuleInterop": true,
         // allows using default exports
         "allowSyntheticDefaultImports": true,
-        "plugins": [{ "name": "typescript-plugin-css-modules" }]
+        "plugins": [
+            {
+                "name": "typescript-plugin-css-modules"
+            }
+        ]
     },
     "ts-node": {
         "compilerOptions": {
             "module": "CommonJS"
         }
-    }
+    },
 }
