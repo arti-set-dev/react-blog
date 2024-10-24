@@ -1,0 +1,4 @@
+@use './mixins/mixins.scss';
+
+@include mixins.font-face("Inter", "../fonts/Inter-Bold", 700, normal);
+@include mixins.font-face("Inter", "../fonts/Inter-Regular", 400, normal); 
