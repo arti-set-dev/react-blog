@@ -1,26 +1,26 @@
 .Container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .Navbar {
-    padding: var(--navbar-offset) 0;
-    background-color: var(--bg-inverted-color);
+  padding: var(--navbar-offset) 0;
+  background-color: var(--bg-inverted-color);
 }
 
 .Nav {
-    margin-left: auto;
+  margin-left: auto;
 }
 
 .Menulist {
-    justify-content: flex-end;
-    display: flex;
-    gap: var(--gap);
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--gap);
 }
 
 .Navlink {
-    font-size: var(--font-size-m);
-    font-weight: 400;
-    line-height: 100%;
+  font-weight: 400;
+  font-size: var(--font-size-m);
+  line-height: 100%;
 }

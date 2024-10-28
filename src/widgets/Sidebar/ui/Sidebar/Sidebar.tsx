@@ -4,6 +4,7 @@ import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import ArrIcon from 'shared/assets/icons/arrow-icon.svg';
 import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
 import { LangSwitcher } from 'widgets/LangSwitcher';
+import { useTranslation } from 'react-i18next';
 import cl from './Sidebar.module.scss';
 
 interface SidebarProps {
@@ -13,6 +14,7 @@ interface SidebarProps {
 export const Sidebar: FC<SidebarProps> = (props) => {
   const { children, className } = props;
   const [collapsed, setCollapsed] = useState(false);
+  const { t } = useTranslation();
 
   const toggleSildebar = () => {
     setCollapsed((prev) => !prev);
@@ -24,7 +26,7 @@ export const Sidebar: FC<SidebarProps> = (props) => {
         <ThemeSwitcher />
         <LangSwitcher className={cl.LangSwitcher} />
       </div>
-      <Button theme={ButtonTheme.ICON} className={classNames(cl.Collapse, {}, [className])} onClick={toggleSildebar} aria-label="toggle sidebar">
+      <Button theme={ButtonTheme.ICON} className={classNames(cl.Collapse, {}, [className])} onClick={toggleSildebar} aria-label={t('toggle sidebar')}>
         <ArrIcon />
       </Button>
     </aside>

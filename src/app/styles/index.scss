@@ -1,12 +1,12 @@
-@use './normalize.scss';
-@use './vars.scss';
-@use './mixins/mixins.scss';
-@use './themes/themes.scss';
-@use './fonts.scss';
+@use "./normalize.scss";
+@use "./vars.scss";
+@use "./mixins/mixins.scss";
+@use "./themes/themes.scss";
+@use "./fonts.scss";
 
 *,
 *::before,
-*::after { 
+*::after {
   box-sizing: border-box;
 }
 
@@ -39,9 +39,9 @@ a {
 }
 
 .app {
-    height: 100vh;
-    background-color: var(--bg-color);
-    color: var(--primary-color);
+  height: 100vh;
+  color: var(--primary-color);
+  background-color: var(--bg-color);
 }
 
 .is-hidden {

@@ -1,49 +1,49 @@
 .Sidebar {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: var(--inner-offset);
-    position: relative;
-    height: calc(100svh - 68px);
-    background-color: var(--bg-inverted-color);
-    max-width: var(--sidebar-width);
-    transition: max-width var(--ui-transition) ease;
-    width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--inner-offset);
+  width: 100%;
+  height: calc(100svh - 68px);
+  max-width: var(--sidebar-width);
+  background-color: var(--bg-inverted-color);
+  transition: max-width var(--ui-transition) ease;
 
-    &.collapsed {
-        max-width: var(--sidebar-width-collapsed);
+  &.collapsed {
+    max-width: var(--sidebar-width-collapsed);
 
-        .Collapse {
-            svg {
-                transform: scaleY(-1);
-            }
-        }
+    .Collapse {
+      svg {
+        transform: scaleY(-1);
+      }
     }
+  }
 }
 
 .Collapse {
-    position: absolute;
-    bottom: var(--inner-offset);
-    right: calc(0px - var(--icon-size));
-    transform: rotate(90deg);
+  position: absolute;
+  right: calc(0px - var(--icon-size));
+  bottom: var(--inner-offset);
+  transform: rotate(90deg);
 
-    svg {
-        transition: transform var(--ui-transition) ease;
-    }
+  svg {
+    transition: transform var(--ui-transition) ease;
+  }
 }
 
 .Switchers {
-    align-items: center;
-    display: flex;
-    gap: var(--gap-mini);
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-top: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin-top: auto;
+  gap: var(--gap-mini);
 }
 
 .LangSwitcher {
-    font-size: var(--font-size-m);
-    font-weight: 400;
-    line-height: 100%;
-    color: var(--text-inverted-color);
+  font-weight: 400;
+  font-size: var(--font-size-m);
+  line-height: 100%;
+  color: var(--text-inverted-color);
 }
