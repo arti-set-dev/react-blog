@@ -1,0 +1,24 @@
+{
+    "React Component": {
+        "prefix": "rc",
+        "body": [
+            "import { FC } from 'react';",
+            "import cl from './${TM_FILENAME_BASE}.module.scss';",
+            "import { classNames } from 'shared/lib/classNames/classNames';",
+            "",
+            "interface ${TM_FILENAME_BASE}Props {",
+            "    className?: string;",
+            "}",
+            "",
+            "export const ${TM_FILENAME_BASE}: FC<${TM_FILENAME_BASE}Props> = (props) => {",
+            "    const { children, className } = props;",
+            "    return (",
+            "        <div className={classNames(cl.${TM_FILENAME_BASE}, {}, [className])}>",
+            "            {children}",
+            "        </div>",
+            "    );",
+            "};"
+        ],
+        "description": "React Component"
+    }
+}

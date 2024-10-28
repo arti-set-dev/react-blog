@@ -18,7 +18,7 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
                 options: {
                     modules: {
                         auto: (resPath: string) => resPath.includes('.module'),
-                        localIdentName: isDev ? '[name]__[local]' : '[hash:base64:6]',
+                        localIdentName: isDev ? '[local]--[hash:base64:6]' : '[hash:base64:6]',
                     },
                 },
             },
@@ -31,9 +31,25 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
         type: 'asset/resource',
     }
 
+    const svgLoader = {
+        test: /\.svg$/,
+        use: ['@svgr/webpack'],
+    }
+
+    const fileLoader = {
+        test: /\.(png|jpe?g|gif)$/i,
+        use: [
+            {
+                loader: 'file-loader',
+            },
+        ],
+    }
+
     return [
+        svgLoader,
+        fileLoader,
         tsLoader,
         fontsLoader,
-        styleLoader
+        styleLoader,
     ]
 }

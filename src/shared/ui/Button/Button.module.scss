@@ -1,0 +1,14 @@
+.Button {
+    border: none;
+    padding: 0;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.icon {
+    background-color: var(--bg-inverted-color);
+    width: var(--icon-size);
+    height: var(--icon-size);
+    font-size: 0;
+    fill: var(--text-inverted-color);
+}
