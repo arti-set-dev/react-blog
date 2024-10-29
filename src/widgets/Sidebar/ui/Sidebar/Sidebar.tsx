@@ -21,12 +21,18 @@ export const Sidebar: FC<SidebarProps> = (props) => {
   };
 
   return (
-    <aside className={classNames(cl.Sidebar, { [cl.collapsed]: collapsed }, [className])}>
+    <aside data-testid="sidebar" className={classNames(cl.Sidebar, { [cl.collapsed]: collapsed }, [className])}>
       <div className={cl.Switchers}>
         <ThemeSwitcher />
         <LangSwitcher className={cl.LangSwitcher} />
       </div>
-      <Button theme={ButtonTheme.ICON} className={classNames(cl.Collapse, {}, [className])} onClick={toggleSildebar} aria-label={t('toggle sidebar')}>
+      <Button
+        data-testid="sidebar-toggle"
+        theme={ButtonTheme.ICON}
+        className={classNames(cl.Collapse, {}, [className])}
+        onClick={toggleSildebar}
+        aria-label={t('toggle sidebar')}
+      >
         <ArrIcon />
       </Button>
     </aside>
