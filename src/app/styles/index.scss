@@ -83,5 +83,12 @@ a {
 
 .main {
   display: flex;
-  gap: var(--gap);
+}
+
+.page-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--inner-offset);
+  width: 100%;
 }

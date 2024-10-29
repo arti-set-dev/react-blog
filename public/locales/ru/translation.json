@@ -5,5 +5,8 @@
   "About": "О странице",
   "English": "Английский",
   "Toggle Theme": "Переключить тему",
-  "toggle sidebar": "переключить боковую панель"
+  "toggle sidebar": "переключить боковую панель",
+  "Page not found": "Страница не найдена",
+  "Something went wrong": "Что-то пошло не так.",
+  "Reaload page": "Перезагрузить страницу"
 }

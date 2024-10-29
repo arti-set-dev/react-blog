@@ -1,4 +1,4 @@
-import { Suspense, useState } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 import { Link, Route, Routes } from 'react-router-dom';
 
 import 'app/styles/index.scss';
@@ -12,17 +12,20 @@ import { AppRouter } from 'app/providers/router';
 import { Navbar } from 'widgets/Navbar';
 import { Sidebar } from 'widgets/Sidebar';
 import { useTranslation } from 'react-i18next';
+import { Loader } from 'shared/ui/Loader/Loader';
 
 const App = () => {
   const { theme } = useTheme();
 
   return (
     <div className={classNames('app', {}, [theme])}>
-      <Suspense fallback={<div>loading...</div>}>
+      <Suspense fallback={<Loader />}>
         <Navbar />
         <main className="main">
           <Sidebar />
-          <AppRouter />
+          <div className="page-content">
+            <AppRouter />
+          </div>
         </main>
       </Suspense>
     </div>
