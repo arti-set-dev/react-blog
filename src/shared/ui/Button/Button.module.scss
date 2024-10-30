@@ -12,3 +12,13 @@
   fill: var(--text-inverted-color);
   background-color: var(--bg-inverted-color);
 }
+
+.outline {
+  border: 1px solid var(--bg-inverted-color);
+  border-radius: var(--button-border-radius);
+  padding: var(--button-offset);
+  font-weight: 400;
+  font-size: var(--font-size-m);
+  line-height: 100%;
+  color: var(--bg-inverted-color);
+}

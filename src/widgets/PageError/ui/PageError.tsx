@@ -20,7 +20,7 @@ export const PageError: FC<PageErrorProps> = (props) => {
   return (
     <div className={classNames(cl.PageError, {}, [className])}>
       <h1>{t('Something went wrong')}</h1>
-      <Button onClick={reloadPage}>{t('Reaload page')}</Button>
+      <Button className={cl.BtnReload} onClick={reloadPage}>{t('Reaload page')}</Button>
     </div>
   );
 };

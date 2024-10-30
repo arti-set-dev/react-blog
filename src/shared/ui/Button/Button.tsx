@@ -10,6 +10,7 @@ export enum ButtonType {
 
 export enum ButtonTheme {
     ICON = 'icon',
+    OUTLINE = 'outline',
 }
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
