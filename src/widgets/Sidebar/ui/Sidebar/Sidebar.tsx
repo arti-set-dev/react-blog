@@ -31,7 +31,7 @@ export const Sidebar: FC<SidebarProps> = (props) => {
         theme={ButtonTheme.ICON}
         className={classNames(cl.Collapse, {}, [className])}
         onClick={toggleSildebar}
-        aria-label={t('toggle sidebar')}
+        aria-label="toggle sidebar"
       >
         <ArrIcon />
       </Button>
