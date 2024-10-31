@@ -18,14 +18,14 @@ export default {
 
 const Template: ComponentStory<typeof AppLink> = (args) => <AppLink {...args} />;
 
-export const Primary = Template.bind({});
-Primary.args = {
-  theme: AppLinkTheme.PRIMARY,
+export const Inverted = Template.bind({});
+Inverted.args = {
+  theme: AppLinkTheme.INVERTED,
 };
 
 export const PrimaryDark = Template.bind({});
 PrimaryDark.args = {
-  theme: AppLinkTheme.PRIMARY,
+  theme: AppLinkTheme.INVERTED,
 };
 PrimaryDark.decorators = [ThemeDecorator(Theme.DARK)];
 

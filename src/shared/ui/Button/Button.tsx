@@ -3,30 +3,37 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import cl from './Button.module.scss';
 
 export enum ButtonType {
-    BUTTON = 'button',
-    RESET = 'reset',
-    SUBMIT = 'submit',
+  BUTTON = 'button',
+  RESET = 'reset',
+  SUBMIT = 'submit',
 }
 
 export enum ButtonTheme {
-    ICON = 'icon',
-    OUTLINE = 'outline',
+  ICON = 'icon',
+  OUTLINE = 'outline',
+  TEXT_INVERTED = 'text-inverted',
+}
+
+export enum ButtonSize {
+  L = 'size-l',
+  XL = 'size-xl',
 }
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-    className?: string;
-    theme?: ButtonTheme;
-    type?: ButtonType;
+  className?: string;
+  theme?: ButtonTheme;
+  type?: ButtonType;
+  size?: ButtonSize;
 }
 
 export const Button: FC<ButtonProps> = (props) => {
   const {
-    children, className, theme, type = ButtonType.BUTTON, ...otherProps
+    children, className, theme, size, type = ButtonType.BUTTON, ...otherProps
   } = props;
   return (
     <button
       type={type}
-      className={classNames(cl.Button, {}, [className, cl[theme]])}
+      className={classNames(cl.Button, {}, [className, cl[theme], cl[size]])}
       {...otherProps}
     >
       {children}

@@ -2,9 +2,14 @@
   font-weight: 400;
   font-size: var(--font-size-m);
   line-height: 100%;
+
+  svg {
+    width: var(--icon-size-l);
+    fill: var(--text-inverted-color);
+  }
 }
 
-.primary {
+.inverted {
   color: var(--text-inverted-color);
 }
 

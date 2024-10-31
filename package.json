@@ -12,8 +12,11 @@
     "lint:scss:fix": "npx stylelint \"**/*.scss\" --fix",
     "unit": "jest --config ./config/jest/jest.config.ts",
     "screen-test": "npx loki test",
-    "screen-test-ok": "npx loki test approve",
+    "screen-test-ok": "npx loki approve",
     "screen-test-ci": "npx loki --requireReference --reactUri file:./storybook-static",
+    "screen-test-json": "node scripts/generate-visual-json-report.js",
+    "screen-test-html": "npx reg-cli --from .loki/report.json --report .loki/report.html",
+    "screen-test-report": "npm run screen-test-json && npm run screen-test-html",
     "storybook": "start-storybook -p 6006 -c ./config/storybook",
     "build-storybook": "build-storybook -c ./config/storybook"
   },

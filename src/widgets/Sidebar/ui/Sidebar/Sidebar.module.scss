@@ -2,10 +2,9 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  align-items: center;
   padding: var(--inner-offset);
   width: 100%;
-  height: calc(100svh - 68px);
+  height: calc(100svh - var(--navbar-height));
   max-width: var(--sidebar-width);
   background-color: var(--bg-inverted-color);
   transition: max-width var(--ui-transition) ease;
@@ -13,37 +12,54 @@
   &.collapsed {
     max-width: var(--sidebar-width-collapsed);
 
-    .Collapse {
+    .SidebarLink {
+      font-size: 0;
+      gap: 0;
+    }
+
+    .CollapseBtn {
       svg {
-        transform: scaleY(-1);
+        transform: scaleX(-1);
       }
+    }
+
+    .Switchers {
+      flex-direction: column;
     }
   }
 }
 
-.Collapse {
-  position: absolute;
-  right: calc(0px - var(--icon-size));
-  bottom: var(--inner-offset);
-  transform: rotate(90deg);
+.SidebarNav {
+  margin-bottom: 20px;
+}
 
-  svg {
-    transition: transform var(--ui-transition) ease;
-  }
+.Menulist {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+}
+
+.SidebarLink {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  gap: var(--gap-mini);
 }
 
 .Switchers {
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
   margin-top: auto;
+  width: max-content;
   gap: var(--gap-mini);
 }
 
-.LangSwitcher {
-  font-weight: 400;
-  font-size: var(--font-size-m);
-  line-height: 100%;
-  color: var(--text-inverted-color);
+.CollapseBtn {
+  position: absolute;
+  right: -34px;
+  bottom: var(--inner-offset);
+
+  svg {
+    transition: transform var(--ui-transition) ease;
+  }
 }
