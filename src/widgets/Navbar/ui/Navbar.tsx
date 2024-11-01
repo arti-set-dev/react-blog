@@ -29,9 +29,7 @@ export const Navbar: FC<NavbarProps> = (props) => {
     <header className={classNames(cl.Navbar, {}, [className])}>
       <Container className={cl.Container}>
         <Button theme={ButtonTheme.OUTLINE_INVERTED} onClick={onToggleModal}>{t('Login')}</Button>
-        <Modal isOpen={isAuthModal} onClose={() => setIsAuthModal(false)}>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        </Modal>
+        <Modal isOpen={isAuthModal} onClose={() => setIsAuthModal(false)} />
       </Container>
     </header>
   );
