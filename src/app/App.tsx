@@ -13,6 +13,7 @@ import { Navbar } from 'widgets/Navbar';
 import { Sidebar } from 'widgets/Sidebar';
 import { useTranslation } from 'react-i18next';
 import { Loader } from 'shared/ui/Loader/Loader';
+import { Modal } from 'shared/ui/Modal/Modal';
 
 const App = () => {
   const { theme } = useTheme();

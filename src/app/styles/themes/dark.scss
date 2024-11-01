@@ -1,4 +1,4 @@
-.app.dark {
+body:has(.app.dark) {
   --bg-color: #292727;
   --bg-inverted-color: #e6e6e6;
   --text-inverted-color: #292727;

@@ -51,18 +51,18 @@ IconXLDark.args = {
 };
 IconXLDark.decorators = [ThemeDecorator(Theme.DARK)];
 
-export const Outline = Template.bind({});
-Outline.args = {
+export const OutlineInverted = Template.bind({});
+OutlineInverted.args = {
   children: 'Text',
-  theme: ButtonTheme.OUTLINE,
+  theme: ButtonTheme.OUTLINE_INVERTED,
 };
-export const OutlineDark = Template.bind({});
 
-OutlineDark.args = {
+export const OutlineInvertedDark = Template.bind({});
+OutlineInvertedDark.args = {
   children: 'Text',
-  theme: ButtonTheme.OUTLINE,
+  theme: ButtonTheme.OUTLINE_INVERTED,
 };
-OutlineDark.decorators = [ThemeDecorator(Theme.DARK)];
+OutlineInvertedDark.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const TextInverted = Template.bind({});
 

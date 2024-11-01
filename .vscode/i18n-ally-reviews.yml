@@ -13,3 +13,14 @@ reviews:
             suggestion: ''
             type: approve
             time: '2024-10-31T11:59:02.006Z'
+  Login:
+    locales:
+      ru:
+        comments:
+          - user:
+              name: roman
+              email: r_kovtun@lweb.pro
+            id: bgaHCpeMNb9FJSkPArvRS
+            type: approve
+            comment: ''
+            time: '2024-11-01T15:22:53.964Z'

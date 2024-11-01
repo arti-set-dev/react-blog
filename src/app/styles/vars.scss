@@ -9,6 +9,7 @@
 
   // colors
   --light-color: #fff;
+  --overlay-color: rgba(0, 0, 0, 0.271);
 
   // sizes
   --font-size-m: 16px;
@@ -23,4 +24,11 @@
   --icon-size-l: 25px;
   --sidebar-width: 180px;
   --sidebar-width-collapsed: 65px;
+  --modal-width: 300px;
+
+  // radiuses
+  --border-radius-l: 20px;
+
+  // indexes
+  --modal-z-index: 10;
 }
