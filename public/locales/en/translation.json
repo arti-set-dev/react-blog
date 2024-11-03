@@ -13,5 +13,7 @@
   "Lang": "En",
   "close modal": "close modal",
   "login": "Login",
-  "Login": "Login"
+  "Login": "Login",
+  "increment": "increment",
+  "decrement": "decrement"
 }

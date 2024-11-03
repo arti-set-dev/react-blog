@@ -21,5 +21,16 @@
             "};"
         ],
         "description": "React Component"
+    },
+    "Base unit test": {
+        "prefix": "ts",
+        "body": [
+            "describe('${TM_FILENAME_BASE}', () => {",
+            "  test('${1:}', () => {",
+            "    expect(${TM_FILENAME_BASE}()).toEqual();",
+            "  });",
+            "});"
+        ],
+        "description": "Base unit test"
     }
 }
