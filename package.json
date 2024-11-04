@@ -6,6 +6,7 @@
     "build": "webpack --env mode=production",
     "dev": "webpack --env mode=development",
     "start": "webpack serve --env port=3000",
+    "start-json-server": "node ./json-server/index.js",
     "lint:ts": "eslint \"**/*.{ts,tsx}\"",
     "lint:ts:fix": "eslint \"**/*.{ts,tsx}\" --fix",
     "lint:scss": "npx stylelint \"**/*.scss\"",
