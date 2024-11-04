@@ -12,7 +12,7 @@ export default {
   },
 } as ComponentMeta<typeof PageNotFound>;
 
-const Template: ComponentStory<typeof PageNotFound> = (args) => <PageNotFound />;
+const Template: ComponentStory<typeof PageNotFound> = (args) => <PageNotFound {...args} />;
 
 export const Light = Template.bind({});
 Light.args = {};
