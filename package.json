@@ -19,7 +19,8 @@
     "screen-test-html": "npx reg-cli --from .loki/report.json --report .loki/report.html",
     "screen-test-report": "npm run screen-test-json && npm run screen-test-html",
     "storybook": "start-storybook -p 6006 -c ./config/storybook",
-    "build-storybook": "build-storybook -c ./config/storybook"
+    "build-storybook": "build-storybook -c ./config/storybook",
+    "prepare": "husky install"
   },
   "keywords": [],
   "author": "Roman Kovtun",
@@ -112,7 +113,7 @@
         "mobile": false
       },
       "chrome.iphone7": {
-        "target": "chrome.docker", 
+        "target": "chrome.docker",
         "preset": "iPhone 7"
       }
     }
