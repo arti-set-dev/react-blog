@@ -14,5 +14,7 @@
   "close modal": "закрыть модальное окно",
   "Login": "Войти",
   "increment": "приращение",
-  "decrement": "уменьшать"
+  "decrement": "уменьшать",
+  "Your name": "Ваше имя",
+  "Your password": "Ваш пароль"
 }

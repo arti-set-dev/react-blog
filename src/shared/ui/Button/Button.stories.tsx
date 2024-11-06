@@ -78,3 +78,18 @@ TextInvertedDark.args = {
   theme: ButtonTheme.TEXT_INVERTED,
 };
 TextInvertedDark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const Primary = Template.bind({});
+
+Primary.args = {
+  children: 'Text',
+  theme: ButtonTheme.PRIMARY,
+};
+
+export const PrimaryDark = Template.bind({});
+
+PrimaryDark.args = {
+  children: 'Text',
+  theme: ButtonTheme.PRIMARY,
+};
+PrimaryDark.decorators = [ThemeDecorator(Theme.DARK)];

@@ -1,0 +1,52 @@
+.Input {
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+  border-radius: 0;
+  padding: var(--input-offset) 0;
+  width: 100%;
+  background-color: transparent;
+
+  &::-webkit-search-decoration,
+  &::-webkit-search-cancel-button,
+  &::-webkit-search-results-button,
+  &::-webkit-search-results-decoration {
+    display: none;
+  }
+
+  &.line-inverted {
+    border-bottom: 1px solid var(--text-inverted-color);
+    color: var(--text-inverted-color);
+  }
+
+  &::placeholder {
+    font-size: 0;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.InputWrapper {
+  position: relative;
+}
+
+.InputPlaceholder {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: inline-block;
+  font-weight: 400;
+  font-size: var(--font-size-m);
+  line-height: 100%;
+  color: var(--text-inverted-color);
+  transform: translateY(10px);
+  transition: transform var(--ui-transition) ease, font-size var(--ui-transition) ease;
+  pointer-events: none;
+
+  &.focused {
+    font-size: var(--font-size-s);
+    transform: translateY(-5px);
+  }
+}

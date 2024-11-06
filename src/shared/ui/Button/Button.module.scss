@@ -36,3 +36,9 @@
 .text-inverted {
   color: var(--text-inverted-color);
 }
+
+.primary {
+  padding: var(--btn-offset);
+  color: var(--primary-inverted-color);
+  background-color: var(--bg-color);
+}

@@ -1,4 +1,6 @@
-import React, { FC, useCallback, useEffect } from 'react';
+import React, {
+  FC, useCallback, useEffect, useState,
+} from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import CloseIcon from 'shared/assets/icons/close-icon.svg';
 import { useTranslation } from 'react-i18next';
@@ -10,12 +12,21 @@ interface ModalProps {
     className?: string;
     isOpen?: boolean;
     onClose?: () => void;
+    lazy?: boolean;
 }
 
 export const Modal: FC<ModalProps> = (props) => {
   const {
-    children, className, isOpen, onClose,
+    children, className, isOpen, onClose, lazy,
   } = props;
+
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    if (isOpen) {
+      setIsMounted(true);
+    }
+  }, [isOpen]);
 
   const mods: Record<string, boolean> = {
     [cl.opened]: isOpen,
@@ -48,6 +59,10 @@ export const Modal: FC<ModalProps> = (props) => {
   const onWindowClick = (e: React.MouseEvent) => {
     e.stopPropagation();
   };
+
+  if (lazy && !isMounted) {
+    return null;
+  }
 
   return (
     <Portal>
