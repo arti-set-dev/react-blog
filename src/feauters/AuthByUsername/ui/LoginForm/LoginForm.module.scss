@@ -5,15 +5,6 @@
   gap: var(--gap);
 }
 
-.LoginTitle {
-  margin: 0;
-  margin-bottom: 30px;
-  font-weight: 700;
-  font-size: var(--icon-size-xl);
-  line-height: 100%;
-  color: var(--text-inverted-color);
-}
-
 .LoginFields {
   display: flex;
   flex-direction: column;

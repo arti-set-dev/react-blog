@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import ThemeIcon from 'shared/assets/icons/theme-icon.svg';
-import { Theme, useTheme } from 'app/providers/ThemeProveder';
+import { Theme, useTheme } from 'app/providers/ThemeProvider';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { useTranslation } from 'react-i18next';
 import cl from './ThemeSwitcher.module.scss';

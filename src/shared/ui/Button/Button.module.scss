@@ -42,3 +42,7 @@
   color: var(--primary-inverted-color);
   background-color: var(--bg-color);
 }
+
+.disabled {
+  opacity: 0.5;
+}

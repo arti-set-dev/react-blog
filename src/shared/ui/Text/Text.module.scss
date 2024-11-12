@@ -1,0 +1,43 @@
+.Text {
+  line-height: 100%;
+
+  &.size-s {
+    font-size: var(--font-size-s);
+  }
+
+  &.size-xs {
+    font-size: var(--font-size-xs);
+  }
+
+  &.size-m {
+    font-size: var(--font-size-m);
+  }
+
+  &.size-l {
+    font-size: var(--font-size-l);
+  }
+
+  &.size-xl {
+    font-size: var(--font-size-xl);
+  }
+
+  &.primary {
+    color: var(--primary-color);
+  }
+
+  &.inverted {
+    color: var(--text-inverted-color);
+  }
+
+  &.error {
+    color: var(--error-color);
+  }
+
+  &.bold {
+    font-weight: 700;
+  }
+
+  &.regular {
+    font-weight: 400;
+  }
+}

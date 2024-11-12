@@ -1,7 +1,7 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Theme } from 'app/providers/ThemeProveder';
+import { Theme } from 'app/providers/ThemeProvider';
 import IconArr from 'shared/assets/icons/arrow-icon.svg';
 import { Button, ButtonSize, ButtonTheme } from './Button';
 
@@ -93,3 +93,20 @@ PrimaryDark.args = {
   theme: ButtonTheme.PRIMARY,
 };
 PrimaryDark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const Disabled = Template.bind({});
+
+Primary.args = {
+  children: 'Text',
+  theme: ButtonTheme.OUTLINE_INVERTED,
+  disabled: true,
+};
+
+export const DisabledDark = Template.bind({});
+
+DisabledDark.args = {
+  children: 'Text',
+  theme: ButtonTheme.OUTLINE_INVERTED,
+  disabled: true,
+};
+DisabledDark.decorators = [ThemeDecorator(Theme.DARK)];

@@ -16,5 +16,7 @@
   "increment": "приращение",
   "decrement": "уменьшать",
   "Your name": "Ваше имя",
-  "Your password": "Ваш пароль"
+  "Your password": "Ваш пароль",
+  "Error login": "Ошибка при попытке войти",
+  "Logout": "Выйти"
 }

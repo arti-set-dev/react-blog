@@ -17,5 +17,7 @@
   "increment": "increment",
   "decrement": "decrement",
   "Your name": "Your name",
-  "Your password": "Your password"
+  "Your password": "Your password",
+  "Error login": "Error while trying to log in",
+  "Logout": "Logout"
 }
