@@ -52,7 +52,8 @@ export const Navbar: FC<NavbarProps> = (props) => {
     <header className={classNames(cl.Navbar, {}, [className])}>
       <Container className={cl.Container}>
         <Button theme={ButtonTheme.OUTLINE_INVERTED} onClick={onShowModal}>{t('Login')}</Button>
-        <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
+        {isAuthModal
+          && <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />}
       </Container>
     </header>
   );

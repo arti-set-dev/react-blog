@@ -1,14 +1,28 @@
-import { FC } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import cl from './Loader.module.scss';
 
-interface LoaderProps {
-    className?: string;
+export enum LoaderTheme {
+  INVERTED = 'inverted',
+  PRIMARY = 'primary',
 }
 
-export const Loader: FC<LoaderProps> = (props) => {
-  const { children, className } = props;
+export enum LoaderOffset {
+  DEFAULT = 'offset-default',
+  L = 'offset-l',
+  XL = 'offset-xl',
+}
+
+interface LoaderProps {
+    className?: string;
+    theme?: LoaderTheme;
+    offset?: LoaderOffset;
+}
+
+export const Loader = (props: LoaderProps) => {
+  const {
+    className, theme = LoaderTheme.INVERTED, offset = LoaderOffset.DEFAULT,
+  } = props;
   return (
-    <div className={classNames(cl.Loader, {}, [className])} />
+    <div className={classNames(cl.Loader, {}, [className, cl[theme], cl[offset]])} />
   );
 };

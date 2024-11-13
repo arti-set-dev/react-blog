@@ -6,10 +6,31 @@
   width: 10px;
   height: 10px;
   color: var(--bg-inverted-color);
-  animation: shadow-rolling 2s linear infinite;
+
+  &.inverted {
+    color: var(--bg-inverted-color);
+    animation: shadow-rolling-inverted 2s linear infinite;
+  }
+
+  &.primary {
+    color: var(--bg-color);
+    animation: shadow-rolling-primary 2s linear infinite;
+  }
+
+  &.offset-default {
+    margin: 0;
+  }
+
+  &.offset-l {
+    margin: 100px;
+  }
+
+  &.offset-xl {
+    margin: 150px;
+  }
 }
 
-@keyframes shadow-rolling {
+@keyframes shadow-rolling-inverted {
   0% {
     box-shadow:
       0 0 rgba(255, 255, 255, 0),
@@ -72,6 +93,80 @@
       200px 0 rgba(255, 255, 255, 0),
       200px 0 rgba(255, 255, 255, 0),
       130px 0 var(--bg-inverted-color);
+  }
+
+  100% {
+    box-shadow:
+      200px 0 rgba(255, 255, 255, 0),
+      200px 0 rgba(255, 255, 255, 0),
+      200px 0 rgba(255, 255, 255, 0),
+      200px 0 rgba(255, 255, 255, 0);
+  }
+}
+
+@keyframes shadow-rolling-primary {
+  0% {
+    box-shadow:
+      0 0 rgba(255, 255, 255, 0),
+      0 0 rgba(255, 255, 255, 0),
+      0 0 rgba(255, 255, 255, 0),
+      0 0 rgba(255, 255, 255, 0);
+  }
+
+  12% {
+    box-shadow:
+      100px 0 var(--bg-color),
+      0 0 rgba(255, 255, 255, 0),
+      0 0 rgba(255, 255, 255, 0),
+      0 0 rgba(255, 255, 255, 0);
+  }
+
+  25% {
+    box-shadow:
+      110px 0 var(--bg-color),
+      100px 0 var(--bg-color),
+      0 0 rgba(255, 255, 255, 0),
+      0 0 rgba(255, 255, 255, 0);
+  }
+
+  36% {
+    box-shadow:
+      120px 0 var(--bg-color),
+      110px 0 var(--bg-color),
+      100px 0 var(--bg-color),
+      0 0 rgba(255, 255, 255, 0);
+  }
+
+  50% {
+    box-shadow:
+      130px 0 var(--bg-color),
+      120px 0 var(--bg-color),
+      110px 0 var(--bg-color),
+      100px 0 var(--bg-color);
+  }
+
+  62% {
+    box-shadow:
+      200px 0 rgba(255, 255, 255, 0),
+      130px 0 var(--bg-color),
+      120px 0 var(--bg-color),
+      110px 0 var(--bg-color);
+  }
+
+  75% {
+    box-shadow:
+      200px 0 rgba(255, 255, 255, 0),
+      200px 0 rgba(255, 255, 255, 0),
+      130px 0 var(--bg-color),
+      120px 0 var(--bg-color);
+  }
+
+  87% {
+    box-shadow:
+      200px 0 rgba(255, 255, 255, 0),
+      200px 0 rgba(255, 255, 255, 0),
+      200px 0 rgba(255, 255, 255, 0),
+      130px 0 var(--bg-color);
   }
 
   100% {
