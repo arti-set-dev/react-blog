@@ -1,0 +1,18 @@
+.SidebarItem {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  font-weight: 400;
+  font-size: var(--font-size-m);
+  gap: var(--gap-mini);
+
+  svg {
+    width: var(--icon-size-l);
+    fill: var(--text-inverted-color);
+  }
+
+  &.collapsed {
+    font-size: 0;
+    gap: 0;
+  }
+}

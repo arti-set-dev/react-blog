@@ -12,11 +12,6 @@
   &.collapsed {
     max-width: var(--sidebar-width-collapsed);
 
-    .SidebarLink {
-      font-size: 0;
-      gap: 0;
-    }
-
     .CollapseBtn {
       svg {
         transform: scaleX(-1);
@@ -37,13 +32,6 @@
   display: flex;
   flex-direction: column;
   gap: var(--gap);
-}
-
-.SidebarLink {
-  display: flex;
-  align-items: center;
-  width: max-content;
-  gap: var(--gap-mini);
 }
 
 .Switchers {

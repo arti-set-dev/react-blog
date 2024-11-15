@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import cl from './Text.module.scss';
 
@@ -28,7 +29,7 @@ interface TextProps {
     weight?: TextWeight;
 }
 
-export const Text = (props: TextProps) => {
+export const Text = memo((props: TextProps) => {
   const {
     className, text, size = TextSize.S, theme = TextTheme.PRIMARY, weight = TextWeight.REGULAR,
   } = props;
@@ -37,4 +38,4 @@ export const Text = (props: TextProps) => {
       {text}
     </div>
   );
-};
+});

@@ -1,5 +1,5 @@
 import {
-  FC, useCallback, useEffect, useRef, useState,
+  FC, memo, useCallback, useEffect, useRef, useState,
 } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Link } from 'react-router-dom';
@@ -19,8 +19,8 @@ interface NavbarProps {
     className?: string;
 }
 
-export const Navbar: FC<NavbarProps> = (props) => {
-  const { children, className } = props;
+export const Navbar = memo((props: NavbarProps) => {
+  const { className } = props;
   const { t } = useTranslation();
   const [isAuthModal, setIsAuthModal] = useState(false);
   const authData = useSelector(getUserAuthData);
@@ -57,4 +57,4 @@ export const Navbar: FC<NavbarProps> = (props) => {
       </Container>
     </header>
   );
-};
+});

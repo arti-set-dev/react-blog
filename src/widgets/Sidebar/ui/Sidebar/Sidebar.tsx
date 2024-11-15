@@ -1,4 +1,4 @@
-import { FC, useState } from 'react';
+import { FC, memo, useState } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Button, ButtonSize, ButtonTheme } from 'shared/ui/Button/Button';
 import ArrIcon from 'shared/assets/icons/arrow-icon.svg';
@@ -10,14 +10,16 @@ import { List } from 'shared/ui/List/List';
 import HomeIcon from 'shared/assets/icons/home-icon.svg';
 import AboutIcon from 'shared/assets/icons/about-icon.svg';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+import { SidebarItemsList } from 'widgets/Sidebar/model/items';
 import cl from './Sidebar.module.scss';
+import { SidebarItem } from '../SidebarItem/SidebarItem';
 
 interface SidebarProps {
     className?: string;
 }
 
-export const Sidebar: FC<SidebarProps> = (props) => {
-  const { children, className } = props;
+export const Sidebar = memo((props: SidebarProps) => {
+  const { className } = props;
   const [collapsed, setCollapsed] = useState(false);
   const { t } = useTranslation();
 
@@ -29,18 +31,11 @@ export const Sidebar: FC<SidebarProps> = (props) => {
     <aside data-testid="sidebar" className={classNames(cl.Sidebar, { [cl.collapsed]: collapsed }, [className])}>
       <nav className={cl.SidebarNav}>
         <List className={cl.Menulist}>
-          <li>
-            <AppLink to={RoutePath.main} className={cl.SidebarLink}>
-              <HomeIcon />
-              {t('Main')}
-            </AppLink>
-          </li>
-          <li>
-            <AppLink className={cl.SidebarLink} to={RoutePath.about}>
-              <AboutIcon />
-              {t('About')}
-            </AppLink>
-          </li>
+          {SidebarItemsList.map((item) => (
+            <li key={item.path}>
+              <SidebarItem item={item} collapsed={collapsed} />
+            </li>
+          ))}
         </List>
       </nav>
       <div className={cl.Switchers}>
@@ -59,4 +54,4 @@ export const Sidebar: FC<SidebarProps> = (props) => {
       </Button>
     </aside>
   );
-};
+});
