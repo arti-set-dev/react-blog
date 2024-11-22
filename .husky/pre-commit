@@ -5,6 +5,5 @@ npm run build
 npm run lint:ts
 npm run lint:scss
 npm run unit
-npm run build-storybook
+npm run storybook
 npm run screen-test
-npm run screen-test-ci
