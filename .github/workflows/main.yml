@@ -32,8 +32,8 @@ jobs:
           if: always()
           run: npm run unit
         - name: storybook
-          run: npm run storybook
+          run: npm run build-storybook
           if: always()
         - name: screenshot testing
-          run: npm run screen-test
+          run: npm run screen-test-ci
           if: always()
