@@ -35,5 +35,5 @@ jobs:
           run: npm run build-storybook
           if: always()
         - name: screenshot testing
-          run: npm run screen-test-ci
+          run: npm run screen-test
           if: always()
