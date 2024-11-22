@@ -29,7 +29,17 @@ export const Sidebar = memo((props: SidebarProps) => {
 
   return (
     <aside data-testid="sidebar" className={classNames(cl.Sidebar, { [cl.collapsed]: collapsed }, [className])}>
-      <nav className={cl.SidebarNav}>
+      <Button
+        data-testid="sidebar-toggle"
+        size={ButtonSize.L}
+        theme={ButtonTheme.ICON}
+        className={classNames(cl.CollapseBtn, {}, [className])}
+        onClick={toggleSildebar}
+        aria-label={t('toggle sidebar')}
+      >
+        <ArrIcon />
+      </Button>
+      <nav>
         <List className={cl.Menulist}>
           {SidebarItemsList.map((item) => (
             <li key={item.path}>
@@ -42,16 +52,6 @@ export const Sidebar = memo((props: SidebarProps) => {
         <ThemeSwitcher />
         <LangSwitcher short={collapsed} />
       </div>
-      <Button
-        data-testid="sidebar-toggle"
-        size={ButtonSize.XL}
-        theme={ButtonTheme.ICON}
-        className={classNames(cl.CollapseBtn, {}, [className])}
-        onClick={toggleSildebar}
-        aria-label={t('toggle sidebar')}
-      >
-        <ArrIcon />
-      </Button>
     </aside>
   );
 });

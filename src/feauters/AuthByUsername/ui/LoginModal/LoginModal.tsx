@@ -8,7 +8,7 @@ import { LoginFormAsync } from '../LoginForm/LoginForm.async';
 interface LoginModalProps {
     className?: string;
     isOpen?: boolean;
-    onClose?: () => void;
+    onClose: () => void;
 }
 
 export const LoginModal = memo((props: LoginModalProps) => {
@@ -17,7 +17,7 @@ export const LoginModal = memo((props: LoginModalProps) => {
   } = props;
   return (
     <Modal lazy isOpen={isOpen} onClose={onClose}>
-      <Suspense fallback={<Loader offset={LoaderOffset.L} theme={LoaderTheme.PRIMARY} />}>
+      <Suspense fallback={<Loader offset={LoaderOffset.L} />}>
         <LoginFormAsync onSucces={onClose} />
       </Suspense>
     </Modal>

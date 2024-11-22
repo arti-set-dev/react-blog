@@ -19,5 +19,7 @@
   "Your name": "Your name",
   "Your password": "Your password",
   "Error login": "Error while trying to log in",
-  "Logout": "Logout"
+  "Logout": "Logout",
+  "Edit": "Edit",
+  "Your lastname": "Your lastname"
 }

@@ -10,7 +10,6 @@
   height: var(--icon-size-l);
   font-size: 0;
   fill: var(--text-inverted-color);
-  background-color: var(--bg-inverted-color);
 
   &.size-l {
     width: var(--icon-size-l);
@@ -25,7 +24,7 @@
 
 .outline-inverted {
   border: 1px solid var(--text-inverted-color);
-  border-radius: var(--button-border-radius);
+  border-radius: var(--button-radius);
   padding: var(--button-offset);
   font-weight: 400;
   font-size: var(--font-size-m);

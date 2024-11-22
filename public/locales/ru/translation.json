@@ -18,5 +18,7 @@
   "Your name": "Ваше имя",
   "Your password": "Ваш пароль",
   "Error login": "Ошибка при попытке войти",
-  "Logout": "Выйти"
+  "Logout": "Выйти",
+  "Edit": "Редактировать",
+  "Your lastname": "Ваша фамилия"
 }

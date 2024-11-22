@@ -1,0 +1,19 @@
+.ProfileCard {
+  border-radius: var(--radius-l);
+  padding: var(--inner-offset);
+  width: 100%;
+  background-color: var(--bg-light-color);
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--gap);
+  gap: var(--gap);
+}
+
+.data {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+}

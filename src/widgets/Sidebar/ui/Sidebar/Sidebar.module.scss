@@ -6,8 +6,9 @@
   width: 100%;
   height: calc(100svh - var(--navbar-height));
   max-width: var(--sidebar-width);
-  background-color: var(--bg-inverted-color);
+  background-color: var(--bg-light-color);
   transition: max-width var(--ui-transition) ease;
+  gap: var(--gap);
 
   &.collapsed {
     max-width: var(--sidebar-width-collapsed);
@@ -22,10 +23,6 @@
       flex-direction: column;
     }
   }
-}
-
-.SidebarNav {
-  margin-bottom: 20px;
 }
 
 .Menulist {
@@ -43,9 +40,7 @@
 }
 
 .CollapseBtn {
-  position: absolute;
-  right: -34px;
-  bottom: var(--inner-offset);
+  background-color: var(--bg-light-color);
 
   svg {
     transition: transform var(--ui-transition) ease;

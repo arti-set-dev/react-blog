@@ -1,7 +1,7 @@
 import React, {
   FC, useCallback, useEffect, useState,
 } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames, Mods } from 'shared/lib/classNames/classNames';
 import CloseIcon from 'shared/assets/icons/close-icon.svg';
 import { useTranslation } from 'react-i18next';
 import { Button, ButtonTheme } from '../Button/Button';
@@ -28,7 +28,7 @@ export const Modal: FC<ModalProps> = (props) => {
     }
   }, [isOpen]);
 
-  const mods: Record<string, boolean> = {
+  const mods: Mods = {
     [cl.opened]: isOpen,
   };
 
@@ -42,7 +42,7 @@ export const Modal: FC<ModalProps> = (props) => {
 
   const onKeyDown = useCallback((e: KeyboardEvent) => {
     if (e.code === 'Escape') {
-      onClose();
+      onClose?.();
     }
   }, [onClose]);
 

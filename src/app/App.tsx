@@ -1,5 +1,7 @@
 import { Suspense, useEffect, useState } from 'react';
-import { Link, Route, Routes } from 'react-router-dom';
+import {
+  Link, Route, Routes, useNavigate,
+} from 'react-router-dom';
 
 import 'app/styles/index.scss';
 import { AboutPageAsync } from 'pages/AboutPage/ui/AboutPage.async';
@@ -20,6 +22,7 @@ import { userActions } from 'entitie/User';
 const App = () => {
   const { theme } = useTheme();
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   useEffect(() => {
     dispatch(userActions.initAuthData());

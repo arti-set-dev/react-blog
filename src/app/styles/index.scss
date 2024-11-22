@@ -48,28 +48,6 @@ a {
   display: none !important; /* stylelint-disable-line declaration-no-important */
 }
 
-.btn-reset {
-  border: none;
-  padding: 0;
-  background-color: transparent;
-  cursor: pointer;
-}
-
-.input-reset {
-  -webkit-appearance: none;
-  appearance: none;
-  border: none;
-  border-radius: 0;
-  background-color: #fff;
-
-  &::-webkit-search-decoration,
-  &::-webkit-search-cancel-button,
-  &::-webkit-search-results-button,
-  &::-webkit-search-results-decoration {
-    display: none;
-  }
-}
-
 .visually-hidden {
   position: absolute;
   overflow: hidden;
@@ -87,7 +65,7 @@ a {
 
 .page-content {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   padding: var(--inner-offset);
   width: 100%;

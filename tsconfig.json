@@ -12,6 +12,7 @@
             ]
         },
         "allowJs": true,
+        "strict": true,
         "moduleResolution": "node",
         "allowSyntheticDefaultImports": true,
         "esModuleInterop": true,

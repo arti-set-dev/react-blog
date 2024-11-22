@@ -29,18 +29,24 @@ interface InputProps extends HTMLInputProps {
 export const Input = memo((props: InputProps) => {
   const {
     className,
-    value,
+    value = '',
     onChange, placeholder, type = InputType.TEXT, theme = InputTheme.LINE_INVERTED, autofocus, ...otherProps
   } = props;
   const [isFocus, setIsFocus] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    if (inputRef?.current?.value !== '') {
+      setIsFocus(true);
+    }
+  }, [inputRef?.current?.value]);
 
   const onFoucus = () => {
     setIsFocus(true);
   };
 
   const onBlur = () => {
-    if (inputRef.current.value === '') {
+    if (inputRef?.current?.value === '') {
       setIsFocus(false);
     }
   };
@@ -76,7 +82,7 @@ export const Input = memo((props: InputProps) => {
           <input
             type={type}
             value={value}
-            onChange={() => onChange(value)}
+            onChange={() => onChange?.(value)}
             className={classNames(cl.Input, {}, [className])}
             {...otherProps}
           />
