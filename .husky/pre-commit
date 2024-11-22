@@ -7,3 +7,4 @@ npm run lint:scss
 npm run unit
 npm run build-storybook
 npm run screen-test
+npm run screen-test-ci
