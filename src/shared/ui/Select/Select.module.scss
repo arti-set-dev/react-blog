@@ -1,0 +1,42 @@
+.Select {
+  border: none;
+  border-bottom: 1px solid var(--text-inverted-color);
+  padding: var(--input-offset) 0;
+  width: 100%;
+  font-size: var(--font-size-xs);
+  color: var(--text-inverted-color);
+  background-color: transparent;
+  transition: opacity var(--ui-transition) ease, border var(--ui-transition) ease;
+
+  &[disabled] {
+    opacity: 0.7;
+  }
+
+  &.readonly {
+    border-bottom: 1px solid transparent;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+option {
+  background-color: var(--bg-light-color);
+}
+
+.SelectWrapper {
+  position: relative;
+  margin-top: 10px;
+}
+
+.Label {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: inline-block;
+  font-size: var(--font-size-s);
+  color: var(--text-inverted-color);
+  transform: translateY(-5px);
+  transition: transform var(--ui-transition) ease, font-size var(--ui-transition) ease;
+}

@@ -25,11 +25,21 @@
 .outline-inverted {
   border: 1px solid var(--text-inverted-color);
   border-radius: var(--button-radius);
-  padding: var(--button-offset);
+  padding: calc(var(--button-offset) - 2px);
   font-weight: 400;
   font-size: var(--font-size-m);
   line-height: 100%;
   color: var(--text-inverted-color);
+}
+
+.outline-red {
+  border: 1px solid var(--error-color);
+  border-radius: var(--button-radius);
+  padding: calc(var(--button-offset) - 2px);
+  font-weight: 400;
+  font-size: var(--font-size-m);
+  line-height: 100%;
+  color: var(--error-color);
 }
 
 .text-inverted {
@@ -37,7 +47,8 @@
 }
 
 .primary {
-  padding: var(--btn-offset);
+  border-radius: var(--button-radius);
+  padding: var(--button-offset);
   color: var(--primary-inverted-color);
   background-color: var(--bg-color);
 }

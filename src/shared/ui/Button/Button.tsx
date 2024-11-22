@@ -13,6 +13,7 @@ export enum ButtonType {
 export enum ButtonTheme {
   ICON = 'icon',
   OUTLINE_INVERTED = 'outline-inverted',
+  OUTLINE_RED = 'outline-red',
   TEXT_INVERTED = 'text-inverted',
   PRIMARY = 'primary',
 }

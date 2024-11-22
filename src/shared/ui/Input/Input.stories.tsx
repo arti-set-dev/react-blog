@@ -14,20 +14,59 @@ export default {
 
 const Template: ComponentStory<typeof Input> = (args) => <Input {...args} />;
 
-export const LineInverted = Template.bind({});
-LineInverted.args = {};
+export const Default = Template.bind({});
+Default.args = {};
 
-export const LineInvertedDark = Template.bind({});
-LineInvertedDark.args = {};
-LineInvertedDark.decorators = [ThemeDecorator(Theme.DARK)];
+export const DefaultDark = Template.bind({});
+DefaultDark.args = {};
+DefaultDark.decorators = [ThemeDecorator(Theme.DARK)];
 
-export const LineInvertedPlaceholder = Template.bind({});
-LineInvertedPlaceholder.args = {
+export const DefaultError = Template.bind({});
+DefaultError.args = {
+  error: 'Invalid value',
+};
+
+export const DefaultErrorDark = Template.bind({});
+DefaultErrorDark.args = {
+  error: 'Invalid value',
+};
+DefaultErrorDark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const Placeholder = Template.bind({});
+Placeholder.args = {
   placeholder: 'text',
 };
 
-export const LineInvertedPlaceholderDark = Template.bind({});
-LineInvertedPlaceholderDark.args = {
+export const PlaceholderDark = Template.bind({});
+PlaceholderDark.args = {
   placeholder: 'text',
 };
-LineInvertedPlaceholderDark.decorators = [ThemeDecorator(Theme.DARK)];
+PlaceholderDark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const PlaceholderError = Template.bind({});
+PlaceholderError.args = {
+  placeholder: 'text',
+  error: 'Invalid value',
+};
+
+export const PlaceholderErrorDark = Template.bind({});
+PlaceholderErrorDark.args = {
+  placeholder: 'text',
+  error: 'Invalid value',
+};
+PlaceholderErrorDark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const PlaceholderReadonly = Template.bind({});
+PlaceholderReadonly.args = {
+  placeholder: 'text',
+  readonly: true,
+  value: 'some text',
+};
+
+export const PlaceholderReadonlyDark = Template.bind({});
+PlaceholderReadonlyDark.args = {
+  placeholder: 'text',
+  readonly: true,
+  value: 'some text',
+};
+PlaceholderReadonlyDark.decorators = [ThemeDecorator(Theme.DARK)];

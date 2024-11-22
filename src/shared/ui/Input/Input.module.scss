@@ -5,6 +5,7 @@
   border-radius: 0;
   padding: var(--input-offset) 0;
   width: 100%;
+  font-size: var(--font-size-xs);
   background-color: transparent;
 
   &::-webkit-search-decoration,
@@ -14,9 +15,19 @@
     display: none;
   }
 
-  &.line-inverted {
+  &.inverted {
     border-bottom: 1px solid var(--text-inverted-color);
     color: var(--text-inverted-color);
+    transition: border var(--ui-transition) ease, opacity var(--ui-transition) ease;
+  }
+
+  &.readonly {
+    border-bottom: 1px solid transparent;
+    opacity: 0.7;
+  }
+
+  &.error {
+    border-color: var(--error-color);
   }
 
   &::placeholder {
@@ -50,4 +61,9 @@
     font-size: var(--font-size-s);
     transform: translateY(-5px);
   }
+}
+
+.ErrorMessage {
+  position: absolute;
+  bottom: -18px;
 }

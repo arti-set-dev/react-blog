@@ -1,10 +1,12 @@
+import { error } from 'console';
 import React, {
   FC, InputHTMLAttributes, memo, useEffect, useRef, useState,
 } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames, Mods } from 'shared/lib/classNames/classNames';
+import { Text, TextSize, TextTheme } from '../Text/Text';
 import cl from './Input.module.scss';
 
-type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange'>
+type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'readOnly'>
 
 export enum InputType {
   TEXT = 'text',
@@ -13,7 +15,7 @@ export enum InputType {
 }
 
 export enum InputTheme {
-  LINE_INVERTED = 'line-inverted',
+  INVERTED = 'inverted',
 }
 
 interface InputProps extends HTMLInputProps {
@@ -24,13 +26,18 @@ interface InputProps extends HTMLInputProps {
     type?: InputType;
     theme?: InputTheme;
     autofocus?: boolean;
+    readonly?: boolean;
+    isNumeric?: boolean;
+    error?: string;
 }
 
 export const Input = memo((props: InputProps) => {
   const {
     className,
     value = '',
-    onChange, placeholder, type = InputType.TEXT, theme = InputTheme.LINE_INVERTED, autofocus, ...otherProps
+    onChange,
+    placeholder,
+    type = InputType.TEXT, theme = InputTheme.INVERTED, autofocus, readonly, isNumeric, error, ...otherProps
   } = props;
   const [isFocus, setIsFocus] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -55,8 +62,10 @@ export const Input = memo((props: InputProps) => {
     onChange?.(e.target.value);
   };
 
-  const mods: Record<string, boolean> = {
+  const mods: Mods = {
     [cl.focused]: isFocus,
+    [cl.readonly]: readonly,
+    [cl.error]: !!error,
   };
 
   return (
@@ -73,19 +82,26 @@ export const Input = memo((props: InputProps) => {
               onChange={onChangeHandler}
               onFocus={onFoucus}
               onBlur={onBlur}
-              className={classNames(cl.Input, {}, [className, cl[theme]])}
+              className={classNames(cl.Input, mods, [className, cl[theme]])}
+              readOnly={readonly}
               {...otherProps}
             />
+            {error
+              && <Text size={TextSize.S} className={cl.ErrorMessage} theme={TextTheme.ERROR} text={error} />}
           </div>
         )
         : (
-          <input
-            type={type}
-            value={value}
-            onChange={() => onChange?.(value)}
-            className={classNames(cl.Input, {}, [className])}
-            {...otherProps}
-          />
+          <div className={cl.InputWrapper}>
+            <input
+              type={type}
+              value={value}
+              onChange={() => onChange?.(value)}
+              className={classNames(cl.Input, {}, [className])}
+              {...otherProps}
+            />
+            {error
+              && <Text size={TextSize.S} className={cl.ErrorMessage} theme={TextTheme.ERROR} text={error} />}
+          </div>
         )}
     </>
   );
