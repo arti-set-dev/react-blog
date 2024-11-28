@@ -556,7 +556,7 @@
       ]
     },
     "overrides": [{
-      "files": ["src/scss/*/**.scss"],
+      "files": ["**/*.scss"],
       "customSyntax": "postcss-scss"
     }]
   }

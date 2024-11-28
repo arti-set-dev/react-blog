@@ -1,11 +1,11 @@
-body:has(.app.dark) {
-  --bg-color: #141414;
-  --bg-light-color: #212121;
-  --skeleton-color: #2d2d2d;
+body:has(.app.orange) {
+  --bg-color: #ce7215;
+  --bg-light-color: #fb8c1d;
+  --skeleton-color: #ce7215;
   --bg-inverted-color: #e6e6e6;
   --text-inverted-color: #e6e6e6;
   --primary-color: #f0e7e7;
   --primary-inverted-color: #e6e6e6;
   --secondary-color: #c5c0c0;
-  --error-color: #f00;
+  --error-color: #be0000;
 }
