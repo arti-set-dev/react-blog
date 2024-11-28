@@ -16,13 +16,14 @@ import { Sidebar } from 'widgets/Sidebar';
 import { useTranslation } from 'react-i18next';
 import { Loader } from 'shared/ui/Loader/Loader';
 import { Modal } from 'shared/ui/Modal/Modal';
-import { useDispatch } from 'react-redux';
-import { userActions } from 'entitie/User';
+import { useDispatch, useSelector } from 'react-redux';
+import { getUserInited, userActions } from 'entitie/User';
 
 const App = () => {
   const { theme } = useTheme();
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const inited = useSelector(getUserInited);
 
   useEffect(() => {
     dispatch(userActions.initAuthData());
@@ -35,7 +36,7 @@ const App = () => {
         <main className="main">
           <Sidebar />
           <div className="page-content">
-            <AppRouter />
+            {inited && <AppRouter />}
           </div>
         </main>
       </Suspense>
