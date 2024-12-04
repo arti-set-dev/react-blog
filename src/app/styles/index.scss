@@ -33,6 +33,7 @@ a {
 }
 
 .app {
+  overflow: auto;
   height: 100vh;
   color: var(--primary-color);
   background-color: var(--bg-color);

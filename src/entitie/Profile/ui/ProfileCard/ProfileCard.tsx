@@ -33,7 +33,7 @@ interface ProfileCardProps {
     onCancelEdit?: () => void;
     onSave?: () => void;
     onChangeFirstname?: (value?: string) => void;
-    onChangeLasttname?: (value?: string) => void;
+    onChangeLastname?: (value?: string) => void;
     onChangeCity?: (value?: string) => void;
     onChangeAge?: (value?: string) => void;
     onChangeCountry?: (country: Country) => void;
@@ -54,7 +54,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
     onSave,
     onCancelEdit,
     onChangeFirstname,
-    onChangeLasttname,
+    onChangeLastname,
     onChangeCity,
     onChangeAge,
     onChangeCountry,
@@ -70,7 +70,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
     return (
       <div className={classNames(cl.ProfileCard, {}, [className])}>
         <div className={cl.head}>
-          <Text size={TextSize.XL} theme={TextTheme.PRIMARY} weight={TextWeight.BOLD} text={t('Profile')} />
+          <Text size={TextSize.XL} theme={TextTheme.PRIMARY} weight={TextWeight.BOLD}>{t('Profile')}</Text>
           <Button disabled={isLoading} theme={ButtonTheme.PRIMARY}>{t('Edit')}</Button>
         </div>
         <div className={classNames(cl.data, {}, [cl.isLoading])}>
@@ -84,11 +84,11 @@ export const ProfileCard = (props: ProfileCardProps) => {
     return (
       <div className={classNames(cl.ProfileCard, {}, [className])}>
         <div className={cl.head}>
-          <Text size={TextSize.XL} theme={TextTheme.PRIMARY} weight={TextWeight.BOLD} text={t('Profile')} />
+          <Text size={TextSize.XL} theme={TextTheme.PRIMARY} weight={TextWeight.BOLD}>{t('Profile')}</Text>
           <Button disabled theme={ButtonTheme.PRIMARY}>{t('Edit')}</Button>
         </div>
         <div className={classNames(cl.data, {}, [cl.isError])}>
-          <Text theme={TextTheme.ERROR} size={TextSize.L} text={t('Profile error')} />
+          <Text theme={TextTheme.ERROR} size={TextSize.L}>{t('Profile error')}</Text>
         </div>
       </div>
     );
@@ -97,7 +97,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
   return (
     <div className={classNames(cl.ProfileCard, {}, [className])}>
       <div className={cl.head}>
-        <Text size={TextSize.XL} theme={TextTheme.PRIMARY} weight={TextWeight.BOLD} text={t('Profile')} />
+        <Text size={TextSize.XL} theme={TextTheme.PRIMARY} weight={TextWeight.BOLD}>{t('Profile')}</Text>
         {readonly
           ? <Button onClick={onEdit} theme={ButtonTheme.PRIMARY}>{t('Edit')}</Button>
           : (
@@ -122,7 +122,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
           error={fieldErrors?.firstname}
         />
         <Input
-          onChange={onChangeLasttname}
+          onChange={onChangeLastname}
           readonly={readonly}
           placeholder={t('Your lastname')}
           value={data?.lastname}

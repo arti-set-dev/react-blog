@@ -5,12 +5,12 @@
     font-size: var(--font-size-s);
   }
 
-  &.size-xs {
-    font-size: var(--font-size-xs);
-  }
-
   &.size-m {
     font-size: var(--font-size-m);
+  }
+
+  &.size-xs {
+    font-size: var(--font-size-xs);
   }
 
   &.size-l {
@@ -22,7 +22,7 @@
   }
 
   &.primary {
-    color: var(--primary-color);
+    color: var(--text-primary-color);
   }
 
   &.inverted {
@@ -39,5 +39,17 @@
 
   &.regular {
     font-weight: 400;
+  }
+
+  &.center {
+    text-align: center;
+  }
+
+  &.left {
+    text-align: left;
+  }
+
+  &.right {
+    text-align: right;
   }
 }

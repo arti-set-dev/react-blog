@@ -16,8 +16,8 @@
   }
 
   &.inverted {
-    border-bottom: 1px solid var(--text-inverted-color);
-    color: var(--text-inverted-color);
+    border-bottom: 1px solid var(--text-primary-color);
+    color: var(--text-primary-color);
     transition: border var(--ui-transition) ease, opacity var(--ui-transition) ease;
   }
 
@@ -52,7 +52,7 @@
   font-weight: 400;
   font-size: var(--font-size-m);
   line-height: 100%;
-  color: var(--text-inverted-color);
+  color: var(--text-primary-color);
   transform: translateY(10px);
   transition: transform var(--ui-transition) ease, font-size var(--ui-transition) ease;
   pointer-events: none;

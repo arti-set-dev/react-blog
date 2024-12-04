@@ -2,6 +2,12 @@ import { memo } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import cl from './Text.module.scss';
 
+export enum TextAlign {
+  CENTER = 'center',
+  LEFT = 'left',
+  RIGHT = 'right',
+}
+
 export enum TextSize {
   S = 'size-s',
   XS = 'size-xs',
@@ -23,19 +29,21 @@ export enum TextWeight {
 
 interface TextProps {
     className?: string;
-    text: string;
     size?: TextSize;
     theme?: TextTheme;
     weight?: TextWeight;
+    align?: TextAlign;
+    children?: React.ReactNode;
 }
 
 export const Text = memo((props: TextProps) => {
   const {
-    className, text, size = TextSize.S, theme = TextTheme.PRIMARY, weight = TextWeight.REGULAR,
+    className,
+    size = TextSize.S, theme = TextTheme.PRIMARY, weight = TextWeight.REGULAR, align = TextAlign.LEFT, children,
   } = props;
   return (
-    <div className={classNames(cl.Text, {}, [className, cl[weight], cl[size], cl[theme]])}>
-      {text}
+    <div className={classNames(cl.Text, {}, [className, cl[weight], cl[size], cl[theme], cl[align]])}>
+      {children}
     </div>
   );
 });

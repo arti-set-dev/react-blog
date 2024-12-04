@@ -23,5 +23,13 @@
   "The lastname field is required": "The lastname field is required",
   "No city selected": "No city selected",
   "No currency selected": "No currency selected",
-  "Username too long": "Username too long"
+  "Username too long": "Username too long",
+  "profile": {
+    "Profile": "profile",
+    "Edit": "profile",
+    "Profile error": "profile",
+    "Profile avatar": "profile",
+    "Cancel": "profile",
+    "Save": "profile"
+  }
 }

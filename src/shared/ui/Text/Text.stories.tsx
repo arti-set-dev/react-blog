@@ -13,7 +13,7 @@ export default {
     backgroundColor: { control: 'color' },
   },
   args: {
-    text: 'Text',
+    children: 'Text',
   },
 } as ComponentMeta<typeof Text>;
 
@@ -36,14 +36,14 @@ InvertedText.args = {
 
 export const SmallText = Template.bind({});
 SmallText.args = {
-  size: TextSize.S,
+  size: TextSize.XS,
   theme: TextTheme.PRIMARY,
   weight: TextWeight.REGULAR,
 };
 
 export const ExtraSmallText = Template.bind({});
 ExtraSmallText.args = {
-  size: TextSize.XS,
+  size: TextSize.S,
   theme: TextTheme.PRIMARY,
   weight: TextWeight.REGULAR,
 };

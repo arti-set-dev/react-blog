@@ -1,11 +1,14 @@
 body:has(.app.light) {
   --bg-color: #e6e6e6;
   --bg-light-color: #fff;
-  --skeleton-color: #b7b7b7;
+  --skeleton-color: #d0d0d0;
+  --skeleton-wave-color: #aaa;
   --bg-inverted-color: #292727;
-  --text-inverted-color: #292727;
+  --text-primary-color: #292727;
+  --text-inverted-color: #e6e6e6;
   --primary-color: #292727;
   --primary-inverted-color: #292727;
   --secondary-color: #3f3c3c;
   --error-color: #f00;
+  --hover-color: #000;
 }

@@ -23,7 +23,7 @@ export const Sidebar = memo((props: SidebarProps) => {
   const [collapsed, setCollapsed] = useState(false);
   const { t } = useTranslation();
 
-  const toggleSildebar = () => {
+  const toggleSidebar = () => {
     setCollapsed((prev) => !prev);
   };
 
@@ -34,7 +34,7 @@ export const Sidebar = memo((props: SidebarProps) => {
         size={ButtonSize.L}
         theme={ButtonTheme.ICON}
         className={classNames(cl.CollapseBtn, {}, [className])}
-        onClick={toggleSildebar}
+        onClick={toggleSidebar}
         aria-label={t('toggle sidebar')}
       >
         <ArrIcon />

@@ -1,3 +1,11 @@
-.ArticleImageTextComponent {
+.ArticleTextBlockComponent {
+  width: 100%;
+}
 
+.Title {
+  margin-bottom: var(--gap);
+}
+
+.Paragraph {
+  margin-top: var(--gap-mini);
 }

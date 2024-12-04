@@ -91,7 +91,7 @@ const ProfilePage = () => {
     dispatch(profileActions.updateProfile({ firstname: value || '' }));
   }, [dispatch]);
 
-  const onChangeLasttname = useCallback((value?: string) => {
+  const onChangeLastname = useCallback((value?: string) => {
     dispatch(profileActions.updateProfile({ lastname: value || '' }));
   }, [dispatch]);
 
@@ -139,7 +139,7 @@ const ProfilePage = () => {
           onChangeCity={onChangeCity}
           onChangeCountry={onChangeCountry}
           onChangeFirstname={onChangeFirstname}
-          onChangeLasttname={onChangeLasttname}
+          onChangeLastname={onChangeLastname}
           onChangeAvatar={onChangeAvatar}
           onChangeUsername={onChangeUsername}
           onChangeCurrency={onChangeCurrency}

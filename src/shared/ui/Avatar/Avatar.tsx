@@ -9,8 +9,8 @@ export enum AvatarLoading {
 
 interface AvatarProps {
     className?: string;
-    src: string;
-    alt: string;
+    src?: string;
+    alt?: string;
     size?: number;
     loading?: AvatarLoading;
 }

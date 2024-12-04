@@ -1,6 +1,10 @@
 {
   "About Page": "About Page",
+  "Article Details Page": "Article Details Page",
+  "Article not found": "Article not found",
+  "Articles Page": "Articles Page",
   "Cancel": "Cancel",
+  "Copy": "Copy",
   "Edit": "Edit",
   "Error login": "Error login",
   "Lang": "Lang",
@@ -22,6 +26,7 @@
   "Something went wrong": "Something went wrong",
   "The firstname field is required": "The firstname field is required",
   "The lastname field is required": "The lastname field is required",
+  "There was an error loading the article": "There was an error loading the article",
   "Toggle Theme": "Toggle Theme",
   "Username too long": "Username too long",
   "Your Country": "Your Country",
@@ -36,5 +41,6 @@
   "close modal": "close modal",
   "decrement": "decrement",
   "increment": "increment",
-  "toggle sidebar": "toggle sidebar"
+  "toggle sidebar": "toggle sidebar",
+  "Статья найдена": "Статья найдена"
 }

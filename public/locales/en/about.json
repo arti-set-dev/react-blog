@@ -1,5 +1,6 @@
 {
   "About Page": "About Page",
-  "About Page1": "About Page1",
-  "About Page12": "About Page12"
+  "about": {
+    "About Page": "About Page"
+  }
 }

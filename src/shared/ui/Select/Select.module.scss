@@ -1,10 +1,10 @@
 .Select {
   border: none;
-  border-bottom: 1px solid var(--text-inverted-color);
+  border-bottom: 1px solid var(--text-primary-color);
   padding: var(--input-offset) 0;
   width: 100%;
   font-size: var(--font-size-xs);
-  color: var(--text-inverted-color);
+  color: var(--text-primary-color);
   background-color: transparent;
   transition: opacity var(--ui-transition) ease, border var(--ui-transition) ease;
 
@@ -36,7 +36,7 @@ option {
   top: 0;
   display: inline-block;
   font-size: var(--font-size-s);
-  color: var(--text-inverted-color);
+  color: var(--text-primary-color);
   transform: translateY(-5px);
   transition: transform var(--ui-transition) ease, font-size var(--ui-transition) ease;
 }

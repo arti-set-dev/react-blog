@@ -87,7 +87,7 @@ export const Input = memo((props: InputProps) => {
               {...otherProps}
             />
             {error
-              && <Text size={TextSize.S} className={cl.ErrorMessage} theme={TextTheme.ERROR} text={error} />}
+                && <Text size={TextSize.S} className={cl.ErrorMessage} theme={TextTheme.ERROR}>{error}</Text>}
           </div>
         )
         : (
@@ -100,7 +100,7 @@ export const Input = memo((props: InputProps) => {
               {...otherProps}
             />
             {error
-              && <Text size={TextSize.S} className={cl.ErrorMessage} theme={TextTheme.ERROR} text={error} />}
+                && <Text size={TextSize.S} className={cl.ErrorMessage} theme={TextTheme.ERROR}>{error}</Text>}
           </div>
         )}
     </>

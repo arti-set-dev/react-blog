@@ -1,4 +1,5 @@
 {
+  "Articles Page": "Articles Page",
   "test example": "тестовый пример",
   "toggle lang": "переключить язык",
   "Main": "Главная",
@@ -20,5 +21,6 @@
   "Error login": "Ошибка при попытке войти",
   "Logout": "Выйти",
   "Edit": "Редактировать",
-  "Your lastname": "Ваша фамилия"
+  "Your lastname": "Ваша фамилия",
+  "Copy": "Копировать"
 }

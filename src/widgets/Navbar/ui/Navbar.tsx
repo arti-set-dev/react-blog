@@ -42,7 +42,7 @@ export const Navbar = memo((props: NavbarProps) => {
     return (
       <header className={classNames(cl.Navbar, {}, [className])}>
         <Container className={cl.Container}>
-          <Button theme={ButtonTheme.OUTLINE_INVERTED} onClick={onLogout}>{t('Logout')}</Button>
+          <Button theme={ButtonTheme.OUTLINE} onClick={onLogout}>{t('Logout')}</Button>
         </Container>
       </header>
     );

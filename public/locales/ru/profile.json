@@ -23,5 +23,6 @@
   "The lastname field is required": "Поле фамилия обязательно",
   "No city selected": "Город не выбран",
   "No currency selected": "Валюта не выбрана",
-  "Username too long": "Имя пользователя слишком длинное"
+  "Username too long": "Имя пользователя слишком длинное",
+  "Profile": "Профиль"
 }
