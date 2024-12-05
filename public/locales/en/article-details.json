@@ -1,7 +1,8 @@
 {
-  "article-details": {
-    "Article not found": "Article not found",
-    "article-details-page": "Article Details Page",
-    "There was an error loading the article": "There was an error loading the article"
-  }
+  "Article not found": "Article not found",
+  "article-details-page": "Article Details Page",
+  "There was an error loading the article": "There was an error loading the article",
+  "Comments": "Comments",
+  "There are no comments": "There are no comments",
+  "There was an error when downloading data": "There was an error when downloading data"
 }

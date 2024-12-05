@@ -1,0 +1,12 @@
+.CommentCard {
+  border: 1px solid var(--bg-inverted-color);
+  border-radius: var(--radius-s);
+  padding: var(--inner-offset);
+}
+
+.Header {
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--gap);
+  gap: var(--gap-mini);
+}

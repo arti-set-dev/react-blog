@@ -1,7 +1,7 @@
 {
-  "article-details": {
-    "Article Details Page": "Страница сведений о статье",
-    "There was an error loading the article": "Произошла ошибка при загрузке статьи",
-    "There was an error loading the article": "Произошла ошибка при загрузке статьи"
-  }
+  "Article Details Page": "Страница сведений о статье",
+  "There was an error loading the article": "Произошла ошибка при загрузке статьи",
+  "Comments": "Комментарии",
+  "There are no comments": "Нет комментариев",
+  "There was an error when downloading data": "Произошла ошибка при загрузке данных"
 }

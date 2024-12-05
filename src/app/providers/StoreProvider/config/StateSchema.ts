@@ -7,6 +7,7 @@ import { CounterSchema } from 'entitie/Counter';
 import { ProfileSchema } from 'entitie/Profile';
 import { UserSchema } from 'entitie/User';
 import { LoginSchema } from 'feauters/AuthByUsername';
+import { ArticleDetailsCommentsSchema } from 'pages/ArticleDetailsPage';
 import { NavigateOptions, To } from 'react-router-dom';
 import { createReducerManager } from './reducerManager';
 
@@ -18,6 +19,7 @@ export interface StateSchema {
     loginForm?: LoginSchema;
     profile?: ProfileSchema;
     articleDetails?: ArticleDetailsSchema;
+    articleDetailsComments?: ArticleDetailsCommentsSchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;

@@ -70,6 +70,8 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
         <Skeleton align={SkeletonAlign.LEFT} height={20} width="300px" />
         <Skeleton height={100} width="100%" />
         <Skeleton height={100} width="100%" />
+        <Skeleton height={100} width="100%" />
+        <Skeleton height={100} width="100%" />
       </div>
     );
   } else if (error) {
