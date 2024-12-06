@@ -19,7 +19,9 @@
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
       "views": 1022,
       "createdAt": "26.02.2022",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -93,13 +95,61 @@
       "id": "2",
       "text": "some comment 2",
       "articleId": "1",
-      "userId": "1"
+      "userId": "2"
     },
     {
       "id": "3",
       "text": "some comment 3",
       "articleId": "1",
       "userId": "1"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "fefe",
+      "id": "_XH1W4Q"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "gege",
+      "id": "R8XiEDQ"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "ssss",
+      "id": "2mvPqyO"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "d",
+      "id": "WHP8-yZ"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "ss",
+      "id": "2OgCB2R"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "ssqsqs",
+      "id": "eXQd2Ck"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "sss",
+      "id": "Jop0ujM"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "sqss",
+      "id": "kZmCi2t"
     }
   ],
   "users": [
@@ -108,7 +158,7 @@
       "username": "admin",
       "password": "123",
       "role": "ADMIN",
-      "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      "avatar": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
       "id": "2",
@@ -118,14 +168,28 @@
       "avatar": "https://plus.unsplash.com/premium_photo-1664536392779-049ba8fde933?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     }
   ],
-  "profile": {
-    "firstname": "ssqsqs",
-    "lastname": "dwdwd",
-    "age": 24,
-    "currency": "KZT",
-    "city": "New York",
-    "username": "admin",
-    "avatar": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "country": "Germany"
-  }
+  "profile": [
+    {
+      "id": "1",
+      "firstname": "user 1",
+      "lastname": "dwdwd",
+      "age": 24,
+      "currency": "KZT",
+      "city": "New York",
+      "username": "admin",
+      "avatar": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "country": "Germany"
+    },
+    {
+      "id": "2",
+      "firstname": "user 23",
+      "lastname": "dwdwd",
+      "age": 24,
+      "currency": "KZT",
+      "city": "New York",
+      "username": "admin",
+      "avatar": "https://plus.unsplash.com/premium_photo-1664536392779-049ba8fde933?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "country": "USA"
+    }
+  ]
 }

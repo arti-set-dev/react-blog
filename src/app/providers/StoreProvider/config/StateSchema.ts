@@ -2,6 +2,7 @@ import {
   AnyAction, CombinedState, EnhancedStore, Reducer, ReducersMapObject, Store,
 } from '@reduxjs/toolkit';
 import { AxiosInstance } from 'axios';
+import { AddNewCommentSchema } from 'feauters/addNewComment';
 import { ArticleDetailsSchema } from 'entitie/Article';
 import { CounterSchema } from 'entitie/Counter';
 import { ProfileSchema } from 'entitie/Profile';
@@ -20,6 +21,7 @@ export interface StateSchema {
     profile?: ProfileSchema;
     articleDetails?: ArticleDetailsSchema;
     articleDetailsComments?: ArticleDetailsCommentsSchema;
+    addNewComment?: AddNewCommentSchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;

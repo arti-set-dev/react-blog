@@ -8,6 +8,7 @@ import { getProfileData } from 'entitie/Profile/model/selectors/getProfileData/g
 import { getProfileError } from 'entitie/Profile/model/selectors/getProfileError/getProfileError';
 import { getProfileIsLoading } from 'entitie/Profile/model/selectors/getProfileIsLoading/getProfileIsLoading';
 import { fetchProfileData } from 'entitie/Profile/model/services/fetchProfileData/fetchProfileData';
+import { getUserAuthData } from 'entitie/User';
 import { FC, useCallback, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
@@ -65,14 +66,13 @@ export const ProfileCard = (props: ProfileCardProps) => {
 
   } = props;
   const { t } = useTranslation('profile');
+  const authData = useSelector(getUserAuthData);
+  const profileData = useSelector(getProfileData);
+  const canEdit = authData?.id === profileData?.id;
 
   if (isLoading) {
     return (
       <div className={classNames(cl.ProfileCard, {}, [className])}>
-        <div className={cl.head}>
-          <Text size={TextSize.XL} theme={TextTheme.PRIMARY} weight={TextWeight.BOLD}>{t('Profile')}</Text>
-          <Button disabled={isLoading} theme={ButtonTheme.PRIMARY}>{t('Edit')}</Button>
-        </div>
         <div className={classNames(cl.data, {}, [cl.isLoading])}>
           <Loader offset={LoaderOffset.L} />
         </div>
@@ -85,7 +85,6 @@ export const ProfileCard = (props: ProfileCardProps) => {
       <div className={classNames(cl.ProfileCard, {}, [className])}>
         <div className={cl.head}>
           <Text size={TextSize.XL} theme={TextTheme.PRIMARY} weight={TextWeight.BOLD}>{t('Profile')}</Text>
-          <Button disabled theme={ButtonTheme.PRIMARY}>{t('Edit')}</Button>
         </div>
         <div className={classNames(cl.data, {}, [cl.isError])}>
           <Text theme={TextTheme.ERROR} size={TextSize.L}>{t('Profile error')}</Text>
@@ -98,14 +97,19 @@ export const ProfileCard = (props: ProfileCardProps) => {
     <div className={classNames(cl.ProfileCard, {}, [className])}>
       <div className={cl.head}>
         <Text size={TextSize.XL} theme={TextTheme.PRIMARY} weight={TextWeight.BOLD}>{t('Profile')}</Text>
-        {readonly
-          ? <Button onClick={onEdit} theme={ButtonTheme.PRIMARY}>{t('Edit')}</Button>
-          : (
-            <div className={cl.Btns}>
-              <Button onClick={onCancelEdit} theme={ButtonTheme.OUTLINE_RED}>{t('Cancel')}</Button>
-              <Button onClick={onSave} theme={ButtonTheme.PRIMARY}>{t('Save')}</Button>
-            </div>
-          )}
+        {canEdit && (
+          // eslint-disable-next-line react/jsx-no-useless-fragment
+          <>
+            {readonly
+              ? <Button onClick={onEdit} theme={ButtonTheme.PRIMARY}>{t('Edit')}</Button>
+              : (
+                <div className={cl.Btns}>
+                  <Button onClick={onCancelEdit} theme={ButtonTheme.OUTLINE_RED}>{t('Cancel')}</Button>
+                  <Button onClick={onSave} theme={ButtonTheme.PRIMARY}>{t('Save')}</Button>
+                </div>
+              )}
+          </>
+        )}
       </div>
       {data?.avatar
         && (

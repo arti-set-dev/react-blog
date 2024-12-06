@@ -5,10 +5,10 @@ import { Country } from 'entitie/Country';
 import { Currency } from 'entitie/Currency';
 import { userActions } from 'entitie/User';
 import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
-import { ValidateProfileError } from '../../types/profile';
+import { Profile, ValidateProfileError } from '../../types/profile';
 import { updateProfileData } from './updateProfileData';
 
-const data = {
+const data: Profile = {
   username: 'admin',
   age: 22,
   country: Country.Germany,
@@ -16,6 +16,7 @@ const data = {
   currency: Currency.EUR,
   firstname: 'Firstname',
   lastname: 'Lastname',
+  id: '1',
 };
 
 describe('updateProfileData.test', () => {

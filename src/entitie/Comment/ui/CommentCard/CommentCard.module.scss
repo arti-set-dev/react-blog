@@ -1,7 +1,8 @@
 .CommentCard {
-  border: 1px solid var(--bg-inverted-color);
+  list-style: none;
   border-radius: var(--radius-s);
   padding: var(--inner-offset);
+  background-color: var(--bg-light-color);
 }
 
 .Header {

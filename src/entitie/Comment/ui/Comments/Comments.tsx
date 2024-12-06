@@ -6,6 +6,7 @@ import {
 } from 'shared/ui/Text/Text';
 import { Comment } from 'entitie/Comment';
 import { List } from 'shared/ui/List/List';
+import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
 import cl from './Comments.module.scss';
 import { CommentCard } from '../CommentCard/CommentCard';
 
@@ -32,26 +33,26 @@ export const Comments = memo((props: CommentsProps) => {
         ))}
       </List>
     );
-  } else if (error) {
+  }
+
+  if (isLoading) {
+    content = (
+      <div className={cl.List}>
+        <Skeleton width="100%" height={40} />
+        <Skeleton width="100%" height={40} />
+        <Skeleton width="100%" height={40} />
+      </div>
+    );
+  }
+
+  if (error) {
     content = (
       <Text>{t('There was an error when downloading data')}</Text>
-    );
-  } else {
-    content = (
-      <Text>{t('There are no comments')}</Text>
     );
   }
 
   return (
-    <div className={classNames(cl.Comments, {}, [className])}>
-      <Text
-        className={cl.Title}
-        theme={TextTheme.PRIMARY}
-        weight={TextWeight.BOLD}
-        size={TextSize.XL}
-      >
-        {t('Comments')}
-      </Text>
+    <div className={classNames('', {}, [className])}>
       {content}
     </div>
   );

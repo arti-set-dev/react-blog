@@ -39,7 +39,7 @@
             "import { createSlice } from '@reduxjs/toolkit';",
             "import { $1Schema } from '../types/$1';",
             "",
-            "const initialState: $1Schema = {};", 
+            "const initialState: $1Schema = {};",
             "",
             "export const $1Slice = createSlice({",
             "  name: '$1',",
@@ -53,6 +53,39 @@
             "export default $1Slice.reducer;"
         ],
         "description": "Redux Slice Template"
+    },
+    "Redux Async Thunk": {
+        "prefix": "rtk",
+        "body": [
+            "import { createAsyncThunk } from '@reduxjs/toolkit';",
+            "import { ThunkConfig } from 'app/providers/StoreProvider';",
+            "import {  } from 'entitie/';",
+            "",
+            "interface $1Props {",
+            "",
+            "}",
+            "",
+            "export const $1 = createAsyncThunk<User, $1Props, ThunkConfig<string>>(",
+            "    '$1',", // имя для thunk
+            "    async ($1Data, thunkAPI) => {",
+            "        const { extra, dispatch, rejectWithValue } = thunkAPI;",
+            "",
+            "        try {",
+            "            const response = await extra.api.post<User>('$1', $1Data);",
+            "",
+            "            if (!response.data) {",
+            "                throw new Error();",
+            "            }",
+            "",
+            "            return response.data;",
+            "        } catch (error) {",
+            "            console.log(error);",
+            "            return rejectWithValue('error');",
+            "        }",
+            "    },",
+            ");"
+        ],
+        "description": "Redux Async Thunk Template"
     },
     "Storybook Text Component": {
         "prefix": "story",

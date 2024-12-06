@@ -4,5 +4,7 @@
   "There was an error loading the article": "There was an error loading the article",
   "Comments": "Comments",
   "There are no comments": "There are no comments",
-  "There was an error when downloading data": "There was an error when downloading data"
+  "There was an error when downloading data": "There was an error when downloading data",
+  "Write your comment": "Write your comment",
+  "There was an error when sending a message": "There was an error when sending a message"
 }

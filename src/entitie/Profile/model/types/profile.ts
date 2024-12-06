@@ -25,6 +25,7 @@ export interface ValidateFields {
 }
 
 export interface Profile {
+    id?: string;
     firstname?: string;
     lastname?: string;
     age?: number;
