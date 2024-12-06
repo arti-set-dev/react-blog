@@ -41,7 +41,6 @@ module.exports = {
     'import/no-extraneous-dependencies': 'off',
     'no-underscore-dangle': 'off',
     'react/button-has-type': 'off',
-    'linebreak-style': ['error', 'windows'],
     'i18next/no-literal-string': ['error', { markupOnly: true, ignoreAttribute: ['data-testid', 'to', 'name'] }],
     'max-len': ['error', { ignoreComments: true, code: 120 }],
     'jsx-a11y/click-events-have-key-events': 'off',
