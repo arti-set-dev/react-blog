@@ -6,6 +6,7 @@ export enum SkeletonAlign {
     LEFT = 'left',
     RIGHT = 'right',
     CENTER = 'center',
+    DEFAULT = 'default',
 }
 
 interface SkeletonProps {

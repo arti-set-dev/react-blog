@@ -17,6 +17,10 @@
     margin: 0 auto;
   }
 
+  &.default {
+    margin: 0;
+  }
+
   &::before {
     content: "";
     position: absolute;

@@ -1,6 +1,8 @@
+/* eslint-disable max-len */
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { memo } from 'react';
+import { Article, ArticleList, ArticleView } from 'entitie/Article';
 import cl from './ArticlesPage.module.scss';
 
 interface ArticlesPageProps {
@@ -13,7 +15,7 @@ const ArticlesPage = (props: ArticlesPageProps) => {
 
   return (
     <div className={classNames(cl.ArticlesPage, {}, [className])}>
-      {t('Articles Page')}
+      <ArticleList articles={[]} />
     </div>
   );
 };
