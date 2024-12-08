@@ -11,4 +11,7 @@
     "source.fixAll.eslint": "explicit"
   },
   "files.eol": "\n",
+  "cSpell.words": [
+    "Swither"
+  ],
 }

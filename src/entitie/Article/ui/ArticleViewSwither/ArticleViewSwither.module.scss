@@ -1,0 +1,18 @@
+.ArticleViewSwither {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: var(--gap);
+  gap: var(--gap-mini);
+}
+
+.Button {
+  svg {
+    stroke: var(--text-primary-color);
+  }
+
+  &.Current {
+    svg {
+      stroke: var(--light-color);
+    }
+  }
+}
