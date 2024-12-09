@@ -11,13 +11,13 @@ import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEf
 import { useSelector } from 'react-redux';
 import { Page } from 'shared/ui/Page/Page';
 import { Text } from 'shared/ui/Text/Text';
-import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList';
 import {
-  getArticlesPageIsError, getArticlesPageIsHasMore, getArticlesPageIsLoading, getArticlesPageIsNum, getArticlesPageIsView,
+  getArticlesPageIsError, getArticlesPageIsHasMore, getArticlesPageIsInited, getArticlesPageIsLoading, getArticlesPageIsNum, getArticlesPageIsView,
 } from '../../model/selectors/articlesPageSelectors';
 import { articlesPageActions, articlesPageReducer, getArticles } from '../../model/slices/articlesPageSlice';
 import cl from './ArticlesPage.module.scss';
 import { fetchNextArticlePage } from '../../model/services/fetchNextArticlePage/fetchNextArticlePage';
+import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
 
 interface ArticlesPageProps {
     className?: string;
@@ -37,6 +37,7 @@ const ArticlesPage = (props: ArticlesPageProps) => {
   const view = useSelector(getArticlesPageIsView);
   const page = useSelector(getArticlesPageIsNum);
   const hasMore = useSelector(getArticlesPageIsHasMore);
+  const inited = useSelector(getArticlesPageIsInited);
 
   const onChangeView = useCallback((view: ArticleView) => {
     dispatch(articlesPageActions.setView(view));
@@ -47,14 +48,11 @@ const ArticlesPage = (props: ArticlesPageProps) => {
   }, [dispatch]);
 
   useInitialEffect(() => {
-    dispatch(articlesPageActions.initState());
-    dispatch(fetchArticlesList({
-      page: 1,
-    }));
+    dispatch(initArticlesPage());
   });
 
   return (
-    <DynamicModuleLoader reducers={reducers}>
+    <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
       <Page onScrollEnd={onLoadNextPart} className={classNames(cl.ArticlesPage, {}, [className])}>
         <ArticleViewSwither view={view} onViewClick={onChangeView} />
         <ArticleList view={view} isLoading={isLoading} articles={articles} />

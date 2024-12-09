@@ -7,6 +7,7 @@
   text-align: center;
   background-color: var(--skeleton-color);
   object-fit: cover;
+  aspect-ratio: 1/1;
 
   &::after {
     content: attr(alt);
