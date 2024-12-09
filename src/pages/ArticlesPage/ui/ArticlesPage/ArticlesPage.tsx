@@ -9,10 +9,15 @@ import { DynamicModuleLoader, ReducerList } from 'shared/lib/components/DynamicM
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { useSelector } from 'react-redux';
+import { Page } from 'shared/ui/Page/Page';
+import { Text } from 'shared/ui/Text/Text';
 import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList';
-import { getArticlesPageIsError, getArticlesPageIsLoading, getArticlesPageIsView } from '../../model/selectors/articlesPageSelectors';
+import {
+  getArticlesPageIsError, getArticlesPageIsHasMore, getArticlesPageIsLoading, getArticlesPageIsNum, getArticlesPageIsView,
+} from '../../model/selectors/articlesPageSelectors';
 import { articlesPageActions, articlesPageReducer, getArticles } from '../../model/slices/articlesPageSlice';
 import cl from './ArticlesPage.module.scss';
+import { fetchNextArticlePage } from '../../model/services/fetchNextArticlePage/fetchNextArticlePage';
 
 interface ArticlesPageProps {
     className?: string;
@@ -30,22 +35,32 @@ const ArticlesPage = (props: ArticlesPageProps) => {
   const isLoading = useSelector(getArticlesPageIsLoading);
   const error = useSelector(getArticlesPageIsError);
   const view = useSelector(getArticlesPageIsView);
+  const page = useSelector(getArticlesPageIsNum);
+  const hasMore = useSelector(getArticlesPageIsHasMore);
 
   const onChangeView = useCallback((view: ArticleView) => {
     dispatch(articlesPageActions.setView(view));
   }, [dispatch]);
 
+  const onLoadNextPart = useCallback(() => {
+    dispatch(fetchNextArticlePage());
+  }, [dispatch]);
+
   useInitialEffect(() => {
-    dispatch(fetchArticlesList());
     dispatch(articlesPageActions.initState());
+    dispatch(fetchArticlesList({
+      page: 1,
+    }));
   });
 
   return (
     <DynamicModuleLoader reducers={reducers}>
-      <div className={classNames(cl.ArticlesPage, {}, [className])}>
+      <Page onScrollEnd={onLoadNextPart} className={classNames(cl.ArticlesPage, {}, [className])}>
         <ArticleViewSwither view={view} onViewClick={onChangeView} />
         <ArticleList view={view} isLoading={isLoading} articles={articles} />
-      </div>
+        {error
+          && <Text>{t('Data boot error')}</Text>}
+      </Page>
     </DynamicModuleLoader>
   );
 };

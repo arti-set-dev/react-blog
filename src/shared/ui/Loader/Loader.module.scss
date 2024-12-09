@@ -28,6 +28,10 @@
   &.offset-xl {
     margin: 150px;
   }
+
+  &.auto {
+    margin: auto;
+  }
 }
 
 @keyframes shadow-rolling-inverted {

@@ -3,5 +3,6 @@
   "Article not found": "Статья не найдена",
   "ArticleDetailsPage": "ArticleDetailsPage",
   "Read more": "Читать далее...",
-  "There are no articles at the moment": "На данный момент статей нет"
+  "There are no articles at the moment": "На данный момент статей нет",
+  "Data boot error": "Ошибка загрузки данных"
 }

@@ -14,7 +14,7 @@ import { AppRouter } from 'app/providers/router';
 import { Navbar } from 'widgets/Navbar';
 import { Sidebar } from 'widgets/Sidebar';
 import { useTranslation } from 'react-i18next';
-import { Loader } from 'shared/ui/Loader/Loader';
+import { Loader, LoaderOffset } from 'shared/ui/Loader/Loader';
 import { Modal } from 'shared/ui/Modal/Modal';
 import { useDispatch, useSelector } from 'react-redux';
 import { getUserInited, userActions } from 'entitie/User';
@@ -35,9 +35,7 @@ const App = () => {
         <Navbar />
         <main className="main">
           <Sidebar />
-          <div className="page-content">
-            {inited && <AppRouter />}
-          </div>
+          {inited && <AppRouter />}
         </main>
       </Suspense>
     </div>

@@ -10,6 +10,7 @@ export enum LoaderOffset {
   DEFAULT = 'offset-default',
   L = 'offset-l',
   XL = 'offset-xl',
+  AUTO = 'auto',
 }
 
 interface LoaderProps {

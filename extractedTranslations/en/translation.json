@@ -8,6 +8,7 @@
   "Cancel": "Cancel",
   "Comments": "Comments",
   "Copy": "",
+  "Data boot error": "Data boot error",
   "Edit": "Edit",
   "English": "",
   "Error login": "",
@@ -57,5 +58,6 @@
   "decrement": "",
   "increment": "",
   "toggle sidebar": "",
+  "Ошибка при загрузке данных": "Ошибка при загрузке данных",
   "Статья найдена": "Статья найдена"
 }

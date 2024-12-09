@@ -57,13 +57,3 @@ a {
 .main {
   display: flex;
 }
-
-.page-content {
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  overflow: auto;
-  padding: var(--inner-offset);
-  width: 100%;
-  height: calc(100vh - var(--navbar-height));
-}

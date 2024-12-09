@@ -7,6 +7,7 @@
   "Cancel": "Cancel",
   "Comments": "Comments",
   "Copy": "Copy",
+  "Data boot error": "Data boot error",
   "Edit": "Edit",
   "Error login": "Error login",
   "Lang": "Lang",
@@ -51,5 +52,6 @@
   "decrement": "decrement",
   "increment": "increment",
   "toggle sidebar": "toggle sidebar",
+  "Ошибка при загрузке данных": "Ошибка при загрузке данных",
   "Статья найдена": "Статья найдена"
 }

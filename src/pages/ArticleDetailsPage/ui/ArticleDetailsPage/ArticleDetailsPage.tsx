@@ -15,6 +15,7 @@ import {
 } from 'shared/ui/Text/Text';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+import { Page } from 'shared/ui/Page/Page';
 import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle';
 import cl from './ArticleDetailsPage.module.scss';
@@ -61,7 +62,7 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-      <div className={classNames(cl.ArticleDetailsPage, {}, [className])}>
+      <Page className={classNames(cl.ArticleDetailsPage, {}, [className])}>
         <Button onClick={onBackToList} theme={ButtonTheme.OUTLINE}>{t('Back')}</Button>
         <ArticleDetails id={id} />
         <Text
@@ -78,7 +79,7 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
           isLoading={commentsIsloading}
           comments={comments}
         />
-      </div>
+      </Page>
     </DynamicModuleLoader>
   );
 };

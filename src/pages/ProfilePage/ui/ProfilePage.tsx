@@ -20,6 +20,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { DynamicModuleLoader, ReducerList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { Page } from 'shared/ui/Page/Page';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
 import cl from './ProfilePage.module.scss';
 
@@ -132,7 +133,7 @@ const ProfilePage = () => {
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-      <div className={cl.ProfilePage}>
+      <Page className={cl.ProfilePage}>
         <ProfileCard
           data={formData}
           error={error}
@@ -151,7 +152,7 @@ const ProfilePage = () => {
           readonly={readonly}
           fieldErrors={fieldErrors}
         />
-      </div>
+      </Page>
     </DynamicModuleLoader>
   );
 };

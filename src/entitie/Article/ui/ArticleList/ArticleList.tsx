@@ -25,24 +25,22 @@ export const ArticleList = memo((props: ArticleListProps) => {
     <ArticleItem key={article.id} article={article} view={view} />
   );
 
-  if (isLoading) {
-    return (
-      <List className={classNames(cl.ArticleList, {}, [className, cl[view]])}>
-        {new Array(view === ArticleView.COLUMN ? 3 : 9)
-          .fill(0)
-          .map((item, index) => (
-            // eslint-disable-next-line react/no-array-index-key
-            <ArticleItemSkeleton key={index} view={view} />
-          ))}
-      </List>
-    );
-  }
-
   return (
     <List className={classNames(cl.ArticleList, {}, [className, cl[view]])}>
       {articles.length
         ? articles.map(renderArticle)
-        : <Text>{t('There are no articles at the moment')}</Text> }
+        : null }
+      {isLoading
+        && (
+          <>
+            {new Array(view === ArticleView.COLUMN ? 3 : 9)
+              .fill(0)
+              .map((item, index) => (
+              // eslint-disable-next-line react/no-array-index-key
+                <ArticleItemSkeleton key={index} view={view} />
+              ))}
+          </>
+        )}
     </List>
   );
 });

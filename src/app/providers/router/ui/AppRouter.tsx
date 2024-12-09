@@ -2,12 +2,12 @@ import React, { memo, Suspense, useCallback } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import { AppRoutesProps, routeConfig } from 'shared/config/routeConfig/routeConfig';
 import { RequireAuth } from 'app/providers/router/ui/RequireAuth';
-import { Loader } from 'shared/ui/Loader/Loader';
+import { Loader, LoaderOffset } from 'shared/ui/Loader/Loader';
 
 const AppRouter = () => {
   const renderWithWrapper = useCallback((route: AppRoutesProps) => {
     const element = (
-      <Suspense fallback={<Loader />}>
+      <Suspense fallback={<Loader offset={LoaderOffset.AUTO} />}>
         {route.element}
       </Suspense>
     );
