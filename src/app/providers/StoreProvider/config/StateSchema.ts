@@ -11,11 +11,13 @@ import { LoginSchema } from 'feauters/AuthByUsername';
 import { ArticleDetailsCommentsSchema } from 'pages/ArticleDetailsPage';
 import { NavigateOptions, To } from 'react-router-dom';
 import { ArticlesPageSchema } from 'pages/ArticlesPage';
+import { ScrollSaveSchema } from 'widgets/Page';
 import { createReducerManager } from './reducerManager';
 
 export interface StateSchema {
     counter: CounterSchema;
     user: UserSchema;
+    scrollSave: ScrollSaveSchema;
 
     // async reducers
     loginForm?: LoginSchema;

@@ -7,6 +7,7 @@ import { ReducerList } from 'shared/lib/components/DynamicModuleLoader/DynamicMo
 import { articleDetailsReducer } from 'entitie/Article/model/slice/articleDetailsSlice';
 import { articleDetailsCommentsReducer } from 'pages/ArticleDetailsPage/model/slices/ArticleDetailsCommentsSlice';
 import { addNewCommentReducer } from 'feauters/addNewComment/model/slices/addNewCommentSlice';
+import { ScrollSaveReducer } from 'widgets/Page';
 
 const defaultAsyncReducers: ReducerList = {
   loginForm: loginReducer,
@@ -14,6 +15,7 @@ const defaultAsyncReducers: ReducerList = {
   articleDetails: articleDetailsReducer,
   articleDetailsComments: articleDetailsCommentsReducer,
   addNewComment: addNewCommentReducer,
+  scrollSave: ScrollSaveReducer,
 };
 
 export const StoreDecorator = (

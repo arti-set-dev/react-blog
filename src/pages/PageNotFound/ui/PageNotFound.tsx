@@ -1,11 +1,11 @@
 import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { Page } from 'shared/ui/Page/Page';
+import { Page } from 'widgets/Page/ui/Page';
 import cl from './PageNotFound.module.scss';
 
 interface PageNotFoundProps {
-    className?: string;
+  className?: string;
 }
 
 export const PageNotFound: FC<PageNotFoundProps> = (props) => {

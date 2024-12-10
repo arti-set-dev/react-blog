@@ -20,7 +20,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { DynamicModuleLoader, ReducerList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
-import { Page } from 'shared/ui/Page/Page';
+import { Page } from 'widgets/Page/ui/Page';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
 import cl from './ProfilePage.module.scss';
 
@@ -36,7 +36,7 @@ const ProfilePage = () => {
   const error = useSelector(getProfileError);
   const readonly = useSelector(getProfileRedonly);
   const validateErrors = useSelector(getProfileValidateErrors);
-  const { id } = useParams<{id: string}>();
+  const { id } = useParams<{ id: string }>();
   const validateErrorTranslates = {
     [ValidateProfileError.NO_DATA_USER_FIRSTNAME]: t('The firstname field is required'),
     [ValidateProfileError.NO_DATA_USER_LASTNAME]: t('The lastname field is required'),

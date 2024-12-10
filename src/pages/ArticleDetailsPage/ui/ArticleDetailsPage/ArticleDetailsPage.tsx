@@ -15,7 +15,7 @@ import {
 } from 'shared/ui/Text/Text';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
-import { Page } from 'shared/ui/Page/Page';
+import { Page } from 'widgets/Page/ui/Page';
 import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle';
 import cl from './ArticleDetailsPage.module.scss';
@@ -23,7 +23,7 @@ import { articleDetailsCommentsReducer, getArticleComments } from '../../model/s
 import { getArticleCommentsError, getArticleCommentsIsloading } from '../../model/selectors/comments';
 
 interface ArticleDetailsPageProps {
-    className?: string;
+  className?: string;
 }
 
 const reducers: ReducerList = {
@@ -33,7 +33,7 @@ const reducers: ReducerList = {
 const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
   const { className } = props;
   const { t } = useTranslation('article-details');
-  const { id } = useParams<{id: string}>();
+  const { id } = useParams<{ id: string }>();
   const dispatch = useAppDispatch();
   const comments = useSelector(getArticleComments.selectAll);
   const commentsIsloading = useSelector(getArticleCommentsIsloading);
