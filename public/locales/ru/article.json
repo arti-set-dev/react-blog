@@ -4,5 +4,18 @@
   "ArticleDetailsPage": "ArticleDetailsPage",
   "Read more": "Читать далее...",
   "There are no articles at the moment": "На данный момент статей нет",
-  "Data boot error": "Ошибка загрузки данных"
+  "Data boot error": "Ошибка загрузки данных",
+  "Sort by": "Сортировать по",
+  "Search": "Поиск",
+  "revival": "возростанию",
+  "descending": "убыванию",
+  "by": "по",
+  "The date of creation": "Дате создания",
+  "name": "заголовок",
+  "Views": "просмотрам",
+  "All": "Economics",
+  "Economics": "Экономика",
+  "it": "айти",
+  "Science": "Наука",
+  "No articles were found": "Статей не найдено"
 }

@@ -1,0 +1,15 @@
+.ArticlesPageFilters {
+  margin-bottom: var(--gap);
+}
+
+.Wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--gap);
+  gap: var(--gap);
+}
+
+.Search {
+  width: 100%;
+}

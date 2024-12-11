@@ -24,3 +24,16 @@ reviews:
             type: approve
             comment: ''
             time: '2024-11-01T15:22:53.964Z'
+  it:
+    locales:
+      ru:
+        comments:
+          - user:
+              name: roman
+              email: r_kovtun@lweb.pro
+            id: dZT1o8gkQkGmML2DZ_R0P
+            comment: ''
+            suggestion: ''
+            type: approve
+            time: '2024-12-11T13:51:07.523Z'
+            resolved: true

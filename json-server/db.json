@@ -158,14 +158,14 @@
     },
     {
       "id": "3",
-      "title": "Kotlin news",
+      "title": "Квантовые вычисления",
       "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://images.unsplash.com/photo-1588690154757-badf4644190f?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "img": "https://images.unsplash.com/photo-1617839625591-e5a789593135?q=80&w=1780&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "views": 1340,
+      "createdAt": "22.04.2022",
       "userId": "1",
       "type": [
-        "IT"
+        "SCIENCE"
       ],
       "blocks": [
         {
@@ -230,14 +230,14 @@
     },
     {
       "id": "4",
-      "title": "Kotlin news",
+      "title": "Экономика в эпоху COVID-19",
       "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://images.unsplash.com/photo-1588690154757-badf4644190f?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "views": 1022,
+      "img": "https://images.unsplash.com/photo-1601382270349-49c15bddf738?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "views": 980,
       "createdAt": "26.02.2022",
       "userId": "1",
       "type": [
-        "IT"
+        "ECONOMICS"
       ],
       "blocks": [
         {
@@ -302,14 +302,15 @@
     },
     {
       "id": "5",
-      "title": "Kotlin news",
+      "title": "История искусственного интеллекта",
       "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://images.unsplash.com/photo-1588690154757-badf4644190f?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "img": "https://images.unsplash.com/photo-1666597107756-ef489e9f1f09?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "views": 1500,
+      "createdAt": "20.06.2022",
       "userId": "1",
       "type": [
-        "IT"
+        "IT",
+        "SCIENCE"
       ],
       "blocks": [
         {
@@ -374,14 +375,14 @@
     },
     {
       "id": "6",
-      "title": "Kotlin news",
+      "title": "Загрязнение окружающей среды",
       "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://images.unsplash.com/photo-1588690154757-badf4644190f?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "img": "https://images.unsplash.com/photo-1704797771332-fca2526315dd?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "views": 670,
+      "createdAt": "13.07.2022",
       "userId": "1",
       "type": [
-        "IT"
+        "SCIENCE"
       ],
       "blocks": [
         {
@@ -446,13 +447,14 @@
     },
     {
       "id": "7",
-      "title": "Kotlin news",
+      "title": "Финансовые технологии",
       "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://images.unsplash.com/photo-1588690154757-badf4644190f?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "img": "https://images.unsplash.com/photo-1628054330565-7d42aa5ae1fa?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "views": 1280,
+      "createdAt": "29.08.2022",
       "userId": "1",
       "type": [
+        "ECONOMICS",
         "IT"
       ],
       "blocks": [
@@ -518,14 +520,14 @@
     },
     {
       "id": "8",
-      "title": "Kotlin news",
+      "title": "Политика и общество",
       "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://images.unsplash.com/photo-1588690154757-badf4644190f?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "img": "https://images.unsplash.com/photo-1717348427429-e5398af7ae4e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "views": 1145,
+      "createdAt": "09.09.2022",
       "userId": "1",
       "type": [
-        "IT"
+        "POLITICS"
       ],
       "blocks": [
         {
@@ -590,11 +592,11 @@
     },
     {
       "id": "9",
-      "title": "Kotlin news",
+      "title": "Технологические стартапы",
       "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://images.unsplash.com/photo-1588690154757-badf4644190f?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "img": "https://images.unsplash.com/photo-1587727383733-f5222d6855b5?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "views": 900,
+      "createdAt": "11.10.2022",
       "userId": "1",
       "type": [
         "IT"
@@ -662,14 +664,15 @@
     },
     {
       "id": "10",
-      "title": "Kotlin news",
+      "title": "Экология и экономика",
       "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://images.unsplash.com/photo-1588690154757-badf4644190f?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "img": "https://images.unsplash.com/photo-1642940399279-3a0b7f820fe7?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "views": 450,
+      "createdAt": "15.11.2022",
       "userId": "1",
       "type": [
-        "IT"
+        "ECONOMICS",
+        "SCIENCE"
       ],
       "blocks": [
         {
@@ -734,14 +737,15 @@
     },
     {
       "id": "11",
-      "title": "Kotlin news",
+      "title": "Климатические изменения",
       "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://images.unsplash.com/photo-1588690154757-badf4644190f?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "img": "https://images.unsplash.com/photo-1579004464832-0c014afa448c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "views": 300,
+      "createdAt": "29.11.2022",
       "userId": "1",
       "type": [
-        "IT"
+        "SCIENCE",
+        "POLITICS"
       ],
       "blocks": [
         {
@@ -806,11 +810,11 @@
     },
     {
       "id": "12",
-      "title": "Kotlin news",
+      "title": "Кибербезопасность",
       "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://images.unsplash.com/photo-1588690154757-badf4644190f?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "img": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "views": 1022,
-      "createdAt": "26.02.2022",
+      "createdAt": "12.12.2022",
       "userId": "1",
       "type": [
         "IT"
@@ -878,14 +882,15 @@
     },
     {
       "id": "13",
-      "title": "Kotlin news",
+      "title": "Искусственный интеллект в бизнесе",
       "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://images.unsplash.com/photo-1588690154757-badf4644190f?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "img": "https://images.unsplash.com/photo-1706466614967-f4f14a3d9d08?q=80&w=1780&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "views": 760,
+      "createdAt": "20.01.2023",
       "userId": "1",
       "type": [
-        "IT"
+        "IT",
+        "ECONOMICS"
       ],
       "blocks": [
         {
@@ -950,14 +955,15 @@
     },
     {
       "id": "14",
-      "title": "Kotlin news",
+      "title": "Глобализация",
       "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://images.unsplash.com/photo-1588690154757-badf4644190f?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "img": "https://images.unsplash.com/photo-1713173642147-30cbbdb176d5?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "views": 590,
+      "createdAt": "25.02.2023",
       "userId": "1",
       "type": [
-        "IT"
+        "ECONOMICS",
+        "POLITICS"
       ],
       "blocks": [
         {
@@ -1022,14 +1028,15 @@
     },
     {
       "id": "15",
-      "title": "Kotlin news",
+      "title": "Социальные сети и общество",
       "subtitle": "Что нового в JS за 2022 год?",
-      "img": "https://images.unsplash.com/photo-1588690154757-badf4644190f?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "views": 1022,
-      "createdAt": "26.02.2022",
+      "img": "https://images.unsplash.com/photo-1517292987719-0369a794ec0f?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "views": 450,
+      "createdAt": "18.03.2023",
       "userId": "1",
       "type": [
-        "IT"
+        "POLITICS",
+        "SCIENCE"
       ],
       "blocks": [
         {
@@ -1177,6 +1184,12 @@
       "userId": "1",
       "text": "sqsqsqs",
       "id": "lz_wSi-"
+    },
+    {
+      "articleId": "9",
+      "userId": "2",
+      "text": "hi",
+      "id": "CXHIfV9"
     }
   ],
   "users": [

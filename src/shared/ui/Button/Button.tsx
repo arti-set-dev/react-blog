@@ -18,6 +18,7 @@ export enum ButtonTheme {
   TEXT_INVERTED = 'text-inverted',
   PRIMARY = 'primary',
   TEXT_PRIMARY = 'text-primary',
+  ACTIVE = 'active',
 }
 
 export enum ButtonSize {

@@ -11,6 +11,7 @@ import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEf
 import { useSelector } from 'react-redux';
 import { Page } from 'widgets/Page/ui/Page';
 import { Text } from 'shared/ui/Text/Text';
+import { useSearchParams } from 'react-router-dom';
 import {
   getArticlesPageIsError, getArticlesPageIsHasMore, getArticlesPageIsInited, getArticlesPageIsLoading, getArticlesPageIsNum, getArticlesPageIsView,
 } from '../../model/selectors/articlesPageSelectors';
@@ -18,6 +19,7 @@ import { articlesPageActions, articlesPageReducer, getArticles } from '../../mod
 import cl from './ArticlesPage.module.scss';
 import { fetchNextArticlePage } from '../../model/services/fetchNextArticlePage/fetchNextArticlePage';
 import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
+import { ArticlesPageFilters } from '../ArticlesPageFilters/ArticlesPageFilters';
 
 interface ArticlesPageProps {
   className?: string;
@@ -35,26 +37,24 @@ const ArticlesPage = (props: ArticlesPageProps) => {
   const isLoading = useSelector(getArticlesPageIsLoading);
   const error = useSelector(getArticlesPageIsError);
   const view = useSelector(getArticlesPageIsView);
-  const page = useSelector(getArticlesPageIsNum);
-  const hasMore = useSelector(getArticlesPageIsHasMore);
-  const inited = useSelector(getArticlesPageIsInited);
+  const [searchParams] = useSearchParams();
 
-  const onChangeView = useCallback((view: ArticleView) => {
-    dispatch(articlesPageActions.setView(view));
-  }, [dispatch]);
+  // const page = useSelector(getArticlesPageIsNum);
+  // const hasMore = useSelector(getArticlesPageIsHasMore);
+  // const inited = useSelector(getArticlesPageIsInited);
 
   const onLoadNextPart = useCallback(() => {
     dispatch(fetchNextArticlePage());
   }, [dispatch]);
 
   useInitialEffect(() => {
-    dispatch(initArticlesPage());
+    dispatch(initArticlesPage(searchParams));
   });
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
       <Page onScrollEnd={onLoadNextPart} className={classNames(cl.ArticlesPage, {}, [className])}>
-        <ArticleViewSwither view={view} onViewClick={onChangeView} />
+        <ArticlesPageFilters />
         <ArticleList view={view} isLoading={isLoading} articles={articles} />
         {error
           && <Text>{t('Data boot error')}</Text>}
