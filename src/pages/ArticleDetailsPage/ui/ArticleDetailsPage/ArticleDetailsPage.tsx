@@ -26,6 +26,7 @@ import { getArticleCommentsError, getArticleCommentsIsloading } from '../../mode
 import { articleDetailsRecommendationsReducer, getArticleRecommendations } from '../../model/slices/ArticleDetailsRecommendationsSlice';
 import { fetchArticleRecommendations } from '../../model/services/fetchArticleRecommendations/fetchArticleRecommendations';
 import { articleDetailsPageReducer } from '../../model/slices';
+import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 
 interface ArticleDetailsPageProps {
   className?: string;
@@ -56,10 +57,6 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
     dispatch(fetchArticleRecommendations());
   });
 
-  const onBackToList = useCallback(() => {
-    navigate(RoutePath.articles);
-  }, [navigate]);
-
   if (!id) {
     return (
       <div className={classNames(cl.ArticleDetailsPage, {}, [className])}>
@@ -71,7 +68,7 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
       <Page className={classNames(cl.ArticleDetailsPage, {}, [className])}>
-        <Button onClick={onBackToList} theme={ButtonTheme.OUTLINE}>{t('Back')}</Button>
+        <ArticleDetailsPageHeader />
         <ArticleDetails id={id} />
         <Text
           theme={TextTheme.PRIMARY}

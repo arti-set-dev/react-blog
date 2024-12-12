@@ -13,6 +13,8 @@ import { Modal } from 'shared/ui/Modal/Modal';
 import { LoginModal } from 'feauters/AuthByUsername';
 import { useDispatch, useSelector } from 'react-redux';
 import { getUserAuthData, userActions } from 'entitie/User';
+import { Text, TextSize } from 'shared/ui/Text/Text';
+import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import cl from './Navbar.module.scss';
 
 interface NavbarProps {
@@ -42,6 +44,8 @@ export const Navbar = memo((props: NavbarProps) => {
     return (
       <header className={classNames(cl.Navbar, {}, [className])}>
         <Container className={cl.Container}>
+          <Text size={TextSize.L}>{t('Logo App')}</Text>
+          <AppLink to={RoutePath.articles_create} className={cl.NewPostText}>{t('Create new post')}</AppLink>
           <Button theme={ButtonTheme.OUTLINE} onClick={onLogout}>{t('Logout')}</Button>
         </Container>
       </header>
