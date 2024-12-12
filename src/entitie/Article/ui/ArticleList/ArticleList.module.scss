@@ -12,6 +12,23 @@
     flex-direction: column;
     gap: var(--gap);
   }
+
+  &.display-flex {
+    display: flex;
+    padding-bottom: 30px;
+    scroll-snap-type: x mandatory;
+
+    .ArticleListItem {
+      flex-shrink: 0;
+      width: 100%;
+      max-width: 270px;
+      scroll-snap-align: start;
+    }
+  }
+
+  &.display-grid {
+    display: grid;
+  }
 }
 
 .Wrapper {

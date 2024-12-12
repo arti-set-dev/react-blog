@@ -8,21 +8,28 @@ import cl from './ArticleList.module.scss';
 import { ArticleItem } from '../ArticleItem/ArticleItem';
 import { ArticleItemSkeleton } from '../ArticleItem/ArticleItemSkeleton';
 
+export enum ArticleListDisplay {
+  FLEX = 'display-flex',
+  GRID = 'display-grid',
+}
+
 interface ArticleListProps {
     className?: string;
     articles: Article[];
     isLoading?: boolean;
     view?: ArticleView;
+    display?: ArticleListDisplay;
+    blank?: boolean;
 }
 
 export const ArticleList = memo((props: ArticleListProps) => {
   const {
-    className, articles, view = ArticleView.GRID, isLoading,
+    className, articles, view = ArticleView.GRID, isLoading, display = ArticleListDisplay.GRID, blank = false,
   } = props;
   const { t } = useTranslation();
 
   const renderArticle = (article: Article) => (
-    <ArticleItem key={article.id} article={article} view={view} />
+    <ArticleItem className={cl.ArticleListItem} key={article.id} article={article} view={view} blank={blank} />
   );
 
   if (!isLoading && !articles.length) {
@@ -32,7 +39,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
   }
 
   return (
-    <List className={classNames(cl.ArticleList, {}, [className, cl[view]])}>
+    <List className={classNames(cl.ArticleList, {}, [className, cl[view], cl[display]])}>
       {articles.length
         ? articles.map(renderArticle)
         : null }

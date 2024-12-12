@@ -57,3 +57,18 @@ a {
 .main {
   display: flex;
 }
+
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  border: 0 solid transparent;
+  border-radius: 20px;
+  background-color: var(--bg-light-color);
+}

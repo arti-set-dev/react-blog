@@ -7,5 +7,8 @@
   "There was an error when downloading data": "There was an error when downloading data",
   "Write your comment": "Write your comment",
   "There was an error when sending a message": "There was an error when sending a message",
-  "Back": "< Back"
+  "Back": "< Back",
+  "article-details": {
+    "We recommend reading": "We recommend reading"
+  }
 }

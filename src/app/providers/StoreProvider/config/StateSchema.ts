@@ -8,10 +8,11 @@ import { CounterSchema } from 'entitie/Counter';
 import { ProfileSchema } from 'entitie/Profile';
 import { UserSchema } from 'entitie/User';
 import { LoginSchema } from 'feauters/AuthByUsername';
-import { ArticleDetailsCommentsSchema } from 'pages/ArticleDetailsPage';
+import { ArticleDetailsCommentsSchema, ArticleDetailsRecommendationsSchema } from 'pages/ArticleDetailsPage';
 import { NavigateOptions, To } from 'react-router-dom';
 import { ArticlesPageSchema } from 'pages/ArticlesPage';
 import { ScrollSaveSchema } from 'widgets/Page';
+import { ArticleDetailsPageSchema } from 'pages/ArticleDetailsPage/model/types';
 import { createReducerManager } from './reducerManager';
 
 export interface StateSchema {
@@ -23,9 +24,9 @@ export interface StateSchema {
     loginForm?: LoginSchema;
     profile?: ProfileSchema;
     articleDetails?: ArticleDetailsSchema;
-    articleDetailsComments?: ArticleDetailsCommentsSchema;
     addNewComment?: AddNewCommentSchema;
     articlesPage?: ArticlesPageSchema;
+    articleDetailsPage?: ArticleDetailsPageSchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;

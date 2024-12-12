@@ -4,5 +4,16 @@
 }
 
 .CommentsTitle {
+  margin-top: var(--gap);
+  margin-bottom: var(--gap);
+}
+
+.Recommendations {
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.RecommendationsTitle {
   margin-bottom: var(--gap);
 }

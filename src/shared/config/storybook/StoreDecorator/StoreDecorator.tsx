@@ -8,12 +8,13 @@ import { articleDetailsReducer } from 'entitie/Article/model/slice/articleDetail
 import { articleDetailsCommentsReducer } from 'pages/ArticleDetailsPage/model/slices/ArticleDetailsCommentsSlice';
 import { addNewCommentReducer } from 'feauters/addNewComment/model/slices/addNewCommentSlice';
 import { ScrollSaveReducer } from 'widgets/Page';
+import { articleDetailsPageReducer } from 'pages/ArticleDetailsPage/model/slices';
 
 const defaultAsyncReducers: ReducerList = {
   loginForm: loginReducer,
   profile: profileReducer,
   articleDetails: articleDetailsReducer,
-  articleDetailsComments: articleDetailsCommentsReducer,
+  articleDetailsPage: articleDetailsPageReducer,
   addNewComment: addNewCommentReducer,
   scrollSave: ScrollSaveReducer,
 };

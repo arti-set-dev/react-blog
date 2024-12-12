@@ -20,10 +20,13 @@ interface ArticleItemProps {
     className?: string;
     article: Article;
     view: ArticleView;
+    blank?: boolean;
 }
 
 export const ArticleItem = memo((props: ArticleItemProps) => {
-  const { className, article, view } = props;
+  const {
+    className, article, view, blank,
+  } = props;
   const { t } = useTranslation();
   const navigate = useNavigate();
 
@@ -51,7 +54,7 @@ export const ArticleItem = memo((props: ArticleItemProps) => {
     const textBlocks = article.blocks.find((block) => block.type === ArticleBlockType.TEXT) as ArticleTextBlock;
     return (
       <li className={classNames(cl.ArticleItem, {}, [className, cl[view]])}>
-        <Card className={classNames(cl.Card, {}, [className])}>
+        <Card className={cl.Card}>
           <div className={cl.Header}>
             <Avatar className={cl.Avatar} size={30} src={article.user.avatar} alt={article.user.username} />
             <Text className={cl.Username} size={TextSize.M} weight={TextWeight.BOLD}>{article.user.username}</Text>
@@ -78,21 +81,42 @@ export const ArticleItem = memo((props: ArticleItemProps) => {
 
   return (
     <li className={classNames(cl.ArticleItem, {}, [className, cl[view]])}>
-      <Card className={classNames(cl.Card, {}, [className])}>
-        <time dateTime={article.createdAt} className={cl.CreatedAt}>{article.createdAt}</time>
-        <AppLink to={`${RoutePath.articles}/${article.id}`}>
-          <img className={cl.Img} height={200} src={article.img} alt={article.title} />
-        </AppLink>
-        <div className={cl.Content}>
-          <div className={cl.Head}>
-            {articleTypes}
-            {views}
-          </div>
-          <AppLink className={cl.Link} to={`${RoutePath.articles}/${article.id}`}>
-            <Text size={TextSize.M} weight={TextWeight.BOLD}>{article.title}</Text>
-          </AppLink>
-        </div>
-      </Card>
+      {blank
+        ? (
+          <Card className={cl.Card}>
+            <time dateTime={article.createdAt} className={cl.CreatedAt}>{article.createdAt}</time>
+            <AppLink to={`${RoutePath.articles}/${article.id}`} target="_blank">
+              <img className={cl.Img} height={200} src={article.img} alt={article.title} />
+            </AppLink>
+            <div className={cl.Content}>
+              <div className={cl.Head}>
+                {articleTypes}
+                {views}
+              </div>
+              <AppLink className={cl.Link} to={`${RoutePath.articles}/${article.id}`} target="_blank">
+                <Text size={TextSize.M} weight={TextWeight.BOLD}>{article.title}</Text>
+              </AppLink>
+            </div>
+          </Card>
+        )
+        : (
+          <Card className={cl.Card}>
+            <time dateTime={article.createdAt} className={cl.CreatedAt}>{article.createdAt}</time>
+            <AppLink to={`${RoutePath.articles}/${article.id}`}>
+              <img className={cl.Img} height={200} src={article.img} alt={article.title} />
+            </AppLink>
+            <div className={cl.Content}>
+              <div className={cl.Head}>
+                {articleTypes}
+                {views}
+              </div>
+              <AppLink className={cl.Link} to={`${RoutePath.articles}/${article.id}`}>
+                <Text size={TextSize.M} weight={TextWeight.BOLD}>{article.title}</Text>
+              </AppLink>
+            </div>
+          </Card>
+        )}
+
     </li>
   );
 });
