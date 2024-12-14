@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Article, ArticleView } from 'entitie/Article/model/types/article';
+import { Article, ArticleView } from '../../model/types/article';
 import { ArticleList } from './ArticleList';
 import storybook from './storybook.jpg';
 

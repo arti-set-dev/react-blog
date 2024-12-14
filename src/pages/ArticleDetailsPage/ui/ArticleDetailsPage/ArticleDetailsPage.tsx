@@ -9,7 +9,7 @@ import { DynamicModuleLoader, ReducerList } from 'shared/lib/components/DynamicM
 import { useSelector } from 'react-redux';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { AddCommentForm } from 'feauters/addNewComment';
+import { AddCommentForm } from 'features/addNewComment';
 import {
   TextSize, TextTheme, TextWeight, Text,
 } from 'shared/ui/Text/Text';

@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
-import { Article, ArticleDetailsSchema } from 'entitie/Article';
+import { ArticleDetailsSchema } from '../types/articleDetailsSchema';
 import { fetchArticleById } from '../services/fetchArticleById/fetchArticleById';
-import { ArticleBlockType, ArticleType } from '../types/article';
+import { ArticleBlockType, ArticleType, Article } from '../types/article';
 // import {  } from '../types/article';
 import { articleDetailsActions, articleDetailsReducer } from './articleDetailsSlice';
 

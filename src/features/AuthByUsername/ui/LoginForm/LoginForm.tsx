@@ -1,12 +1,6 @@
 import { useEffect } from '@storybook/addons';
 import { ReduxStoreWithManager } from 'app/providers/StoreProvider/config/StateSchema';
 import { getLoginState } from 'entitie/User/model/selectors/getLoginState/getLoginState';
-import { getLoginError } from 'feauters/AuthByUsername/model/selectors/getLoginError/getLoginError';
-import { getLoginIsLoading } from 'feauters/AuthByUsername/model/selectors/getLoginIsLoading/getLoginIsLoading';
-import { getLoginPassword } from 'feauters/AuthByUsername/model/selectors/getLoginPassword/getLoginPassword';
-import { getLoginUsername } from 'feauters/AuthByUsername/model/selectors/getLoginUsername/getLoginUsername';
-import { loginByUsername } from 'feauters/AuthByUsername/model/services/loginByUsername/loginByUsername';
-import { loginActions, loginReducer } from 'feauters/AuthByUsername/model/slice/loginSlice';
 import React, { FC, memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector, useStore } from 'react-redux';
@@ -18,6 +12,12 @@ import { Input } from 'shared/ui/Input/Input';
 import {
   Text, TextSize, TextTheme, TextWeight,
 } from 'shared/ui/Text/Text';
+import { getLoginError } from '../../model/selectors/getLoginError/getLoginError';
+import { loginActions, loginReducer } from '../../model/slice/loginSlice';
+import { loginByUsername } from '../../model/services/loginByUsername/loginByUsername';
+import { getLoginUsername } from '../../model/selectors/getLoginUsername/getLoginUsername';
+import { getLoginPassword } from '../../model/selectors/getLoginPassword/getLoginPassword';
+import { getLoginIsLoading } from '../../model/selectors/getLoginIsLoading/getLoginIsLoading';
 import cl from './LoginForm.module.scss';
 
 export interface LoginFormProps {

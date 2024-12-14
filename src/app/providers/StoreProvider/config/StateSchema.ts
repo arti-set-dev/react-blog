@@ -2,12 +2,12 @@ import {
   AnyAction, CombinedState, EnhancedStore, Reducer, ReducersMapObject, Store,
 } from '@reduxjs/toolkit';
 import { AxiosInstance } from 'axios';
-import { AddNewCommentSchema } from 'feauters/addNewComment';
+import { AddNewCommentSchema } from 'features/addNewComment';
 import { ArticleDetailsSchema } from 'entitie/Article';
 import { CounterSchema } from 'entitie/Counter';
 import { ProfileSchema } from 'entitie/Profile';
 import { UserSchema } from 'entitie/User';
-import { LoginSchema } from 'feauters/AuthByUsername';
+import { LoginSchema } from 'features/AuthByUsername';
 import { ArticleDetailsCommentsSchema, ArticleDetailsRecommendationsSchema } from 'pages/ArticleDetailsPage';
 import { NavigateOptions, To } from 'react-router-dom';
 import { ArticlesPageSchema } from 'pages/ArticlesPage';

@@ -4,9 +4,9 @@ import { useTranslation } from 'react-i18next';
 import {
   Text, TextSize, TextTheme, TextWeight,
 } from 'shared/ui/Text/Text';
-import { Comment } from 'entitie/Comment';
 import { List } from 'shared/ui/List/List';
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
+import { Comment } from '../../model/types/comments';
 import cl from './Comments.module.scss';
 import { CommentCard } from '../CommentCard/CommentCard';
 

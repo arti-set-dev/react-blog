@@ -1,13 +1,5 @@
 import { Country, CountrySelect } from 'entitie/Country';
 import { Currency, CurrencySelect } from 'entitie/Currency';
-import {
-  getProfileForm,
-  getProfileRedonly, getProfileValidateErrors, profileActions, updateProfileData, Profile, ValidateFields,
-} from 'entitie/Profile';
-import { getProfileData } from 'entitie/Profile/model/selectors/getProfileData/getProfileData';
-import { getProfileError } from 'entitie/Profile/model/selectors/getProfileError/getProfileError';
-import { getProfileIsLoading } from 'entitie/Profile/model/selectors/getProfileIsLoading/getProfileIsLoading';
-import { fetchProfileData } from 'entitie/Profile/model/services/fetchProfileData/fetchProfileData';
 import { getUserAuthData } from 'entitie/User';
 import { FC, useCallback, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -22,6 +14,14 @@ import { Select } from 'shared/ui/Select/Select';
 import {
   Text, TextSize, TextTheme, TextWeight,
 } from 'shared/ui/Text/Text';
+import {
+  getProfileForm,
+  getProfileRedonly, getProfileValidateErrors, profileActions, updateProfileData, Profile, ValidateFields,
+} from '../../../Profile';
+import { fetchProfileData } from '../../model/services/fetchProfileData/fetchProfileData';
+import { getProfileIsLoading } from '../../model/selectors/getProfileIsLoading/getProfileIsLoading';
+import { getProfileError } from '../../model/selectors/getProfileError/getProfileError';
+import { getProfileData } from '../../model/selectors/getProfileData/getProfileData';
 import cl from './ProfileCard.module.scss';
 
 interface ProfileCardProps {
