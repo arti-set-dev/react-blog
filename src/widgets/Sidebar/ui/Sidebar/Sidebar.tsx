@@ -33,7 +33,9 @@ export const Sidebar = memo((props: SidebarProps) => {
   };
 
   const itemsList = useMemo(() => sidebarItemsList.map((item) => (
-    <SidebarItem item={item} collapsed={collapsed} />
+    <li>
+      <SidebarItem item={item} collapsed={collapsed} />
+    </li>
   )), [collapsed, sidebarItemsList]);
 
   return (
@@ -49,9 +51,9 @@ export const Sidebar = memo((props: SidebarProps) => {
         <ArrIcon />
       </Button>
       <nav>
-        <VStack gap="16">
+        <List gap="16">
           {itemsList}
-        </VStack>
+        </List>
       </nav>
       <div className={cl.Switchers}>
         <ThemeSwitcher />

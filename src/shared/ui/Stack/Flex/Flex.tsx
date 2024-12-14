@@ -7,6 +7,7 @@ export type FlexJustify = 'start' | 'center' | 'end' | 'between';
 export type FlexAlign = 'start' | 'center' | 'end';
 export type FlexDirection = 'row' | 'column';
 export type FlexGap = '4' | '8' | '16' | '32';
+export type FlexTagType = 'section' | 'article' | 'aside' | 'footer' | 'header' | 'main' | 'nav'| 'div' | 'ul' | 'li';
 
 const justifyClasses: Record<FlexJustify, string> = {
   start: cl.justifyStart,
@@ -26,6 +27,19 @@ const directionClasses: Record<FlexDirection, string> = {
   row: cl.directionRow,
 };
 
+const tagClasses: Record<FlexTagType, string> = {
+  article: '',
+  aside: '',
+  div: '',
+  footer: '',
+  header: '',
+  li: '',
+  main: '',
+  nav: '',
+  section: '',
+  ul: cl.ul,
+};
+
 const gapClasses: Record<FlexGap, string> = {
   16: cl.gap16,
   32: cl.gap32,
@@ -41,11 +55,12 @@ export interface FlexProps {
     direction: FlexDirection;
     gap?: FlexGap;
     max?: boolean;
+    tag?: FlexTagType;
 }
 
 export const Flex = (props: FlexProps) => {
   const {
-    className, children, justify = 'start', align = 'center', direction = 'row', gap = '16', max = false,
+    className, children, justify = 'start', align = 'center', direction = 'row', gap = '16', max = false, tag = 'div',
   } = props;
   const { t } = useTranslation();
 
@@ -55,15 +70,18 @@ export const Flex = (props: FlexProps) => {
     alignClasses[align],
     directionClasses[direction],
     gapClasses[gap],
+    tagClasses[tag],
   ];
 
   const mods: Mods = {
     [cl.max]: max,
   };
 
+  const Tag = tag;
+
   return (
-    <div className={classNames(cl.Flex, mods, classes)}>
+    <Tag className={classNames(cl.Flex, mods, classes)}>
       {children}
-    </div>
+    </Tag>
   );
 };

@@ -22,7 +22,7 @@ module.exports = {
     '@typescript-eslint',
     'i18next',
     'react-hooks',
-    'arti-set-fsd-checker-plugin', 
+    'arti-set-fsd-checker-plugin',
   ],
   rules: {
     'react/jsx-indent': [2, 2],
@@ -43,9 +43,12 @@ module.exports = {
     'no-underscore-dangle': 'off',
     'react/button-has-type': 'off',
     'i18next/no-literal-string': ['error',
-      { markupOnly: true, ignoreAttribute: [
-        'data-testid', 'to', 'name', 'target', 'justify', 'align','direction','gap',] }
-      ],
+      {
+        markupOnly: true,
+        ignoreAttribute: [
+          'data-testid', 'to', 'name', 'target', 'justify', 'align', 'direction', 'gap', 'tag'],
+      },
+    ],
     'max-len': ['error', { ignoreComments: true, code: 120 }],
     'jsx-a11y/click-events-have-key-events': 'off',
     'jsx-a11y/no-static-element-interactions': 'off',
