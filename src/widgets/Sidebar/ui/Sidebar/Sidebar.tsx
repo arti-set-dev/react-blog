@@ -13,6 +13,7 @@ import HomeIcon from 'shared/assets/icons/home-icon.svg';
 import AboutIcon from 'shared/assets/icons/about-icon.svg';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { useSelector } from 'react-redux';
+import { VStack } from 'shared/ui/Stack/VStack/VStack';
 import { getSidebarItems } from '../../model/selector/getSidebarItems';
 import cl from './Sidebar.module.scss';
 import { SidebarItem } from '../SidebarItem/SidebarItem';
@@ -32,9 +33,7 @@ export const Sidebar = memo((props: SidebarProps) => {
   };
 
   const itemsList = useMemo(() => sidebarItemsList.map((item) => (
-    <li key={item.path}>
-      <SidebarItem item={item} collapsed={collapsed} />
-    </li>
+    <SidebarItem item={item} collapsed={collapsed} />
   )), [collapsed, sidebarItemsList]);
 
   return (
@@ -50,9 +49,9 @@ export const Sidebar = memo((props: SidebarProps) => {
         <ArrIcon />
       </Button>
       <nav>
-        <List className={cl.Menulist}>
+        <VStack gap="16">
           {itemsList}
-        </List>
+        </VStack>
       </nav>
       <div className={cl.Switchers}>
         <ThemeSwitcher />

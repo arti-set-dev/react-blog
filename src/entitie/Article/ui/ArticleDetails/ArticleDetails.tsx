@@ -11,6 +11,7 @@ import {
 } from 'shared/ui/Text/Text';
 import ViewsIcon from 'shared/assets/icons/eye-icon.svg';
 import CalendarIcon from 'shared/assets/icons/calendar-icon.svg';
+import { HStack, VStack } from 'shared/ui/Stack';
 import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 import { ArticleImageBlockComponent } from '../ArticleImageBlockComponent/ArticleImageBlockComponent';
@@ -64,7 +65,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
 
   if (isLoading) {
     content = (
-      <div className={cl.Skeletons}>
+      <VStack gap="16">
         <Skeleton height={180} width={180} border="50%" />
         <Skeleton align={SkeletonAlign.LEFT} height={20} width="400px" />
         <Skeleton align={SkeletonAlign.LEFT} height={20} width="300px" />
@@ -72,19 +73,19 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
         <Skeleton height={100} width="100%" />
         <Skeleton height={100} width="100%" />
         <Skeleton height={100} width="100%" />
-      </div>
+      </VStack>
     );
   } else if (error) {
     content = (
-      <div className={cl.Error}>
+      <HStack className={cl.Error}>
         <Text size={TextSize.L} theme={TextTheme.ERROR}>{t('There was an error loading the article')}</Text>
-      </div>
+      </HStack>
     );
   } else {
     content = (
       <>
         <Avatar className={cl.Avatar} size={180} src={article?.img} alt={t('Article Details Page')} />
-        <div className={cl.ArticleDetailsWrap}>
+        <VStack max gap="16">
           <Text
             theme={TextTheme.PRIMARY}
             size={TextSize.XL}
@@ -109,7 +110,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
               {article?.createdAt}
             </Text>
           </div>
-        </div>
+        </VStack>
         {article?.blocks.map(renderBlock)}
       </>
     );

@@ -6,6 +6,7 @@ import {
 } from 'shared/ui/Text/Text';
 import { List } from 'shared/ui/List/List';
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
+import { VStack } from 'shared/ui/Stack';
 import { Comment } from '../../model/types/comments';
 import cl from './Comments.module.scss';
 import { CommentCard } from '../CommentCard/CommentCard';
@@ -37,11 +38,11 @@ export const Comments = memo((props: CommentsProps) => {
 
   if (isLoading) {
     content = (
-      <div className={cl.List}>
+      <VStack gap="16">
         <Skeleton width="100%" height={40} />
         <Skeleton width="100%" height={40} />
         <Skeleton width="100%" height={40} />
-      </div>
+      </VStack>
     );
   }
 

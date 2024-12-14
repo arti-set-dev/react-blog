@@ -14,6 +14,8 @@ import { Select } from 'shared/ui/Select/Select';
 import {
   Text, TextSize, TextTheme, TextWeight,
 } from 'shared/ui/Text/Text';
+import { HStack } from 'shared/ui/Stack/HStack/HStack';
+import { VStack } from 'shared/ui/Stack/VStack/VStack';
 import {
   getProfileForm,
   getProfileRedonly, getProfileValidateErrors, profileActions, updateProfileData, Profile, ValidateFields,
@@ -83,9 +85,9 @@ export const ProfileCard = (props: ProfileCardProps) => {
   if (error) {
     return (
       <div className={classNames(cl.ProfileCard, {}, [className])}>
-        <div className={cl.head}>
+        <HStack justify="between">
           <Text size={TextSize.XL} theme={TextTheme.PRIMARY} weight={TextWeight.BOLD}>{t('Profile')}</Text>
-        </div>
+        </HStack>
         <div className={classNames(cl.data, {}, [cl.isError])}>
           <Text theme={TextTheme.ERROR} size={TextSize.L}>{t('Profile error')}</Text>
         </div>
@@ -95,7 +97,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
 
   return (
     <div className={classNames(cl.ProfileCard, {}, [className])}>
-      <div className={cl.head}>
+      <HStack justify="between">
         <Text size={TextSize.XL} theme={TextTheme.PRIMARY} weight={TextWeight.BOLD}>{t('Profile')}</Text>
         {canEdit && (
           // eslint-disable-next-line react/jsx-no-useless-fragment
@@ -103,19 +105,19 @@ export const ProfileCard = (props: ProfileCardProps) => {
             {readonly
               ? <Button onClick={onEdit} theme={ButtonTheme.PRIMARY}>{t('Edit')}</Button>
               : (
-                <div className={cl.Btns}>
+                <HStack gap="16">
                   <Button onClick={onCancelEdit} theme={ButtonTheme.OUTLINE_RED}>{t('Cancel')}</Button>
                   <Button onClick={onSave} theme={ButtonTheme.PRIMARY}>{t('Save')}</Button>
-                </div>
+                </HStack>
               )}
           </>
         )}
-      </div>
+      </HStack>
       {data?.avatar
         && (
-          <div className={cl.AvatarWrapper}>
+          <VStack align="center" className={cl.AvatarWrapper}>
             <Avatar size={180} src={data.avatar} alt={t('Profile avatar')} />
-          </div>
+          </VStack>
         )}
       <div className={cl.data}>
         <Input

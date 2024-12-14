@@ -16,13 +16,6 @@
   gap: var(--gap);
 }
 
-.ArticleDetailsWrap {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  gap: var(--gap);
-}
-
 .Meta {
   display: flex;
   flex-direction: column;
@@ -47,8 +40,5 @@
 }
 
 .Error {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   height: 100%;
 }

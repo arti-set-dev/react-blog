@@ -7,6 +7,7 @@ import { useSelector } from 'react-redux';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { DynamicModuleLoader, ReducerList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
+import { VStack } from 'shared/ui/Stack';
 import { addNewCommentActions, addNewCommentReducer } from '../../model/slices/addNewCommentSlice';
 import { getCommentFormError, getCommentFormText } from '../../model/selectors/addNewCommentSelectors';
 import cl from './AddCommentForm.module.scss';
@@ -42,10 +43,10 @@ const AddCommentForm = memo((props: AddCommentFormProps) => {
         <Input value={text} onChange={onCommentTextChange} placeholder={t('Write your comment')} />
         {error
           && (
-            <div className={cl.errorWrapper}>
+            <VStack gap="8">
               <Input value={text} onChange={onCommentTextChange} placeholder={t('Write your comment')} />
               <Text theme={TextTheme.ERROR}>{t('There was an error when sending a message')}</Text>
-            </div>
+            </VStack>
           )}
         <Button onClick={onSendHandler} theme={ButtonTheme.OUTLINE}>{t('Send')}</Button>
       </form>
