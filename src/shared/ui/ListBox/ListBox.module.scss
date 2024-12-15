@@ -1,0 +1,53 @@
+.ListBox {
+  position: relative;
+}
+
+.Trigger {
+  position: relative;
+  border: none;
+  border-bottom: 1px solid var(--text-primary-color);
+  padding: var(--input-offset) 0;
+  width: 100%;
+  text-align: left;
+  color: var(--text-primary-color);
+  background-color: transparent;
+  transition: border var(--ui-transition) ease;
+
+  &[disabled] {
+    border: transparent;
+  }
+}
+
+.Options {
+  position: absolute;
+  z-index: 10;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  box-shadow: 0 5px 10px 2px rgba(34, 60, 80, 0.2);
+  background-color: var(--bg-light-color);
+}
+
+.Option {
+
+}
+
+.active {
+  background-color: var(--bg-color);
+}
+
+.disabled {
+  opacity: 0.6;
+}
+
+.Label {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: inline-block;
+  font-size: var(--font-size-s);
+  color: var(--text-primary-color);
+  transform: translateY(-5px);
+  transition: transform var(--ui-transition) ease, font-size var(--ui-transition) ease;
+}
