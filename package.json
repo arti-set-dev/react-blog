@@ -20,7 +20,8 @@
     "screen-test-report": "npm run screen-test-json && npm run screen-test-html",
     "storybook": "start-storybook -p 6006 -c ./config/storybook",
     "build-storybook": "build-storybook -c ./config/storybook",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "generate-slice": "node ./scripts/createSlice/index.js"
   },
   "keywords": [],
   "author": "Roman Kovtun",
