@@ -1,0 +1,56 @@
+.Dropdown {
+  position: relative;
+}
+
+.Btn {
+  margin: 0;
+  outline: none;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.Items {
+  position: absolute;
+  z-index: 10;
+  list-style: none;
+  overflow: hidden;
+  border-radius: var(--radius-s);
+  max-width: 200px;
+  box-shadow: var(--box-shadow);
+  background-color: var(--bg-color);
+}
+
+.Item {
+  border: none;
+  padding: 10px 20px;
+  width: 100%;
+  color: var(--text-primary-color);
+  background: none;
+  cursor: pointer;
+}
+
+.active {
+  background-color: var(--bg-light-color);
+}
+
+.dropdownBottomLeft {
+  right: 0;
+  top: 100%;
+}
+
+.dropdownBottomRight {
+  left: 0;
+  top: 100%;
+}
+
+.dropdownTopLeft {
+  right: 0;
+  bottom: 100%;
+}
+
+.dropdownTopRight {
+  left: 0;
+  bottom: 100%;
+}

@@ -65,7 +65,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
 
   if (isLoading) {
     content = (
-      <VStack gap="16">
+      <VStack gap="16" max>
         <Skeleton height={180} width={180} border="50%" />
         <Skeleton align={SkeletonAlign.LEFT} height={20} width="400px" />
         <Skeleton align={SkeletonAlign.LEFT} height={20} width="300px" />

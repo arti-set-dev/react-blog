@@ -15,6 +15,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getUserAuthData, userActions } from 'entitie/User';
 import { Text, TextSize } from 'shared/ui/Text/Text';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+import { Dropdown } from 'shared/ui/Dropdown/Dropdown';
+import { Avatar } from 'shared/ui/Avatar/Avatar';
 import cl from './Navbar.module.scss';
 
 interface NavbarProps {
@@ -46,7 +48,20 @@ export const Navbar = memo((props: NavbarProps) => {
         <Container className={cl.Container}>
           <Text size={TextSize.L}>{t('Logo App')}</Text>
           <AppLink to={RoutePath.articles_create} className={cl.NewPostText}>{t('Create new post')}</AppLink>
-          <Button theme={ButtonTheme.OUTLINE} onClick={onLogout}>{t('Logout')}</Button>
+          <Dropdown
+            className={cl.Dropdown}
+            items={[
+              {
+                content: t('Profile'),
+                href: RoutePath.profile + authData.id,
+              },
+              {
+                content: t('Logout'),
+                onclick: onLogout,
+              },
+            ]}
+            trigger={<Avatar size={30} src={authData.avatar} alt={authData.username} />}
+          />
         </Container>
       </header>
     );
