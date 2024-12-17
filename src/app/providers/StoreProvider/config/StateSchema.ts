@@ -5,20 +5,22 @@ import { AxiosInstance } from 'axios';
 import { AddNewCommentSchema } from 'features/addNewComment';
 import { ArticleDetailsSchema } from 'entitie/Article';
 import { CounterSchema } from 'entitie/Counter';
-import { ProfileSchema } from 'entitie/Profile';
 import { UserSchema } from 'entitie/User';
 import { LoginSchema } from 'features/AuthByUsername';
+import { ProfileSchema } from 'features/editableProfileCard';
 import { ArticleDetailsCommentsSchema, ArticleDetailsRecommendationsSchema } from 'pages/ArticleDetailsPage';
 import { NavigateOptions, To } from 'react-router-dom';
 import { ArticlesPageSchema } from 'pages/ArticlesPage';
 import { ScrollSaveSchema } from 'widgets/Page';
 import { ArticleDetailsPageSchema } from 'pages/ArticleDetailsPage/model/types';
+import { rtkApi } from 'shared/api/rtkApi';
 import { createReducerManager } from './reducerManager';
 
 export interface StateSchema {
     counter: CounterSchema;
     user: UserSchema;
     scrollSave: ScrollSaveSchema;
+    [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>;
 
     // async reducers
     loginForm?: LoginSchema;

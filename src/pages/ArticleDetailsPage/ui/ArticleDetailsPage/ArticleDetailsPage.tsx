@@ -17,6 +17,7 @@ import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { Page } from 'widgets/Page/ui/Page';
 import { ArticleListDisplay } from 'entitie/Article/ui/ArticleList/ArticleList';
+import { ArticleRecommendationsList } from 'features/articleRecommendationsList';
 import { getArticleRecommendationsIsloading } from '../../model/selectors/recommendations';
 import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle';
@@ -27,6 +28,7 @@ import { articleDetailsRecommendationsReducer, getArticleRecommendations } from 
 import { fetchArticleRecommendations } from '../../model/services/fetchArticleRecommendations/fetchArticleRecommendations';
 import { articleDetailsPageReducer } from '../../model/slices';
 import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
+import { ArticleDetailsPageComments } from '../ArticleDetailsPageComments/ArticleDetailsPageComments';
 
 interface ArticleDetailsPageProps {
   className?: string;
@@ -40,22 +42,6 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
   const { className } = props;
   const { t } = useTranslation('article-details');
   const { id } = useParams<{ id: string }>();
-  const dispatch = useAppDispatch();
-  const comments = useSelector(getArticleComments.selectAll);
-  const commentsIsloading = useSelector(getArticleCommentsIsloading);
-  const commentsError = useSelector(getArticleCommentsError);
-  const recommendations = useSelector(getArticleRecommendations.selectAll);
-  const recommendationsIsLoading = useSelector(getArticleRecommendationsIsloading);
-  const navigate = useNavigate();
-
-  const onSendComment = useCallback((text: string) => {
-    dispatch(addCommentForArticle(text));
-  }, [dispatch]);
-
-  useInitialEffect(() => {
-    dispatch(fetchCommentsByArticleId(id));
-    dispatch(fetchArticleRecommendations());
-  });
 
   if (!id) {
     return (
@@ -70,35 +56,8 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
       <Page className={classNames(cl.ArticleDetailsPage, {}, [className])}>
         <ArticleDetailsPageHeader />
         <ArticleDetails id={id} />
-        <Text
-          theme={TextTheme.PRIMARY}
-          weight={TextWeight.BOLD}
-          size={TextSize.XL}
-          className={cl.RecommendationsTitle}
-        >
-          {t('We recommend reading')}
-        </Text>
-        <ArticleList
-          display={ArticleListDisplay.FLEX}
-          className={cl.Recommendations}
-          articles={recommendations}
-          isLoading={recommendationsIsLoading}
-          blank
-        />
-        <Text
-          className={cl.CommentsTitle}
-          theme={TextTheme.PRIMARY}
-          weight={TextWeight.BOLD}
-          size={TextSize.XL}
-        >
-          {t('Comments')}
-        </Text>
-        <AddCommentForm onSendComment={onSendComment} />
-        <Comments
-          error={commentsError}
-          isLoading={commentsIsloading}
-          comments={comments}
-        />
+        <ArticleRecommendationsList />
+        <ArticleDetailsPageComments id={id} />
       </Page>
     </DynamicModuleLoader>
   );

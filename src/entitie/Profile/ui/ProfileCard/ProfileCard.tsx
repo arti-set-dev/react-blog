@@ -1,29 +1,21 @@
 import { Country, CountrySelect } from 'entitie/Country';
 import { Currency, CurrencySelect } from 'entitie/Currency';
 import { getUserAuthData } from 'entitie/User';
-import { FC, useCallback, useEffect } from 'react';
+import { getProfileData } from 'features/editableProfileCard/model/selectors/getProfileData/getProfileData';
+import { ValidateFields } from 'features/editableProfileCard/model/types/editableProfileCardSchema';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { Input } from 'shared/ui/Input/Input';
 import { Loader, LoaderOffset } from 'shared/ui/Loader/Loader';
-import { Select } from 'shared/ui/Select/Select';
-import {
-  Text, TextSize, TextTheme, TextWeight,
-} from 'shared/ui/Text/Text';
 import { HStack } from 'shared/ui/Stack/HStack/HStack';
 import { VStack } from 'shared/ui/Stack/VStack/VStack';
 import {
-  getProfileForm,
-  getProfileRedonly, getProfileValidateErrors, profileActions, updateProfileData, Profile, ValidateFields,
-} from '../../../Profile';
-import { fetchProfileData } from '../../model/services/fetchProfileData/fetchProfileData';
-import { getProfileIsLoading } from '../../model/selectors/getProfileIsLoading/getProfileIsLoading';
-import { getProfileError } from '../../model/selectors/getProfileError/getProfileError';
-import { getProfileData } from '../../model/selectors/getProfileData/getProfileData';
+  Text, TextSize, TextTheme, TextWeight,
+} from 'shared/ui/Text/Text';
+import { Profile } from '../../model/types/profile';
 import cl from './ProfileCard.module.scss';
 
 interface ProfileCardProps {

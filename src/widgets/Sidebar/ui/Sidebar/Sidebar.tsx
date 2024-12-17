@@ -51,9 +51,9 @@ export const Sidebar = memo((props: SidebarProps) => {
         <ArrIcon />
       </Button>
       <nav>
-        <List gap="16">
+        <VStack tag="ul" gap="16">
           {itemsList}
-        </List>
+        </VStack>
       </nav>
       <div className={cl.Switchers}>
         <ThemeSwitcher />

@@ -26,11 +26,11 @@
   "Username too long": "Username too long",
   "profile": {
     "Profile": "profile",
-    "Edit": "profile",
+    "Edit": "Edit",
     "Profile error": "profile",
     "Profile avatar": "profile",
-    "Cancel": "profile",
-    "Save": "profile"
+    "Cancel": "Cancel",
+    "Save": "Save"
   },
   "Indicate the currency": "Indicate the currency"
 }

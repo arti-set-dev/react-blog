@@ -20,6 +20,7 @@ import cl from './ArticlesPage.module.scss';
 import { fetchNextArticlePage } from '../../model/services/fetchNextArticlePage/fetchNextArticlePage';
 import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
 import { ArticlesPageFilters } from '../ArticlesPageFilters/ArticlesPageFilters';
+import { ArticleInfiniteList } from '../ArticleInfiniteList/ArticleInfiniteList';
 
 interface ArticlesPageProps {
   className?: string;
@@ -33,29 +34,18 @@ const ArticlesPage = (props: ArticlesPageProps) => {
   const { className } = props;
   const { t } = useTranslation();
   const dispatch = useAppDispatch();
-  const articles = useSelector(getArticles.selectAll);
-  const isLoading = useSelector(getArticlesPageIsLoading);
   const error = useSelector(getArticlesPageIsError);
-  const view = useSelector(getArticlesPageIsView);
   const [searchParams] = useSearchParams();
-
-  // const page = useSelector(getArticlesPageIsNum);
-  // const hasMore = useSelector(getArticlesPageIsHasMore);
-  // const inited = useSelector(getArticlesPageIsInited);
 
   const onLoadNextPart = useCallback(() => {
     dispatch(fetchNextArticlePage());
   }, [dispatch]);
 
-  useInitialEffect(() => {
-    dispatch(initArticlesPage(searchParams));
-  });
-
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
       <Page onScrollEnd={onLoadNextPart} className={classNames(cl.ArticlesPage, {}, [className])}>
         <ArticlesPageFilters />
-        <ArticleList view={view} isLoading={isLoading} articles={articles} />
+        <ArticleInfiniteList />
         {error
           && <Text>{t('Data boot error')}</Text>}
       </Page>
