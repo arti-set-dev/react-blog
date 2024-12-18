@@ -87,7 +87,16 @@ export const Input = memo((props: InputProps) => {
               {...otherProps}
             />
             {error
-                && <Text size={TextSize.S} className={cl.ErrorMessage} theme={TextTheme.ERROR}>{error}</Text>}
+                && (
+                  <Text
+                    data-testid="Input.Error"
+                    size={TextSize.S}
+                    className={cl.ErrorMessage}
+                    theme={TextTheme.ERROR}
+                  >
+                    {error}
+                  </Text>
+                )}
           </div>
         )
         : (

@@ -95,11 +95,31 @@ export const ProfileCard = (props: ProfileCardProps) => {
           // eslint-disable-next-line react/jsx-no-useless-fragment
           <>
             {readonly
-              ? <Button onClick={onEdit} theme={ButtonTheme.PRIMARY}>{t('Edit')}</Button>
+              ? (
+                <Button
+                  data-testid="ProfileCard.EditButton"
+                  onClick={onEdit}
+                  theme={ButtonTheme.PRIMARY}
+                >
+                  {t('Edit')}
+                </Button>
+              )
               : (
                 <HStack gap="16">
-                  <Button onClick={onCancelEdit} theme={ButtonTheme.OUTLINE_RED}>{t('Cancel')}</Button>
-                  <Button onClick={onSave} theme={ButtonTheme.PRIMARY}>{t('Save')}</Button>
+                  <Button
+                    data-testid="ProfileCard.CancelButton"
+                    onClick={onCancelEdit}
+                    theme={ButtonTheme.OUTLINE_RED}
+                  >
+                    {t('Cancel')}
+                  </Button>
+                  <Button
+                    data-testid="ProfileCard.SaveButton"
+                    onClick={onSave}
+                    theme={ButtonTheme.PRIMARY}
+                  >
+                    {t('Save')}
+                  </Button>
                 </HStack>
               )}
           </>
@@ -118,6 +138,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
           placeholder={t('Your name')}
           value={data?.firstname}
           error={fieldErrors?.firstname}
+          data-testid="ProfileCard.firstname"
         />
         <Input
           onChange={onChangeLastname}
@@ -125,6 +146,7 @@ export const ProfileCard = (props: ProfileCardProps) => {
           placeholder={t('Your lastname')}
           value={data?.lastname}
           error={fieldErrors?.lastname}
+          data-testid="ProfileCard.lastname"
         />
         <Input
           onChange={onChangeAge}

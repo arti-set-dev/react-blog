@@ -22,7 +22,7 @@ import { ValidateFields, ValidateProfileError } from '../../model/types/editable
 
 interface EditableProfileCardProps {
     className?: string;
-    id?: string;
+    id: string;
 }
 
 const reducers: ReducerList = {

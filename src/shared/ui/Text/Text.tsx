@@ -37,19 +37,24 @@ interface TextProps {
     align?: TextAlign;
     children?: React.ReactNode;
     tag?: TagType;
+    'data-testid'?: string;
 }
 
 export const Text = memo((props: TextProps) => {
   const {
     className,
     size = TextSize.S,
-    theme = TextTheme.PRIMARY, weight = TextWeight.REGULAR, align = TextAlign.LEFT, children, tag = 'div',
+    theme = TextTheme.PRIMARY,
+    weight = TextWeight.REGULAR, align = TextAlign.LEFT, children, tag = 'div', 'data-testid': dataTestId = 'Text',
   } = props;
 
   const Tag = tag;
 
   return (
-    <Tag className={classNames(cl.Text, {}, [className, cl[weight], cl[size], cl[theme], cl[align]])}>
+    <Tag
+      data-testid={`${dataTestId}.Tag`}
+      className={classNames(cl.Text, {}, [className, cl[weight], cl[size], cl[theme], cl[align]])}
+    >
       {children}
     </Tag>
   );
