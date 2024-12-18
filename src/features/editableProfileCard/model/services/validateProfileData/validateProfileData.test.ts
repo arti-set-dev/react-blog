@@ -5,7 +5,7 @@ import { Country } from 'entitie/Country';
 import { Currency } from 'entitie/Currency';
 import { userActions } from 'entitie/User';
 import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
-import { ValidateProfileError } from '../../types/profile';
+import { ValidateProfileError } from '../../types/editableProfileCardSchema';
 import { validateProfileData } from './validateProfileData';
 
 const data = {

@@ -3,9 +3,10 @@ import { StateSchema } from 'app/providers/StoreProvider';
 import axios from 'axios';
 import { Country } from 'entitie/Country';
 import { Currency } from 'entitie/Currency';
+import { Profile } from 'entitie/Profile';
 import { userActions } from 'entitie/User';
 import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
-import { Profile, ValidateProfileError } from '../../types/profile';
+import { ValidateProfileError } from '../../types/editableProfileCardSchema';
 import { updateProfileData } from './updateProfileData';
 
 const data: Profile = {

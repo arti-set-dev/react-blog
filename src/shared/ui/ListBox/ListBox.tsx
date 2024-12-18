@@ -49,7 +49,7 @@ export const Listbox = (props: ListBoxProps) => {
           >
             {({ active, selected }) => (
               <li className={classNames(
-                cl.item,
+                '',
                 {
                   [cl.active]: active,
                   [cl.disabled]: item.disabled,
