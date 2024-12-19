@@ -1,6 +1,8 @@
-import { memo, useCallback } from 'react';
+import { memo, useCallback, Suspense } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
+import { Loader } from 'shared/ui/Loader/Loader';
+import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
 import {
   TextSize, TextTheme, TextWeight, Text,
 } from 'shared/ui/Text/Text';
@@ -17,7 +19,7 @@ import cl from './ArticleDetailsPageComments.module.scss';
 
 interface ArticleDetailsPageCommentsProps {
     className?: string;
-    id: string;
+    id?: string;
 }
 
 export const ArticleDetailsPageComments = memo((props: ArticleDetailsPageCommentsProps) => {
@@ -46,7 +48,9 @@ export const ArticleDetailsPageComments = memo((props: ArticleDetailsPageComment
       >
         {t('Comments')}
       </Text>
-      <AddCommentForm onSendComment={onSendComment} />
+      <Suspense fallback={<Skeleton width="100%" height={40} border="20" />}>
+        <AddCommentForm onSendComment={onSendComment} />
+      </Suspense>
       <Comments
         error={commentsError}
         isLoading={commentsIsloading}

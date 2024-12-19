@@ -1,5 +1,5 @@
 import React, {
-  FC, useCallback, useEffect, useState,
+  FC, useCallback, useEffect, useState, ReactNode,
 } from 'react';
 import { classNames, Mods } from 'shared/lib/classNames/classNames';
 import CloseIcon from 'shared/assets/icons/close-icon.svg';
@@ -13,9 +13,10 @@ interface ModalProps {
     isOpen?: boolean;
     onClose?: () => void;
     lazy?: boolean;
+    children: ReactNode;
 }
 
-export const Modal: FC<ModalProps> = (props) => {
+export const Modal = (props: ModalProps) => {
   const {
     children, className, isOpen, onClose, lazy,
   } = props;

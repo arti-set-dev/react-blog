@@ -18,12 +18,6 @@ const ProfilePage = () => {
   const { t } = useTranslation('profile');
   const { id } = useParams<{ id: string }>();
 
-  if (!id) {
-    return (
-      <Text>{t('Profile error')}</Text>
-    );
-  }
-
   return (
     <Page className={cl.ProfilePage}>
       <EditableProfileCard id={id} />

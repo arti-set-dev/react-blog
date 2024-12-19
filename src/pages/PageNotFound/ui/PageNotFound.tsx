@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Page } from 'widgets/Page/ui/Page';
@@ -6,9 +6,10 @@ import cl from './PageNotFound.module.scss';
 
 interface PageNotFoundProps {
   className?: string;
+  children?: ReactNode;
 }
 
-export const PageNotFound: FC<PageNotFoundProps> = (props) => {
+export const PageNotFound = (props: PageNotFoundProps) => {
   const { children, className } = props;
   const { t } = useTranslation();
   return (

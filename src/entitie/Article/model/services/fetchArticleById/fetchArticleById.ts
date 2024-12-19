@@ -6,7 +6,7 @@ import { USER_LOCALSTORAGE_KEY } from 'shared/const/localstorage';
 import { Article } from '../../types/article';
 
 export const fetchArticleById = createAsyncThunk<
-    Article, string, ThunkConfig<string>>(
+    Article, string | undefined, ThunkConfig<string>>(
       'article/fetchArticleById',
       async (articleId, thunkAPI) => {
         const { extra, dispatch, rejectWithValue } = thunkAPI;
@@ -17,6 +17,10 @@ export const fetchArticleById = createAsyncThunk<
               _expand: 'user',
             },
           });
+
+          if (!articleId) {
+            throw new Error('Article not found');
+          }
 
           if (!response.data) {
             throw new Error();
