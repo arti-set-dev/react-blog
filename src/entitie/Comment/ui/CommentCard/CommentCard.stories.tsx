@@ -1,3 +1,4 @@
+import { UserRole } from 'entitie/User';
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { CommentCard } from './CommentCard';
@@ -18,7 +19,7 @@ Normal.args = {
   comment: {
     id: '1',
     text: 'hello world',
-    user: { id: '1', username: 'Vasya' },
+    user: { id: '1', username: 'Vasya', roles: [UserRole.ADMIN] },
   },
 };
 
@@ -31,6 +32,7 @@ Avatar.args = {
       id: '1',
       username: 'Vasya',
       avatar: avatarImage,
+      roles: [UserRole.ADMIN],
     },
   },
 };
@@ -40,7 +42,7 @@ Loading.args = {
   comment: {
     id: '1',
     text: 'hello world',
-    user: { id: '1', username: 'Vasya' },
+    user: { id: '1', username: 'Vasya', roles: [UserRole.ADMIN] },
   },
   isLoading: true,
 };

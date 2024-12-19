@@ -41,27 +41,36 @@ export const Dropdown = (props: DropdownProps) => {
         {trigger}
       </Menu.Button>
       <Menu.Items className={classNames(cl.Items, {}, menuClasses)}>
-        {items.map((item) => {
+        {items.map((item, index) => {
           const content = ({ active }: {active: boolean}) => (
-            <button
-              onClick={item.onclick}
-              disabled={item.disabled}
-              className={classNames(cl.Item, { [cl.active]: active }, [])}
-            >
-              {item.content}
-            </button>
+            // eslint-disable-next-line react/jsx-no-useless-fragment
+            <>
+              {item.href
+                ? item.content
+                : (
+                  <button
+                    onClick={item.onclick}
+                    disabled={item.disabled}
+                    className={classNames(cl.Item, { [cl.active]: active }, [])}
+                  >
+                    {item.content}
+                  </button>
+                )}
+            </>
           );
 
           if (item.href) {
             return (
-              <Menu.Item as={AppLink} to={item.href} disabled={item.disabled}>
+              // eslint-disable-next-line react/no-array-index-key
+              <Menu.Item key={index} className={cl.Item} as={AppLink} to={item.href} disabled={item.disabled}>
                 {content}
               </Menu.Item>
             );
           }
 
           return (
-            <Menu.Item as={Fragment} disabled={item.disabled}>
+            // eslint-disable-next-line react/no-array-index-key
+            <Menu.Item key={index} as={Fragment} disabled={item.disabled}>
               {content}
             </Menu.Item>
           );

@@ -1,5 +1,7 @@
 {
   "About Page": "About Page",
+  "Admin": "Admin",
+  "Admin Panel Page": "Admin Panel Page",
   "All": "All",
   "Article Details Page": "Article Details Page",
   "Article not found": "Article not found",
@@ -53,6 +55,7 @@
   "Views": "Views",
   "We recommend reading": "We recommend reading",
   "Write your comment": "Write your comment",
+  "You do not have access to this page": "You do not have access to this page",
   "Your Country": "Your Country",
   "Your Currency": "Your Currency",
   "Your age": "Your age",

@@ -1,4 +1,5 @@
 /* eslint-disable max-len */
+import { UserRole } from 'entitie/User';
 import { ArticleDetailsSchema } from '../types/articleDetailsSchema';
 import { fetchArticleById } from '../services/fetchArticleById/fetchArticleById';
 import { ArticleBlockType, ArticleType, Article } from '../types/article';
@@ -15,6 +16,7 @@ const article: Article = {
   user: {
     id: '1',
     username: 'Roman',
+    roles: [UserRole.ADMIN],
   },
   type: [ArticleType.IT],
   blocks: [

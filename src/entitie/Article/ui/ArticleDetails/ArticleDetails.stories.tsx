@@ -1,4 +1,5 @@
 /* eslint-disable max-len */
+import { UserRole } from 'entitie/User';
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
@@ -25,6 +26,7 @@ const article: Article = {
   user: {
     id: '1',
     username: 'Roman',
+    roles: [UserRole.ADMIN],
   },
   type: [ArticleType.IT],
   blocks: [

@@ -4,16 +4,16 @@ import { Link, LinkProps } from 'react-router-dom';
 import cl from './AppLink.module.scss';
 
 export enum AppLinkTheme {
-    INVERTED = 'inverted',
-    PRIMARY = 'primary',
-    SECONDARY = 'secondary',
-    RED = 'red',
+  INVERTED = 'inverted',
+  PRIMARY = 'primary',
+  SECONDARY = 'secondary',
+  RED = 'red',
 }
 
 interface AppLinkProps extends LinkProps {
-    className?: string;
-    theme?: AppLinkTheme;
-    children?: ReactNode;
+  className?: string;
+  theme?: AppLinkTheme;
+  children?: ReactNode;
 }
 
 export const AppLink = memo((props: AppLinkProps) => {

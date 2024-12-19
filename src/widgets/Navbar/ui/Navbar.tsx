@@ -12,7 +12,9 @@ import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { Modal } from 'shared/ui/Modal/Modal';
 import { LoginModal } from 'features/AuthByUsername';
 import { useDispatch, useSelector } from 'react-redux';
-import { getUserAuthData, userActions } from 'entitie/User';
+import {
+  getUserAuthData, userActions, isUserAdmin, isUserManager,
+} from 'entitie/User';
 import { Text, TextSize } from 'shared/ui/Text/Text';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { Dropdown } from 'shared/ui/Dropdown/Dropdown';
@@ -29,6 +31,10 @@ export const Navbar = memo((props: NavbarProps) => {
   const [isAuthModal, setIsAuthModal] = useState(false);
   const authData = useSelector(getUserAuthData);
   const dispatch = useDispatch();
+  const isAdmin = useSelector(isUserAdmin);
+  const isManager = useSelector(isUserManager);
+
+  const isAdminPanelAvailable = isAdmin || isManager;
 
   const onCloseModal = useCallback(() => {
     setIsAuthModal(false);
@@ -49,8 +55,11 @@ export const Navbar = memo((props: NavbarProps) => {
           <Text size={TextSize.L}>{t('Logo App')}</Text>
           <AppLink to={RoutePath.articles_create} className={cl.NewPostText}>{t('Create new post')}</AppLink>
           <Dropdown
-            className={cl.Dropdown}
             items={[
+              ...(isAdminPanelAvailable ? [{
+                content: t('Admin'),
+                href: RoutePath.admin_panel,
+              }] : []),
               {
                 content: t('Profile'),
                 href: RoutePath.profile + authData.id,
