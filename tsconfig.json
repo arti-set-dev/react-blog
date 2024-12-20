@@ -15,6 +15,7 @@
         "strict": true,
         "moduleResolution": "node",
         "allowSyntheticDefaultImports": true,
+        "isolatedModules": true,
         "esModuleInterop": true,
         "plugins": [
             {

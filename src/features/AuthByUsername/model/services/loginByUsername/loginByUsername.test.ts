@@ -17,10 +17,10 @@ describe('loginByUsername.test', () => {
   //   });
 
   //   test('succes login', async () => {
-  //     const userValue = { username: '123', id: '1' };
+  //     consts userValue = { username: '123', id: '1' };
   //     mockedAxios.post.mockReturnValue(Promise.resolve({ data: userValue }));
-  //     const action = loginByUsername({ username: '123', password: '123' });
-  //     const result = await action(dispatch, getState, undefined);
+  //     consts action = loginByUsername({ username: '123', password: '123' });
+  //     consts result = await action(dispatch, getState, undefined);
 
   //     expect(dispatch).toHaveBeenCalledWith(userActions.setAuthData(userValue));
   //     expect(dispatch).toHaveBeenCalledTimes(3);
@@ -31,8 +31,8 @@ describe('loginByUsername.test', () => {
 
   //   test('rejected login', async () => {
   //     mockedAxios.post.mockReturnValue(Promise.resolve({ status: 403 }));
-  //     const action = loginByUsername({ username: '123', password: '123' });
-  //     const result = await action(dispatch, getState, undefined);
+  //     consts action = loginByUsername({ username: '123', password: '123' });
+  //     consts result = await action(dispatch, getState, undefined);
 
   //     expect(dispatch).toHaveBeenCalledTimes(2);
   //     expect(mockedAxios.post).toHaveBeenCalled();

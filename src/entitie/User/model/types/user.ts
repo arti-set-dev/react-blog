@@ -1,8 +1,4 @@
-export enum UserRole {
-    ADMIN = 'ADMIN',
-    USER = 'USER',
-    MANAGER = 'MANAGER',
-}
+import { UserRole } from '../../model/consts/consts';
 
 export interface User {
     id: string;

@@ -1,13 +1,15 @@
+import { ArticleView } from './model/consts/consts';
+import { ArticleType, ArticleSortField } from './model/types/articleType';
 import { ArticleDetails } from './ui/ArticleDetails/ArticleDetails';
-import {
-  Article, ArticleView, ArticleSortField, ArticleType,
+import type {
+  Article,
 } from './model/types/article';
 import type { ArticleDetailsSchema } from './model/types/articleDetailsSchema';
 import { ArticleList } from './ui/ArticleList/ArticleList';
-import { ArticleViewSwither } from './ui/ArticleViewSwither/ArticleViewSwither';
 import { ArticleSortSelector } from './ui/ArticleSortSelector/ArticleSortSelector';
 import { ArticleTypeTabs } from './ui/ArticleTypeTabs/ArticleTypeTabs';
 import { getArticleDetailsData } from './model/selectors/articleDetails';
+import { ArticleViewSwitcher } from './ui/ArticleViewSwitcher/ArticleViewSwither';
 
 export {
   ArticleDetails,
@@ -15,5 +17,5 @@ export {
   ArticleDetailsSchema,
   ArticleView,
   ArticleList,
-  ArticleViewSwither, ArticleSortField, ArticleSortSelector, ArticleType, ArticleTypeTabs, getArticleDetailsData,
+  ArticleViewSwitcher, ArticleSortField, ArticleSortSelector, ArticleType, ArticleTypeTabs, getArticleDetailsData,
 };

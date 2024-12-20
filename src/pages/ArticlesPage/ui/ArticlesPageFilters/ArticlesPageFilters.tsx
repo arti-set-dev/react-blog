@@ -2,7 +2,7 @@ import { memo, useCallback, useMemo } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import {
-  ArticleView, ArticleViewSwither, ArticleSortSelector, ArticleSortField, ArticleTypeTabs,
+  ArticleView, ArticleViewSwitcher, ArticleSortSelector, ArticleSortField, ArticleTypeTabs, ArticleType,
 } from 'entitie/Article';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useSelector } from 'react-redux';
@@ -12,7 +12,6 @@ import { SortOrder } from 'shared/types';
 import { Card } from 'shared/ui/Card/Card';
 import { useDebounce } from 'shared/lib/hooks/useDebounce/useDebounce';
 import { TabItem, Tabs } from 'shared/ui/Tabs/Tabs';
-import { ArticleType } from 'entitie/Article/model/types/article';
 import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList';
 import cl from './ArticlesPageFilters.module.scss';
 import { articlesPageActions } from '../../model/slices/articlesPageSlice';
@@ -73,7 +72,7 @@ export const ArticlesPageFilters = memo((props: ArticlesPageFiltersProps) => {
     <div className={classNames(cl.ArticlesPageFilters, {}, [className])}>
       <div className={cl.Wrapper}>
         <ArticleSortSelector onChangeOrder={onChangeOrder} onChangeSort={onChangeSort} order={order} sort={sort} />
-        <ArticleViewSwither view={view} onViewClick={onChangeView} />
+        <ArticleViewSwitcher view={view} onViewClick={onChangeView} />
       </div>
       <ArticleTypeTabs value={type} onChangeType={onChangeType} />
       <Input value={search} onChange={onChangeSearch} className={cl.Search} placeholder={t('Search')} />

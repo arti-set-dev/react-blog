@@ -4,8 +4,8 @@ import axios, { AxiosResponse } from 'axios';
 import { Profile } from 'entitie/Profile';
 import { User, userActions } from 'entitie/User';
 import { USER_LOCALSTORAGE_KEY } from 'shared/const/localstorage';
+import { ValidateProfileError } from '../../consts/consts';
 import { getProfileForm } from '../../selectors/getProfileForm/getProfileForm';
-import { ValidateProfileError } from '../../types/editableProfileCardSchema';
 import { validateProfileData } from '../validateProfileData/validateProfileData';
 
 export const updateProfileData = createAsyncThunk<Profile, void, ThunkConfig<ValidateProfileError[]>>(

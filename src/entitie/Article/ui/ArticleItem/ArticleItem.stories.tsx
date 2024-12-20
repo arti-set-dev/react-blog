@@ -1,7 +1,8 @@
 /* eslint-disable max-len */
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Article, ArticleView } from '../../model/types/article';
+import { ArticleView } from '../../model/consts/consts';
+import { Article } from '../../model/types/article';
 import storybookImage from './storybook.jpg';
 import { ArticleItem } from './ArticleItem';
 
@@ -64,7 +65,7 @@ const article = {
     {
       id: '5',
       type: 'CODE',
-      code: "const path = require('path');\n\nconst server = jsonServer.create();\n\nconst router = jsonServer.router(path.resolve(__dirname, 'db.json'));\n\nserver.use(jsonServer.defaults({}));\nserver.use(jsonServer.bodyParser);",
+      code: "consts path = require('path');\n\nconsts server = jsonServer.create();\n\nconsts router = jsonServer.router(path.resolve(__dirname, 'db.json'));\n\nserver.use(jsonServer.defaults({}));\nserver.use(jsonServer.bodyParser);",
     },
     {
       id: '6',

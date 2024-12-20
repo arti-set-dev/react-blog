@@ -5,10 +5,10 @@ import ListIcon from 'shared/assets/icons/list-icon.svg';
 import GridIcon from 'shared/assets/icons/grid-icon.svg';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { Icon } from 'shared/ui/Icon/Icon';
-import { ArticleView } from '../../model/types/article';
+import { ArticleView } from '../../model/consts/consts';
 import cl from './ArticleViewSwither.module.scss';
 
-interface ArticleViewSwitherProps {
+interface ArticleViewSwitcherProps {
     className?: string;
     view: ArticleView;
     onViewClick: (view: ArticleView) => void;
@@ -25,7 +25,7 @@ const viewTypes = [
   },
 ];
 
-export const ArticleViewSwither = memo((props: ArticleViewSwitherProps) => {
+export const ArticleViewSwitcher = memo((props: ArticleViewSwitcherProps) => {
   const { className, view, onViewClick } = props;
   const { t } = useTranslation();
 
@@ -34,7 +34,7 @@ export const ArticleViewSwither = memo((props: ArticleViewSwitherProps) => {
   };
 
   return (
-    <div className={classNames(cl.ArticleViewSwither, {}, [className])}>
+    <div className={classNames(cl.ArticleViewSwitcher, {}, [className])}>
       {viewTypes.map((viewType) => (
         <Button
           key={viewType.view}

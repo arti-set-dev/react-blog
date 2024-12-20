@@ -6,7 +6,7 @@ import { Currency } from 'entitie/Currency';
 import { Profile } from 'entitie/Profile';
 import { userActions } from 'entitie/User';
 import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
-import { ValidateProfileError } from '../../types/editableProfileCardSchema';
+import { ValidateProfileError } from '../../consts/consts';
 import { updateProfileData } from './updateProfileData';
 
 const data: Profile = {

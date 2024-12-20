@@ -1,8 +1,10 @@
 /* eslint-disable max-len */
 import { UserRole } from 'entitie/User';
+import { ArticleType } from '../types/articleType';
+import { ArticleBlockType } from '../../model/types/articleType';
 import { ArticleDetailsSchema } from '../types/articleDetailsSchema';
 import { fetchArticleById } from '../services/fetchArticleById/fetchArticleById';
-import { ArticleBlockType, ArticleType, Article } from '../types/article';
+import { Article } from '../types/article';
 // import {  } from '../types/article';
 import { articleDetailsActions, articleDetailsReducer } from './articleDetailsSlice';
 
@@ -53,7 +55,7 @@ const article: Article = {
     {
       id: '5',
       type: ArticleBlockType.CODE,
-      code: "const path = require('path');\n\nconst server = jsonServer.create();\n\nconst router = jsonServer.router(path.resolve(__dirname, 'db.json'));\n\nserver.use(jsonServer.defaults({}));\nserver.use(jsonServer.bodyParser);",
+      code: "consts path = require('path');\n\nconsts server = jsonServer.create();\n\nconsts router = jsonServer.router(path.resolve(__dirname, 'db.json'));\n\nserver.use(jsonServer.defaults({}));\nserver.use(jsonServer.bodyParser);",
     },
     {
       id: '6',
