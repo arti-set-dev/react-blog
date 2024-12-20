@@ -7,7 +7,7 @@ import { ArticleCodeBlock } from '../../model/types/article';
 
 interface ArticleCodeBlockComponentProps {
     className?: string;
-    block: ArticleCodeBlock
+    block: ArticleCodeBlock;
 }
 
 export const ArticleCodeBlockComponent = memo((props: ArticleCodeBlockComponentProps) => {
