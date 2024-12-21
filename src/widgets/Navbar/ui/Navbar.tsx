@@ -1,24 +1,25 @@
-import {
-  FC, memo, useCallback, useEffect, useRef, useState,
-} from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { Link } from 'react-router-dom';
-import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
-import { Container } from 'shared/ui/Container/Container';
-import { List } from 'shared/ui/List/List';
-import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
-import { useTranslation } from 'react-i18next';
-import { Button, ButtonTheme } from 'shared/ui/Button/Button';
-import { Modal } from 'shared/ui/Modal/Modal';
-import { LoginModal } from 'features/AuthByUsername';
-import { useDispatch, useSelector } from 'react-redux';
+import { NotificationList } from 'entitie/Notification';
 import {
   getUserAuthData, userActions, isUserAdmin, isUserManager,
 } from 'entitie/User';
-import { Text, TextSize } from 'shared/ui/Text/Text';
+import { LoginModal } from 'features/AuthByUsername';
+import { AvatarDropdown } from 'features/avatarDropdown';
+import { NotificationButton } from 'features/notificationButton';
+import { memo, useCallback, useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import { useDispatch, useSelector } from 'react-redux';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
-import { Dropdown } from 'shared/ui/Dropdown/Dropdown';
+import { classNames } from 'shared/lib/classNames/classNames';
+import { AppLink } from 'shared/ui/AppLink/AppLink';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
+import { Button, ButtonTheme } from 'shared/ui/Button/Button';
+import { Container } from 'shared/ui/Container/Container';
+import { Popover } from 'shared/ui/Popups';
+import { Dropdown } from 'shared/ui/Popups/ui/Dropdown/Dropdown';
+import { Icon } from 'shared/ui/Icon/Icon';
+import { HStack } from 'shared/ui/Stack';
+import { Text, TextSize } from 'shared/ui/Text/Text';
+import NotificationIcon from 'shared/assets/icons/notification-icon.svg';
 import cl from './Navbar.module.scss';
 
 interface NavbarProps {
@@ -30,11 +31,6 @@ export const Navbar = memo((props: NavbarProps) => {
   const { t } = useTranslation();
   const [isAuthModal, setIsAuthModal] = useState(false);
   const authData = useSelector(getUserAuthData);
-  const dispatch = useDispatch();
-  const isAdmin = useSelector(isUserAdmin);
-  const isManager = useSelector(isUserManager);
-
-  const isAdminPanelAvailable = isAdmin || isManager;
 
   const onCloseModal = useCallback(() => {
     setIsAuthModal(false);
@@ -44,33 +40,16 @@ export const Navbar = memo((props: NavbarProps) => {
     setIsAuthModal(true);
   }, []);
 
-  const onLogout = useCallback(() => {
-    dispatch(userActions.logout());
-  }, [dispatch]);
-
   if (authData) {
     return (
       <header className={classNames(cl.Navbar, {}, [className])}>
         <Container className={cl.Container}>
           <Text size={TextSize.L}>{t('Logo App')}</Text>
           <AppLink to={RoutePath.articles_create} className={cl.NewPostText}>{t('Create new post')}</AppLink>
-          <Dropdown
-            items={[
-              ...(isAdminPanelAvailable ? [{
-                content: t('Admin'),
-                href: RoutePath.admin_panel,
-              }] : []),
-              {
-                content: t('Profile'),
-                href: RoutePath.profile + authData.id,
-              },
-              {
-                content: t('Logout'),
-                onclick: onLogout,
-              },
-            ]}
-            trigger={<Avatar size={30} src={authData.avatar} alt={authData.username} />}
-          />
+          <HStack gap="16">
+            <NotificationButton />
+            <AvatarDropdown />
+          </HStack>
         </Container>
       </header>
     );

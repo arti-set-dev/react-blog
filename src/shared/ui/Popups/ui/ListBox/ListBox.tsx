@@ -4,7 +4,8 @@ import {
 import { Fragment, ReactNode, useState } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import cl from './ListBox.module.scss';
-import { Text } from '../Text/Text';
+import { Text } from '../../../Text/Text';
+import popupCl from '../../styles/Popups.module.scss';
 
 export interface ListBoxItem {
   value: string;
@@ -31,7 +32,7 @@ export const Listbox = (props: ListBoxProps) => {
     <HListBox
       disabled={readonly}
       as="div"
-      className={classNames(cl.ListBox, {}, [className])}
+      className={classNames(popupCl.Popup, {}, [className])}
       value={value}
       onChange={onChange}
     >

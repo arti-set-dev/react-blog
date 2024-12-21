@@ -1,0 +1,15 @@
+.Popover {
+  position: relative;
+}
+
+.Panel {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--radius-s);
+  padding: var(--gap);
+  width: 400px;
+  box-shadow: var(--box-shadow);
+  background-color: var(--bg-color);
+  gap: var(--gap-mini);
+}

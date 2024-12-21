@@ -1,0 +1,47 @@
+import { useTranslation } from 'react-i18next';
+import { classNames } from 'shared/lib/classNames/classNames';
+import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
+import { VStack } from 'shared/ui/Stack';
+import { Text, TextTheme } from 'shared/ui/Text/Text';
+import { useNotificationList } from '../../api/notificationApi';
+import { NotificationItem } from '../../ui/NotificationItem/NotificationItem';
+import cl from './NotificationList.module.scss';
+
+interface NotificationListProps {
+  className?: string;
+}
+
+export const NotificationList = (props: NotificationListProps) => {
+  const { className } = props;
+  const { t } = useTranslation();
+  const { data: notifications, error, isLoading } = useNotificationList(null, {
+    pollingInterval: 5000,
+  });
+
+  if (isLoading) {
+    return (
+      <VStack tag="div" className={classNames(cl.NotificationList, {}, [className])}>
+        <Skeleton width="100%" border="10px" />
+        <Skeleton width="100%" border="10px" />
+        <Skeleton width="100%" border="10px" />
+        <Skeleton width="100%" border="10px" />
+      </VStack>
+    );
+  }
+
+  if (error) {
+    return (
+      <VStack tag="div" className={classNames(cl.NotificationList, {}, [className])}>
+        <Text theme={TextTheme.ERROR}>{t('There was an error loading notifications')}</Text>
+      </VStack>
+    );
+  }
+
+  return (
+    <VStack tag="ul" className={classNames(cl.NotificationList, {}, [className])}>
+      {notifications?.map((notification) => (
+        <NotificationItem notification={notification} key={notification.id} />
+      ))}
+    </VStack>
+  );
+};
