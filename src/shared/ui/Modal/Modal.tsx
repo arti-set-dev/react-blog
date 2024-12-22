@@ -4,6 +4,7 @@ import React, {
 import { classNames, Mods } from 'shared/lib/classNames/classNames';
 import CloseIcon from 'shared/assets/icons/close-icon.svg';
 import { useTranslation } from 'react-i18next';
+import { Overlay } from '../Overlay/Overlay';
 import { Button, ButtonTheme } from '../Button/Button';
 import cl from './Modal.module.scss';
 import { Portal } from '../Portal/Portal';
@@ -67,9 +68,9 @@ export const Modal = (props: ModalProps) => {
 
   return (
     <Portal>
-      <div
+      <Overlay
+        isOpen={isOpen}
         onClick={closeHandler}
-        className={classNames(cl.ModalOverlay, mods, [className])}
       >
         <div onClick={onWindowClick} className={classNames(cl.ModalWindow, mods, [className])}>
           <Button onClick={closeHandler} theme={ButtonTheme.ICON} className={cl.ModalBtn} aria-label={t('close modal')}>
@@ -77,7 +78,7 @@ export const Modal = (props: ModalProps) => {
           </Button>
           {children}
         </div>
-      </div>
+      </Overlay>
     </Portal>
   );
 };

@@ -4,6 +4,7 @@
 
 .Panel {
   position: absolute;
+  z-index: var(--modal-z-index);
   display: flex;
   flex-direction: column;
   border-radius: var(--radius-s);

@@ -14,6 +14,7 @@ import { AppLink } from 'shared/ui/AppLink/AppLink';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { Container } from 'shared/ui/Container/Container';
+import { Drawer } from 'shared/ui/Drawer/Drawer';
 import { Popover } from 'shared/ui/Popups';
 import { Dropdown } from 'shared/ui/Popups/ui/Dropdown/Dropdown';
 import { Icon } from 'shared/ui/Icon/Icon';
@@ -30,6 +31,7 @@ export const Navbar = memo((props: NavbarProps) => {
   const { className } = props;
   const { t } = useTranslation();
   const [isAuthModal, setIsAuthModal] = useState(false);
+
   const authData = useSelector(getUserAuthData);
 
   const onCloseModal = useCallback(() => {
