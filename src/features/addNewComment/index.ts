@@ -1,5 +1,5 @@
 import { getCommentFormText } from './model/selectors/addNewCommentSelectors';
 import type { AddNewCommentSchema } from './model/types/addNewComment';
-import { AddCommentFormAsync } from './ui/AddCommentForm/AddCommentForm.async';
+import { AddCommentForm } from './ui/AddCommentForm/AddCommentForm';
 
-export { AddNewCommentSchema, AddCommentFormAsync as AddCommentForm, getCommentFormText };
+export { AddNewCommentSchema, AddCommentForm, getCommentFormText };

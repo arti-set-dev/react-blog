@@ -17,7 +17,7 @@ export interface AddCommentFormProps {
     onSendComment: (text: string) => void;
 }
 
-const AddCommentForm = memo((props: AddCommentFormProps) => {
+export const AddCommentForm = memo((props: AddCommentFormProps) => {
   const { className, onSendComment } = props;
   const { t } = useTranslation();
   const text = useSelector(getCommentFormText);
@@ -53,5 +53,3 @@ const AddCommentForm = memo((props: AddCommentFormProps) => {
     </DynamicModuleLoader>
   );
 });
-
-export default AddCommentForm;

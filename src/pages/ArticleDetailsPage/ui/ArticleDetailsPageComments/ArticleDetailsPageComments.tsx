@@ -48,9 +48,7 @@ export const ArticleDetailsPageComments = memo((props: ArticleDetailsPageComment
       >
         {t('Comments')}
       </Text>
-      <Suspense fallback={<Skeleton width="100%" height={40} border="20" />}>
-        <AddCommentForm onSendComment={onSendComment} />
-      </Suspense>
+      <AddCommentForm onSendComment={onSendComment} />
       <Comments
         error={commentsError}
         isLoading={commentsIsloading}
