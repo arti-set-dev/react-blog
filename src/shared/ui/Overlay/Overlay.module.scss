@@ -13,6 +13,10 @@
   cursor: pointer;
   pointer-events: none;
 
+  &.OverflowOff {
+    overflow: hidden;
+  }
+
   &.opened {
     opacity: 1;
     visibility: visible;

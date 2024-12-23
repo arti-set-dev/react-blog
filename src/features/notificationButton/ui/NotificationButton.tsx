@@ -3,6 +3,7 @@ import { useState, useCallback } from 'react';
 import NotificationIcon from 'shared/assets/icons/notification-icon.svg';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
+import { AnimationProvider } from 'shared/lib/components/AnimationProvider';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { Drawer } from 'shared/ui/Drawer/Drawer';
 import { Icon } from 'shared/ui/Icon/Icon';
@@ -43,9 +44,11 @@ export const NotificationButton = (props: NotificationButtonProps) => {
       </BrowserView>
       <MobileView>
         {trigger}
-        <Drawer lazy isOpen={isOpen} onClose={onCloseDrower}>
-          <NotificationList />
-        </Drawer>
+        <AnimationProvider>
+          <Drawer lazy isOpen={isOpen} onClose={onCloseDrower}>
+            <NotificationList />
+          </Drawer>
+        </AnimationProvider>
       </MobileView>
     </>
   );

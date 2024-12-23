@@ -9,7 +9,7 @@ export const useModal = (props: UseModalProps) => {
   const { onClose, isOpen } = props;
   const [isMounted, setIsMounted] = useState(false);
 
-  const close = () => {
+  const closing = () => {
     if (onClose) {
       onClose();
     }
@@ -42,6 +42,6 @@ export const useModal = (props: UseModalProps) => {
   };
 
   return {
-    close, onWindowClick, isMounted,
+    closing, onWindowClick, isMounted,
   };
 };

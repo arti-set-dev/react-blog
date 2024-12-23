@@ -23,7 +23,7 @@ export const Modal = (props: ModalProps) => {
     children, className, isOpen, onClose, lazy,
   } = props;
 
-  const { close, onWindowClick, isMounted } = useModal({
+  const { closing, onWindowClick, isMounted } = useModal({
     isOpen,
     onClose,
   });
@@ -42,10 +42,10 @@ export const Modal = (props: ModalProps) => {
     <Portal>
       <Overlay
         isOpen={isOpen}
-        onClick={close}
+        onClick={closing}
       >
         <div onClick={onWindowClick} className={classNames(cl.ModalWindow, mods, [className])}>
-          <Button onClick={close} theme={ButtonTheme.ICON} className={cl.ModalBtn} aria-label={t('close modal')}>
+          <Button onClick={closing} theme={ButtonTheme.ICON} className={cl.ModalBtn} aria-label={t('close modal')}>
             <CloseIcon />
           </Button>
           {children}
