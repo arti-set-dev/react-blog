@@ -43,7 +43,7 @@ export const NotificationButton = (props: NotificationButtonProps) => {
       </BrowserView>
       <MobileView>
         {trigger}
-        <Drawer isOpen={isOpen} onClose={onCloseDrower}>
+        <Drawer lazy isOpen={isOpen} onClose={onCloseDrower}>
           <NotificationList />
         </Drawer>
       </MobileView>
