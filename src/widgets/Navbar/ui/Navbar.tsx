@@ -1,26 +1,26 @@
-import { NotificationList } from 'entitie/Notification';
-import {
-  getUserAuthData, userActions, isUserAdmin, isUserManager,
-} from 'entitie/User';
-import { LoginModal } from 'features/AuthByUsername';
-import { AvatarDropdown } from 'features/avatarDropdown';
-import { NotificationButton } from 'features/notificationButton';
 import { memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
-import { RoutePath } from 'shared/config/routeConfig/routeConfig';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { AppLink } from 'shared/ui/AppLink/AppLink';
-import { Avatar } from 'shared/ui/Avatar/Avatar';
-import { Button, ButtonTheme } from 'shared/ui/Button/Button';
-import { Container } from 'shared/ui/Container/Container';
-import { Drawer } from 'shared/ui/Drawer/Drawer';
-import { Popover } from 'shared/ui/Popups';
-import { Dropdown } from 'shared/ui/Popups/ui/Dropdown/Dropdown';
-import { Icon } from 'shared/ui/Icon/Icon';
-import { HStack } from 'shared/ui/Stack';
-import { Text, TextSize } from 'shared/ui/Text/Text';
-import NotificationIcon from 'shared/assets/icons/notification-icon.svg';
+import { NotificationList } from '@/entities/Notification';
+import {
+  getUserAuthData, userActions, isUserAdmin, isUserManager,
+} from '@/entities/User';
+import { LoginModal } from '@/features/AuthByUsername';
+import { AvatarDropdown } from '@/features/avatarDropdown';
+import { NotificationButton } from '@/features/notificationButton';
+import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { AppLink } from '@/shared/ui/AppLink/AppLink';
+import { Avatar } from '@/shared/ui/Avatar/Avatar';
+import { Button, ButtonTheme } from '@/shared/ui/Button/Button';
+import { Container } from '@/shared/ui/Container/Container';
+import { Drawer } from '@/shared/ui/Drawer/Drawer';
+import { Popover } from '@/shared/ui/Popups';
+import { Dropdown } from '@/shared/ui/Popups/ui/Dropdown/Dropdown';
+import { Icon } from '@/shared/ui/Icon/Icon';
+import { HStack } from '@/shared/ui/Stack';
+import { Text, TextSize } from '@/shared/ui/Text/Text';
+import NotificationIcon from '@/shared/assets/icons/notification-icon.svg';
 import cl from './Navbar.module.scss';
 
 interface NavbarProps {

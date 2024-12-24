@@ -59,7 +59,7 @@
         "body": [
             "import { createAsyncThunk } from '@reduxjs/toolkit';",
             "import { ThunkConfig } from 'app/providers/StoreProvider';",
-            "import {  } from 'entitie/';",
+            "import {  } from 'entities/';",
             "",
             "interface $1Props {",
             "",

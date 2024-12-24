@@ -1,16 +1,16 @@
 import { memo, useCallback, Suspense } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
-import { Loader } from 'shared/ui/Loader/Loader';
-import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
+import { useSelector } from 'react-redux';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Loader } from '@/shared/ui/Loader/Loader';
+import { Skeleton } from '@/shared/ui/Skeleton/Skeleton';
 import {
   TextSize, TextTheme, TextWeight, Text,
-} from 'shared/ui/Text/Text';
-import { AddCommentForm } from 'features/addNewComment';
-import { Comments } from 'entitie/Comment';
-import { useSelector } from 'react-redux';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
+} from '@/shared/ui/Text/Text';
+import { AddCommentForm } from '@/features/addNewComment';
+import { Comments } from '@/entities/Comment';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle';
 import { getArticleCommentsError, getArticleCommentsIsloading } from '../../model/selectors/comments';

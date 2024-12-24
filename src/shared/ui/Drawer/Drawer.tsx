@@ -1,7 +1,7 @@
 import React, { memo, useCallback, useEffect } from 'react';
-import { classNames, Mods } from 'shared/lib/classNames/classNames';
-import { useAnimationLibs } from 'shared/lib/components/AnimationProvider';
-import { useModal } from 'shared/lib/hooks/useModal/useModal';
+import { classNames, Mods } from '@/shared/lib/classNames/classNames';
+import { useAnimationLibs } from '@/shared/lib/components/AnimationProvider';
+import { useModal } from '@/shared/lib/hooks/useModal/useModal';
 import { Loader } from '../Loader/Loader';
 import { Portal } from '../Portal/Portal';
 import { Overlay } from '../Overlay/Overlay';

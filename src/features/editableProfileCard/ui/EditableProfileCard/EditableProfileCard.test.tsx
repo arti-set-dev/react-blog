@@ -1,12 +1,12 @@
 import userEvent from '@testing-library/user-event';
 import { render, screen } from '@testing-library/react';
-import { Country } from 'entitie/Country';
-import { Currency } from 'entitie/Currency';
-import { Profile } from 'entitie/Profile';
 import { withTranslation } from 'react-i18next';
-import { $api } from 'shared/api/api';
-import { renderWithTranslation } from 'shared/lib/tests/renderWithTranslation/renderWithTranslation';
-import { componentRender } from 'shared/lib/tests/componentRender/componentRender';
+import { Country } from '@/entities/Country';
+import { Currency } from '@/entities/Currency';
+import { Profile } from '@/entities/Profile';
+import { $api } from '@/shared/api/api';
+import { renderWithTranslation } from '@/shared/lib/tests/renderWithTranslation/renderWithTranslation';
+import { componentRender } from '@/shared/lib/tests/componentRender/componentRender';
 import { profileReducer } from '../../model/slice/profileSlice';
 import { EditableProfileCard } from './EditableProfileCard';
 

@@ -1,8 +1,8 @@
 import { Menu } from '@headlessui/react';
-import { classNames } from 'shared/lib/classNames/classNames';
 import { Fragment } from 'react/jsx-runtime';
 import { ReactNode } from 'react';
-import { DropdownDirection } from 'app/types/ui';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { DropdownDirection } from '@/app/types/ui';
 import { mapDirectionClass } from '../../styles/consts';
 import cl from './Dropdown.module.scss';
 import { Button } from '../../../Button/Button';

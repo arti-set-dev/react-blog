@@ -1,4 +1,4 @@
-import { DropdownDirection } from 'app/types/ui';
+import { DropdownDirection } from '@/app/types/ui';
 import cl from './Popups.module.scss';
 
 export const mapDirectionClass: Record<DropdownDirection, string> = {

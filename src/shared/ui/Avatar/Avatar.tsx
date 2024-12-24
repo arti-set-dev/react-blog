@@ -1,5 +1,5 @@
 import { CSSProperties, FC, useMemo } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import cl from './Avatar.module.scss';
 
 export enum AvatarLoading {

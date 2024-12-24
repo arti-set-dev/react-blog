@@ -2,18 +2,18 @@ import {
   AnyAction, CombinedState, EnhancedStore, Reducer, ReducersMapObject, Store,
 } from '@reduxjs/toolkit';
 import { AxiosInstance } from 'axios';
-import { AddNewCommentSchema } from 'features/addNewComment';
-import { ArticleDetailsSchema } from 'entitie/Article';
-import { CounterSchema } from 'entitie/Counter';
-import { UserSchema } from 'entitie/User';
-import { LoginSchema } from 'features/AuthByUsername';
-import { ProfileSchema } from 'features/editableProfileCard';
-import { ArticleDetailsCommentsSchema, ArticleDetailsRecommendationsSchema } from 'pages/ArticleDetailsPage';
 import { NavigateOptions, To } from 'react-router-dom';
-import { ArticlesPageSchema } from 'pages/ArticlesPage';
-import { ScrollSaveSchema } from 'widgets/Page';
-import { ArticleDetailsPageSchema } from 'pages/ArticleDetailsPage/model/types';
-import { rtkApi } from 'shared/api/rtkApi';
+import { AddNewCommentSchema } from '@/features/addNewComment';
+import { ArticleDetailsSchema } from '@/entities/Article';
+import { CounterSchema } from '@/entities/Counter';
+import { UserSchema } from '@/entities/User';
+import { LoginSchema } from '@/features/AuthByUsername';
+import { ProfileSchema } from '@/features/editableProfileCard';
+import { ArticleDetailsCommentsSchema, ArticleDetailsRecommendationsSchema } from '@/pages/ArticleDetailsPage';
+import { ArticlesPageSchema } from '@/pages/ArticlesPage';
+import { ScrollSaveSchema } from '@/widgets/Page';
+import { ArticleDetailsPageSchema } from '@/pages/ArticleDetailsPage/model/types';
+import { rtkApi } from '@/shared/api/rtkApi';
 import { createReducerManager } from './reducerManager';
 
 export interface StateSchema {

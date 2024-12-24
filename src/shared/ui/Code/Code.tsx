@@ -2,10 +2,10 @@ import {
   memo, ReactNode, useCallback, useState,
 } from 'react';
 import { useTranslation } from 'react-i18next';
-import { classNames } from 'shared/lib/classNames/classNames';
-import CopyIcon from 'shared/assets/icons/copy-icon.svg';
-import WarningIcon from 'shared/assets/icons/warning-icon.svg';
-import CheckIconSuccess from 'shared/assets/icons/check-icon.svg';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import CopyIcon from '@/shared/assets/icons/copy-icon.svg';
+import WarningIcon from '@/shared/assets/icons/warning-icon.svg';
+import CheckIconSuccess from '@/shared/assets/icons/check-icon.svg';
 import { Button, ButtonTheme } from '../Button/Button';
 import cl from './Code.module.scss';
 

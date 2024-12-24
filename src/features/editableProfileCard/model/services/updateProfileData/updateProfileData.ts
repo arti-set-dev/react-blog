@@ -1,9 +1,9 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { ThunkConfig } from 'app/providers/StoreProvider';
 import axios, { AxiosResponse } from 'axios';
-import { Profile } from 'entitie/Profile';
-import { User, userActions } from 'entitie/User';
-import { USER_LOCALSTORAGE_KEY } from 'shared/const/localstorage';
+import { ThunkConfig } from '@/app/providers/StoreProvider';
+import { Profile } from '@/entities/Profile';
+import { User, userActions } from '@/entities/User';
+import { USER_LOCALSTORAGE_KEY } from '@/shared/const/localstorage';
 import { ValidateProfileError } from '../../consts/consts';
 import { getProfileForm } from '../../selectors/getProfileForm/getProfileForm';
 import { validateProfileData } from '../validateProfileData/validateProfileData';

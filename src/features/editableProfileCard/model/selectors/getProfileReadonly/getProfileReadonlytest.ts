@@ -1,6 +1,6 @@
-import { StateSchema } from 'app/providers/StoreProvider';
-import { Country } from 'entitie/Country';
-import { Currency } from 'entitie/Currency';
+import { StateSchema } from '@/app/providers/StoreProvider';
+import { Country } from '@/entities/Country';
+import { Currency } from '@/entities/Currency';
 import { getProfileReadonly } from './getProfileReadonly';
 
 describe('getProfileReadonly.test', () => {

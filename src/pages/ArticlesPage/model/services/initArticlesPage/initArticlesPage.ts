@@ -1,9 +1,9 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { ThunkConfig } from 'app/providers/StoreProvider';
-import { Article, ArticleSortField, ArticleType } from 'entitie/Article';
-import { getArticleCommentsIsloading } from 'pages/ArticleDetailsPage/model/selectors/comments';
 import { useSelector } from 'react-redux';
-import { SortOrder } from 'shared/types';
+import { ThunkConfig } from '@/app/providers/StoreProvider';
+import { Article, ArticleSortField, ArticleType } from '@/entities/Article';
+import { getArticleCommentsIsloading } from '@/pages/ArticleDetailsPage/model/selectors/comments';
+import { SortOrder } from '@/shared/types';
 import {
   getArticlesPageIsHasMore,
   getArticlesPageIsInited,

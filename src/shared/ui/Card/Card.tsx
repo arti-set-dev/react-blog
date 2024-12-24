@@ -1,6 +1,6 @@
 import { memo, ReactNode } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import cl from './Card.module.scss';
 
 interface CardProps {

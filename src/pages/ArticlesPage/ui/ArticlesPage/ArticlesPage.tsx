@@ -1,17 +1,17 @@
 /* eslint-disable max-len */
-import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { memo, useCallback } from 'react';
+import { useSelector } from 'react-redux';
+import { useSearchParams } from 'react-router-dom';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import {
   Article, ArticleList, ArticleView, ArticleViewSwitcher,
-} from 'entitie/Article';
-import { DynamicModuleLoader, ReducerList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
-import { useSelector } from 'react-redux';
-import { Page } from 'widgets/Page/ui/Page';
-import { Text } from 'shared/ui/Text/Text';
-import { useSearchParams } from 'react-router-dom';
+} from '@/entities/Article';
+import { DynamicModuleLoader, ReducerList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { Page } from '@/widgets/Page/ui/Page';
+import { Text } from '@/shared/ui/Text/Text';
 import {
   getArticlesPageIsError, getArticlesPageIsHasMore, getArticlesPageIsInited, getArticlesPageIsLoading, getArticlesPageIsNum, getArticlesPageIsView,
 } from '../../model/selectors/articlesPageSelectors';

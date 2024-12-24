@@ -1,17 +1,17 @@
 import { useEffect } from '@storybook/addons';
-import { ReduxStoreWithManager } from 'app/providers/StoreProvider/config/StateSchema';
-import { getLoginState } from 'entitie/User/model/selectors/getLoginState/getLoginState';
 import React, { FC, memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector, useStore } from 'react-redux';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { DynamicModuleLoader, ReducerList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { Button, ButtonTheme, ButtonType } from 'shared/ui/Button/Button';
-import { Input } from 'shared/ui/Input/Input';
+import { getLoginState } from '@/entities/User/model/selectors/getLoginState/getLoginState';
+import { ReduxStoreWithManager } from '@/app/providers/StoreProvider/config/StateSchema';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { DynamicModuleLoader, ReducerList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { Button, ButtonTheme, ButtonType } from '@/shared/ui/Button/Button';
+import { Input } from '@/shared/ui/Input/Input';
 import {
   Text, TextSize, TextTheme, TextWeight,
-} from 'shared/ui/Text/Text';
+} from '@/shared/ui/Text/Text';
 import { getLoginError } from '../../model/selectors/getLoginError/getLoginError';
 import { loginActions, loginReducer } from '../../model/slice/loginSlice';
 import { loginByUsername } from '../../model/services/loginByUsername/loginByUsername';

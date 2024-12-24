@@ -1,9 +1,9 @@
-import { getUserAuthData } from 'entitie/User';
 import { memo } from 'react';
 import { useSelector } from 'react-redux';
-import { RoutePath } from 'shared/config/routeConfig/routeConfig';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { AppLink } from 'shared/ui/AppLink/AppLink';
+import { getUserAuthData } from '@/entities/User';
+import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { AppLink } from '@/shared/ui/AppLink/AppLink';
 import { SidebarItemType } from '../../model/types/sidebar';
 import cl from './SidebarItem.module.scss';
 

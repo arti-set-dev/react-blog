@@ -1,6 +1,6 @@
-import { Article, ArticleDetailsSchema } from 'entitie/Article';
+import { Article, ArticleDetailsSchema } from '@/entities/Article';
 import { addCommentForArticle }
-  from 'pages/ArticleDetailsPage/model/services/addCommentForArticle/addCommentForArticle';
+  from '@/pages/ArticleDetailsPage/model/services/addCommentForArticle/addCommentForArticle';
 import { AddNewCommentSchema } from '../types/addNewComment';
 import { addNewCommentActions, addNewCommentReducer } from './addNewCommentSlice';
 

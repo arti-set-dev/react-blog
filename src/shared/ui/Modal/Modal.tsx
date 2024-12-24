@@ -1,10 +1,10 @@
 import React, {
   FC, useCallback, useEffect, useState, ReactNode,
 } from 'react';
-import { classNames, Mods } from 'shared/lib/classNames/classNames';
-import CloseIcon from 'shared/assets/icons/close-icon.svg';
 import { useTranslation } from 'react-i18next';
-import { useModal } from 'shared/lib/hooks/useModal/useModal';
+import { classNames, Mods } from '@/shared/lib/classNames/classNames';
+import CloseIcon from '@/shared/assets/icons/close-icon.svg';
+import { useModal } from '@/shared/lib/hooks/useModal/useModal';
 import { Overlay } from '../Overlay/Overlay';
 import { Button, ButtonTheme } from '../Button/Button';
 import cl from './Modal.module.scss';

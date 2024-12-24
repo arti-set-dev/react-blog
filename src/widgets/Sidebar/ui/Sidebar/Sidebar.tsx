@@ -1,19 +1,19 @@
 import {
   FC, memo, useMemo, useState,
 } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { Button, ButtonSize, ButtonTheme } from 'shared/ui/Button/Button';
-import ArrIcon from 'shared/assets/icons/arrow-icon.svg';
-import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
-import { LangSwitcher } from 'widgets/LangSwitcher';
 import { useTranslation } from 'react-i18next';
-import { AppLink } from 'shared/ui/AppLink/AppLink';
-import { List } from 'shared/ui/List/List';
-import HomeIcon from 'shared/assets/icons/home-icon.svg';
-import AboutIcon from 'shared/assets/icons/about-icon.svg';
-import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { useSelector } from 'react-redux';
-import { VStack } from 'shared/ui/Stack/VStack/VStack';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Button, ButtonSize, ButtonTheme } from '@/shared/ui/Button/Button';
+import ArrIcon from '@/shared/assets/icons/arrow-icon.svg';
+import { ThemeSwitcher } from '@/widgets/ThemeSwitcher';
+import { LangSwitcher } from '@/widgets/LangSwitcher';
+import { AppLink } from '@/shared/ui/AppLink/AppLink';
+import { List } from '@/shared/ui/List/List';
+import HomeIcon from '@/shared/assets/icons/home-icon.svg';
+import AboutIcon from '@/shared/assets/icons/about-icon.svg';
+import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
+import { VStack } from '@/shared/ui/Stack/VStack/VStack';
 import { getSidebarItems } from '../../model/selector/getSidebarItems';
 import cl from './Sidebar.module.scss';
 import { SidebarItem } from '../SidebarItem/SidebarItem';

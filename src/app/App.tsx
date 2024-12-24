@@ -3,21 +3,21 @@ import {
   Link, Route, Routes, useNavigate,
 } from 'react-router-dom';
 
-import 'app/styles/index.scss';
-import { AboutPageAsync } from 'pages/AboutPage/ui/AboutPage.async';
-import { MainPageAsync } from 'pages/MainPage/ui/MainPage.async';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { useTheme } from 'app/providers/ThemeProvider/lib/useTheme';
-import { MainPage } from 'pages/MainPage';
-import { AboutPage } from 'pages/AboutPage';
-import { AppRouter } from 'app/providers/router';
-import { Navbar } from 'widgets/Navbar';
-import { Sidebar } from 'widgets/Sidebar';
+import '@/app/styles/index.scss';
 import { useTranslation } from 'react-i18next';
-import { Loader, LoaderOffset } from 'shared/ui/Loader/Loader';
-import { Modal } from 'shared/ui/Modal/Modal';
 import { useDispatch, useSelector } from 'react-redux';
-import { getUserInited, userActions } from 'entitie/User';
+import { AboutPageAsync } from '@/pages/AboutPage/ui/AboutPage.async';
+import { MainPageAsync } from '@/pages/MainPage/ui/MainPage.async';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { useTheme } from '@/app/providers/ThemeProvider/lib/useTheme';
+import { MainPage } from '@/pages/MainPage';
+import { AboutPage } from '@/pages/AboutPage';
+import { AppRouter } from '@/app/providers/router';
+import { Navbar } from '@/widgets/Navbar';
+import { Sidebar } from '@/widgets/Sidebar';
+import { Loader, LoaderOffset } from '@/shared/ui/Loader/Loader';
+import { Modal } from '@/shared/ui/Modal/Modal';
+import { getUserInited, userActions } from '@/entities/User';
 
 const App = () => {
   const { theme } = useTheme();

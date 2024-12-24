@@ -1,11 +1,11 @@
 /* eslint-disable max-len */
-import { ArticleBlockType } from 'entitie/Article/model/types/articleType';
-import { UserRole } from 'entitie/User';
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
-import { Article, ArticleType } from 'entitie/Article';
 import withMock from 'storybook-addon-mock';
+import { ArticleBlockType } from '@/entities/Article/model/types/articleType';
+import { UserRole } from '@/entities/User';
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
+import { Article, ArticleType } from '@/entities/Article';
 import ArticleDetailsPage from './ArticleDetailsPage';
 
 export default {
