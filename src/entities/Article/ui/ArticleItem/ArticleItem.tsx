@@ -56,7 +56,7 @@ export const ArticleItem = memo((props: ArticleItemProps) => {
     const textBlocks = article.blocks.find((block) => block.type === ArticleBlockType.TEXT) as ArticleTextBlock;
     return (
       <li className={classNames(cl.ArticleItem, {}, [className, cl[view]])}>
-        <Card className={cl.Card}>
+        <Card isHovered className={cl.Card}>
           <div className={cl.Header}>
             <Avatar className={cl.Avatar} size={30} src={article.user.avatar} alt={article.user.username} />
             <Text className={cl.Username} size={TextSize.M} weight={TextWeight.BOLD}>{article.user.username}</Text>
@@ -85,7 +85,7 @@ export const ArticleItem = memo((props: ArticleItemProps) => {
     <li className={classNames(cl.ArticleItem, {}, [className, cl[view]])}>
       {blank
         ? (
-          <Card className={cl.Card}>
+          <Card isHovered className={cl.Card}>
             <time dateTime={article.createdAt} className={cl.CreatedAt}>{article.createdAt}</time>
             <AppLink to={`${RoutePath.articles}/${article.id}`} target="_blank">
               <img className={cl.Img} height={200} src={article.img} alt={article.title} />

@@ -47,7 +47,7 @@ export const ArticleItemSkeleton = memo((props: ArticleItemSkeletonProps) => {
   }
 
   return (
-    <li className={classNames('', {}, [className, cl[view]])}>
+    <li className={classNames(cl.ArticleItem, {}, [className, cl[view]])}>
       <Card className={classNames(cl.Card, {}, [className])}>
         <Skeleton width="100%" height="200px" />
         <div className={cl.Content}>

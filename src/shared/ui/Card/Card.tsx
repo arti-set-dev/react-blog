@@ -6,14 +6,17 @@ import cl from './Card.module.scss';
 interface CardProps {
     className?: string;
     children: ReactNode;
+    isHovered?: boolean;
 }
 
 export const Card = memo((props: CardProps) => {
-  const { className, children, ...otherProps } = props;
+  const {
+    className, children, isHovered, ...otherProps
+  } = props;
   const { t } = useTranslation();
 
   return (
-    <article {...otherProps} className={classNames(cl.Card, {}, [className])}>
+    <article {...otherProps} className={classNames(cl.Card, { [cl.hovered]: isHovered }, [className])}>
       {children}
     </article>
   );

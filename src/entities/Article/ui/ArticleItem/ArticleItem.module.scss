@@ -2,6 +2,11 @@
   list-style: none;
 
   .Card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
     height: 100%;
   }
 }

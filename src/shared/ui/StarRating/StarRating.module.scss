@@ -1,0 +1,16 @@
+.Icon {
+  fill: none;
+}
+
+.default {
+  fill: none;
+}
+
+.Selected {
+  cursor: default;
+}
+
+.hovered {
+  fill: var(--text-primary-color);
+  cursor: pointer;
+}
