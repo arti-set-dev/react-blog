@@ -1322,13 +1322,6 @@
   ],
   "article-ratings": [
     {
-      "id": "1",
-      "rate": 4,
-      "feedback": "Хорошая статья",
-      "userId": "1",
-      "articleId": "1"
-    },
-    {
       "id": "2",
       "rate": 4,
       "feedback": "Хорошая статья",
@@ -1383,6 +1376,13 @@
       "rate": 5,
       "feedback": "Good!",
       "id": "fMSRXkv"
+    },
+    {
+      "userId": "1",
+      "articleId": "1",
+      "rate": 4,
+      "feedback": "Nice!",
+      "id": "-Kvua4b"
     }
   ],
   "profile-ratings": [
