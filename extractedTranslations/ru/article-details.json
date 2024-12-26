@@ -1,5 +1,8 @@
 {
   "Article Details Page": "Article Details Page",
+  "Leave your feedback on the article, it helps improve the quality": "Leave your feedback on the article, it helps improve the quality",
+  "Rate this article": "Rate this article",
   "There was an error loading the article": "There was an error loading the article",
-  "There was an error when downloading data": "There was an error when downloading data"
+  "There was an error when downloading data": "There was an error when downloading data",
+  "article id is not defined": "article id is not defined"
 }

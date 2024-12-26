@@ -8,7 +8,6 @@ const MainPage = () => {
   return (
     <Page>
       <h1>{t('Main Page')}</h1>
-      <RatingCard title={t('Your rating')} feedbackTitle={t('Leave a review about the article')} hasFeedback />
     </Page>
   );
 };

@@ -18,7 +18,7 @@ export const StarRating = (props: StarRatingProps) => {
     className, selectStars = 0, onSelect, size = 30,
   } = props;
 
-  const [currentStarsCount, setCurrentStarsCount] = useState(0);
+  const [currentStarsCount, setCurrentStarsCount] = useState(selectStars);
   const [isSelected, setIsSelected] = useState(Boolean(selectStars));
 
   const mods: Mods = {
