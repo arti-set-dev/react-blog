@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Icon } from '@/shared/ui/Icon/Icon';
+import { Icon } from '../Icon/Icon';
 import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 import cl from './StarRating.module.scss';
 import StarIcon from '@/shared/assets/icons/star-icon.svg';
