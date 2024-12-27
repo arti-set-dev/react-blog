@@ -3,6 +3,7 @@ import {
 } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
+import { RoutePath } from '@/shared/const/router';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Button, ButtonSize, ButtonTheme } from '@/shared/ui/Button/Button';
 import ArrIcon from '@/shared/assets/icons/arrow-icon.svg';
@@ -12,7 +13,6 @@ import { AppLink } from '@/shared/ui/AppLink/AppLink';
 import { List } from '@/shared/ui/List/List';
 import HomeIcon from '@/shared/assets/icons/home-icon.svg';
 import AboutIcon from '@/shared/assets/icons/about-icon.svg';
-import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
 import { VStack } from '@/shared/ui/Stack/VStack/VStack';
 import { getSidebarItems } from '../../model/selector/getSidebarItems';
 import cl from './Sidebar.module.scss';
