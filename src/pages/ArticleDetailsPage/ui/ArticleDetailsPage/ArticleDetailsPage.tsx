@@ -7,7 +7,7 @@ import { ArticleRecommendationsList } from '@/features/articleRecommendationsLis
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { DynamicModuleLoader, ReducerList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { Text, TextSize } from '@/shared/ui/Text/Text';
-import { Page } from '@/widgets/Page/ui/Page';
+import { Page } from '@/widgets/Page';
 import { articleDetailsPageReducer } from '../../model/slices';
 import { ArticleDetailsPageComments } from '../ArticleDetailsPageComments/ArticleDetailsPageComments';
 import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';

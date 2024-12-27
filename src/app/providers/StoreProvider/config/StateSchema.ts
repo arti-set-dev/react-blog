@@ -9,10 +9,9 @@ import { CounterSchema } from '@/entities/Counter';
 import { UserSchema } from '@/entities/User';
 import { LoginSchema } from '@/features/AuthByUsername';
 import { ProfileSchema } from '@/features/editableProfileCard';
-import { ArticleDetailsCommentsSchema, ArticleDetailsRecommendationsSchema } from '@/pages/ArticleDetailsPage';
+import { ArticleDetailsPageSchema } from '@/pages/ArticleDetailsPage';
 import { ArticlesPageSchema } from '@/pages/ArticlesPage';
 import { ScrollSaveSchema } from '@/widgets/Page';
-import { ArticleDetailsPageSchema } from '@/pages/ArticleDetailsPage/model/types';
 import { rtkApi } from '@/shared/api/rtkApi';
 import { createReducerManager } from './reducerManager';
 

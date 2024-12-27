@@ -10,7 +10,7 @@ import {
 import { DynamicModuleLoader, ReducerList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
-import { Page } from '@/widgets/Page/ui/Page';
+import { Page } from '@/widgets/Page';
 import { Text } from '@/shared/ui/Text/Text';
 import {
   getArticlesPageIsError, getArticlesPageIsHasMore, getArticlesPageIsInited, getArticlesPageIsLoading, getArticlesPageIsNum, getArticlesPageIsView,

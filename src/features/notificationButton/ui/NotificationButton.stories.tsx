@@ -1,7 +1,6 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import withMock from 'storybook-addon-mock';
-import { Primary } from '@/entities/Profile/ui/ProfileCard/ProfileCard.stories';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 
 import { NotificationButton } from './NotificationButton';

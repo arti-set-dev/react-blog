@@ -4,10 +4,10 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import {
   TextSize, TextTheme, TextWeight, Text,
 } from '@/shared/ui/Text/Text';
-import { ArticleList } from '@/entities/Article';
+import { ArticleList, ArticleListDisplay } from '@/entities/Article';
 import { VStack } from '@/shared/ui/Stack';
 import { rtkApi } from '@/shared/api/rtkApi';
-import { ArticleListDisplay } from '@/entities/Article/ui/ArticleList/ArticleList';
+// eslint-disable-next-line import/no-duplicates
 import { Loader } from '@/shared/ui/Loader/Loader';
 import { useArticleRecommendationsList } from '../../api/ArticleRecommendationsApi';
 import cl from './ArticleRecommendationsList.module.scss';

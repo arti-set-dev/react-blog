@@ -6,8 +6,6 @@ import {
 import '@/app/styles/index.scss';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
-import { AboutPageAsync } from '@/pages/AboutPage/ui/AboutPage.async';
-import { MainPageAsync } from '@/pages/MainPage/ui/MainPage.async';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { useTheme } from '@/app/providers/ThemeProvider/lib/useTheme';
 import { MainPage } from '@/pages/MainPage';

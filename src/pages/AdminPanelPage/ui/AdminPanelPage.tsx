@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { Listbox } from '@/shared/ui/Popups/ui/ListBox/ListBox';
-import { Page } from '@/widgets/Page/ui/Page';
+import { Page } from '@/widgets/Page';
 
 const AdminPanelPage = () => {
   const { t } = useTranslation('about');

@@ -1,7 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { ThunkConfig } from '@/app/providers/StoreProvider';
 import { Article } from '@/entities/Article';
-import { getArticleCommentsIsloading } from '@/pages/ArticleDetailsPage/model/selectors/comments';
+import { getArticleCommentsIsloading } from '@/pages/ArticleDetailsPage';
 import {
   getArticlesPageIsHasMore,
   getArticlesPageIsLimit, getArticlesPageIsNum,

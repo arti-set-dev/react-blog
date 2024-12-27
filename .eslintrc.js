@@ -57,6 +57,7 @@ module.exports = {
     'no-param-reassign': 'off',
     'no-undef': 'off',
     'arti-set-fsd-checker-plugin/path-checker': ['error', { alias: '@' }],
+    'arti-set-fsd-checker-plugin/public-api-imports': ['error', { alias: '@' }],
   },
   globals: {
     __IS_DEV__: true,
