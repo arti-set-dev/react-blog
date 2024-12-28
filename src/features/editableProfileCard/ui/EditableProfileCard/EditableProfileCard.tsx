@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
+import { ValidateFields } from '@/shared/types/validation';
 import { classNames } from '@/shared/lib/classNames/classNames';
 
 import { Currency } from '@/entities/Currency';
@@ -19,7 +20,6 @@ import cl from './EditableProfileCard.module.scss';
 import { fetchProfileData } from '../../model/services/fetchProfileData/fetchProfileData';
 import { profileActions, profileReducer } from '../../model/slice/profileSlice';
 import { updateProfileData } from '../../model/services/updateProfileData/updateProfileData';
-import { ValidateFields } from '../../model/types/editableProfileCardSchema';
 
 interface EditableProfileCardProps {
     className?: string;

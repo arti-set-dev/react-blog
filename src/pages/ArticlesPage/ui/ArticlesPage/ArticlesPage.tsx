@@ -17,7 +17,7 @@ import {
 } from '../../model/selectors/articlesPageSelectors';
 import { articlesPageActions, articlesPageReducer, getArticles } from '../../model/slices/articlesPageSlice';
 import cl from './ArticlesPage.module.scss';
-import { fetchNextArticlePage } from '../../model/services/fetchNextArticlePage/fetchNextArticlePage';
+import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlePage/fetchNextArticlePage';
 import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
 import { ArticlesPageFilters } from '../ArticlesPageFilters/ArticlesPageFilters';
 import { ArticleInfiniteList } from '../ArticleInfiniteList/ArticleInfiniteList';
@@ -38,7 +38,7 @@ const ArticlesPage = (props: ArticlesPageProps) => {
   const [searchParams] = useSearchParams();
 
   const onLoadNextPart = useCallback(() => {
-    dispatch(fetchNextArticlePage());
+    dispatch(fetchNextArticlesPage());
   }, [dispatch]);
 
   return (

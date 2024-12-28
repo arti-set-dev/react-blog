@@ -1,9 +1,10 @@
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
+import { ValidateFields } from '@/shared/types/validation';
 import { Country, CountrySelect } from '@/entities/Country';
 import { Currency, CurrencySelect } from '@/entities/Currency';
 import { getUserAuthData } from '@/entities/User';
-import { ValidateFields } from '@/features/editableProfileCard';
+import { getProfileData } from '../../model/selectors/getProfileData/getProfileData';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Avatar } from '@/shared/ui/Avatar/Avatar';
 import { Button, ButtonTheme } from '@/shared/ui/Button/Button';
@@ -16,8 +17,6 @@ import {
 } from '@/shared/ui/Text/Text';
 import { Profile } from '../../model/types/profile';
 import cl from './ProfileCard.module.scss';
-// eslint-disable-next-line arti-set-fsd-checker-plugin/public-api-imports
-import { getProfileData } from '@/features/editableProfileCard/model/selectors/getProfileData/getProfileData';
 
 interface ProfileCardProps {
     className?: string;

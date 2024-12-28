@@ -6,7 +6,6 @@ import { profileReducer } from '@/features/editableProfileCard/testing';
 import { ReducerList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { articleDetailsReducer } from '@/entities/Article/testing';
 import { addNewCommentReducer } from '@/features/addNewComment/testing';
-import { ScrollSaveReducer } from '@/widgets/Page';
 import { articleDetailsPageReducer } from '@/pages/ArticleDetailsPage/testing';
 
 const defaultAsyncReducers: ReducerList = {
@@ -15,7 +14,6 @@ const defaultAsyncReducers: ReducerList = {
   articleDetails: articleDetailsReducer,
   articleDetailsPage: articleDetailsPageReducer,
   addNewComment: addNewCommentReducer,
-  scrollSave: ScrollSaveReducer,
 };
 
 export const StoreDecorator = (

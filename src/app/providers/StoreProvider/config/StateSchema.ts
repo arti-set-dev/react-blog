@@ -3,12 +3,12 @@ import {
 } from '@reduxjs/toolkit';
 import { AxiosInstance } from 'axios';
 import { NavigateOptions, To } from 'react-router-dom';
+import { ProfileSchema } from 'src/features/editableProfileCard';
 import { AddNewCommentSchema } from '@/features/addNewComment';
 import { ArticleDetailsSchema } from '@/entities/Article';
 import { CounterSchema } from '@/entities/Counter';
 import { UserSchema } from '@/entities/User';
 import { LoginSchema } from '@/features/AuthByUsername';
-import { ProfileSchema } from '@/features/editableProfileCard';
 import { ArticleDetailsPageSchema } from '@/pages/ArticleDetailsPage';
 import { ArticlesPageSchema } from '@/pages/ArticlesPage';
 import { ScrollSaveSchema } from '@/widgets/Page';

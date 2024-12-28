@@ -8,7 +8,7 @@ import {
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Select } from '@/shared/ui/Select/Select';
 import { Input } from '@/shared/ui/Input/Input';
-import { SortOrder } from '@/shared/types';
+import { SortOrder } from '@/shared/types/SortOrder';
 import { Card } from '@/shared/ui/Card/Card';
 import { useDebounce } from '@/shared/lib/hooks/useDebounce/useDebounce';
 import { TabItem, Tabs } from '@/shared/ui/Tabs/Tabs';

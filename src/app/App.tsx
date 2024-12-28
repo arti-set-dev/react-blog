@@ -3,14 +3,13 @@ import {
   Link, Route, Routes, useNavigate,
 } from 'react-router-dom';
 
-import '@/app/styles/index.scss';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { useTheme } from '@/app/providers/ThemeProvider/lib/useTheme';
+import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
 import { MainPage } from '@/pages/MainPage';
 import { AboutPage } from '@/pages/AboutPage';
-import { AppRouter } from '@/app/providers/router';
+import { AppRouter } from './providers/router';
 import { Navbar } from '@/widgets/Navbar';
 import { Sidebar } from '@/widgets/Sidebar';
 import { Loader, LoaderOffset } from '@/shared/ui/Loader/Loader';

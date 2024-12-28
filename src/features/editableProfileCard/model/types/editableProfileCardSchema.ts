@@ -1,16 +1,5 @@
 import { Profile } from '@/entities/Profile';
-import { ValidateProfileError } from '../../model/consts/consts';
-
-export interface ValidateFields {
-    firstname?: string;
-    lastname?: string;
-    age?: string;
-    currency?: string,
-    country?: string;
-    city?: string,
-    username?: string;
-    avatar?: string;
-}
+import { ValidateProfileError } from '../consts/consts';
 
 export interface ProfileSchema {
     data?: Profile;

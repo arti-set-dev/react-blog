@@ -10,7 +10,6 @@ import { Text } from '@/shared/ui/Text/Text';
 import { getArticles } from '../../model/slices/articlesPageSlice';
 import { getArticlesPageIsError, getArticlesPageIsLoading, getArticlesPageIsView }
   from '../../model/selectors/articlesPageSelectors';
-import { fetchNextArticlePage } from '../../model/services/fetchNextArticlePage/fetchNextArticlePage';
 import { initArticlesPage } from '../../model/services/initArticlesPage/initArticlesPage';
 import cl from './ArticleInfiniteList.module.scss';
 

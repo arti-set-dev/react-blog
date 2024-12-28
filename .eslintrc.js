@@ -57,6 +57,13 @@ module.exports = {
     'no-param-reassign': 'off',
     'no-undef': 'off',
     'arti-set-fsd-checker-plugin/path-checker': ['error', { alias: '@' }],
+    'arti-set-fsd-checker-plugin/layer-imports': [
+      'error',
+      {
+        alias: '@',
+        ignoreImportPatterns: ['**/StoreProvider', '**/testing'],
+      },
+    ],
     'arti-set-fsd-checker-plugin/public-api-imports': [
       'error',
       {

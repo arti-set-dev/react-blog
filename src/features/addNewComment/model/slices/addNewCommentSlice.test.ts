@@ -1,5 +1,5 @@
 import { Article, ArticleDetailsSchema } from '@/entities/Article';
-// eslint-disable-next-line arti-set-fsd-checker-plugin/public-api-imports
+// eslint-disable-next-line arti-set-fsd-checker-plugin/layer-imports,arti-set-fsd-checker-plugin/public-api-imports
 import { addCommentForArticle } from
   '@/pages/ArticleDetailsPage/model/services/addCommentForArticle/addCommentForArticle';
 import { AddNewCommentSchema } from '../types/addNewComment';
