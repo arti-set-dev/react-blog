@@ -4,13 +4,13 @@ import { useNavigate } from 'react-router-dom';
 import { RoutePath } from '@/shared/const/router';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import ViewsIcon from '@/shared/assets/icons/eye-icon.svg';
-import { Text, TextSize, TextWeight } from '@/shared/ui/Text/Text';
-import { AppLink } from '@/shared/ui/AppLink/AppLink';
-import { Card } from '@/shared/ui/Card/Card';
+import { Text, TextSize, TextWeight } from '@/shared/ui/Text';
+import { AppLink } from '@/shared/ui/AppLink';
+import { Card } from '@/shared/ui/Card';
 import { useHover } from '@/shared/lib/hooks/useHover/useHover';
-import { Avatar } from '@/shared/ui/Avatar/Avatar';
-import { Button, ButtonTheme } from '@/shared/ui/Button/Button';
-import { Skeleton, SkeletonAlign } from '@/shared/ui/Skeleton/Skeleton';
+import { Avatar } from '@/shared/ui/Avatar';
+import { Button, ButtonTheme } from '@/shared/ui/Button';
+import { Skeleton, SkeletonAlign } from '@/shared/ui/Skeleton';
 import { ArticleView } from '../../model/consts/consts';
 import {
   Article, ArticleTextBlock,

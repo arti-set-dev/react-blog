@@ -6,12 +6,12 @@ import {
   ArticleView, ArticleViewSwitcher, ArticleSortSelector, ArticleSortField, ArticleTypeTabs, ArticleType,
 } from '@/entities/Article';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { Select } from '@/shared/ui/Select/Select';
-import { Input } from '@/shared/ui/Input/Input';
+import { Select } from '@/shared/ui/Select';
+import { Input } from '@/shared/ui/Input';
 import { SortOrder } from '@/shared/types/SortOrder';
-import { Card } from '@/shared/ui/Card/Card';
+import { Card } from '@/shared/ui/Card';
 import { useDebounce } from '@/shared/lib/hooks/useDebounce/useDebounce';
-import { TabItem, Tabs } from '@/shared/ui/Tabs/Tabs';
+import { TabItem, Tabs } from '@/shared/ui/Tabs';
 import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList';
 import cl from './ArticlesPageFilters.module.scss';
 import { articlesPageActions } from '../../model/slices/articlesPageSlice';

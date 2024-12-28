@@ -3,9 +3,9 @@ import { useTranslation } from 'react-i18next';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import {
   Text, TextSize, TextTheme, TextWeight,
-} from '@/shared/ui/Text/Text';
-import { List } from '@/shared/ui/List/List';
-import { Skeleton } from '@/shared/ui/Skeleton/Skeleton';
+} from '@/shared/ui/Text';
+import { List } from '@/shared/ui/List';
+import { Skeleton } from '@/shared/ui/Skeleton';
 import { VStack } from '@/shared/ui/Stack';
 import { Comment } from '../../model/types/comments';
 import cl from './Comments.module.scss';

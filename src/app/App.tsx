@@ -12,8 +12,8 @@ import { AboutPage } from '@/pages/AboutPage';
 import { AppRouter } from './providers/router';
 import { Navbar } from '@/widgets/Navbar';
 import { Sidebar } from '@/widgets/Sidebar';
-import { Loader, LoaderOffset } from '@/shared/ui/Loader/Loader';
-import { Modal } from '@/shared/ui/Modal/Modal';
+import { Loader, LoaderOffset } from '@/shared/ui/Loader';
+import { Modal } from '@/shared/ui/Modal';
 import { getUserInited, userActions } from '@/entities/User';
 
 const App = () => {

@@ -1,7 +1,7 @@
 import { FC, memo, Suspense } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Loader, LoaderOffset, LoaderTheme } from '@/shared/ui/Loader/Loader';
-import { Modal } from '@/shared/ui/Modal/Modal';
+import { Loader, LoaderOffset, LoaderTheme } from '@/shared/ui/Loader';
+import { Modal } from '@/shared/ui/Modal';
 import LoginForm from '../LoginForm/LoginForm';
 import { LoginFormAsync } from '../LoginForm/LoginForm.async';
 

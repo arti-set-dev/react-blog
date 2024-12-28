@@ -3,12 +3,12 @@ import { memo } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import {
   TextSize, TextTheme, TextWeight, Text,
-} from '@/shared/ui/Text/Text';
+} from '@/shared/ui/Text';
 import { ArticleList, ArticleListDisplay } from '@/entities/Article';
 import { VStack } from '@/shared/ui/Stack';
 import { rtkApi } from '@/shared/api/rtkApi';
 // eslint-disable-next-line import/no-duplicates
-import { Loader } from '@/shared/ui/Loader/Loader';
+import { Loader } from '@/shared/ui/Loader';
 import { useArticleRecommendationsList } from '../../api/ArticleRecommendationsApi';
 import cl from './ArticleRecommendationsList.module.scss';
 

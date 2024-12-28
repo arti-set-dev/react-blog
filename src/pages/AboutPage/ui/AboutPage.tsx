@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { Listbox } from '@/shared/ui/Popups/ui/ListBox/ListBox';
+import { Listbox } from '@/shared/ui/Popups';
 import { Page } from '@/widgets/Page';
 
 const AboutPage = () => {

@@ -10,7 +10,7 @@ import { DynamicModuleLoader, ReducerList } from '@/shared/lib/components/Dynami
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { Page } from '@/widgets/Page';
-import { Text, TextTheme } from '@/shared/ui/Text/Text';
+import { Text, TextTheme } from '@/shared/ui/Text';
 import { EditableProfileCard } from '@/features/editableProfileCard';
 import cl from './ProfilePage.module.scss';
 
