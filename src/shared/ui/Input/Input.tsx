@@ -1,6 +1,5 @@
-import { error } from 'console';
 import React, {
-  FC, InputHTMLAttributes, memo, useEffect, useRef, useState,
+  InputHTMLAttributes, memo, useEffect, useRef, useState,
 } from 'react';
 import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 import { Text, TextSize, TextTheme } from '../Text/Text';

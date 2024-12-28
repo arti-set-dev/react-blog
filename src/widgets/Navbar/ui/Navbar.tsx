@@ -1,25 +1,19 @@
 import { memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { RoutePath } from '@/shared/const/router';
-import { NotificationList } from '@/entities/Notification';
 import {
-  getUserAuthData, userActions, isUserAdmin, isUserManager,
+  getUserAuthData,
 } from '@/entities/User';
 import { LoginModal } from '@/features/AuthByUsername';
 import { AvatarDropdown } from '@/features/avatarDropdown';
 import { NotificationButton } from '@/features/notificationButton';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { AppLink } from '@/shared/ui/AppLink';
-import { Avatar } from '@/shared/ui/Avatar';
 import { Button, ButtonTheme } from '@/shared/ui/Button';
 import { Container } from '@/shared/ui/Container';
-import { Drawer } from '@/shared/ui/Drawer';
-import { Popover, Dropdown } from '@/shared/ui/Popups';
-import { Icon } from '@/shared/ui/Icon';
 import { HStack } from '@/shared/ui/Stack';
 import { Text, TextSize } from '@/shared/ui/Text';
-import NotificationIcon from '@/shared/assets/icons/notification-icon.svg';
 import cl from './Navbar.module.scss';
 
 interface NavbarProps {

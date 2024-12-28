@@ -1,8 +1,7 @@
 import {
-  AnyAction, CombinedState, EnhancedStore, Reducer, ReducersMapObject, Store,
+  AnyAction, CombinedState, EnhancedStore, Reducer, ReducersMapObject,
 } from '@reduxjs/toolkit';
 import { AxiosInstance } from 'axios';
-import { NavigateOptions, To } from 'react-router-dom';
 import { ProfileSchema } from 'src/features/editableProfileCard';
 import { AddNewCommentSchema } from '@/features/addNewComment';
 import { ArticleDetailsSchema } from '@/entities/Article';
@@ -13,7 +12,6 @@ import { ArticleDetailsPageSchema } from '@/pages/ArticleDetailsPage';
 import { ArticlesPageSchema } from '@/pages/ArticlesPage';
 import { ScrollSaveSchema } from '@/widgets/Page';
 import { rtkApi } from '@/shared/api/rtkApi';
-import { createReducerManager } from './reducerManager';
 
 export interface StateSchema {
     counter: CounterSchema;

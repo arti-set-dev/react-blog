@@ -1,10 +1,9 @@
-import { FC, memo } from 'react';
+import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import ThemeIcon from '@/shared/assets/icons/theme-icon.svg';
 import { Button, ButtonTheme } from '@/shared/ui/Button';
-import cl from './ThemeSwitcher.module.scss';
 
 interface ThemeSwitcherProps {
     className?: string;

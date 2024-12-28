@@ -1,7 +1,5 @@
-import { render, screen } from '@testing-library/react';
-import { withTranslation } from 'react-i18next';
+import { screen } from '@testing-library/react';
 import { fireEvent } from '@storybook/testing-library';
-import { renderWithTranslation } from '@/shared/lib/tests/renderWithTranslation/renderWithTranslation';
 import { componentRender } from '@/shared/lib/tests/componentRender/componentRender';
 import { Sidebar } from './Sidebar';
 

@@ -1,9 +1,7 @@
-import { memo, useCallback, Suspense } from 'react';
+import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Loader } from '@/shared/ui/Loader';
-import { Skeleton } from '@/shared/ui/Skeleton';
 import {
   TextSize, TextTheme, TextWeight, Text,
 } from '@/shared/ui/Text';

@@ -1,10 +1,9 @@
 import {
   Listbox as HListBox,
 } from '@headlessui/react';
-import { Fragment, ReactNode, useState } from 'react';
+import { Fragment, ReactNode } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cl from './ListBox.module.scss';
-import { Text } from '../../../Text/Text';
 import popupCl from '../../styles/Popups.module.scss';
 
 export interface ListBoxItem {

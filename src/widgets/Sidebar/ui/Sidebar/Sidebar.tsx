@@ -1,18 +1,11 @@
-import {
-  FC, memo, useMemo, useState,
-} from 'react';
+import { memo, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { RoutePath } from '@/shared/const/router';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Button, ButtonSize, ButtonTheme } from '@/shared/ui/Button';
 import ArrIcon from '@/shared/assets/icons/arrow-icon.svg';
 import { ThemeSwitcher } from '@/features/ThemeSwitcher';
 import { LangSwitcher } from '@/features/LangSwitcher';
-import { AppLink } from '@/shared/ui/AppLink';
-import { List } from '@/shared/ui/List';
-import HomeIcon from '@/shared/assets/icons/home-icon.svg';
-import AboutIcon from '@/shared/assets/icons/about-icon.svg';
 import { VStack } from '@/shared/ui/Stack';
 import { getSidebarItems } from '../../model/selector/getSidebarItems';
 import cl from './Sidebar.module.scss';

@@ -5,11 +5,9 @@ import { RoutePath } from '@/shared/const/router';
 import {
   isUserAdmin, isUserManager, userActions, getUserAuthData,
 } from '@/entities/User';
-import { classNames } from '@/shared/lib/classNames/classNames';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Avatar } from '@/shared/ui/Avatar';
 import { Dropdown } from '@/shared/ui/Popups';
-import cl from './AvatarDropdown.module.scss';
 
 interface AvatarDropdownProps {
   className?: string;

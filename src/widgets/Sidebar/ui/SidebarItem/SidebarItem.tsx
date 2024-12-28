@@ -1,6 +1,5 @@
 import { memo } from 'react';
 import { useSelector } from 'react-redux';
-import { RoutePath } from '@/shared/const/router';
 import { getUserAuthData } from '@/entities/User';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { AppLink } from '@/shared/ui/AppLink';

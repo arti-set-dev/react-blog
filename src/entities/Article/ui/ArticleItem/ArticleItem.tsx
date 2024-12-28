@@ -7,7 +7,6 @@ import ViewsIcon from '@/shared/assets/icons/eye-icon.svg';
 import { Text, TextSize, TextWeight } from '@/shared/ui/Text';
 import { AppLink } from '@/shared/ui/AppLink';
 import { Card } from '@/shared/ui/Card';
-import { useHover } from '@/shared/lib/hooks/useHover/useHover';
 import { Avatar } from '@/shared/ui/Avatar';
 import { Button, ButtonTheme } from '@/shared/ui/Button';
 import { ArticleView } from '../../model/consts/consts';

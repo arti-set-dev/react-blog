@@ -1,6 +1,4 @@
-import React, {
-  FC, useCallback, useEffect, useState, ReactNode,
-} from 'react';
+import React, { ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 import CloseIcon from '@/shared/assets/icons/close-icon.svg';

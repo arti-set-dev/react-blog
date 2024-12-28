@@ -6,7 +6,6 @@ import {
 } from '@/shared/ui/Text';
 import { ArticleList, ArticleListDisplay } from '@/entities/Article';
 import { VStack } from '@/shared/ui/Stack';
-import { rtkApi } from '@/shared/api/rtkApi';
 // eslint-disable-next-line import/no-duplicates
 import { Loader } from '@/shared/ui/Loader';
 import { useArticleRecommendationsList } from '../../api/ArticleRecommendationsApi';

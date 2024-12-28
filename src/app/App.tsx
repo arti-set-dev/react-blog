@@ -1,19 +1,13 @@
-import { Suspense, useEffect, useState } from 'react';
-import {
-  Link, Route, Routes, useNavigate,
-} from 'react-router-dom';
+import { Suspense, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
-import { MainPage } from '@/pages/MainPage';
-import { AboutPage } from '@/pages/AboutPage';
 import { AppRouter } from './providers/router';
 import { Navbar } from '@/widgets/Navbar';
 import { Sidebar } from '@/widgets/Sidebar';
-import { Loader, LoaderOffset } from '@/shared/ui/Loader';
-import { Modal } from '@/shared/ui/Modal';
+import { Loader } from '@/shared/ui/Loader';
 import { getUserInited, userActions } from '@/entities/User';
 
 const App = () => {
