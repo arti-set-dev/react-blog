@@ -1,7 +1,7 @@
 import { useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
-import { RoutePath } from '@/shared/const/router';
+import { getRouteAdminPanel, getRouteProfile } from '@/shared/const/router';
 import {
   isUserAdmin, isUserManager, userActions, getUserAuthData,
 } from '@/entities/User';
@@ -32,12 +32,12 @@ export const AvatarDropdown = (props: AvatarDropdownProps) => {
       items={[
         ...(isAdminPanelAvailable ? [{
           content: t('Admin'),
-          href: RoutePath.admin_panel,
+          href: getRouteAdminPanel(),
         }] : []),
-        {
+        ...(authData ? [{
           content: t('Profile'),
-          href: `${RoutePath.profile}${authData?.id}`,
-        },
+          href: getRouteProfile(authData.id),
+        }] : []),
         {
           content: t('Logout'),
           onclick: onLogout,

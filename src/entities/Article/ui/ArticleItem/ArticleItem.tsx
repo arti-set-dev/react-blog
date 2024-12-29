@@ -1,7 +1,7 @@
 import { memo, useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
-import { RoutePath } from '@/shared/const/router';
+import { getRouteArticleDetails } from '@/shared/const/router';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import ViewsIcon from '@/shared/assets/icons/eye-icon.svg';
 import { Text, TextSize, TextWeight } from '@/shared/ui/Text';
@@ -32,7 +32,7 @@ export const ArticleItem = memo((props: ArticleItemProps) => {
   const navigate = useNavigate();
 
   const onOpenArticle = useCallback(() => {
-    navigate(RoutePath.articles_details + article.id);
+    navigate(getRouteArticleDetails(article.id));
   }, [article.id, navigate]);
 
   const articleTypes = useMemo(() => (
@@ -61,11 +61,11 @@ export const ArticleItem = memo((props: ArticleItemProps) => {
             <Text className={cl.Username} size={TextSize.M} weight={TextWeight.BOLD}>{article.user.username}</Text>
             <Text size={TextSize.S}>{article.createdAt}</Text>
           </div>
-          <AppLink to={`${RoutePath.articles}/${article.id}`}>
+          <AppLink to={getRouteArticleDetails(article.id)}>
             <Text className={cl.Title} size={TextSize.XL}>{article.title}</Text>
           </AppLink>
           {articleTypes}
-          <AppLink className={cl.LinkImg} to={`${RoutePath.articles}/${article.id}`}>
+          <AppLink className={cl.LinkImg} to={getRouteArticleDetails(article.id)}>
             <img height={300} className={cl.Img} src={article.img} alt={article.title} />
           </AppLink>
           {textBlocks && (
@@ -86,7 +86,7 @@ export const ArticleItem = memo((props: ArticleItemProps) => {
         ? (
           <Card isHovered className={cl.Card}>
             <time dateTime={article.createdAt} className={cl.CreatedAt}>{article.createdAt}</time>
-            <AppLink to={`${RoutePath.articles}/${article.id}`} target="_blank">
+            <AppLink to={getRouteArticleDetails(article.id)} target="_blank">
               <img className={cl.Img} height={200} src={article.img} alt={article.title} />
             </AppLink>
             <div className={cl.Content}>
@@ -94,7 +94,7 @@ export const ArticleItem = memo((props: ArticleItemProps) => {
                 {articleTypes}
                 {views}
               </div>
-              <AppLink className={cl.Link} to={`${RoutePath.articles}/${article.id}`} target="_blank">
+              <AppLink className={cl.Link} to={getRouteArticleDetails(article.id)} target="_blank">
                 <Text size={TextSize.M} weight={TextWeight.BOLD}>{article.title}</Text>
               </AppLink>
             </div>
@@ -103,7 +103,7 @@ export const ArticleItem = memo((props: ArticleItemProps) => {
         : (
           <Card className={cl.Card}>
             <time dateTime={article.createdAt} className={cl.CreatedAt}>{article.createdAt}</time>
-            <AppLink to={`${RoutePath.articles}/${article.id}`}>
+            <AppLink to={getRouteArticleDetails(article.id)}>
               <img className={cl.Img} height={200} src={article.img} alt={article.title} />
             </AppLink>
             <div className={cl.Content}>
@@ -111,7 +111,7 @@ export const ArticleItem = memo((props: ArticleItemProps) => {
                 {articleTypes}
                 {views}
               </div>
-              <AppLink className={cl.Link} to={`${RoutePath.articles}/${article.id}`}>
+              <AppLink className={cl.Link} to={getRouteArticleDetails(article.id)}>
                 <Text size={TextSize.M} weight={TextWeight.BOLD}>{article.title}</Text>
               </AppLink>
             </div>

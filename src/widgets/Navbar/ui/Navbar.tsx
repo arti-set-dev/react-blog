@@ -1,7 +1,7 @@
 import { memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { RoutePath } from '@/shared/const/router';
+import { getRouteArticleCreate } from '@/shared/const/router';
 import {
   getUserAuthData,
 } from '@/entities/User';
@@ -40,7 +40,7 @@ export const Navbar = memo((props: NavbarProps) => {
       <header className={classNames(cl.Navbar, {}, [className])}>
         <Container className={cl.Container}>
           <Text size={TextSize.L}>{t('Logo App')}</Text>
-          <AppLink to={RoutePath.articles_create} className={cl.NewPostText}>{t('Create new post')}</AppLink>
+          <AppLink to={getRouteArticleCreate()} className={cl.NewPostText}>{t('Create new post')}</AppLink>
           <HStack gap="16">
             <NotificationButton />
             <AvatarDropdown />

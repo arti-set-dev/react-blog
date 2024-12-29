@@ -1,6 +1,6 @@
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { RoutePath } from '@/shared/const/router';
+import { getRouteProfile } from '@/shared/const/router';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Avatar } from '@/shared/ui/Avatar';
 import { Text, TextSize, TextWeight } from '@/shared/ui/Text';
@@ -37,7 +37,7 @@ export const CommentCard = memo((props: CommentCardProps) => {
 
   return (
     <li className={classNames(cl.CommentCard, {}, [className])}>
-      <AppLink to={`${RoutePath.profile}${comment.user.id}`} className={cl.Header}>
+      <AppLink to={getRouteProfile(comment.user.id)} className={cl.Header}>
         {comment.user.avatar
           && <Avatar alt={comment.user.username} size={30} src={comment.user.avatar} />}
         <Text size={TextSize.M} weight={TextWeight.BOLD}>{comment.user.username}</Text>
