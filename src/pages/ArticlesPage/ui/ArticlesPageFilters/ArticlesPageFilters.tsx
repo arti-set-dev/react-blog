@@ -1,9 +1,12 @@
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
+import { ArticleSortSelector } from '@/features/ArticleSortSelector';
+import { ArticleTypeTabs } from '@/features/ArticleTypeTabs';
+import { ArticleViewSwitcher } from '@/features/ArticleViewSwitcher';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import {
-  ArticleView, ArticleViewSwitcher, ArticleSortSelector, ArticleSortField, ArticleTypeTabs, ArticleType,
+  ArticleView, ArticleSortField, ArticleType,
 } from '@/entities/Article';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Input } from '@/shared/ui/Input';

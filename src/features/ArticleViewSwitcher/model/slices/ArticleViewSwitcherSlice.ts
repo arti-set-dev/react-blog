@@ -1,12 +1,12 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { ArticleSortSelectorSchema } from '../types/ArticleSortSelectorSchema';
+import { ArticleViewSwitcherSchema } from '../types/ArticleViewSwitcherSchema';
 
-const initialState: ArticleSortSelectorSchema = {
+const initialState: ArticleViewSwitcherSchema = {
 
 };
 
-export const ArticleSortSelectorSlice = createSlice({
-  name: 'ArticleSortSelector',
+export const ArticleViewSwitcherSlice = createSlice({
+  name: 'ArticleViewSwitcher',
   initialState,
   reducers: {
     template: (state, action: PayloadAction<string>) => {
@@ -29,5 +29,5 @@ export const ArticleSortSelectorSlice = createSlice({
   // },
 });
 
-export const { actions: ArticleSortSelectorActions } = ArticleSortSelectorSlice;
-export const { reducer: ArticleSortSelectorReducer } = ArticleSortSelectorSlice;
+export const { actions: ArticleViewSwitcherActions } = ArticleViewSwitcherSlice;
+export const { reducer: ArticleViewSwitcherReducer } = ArticleViewSwitcherSlice;
