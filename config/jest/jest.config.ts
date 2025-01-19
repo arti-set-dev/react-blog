@@ -11,6 +11,7 @@ export default {
     __API__: '',
     __PROJECT__: 'jest',
   },
+
   // All imported modules in your tests should be mocked automatically
   // automock: false,
 

@@ -6,7 +6,7 @@ import { ArticleEditPage } from '@/pages/ArticleEditPage';
 import { ArticlesPage } from '@/pages/ArticlesPage';
 import { ForbiddenPage } from '@/pages/ForbiddenPage';
 import { MainPage } from '@/pages/MainPage';
-import { PageNotFound } from '@/pages/PageNotFound';
+import { NotFoundPage } from '@/pages/PageNotFound';
 import { ProfilePage } from '@/pages/ProfilePage';
 import {
   AppRoutes,
@@ -78,6 +78,6 @@ export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
   // last
   [AppRoutes.NOT_FOUND]: {
     path: '*',
-    element: <PageNotFound />,
+    element: <NotFoundPage />,
   },
 };

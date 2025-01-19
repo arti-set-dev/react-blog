@@ -3,6 +3,7 @@ import {
 } from 'react';
 import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
+import { TestsProps } from '@/shared/types/tests';
 import { StateSchema } from '@/app/providers/StoreProvider';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
@@ -13,7 +14,7 @@ import { getScrollByPath } from '../../model/selectors/scrollSaveSelectors';
 import { ScrollSaveActions } from '../../model/slices/ScrollSaveSlice';
 import cl from './Page.module.scss';
 
-interface PageProps {
+interface PageProps extends TestsProps{
   className?: string;
   children: ReactNode,
   onScrollEnd?: () => void;
@@ -47,7 +48,12 @@ export const Page = memo((props: PageProps) => {
   }, 1000);
 
   return (
-    <section onScroll={onScroll} ref={wrapperRef} className={classNames(cl.Page, {}, [className])}>
+    <section
+      data-testid={props['data-testid'] ?? 'Page'}
+      onScroll={onScroll}
+      ref={wrapperRef}
+      className={classNames(cl.Page, {}, [className])}
+    >
       {children}
       {onScrollEnd
         && <div className={cl.TriggerElem} ref={triggerRef} />}

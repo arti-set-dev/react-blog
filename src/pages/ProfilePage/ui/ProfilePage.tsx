@@ -9,7 +9,7 @@ const ProfilePage = () => {
   const { id } = useParams<{ id: string }>();
 
   return (
-    <Page className={cl.ProfilePage}>
+    <Page data-testid="ProfilePage" className={cl.ProfilePage}>
       <EditableProfileCard id={id} />
     </Page>
   );
