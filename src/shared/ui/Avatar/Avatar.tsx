@@ -1,5 +1,9 @@
 import { classNames } from '@/shared/lib/classNames/classNames';
+import { Icon } from '../Icon';
+import { Skeleton } from '../Skeleton';
+import { LazyImage } from '../LazyImage';
 import cl from './Avatar.module.scss';
+import ProfileIcon from '@/shared/assets/icons/profile-icon.svg';
 
 export enum AvatarLoading {
     LAZY = 'lazy',
@@ -19,8 +23,13 @@ export const Avatar = (props: AvatarProps) => {
     className, src, alt, size = 100, loading = AvatarLoading.LAZY,
   } = props;
 
+  const fallback = <Skeleton width={size} height={size} border="50%" />;
+  const errorFallback = <Icon width={size} Svg={ProfileIcon} />;
+
   return (
-    <img
+    <LazyImage
+      fallback={fallback}
+      errorFallback={errorFallback}
       loading={loading}
       width={size}
       height={size}

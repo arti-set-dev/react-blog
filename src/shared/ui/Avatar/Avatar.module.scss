@@ -1,5 +1,4 @@
 .Avatar {
-  position: relative;
   display: block;
   border-radius: 50%;
   max-width: 100%;
@@ -8,13 +7,4 @@
   background-color: var(--skeleton-color);
   object-fit: cover;
   aspect-ratio: 1/1;
-
-  &::after {
-    content: attr(alt);
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    font-size: var(--font-size-l);
-    transform: translate(-50%, -50%);
-  }
 }

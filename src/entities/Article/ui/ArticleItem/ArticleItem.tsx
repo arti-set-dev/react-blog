@@ -1,6 +1,8 @@
 import { memo, useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
+import { Skeleton } from '@/shared/ui/Skeleton';
+import { LazyImage } from '@/shared/ui/LazyImage';
 import { getRouteArticleDetails } from '@/shared/const/router';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import ViewsIcon from '@/shared/assets/icons/eye-icon.svg';
@@ -66,7 +68,7 @@ export const ArticleItem = memo((props: ArticleItemProps) => {
           </AppLink>
           {articleTypes}
           <AppLink className={cl.LinkImg} to={getRouteArticleDetails(article.id)}>
-            <img height={300} className={cl.Img} src={article.img} alt={article.title} />
+            <LazyImage height={300} className={cl.Img} src={article.img} alt={article.title} />
           </AppLink>
           {textBlocks && (
             <ArticleTextBlockComponent className={cl.TextBlock} block={textBlocks} />
@@ -86,8 +88,15 @@ export const ArticleItem = memo((props: ArticleItemProps) => {
         ? (
           <Card isHovered className={cl.Card}>
             <time dateTime={article.createdAt} className={cl.CreatedAt}>{article.createdAt}</time>
-            <AppLink to={getRouteArticleDetails(article.id)} target="_blank">
-              <img className={cl.Img} height={200} src={article.img} alt={article.title} />
+            <AppLink className={cl.LinkImg} to={getRouteArticleDetails(article.id)} target="_blank">
+              <LazyImage
+                fallback={<Skeleton width="100%" height={200} />}
+                className={cl.Img}
+                width={280}
+                height={200}
+                src={article.img}
+                alt={article.title}
+              />
             </AppLink>
             <div className={cl.Content}>
               <div className={cl.Head}>
@@ -103,8 +112,14 @@ export const ArticleItem = memo((props: ArticleItemProps) => {
         : (
           <Card className={cl.Card}>
             <time dateTime={article.createdAt} className={cl.CreatedAt}>{article.createdAt}</time>
-            <AppLink to={getRouteArticleDetails(article.id)}>
-              <img className={cl.Img} height={200} src={article.img} alt={article.title} />
+            <AppLink className={cl.LinkImg} to={getRouteArticleDetails(article.id)}>
+              <LazyImage
+                fallback={<Skeleton width="100%" height={200} />}
+                className={cl.Img}
+                height={200}
+                src={article.img}
+                alt={article.title}
+              />
             </AppLink>
             <div className={cl.Content}>
               <div className={cl.Head}>
@@ -117,7 +132,6 @@ export const ArticleItem = memo((props: ArticleItemProps) => {
             </div>
           </Card>
         )}
-
     </li>
   );
 });

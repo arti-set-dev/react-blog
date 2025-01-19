@@ -43,7 +43,7 @@ export const AvatarDropdown = (props: AvatarDropdownProps) => {
           onclick: onLogout,
         },
       ]}
-      trigger={<Avatar size={30} src={authData?.avatar} alt={authData?.username} />}
+      trigger={<Avatar size={25} src={authData?.avatar} alt={authData?.username} />}
     />
   );
 };

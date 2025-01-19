@@ -57,6 +57,12 @@
     }
   }
 
+  .LinkImg {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
   .CreatedAt {
     position: absolute;
     right: 10px;
