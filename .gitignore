@@ -1,6 +1,5 @@
 /node_modules
 /build
-package-lock.json
 .idea
 /storybook-static
 .loki/report.html
