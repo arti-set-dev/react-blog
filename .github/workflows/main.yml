@@ -74,14 +74,8 @@ jobs:
       - name: build storybook
         run: npm run build:storybook
         if: always()
-      - name: Start static server
-        run: npx http-server storybook-static -p 9009 &
-        if: always()
-      - name: Wait for static server to be ready
-        run: npx wait-on http://localhost:9009
-        if: always()
       - name: screenshot testing
-        run: npx loki test --reactUri=http://localhost:9009
+        run: npm run screen-test
         if: always()
       - name: Generate HTML report
         run: npm run screen-test:report
