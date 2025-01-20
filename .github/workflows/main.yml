@@ -75,7 +75,7 @@ jobs:
         run: npm run build:storybook
         if: always()
       - name: screenshot testing
-        run: npm run screen-test
+        run: npm run screen-test:ci
         if: always()
       - name: Generate HTML report
         run: npm run screen-test:report
