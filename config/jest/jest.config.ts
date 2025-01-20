@@ -4,6 +4,7 @@
  */
 
 import path from 'path';
+import 'whatwg-fetch';
 
 export default {
   globals: {

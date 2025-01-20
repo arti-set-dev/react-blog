@@ -1,8 +1,13 @@
-import { screen, userEvent } from '@storybook/testing-library';
+import { screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { componentRender } from '@/shared/lib/tests/componentRender/componentRender';
 import { Counter } from './Counter';
 
 describe('Counter.test', () => {
+  beforeEach(() => {
+    jest.resetModules();
+  });
+
   test('Test render', () => {
     componentRender(<Counter />, {
       initialState: { counter: { value: 10 } },
@@ -10,19 +15,21 @@ describe('Counter.test', () => {
     expect(screen.getByTestId('value-title')).toHaveTextContent('10');
   });
 
-  test('increment', () => {
+  test('increment', async () => {
     componentRender(<Counter />, {
       initialState: { counter: { value: 10 } },
     });
-    userEvent.click(screen.getByTestId('increment-btn'));
+    const incrementButton = screen.getByTestId('increment-btn');
+    await userEvent.click(incrementButton);
     expect(screen.getByTestId('value-title')).toHaveTextContent('11');
   });
 
-  test('decrement', () => {
+  test('decrement', async () => {
     componentRender(<Counter />, {
       initialState: { counter: { value: 10 } },
     });
-    userEvent.click(screen.getByTestId('decrement-btn'));
+    const decrementButton = screen.getByTestId('decrement-btn');
+    await userEvent.click(decrementButton);
     expect(screen.getByTestId('value-title')).toHaveTextContent('9');
   });
 });
