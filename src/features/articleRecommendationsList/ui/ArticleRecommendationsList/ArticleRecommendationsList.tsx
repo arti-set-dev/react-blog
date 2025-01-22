@@ -35,7 +35,7 @@ export const ArticleRecommendationsList = memo((props: ArticleRecommendationsLis
   }
 
   return (
-    <VStack tag="section" gap="16" className={classNames('', {}, [className])}>
+    <VStack data-testid="ArticleRecommendationsList" tag="section" gap="16" className={classNames('', {}, [className])}>
       <Text
         tag="h2"
         theme={TextTheme.PRIMARY}

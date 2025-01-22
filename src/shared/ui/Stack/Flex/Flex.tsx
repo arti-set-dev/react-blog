@@ -37,7 +37,7 @@ const tagClasses: Record<FlexTagType, string> = {
   main: '',
   nav: '',
   section: '',
-  ul: cl.ul,
+  ul: '',
 };
 
 const gapClasses: Record<FlexGap, string> = {
@@ -60,7 +60,9 @@ export interface FlexProps {
 
 export const Flex = (props: FlexProps) => {
   const {
-    className, children, justify = 'start', align = 'center', direction = 'row', gap = '16', max = false, tag = 'div',
+    className,
+    children,
+    justify = 'start', align = 'center', direction = 'row', gap = '16', max = false, tag = 'div', ...otherProps
   } = props;
   const { t } = useTranslation();
 
@@ -80,7 +82,7 @@ export const Flex = (props: FlexProps) => {
   const Tag = tag;
 
   return (
-    <Tag className={classNames(cl.Flex, mods, classes)}>
+    <Tag className={classNames(cl.Flex, mods, classes)} {...otherProps}>
       {children}
     </Tag>
   );

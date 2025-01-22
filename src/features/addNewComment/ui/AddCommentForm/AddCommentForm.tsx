@@ -39,8 +39,13 @@ export const AddCommentForm = memo((props: AddCommentFormProps) => {
 
   return (
     <DynamicModuleLoader reducers={reducers}>
-      <form className={classNames(cl.AddCommentForm, {}, [className])}>
-        <Input value={text} onChange={onCommentTextChange} placeholder={t('Write your comment')} />
+      <form data-testid="AddCommentForm" className={classNames(cl.AddCommentForm, {}, [className])}>
+        <Input
+          data-testid="AddCommentForm.Input"
+          value={text}
+          onChange={onCommentTextChange}
+          placeholder={t('Write your comment')}
+        />
         {error
           && (
             <VStack gap="8">
@@ -48,7 +53,13 @@ export const AddCommentForm = memo((props: AddCommentFormProps) => {
               <Text theme={TextTheme.ERROR}>{t('There was an error when sending a message')}</Text>
             </VStack>
           )}
-        <Button onClick={onSendHandler} theme={ButtonTheme.OUTLINE}>{t('Send')}</Button>
+        <Button
+          data-testid="AddCommentForm.Button"
+          onClick={onSendHandler}
+          theme={ButtonTheme.OUTLINE}
+        >
+          {t('Send')}
+        </Button>
       </form>
     </DynamicModuleLoader>
   );

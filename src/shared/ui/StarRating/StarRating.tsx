@@ -55,6 +55,8 @@ export const StarRating = (props: StarRatingProps) => {
             { [cl.Selected]: isSelected },
             [currentStarsCount >= starNumber ? cl.hovered : cl.default],
           )}
+          data-testid={`StarRating.${starNumber}`}
+          data-selected={currentStarsCount >= starNumber}
           width={size}
           height={size}
           Svg={StarIcon}

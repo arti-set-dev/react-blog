@@ -86,7 +86,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
     content = (
       <>
         <Avatar className={cl.Avatar} size={180} src={article?.img} alt={t('Article Details Page')} />
-        <VStack max gap="16">
+        <VStack data-testid="ArticleDetails.Info" max gap="16">
           <Text
             tag="h1"
             theme={TextTheme.PRIMARY}

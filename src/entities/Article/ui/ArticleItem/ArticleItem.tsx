@@ -56,7 +56,7 @@ export const ArticleItem = memo((props: ArticleItemProps) => {
   if (view === ArticleView.COLUMN) {
     const textBlocks = article.blocks.find((block) => block.type === ArticleBlockType.TEXT) as ArticleTextBlock;
     return (
-      <li className={classNames(cl.ArticleItem, {}, [className, cl[view]])}>
+      <li data-testid="ArticlesItem" className={classNames(cl.ArticleItem, {}, [className, cl[view]])}>
         <Card isHovered className={cl.Card}>
           <div className={cl.Header}>
             <Avatar className={cl.Avatar} size={30} src={article.user.avatar} alt={article.user.username} />
@@ -83,7 +83,7 @@ export const ArticleItem = memo((props: ArticleItemProps) => {
   }
 
   return (
-    <li className={classNames(cl.ArticleItem, {}, [className, cl[view]])}>
+    <li data-testid="ArticlesItem" className={classNames(cl.ArticleItem, {}, [className, cl[view]])}>
       {blank
         ? (
           <Card isHovered className={cl.Card}>

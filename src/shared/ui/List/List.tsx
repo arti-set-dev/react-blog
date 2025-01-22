@@ -8,9 +8,9 @@ interface ListProps {
 }
 
 export const List = (props: ListProps) => {
-  const { children, className } = props;
+  const { children, className, ...otherProps } = props;
   return (
-    <ul className={classNames(cl.List, {}, [className])}>
+    <ul className={classNames(cl.List, {}, [className])} {...otherProps}>
       {children}
     </ul>
   );
