@@ -23,7 +23,8 @@ describe('The user visits the article page', () => {
     cy.addComment('Some text');
     cy.getByTestId('CommentCard.Content').should('have.length', 1);
   });
-  it('and gives a rating', () => {
+  it('and gives a rating (stubs)', () => {
+    cy.intercept('GET', '**/articles/*', { fixture: 'article-details.json' });
     cy.getByTestId('ArticleDetails.Info');
     cy.getByTestId('AddCommentForm').scrollIntoView();
     cy.setRate(5, 'Some feedback');
