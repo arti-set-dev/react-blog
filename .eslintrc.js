@@ -61,6 +61,7 @@ module.exports = {
       testFilesPatterns: ['**/*.test.ts', '**/*.story.*', '**/StoreDecorator.tsx'],
     }],
     'react/no-unstable-nested-components': 'warn',
+    'react/no-array-index-key': 'warn',
   },
   globals: {
     __IS_DEV__: true,
