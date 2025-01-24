@@ -1,8 +1,8 @@
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
-import { Counter } from '@/entities/Counter';
-import { getFeatureFlag } from '@/shared/lib/features';
+import { Card } from '@/shared/ui/Card';
+import { toggleFeatures } from '@/shared/lib/features';
 import { ArticleDetails } from '@/entities/Article';
 import { ArticleRating } from '@/features/articleRating';
 import { ArticleRecommendationsList } from '@/features/articleRecommendationsList';
@@ -27,8 +27,6 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
   const { className } = props;
   const { t } = useTranslation('article-details');
   const { id } = useParams<{ id: string }>();
-  const isArticleRatingEnabled = getFeatureFlag('isArticleRatingEnabled');
-  const isCounterEnabled = getFeatureFlag('isCounterEnabled');
 
   if (!id) {
     return (
@@ -36,13 +34,18 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
     );
   }
 
+  const articleRatingCard = toggleFeatures({
+    name: 'isArticleRatingEnabled',
+    on: () => <ArticleRating />,
+    off: () => <Card isOffset>{t('There will be a rating in the speed of time')}</Card>,
+  });
+
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
       <Page className={classNames(cl.ArticleDetailsPage, {}, [className])}>
         <ArticleDetailsPageHeader />
         <ArticleDetails id={id} />
-        {isCounterEnabled && <Counter />}
-        {isArticleRatingEnabled && <ArticleRating articleId={id} />}
+        {articleRatingCard}
         <ArticleRecommendationsList />
         <ArticleDetailsPageComments id={id} />
       </Page>

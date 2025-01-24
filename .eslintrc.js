@@ -2,16 +2,16 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
-    jest: true
+    jest: true,
   },
   extends: ['plugin:react/recommended', 'airbnb', 'plugin:i18next/recommended', 'plugin:storybook/recommended'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
-      jsx: true
+      jsx: true,
     },
     ecmaVersion: 'latest',
-    sourceType: 'module'
+    sourceType: 'module',
   },
   plugins: ['react', '@typescript-eslint', 'i18next', 'react-hooks', 'arti-set-fsd-checker-plugin', 'unused-imports'],
   rules: {
@@ -20,7 +20,7 @@ module.exports = {
     'unused-imports/no-unused-imports': 'error',
     indent: [2, 2],
     'react/jsx-filename-extension': [2, {
-      extensions: ['.js', '.jsx', '.tsx']
+      extensions: ['.js', '.jsx', '.tsx'],
     }],
     'import/no-unresolved': 'off',
     'import/prefer-default-export': 'off',
@@ -36,11 +36,12 @@ module.exports = {
     'react/button-has-type': 'off',
     'i18next/no-literal-string': ['error', {
       markupOnly: true,
-      ignoreAttribute: ['data-testid', 'to', 'name', 'target', 'justify', 'align', 'direction', 'gap', 'tag', 'as', 'border']
+      ignoreAttribute:
+        ['data-testid', 'to', 'name', 'target', 'justify', 'align', 'direction', 'gap', 'tag', 'as', 'border'],
     }],
     'max-len': ['error', {
       ignoreComments: true,
-      code: 120
+      code: 120,
     }],
     'jsx-a11y/click-events-have-key-events': 'off',
     'jsx-a11y/no-static-element-interactions': 'off',
@@ -49,26 +50,27 @@ module.exports = {
     'no-param-reassign': 'off',
     'no-undef': 'off',
     'arti-set-fsd-checker-plugin/path-checker': ['error', {
-      alias: '@'
+      alias: '@',
     }],
     'arti-set-fsd-checker-plugin/layer-imports': ['error', {
       alias: '@',
-      ignoreImportPatterns: ['**/StoreProvider', '**/testing']
+      ignoreImportPatterns: ['**/StoreProvider', '**/testing'],
     }],
     'arti-set-fsd-checker-plugin/public-api-imports': ['error', {
       alias: '@',
-      testFilesPatterns: ['**/*.test.ts', '**/*.story.*', '**/StoreDecorator.tsx']
-    }]
+      testFilesPatterns: ['**/*.test.ts', '**/*.story.*', '**/StoreDecorator.tsx'],
+    }],
+    'react/no-unstable-nested-components': 'warn',
   },
   globals: {
     __IS_DEV__: true,
     __API__: true,
-    __PROJECT__: true
+    __PROJECT__: true,
   },
   overrides: [{
     files: ['**/src/**/*.{test,stories}.{ts,tsx}'],
     rules: {
-      'i18next/no-literal-string': 'off'
-    }
-  }]
+      'i18next/no-literal-string': 'off',
+    },
+  }],
 };
