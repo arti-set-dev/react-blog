@@ -1,8 +1,5 @@
 /* eslint-disable max-len */
-import {
-  createEntityAdapter,
-  createSlice,
-} from '@reduxjs/toolkit';
+import { createEntityAdapter, createSlice } from '@reduxjs/toolkit';
 import { StateSchema } from '@/app/providers/StoreProvider';
 import { Article } from '@/entities/Article';
 import { fetchArticleRecommendations } from '../services/fetchArticleRecommendations/fetchArticleRecommendations';
@@ -13,22 +10,22 @@ const recommendationsAdapter = createEntityAdapter<Article>({
 });
 
 export const getArticleRecommendations = recommendationsAdapter.getSelectors<StateSchema>(
-  (state) => state.articleDetailsPage?.recommendations || recommendationsAdapter.getInitialState(),
+  (state) => state.articleDetailsPage?.recommendations
+      || recommendationsAdapter.getInitialState(),
 );
 
 const articleDetailsRecommendationsSlice = createSlice({
   name: 'articleDetailsRecommendationsSlice',
-  initialState: recommendationsAdapter.getInitialState<ArticleDetailsRecommendationsSchema>({
-    isLoading: false,
-    error: undefined,
-    ids: [],
-    entities: {
-
-    },
-  }),
-  reducers: {
-
-  },
+  initialState:
+    recommendationsAdapter.getInitialState<ArticleDetailsRecommendationsSchema>(
+      {
+        isLoading: false,
+        error: undefined,
+        ids: [],
+        entities: {},
+      },
+    ),
+  reducers: {},
   extraReducers: (builder) => {
     // fetch comments
     builder.addCase(fetchArticleRecommendations.pending, (state, action) => {

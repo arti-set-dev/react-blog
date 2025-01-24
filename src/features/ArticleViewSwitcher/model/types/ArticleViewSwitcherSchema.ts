@@ -1,3 +1,1 @@
-export interface ArticleViewSwitcherSchema {
-
-}
+export interface ArticleViewSwitcherSchema {}

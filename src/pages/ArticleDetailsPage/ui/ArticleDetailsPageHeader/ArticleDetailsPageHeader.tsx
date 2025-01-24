@@ -9,31 +9,38 @@ import { HStack } from '@/shared/ui/Stack';
 import { getCanEditArticle } from '../../model/selectors/article';
 
 interface ArticleDetailsPageHeaderProps {
-    className?: string;
+  className?: string;
 }
 
-export const ArticleDetailsPageHeader = memo((props: ArticleDetailsPageHeaderProps) => {
-  const { className } = props;
-  const { t } = useTranslation();
-  const navigate = useNavigate();
-  const canEdit = useSelector(getCanEditArticle);
-  const article = useSelector(getArticleDetailsData);
+export const ArticleDetailsPageHeader = memo(
+  (props: ArticleDetailsPageHeaderProps) => {
+    const { className } = props;
+    const { t } = useTranslation();
+    const navigate = useNavigate();
+    const canEdit = useSelector(getCanEditArticle);
+    const article = useSelector(getArticleDetailsData);
 
-  const onBackToList = useCallback(() => {
-    navigate(getRouteArticles());
-  }, [navigate]);
+    const onBackToList = useCallback(() => {
+      navigate(getRouteArticles());
+    }, [navigate]);
 
-  const onEditArticle = useCallback(() => {
-    if (article) {
-      navigate(getRouteProfile(article.id));
-    }
-  }, [article, navigate]);
+    const onEditArticle = useCallback(() => {
+      if (article) {
+        navigate(getRouteProfile(article.id));
+      }
+    }, [article, navigate]);
 
-  return (
-    <HStack justify="between">
-      <Button onClick={onBackToList} theme={ButtonTheme.OUTLINE}>{t('Back')}</Button>
-      {canEdit
-        && <Button onClick={onEditArticle} theme={ButtonTheme.OUTLINE}>{t('Edit')}</Button>}
-    </HStack>
-  );
-});
+    return (
+      <HStack justify="between">
+        <Button onClick={onBackToList} theme={ButtonTheme.OUTLINE}>
+          {t('Back')}
+        </Button>
+        {canEdit && (
+          <Button onClick={onEditArticle} theme={ButtonTheme.OUTLINE}>
+            {t('Edit')}
+          </Button>
+        )}
+      </HStack>
+    );
+  },
+);

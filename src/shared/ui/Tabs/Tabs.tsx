@@ -10,10 +10,10 @@ export interface TabItem {
 }
 
 interface TabsProps {
-    className?: string;
-    tabs: TabItem[];
-    value: string;
-    onTabClick: (tab: TabItem) => void;
+  className?: string;
+  tabs: TabItem[];
+  value: string;
+  onTabClick: (tab: TabItem) => void;
 }
 
 export const Tabs = memo((props: TabsProps) => {
@@ -22,9 +22,12 @@ export const Tabs = memo((props: TabsProps) => {
   } = props;
   const { t } = useTranslation();
 
-  const clickHandle = useCallback((tab: TabItem) => () => {
-    onTabClick(tab);
-  }, [onTabClick]);
+  const clickHandle = useCallback(
+    (tab: TabItem) => () => {
+      onTabClick(tab);
+    },
+    [onTabClick],
+  );
 
   return (
     <div className={classNames(cl.Tabs, {}, [className])}>

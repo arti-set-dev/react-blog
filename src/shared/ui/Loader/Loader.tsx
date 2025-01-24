@@ -14,16 +14,20 @@ export enum LoaderOffset {
 }
 
 interface LoaderProps {
-    className?: string;
-    theme?: LoaderTheme;
-    offset?: LoaderOffset;
+  className?: string;
+  theme?: LoaderTheme;
+  offset?: LoaderOffset;
 }
 
 export const Loader = (props: LoaderProps) => {
   const {
-    className, theme = LoaderTheme.INVERTED, offset = LoaderOffset.DEFAULT,
+    className,
+    theme = LoaderTheme.INVERTED,
+    offset = LoaderOffset.DEFAULT,
   } = props;
   return (
-    <div className={classNames(cl.Loader, {}, [className, cl[theme], cl[offset]])} />
+    <div
+      className={classNames(cl.Loader, {}, [className, cl[theme], cl[offset]])}
+    />
   );
 };

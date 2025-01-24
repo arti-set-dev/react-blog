@@ -30,14 +30,14 @@ export enum TextWeight {
 type TagType = 'h1' | 'h2' | 'h3' | 'p' | 'strong' | 'b' | 'div';
 
 interface TextProps {
-    className?: string;
-    size?: TextSize;
-    theme?: TextTheme;
-    weight?: TextWeight;
-    align?: TextAlign;
-    children?: React.ReactNode;
-    tag?: TagType;
-    'data-testid'?: string;
+  className?: string;
+  size?: TextSize;
+  theme?: TextTheme;
+  weight?: TextWeight;
+  align?: TextAlign;
+  children?: React.ReactNode;
+  tag?: TagType;
+  'data-testid'?: string;
 }
 
 export const Text = memo((props: TextProps) => {
@@ -45,7 +45,11 @@ export const Text = memo((props: TextProps) => {
     className,
     size = TextSize.S,
     theme = TextTheme.PRIMARY,
-    weight = TextWeight.REGULAR, align = TextAlign.LEFT, children, tag = 'div', 'data-testid': dataTestId = 'Text',
+    weight = TextWeight.REGULAR,
+    align = TextAlign.LEFT,
+    children,
+    tag = 'div',
+    'data-testid': dataTestId = 'Text',
   } = props;
 
   const Tag = tag;
@@ -53,7 +57,13 @@ export const Text = memo((props: TextProps) => {
   return (
     <Tag
       data-testid={`${dataTestId}.Tag`}
-      className={classNames(cl.Text, {}, [className, cl[weight], cl[size], cl[theme], cl[align]])}
+      className={classNames(cl.Text, {}, [
+        className,
+        cl[weight],
+        cl[size],
+        cl[theme],
+        cl[align],
+      ])}
     >
       {children}
     </Tag>

@@ -14,13 +14,20 @@ interface NotificationListProps {
 export const NotificationList = (props: NotificationListProps) => {
   const { className } = props;
   const { t } = useTranslation();
-  const { data: notifications, error, isLoading } = useNotificationList(null, {
+  const {
+    data: notifications,
+    error,
+    isLoading,
+  } = useNotificationList(null, {
     pollingInterval: 5000,
   });
 
   if (isLoading) {
     return (
-      <VStack tag="div" className={classNames(cl.NotificationList, {}, [className])}>
+      <VStack
+        tag="div"
+        className={classNames(cl.NotificationList, {}, [className])}
+      >
         <Skeleton width="100%" border="10px" />
         <Skeleton width="100%" border="10px" />
         <Skeleton width="100%" border="10px" />
@@ -31,14 +38,22 @@ export const NotificationList = (props: NotificationListProps) => {
 
   if (error) {
     return (
-      <VStack tag="div" className={classNames(cl.NotificationList, {}, [className])}>
-        <Text theme={TextTheme.ERROR}>{t('There was an error loading notifications')}</Text>
+      <VStack
+        tag="div"
+        className={classNames(cl.NotificationList, {}, [className])}
+      >
+        <Text theme={TextTheme.ERROR}>
+          {t('There was an error loading notifications')}
+        </Text>
       </VStack>
     );
   }
 
   return (
-    <VStack tag="ul" className={classNames(cl.NotificationList, {}, [className])}>
+    <VStack
+      tag="ul"
+      className={classNames(cl.NotificationList, {}, [className])}
+    >
       {notifications?.map((notification) => (
         <NotificationItem notification={notification} key={notification.id} />
       ))}

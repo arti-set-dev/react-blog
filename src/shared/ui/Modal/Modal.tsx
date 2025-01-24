@@ -9,11 +9,11 @@ import cl from './Modal.module.scss';
 import { Portal } from '../Portal/Portal';
 
 interface ModalProps {
-    className?: string;
-    isOpen?: boolean;
-    onClose?: () => void;
-    lazy?: boolean;
-    children: ReactNode;
+  className?: string;
+  isOpen?: boolean;
+  onClose?: () => void;
+  lazy?: boolean;
+  children: ReactNode;
 }
 
 export const Modal = (props: ModalProps) => {
@@ -38,12 +38,17 @@ export const Modal = (props: ModalProps) => {
 
   return (
     <Portal>
-      <Overlay
-        isOpen={isOpen}
-        onClick={closing}
-      >
-        <div onClick={onWindowClick} className={classNames(cl.ModalWindow, mods, [className])}>
-          <Button onClick={closing} theme={ButtonTheme.ICON} className={cl.ModalBtn} aria-label={t('close modal')}>
+      <Overlay isOpen={isOpen} onClick={closing}>
+        <div
+          onClick={onWindowClick}
+          className={classNames(cl.ModalWindow, mods, [className])}
+        >
+          <Button
+            onClick={closing}
+            theme={ButtonTheme.ICON}
+            className={cl.ModalBtn}
+            aria-label={t('close modal')}
+          >
             <CloseIcon />
           </Button>
           {children}

@@ -23,12 +23,14 @@ export const articleDetailsSlice = createSlice({
       state.isLoading = false;
       state.error = action.payload;
     });
-    builder.addCase(fetchArticleById.fulfilled, (state, action: PayloadAction<Article>) => {
-      state.isLoading = false;
-      state.data = action.payload;
-    });
+    builder.addCase(
+      fetchArticleById.fulfilled,
+      (state, action: PayloadAction<Article>) => {
+        state.isLoading = false;
+        state.data = action.payload;
+      },
+    );
   },
-
 });
 
 export const { actions: articleDetailsActions } = articleDetailsSlice;

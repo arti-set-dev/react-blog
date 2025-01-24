@@ -13,24 +13,30 @@ export default {
   },
 } as ComponentMeta<typeof EditableProfileCard>;
 
-const Template: ComponentStory<typeof EditableProfileCard> = (args) => <EditableProfileCard {...args} />;
+const Template: ComponentStory<typeof EditableProfileCard> = (args) => (
+  <EditableProfileCard {...args} />
+);
 
 export const Normal = Template.bind({});
 Normal.args = {
   id: '1',
 };
-Normal.decorators = [StoreDecorator({
-  profile: {
-    form: {
-      username: 'admin',
-      age: 22,
-      country: Country.Germany,
-      city: 'New York',
-      currency: Currency.EUR,
-      firstname: 'Firstname',
-      lastname: 'Lastname',
-      // eslint-disable-next-line max-len
-      avatar: 'https://images.unsplash.com/photo-1511367461989-f85a21fda167?q=80&w=1931&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+Normal.decorators = [
+  StoreDecorator({
+    profile: {
+      form: {
+        username: 'admin',
+        age: 22,
+        country: Country.Germany,
+        city: 'New York',
+        currency: Currency.EUR,
+        firstname: 'Firstname',
+        lastname: 'Lastname',
+        // eslint-disable-next-line max-len
+        avatar:
+          // eslint-disable-next-line max-len
+          'https://images.unsplash.com/photo-1511367461989-f85a21fda167?q=80&w=1931&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      },
     },
-  },
-})];
+  }),
+];

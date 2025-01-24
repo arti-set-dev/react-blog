@@ -7,7 +7,10 @@ import { ArticleDetails } from '@/entities/Article';
 import { ArticleRating } from '@/features/articleRating';
 import { ArticleRecommendationsList } from '@/features/articleRecommendationsList';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { DynamicModuleLoader, ReducerList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import {
+  DynamicModuleLoader,
+  ReducerList,
+} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { Text, TextSize } from '@/shared/ui/Text';
 import { Page } from '@/widgets/Page';
 import { articleDetailsPageReducer } from '../../model/slices';
@@ -29,15 +32,15 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
   const { id } = useParams<{ id: string }>();
 
   if (!id) {
-    return (
-      <Text size={TextSize.L}>{t('article id is not defined')}</Text>
-    );
+    return <Text size={TextSize.L}>{t('article id is not defined')}</Text>;
   }
 
   const articleRatingCard = toggleFeatures({
     name: 'isArticleRatingEnabled',
     on: () => <ArticleRating />,
-    off: () => <Card isOffset>{t('There will be a rating in the speed of time')}</Card>,
+    off: () => (
+      <Card isOffset>{t('There will be a rating in the speed of time')}</Card>
+    ),
   });
 
   return (

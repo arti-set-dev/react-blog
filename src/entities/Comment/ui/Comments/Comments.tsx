@@ -1,9 +1,7 @@
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import {
-  Text,
-} from '@/shared/ui/Text';
+import { Text } from '@/shared/ui/Text';
 import { List } from '@/shared/ui/List';
 import { Skeleton } from '@/shared/ui/Skeleton';
 import { VStack } from '@/shared/ui/Stack';
@@ -12,10 +10,10 @@ import cl from './Comments.module.scss';
 import { CommentCard } from '../CommentCard/CommentCard';
 
 interface CommentsProps {
-    className?: string;
-    comments?: Comment[];
-    isLoading?: boolean;
-    error?: string;
+  className?: string;
+  comments?: Comment[];
+  isLoading?: boolean;
+  error?: string;
 }
 
 export const Comments = memo((props: CommentsProps) => {
@@ -30,7 +28,11 @@ export const Comments = memo((props: CommentsProps) => {
     content = (
       <List className={cl.List}>
         {comments.map((comment) => (
-          <CommentCard key={comment.id} comment={comment} isLoading={isLoading} />
+          <CommentCard
+            key={comment.id}
+            comment={comment}
+            isLoading={isLoading}
+          />
         ))}
       </List>
     );
@@ -47,14 +49,8 @@ export const Comments = memo((props: CommentsProps) => {
   }
 
   if (error) {
-    content = (
-      <Text>{t('There was an error when downloading data')}</Text>
-    );
+    content = <Text>{t('There was an error when downloading data')}</Text>;
   }
 
-  return (
-    <div className={classNames('', {}, [className])}>
-      {content}
-    </div>
-  );
+  return <div className={classNames('', {}, [className])}>{content}</div>;
 });

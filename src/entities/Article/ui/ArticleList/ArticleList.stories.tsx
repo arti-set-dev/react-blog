@@ -27,9 +27,7 @@ const articles = [
       username: 'Roman',
       avatar: storybook,
     },
-    type: [
-      'IT',
-    ],
+    type: ['IT'],
     blocks: [
       {
         id: '1',
@@ -103,9 +101,7 @@ const articles = [
       username: 'Roman',
       avatar: storybook,
     },
-    type: [
-      'IT',
-    ],
+    type: ['IT'],
     blocks: [
       {
         id: '1',
@@ -179,9 +175,7 @@ const articles = [
       username: 'Roman',
       avatar: storybook,
     },
-    type: [
-      'IT',
-    ],
+    type: ['IT'],
     blocks: [
       {
         id: '1',
@@ -255,9 +249,7 @@ const articles = [
       username: 'Roman',
       avatar: storybook,
     },
-    type: [
-      'IT',
-    ],
+    type: ['IT'],
     blocks: [
       {
         id: '1',
@@ -331,9 +323,7 @@ const articles = [
       username: 'Roman',
       avatar: storybook,
     },
-    type: [
-      'IT',
-    ],
+    type: ['IT'],
     blocks: [
       {
         id: '1',
@@ -397,7 +387,9 @@ const articles = [
   },
 ] as Article[];
 
-const Template: ComponentStory<typeof ArticleList> = (args) => <ArticleList {...args} />;
+const Template: ComponentStory<typeof ArticleList> = (args) => (
+  <ArticleList {...args} />
+);
 
 export const Default = Template.bind({});
 Default.args = {

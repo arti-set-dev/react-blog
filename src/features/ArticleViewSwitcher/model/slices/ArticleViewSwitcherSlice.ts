@@ -1,17 +1,13 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { ArticleViewSwitcherSchema } from '../types/ArticleViewSwitcherSchema';
 
-const initialState: ArticleViewSwitcherSchema = {
-
-};
+const initialState: ArticleViewSwitcherSchema = {};
 
 export const ArticleViewSwitcherSlice = createSlice({
   name: 'ArticleViewSwitcher',
   initialState,
   reducers: {
-    template: (state, action: PayloadAction<string>) => {
-
-    },
+    template: (state, action: PayloadAction<string>) => {},
   },
   // extraReducers: (builder) => {
   //     builder

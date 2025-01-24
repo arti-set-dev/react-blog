@@ -3,8 +3,8 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import cl from './List.module.scss';
 
 interface ListProps {
-    className?: string;
-    children?: ReactNode;
+  className?: string;
+  children?: ReactNode;
 }
 
 export const List = (props: ListProps) => {

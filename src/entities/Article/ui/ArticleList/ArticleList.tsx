@@ -15,46 +15,59 @@ export enum ArticleListDisplay {
 }
 
 interface ArticleListProps {
-    className?: string;
-    articles: Article[];
-    isLoading?: boolean;
-    view?: ArticleView;
-    display?: ArticleListDisplay;
-    blank?: boolean;
+  className?: string;
+  articles: Article[];
+  isLoading?: boolean;
+  view?: ArticleView;
+  display?: ArticleListDisplay;
+  blank?: boolean;
 }
 
 export const ArticleList = memo((props: ArticleListProps) => {
   const {
-    className, articles, view = ArticleView.GRID, isLoading, display = ArticleListDisplay.GRID, blank = false,
+    className,
+    articles,
+    view = ArticleView.GRID,
+    isLoading,
+    display = ArticleListDisplay.GRID,
+    blank = false,
   } = props;
   const { t } = useTranslation();
 
   const renderArticle = (article: Article) => (
-    <ArticleItem className={cl.ArticleListItem} key={article.id} article={article} view={view} blank={blank} />
+    <ArticleItem
+      className={cl.ArticleListItem}
+      key={article.id}
+      article={article}
+      view={view}
+      blank={blank}
+    />
   );
 
   if (!isLoading && !articles.length) {
-    return (
-      <Text size={TextSize.L}>{t('No articles were found')}</Text>
-    );
+    return <Text size={TextSize.L}>{t('No articles were found')}</Text>;
   }
 
   return (
-    <List data-testid="ArticlesList" className={classNames(cl.ArticleList, {}, [className, cl[view], cl[display]])}>
-      {articles.length
-        ? articles.map(renderArticle)
-        : null }
-      {isLoading
-        && (
-          <>
-            {new Array(view === ArticleView.COLUMN ? 3 : 9)
-              .fill(0)
-              .map((item, index) => (
+    <List
+      data-testid="ArticlesList"
+      className={classNames(cl.ArticleList, {}, [
+        className,
+        cl[view],
+        cl[display],
+      ])}
+    >
+      {articles.length ? articles.map(renderArticle) : null}
+      {isLoading && (
+        <>
+          {new Array(view === ArticleView.COLUMN ? 3 : 9)
+            .fill(0)
+            .map((item, index) => (
               // eslint-disable-next-line react/no-array-index-key
-                <ArticleItemSkeleton key={index} view={view} />
-              ))}
-          </>
-        )}
+              <ArticleItemSkeleton key={index} view={view} />
+            ))}
+        </>
+      )}
     </List>
   );
 });

@@ -4,10 +4,10 @@ import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 import cl from './Card.module.scss';
 
 interface CardProps {
-    className?: string;
-    children: ReactNode;
-    isHovered?: boolean;
-    isOffset?: boolean;
+  className?: string;
+  children: ReactNode;
+  isHovered?: boolean;
+  isOffset?: boolean;
 }
 
 export const Card = memo((props: CardProps) => {

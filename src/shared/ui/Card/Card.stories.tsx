@@ -19,7 +19,13 @@ export const Default = Template.bind({});
 Default.args = {
   children: (
     <>
-      <Text size={TextSize.L} weight={TextWeight.BOLD} theme={TextTheme.PRIMARY}>Some text</Text>
+      <Text
+        size={TextSize.L}
+        weight={TextWeight.BOLD}
+        theme={TextTheme.PRIMARY}
+      >
+        Some text
+      </Text>
       <Text theme={TextTheme.PRIMARY}>Some text</Text>
     </>
   ),

@@ -12,7 +12,7 @@ import cl from './Sidebar.module.scss';
 import { SidebarItem } from '../SidebarItem/SidebarItem';
 
 interface SidebarProps {
-    className?: string;
+  className?: string;
 }
 
 export const Sidebar = memo((props: SidebarProps) => {
@@ -25,14 +25,22 @@ export const Sidebar = memo((props: SidebarProps) => {
     setCollapsed((prev) => !prev);
   };
 
-  const itemsList = useMemo(() => sidebarItemsList.map((item) => (
-    <li key={item.text}>
-      <SidebarItem item={item} collapsed={collapsed} />
-    </li>
-  )), [collapsed, sidebarItemsList]);
+  const itemsList = useMemo(
+    () => sidebarItemsList.map((item) => (
+      <li key={item.text}>
+        <SidebarItem item={item} collapsed={collapsed} />
+      </li>
+    )),
+    [collapsed, sidebarItemsList],
+  );
 
   return (
-    <aside data-testid="sidebar" className={classNames(cl.Sidebar, { [cl.collapsed]: collapsed }, [className])}>
+    <aside
+      data-testid="sidebar"
+      className={classNames(cl.Sidebar, { [cl.collapsed]: collapsed }, [
+        className,
+      ])}
+    >
       <Button
         data-testid="sidebar-toggle"
         size={ButtonSize.L}

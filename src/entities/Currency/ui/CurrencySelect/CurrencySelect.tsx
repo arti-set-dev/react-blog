@@ -4,10 +4,10 @@ import { Listbox } from '@/shared/ui/Popups';
 import { Currency } from '../../model/types/currency';
 
 interface CurrencySelectProps {
-    className?: string;
-    currValue?: Currency;
-    onChange?: (value: Currency) => void;
-    readonly?: boolean;
+  className?: string;
+  currValue?: Currency;
+  onChange?: (value: Currency) => void;
+  readonly?: boolean;
 }
 
 const options = [
@@ -22,9 +22,12 @@ export const CurrencySelect = memo((props: CurrencySelectProps) => {
   } = props;
   const { t } = useTranslation();
 
-  const onChangeHandler = useCallback((value: string) => {
-    onChange?.(value as Currency);
-  }, [onChange]);
+  const onChangeHandler = useCallback(
+    (value: string) => {
+      onChange?.(value as Currency);
+    },
+    [onChange],
+  );
 
   return (
     <Listbox

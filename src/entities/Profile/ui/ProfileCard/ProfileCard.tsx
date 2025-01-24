@@ -18,23 +18,23 @@ import { Profile } from '../../model/types/profile';
 import cl from './ProfileCard.module.scss';
 
 interface ProfileCardProps {
-    className?: string;
-    data?: Profile;
-    error?: string;
-    isLoading?: boolean;
-    readonly?: boolean;
-    onEdit?: () => void;
-    onCancelEdit?: () => void;
-    onSave?: () => void;
-    onChangeFirstname?: (value?: string) => void;
-    onChangeLastname?: (value?: string) => void;
-    onChangeCity?: (value?: string) => void;
-    onChangeAge?: (value?: string) => void;
-    onChangeCountry?: (country: Country) => void;
-    onChangeCurrency?: (currency: Currency) => void;
-    onChangeAvatar?: (value?: string) => void;
-    onChangeUsername?: (value?: string) => void;
-    fieldErrors?: ValidateFields;
+  className?: string;
+  data?: Profile;
+  error?: string;
+  isLoading?: boolean;
+  readonly?: boolean;
+  onEdit?: () => void;
+  onCancelEdit?: () => void;
+  onSave?: () => void;
+  onChangeFirstname?: (value?: string) => void;
+  onChangeLastname?: (value?: string) => void;
+  onChangeCity?: (value?: string) => void;
+  onChangeAge?: (value?: string) => void;
+  onChangeCountry?: (country: Country) => void;
+  onChangeCurrency?: (currency: Currency) => void;
+  onChangeAvatar?: (value?: string) => void;
+  onChangeUsername?: (value?: string) => void;
+  fieldErrors?: ValidateFields;
 }
 
 export const ProfileCard = (props: ProfileCardProps) => {
@@ -56,7 +56,6 @@ export const ProfileCard = (props: ProfileCardProps) => {
     onChangeUsername,
     onChangeCurrency,
     fieldErrors,
-
   } = props;
   const { t } = useTranslation('profile');
   const authData = useSelector(getUserAuthData);
@@ -77,10 +76,18 @@ export const ProfileCard = (props: ProfileCardProps) => {
     return (
       <div className={classNames(cl.ProfileCard, {}, [className])}>
         <HStack justify="between">
-          <Text size={TextSize.XL} theme={TextTheme.PRIMARY} weight={TextWeight.BOLD}>{t('Profile')}</Text>
+          <Text
+            size={TextSize.XL}
+            theme={TextTheme.PRIMARY}
+            weight={TextWeight.BOLD}
+          >
+            {t('Profile')}
+          </Text>
         </HStack>
         <div className={classNames(cl.data, {}, [cl.isError])}>
-          <Text theme={TextTheme.ERROR} size={TextSize.L}>{t('Profile error')}</Text>
+          <Text theme={TextTheme.ERROR} size={TextSize.L}>
+            {t('Profile error')}
+          </Text>
         </div>
       </div>
     );
@@ -89,47 +96,50 @@ export const ProfileCard = (props: ProfileCardProps) => {
   return (
     <div className={classNames(cl.ProfileCard, {}, [className])}>
       <HStack justify="between">
-        <Text size={TextSize.XL} theme={TextTheme.PRIMARY} weight={TextWeight.BOLD}>{t('Profile')}</Text>
+        <Text
+          size={TextSize.XL}
+          theme={TextTheme.PRIMARY}
+          weight={TextWeight.BOLD}
+        >
+          {t('Profile')}
+        </Text>
         {canEdit && (
           // eslint-disable-next-line react/jsx-no-useless-fragment
           <>
-            {readonly
-              ? (
+            {readonly ? (
+              <Button
+                data-testid="ProfileCard.EditButton"
+                onClick={onEdit}
+                theme={ButtonTheme.PRIMARY}
+              >
+                {t('Edit')}
+              </Button>
+            ) : (
+              <HStack gap="16">
                 <Button
-                  data-testid="ProfileCard.EditButton"
-                  onClick={onEdit}
+                  data-testid="ProfileCard.CancelButton"
+                  onClick={onCancelEdit}
+                  theme={ButtonTheme.OUTLINE_RED}
+                >
+                  {t('Cancel')}
+                </Button>
+                <Button
+                  data-testid="ProfileCard.SaveButton"
+                  onClick={onSave}
                   theme={ButtonTheme.PRIMARY}
                 >
-                  {t('Edit')}
+                  {t('Save')}
                 </Button>
-              )
-              : (
-                <HStack gap="16">
-                  <Button
-                    data-testid="ProfileCard.CancelButton"
-                    onClick={onCancelEdit}
-                    theme={ButtonTheme.OUTLINE_RED}
-                  >
-                    {t('Cancel')}
-                  </Button>
-                  <Button
-                    data-testid="ProfileCard.SaveButton"
-                    onClick={onSave}
-                    theme={ButtonTheme.PRIMARY}
-                  >
-                    {t('Save')}
-                  </Button>
-                </HStack>
-              )}
+              </HStack>
+            )}
           </>
         )}
       </HStack>
-      {data?.avatar
-        && (
-          <VStack align="center" className={cl.AvatarWrapper}>
-            <Avatar size={180} src={data.avatar} alt={t('Profile avatar')} />
-          </VStack>
-        )}
+      {data?.avatar && (
+        <VStack align="center" className={cl.AvatarWrapper}>
+          <Avatar size={180} src={data.avatar} alt={t('Profile avatar')} />
+        </VStack>
+      )}
       <div className={cl.data}>
         <Input
           onChange={onChangeFirstname}
@@ -160,8 +170,16 @@ export const ProfileCard = (props: ProfileCardProps) => {
           value={data?.city}
           error={fieldErrors?.city}
         />
-        <CurrencySelect readonly={readonly} onChange={onChangeCurrency} currValue={data?.currency} />
-        <CountrySelect readonly={readonly} onChange={onChangeCountry} currValue={data?.country} />
+        <CurrencySelect
+          readonly={readonly}
+          onChange={onChangeCurrency}
+          currValue={data?.currency}
+        />
+        <CountrySelect
+          readonly={readonly}
+          onChange={onChangeCountry}
+          currValue={data?.country}
+        />
         <Input
           onChange={onChangeUsername}
           readonly={readonly}

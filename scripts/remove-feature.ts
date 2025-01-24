@@ -26,7 +26,10 @@ function isToggleFunction(node: Node) {
   let isToggleFeature = false;
 
   node.forEachChild((child) => {
-    if (child.isKind(SyntaxKind.Identifier) && child.getText() === 'toggleFeatures') {
+    if (
+      child.isKind(SyntaxKind.Identifier)
+      && child.getText() === 'toggleFeatures'
+    ) {
       isToggleFeature = true;
     }
   });
@@ -37,7 +40,9 @@ function isToggleFunction(node: Node) {
 files.forEach((sourceFile) => {
   sourceFile.forEachDescendant((node) => {
     if (node.isKind(SyntaxKind.CallExpression) && isToggleFunction(node)) {
-      const objectOptions = node.getFirstDescendantByKind(SyntaxKind.ObjectLiteralExpression);
+      const objectOptions = node.getFirstDescendantByKind(
+        SyntaxKind.ObjectLiteralExpression,
+      );
 
       if (!objectOptions) return;
 
@@ -46,11 +51,16 @@ files.forEach((sourceFile) => {
 
       const featureNameProperty = objectOptions.getProperty('name');
 
-      const onFunction = onFunctionProperty?.getFirstDescendantByKind(SyntaxKind.ArrowFunction);
-      const offFunction = offFunctionProperty?.getFirstDescendantByKind(SyntaxKind.ArrowFunction);
-      const featureName = featureNameProperty?.getFirstDescendantByKind(
-        SyntaxKind.StringLiteral,
-      )?.getText().slice(1, -1);
+      const onFunction = onFunctionProperty?.getFirstDescendantByKind(
+        SyntaxKind.ArrowFunction,
+      );
+      const offFunction = offFunctionProperty?.getFirstDescendantByKind(
+        SyntaxKind.ArrowFunction,
+      );
+      const featureName = featureNameProperty
+        ?.getFirstDescendantByKind(SyntaxKind.StringLiteral)
+        ?.getText()
+        .slice(1, -1);
 
       if (featureName !== removedFeatureName) return;
 

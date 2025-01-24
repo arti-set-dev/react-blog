@@ -10,7 +10,9 @@ import '@/shared/config/i18n/i18n';
 const container = document.getElementById('root');
 
 if (!container) {
-  throw new Error('The root container was not found. Failed to install react application.');
+  throw new Error(
+    'The root container was not found. Failed to install react application.',
+  );
 }
 
 const root = createRoot(container);

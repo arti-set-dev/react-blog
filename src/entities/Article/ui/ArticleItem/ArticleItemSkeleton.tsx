@@ -7,8 +7,8 @@ import { ArticleView } from '../../model/consts/consts';
 import cl from './ArticleItem.module.scss';
 
 interface ArticleItemSkeletonProps {
-    className?: string;
-    view: ArticleView;
+  className?: string;
+  view: ArticleView;
 }
 
 export const ArticleItemSkeleton = memo((props: ArticleItemSkeletonProps) => {
@@ -19,8 +19,19 @@ export const ArticleItemSkeleton = memo((props: ArticleItemSkeletonProps) => {
       <li className={classNames('', {}, [className, cl[view]])}>
         <Card className={classNames(cl.Card, {}, [className])}>
           <div className={cl.Header}>
-            <Skeleton align={SkeletonAlign.DEFAULT} className={cl.Avatar} width={30} height={30} border="50%" />
-            <Skeleton align={SkeletonAlign.DEFAULT} className={cl.Username} width={100} height={16} />
+            <Skeleton
+              align={SkeletonAlign.DEFAULT}
+              className={cl.Avatar}
+              width={30}
+              height={30}
+              border="50%"
+            />
+            <Skeleton
+              align={SkeletonAlign.DEFAULT}
+              className={cl.Username}
+              width={100}
+              height={16}
+            />
             <Skeleton align={SkeletonAlign.DEFAULT} width={100} height={16} />
           </div>
           <Skeleton width="100%" height={16} />
@@ -40,8 +51,16 @@ export const ArticleItemSkeleton = memo((props: ArticleItemSkeletonProps) => {
         <Skeleton width="100%" height="200px" />
         <div className={cl.Content}>
           <div className={cl.Head}>
-            <Skeleton align={SkeletonAlign.DEFAULT} width="100px" height="16px" />
-            <Skeleton align={SkeletonAlign.DEFAULT} width="100px" height="16px" />
+            <Skeleton
+              align={SkeletonAlign.DEFAULT}
+              width="100px"
+              height="16px"
+            />
+            <Skeleton
+              align={SkeletonAlign.DEFAULT}
+              width="100px"
+              height="16px"
+            />
           </div>
           <Skeleton width="100%" height="16px" />
         </div>

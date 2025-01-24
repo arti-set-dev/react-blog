@@ -3,7 +3,10 @@ import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { DynamicModuleLoader, ReducerList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import {
+  DynamicModuleLoader,
+  ReducerList,
+} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Avatar } from '@/shared/ui/Avatar';
 import { Skeleton, SkeletonAlign } from '@/shared/ui/Skeleton';
@@ -27,8 +30,8 @@ import {
 import cl from './ArticleDetails.module.scss';
 
 interface ArticleDetailsProps {
-    className?: string;
-    id?: string;
+  className?: string;
+  id?: string;
 }
 
 const reducers: ReducerList = {
@@ -46,11 +49,29 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
   const renderBlock = useCallback((block: ArticleBlock) => {
     switch (block.type) {
     case ArticleBlockType.CODE:
-      return <ArticleCodeBlockComponent key={block.id} className={cl.Block} block={block} />;
+      return (
+        <ArticleCodeBlockComponent
+          key={block.id}
+          className={cl.Block}
+          block={block}
+        />
+      );
     case ArticleBlockType.IMAGE:
-      return <ArticleImageBlockComponent key={block.id} className={cl.Block} block={block} />;
+      return (
+        <ArticleImageBlockComponent
+          key={block.id}
+          className={cl.Block}
+          block={block}
+        />
+      );
     case ArticleBlockType.TEXT:
-      return <ArticleTextBlockComponent key={block.id} className={cl.Block} block={block} />;
+      return (
+        <ArticleTextBlockComponent
+          key={block.id}
+          className={cl.Block}
+          block={block}
+        />
+      );
     default:
       return null;
     }
@@ -79,13 +100,20 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
   } else if (error) {
     content = (
       <HStack className={cl.Error}>
-        <Text size={TextSize.L} theme={TextTheme.ERROR}>{t('There was an error loading the article')}</Text>
+        <Text size={TextSize.L} theme={TextTheme.ERROR}>
+          {t('There was an error loading the article')}
+        </Text>
       </HStack>
     );
   } else {
     content = (
       <>
-        <Avatar className={cl.Avatar} size={180} src={article?.img} alt={t('Article Details Page')} />
+        <Avatar
+          className={cl.Avatar}
+          size={180}
+          src={article?.img}
+          alt={t('Article Details Page')}
+        />
         <VStack data-testid="ArticleDetails.Info" max gap="16">
           <Text
             tag="h1"

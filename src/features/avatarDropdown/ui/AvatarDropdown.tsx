@@ -3,7 +3,10 @@ import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import { getRouteAdminPanel, getRouteProfile } from '@/shared/const/router';
 import {
-  isUserAdmin, isUserManager, userActions, getUserAuthData,
+  isUserAdmin,
+  isUserManager,
+  userActions,
+  getUserAuthData,
 } from '@/entities/User';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Avatar } from '@/shared/ui/Avatar';
@@ -30,20 +33,30 @@ export const AvatarDropdown = (props: AvatarDropdownProps) => {
   return (
     <Dropdown
       items={[
-        ...(isAdminPanelAvailable ? [{
-          content: t('Admin'),
-          href: getRouteAdminPanel(),
-        }] : []),
-        ...(authData ? [{
-          content: t('Profile'),
-          href: getRouteProfile(authData.id),
-        }] : []),
+        ...(isAdminPanelAvailable
+          ? [
+            {
+              content: t('Admin'),
+              href: getRouteAdminPanel(),
+            },
+          ]
+          : []),
+        ...(authData
+          ? [
+            {
+              content: t('Profile'),
+              href: getRouteProfile(authData.id),
+            },
+          ]
+          : []),
         {
           content: t('Logout'),
           onclick: onLogout,
         },
       ]}
-      trigger={<Avatar size={25} src={authData?.avatar} alt={authData?.username} />}
+      trigger={
+        <Avatar size={25} src={authData?.avatar} alt={authData?.username} />
+      }
     />
   );
 };

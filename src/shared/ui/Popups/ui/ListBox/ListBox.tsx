@@ -1,6 +1,4 @@
-import {
-  Listbox as HListBox,
-} from '@headlessui/react';
+import { Listbox as HListBox } from '@headlessui/react';
 import { Fragment, ReactNode } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cl from './ListBox.module.scss';
@@ -48,13 +46,11 @@ export const Listbox = (props: ListBoxProps) => {
             as={Fragment}
           >
             {({ active, selected }) => (
-              <li className={classNames(
-                '',
-                {
+              <li
+                className={classNames('', {
                   [cl.active]: active,
                   [cl.disabled]: item.disabled,
-                },
-              )}
+                })}
               >
                 {selected && '>'}
                 {item.content}

@@ -1,6 +1,4 @@
-import {
-  ButtonHTMLAttributes, memo, ReactNode,
-} from 'react';
+import { ButtonHTMLAttributes, memo, ReactNode } from 'react';
 import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 import cl from './Button.module.scss';
 
@@ -40,7 +38,12 @@ export const Button = memo((props: ButtonProps) => {
   const {
     children,
     className,
-    theme = ButtonTheme.PRIMARY, size = ButtonSize.L, type = ButtonType.BUTTON, disabled, fullWidth, ...otherProps
+    theme = ButtonTheme.PRIMARY,
+    size = ButtonSize.L,
+    type = ButtonType.BUTTON,
+    disabled,
+    fullWidth,
+    ...otherProps
   } = props;
 
   const mods: Mods = {

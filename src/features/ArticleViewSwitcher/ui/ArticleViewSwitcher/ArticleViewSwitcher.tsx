@@ -9,9 +9,9 @@ import { Icon } from '@/shared/ui/Icon';
 import cl from './ArticleViewSwitcher.module.scss';
 
 interface ArticleViewSwitcherProps {
-    className?: string;
-    view: ArticleView;
-    onViewClick: (view: ArticleView) => void;
+  className?: string;
+  view: ArticleView;
+  onViewClick: (view: ArticleView) => void;
 }
 
 const viewTypes = [
@@ -38,7 +38,9 @@ export const ArticleViewSwitcher = memo((props: ArticleViewSwitcherProps) => {
       {viewTypes.map((viewType) => (
         <Button
           key={viewType.view}
-          className={classNames(cl.Button, { [cl.Current]: viewType.view === view })}
+          className={classNames(cl.Button, {
+            [cl.Current]: viewType.view === view,
+          })}
           onClick={onClick(viewType.view)}
           theme={ButtonTheme.ICON}
         >

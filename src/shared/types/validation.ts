@@ -2,9 +2,9 @@ export interface ValidateFields {
   firstname?: string;
   lastname?: string;
   age?: string;
-  currency?: string,
+  currency?: string;
   country?: string;
-  city?: string,
+  city?: string;
   username?: string;
   avatar?: string;
 }

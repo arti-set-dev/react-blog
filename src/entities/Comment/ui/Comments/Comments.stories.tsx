@@ -12,7 +12,9 @@ export default {
   },
 } as ComponentMeta<typeof Comments>;
 
-const Template: ComponentStory<typeof Comments> = (args) => <Comments {...args} />;
+const Template: ComponentStory<typeof Comments> = (args) => (
+  <Comments {...args} />
+);
 
 export const Normal = Template.bind({});
 Normal.args = {

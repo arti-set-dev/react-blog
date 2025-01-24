@@ -54,9 +54,7 @@
       "views": 1022,
       "createdAt": "26.02.2020",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -126,9 +124,7 @@
       "views": 1022,
       "createdAt": "26.02.2022",
       "userId": "2",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -198,9 +194,7 @@
       "views": 1340,
       "createdAt": "22.04.2022",
       "userId": "1",
-      "type": [
-        "SCIENCE"
-      ],
+      "type": ["SCIENCE"],
       "blocks": [
         {
           "id": "1",
@@ -270,9 +264,7 @@
       "views": 980,
       "createdAt": "26.02.2023",
       "userId": "1",
-      "type": [
-        "ECONOMICS"
-      ],
+      "type": ["ECONOMICS"],
       "blocks": [
         {
           "id": "1",
@@ -342,10 +334,7 @@
       "views": 1500,
       "createdAt": "20.06.2022",
       "userId": "1",
-      "type": [
-        "IT",
-        "SCIENCE"
-      ],
+      "type": ["IT", "SCIENCE"],
       "blocks": [
         {
           "id": "1",
@@ -415,9 +404,7 @@
       "views": 670,
       "createdAt": "13.07.2022",
       "userId": "1",
-      "type": [
-        "SCIENCE"
-      ],
+      "type": ["SCIENCE"],
       "blocks": [
         {
           "id": "1",
@@ -487,10 +474,7 @@
       "views": 1280,
       "createdAt": "29.08.2022",
       "userId": "1",
-      "type": [
-        "ECONOMICS",
-        "IT"
-      ],
+      "type": ["ECONOMICS", "IT"],
       "blocks": [
         {
           "id": "1",
@@ -560,9 +544,7 @@
       "views": 1145,
       "createdAt": "09.09.2022",
       "userId": "1",
-      "type": [
-        "POLITICS"
-      ],
+      "type": ["POLITICS"],
       "blocks": [
         {
           "id": "1",
@@ -632,9 +614,7 @@
       "views": 900,
       "createdAt": "11.10.2022",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -704,10 +684,7 @@
       "views": 450,
       "createdAt": "15.11.2022",
       "userId": "1",
-      "type": [
-        "ECONOMICS",
-        "SCIENCE"
-      ],
+      "type": ["ECONOMICS", "SCIENCE"],
       "blocks": [
         {
           "id": "1",
@@ -777,10 +754,7 @@
       "views": 300,
       "createdAt": "29.11.2022",
       "userId": "1",
-      "type": [
-        "SCIENCE",
-        "POLITICS"
-      ],
+      "type": ["SCIENCE", "POLITICS"],
       "blocks": [
         {
           "id": "1",
@@ -850,9 +824,7 @@
       "views": 1022,
       "createdAt": "12.12.2022",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -922,10 +894,7 @@
       "views": 760,
       "createdAt": "20.01.2023",
       "userId": "1",
-      "type": [
-        "IT",
-        "ECONOMICS"
-      ],
+      "type": ["IT", "ECONOMICS"],
       "blocks": [
         {
           "id": "1",
@@ -995,10 +964,7 @@
       "views": 590,
       "createdAt": "25.02.2023",
       "userId": "1",
-      "type": [
-        "ECONOMICS",
-        "POLITICS"
-      ],
+      "type": ["ECONOMICS", "POLITICS"],
       "blocks": [
         {
           "id": "1",
@@ -1068,10 +1034,7 @@
       "views": 450,
       "createdAt": "18.03.2023",
       "userId": "1",
-      "type": [
-        "POLITICS",
-        "SCIENCE"
-      ],
+      "type": ["POLITICS", "SCIENCE"],
       "blocks": [
         {
           "id": "1",
@@ -1261,9 +1224,7 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "roles": [
-        "ADMIN"
-      ],
+      "roles": ["ADMIN"],
       "features": {
         "isArticleRatingEnabled": true,
         "isCounterEnabled": true
@@ -1274,9 +1235,7 @@
       "id": "2",
       "username": "user",
       "password": "123",
-      "roles": [
-        "USER"
-      ],
+      "roles": ["USER"],
       "features": {
         "isArticleRatingEnabled": false,
         "isCounterEnabled": true
@@ -1287,9 +1246,7 @@
       "id": "3",
       "username": "manager",
       "password": "123",
-      "roles": [
-        "MANAGER"
-      ],
+      "roles": ["MANAGER"],
       "features": {
         "isArticleRatingEnabled": true,
         "isCounterEnabled": false
@@ -1300,9 +1257,7 @@
       "id": "4",
       "username": "testuser",
       "password": "123",
-      "roles": [
-        "ADMIN"
-      ],
+      "roles": ["ADMIN"],
       "avatar": "https://images.unsplash.com/photo-1664575600397-88e370cb46b8?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     }
   ],

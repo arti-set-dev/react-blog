@@ -7,20 +7,22 @@ import { Text } from '@/shared/ui/Text';
 import cl from './ArticleEditPage.module.scss';
 
 interface ArticleEditPageProps {
-    className?: string;
+  className?: string;
 }
 
 const ArticleEditPage = memo((props: ArticleEditPageProps) => {
   const { className } = props;
   const { t } = useTranslation();
-  const { id } = useParams<{id: string}>();
+  const { id } = useParams<{ id: string }>();
   const isEdit = Boolean(id);
 
   return (
     <Page className={classNames(cl.ArticleEditPage, {}, [className])}>
-      {isEdit
-        ? <Text>{t('Editing an article with ID -') + id}</Text>
-        : <Text>{t('Creating a new article')}</Text>}
+      {isEdit ? (
+        <Text>{t('Editing an article with ID -') + id}</Text>
+      ) : (
+        <Text>{t('Creating a new article')}</Text>
+      )}
     </Page>
   );
 });

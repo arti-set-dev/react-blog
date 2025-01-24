@@ -2,9 +2,7 @@ import { memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { getRouteArticleCreate } from '@/shared/const/router';
-import {
-  getUserAuthData,
-} from '@/entities/User';
+import { getUserAuthData } from '@/entities/User';
 import { LoginModal } from '@/features/AuthByUsername';
 import { AvatarDropdown } from '@/features/avatarDropdown';
 import { NotificationButton } from '@/features/notificationButton';
@@ -17,7 +15,7 @@ import { Text, TextSize } from '@/shared/ui/Text';
 import cl from './Navbar.module.scss';
 
 interface NavbarProps {
-    className?: string;
+  className?: string;
 }
 
 export const Navbar = memo((props: NavbarProps) => {
@@ -40,7 +38,9 @@ export const Navbar = memo((props: NavbarProps) => {
       <header className={classNames(cl.Navbar, {}, [className])}>
         <Container className={cl.Container}>
           <Text size={TextSize.L}>{t('Logo App')}</Text>
-          <AppLink to={getRouteArticleCreate()} className={cl.NewPostText}>{t('Create new post')}</AppLink>
+          <AppLink to={getRouteArticleCreate()} className={cl.NewPostText}>
+            {t('Create new post')}
+          </AppLink>
           <HStack gap="16">
             <NotificationButton />
             <AvatarDropdown />
@@ -53,7 +53,9 @@ export const Navbar = memo((props: NavbarProps) => {
   return (
     <header className={classNames(cl.Navbar, {}, [className])}>
       <Container className={cl.Container}>
-        <Button theme={ButtonTheme.OUTLINE} onClick={onShowModal}>{t('Login')}</Button>
+        <Button theme={ButtonTheme.OUTLINE} onClick={onShowModal}>
+          {t('Login')}
+        </Button>
         <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
       </Container>
     </header>

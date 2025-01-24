@@ -1,11 +1,18 @@
 import React, {
-  InputHTMLAttributes, memo, useEffect, useRef, useState,
+  InputHTMLAttributes,
+  memo,
+  useEffect,
+  useRef,
+  useState,
 } from 'react';
 import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 import { Text, TextSize, TextTheme } from '../Text/Text';
 import cl from './Input.module.scss';
 
-type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'readOnly'>
+type HTMLInputProps = Omit<
+  InputHTMLAttributes<HTMLInputElement>,
+  'value' | 'onChange' | 'readOnly'
+>;
 
 export enum InputType {
   TEXT = 'text',
@@ -18,16 +25,16 @@ export enum InputTheme {
 }
 
 interface InputProps extends HTMLInputProps {
-    className?: string;
-    value?: string;
-    onChange?: (value: string) => void;
-    placeholder?: string;
-    type?: InputType;
-    theme?: InputTheme;
-    autofocus?: boolean;
-    readonly?: boolean;
-    isNumeric?: boolean;
-    error?: string;
+  className?: string;
+  value?: string;
+  onChange?: (value: string) => void;
+  placeholder?: string;
+  type?: InputType;
+  theme?: InputTheme;
+  autofocus?: boolean;
+  readonly?: boolean;
+  isNumeric?: boolean;
+  error?: string;
 }
 
 export const Input = memo((props: InputProps) => {
@@ -36,7 +43,13 @@ export const Input = memo((props: InputProps) => {
     value = '',
     onChange,
     placeholder,
-    type = InputType.TEXT, theme = InputTheme.INVERTED, autofocus, readonly, isNumeric, error, ...otherProps
+    type = InputType.TEXT,
+    theme = InputTheme.INVERTED,
+    autofocus,
+    readonly,
+    isNumeric,
+    error,
+    ...otherProps
   } = props;
   const [isFocus, setIsFocus] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -70,47 +83,58 @@ export const Input = memo((props: InputProps) => {
   return (
     // eslint-disable-next-line react/jsx-no-useless-fragment
     <>
-      {placeholder
-        ? (
-          <div className={cl.InputWrapper}>
-            <span className={classNames(cl.InputPlaceholder, mods, [className, cl[theme]])}>{placeholder}</span>
-            <input
-              ref={inputRef}
-              type={type}
-              value={value}
-              onChange={onChangeHandler}
-              onFocus={onFoucus}
-              onBlur={onBlur}
-              className={classNames(cl.Input, mods, [className, cl[theme]])}
-              readOnly={readonly}
-              {...otherProps}
-            />
-            {error
-                && (
-                  <Text
-                    data-testid="Input.Error"
-                    size={TextSize.S}
-                    className={cl.ErrorMessage}
-                    theme={TextTheme.ERROR}
-                  >
-                    {error}
-                  </Text>
-                )}
-          </div>
-        )
-        : (
-          <div className={cl.InputWrapper}>
-            <input
-              type={type}
-              value={value}
-              onChange={() => onChange?.(value)}
-              className={classNames(cl.Input, {}, [className])}
-              {...otherProps}
-            />
-            {error
-                && <Text size={TextSize.S} className={cl.ErrorMessage} theme={TextTheme.ERROR}>{error}</Text>}
-          </div>
-        )}
+      {placeholder ? (
+        <div className={cl.InputWrapper}>
+          <span
+            className={classNames(cl.InputPlaceholder, mods, [
+              className,
+              cl[theme],
+            ])}
+          >
+            {placeholder}
+          </span>
+          <input
+            ref={inputRef}
+            type={type}
+            value={value}
+            onChange={onChangeHandler}
+            onFocus={onFoucus}
+            onBlur={onBlur}
+            className={classNames(cl.Input, mods, [className, cl[theme]])}
+            readOnly={readonly}
+            {...otherProps}
+          />
+          {error && (
+            <Text
+              data-testid="Input.Error"
+              size={TextSize.S}
+              className={cl.ErrorMessage}
+              theme={TextTheme.ERROR}
+            >
+              {error}
+            </Text>
+          )}
+        </div>
+      ) : (
+        <div className={cl.InputWrapper}>
+          <input
+            type={type}
+            value={value}
+            onChange={() => onChange?.(value)}
+            className={classNames(cl.Input, {}, [className])}
+            {...otherProps}
+          />
+          {error && (
+            <Text
+              size={TextSize.S}
+              className={cl.ErrorMessage}
+              theme={TextTheme.ERROR}
+            >
+              {error}
+            </Text>
+          )}
+        </div>
+      )}
     </>
   );
 });

@@ -24,7 +24,11 @@ export const NotificationButton = (props: NotificationButtonProps) => {
   }, []);
 
   const trigger = (
-    <Button onClick={onOpenDrower} theme={ButtonTheme.ICON} aria-label={t('Toggle notification')}>
+    <Button
+      onClick={onOpenDrower}
+      theme={ButtonTheme.ICON}
+      aria-label={t('Toggle notification')}
+    >
       <Icon Svg={NotificationIcon} />
     </Button>
   );
@@ -32,10 +36,7 @@ export const NotificationButton = (props: NotificationButtonProps) => {
   return (
     <>
       <BrowserView>
-        <Popover
-          direction="bottom left"
-          trigger={trigger}
-        >
+        <Popover direction="bottom left" trigger={trigger}>
           <NotificationList />
         </Popover>
       </BrowserView>

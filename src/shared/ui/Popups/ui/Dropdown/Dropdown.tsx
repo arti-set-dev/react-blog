@@ -31,32 +31,36 @@ export const Dropdown = (props: DropdownProps) => {
 
   return (
     <Menu as="div" className={classNames(popupCl.Popup, {}, [className])}>
-      <Menu.Button className={popupCl.Trigger}>
-        {trigger}
-      </Menu.Button>
+      <Menu.Button className={popupCl.Trigger}>{trigger}</Menu.Button>
       <Menu.Items className={classNames(cl.Items, {}, menuClasses)}>
         {items.map((item, index) => {
-          const content = ({ active }: {active: boolean}) => (
+          const content = ({ active }: { active: boolean }) => (
             // eslint-disable-next-line react/jsx-no-useless-fragment
             <>
-              {item.href
-                ? item.content
-                : (
-                  <button
-                    onClick={item.onclick}
-                    disabled={item.disabled}
-                    className={classNames(cl.Item, { [cl.active]: active }, [])}
-                  >
-                    {item.content}
-                  </button>
-                )}
+              {item.href ? (
+                item.content
+              ) : (
+                <button
+                  onClick={item.onclick}
+                  disabled={item.disabled}
+                  className={classNames(cl.Item, { [cl.active]: active }, [])}
+                >
+                  {item.content}
+                </button>
+              )}
             </>
           );
 
           if (item.href) {
             return (
               // eslint-disable-next-line react/no-array-index-key
-              <Menu.Item key={index} className={cl.Item} as={AppLink} to={item.href} disabled={item.disabled}>
+              <Menu.Item
+                className={cl.Item}
+                key={index}
+                as={AppLink}
+                to={item.href}
+                disabled={item.disabled}
+              >
                 {content}
               </Menu.Item>
             );

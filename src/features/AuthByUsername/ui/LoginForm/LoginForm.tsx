@@ -2,7 +2,10 @@ import React, { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { DynamicModuleLoader, ReducerList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import {
+  DynamicModuleLoader,
+  ReducerList,
+} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Button, ButtonTheme, ButtonType } from '@/shared/ui/Button';
 import { Input } from '@/shared/ui/Input';
@@ -18,8 +21,8 @@ import { getLoginIsLoading } from '../../model/selectors/getLoginIsLoading/getLo
 import cl from './LoginForm.module.scss';
 
 export interface LoginFormProps {
-    className?: string;
-    onSucces: () => void;
+  className?: string;
+  onSucces: () => void;
 }
 
 const initialReducers: ReducerList = {
@@ -34,31 +37,55 @@ const LoginForm = memo((props: LoginFormProps) => {
   const isLoading = useSelector(getLoginIsLoading);
   const error = useSelector(getLoginError);
 
-  const onChangeUsername = useCallback((value: string) => {
-    dispatch(loginActions.setUsername(value));
-  }, [dispatch]);
+  const onChangeUsername = useCallback(
+    (value: string) => {
+      dispatch(loginActions.setUsername(value));
+    },
+    [dispatch],
+  );
 
-  const onChangePassword = useCallback((value: string) => {
-    dispatch(loginActions.setPassword(value));
-  }, [dispatch]);
+  const onChangePassword = useCallback(
+    (value: string) => {
+      dispatch(loginActions.setPassword(value));
+    },
+    [dispatch],
+  );
 
-  const onLoginClick = useCallback(async (e: React.MouseEvent) => {
-    e.preventDefault();
-    const result = await dispatch(loginByUsername({ username, password }));
-    if (result.meta.requestStatus === 'fulfilled') {
-      onSucces();
-    }
-  }, [dispatch, onSucces, password, username]);
+  const onLoginClick = useCallback(
+    async (e: React.MouseEvent) => {
+      e.preventDefault();
+      const result = await dispatch(loginByUsername({ username, password }));
+      if (result.meta.requestStatus === 'fulfilled') {
+        onSucces();
+      }
+    },
+    [dispatch, onSucces, password, username],
+  );
 
   const { t } = useTranslation();
 
   return (
     <DynamicModuleLoader removeAfterUnmount reducers={initialReducers}>
       <form className={classNames(cl.LoginForm, {}, [className])}>
-        <Text theme={TextTheme.PRIMARY} size={TextSize.XL} weight={TextWeight.BOLD}>{t('Login')}</Text>
+        <Text
+          theme={TextTheme.PRIMARY}
+          size={TextSize.XL}
+          weight={TextWeight.BOLD}
+        >
+          {t('Login')}
+        </Text>
         <div className={cl.LoginFields}>
-          <Input autofocus placeholder={t('Your name')} value={username} onChange={onChangeUsername} />
-          <Input placeholder={t('Your password')} value={password} onChange={onChangePassword} />
+          <Input
+            autofocus
+            placeholder={t('Your name')}
+            value={username}
+            onChange={onChangeUsername}
+          />
+          <Input
+            placeholder={t('Your password')}
+            value={password}
+            onChange={onChangePassword}
+          />
         </div>
         <Button
           type={ButtonType.SUBMIT}
@@ -69,8 +96,7 @@ const LoginForm = memo((props: LoginFormProps) => {
         >
           {t('Login')}
         </Button>
-        {error
-            && <Text theme={TextTheme.ERROR}>{t('Error login')}</Text>}
+        {error && <Text theme={TextTheme.ERROR}>{t('Error login')}</Text>}
       </form>
     </DynamicModuleLoader>
   );

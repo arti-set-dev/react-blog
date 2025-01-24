@@ -6,11 +6,14 @@ import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch
 import { ArticleList } from '@/entities/Article';
 import { Text } from '@/shared/ui/Text';
 import { getArticles } from '../../model/slices/articlesPageSlice';
-import { getArticlesPageIsError, getArticlesPageIsLoading, getArticlesPageIsView }
-  from '../../model/selectors/articlesPageSelectors';
+import {
+  getArticlesPageIsError,
+  getArticlesPageIsLoading,
+  getArticlesPageIsView,
+} from '../../model/selectors/articlesPageSelectors';
 
 interface ArticleInfiniteListProps {
-    className?: string;
+  className?: string;
 }
 
 export const ArticleInfiniteList = memo((props: ArticleInfiniteListProps) => {
@@ -24,12 +27,8 @@ export const ArticleInfiniteList = memo((props: ArticleInfiniteListProps) => {
   const [searchParams] = useSearchParams();
 
   if (error) {
-    return (
-      <Text>{t('Data boot error')}</Text>
-    );
+    return <Text>{t('Data boot error')}</Text>;
   }
 
-  return (
-    <ArticleList view={view} isLoading={isLoading} articles={articles} />
-  );
+  return <ArticleList view={view} isLoading={isLoading} articles={articles} />;
 });

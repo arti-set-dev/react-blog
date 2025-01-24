@@ -6,7 +6,8 @@ import type { ArticleDetailsPageSchema } from './model/types';
 
 export {
   ArticleDetailsPageAsync as ArticleDetailsPage,
-  ArticleDetailsCommentsSchema, ArticleDetailsRecommendationsSchema,
+  ArticleDetailsCommentsSchema,
+  ArticleDetailsRecommendationsSchema,
   ArticleDetailsPageSchema,
   getArticleCommentsIsloading,
 };

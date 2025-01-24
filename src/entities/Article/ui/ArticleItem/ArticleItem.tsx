@@ -13,17 +13,15 @@ import { Avatar } from '@/shared/ui/Avatar';
 import { Button, ButtonTheme } from '@/shared/ui/Button';
 import { ArticleView } from '../../model/consts/consts';
 import { ArticleBlockType } from '../../model/types/articleType';
-import {
-  Article, ArticleTextBlock,
-} from '../../model/types/article';
+import { Article, ArticleTextBlock } from '../../model/types/article';
 import cl from './ArticleItem.module.scss';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 
 interface ArticleItemProps {
-    className?: string;
-    article: Article;
-    view: ArticleView;
-    blank?: boolean;
+  className?: string;
+  article: Article;
+  view: ArticleView;
+  blank?: boolean;
 }
 
 export const ArticleItem = memo((props: ArticleItemProps) => {
@@ -37,14 +35,19 @@ export const ArticleItem = memo((props: ArticleItemProps) => {
     navigate(getRouteArticleDetails(article.id));
   }, [article.id, navigate]);
 
-  const articleTypes = useMemo(() => (
-    <div className={cl.Tags}>
-      {article.type.map(((type, index) => (
-        // eslint-disable-next-line react/no-array-index-key
-        <Text key={index} className={cl.Tag}>{type}</Text>
-      )))}
-    </div>
-  ), [article.type]);
+  const articleTypes = useMemo(
+    () => (
+      <div className={cl.Tags}>
+        {article.type.map((type, index) => (
+          // eslint-disable-next-line react/no-array-index-key
+          <Text key={index} className={cl.Tag}>
+            {type}
+          </Text>
+        ))}
+      </div>
+    ),
+    [article.type],
+  );
 
   const views = (
     <div className={cl.Views}>
@@ -54,24 +57,53 @@ export const ArticleItem = memo((props: ArticleItemProps) => {
   );
 
   if (view === ArticleView.COLUMN) {
-    const textBlocks = article.blocks.find((block) => block.type === ArticleBlockType.TEXT) as ArticleTextBlock;
+    const textBlocks = article.blocks.find(
+      (block) => block.type === ArticleBlockType.TEXT,
+    ) as ArticleTextBlock;
     return (
-      <li data-testid="ArticlesItem" className={classNames(cl.ArticleItem, {}, [className, cl[view]])}>
+      <li
+        data-testid="ArticlesItem"
+        className={classNames(cl.ArticleItem, {}, [className, cl[view]])}
+      >
         <Card isHovered className={cl.Card}>
           <div className={cl.Header}>
-            <Avatar className={cl.Avatar} size={30} src={article.user.avatar} alt={article.user.username} />
-            <Text className={cl.Username} size={TextSize.M} weight={TextWeight.BOLD}>{article.user.username}</Text>
+            <Avatar
+              className={cl.Avatar}
+              size={30}
+              src={article.user.avatar}
+              alt={article.user.username}
+            />
+            <Text
+              className={cl.Username}
+              size={TextSize.M}
+              weight={TextWeight.BOLD}
+            >
+              {article.user.username}
+            </Text>
             <Text size={TextSize.S}>{article.createdAt}</Text>
           </div>
           <AppLink to={getRouteArticleDetails(article.id)}>
-            <Text className={cl.Title} size={TextSize.XL}>{article.title}</Text>
+            <Text className={cl.Title} size={TextSize.XL}>
+              {article.title}
+            </Text>
           </AppLink>
           {articleTypes}
-          <AppLink className={cl.LinkImg} to={getRouteArticleDetails(article.id)}>
-            <LazyImage height={300} className={cl.Img} src={article.img} alt={article.title} />
+          <AppLink
+            className={cl.LinkImg}
+            to={getRouteArticleDetails(article.id)}
+          >
+            <LazyImage
+              height={300}
+              className={cl.Img}
+              src={article.img}
+              alt={article.title}
+            />
           </AppLink>
           {textBlocks && (
-            <ArticleTextBlockComponent className={cl.TextBlock} block={textBlocks} />
+            <ArticleTextBlockComponent
+              className={cl.TextBlock}
+              block={textBlocks}
+            />
           )}
           <div onClick={onOpenArticle} className={cl.Footer}>
             <Button theme={ButtonTheme.OUTLINE}>{t('Read more')}</Button>
@@ -83,55 +115,78 @@ export const ArticleItem = memo((props: ArticleItemProps) => {
   }
 
   return (
-    <li data-testid="ArticlesItem" className={classNames(cl.ArticleItem, {}, [className, cl[view]])}>
-      {blank
-        ? (
-          <Card isHovered className={cl.Card}>
-            <time dateTime={article.createdAt} className={cl.CreatedAt}>{article.createdAt}</time>
-            <AppLink className={cl.LinkImg} to={getRouteArticleDetails(article.id)} target="_blank">
-              <LazyImage
-                fallback={<Skeleton width="100%" height={200} />}
-                className={cl.Img}
-                width={280}
-                height={200}
-                src={article.img}
-                alt={article.title}
-              />
-            </AppLink>
-            <div className={cl.Content}>
-              <div className={cl.Head}>
-                {articleTypes}
-                {views}
-              </div>
-              <AppLink className={cl.Link} to={getRouteArticleDetails(article.id)} target="_blank">
-                <Text size={TextSize.M} weight={TextWeight.BOLD}>{article.title}</Text>
-              </AppLink>
+    <li
+      data-testid="ArticlesItem"
+      className={classNames(cl.ArticleItem, {}, [className, cl[view]])}
+    >
+      {blank ? (
+        <Card isHovered className={cl.Card}>
+          <time dateTime={article.createdAt} className={cl.CreatedAt}>
+            {article.createdAt}
+          </time>
+          <AppLink
+            className={cl.LinkImg}
+            to={getRouteArticleDetails(article.id)}
+            target="_blank"
+          >
+            <LazyImage
+              fallback={<Skeleton width="100%" height={200} />}
+              className={cl.Img}
+              width={280}
+              height={200}
+              src={article.img}
+              alt={article.title}
+            />
+          </AppLink>
+          <div className={cl.Content}>
+            <div className={cl.Head}>
+              {articleTypes}
+              {views}
             </div>
-          </Card>
-        )
-        : (
-          <Card className={cl.Card}>
-            <time dateTime={article.createdAt} className={cl.CreatedAt}>{article.createdAt}</time>
-            <AppLink className={cl.LinkImg} to={getRouteArticleDetails(article.id)}>
-              <LazyImage
-                fallback={<Skeleton width="100%" height={200} />}
-                className={cl.Img}
-                height={200}
-                src={article.img}
-                alt={article.title}
-              />
+            <AppLink
+              className={cl.Link}
+              to={getRouteArticleDetails(article.id)}
+              target="_blank"
+            >
+              <Text size={TextSize.M} weight={TextWeight.BOLD}>
+                {article.title}
+              </Text>
             </AppLink>
-            <div className={cl.Content}>
-              <div className={cl.Head}>
-                {articleTypes}
-                {views}
-              </div>
-              <AppLink className={cl.Link} to={getRouteArticleDetails(article.id)}>
-                <Text size={TextSize.M} weight={TextWeight.BOLD}>{article.title}</Text>
-              </AppLink>
+          </div>
+        </Card>
+      ) : (
+        <Card className={cl.Card}>
+          <time dateTime={article.createdAt} className={cl.CreatedAt}>
+            {article.createdAt}
+          </time>
+          <AppLink
+            className={cl.LinkImg}
+            to={getRouteArticleDetails(article.id)}
+          >
+            <LazyImage
+              fallback={<Skeleton width="100%" height={200} />}
+              className={cl.Img}
+              height={200}
+              src={article.img}
+              alt={article.title}
+            />
+          </AppLink>
+          <div className={cl.Content}>
+            <div className={cl.Head}>
+              {articleTypes}
+              {views}
             </div>
-          </Card>
-        )}
+            <AppLink
+              className={cl.Link}
+              to={getRouteArticleDetails(article.id)}
+            >
+              <Text size={TextSize.M} weight={TextWeight.BOLD}>
+                {article.title}
+              </Text>
+            </AppLink>
+          </div>
+        </Card>
+      )}
     </li>
   );
 });

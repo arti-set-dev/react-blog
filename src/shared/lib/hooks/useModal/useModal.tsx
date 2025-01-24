@@ -15,11 +15,14 @@ export const useModal = (props: UseModalProps) => {
     }
   };
 
-  const onKeyDown = useCallback((e: KeyboardEvent) => {
-    if (e.code === 'Escape') {
-      onClose?.();
-    }
-  }, [onClose]);
+  const onKeyDown = useCallback(
+    (e: KeyboardEvent) => {
+      if (e.code === 'Escape') {
+        onClose?.();
+      }
+    },
+    [onClose],
+  );
 
   useEffect(() => {
     if (isOpen) {
@@ -42,6 +45,8 @@ export const useModal = (props: UseModalProps) => {
   };
 
   return {
-    closing, onWindowClick, isMounted,
+    closing,
+    onWindowClick,
+    isMounted,
   };
 };

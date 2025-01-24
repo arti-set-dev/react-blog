@@ -23,7 +23,6 @@ export const StarRating = (props: StarRatingProps) => {
 
   const mods: Mods = {
     [cl.hovered]: currentStarsCount >= stars.length ? cl.hovered : cl.default,
-
   };
 
   const onHover = (starsCount: number) => () => {
@@ -50,11 +49,9 @@ export const StarRating = (props: StarRatingProps) => {
     <div className={classNames('', mods, [className])}>
       {stars.map((starNumber) => (
         <Icon
-          className={classNames(
-            cl.Icon,
-            { [cl.Selected]: isSelected },
-            [currentStarsCount >= starNumber ? cl.hovered : cl.default],
-          )}
+          className={classNames(cl.Icon, { [cl.Selected]: isSelected }, [
+            currentStarsCount >= starNumber ? cl.hovered : cl.default,
+          ])}
           data-testid={`StarRating.${starNumber}`}
           data-selected={currentStarsCount >= starNumber}
           width={size}

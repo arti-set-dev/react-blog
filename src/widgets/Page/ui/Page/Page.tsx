@@ -14,9 +14,9 @@ import { getScrollByPath } from '../../model/selectors/scrollSaveSelectors';
 import { ScrollSaveActions } from '../../model/slices/ScrollSaveSlice';
 import cl from './Page.module.scss';
 
-interface PageProps extends TestsProps{
+interface PageProps extends TestsProps {
   className?: string;
-  children: ReactNode,
+  children: ReactNode;
   onScrollEnd?: () => void;
 }
 
@@ -26,9 +26,7 @@ export const Page = memo((props: PageProps) => {
   const triggerRef = useRef() as MutableRefObject<HTMLDivElement>;
   const dispatch = useAppDispatch();
   const { pathname } = useLocation();
-  const scrollPosition = useSelector(
-    (state: StateSchema) => getScrollByPath(state, pathname),
-  );
+  const scrollPosition = useSelector((state: StateSchema) => getScrollByPath(state, pathname));
 
   useInfiniteScroll({
     triggerRef,
@@ -41,10 +39,12 @@ export const Page = memo((props: PageProps) => {
   });
 
   const onScroll = useThrottle((e: UIEvent<HTMLDivElement>) => {
-    dispatch(ScrollSaveActions.setScrollPosition({
-      position: e.currentTarget.scrollTop,
-      path: pathname,
-    }));
+    dispatch(
+      ScrollSaveActions.setScrollPosition({
+        position: e.currentTarget.scrollTop,
+        path: pathname,
+      }),
+    );
   }, 1000);
 
   return (
@@ -55,8 +55,7 @@ export const Page = memo((props: PageProps) => {
       className={classNames(cl.Page, {}, [className])}
     >
       {children}
-      {onScrollEnd
-        && <div className={cl.TriggerElem} ref={triggerRef} />}
+      {onScrollEnd && <div className={cl.TriggerElem} ref={triggerRef} />}
     </section>
   );
 });

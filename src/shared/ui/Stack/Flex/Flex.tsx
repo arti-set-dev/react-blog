@@ -7,7 +7,17 @@ export type FlexJustify = 'start' | 'center' | 'end' | 'between';
 export type FlexAlign = 'start' | 'center' | 'end';
 export type FlexDirection = 'row' | 'column';
 export type FlexGap = '4' | '8' | '16' | '32';
-export type FlexTagType = 'section' | 'article' | 'aside' | 'footer' | 'header' | 'main' | 'nav'| 'div' | 'ul' | 'li';
+export type FlexTagType =
+  | 'section'
+  | 'article'
+  | 'aside'
+  | 'footer'
+  | 'header'
+  | 'main'
+  | 'nav'
+  | 'div'
+  | 'ul'
+  | 'li';
 
 const justifyClasses: Record<FlexJustify, string> = {
   start: cl.justifyStart,
@@ -48,21 +58,27 @@ const gapClasses: Record<FlexGap, string> = {
 };
 
 export interface FlexProps {
-    className?: string;
-    children: ReactNode;
-    justify?: FlexJustify;
-    align?: FlexAlign;
-    direction: FlexDirection;
-    gap?: FlexGap;
-    max?: boolean;
-    tag?: FlexTagType;
+  className?: string;
+  children: ReactNode;
+  justify?: FlexJustify;
+  align?: FlexAlign;
+  direction: FlexDirection;
+  gap?: FlexGap;
+  max?: boolean;
+  tag?: FlexTagType;
 }
 
 export const Flex = (props: FlexProps) => {
   const {
     className,
     children,
-    justify = 'start', align = 'center', direction = 'row', gap = '16', max = false, tag = 'div', ...otherProps
+    justify = 'start',
+    align = 'center',
+    direction = 'row',
+    gap = '16',
+    max = false,
+    tag = 'div',
+    ...otherProps
   } = props;
   const { t } = useTranslation();
 

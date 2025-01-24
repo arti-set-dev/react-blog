@@ -1,6 +1,9 @@
 import React, { memo, useCallback, useEffect } from 'react';
 import { classNames, Mods } from '@/shared/lib/classNames/classNames';
-import { useAnimationLibs, AnimationProvider } from '@/shared/lib/components/AnimationProvider';
+import {
+  useAnimationLibs,
+  AnimationProvider,
+} from '@/shared/lib/components/AnimationProvider';
 import { useModal } from '@/shared/lib/hooks/useModal/useModal';
 import { Loader } from '../Loader/Loader';
 import { Portal } from '../Portal/Portal';
@@ -64,7 +67,10 @@ const DrawerContent = memo((props: DrawerProps) => {
       }
     },
     {
-      from: () => [0, y.get()], filterTaps: true, bounds: { top: 0 }, rubberband: true,
+      from: () => [0, y.get()],
+      filterTaps: true,
+      bounds: { top: 0 },
+      rubberband: true,
     },
   );
 

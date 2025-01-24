@@ -4,8 +4,8 @@ import { Theme } from '@/shared/const/theme';
 import { ThemeContext } from '../../context/ThemeContext';
 
 interface UseThemeResult {
-    toggleTheme: () => void;
-    theme: Theme;
+  toggleTheme: () => void;
+  theme: Theme;
 }
 
 export function useTheme(): UseThemeResult {

@@ -12,10 +12,11 @@ export default {
   argTypes: {
     backgroundColor: { control: 'color' },
   },
-
 } as ComponentMeta<typeof ArticleDetailsPage>;
 
-const Template: ComponentStory<typeof ArticleDetailsPage> = (args) => <ArticleDetailsPage {...args} />;
+const Template: ComponentStory<typeof ArticleDetailsPage> = (args) => (
+  <ArticleDetailsPage {...args} />
+);
 
 const article: Article = {
   id: '1',
@@ -94,11 +95,13 @@ const article: Article = {
 
 export const Default = Template.bind({});
 Default.args = {};
-Default.decorators = [StoreDecorator({
-  articleDetails: {
-    data: article,
-  },
-})];
+Default.decorators = [
+  StoreDecorator({
+    articleDetails: {
+      data: article,
+    },
+  }),
+];
 Default.parameters = {
   mockData: [
     {

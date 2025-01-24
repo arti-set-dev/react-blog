@@ -16,11 +16,16 @@ export const NotificationItem = (props: NotificationItemProps) => {
   const { t } = useTranslation();
 
   return (
-    <VStack tag="li" gap="4" className={classNames(cl.NotificationItem, {}, [className])}>
+    <VStack
+      tag="li"
+      gap="4"
+      className={classNames(cl.NotificationItem, {}, [className])}
+    >
       <Text size={TextSize.M}>{notification.title}</Text>
       <Text>{notification.description}</Text>
-      {notification.href
-        && <AppLink to={notification.href}>{t('Go to link')}</AppLink>}
+      {notification.href && (
+        <AppLink to={notification.href}>{t('Go to link')}</AppLink>
+      )}
     </VStack>
   );
 };

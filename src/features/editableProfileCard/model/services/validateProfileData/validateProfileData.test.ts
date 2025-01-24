@@ -22,7 +22,10 @@ describe('validateProfileData.test', () => {
 
   test('without required fields', async () => {
     const result = validateProfileData({
-      ...data, firstname: '', lastname: '', city: '',
+      ...data,
+      firstname: '',
+      lastname: '',
+      city: '',
     });
 
     expect(result).toEqual([
@@ -35,16 +38,12 @@ describe('validateProfileData.test', () => {
   test('username too long', async () => {
     const result = validateProfileData({ ...data, username: 'qwertyuiopa' });
 
-    expect(result).toEqual([
-      ValidateProfileError.LONG_USERNAME,
-    ]);
+    expect(result).toEqual([ValidateProfileError.LONG_USERNAME]);
   });
 
   test('incorrect country', async () => {
     const result = validateProfileData({ ...data, country: undefined });
 
-    expect(result).toEqual([
-      ValidateProfileError.INCORRECT_COUNTRY,
-    ]);
+    expect(result).toEqual([ValidateProfileError.INCORRECT_COUNTRY]);
   });
 });

@@ -6,21 +6,25 @@ import cl from './Avatar.module.scss';
 import ProfileIcon from '@/shared/assets/icons/profile-icon.svg';
 
 export enum AvatarLoading {
-    LAZY = 'lazy',
-    EAGER = 'eager',
+  LAZY = 'lazy',
+  EAGER = 'eager',
 }
 
 interface AvatarProps {
-    className?: string;
-    src?: string;
-    alt?: string;
-    size?: number;
-    loading?: AvatarLoading;
+  className?: string;
+  src?: string;
+  alt?: string;
+  size?: number;
+  loading?: AvatarLoading;
 }
 
 export const Avatar = (props: AvatarProps) => {
   const {
-    className, src, alt, size = 100, loading = AvatarLoading.LAZY,
+    className,
+    src,
+    alt,
+    size = 100,
+    loading = AvatarLoading.LAZY,
   } = props;
 
   const fallback = <Skeleton width={size} height={size} border="50%" />;

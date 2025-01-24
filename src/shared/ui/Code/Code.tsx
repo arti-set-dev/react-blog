@@ -1,6 +1,4 @@
-import {
-  memo, useCallback, useState,
-} from 'react';
+import { memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import CopyIcon from '@/shared/assets/icons/copy-icon.svg';
@@ -10,8 +8,8 @@ import { Button, ButtonTheme } from '../Button/Button';
 import cl from './Code.module.scss';
 
 interface CodeProps {
-    className?: string;
-    text: string;
+  className?: string;
+  text: string;
 }
 
 enum CopyStatus {
@@ -22,10 +20,13 @@ enum CopyStatus {
 export const Code = memo((props: CodeProps) => {
   const { className, text } = props;
   const { t } = useTranslation();
-  const [copySuccess, setCopySuccess] = useState<CopyStatus | undefined>(undefined);
+  const [copySuccess, setCopySuccess] = useState<CopyStatus | undefined>(
+    undefined,
+  );
 
   const onCopy = useCallback(() => {
-    navigator.clipboard.writeText(text)
+    navigator.clipboard
+      .writeText(text)
       .then(() => {
         setCopySuccess(CopyStatus.SUCCESS);
         setTimeout(() => setCopySuccess(undefined), 2000);
@@ -38,20 +39,24 @@ export const Code = memo((props: CodeProps) => {
 
   return (
     <pre className={classNames(cl.Code, {}, [className])}>
-      <Button onClick={onCopy} theme={ButtonTheme.ICON} className={cl.CopyBtn} aria-label={t('Copy')}>
-        {!copySuccess
-            && <CopyIcon />}
+      <Button
+        onClick={onCopy}
+        theme={ButtonTheme.ICON}
+        className={cl.CopyBtn}
+        aria-label={t('Copy')}
+      >
+        {!copySuccess && <CopyIcon />}
 
-        {copySuccess === CopyStatus.SUCCESS
-          && <CheckIconSuccess className={cl.CheckIconSuccess} />}
+        {copySuccess === CopyStatus.SUCCESS && (
+          <CheckIconSuccess className={cl.CheckIconSuccess} />
+        )}
 
-        {copySuccess === CopyStatus.ERROR
-              && <WarningIcon className={cl.WarningIcon} />}
+        {copySuccess === CopyStatus.ERROR && (
+          <WarningIcon className={cl.WarningIcon} />
+        )}
       </Button>
       <div className={cl.Overlay}>
-        <code>
-          {text}
-        </code>
+        <code>{text}</code>
       </div>
     </pre>
   );

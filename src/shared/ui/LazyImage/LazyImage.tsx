@@ -1,8 +1,12 @@
 import {
-  memo, useState, ImgHTMLAttributes, ReactElement, useLayoutEffect,
+  memo,
+  useState,
+  ImgHTMLAttributes,
+  ReactElement,
+  useLayoutEffect,
 } from 'react';
 
-interface LazyImageProps extends ImgHTMLAttributes<HTMLImageElement>{
+interface LazyImageProps extends ImgHTMLAttributes<HTMLImageElement> {
   className?: string;
   fallback?: ReactElement;
   errorFallback?: ReactElement;
@@ -10,7 +14,12 @@ interface LazyImageProps extends ImgHTMLAttributes<HTMLImageElement>{
 
 export const LazyImage = memo((props: LazyImageProps) => {
   const {
-    className, src, alt = '', fallback, errorFallback, ...otherProps
+    className,
+    src,
+    alt = '',
+    fallback,
+    errorFallback,
+    ...otherProps
   } = props;
   const [isLoading, setIsLoading] = useState(false);
   const [hasError, setHasError] = useState(false);
@@ -37,6 +46,12 @@ export const LazyImage = memo((props: LazyImageProps) => {
   }
 
   return (
-    <img loading="lazy" src={src} alt={alt} {...otherProps} className={className} />
+    <img
+      loading="lazy"
+      src={src}
+      alt={alt}
+      {...otherProps}
+      className={className}
+    />
   );
 });

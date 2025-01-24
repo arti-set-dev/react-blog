@@ -23,13 +23,9 @@ const articleDetailsCommentsSlice = createSlice({
     isLoading: false,
     error: undefined,
     ids: [],
-    entities: {
-
-    },
+    entities: {},
   }),
-  reducers: {
-
-  },
+  reducers: {},
   extraReducers: (builder) => {
     // fetch comments
     builder.addCase(fetchCommentsByArticleId.pending, (state, action) => {
@@ -40,10 +36,13 @@ const articleDetailsCommentsSlice = createSlice({
       state.isLoading = false;
       state.error = action.payload;
     });
-    builder.addCase(fetchCommentsByArticleId.fulfilled, (state, action: PayloadAction<Comment[]>) => {
-      state.isLoading = false;
-      commentsAdapter.setAll(state, action.payload);
-    });
+    builder.addCase(
+      fetchCommentsByArticleId.fulfilled,
+      (state, action: PayloadAction<Comment[]>) => {
+        state.isLoading = false;
+        commentsAdapter.setAll(state, action.payload);
+      },
+    );
   },
 });
 

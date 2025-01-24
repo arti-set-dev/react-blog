@@ -20,7 +20,10 @@ export const Overlay = (props: OverlayProps) => {
   };
 
   return (
-    <div onClick={onClick} className={classNames(cl.Overlay, mods, [className])}>
+    <div
+      onClick={onClick}
+      className={classNames(cl.Overlay, mods, [className])}
+    >
       {children}
     </div>
   );

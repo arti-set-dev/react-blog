@@ -2,7 +2,7 @@ import { FC, useEffect, useState } from 'react';
 import { Button } from '@/shared/ui/Button';
 
 interface BugButtonProps {
-    className?: string;
+  className?: string;
 }
 
 export const BugButton: FC<BugButtonProps> = () => {
@@ -19,7 +19,7 @@ export const BugButton: FC<BugButtonProps> = () => {
   return (
     <Button
       onClick={onThrow}
-    // eslint-disable-next-line i18next/no-literal-string
+      // eslint-disable-next-line i18next/no-literal-string
     >
       throw error
     </Button>
