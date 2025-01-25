@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import { useSearchParams } from 'react-router-dom';
+import { ArticlePageGreeting } from '@/features/articlePageGreeting';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import {
   DynamicModuleLoader,
@@ -47,6 +48,7 @@ const ArticlesPage = (props: ArticlesPageProps) => {
         <ArticlesPageFilters />
         <ArticleInfiniteList />
         {error && <Text>{t('Data boot error')}</Text>}
+        <ArticlePageGreeting />
       </Page>
     </DynamicModuleLoader>
   );
