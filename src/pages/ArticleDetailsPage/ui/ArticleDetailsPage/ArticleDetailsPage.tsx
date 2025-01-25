@@ -2,9 +2,7 @@ import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
 import { Card } from '@/shared/ui/Card';
-import { toggleFeatures } from '@/shared/lib/features';
 import { ArticleDetails } from '@/entities/Article';
-import { ArticleRating } from '@/features/articleRating';
 import { ArticleRecommendationsList } from '@/features/articleRecommendationsList';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import {
@@ -35,20 +33,12 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
     return <Text size={TextSize.L}>{t('article id is not defined')}</Text>;
   }
 
-  const articleRatingCard = toggleFeatures({
-    name: 'isArticleRatingEnabled',
-    on: () => <ArticleRating />,
-    off: () => (
-      <Card isOffset>{t('There will be a rating in the speed of time')}</Card>
-    ),
-  });
-
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
       <Page className={classNames(cl.ArticleDetailsPage, {}, [className])}>
         <ArticleDetailsPageHeader />
         <ArticleDetails id={id} />
-        {articleRatingCard}
+        <Card isOffset>{t('There will be a rating in the speed of time')}</Card>
         <ArticleRecommendationsList />
         <ArticleDetailsPageComments id={id} />
       </Page>
