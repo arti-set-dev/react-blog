@@ -2,6 +2,8 @@ import { Suspense, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { useSelector } from 'react-redux';
+import { MainLayout } from '@/shared/layouts/MainLayout';
+import { ToggleFeatures } from '@/shared/lib/features';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { initAuthData, getUserInited } from '@/entities/User';
 import { classNames } from '@/shared/lib/classNames/classNames';
@@ -21,8 +23,6 @@ const App = () => {
     dispatch(initAuthData());
   }, [dispatch]);
 
-  console.log(inited);
-
   if (!inited) {
     return (
       <div className={classNames('app app--all-center', {}, [theme])}>
@@ -32,15 +32,27 @@ const App = () => {
   }
 
   return (
-    <div className={classNames('app', {}, [theme])}>
-      <Suspense fallback={<Loader />}>
-        <Navbar />
-        <main className="main">
-          <Sidebar />
-          {inited && <AppRouter />}
-        </main>
-      </Suspense>
-    </div>
+    <ToggleFeatures
+      feature="isAppRedesigned"
+      on={(
+        <div id="app" className={classNames('app_redesigned', {}, [theme])}>
+          <Suspense fallback={<Loader />}>
+            <MainLayout header={<Navbar />} content={<AppRouter />} sidebar={<Sidebar />} toolbar={<div>222322</div>} />
+          </Suspense>
+        </div>
+      )}
+      off={(
+        <div id="app" className={classNames('app', {}, [theme])}>
+          <Suspense fallback={<Loader />}>
+            <Navbar />
+            <main className="main">
+              <Sidebar />
+              {inited && <AppRouter />}
+            </main>
+          </Suspense>
+        </div>
+      )}
+    />
   );
 };
 

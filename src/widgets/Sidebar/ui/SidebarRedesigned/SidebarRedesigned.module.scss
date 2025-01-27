@@ -1,0 +1,51 @@
+.SidebarRedesigned {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: var(--radius-l);
+  padding: var(--gap) 0;
+  height: calc(100svh - (var(--navbar-height) + (var(--inner-offset) * 2)));
+  max-width: var(--sidebar-width);
+  background-color: var(--bg-light-color);
+  transition: max-width var(--ui-transition) ease;
+  gap: var(--gap);
+
+  svg {
+    flex-shrink: 0;
+  }
+
+  &.collapsed {
+    max-width: var(--sidebar-width-collapsed);
+
+    .CollapseBtn {
+      svg {
+        transform: scaleX(-1);
+      }
+    }
+
+    .Switchers {
+      flex-direction: column;
+    }
+  }
+}
+
+.Switchers {
+  display: flex;
+  align-items: center;
+  margin-top: auto;
+  margin-left: var(--gap);
+  width: max-content;
+  gap: var(--gap-mini);
+}
+
+.CollapseBtn {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.SidebarListItem {
+  width: 100%;
+}

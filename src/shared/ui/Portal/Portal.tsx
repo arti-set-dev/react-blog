@@ -3,10 +3,18 @@ import { createPortal } from 'react-dom';
 
 interface PortalProps {
   children: ReactNode;
-  element?: HTMLElement;
+  id?: string;
 }
 
 export const Portal: FC<PortalProps> = (props) => {
-  const { children, element = document.body } = props;
+  const { children, id = 'app' } = props;
+
+  const element = document.getElementById(id);
+
+  if (!element) {
+    console.error(`Target element for Portal not found: ${id}`);
+    return null;
+  }
+
   return createPortal(children, element);
 };

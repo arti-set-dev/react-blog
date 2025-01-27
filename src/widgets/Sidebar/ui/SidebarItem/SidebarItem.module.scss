@@ -16,3 +16,27 @@
     gap: 0;
   }
 }
+
+.SidebarItemRedesigned {
+  display: flex;
+  align-items: center;
+  padding: var(--gap-mini) var(--gap);
+  width: 100%;
+  font-weight: 400;
+  font-size: var(--font-size-m);
+  gap: var(--gap-mini);
+
+  svg {
+    width: var(--icon-size-l);
+    fill: var(--text-primary-color);
+  }
+
+  &.collapsed {
+    font-size: 0;
+    gap: 0;
+  }
+
+  &:hover {
+    background-color: var(--bg-color);
+  }
+}

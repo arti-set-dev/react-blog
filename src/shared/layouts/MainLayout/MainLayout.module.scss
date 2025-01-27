@@ -1,0 +1,25 @@
+.MainLayout {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  height: 100vh;
+}
+
+.header {
+  flex-basis: 100%;
+}
+
+.sidebar {
+  flex-basis: 20%;
+  padding: var(--inner-offset);
+}
+
+.content {
+  flex-basis: 60%;
+  max-width: 1200px;
+}
+
+.rightbar {
+  flex-basis: 20%;
+  padding: var(--inner-offset);
+}

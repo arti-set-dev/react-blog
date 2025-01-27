@@ -12,7 +12,6 @@
 
 html {
   height: 100%;
-  font-family: var(--font-family, sans-serif);
   -webkit-text-size-adjust: 100%;
   scroll-behavior: smooth;
 }
@@ -41,6 +40,7 @@ ul {
 .app {
   overflow: auto;
   height: 100vh;
+  font-family: var(--font-family, sans-serif), serif;
   color: var(--primary-color);
   background-color: var(--bg-color);
 
@@ -49,6 +49,14 @@ ul {
     align-items: center;
     justify-content: center;
   }
+}
+
+.app_redesigned {
+  overflow: auto;
+  height: 100vh;
+  font-family: var(--font-family-redesigned, sans-serif), serif;
+  color: var(--primary-color);
+  background-color: var(--bg-color);
 }
 
 .is-hidden {

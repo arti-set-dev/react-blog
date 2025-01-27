@@ -1,48 +1,46 @@
-import { memo, useMemo, useState } from 'react';
+import { memo, useState, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { SidebarRedesigned } from '../SidebarRedesigned/SidebarRedesigned';
-import { ToggleFeatures } from '@/shared/lib/features';
-import { classNames } from '@/shared/lib/classNames/classNames';
-import { Button, ButtonSize, ButtonTheme } from '@/shared/ui/Button';
-import ArrIcon from '@/shared/assets/icons/arrow-icon.svg';
-import { ThemeSwitcher } from '@/features/ThemeSwitcher';
-import { LangSwitcher } from '@/features/LangSwitcher';
-import { VStack } from '@/shared/ui/Stack';
 import { getSidebarItems } from '../../model/selector/getSidebarItems';
-import cl from './Sidebar.module.scss';
 import { SidebarItem } from '../SidebarItem/SidebarItem';
+import { LangSwitcher } from '@/features/LangSwitcher';
+import { ThemeSwitcher } from '@/features/ThemeSwitcher';
+import ArrIcon from '@/shared/assets/icons/arrow-icon.svg';
+import { Button, ButtonSize, ButtonTheme } from '@/shared/ui/Button';
+import { VStack } from '@/shared/ui/Stack';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import cl from './SidebarRedesigned.module.scss';
 
-interface SidebarProps {
+interface SidebarRedesignedProps {
   className?: string;
 }
 
-export const Sidebar = memo((props: SidebarProps) => {
+export const SidebarRedesigned = memo((props: SidebarRedesignedProps) => {
   const { className } = props;
-  const [collapsed, setCollapsed] = useState(false);
   const { t } = useTranslation();
-  const sidebarItemsList = useSelector(getSidebarItems);
+  const [collapsed, setCollapsed] = useState(false);
 
+  const sidebarItemsList = useSelector(getSidebarItems);
   const toggleSidebar = () => {
     setCollapsed((prev) => !prev);
   };
-
   const itemsList = useMemo(
     () => sidebarItemsList.map((item) => (
-      <li key={item.text}>
+      <li key={item.text} className={cl.SidebarListItem}>
         <SidebarItem item={item} collapsed={collapsed} />
       </li>
     )),
     [collapsed, sidebarItemsList],
   );
 
-  const sidebarDeprecated = (
+  return (
     <aside
       data-testid="sidebar"
-      className={classNames(cl.Sidebar, { [cl.collapsed]: collapsed }, [
+      className={classNames(cl.SidebarRedesigned, { [cl.collapsed]: collapsed }, [
         className,
       ])}
     >
+      {/* <Avatar alt='' src={} /> */}
       <Button
         data-testid="sidebar-toggle"
         size={ButtonSize.L}
@@ -54,7 +52,7 @@ export const Sidebar = memo((props: SidebarProps) => {
         <ArrIcon />
       </Button>
       <nav>
-        <VStack tag="ul" gap="16">
+        <VStack tag="ul" gap="4">
           {itemsList}
         </VStack>
       </nav>
@@ -63,13 +61,5 @@ export const Sidebar = memo((props: SidebarProps) => {
         <LangSwitcher short={collapsed} />
       </div>
     </aside>
-  );
-
-  return (
-    <ToggleFeatures
-      feature="isAppRedesigned"
-      on={<SidebarRedesigned />}
-      off={sidebarDeprecated}
-    />
   );
 });

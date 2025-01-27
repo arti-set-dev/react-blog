@@ -1,5 +1,6 @@
 import { memo } from 'react';
 import { useSelector } from 'react-redux';
+import { ToggleFeatures } from '@/shared/lib/features';
 import { getUserAuthData } from '@/entities/User';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { AppLink } from '@/shared/ui/AppLink';
@@ -20,12 +21,26 @@ export const SidebarItem = memo((props: SidebarItemProps) => {
   }
 
   return (
-    <AppLink
-      to={item.path}
-      className={classNames(cl.SidebarItem, { [cl.collapsed]: collapsed }, [])}
-    >
-      <item.Icon />
-      {item.text}
-    </AppLink>
+    <ToggleFeatures
+      feature="isAppRedesigned"
+      on={(
+        <AppLink
+          to={item.path}
+          className={classNames(cl.SidebarItemRedesigned, { [cl.collapsed]: collapsed }, [])}
+        >
+          <item.Icon />
+          {item.text}
+        </AppLink>
+      )}
+      off={(
+        <AppLink
+          to={item.path}
+          className={classNames(cl.SidebarItem, { [cl.collapsed]: collapsed }, [])}
+        >
+          <item.Icon />
+          {item.text}
+        </AppLink>
+      )}
+    />
   );
 });
