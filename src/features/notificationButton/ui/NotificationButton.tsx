@@ -29,7 +29,7 @@ export const NotificationButton = (props: NotificationButtonProps) => {
       theme={ButtonTheme.ICON}
       aria-label={t('Toggle notification')}
     >
-      <Icon Svg={NotificationIcon} />
+      <Icon Svg={NotificationIcon} width="100%" height="100%" />
     </Button>
   );
 

@@ -1,5 +1,6 @@
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Icon } from '@/shared/ui/Icon';
 import { saveJsonSettings } from '@/entities/User';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
@@ -30,7 +31,7 @@ export const ThemeSwitcher = memo((props: ThemeSwitcherProps) => {
       className={classNames('', {}, [className])}
       aria-label={t('Toggle Theme')}
     >
-      <ThemeIcon />
+      <Icon Svg={ThemeIcon} width="100%" height="100%" />
     </Button>
   );
 });

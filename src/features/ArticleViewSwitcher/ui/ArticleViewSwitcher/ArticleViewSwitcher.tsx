@@ -44,7 +44,7 @@ export const ArticleViewSwitcher = memo((props: ArticleViewSwitcherProps) => {
           onClick={onClick(viewType.view)}
           theme={ButtonTheme.ICON}
         >
-          <Icon Svg={viewType.icon} />
+          <Icon Svg={viewType.icon} width="100%" height="100%" />
         </Button>
       ))}
     </div>

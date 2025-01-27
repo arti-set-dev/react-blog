@@ -28,7 +28,7 @@ export const Avatar = (props: AvatarProps) => {
   } = props;
 
   const fallback = <Skeleton width={size} height={size} border="50%" />;
-  const errorFallback = <Icon width={size} Svg={ProfileIcon} />;
+  const errorFallback = <Icon width={size} height={size} Svg={ProfileIcon} />;
 
   return (
     <LazyImage

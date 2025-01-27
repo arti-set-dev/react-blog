@@ -1,6 +1,7 @@
 import { memo, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
+import { Icon } from '@/shared/ui/Icon';
 import { SidebarRedesigned } from '../SidebarRedesigned/SidebarRedesigned';
 import { ToggleFeatures } from '@/shared/lib/features';
 import { classNames } from '@/shared/lib/classNames/classNames';
@@ -51,7 +52,7 @@ export const Sidebar = memo((props: SidebarProps) => {
         onClick={toggleSidebar}
         aria-label={t('toggle sidebar')}
       >
-        <ArrIcon />
+        <Icon Svg={ArrIcon} width="100%" height="100%" />
       </Button>
       <nav>
         <VStack tag="ul" gap="16">

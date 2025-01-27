@@ -18,6 +18,11 @@
     }
   }
 
+  &.size-xs {
+    width: var(--icon-size-xs);
+    height: var(--icon-size-xs);
+  }
+
   &.size-l {
     width: var(--icon-size-l);
     height: var(--icon-size-l);

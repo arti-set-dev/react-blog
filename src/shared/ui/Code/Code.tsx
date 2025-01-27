@@ -1,5 +1,6 @@
 import { memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Icon } from '../Icon';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import CopyIcon from '@/shared/assets/icons/copy-icon.svg';
 import WarningIcon from '@/shared/assets/icons/warning-icon.svg';
@@ -45,14 +46,19 @@ export const Code = memo((props: CodeProps) => {
         className={cl.CopyBtn}
         aria-label={t('Copy')}
       >
-        {!copySuccess && <CopyIcon />}
+        {!copySuccess && <Icon Svg={CopyIcon} width="100%" height="100%" />}
 
         {copySuccess === CopyStatus.SUCCESS && (
-          <CheckIconSuccess className={cl.CheckIconSuccess} />
+          <Icon className={cl.CheckIconSuccess} Svg={CheckIconSuccess} width="100%" height="100%" />
         )}
 
         {copySuccess === CopyStatus.ERROR && (
-          <WarningIcon className={cl.WarningIcon} />
+          <Icon
+            className={cl.WarningIcon}
+            Svg={WarningIcon}
+            width="100%"
+            height="100%"
+          />
         )}
       </Button>
       <div className={cl.Overlay}>

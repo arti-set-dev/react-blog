@@ -1,6 +1,7 @@
 import { memo, useState, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
+import { Icon } from '@/shared/ui/Icon';
 import { getSidebarItems } from '../../model/selector/getSidebarItems';
 import { SidebarItem } from '../SidebarItem/SidebarItem';
 import { LangSwitcher } from '@/features/LangSwitcher';
@@ -40,16 +41,15 @@ export const SidebarRedesigned = memo((props: SidebarRedesignedProps) => {
         className,
       ])}
     >
-      {/* <Avatar alt='' src={} /> */}
       <Button
         data-testid="sidebar-toggle"
-        size={ButtonSize.L}
+        size={ButtonSize.XS}
         theme={ButtonTheme.ICON}
         className={classNames(cl.CollapseBtn, {}, [className])}
         onClick={toggleSidebar}
         aria-label={t('toggle sidebar')}
       >
-        <ArrIcon />
+        <Icon Svg={ArrIcon} width="100%" height="100%" />
       </Button>
       <nav>
         <VStack tag="ul" gap="4">
