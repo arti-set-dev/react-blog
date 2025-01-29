@@ -1,0 +1,106 @@
+.Button {
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.icon {
+  width: var(--icon-size-l);
+  height: var(--icon-size-l);
+  font-size: 0;
+  fill: var(--text-primary-color);
+
+  @media (any-hover: hover) {
+    &:hover {
+      fill: var(--hover-color);
+      stroke: var(--hover-color);
+    }
+  }
+
+  &.xs {
+    width: var(--icon-size-xs);
+    height: var(--icon-size-xs);
+  }
+
+  &.l {
+    width: var(--icon-size-l);
+    height: var(--icon-size-l);
+  }
+
+  &.xl {
+    width: var(--icon-size-xl);
+    height: var(--icon-size-xl);
+  }
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+.text-primary {
+  font-weight: 400;
+  font-size: var(--font-size-m);
+  line-height: 100%;
+  color: var(--text-primary-color);
+}
+
+.outline-inverted {
+  border: 1px solid var(--text-inverted-color);
+  border-radius: var(--radius-s);
+  padding: calc(var(--button-offset) - 2px);
+  font-weight: 400;
+  font-size: var(--font-size-m);
+  line-height: 100%;
+  color: var(--text-inverted-color);
+}
+
+.outline {
+  border: 1px solid var(--text-primary-color);
+  border-radius: var(--radius-s);
+  padding: calc(var(--button-offset) - 2px);
+  font-weight: 400;
+  font-size: var(--font-size-m);
+  line-height: 100%;
+  color: var(--text-primary-color);
+  transition: background-color var(--ui-transition) ease, color var(--ui-transition) ease;
+
+  @media (any-hover: hover) {
+    &:hover {
+      color: var(--text-inverted-color);
+      background-color: var(--text-primary-color);
+    }
+  }
+}
+
+.outline-red {
+  border: 1px solid var(--error-color);
+  border-radius: var(--radius-s);
+  padding: calc(var(--button-offset) - 2px);
+  font-weight: 400;
+  font-size: var(--font-size-m);
+  line-height: 100%;
+  color: var(--error-color);
+}
+
+.text-inverted {
+  color: var(--text-inverted-color);
+}
+
+.primary {
+  border-radius: var(--radius-s);
+  padding: var(--button-offset);
+  color: var(--primary-inverted-color);
+  background-color: var(--bg-color);
+}
+
+.disabled {
+  opacity: 0.5;
+}
+
+.active {
+  border-radius: var(--radius-s);
+  padding: calc(var(--button-offset) - 2px);
+  color: var(--text-inverted-color);
+  background-color: var(--text-primary-color);
+}

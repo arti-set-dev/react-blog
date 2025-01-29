@@ -8,7 +8,6 @@
   height: calc(100svh - (var(--navbar-height) + (var(--inner-offset) * 2)));
   max-width: var(--sidebar-width);
   background-color: var(--bg-light-color);
-  transition: max-width var(--ui-transition) ease;
   gap: var(--gap);
 
   svg {
@@ -43,6 +42,9 @@
   position: absolute;
   right: 0;
   top: 50%;
+  z-index: 10;
+  width: 15px;
+  height: 15px;
   transform: translateY(-50%);
 }
 

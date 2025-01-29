@@ -1,7 +1,7 @@
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Avatar } from '@/shared/ui/deprecated/Avatar';
 import { AppLink } from '@/shared/ui/deprecated/AppLink';
+import { Avatar } from '@/shared/ui/deprecated/Avatar';
 import { Text, TextSize, TextWeight } from '@/shared/ui/deprecated/Text';
 import { Skeleton } from '@/shared/ui/deprecated/Skeleton';
 import { getRouteProfile } from '@/shared/const/router';
