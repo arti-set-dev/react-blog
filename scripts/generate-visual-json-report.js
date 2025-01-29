@@ -28,4 +28,4 @@ const diffDir = joinPath(lokiDir, 'difference');
       diffDir: relative(lokiDir, diffDir),
     }),
   );
-})();
+}());

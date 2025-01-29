@@ -1,18 +1,18 @@
 import { memo, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { Icon } from '@/shared/ui/Icon';
-import { SidebarRedesigned } from '../SidebarRedesigned/SidebarRedesigned';
-import { ToggleFeatures } from '@/shared/lib/features';
-import { classNames } from '@/shared/lib/classNames/classNames';
-import { Button, ButtonSize, ButtonTheme } from '@/shared/ui/Button';
-import ArrIcon from '@/shared/assets/icons/arrow-icon.svg';
-import { ThemeSwitcher } from '@/features/ThemeSwitcher';
+import { Button, ButtonSize, ButtonTheme } from '@/shared/ui/deprecated/Button';
+import { Icon } from '@/shared/ui/deprecated/Icon';
+import { VStack } from '@/shared/ui/deprecated/Stack';
 import { LangSwitcher } from '@/features/LangSwitcher';
-import { VStack } from '@/shared/ui/Stack';
+import { ThemeSwitcher } from '@/features/ThemeSwitcher';
+import ArrIcon from '@/shared/assets/icons/arrow-icon.svg';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { ToggleFeatures } from '@/shared/lib/features';
 import { getSidebarItems } from '../../model/selector/getSidebarItems';
-import cl from './Sidebar.module.scss';
 import { SidebarItem } from '../SidebarItem/SidebarItem';
+import { SidebarRedesigned } from '../SidebarRedesigned/SidebarRedesigned';
+import cl from './Sidebar.module.scss';
 
 interface SidebarProps {
   className?: string;

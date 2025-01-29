@@ -1,8 +1,8 @@
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Text, TextSize } from '@/shared/ui/deprecated/Text';
+import { List } from '@/shared/ui/deprecated/List';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { List } from '@/shared/ui/List';
-import { Text, TextSize } from '@/shared/ui/Text';
 import { ArticleView } from '../../model/consts/consts';
 import { Article } from '../../model/types/article';
 import cl from './ArticleList.module.scss';

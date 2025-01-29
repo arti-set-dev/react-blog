@@ -1,6 +1,12 @@
 import { useEffect, memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
+import { Avatar } from '@/shared/ui/deprecated/Avatar';
+import { Skeleton, SkeletonAlign } from '@/shared/ui/deprecated/Skeleton';
+import {
+  Text, TextTheme, TextSize, TextWeight,
+} from '@/shared/ui/deprecated/Text';
+import { HStack, VStack } from '@/shared/ui/deprecated/Stack';
 import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import {
@@ -8,14 +14,8 @@ import {
   ReducerList,
 } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { Avatar } from '@/shared/ui/Avatar';
-import { Skeleton, SkeletonAlign } from '@/shared/ui/Skeleton';
-import {
-  Text, TextTheme, TextSize, TextWeight,
-} from '@/shared/ui/Text';
 import ViewsIcon from '@/shared/assets/icons/eye-icon.svg';
 import CalendarIcon from '@/shared/assets/icons/calendar-icon.svg';
-import { HStack, VStack } from '@/shared/ui/Stack';
 import { ArticleBlockType } from '../../model/types/articleType';
 import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';

@@ -1,10 +1,10 @@
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Text } from '@/shared/ui/deprecated/Text';
+import { Skeleton } from '@/shared/ui/deprecated/Skeleton';
+import { VStack } from '@/shared/ui/deprecated/Stack';
+import { List } from '@/shared/ui/deprecated/List';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Text } from '@/shared/ui/Text';
-import { List } from '@/shared/ui/List';
-import { Skeleton } from '@/shared/ui/Skeleton';
-import { VStack } from '@/shared/ui/Stack';
 import { Comment } from '../../model/types/comments';
 import cl from './Comments.module.scss';
 import { CommentCard } from '../CommentCard/CommentCard';

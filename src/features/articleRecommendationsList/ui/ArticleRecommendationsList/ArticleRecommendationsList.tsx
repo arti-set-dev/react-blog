@@ -1,13 +1,13 @@
 import { useTranslation } from 'react-i18next';
 import { memo } from 'react';
-import { classNames } from '@/shared/lib/classNames/classNames';
 import {
   TextSize, TextTheme, TextWeight, Text,
-} from '@/shared/ui/Text';
+} from '@/shared/ui/deprecated/Text';
+import { VStack } from '@/shared/ui/deprecated/Stack';
+import { Loader } from '@/shared/ui/deprecated/Loader';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { ArticleList, ArticleListDisplay } from '@/entities/Article';
-import { VStack } from '@/shared/ui/Stack';
 // eslint-disable-next-line import/no-duplicates
-import { Loader } from '@/shared/ui/Loader';
 import { useArticleRecommendationsList } from '../../api/ArticleRecommendationsApi';
 import cl from './ArticleRecommendationsList.module.scss';
 

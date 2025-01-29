@@ -1,17 +1,17 @@
 import { memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
+import { AppLink } from '@/shared/ui/deprecated/AppLink';
+import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button';
+import { Container } from '@/shared/ui/deprecated/Container';
+import { HStack } from '@/shared/ui/deprecated/Stack';
+import { Text, TextSize } from '@/shared/ui/deprecated/Text';
 import { getRouteArticleCreate } from '@/shared/const/router';
 import { getUserAuthData } from '@/entities/User';
 import { LoginModal } from '@/features/AuthByUsername';
 import { AvatarDropdown } from '@/features/avatarDropdown';
 import { NotificationButton } from '@/features/notificationButton';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { AppLink } from '@/shared/ui/AppLink';
-import { Button, ButtonTheme } from '@/shared/ui/Button';
-import { Container } from '@/shared/ui/Container';
-import { HStack } from '@/shared/ui/Stack';
-import { Text, TextSize } from '@/shared/ui/Text';
 import cl from './Navbar.module.scss';
 
 interface NavbarProps {

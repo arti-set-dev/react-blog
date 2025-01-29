@@ -1,10 +1,10 @@
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { classNames } from '@/shared/lib/classNames/classNames';
 import {
   TextSize, TextTheme, TextWeight, Text,
-} from '@/shared/ui/Text';
+} from '@/shared/ui/deprecated/Text';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { AddCommentForm } from '@/features/addNewComment';
 import { Comments } from '@/entities/Comment';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';

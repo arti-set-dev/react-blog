@@ -1,19 +1,19 @@
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
+import { Avatar } from '@/shared/ui/deprecated/Avatar';
+import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button';
+import { Input } from '@/shared/ui/deprecated/Input';
+import { HStack, VStack } from '@/shared/ui/deprecated/Stack';
+import {
+  Text, TextSize, TextTheme, TextWeight,
+} from '@/shared/ui/deprecated/Text';
+import { Loader, LoaderOffset } from '@/shared/ui/deprecated/Loader';
 import { ValidateFields } from '@/shared/types/validation';
 import { Country, CountrySelect } from '@/entities/Country';
 import { Currency, CurrencySelect } from '@/entities/Currency';
 import { getUserAuthData } from '@/entities/User';
 import { getProfileData } from '../../model/selectors/getProfileData/getProfileData';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Avatar } from '@/shared/ui/Avatar';
-import { Button, ButtonTheme } from '@/shared/ui/Button';
-import { Input } from '@/shared/ui/Input';
-import { Loader, LoaderOffset } from '@/shared/ui/Loader';
-import { HStack, VStack } from '@/shared/ui/Stack';
-import {
-  Text, TextSize, TextTheme, TextWeight,
-} from '@/shared/ui/Text';
 import { Profile } from '../../model/types/profile';
 import cl from './ProfileCard.module.scss';
 

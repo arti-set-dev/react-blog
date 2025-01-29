@@ -1,9 +1,9 @@
 import { memo } from 'react';
 import { useSelector } from 'react-redux';
+import { AppLink } from '@/shared/ui/deprecated/AppLink';
 import { ToggleFeatures } from '@/shared/lib/features';
 import { getUserAuthData } from '@/entities/User';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { AppLink } from '@/shared/ui/AppLink';
 import { SidebarItemType } from '../../model/types/sidebar';
 import cl from './SidebarItem.module.scss';
 

@@ -6,7 +6,7 @@ import {
   ReducersMapObject,
 } from '@reduxjs/toolkit';
 import { AxiosInstance } from 'axios';
-import { ProfileSchema } from 'src/features/editableProfileCard';
+import { ProfileSchema } from '@/features/editableProfileCard';
 import { AddNewCommentSchema } from '@/features/addNewComment';
 import { ArticleDetailsSchema } from '@/entities/Article';
 import { CounterSchema } from '@/entities/Counter';
