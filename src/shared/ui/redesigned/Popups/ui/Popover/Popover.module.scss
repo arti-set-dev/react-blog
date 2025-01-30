@@ -1,0 +1,19 @@
+.Popover {
+  position: relative;
+}
+
+.Panel {
+  position: absolute;
+  z-index: var(--modal-z-index);
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  overflow-y: auto;
+  border-radius: var(--radius-s);
+  padding: var(--gap);
+  width: 400px;
+  max-height: 300px;
+  box-shadow: var(--box-shadow);
+  background-color: var(--bg-color);
+  gap: var(--gap-mini);
+}

@@ -1,9 +1,9 @@
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
+import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
 import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button';
 import { Avatar } from '@/shared/ui/deprecated/Avatar';
 import { Input } from '@/shared/ui/deprecated/Input';
-import { HStack, VStack } from '@/shared/ui/deprecated/Stack';
 import {
   Text, TextSize, TextTheme, TextWeight,
 } from '@/shared/ui/deprecated/Text';

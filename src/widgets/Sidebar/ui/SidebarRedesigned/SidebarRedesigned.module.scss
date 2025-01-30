@@ -6,7 +6,7 @@
   border-radius: var(--radius-l);
   padding: var(--gap) 0;
   height: calc(100svh - (var(--navbar-height) + (var(--inner-offset) * 2)));
-  max-width: var(--sidebar-width);
+  min-width: var(--sidebar-width);
   background-color: var(--bg-light-color);
   gap: var(--gap);
 
@@ -15,7 +15,7 @@
   }
 
   &.collapsed {
-    max-width: var(--sidebar-width-collapsed);
+    min-width: var(--sidebar-width-collapsed);
 
     .CollapseBtn {
       svg {

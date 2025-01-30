@@ -1,0 +1,40 @@
+.Card {
+  border-radius: var(--radius-l);
+  background-color: var(--bg-light-color);
+  transition: transform var(--ui-transition) ease;
+
+  &.offset {
+    padding: var(--inner-offset);
+  }
+
+  &.primary {
+    background-color: var(--bg-light-color);
+  }
+
+  &.outline {
+    border: 1px solid var(--bg-light-color);
+    background-color: transparent;
+  }
+
+  &.offset_0 {
+    padding: 0;
+  }
+
+  &.offset_8 {
+    padding: 8px;
+  }
+
+  &.offset_16 {
+    padding: 16px;
+  }
+
+  &.offset_24 {
+    padding: 24px;
+  }
+
+  &.hovered {
+    &:hover {
+      transform: scale(1.03);
+    }
+  }
+}

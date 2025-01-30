@@ -1,0 +1,33 @@
+.Popup {
+  position: relative;
+}
+
+.Trigger {
+  margin: 0;
+  outline: none;
+  border: 0;
+  padding: 0;
+  width: var(--icon-size-l);
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.dropdownBottomLeft {
+  right: 0;
+  top: 100%;
+}
+
+.dropdownBottomRight {
+  left: 0;
+  top: 100%;
+}
+
+.dropdownTopLeft {
+  right: 0;
+  bottom: 100%;
+}
+
+.dropdownTopRight {
+  left: 0;
+  bottom: 100%;
+}

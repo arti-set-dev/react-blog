@@ -6,10 +6,6 @@ interface PortalProps {
   id?: string;
 }
 
-/**
- * Outdated, use the component from the Redesigned folder
- * @deprecated
- */
 export const Portal: FC<PortalProps> = (props) => {
   const { children, id = 'app' } = props;
 

@@ -1,12 +1,12 @@
 import { useEffect, memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
+import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
 import { Avatar } from '@/shared/ui/deprecated/Avatar';
 import { Skeleton, SkeletonAlign } from '@/shared/ui/deprecated/Skeleton';
 import {
   Text, TextTheme, TextSize, TextWeight,
 } from '@/shared/ui/deprecated/Text';
-import { HStack, VStack } from '@/shared/ui/deprecated/Stack';
 import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import {

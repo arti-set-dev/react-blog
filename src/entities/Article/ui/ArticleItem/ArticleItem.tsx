@@ -1,12 +1,12 @@
 import { memo, useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
+import { LazyImage } from '@/shared/ui/redesigned/LazyImage';
 import { AppLink } from '@/shared/ui/deprecated/AppLink';
 import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button';
 import { Card } from '@/shared/ui/deprecated/Card';
 import { Avatar } from '@/shared/ui/deprecated/Avatar';
 import { Skeleton } from '@/shared/ui/deprecated/Skeleton';
-import { LazyImage } from '@/shared/ui/deprecated/LazyImage';
 import { Text, TextSize, TextWeight } from '@/shared/ui/deprecated/Text';
 import { getRouteArticleDetails } from '@/shared/const/router';
 import { classNames } from '@/shared/lib/classNames/classNames';

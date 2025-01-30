@@ -1,9 +1,9 @@
 import { memo, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
+import { VStack } from '@/shared/ui/redesigned/Stack';
 import { Button, ButtonSize, ButtonTheme } from '@/shared/ui/deprecated/Button';
 import { Icon } from '@/shared/ui/deprecated/Icon';
-import { VStack } from '@/shared/ui/deprecated/Stack';
 import { LangSwitcher } from '@/features/LangSwitcher';
 import { ThemeSwitcher } from '@/features/ThemeSwitcher';
 import ArrIcon from '@/shared/assets/icons/arrow-icon.svg';

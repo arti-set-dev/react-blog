@@ -12,10 +12,6 @@ interface LazyImageProps extends ImgHTMLAttributes<HTMLImageElement> {
   errorFallback?: ReactElement;
 }
 
-/**
- * Outdated, use the component from the Redesigned folder
- * @deprecated
- */
 export const LazyImage = memo((props: LazyImageProps) => {
   const {
     className,

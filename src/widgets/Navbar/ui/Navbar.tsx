@@ -1,10 +1,10 @@
 import { memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
+import { HStack } from '@/shared/ui/redesigned/Stack';
 import { AppLink } from '@/shared/ui/deprecated/AppLink';
 import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button';
 import { Container } from '@/shared/ui/deprecated/Container';
-import { HStack } from '@/shared/ui/deprecated/Stack';
 import { Text, TextSize } from '@/shared/ui/deprecated/Text';
 import { getRouteArticleCreate } from '@/shared/const/router';
 import { getUserAuthData } from '@/entities/User';

@@ -1,0 +1,33 @@
+.Items {
+  position: absolute;
+  z-index: 10;
+  list-style: none;
+  overflow: hidden;
+  border: 1px solid var(--bg-inverted-color);
+  border-radius: var(--radius-s);
+  max-width: 200px;
+  box-shadow: var(--box-shadow);
+  background-color: var(--bg-light-color);
+}
+
+.Item {
+  display: inline-block;
+  border: none;
+  padding: 10px 20px;
+  width: 100%;
+  color: var(--text-primary-color);
+  background: none;
+  cursor: pointer;
+
+  &[data-headlessui-state="active"] {
+    background-color: var(--bg-color);
+  }
+
+  &:hover {
+    background-color: var(--bg-color);
+  }
+}
+
+.active {
+  background-color: var(--bg-light-color);
+}

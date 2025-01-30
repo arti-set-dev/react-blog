@@ -9,10 +9,6 @@ interface OverlayProps {
   overflowOff?: boolean;
 }
 
-/**
- * Outdated, use the component from the Redesigned folder
- * @deprecated
- */
 export const Overlay = (props: OverlayProps) => {
   const {
     className, onClick, children, isOpen, overflowOff = false,

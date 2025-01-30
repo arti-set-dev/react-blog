@@ -1,9 +1,9 @@
 import { useTranslation } from 'react-i18next';
 import { memo } from 'react';
+import { VStack } from '@/shared/ui/redesigned/Stack';
 import {
   TextSize, TextTheme, TextWeight, Text,
 } from '@/shared/ui/deprecated/Text';
-import { VStack } from '@/shared/ui/deprecated/Stack';
 import { Loader } from '@/shared/ui/deprecated/Loader';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { ArticleList, ArticleListDisplay } from '@/entities/Article';

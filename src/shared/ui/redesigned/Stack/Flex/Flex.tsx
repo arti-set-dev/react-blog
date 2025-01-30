@@ -68,10 +68,6 @@ export interface FlexProps {
   tag?: FlexTagType;
 }
 
-/**
- * Outdated, use the component from the Redesigned folder
- * @deprecated
- */
 export const Flex = (props: FlexProps) => {
   const {
     className,

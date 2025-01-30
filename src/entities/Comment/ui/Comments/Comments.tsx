@@ -1,8 +1,8 @@
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
+import { VStack } from '@/shared/ui/redesigned/Stack';
 import { Text } from '@/shared/ui/deprecated/Text';
 import { Skeleton } from '@/shared/ui/deprecated/Skeleton';
-import { VStack } from '@/shared/ui/deprecated/Stack';
 import { List } from '@/shared/ui/deprecated/List';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Comment } from '../../model/types/comments';

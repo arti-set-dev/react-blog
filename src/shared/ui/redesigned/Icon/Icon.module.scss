@@ -1,6 +1,8 @@
 .Icon {
+  color: var(--text-primary-color);
   fill: var(--text-primary-color);
   stroke: var(--text-primary-color);
+  stroke-width: 0;
   pointer-events: none;
 }
 

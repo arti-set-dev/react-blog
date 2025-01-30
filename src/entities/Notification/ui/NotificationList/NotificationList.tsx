@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
+import { VStack } from '@/shared/ui/redesigned/Stack';
 import { Skeleton } from '@/shared/ui/deprecated/Skeleton';
-import { VStack } from '@/shared/ui/deprecated/Stack';
 import { Text, TextTheme } from '@/shared/ui/deprecated/Text';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { useNotificationList } from '../../api/notificationApi';

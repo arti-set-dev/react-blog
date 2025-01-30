@@ -1,0 +1,56 @@
+.Text {
+  margin: 0;
+  line-height: 100%;
+
+  &.s {
+    font-size: var(--font-size-s);
+  }
+
+  &.m {
+    font-size: var(--font-size-m);
+  }
+
+  &.xs {
+    font-size: var(--font-size-xs);
+  }
+
+  &.l {
+    font-size: var(--font-size-l);
+  }
+
+  &.xl {
+    font-size: var(--font-size-xl);
+  }
+
+  &.primary {
+    color: var(--text-primary-color);
+  }
+
+  &.inverted {
+    color: var(--text-inverted-color);
+  }
+
+  &.error {
+    color: var(--error-color);
+  }
+
+  &.bold {
+    font-weight: 700;
+  }
+
+  &.normal {
+    font-weight: 400;
+  }
+
+  &.center {
+    text-align: center;
+  }
+
+  &.left {
+    text-align: left;
+  }
+
+  &.right {
+    text-align: right;
+  }
+}

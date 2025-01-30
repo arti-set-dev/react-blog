@@ -18,10 +18,6 @@ interface AvatarProps {
   loading?: AvatarLoading;
 }
 
-/**
- * Outdated, use the component from the Redesigned folder
- * @deprecated
- */
 export const Avatar = (props: AvatarProps) => {
   const {
     className,

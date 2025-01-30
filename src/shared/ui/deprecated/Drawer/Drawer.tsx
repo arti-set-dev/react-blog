@@ -6,8 +6,8 @@ import {
 } from '@/shared/lib/components/AnimationProvider';
 import { useModal } from '@/shared/lib/hooks/useModal/useModal';
 import { Loader } from '../Loader/Loader';
-import { Portal } from '../Portal/Portal';
-import { Overlay } from '../Overlay/Overlay';
+import { Portal } from '../../redesigned/Portal/Portal';
+import { Overlay } from '../../redesigned/Overlay/Overlay';
 import cl from './Drawer.module.scss';
 
 interface DrawerProps {

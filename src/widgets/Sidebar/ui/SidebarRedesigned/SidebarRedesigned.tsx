@@ -1,8 +1,8 @@
 import { memo, useState, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
+import { VStack } from '@/shared/ui/redesigned/Stack';
 import { Icon } from '@/shared/ui/redesigned/Icon/Icon';
-import { VStack } from '@/shared/ui/deprecated/Stack';
 import { getSidebarItems } from '../../model/selector/getSidebarItems';
 import { SidebarItem } from '../SidebarItem/SidebarItem';
 import { LangSwitcher } from '@/features/LangSwitcher';

@@ -1,12 +1,17 @@
 import { useState, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { BrowserView, MobileView } from 'react-device-detect';
-import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button';
-import { Popover } from '@/shared/ui/deprecated/Popups';
+import { Popover as PopoverDeprecated } from '@/shared/ui/deprecated/Popups';
+import { Popover } from '@/shared/ui/redesigned/Popups';
+import { Icon } from '@/shared/ui/redesigned/Icon/Icon';
+import { Button } from '@/shared/ui/redesigned/Button/Button';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { Button as ButtonDeprecated, ButtonTheme } from '@/shared/ui/deprecated/Button';
 import { Drawer } from '@/shared/ui/deprecated/Drawer';
-import { Icon } from '@/shared/ui/deprecated/Icon';
+import { Icon as IconDeprecated } from '@/shared/ui/deprecated/Icon';
 import { NotificationList } from '@/entities/Notification';
-import NotificationIcon from '@/shared/assets/icons/notification-icon.svg';
+import NotificationIconDeprecated from '@/shared/assets/icons/notification-icon.svg';
+import NotificationIcon from '@/shared/assets/icons/notification-icon-new.svg';
 
 interface NotificationButtonProps {
   className?: string;
@@ -24,21 +29,45 @@ export const NotificationButton = (props: NotificationButtonProps) => {
   }, []);
 
   const trigger = (
-    <Button
-      onClick={onOpenDrower}
-      theme={ButtonTheme.ICON}
-      aria-label={t('Toggle notification')}
-    >
-      <Icon Svg={NotificationIcon} width="100%" height="100%" />
-    </Button>
+    <ToggleFeatures
+      feature="isAppRedesigned"
+      on={(
+        <Button
+          onClick={onOpenDrower}
+          variant="icon"
+          aria-label={t('Toggle notification')}
+        >
+          <Icon Svg={NotificationIcon} width="100%" height="100%" />
+        </Button>
+      )}
+      off={(
+        <ButtonDeprecated
+          onClick={onOpenDrower}
+          theme={ButtonTheme.ICON}
+          aria-label={t('Toggle notification')}
+        >
+          <IconDeprecated Svg={NotificationIconDeprecated} width="100%" height="100%" />
+        </ButtonDeprecated>
+      )}
+    />
   );
 
   return (
     <>
       <BrowserView>
-        <Popover direction="bottom left" trigger={trigger}>
-          <NotificationList />
-        </Popover>
+        <ToggleFeatures
+          feature="isAppRedesigned"
+          on={(
+            <Popover direction="bottom left" trigger={trigger}>
+              <NotificationList />
+            </Popover>
+          )}
+          off={(
+            <PopoverDeprecated direction="bottom left" trigger={trigger}>
+              <NotificationList />
+            </PopoverDeprecated>
+          )}
+        />
       </BrowserView>
       <MobileView>
         {trigger}

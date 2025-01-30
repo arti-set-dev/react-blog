@@ -1,0 +1,10 @@
+.Avatar {
+  display: block;
+  border-radius: 50%;
+  max-width: 100%;
+  font-size: 0;
+  text-align: center;
+  background-color: var(--skeleton-color);
+  object-fit: cover;
+  aspect-ratio: 1/1;
+}
