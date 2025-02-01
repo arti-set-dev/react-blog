@@ -3,7 +3,7 @@ import React, {
   memo,
   useEffect,
   useRef,
-  useState,
+  useState, ReactNode,
 } from 'react';
 import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 import { Text } from '../Text/Text';
@@ -29,6 +29,7 @@ interface InputProps extends HTMLInputProps {
   readonly?: boolean;
   isNumeric?: boolean;
   error?: string;
+  addon?: ReactNode;
 }
 
 export const Input = memo((props: InputProps) => {
@@ -43,6 +44,7 @@ export const Input = memo((props: InputProps) => {
     readonly,
     isNumeric,
     error,
+    addon,
     ...otherProps
   } = props;
   const [isFocus, setIsFocus] = useState(false);
@@ -74,11 +76,18 @@ export const Input = memo((props: InputProps) => {
     [cl.error]: !!error,
   };
 
+  const addonContent = (
+    <div className={cl.Addon}>
+      {addon}
+    </div>
+  );
+
   return (
     // eslint-disable-next-line react/jsx-no-useless-fragment
     <>
       {placeholder ? (
         <div className={cl.InputWrapper}>
+          {addon && addonContent}
           <span
             className={classNames(cl.InputPlaceholder, mods, [
               className,
@@ -111,6 +120,7 @@ export const Input = memo((props: InputProps) => {
         </div>
       ) : (
         <div className={cl.InputWrapper}>
+          {addon && addonContent}
           <input
             type={type}
             value={value}

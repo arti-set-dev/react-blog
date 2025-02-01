@@ -50,6 +50,23 @@
   position: relative;
   margin-top: 10px;
   width: 100%;
+
+  svg {
+    fill: transparent;
+  }
+
+  &:has(.Addon) {
+    .Input {
+      padding-left: 29px;
+    }
+  }
+}
+
+.Addon {
+  position: absolute;
+  left: 8px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .InputPlaceholder {
@@ -81,6 +98,10 @@
     font-size: var(--font-size-s);
     transform: translateY(-5px);
   }
+}
+
+.Addon + .InputPlaceholder {
+  margin-left: 29px;
 }
 
 .ErrorMessage {
