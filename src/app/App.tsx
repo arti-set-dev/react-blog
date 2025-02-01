@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { Loader } from '@/shared/ui/deprecated/Loader';
 import { MainLayout } from '@/shared/layouts/MainLayout';
-import { ToggleFeatures } from '@/shared/lib/features';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { initAuthData, getUserInited } from '@/entities/User';
 import { classNames } from '@/shared/lib/classNames/classNames';
@@ -32,27 +31,13 @@ const App = () => {
   }
 
   return (
-    <ToggleFeatures
-      feature="isAppRedesigned"
-      on={(
-        <div id="app" className={classNames('app_redesigned', {}, [theme])}>
-          <Suspense fallback={<Loader />}>
-            <MainLayout header={<Navbar />} content={<AppRouter />} sidebar={<Sidebar />} toolbar={<div>222322</div>} />
-          </Suspense>
-        </div>
-      )}
-      off={(
-        <div id="app" className={classNames('app', {}, [theme])}>
-          <Suspense fallback={<Loader />}>
-            <Navbar />
-            <main className="main">
-              <Sidebar />
-              {inited && <AppRouter />}
-            </main>
-          </Suspense>
-        </div>
-      )}
-    />
+
+    <div id="app" className={classNames('app_redesigned', {}, [theme])}>
+      <Suspense fallback={<Loader />}>
+        <MainLayout header={<Navbar />} content={<AppRouter />} sidebar={<Sidebar />} toolbar={<div>222322</div>} />
+      </Suspense>
+    </div>
+
   );
 };
 

@@ -1,26 +1,29 @@
 import { Listbox as HListBox } from '@headlessui/react';
 import { Fragment, ReactNode } from 'react';
+import { Icon } from '../../../Icon/Icon';
+import { getHstack } from '@/shared/lib/stack/getHstack/getHstack';
 import { classNames } from '@/shared/lib/classNames/classNames';
+import ArrIcon from '@/shared/assets/icons/arrow-icon.svg';
 import cl from './ListBox.module.scss';
 import popupCl from '../../styles/Popups.module.scss';
 
-export interface ListBoxItem {
+export interface ListBoxItem<T extends string> {
   value: string;
   content: ReactNode;
   disabled?: boolean;
 }
 
-interface ListBoxProps {
-  items?: ListBoxItem[];
+interface ListBoxProps<T extends string> {
+  items?: ListBoxItem<T>[];
   className?: string;
-  value?: string;
+  value?: T;
   defaultValue?: string;
-  onChange: (value: string) => void;
+  onChange: (value: T) => void;
   readonly?: boolean;
   label?: string;
 }
 
-export const Listbox = (props: ListBoxProps) => {
+export const Listbox = <T extends string>(props: ListBoxProps<T>) => {
   const {
     className, items, value, defaultValue, onChange, readonly, label,
   } = props;
@@ -33,9 +36,10 @@ export const Listbox = (props: ListBoxProps) => {
       value={value}
       onChange={onChange}
     >
-      <HListBox.Button className={cl.Trigger}>
+      <HListBox.Button className={classNames(cl.Trigger, {}, [className, getHstack({ gap: 4, align: 'center' })])}>
         {label && <span className={cl.Label}>{label}</span>}
         {value ?? defaultValue}
+        <Icon width={10} height={10} Svg={ArrIcon} />
       </HListBox.Button>
       <HListBox.Options className={cl.Options}>
         {items?.map((item) => (
@@ -47,7 +51,7 @@ export const Listbox = (props: ListBoxProps) => {
           >
             {({ active, selected }) => (
               <li
-                className={classNames('', {
+                className={classNames(cl.Option, {
                   [cl.active]: active,
                   [cl.disabled]: item.disabled,
                 })}

@@ -1,0 +1,89 @@
+.Input {
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+  border-radius: 0;
+  padding: var(--input-offset) 0;
+  width: 100%;
+  font-size: var(--font-size-xs);
+  background-color: transparent;
+
+  &::-webkit-search-decoration,
+  &::-webkit-search-cancel-button,
+  &::-webkit-search-results-button,
+  &::-webkit-search-results-decoration {
+    display: none;
+  }
+
+  &.inverted {
+    border-bottom: 1px solid var(--text-primary-color);
+    color: var(--text-primary-color);
+    transition: border var(--ui-transition) ease, opacity var(--ui-transition) ease;
+  }
+
+  &.readonly {
+    border-bottom: 1px solid transparent;
+    opacity: 0.7;
+  }
+
+  &.outlined {
+    border: 1px solid var(--text-primary-color);
+    border-radius: var(--radius-s);
+    padding: var(--input-offset);
+    color: var(--text-primary-color);
+  }
+
+  &.error {
+    border-color: var(--error-color);
+  }
+
+  &::placeholder {
+    font-size: 0;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.InputWrapper {
+  position: relative;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.InputPlaceholder {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: inline-block;
+  font-weight: 400;
+  font-size: var(--font-size-m);
+  line-height: 100%;
+  color: var(--text-primary-color);
+  transform: translateY(10px);
+  transition: transform var(--ui-transition) ease, font-size var(--ui-transition) ease;
+  pointer-events: none;
+
+  &.outlined {
+    z-index: 1;
+    margin-left: var(--input-offset);
+    padding: 3px;
+    background-color: var(--bg-light-color);
+    transform: translateY(8px);
+
+    &.focused {
+      transform: translateY(-7px);
+    }
+  }
+
+  &.focused {
+    font-size: var(--font-size-s);
+    transform: translateY(-5px);
+  }
+}
+
+.ErrorMessage {
+  position: absolute;
+  bottom: -18px;
+}

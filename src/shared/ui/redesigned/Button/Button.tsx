@@ -4,7 +4,7 @@ import cl from './Button.module.scss';
 
 export type ButtonType = 'button' | 'reset' | 'submit';
 export type ButtonVariant =
-  'icon' | 'outline-inverted' | 'outline' | 'outline-red' | 'text-inverted'|'primary'|'text-primary'|'active';
+  'icon' | 'outline-inverted' | 'outline' | 'outline-red' | 'text-inverted'|'primary'|'text-primary'|'active' | 'clear';
 
 export type ButtonSize = 'xs' | 'l' | 'xl';
 

@@ -3,6 +3,10 @@ import { useTranslation } from 'react-i18next';
 import { memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import { useSearchParams } from 'react-router-dom';
+import { FiltersContainer } from '../FiltersContainer/FiltersContainer';
+import { ViewSwitcherContainer } from '../ViewSwitherContainer/ViewSwitcherContainer';
+import { StickyContentLayout } from '@/shared/layouts/SticlyContentLayout';
+import { ToggleFeatures } from '@/shared/lib/features';
 import { Text } from '@/shared/ui/deprecated/Text';
 import { ArticlePageGreeting } from '@/features/articlePageGreeting';
 import { classNames } from '@/shared/lib/classNames/classNames';
@@ -38,18 +42,43 @@ const ArticlesPage = (props: ArticlesPageProps) => {
     dispatch(fetchNextArticlesPage());
   }, [dispatch]);
 
+  const content = (
+    <ToggleFeatures
+      feature="isAppRedesigned"
+      on={(
+        <StickyContentLayout
+          left={<ViewSwitcherContainer />}
+          right={<FiltersContainer />}
+          content={(
+            <Page
+              data-testid="ArticlesPage"
+              onScrollEnd={onLoadNextPart}
+              className={classNames(cl.ArticlesPage, {}, [className])}
+            >
+              <ArticleInfiniteList />
+              {error && <Text>{t('Data boot error')}</Text>}
+              <ArticlePageGreeting />
+            </Page>
+          )}
+        />
+      )}
+      off={(
+        <Page
+          data-testid="ArticlesPage"
+          onScrollEnd={onLoadNextPart}
+          className={classNames(cl.ArticlesPage, {}, [className])}
+        >
+          <ArticlesPageFilters />
+          <ArticleInfiniteList />
+          {error && <Text>{t('Data boot error')}</Text>}
+        </Page>
+      )}
+    />
+  );
+
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
-      <Page
-        data-testid="ArticlesPage"
-        onScrollEnd={onLoadNextPart}
-        className={classNames(cl.ArticlesPage, {}, [className])}
-      >
-        <ArticlesPageFilters />
-        <ArticleInfiniteList />
-        {error && <Text>{t('Data boot error')}</Text>}
-        <ArticlePageGreeting />
-      </Page>
+      {content}
     </DynamicModuleLoader>
   );
 };

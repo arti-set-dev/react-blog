@@ -1,0 +1,32 @@
+.StickyContentLayout {
+  display: grid;
+  grid-template-areas: "left content right";
+  grid-template-columns: min-content 1fr 230px;
+  width: 100%;
+  gap: var(--gap);
+}
+
+.left {
+  grid-area: left;
+  margin-top: var(--inner-offset);
+}
+
+.content {
+  justify-self: center;
+  grid-area: content;
+  width: 100%;
+  max-width: 1200px;
+  gap: var(--gap);
+}
+
+.right {
+  grid-area: right;
+  margin-top: var(--inner-offset);
+}
+
+.left,
+.right {
+  position: sticky;
+  top: 32px;
+  height: fit-content;
+}

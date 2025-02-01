@@ -22,7 +22,7 @@ interface PageProps extends TestsProps {
 
 export const Page = memo((props: PageProps) => {
   const { className, children, onScrollEnd } = props;
-  const wrapperRef = useRef() as MutableRefObject<HTMLElement>;
+  const wrapperRef = useRef() as MutableRefObject<HTMLDivElement>;
   const triggerRef = useRef() as MutableRefObject<HTMLDivElement>;
   const dispatch = useAppDispatch();
   const { pathname } = useLocation();

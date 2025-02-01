@@ -6,7 +6,7 @@ import React, {
   useState,
 } from 'react';
 import { classNames, Mods } from '@/shared/lib/classNames/classNames';
-import { Text, TextSize, TextTheme } from '../Text/Text';
+import { Text } from '../Text/Text';
 import cl from './Input.module.scss';
 
 type HTMLInputProps = Omit<
@@ -14,15 +14,9 @@ type HTMLInputProps = Omit<
   'value' | 'onChange' | 'readOnly'
 >;
 
-export enum InputType {
-  TEXT = 'text',
-  PASSWORD = 'password',
-  NUMBER = 'number',
-}
+export type InputType = 'text' | 'password' | 'number';
 
-export enum InputTheme {
-  INVERTED = 'inverted',
-}
+export type InputVariant = 'inverted' | 'outlined';
 
 interface InputProps extends HTMLInputProps {
   className?: string;
@@ -30,25 +24,21 @@ interface InputProps extends HTMLInputProps {
   onChange?: (value: string) => void;
   placeholder?: string;
   type?: InputType;
-  theme?: InputTheme;
+  variant?: InputVariant;
   autofocus?: boolean;
   readonly?: boolean;
   isNumeric?: boolean;
   error?: string;
 }
 
-/**
- * Outdated, use the component from the Redesigned folder
- * @deprecated
- */
 export const Input = memo((props: InputProps) => {
   const {
     className,
     value = '',
     onChange,
     placeholder,
-    type = InputType.TEXT,
-    theme = InputTheme.INVERTED,
+    type = 'text',
+    variant = 'inverted',
     autofocus,
     readonly,
     isNumeric,
@@ -92,7 +82,7 @@ export const Input = memo((props: InputProps) => {
           <span
             className={classNames(cl.InputPlaceholder, mods, [
               className,
-              cl[theme],
+              cl[variant],
             ])}
           >
             {placeholder}
@@ -104,16 +94,16 @@ export const Input = memo((props: InputProps) => {
             onChange={onChangeHandler}
             onFocus={onFoucus}
             onBlur={onBlur}
-            className={classNames(cl.Input, mods, [className, cl[theme]])}
+            className={classNames(cl.Input, mods, [className, cl[variant]])}
             readOnly={readonly}
             {...otherProps}
           />
           {error && (
             <Text
               data-testid="Input.Error"
-              size={TextSize.S}
+              size="s"
               className={cl.ErrorMessage}
-              theme={TextTheme.ERROR}
+              variant="error"
             >
               {error}
             </Text>
@@ -130,9 +120,9 @@ export const Input = memo((props: InputProps) => {
           />
           {error && (
             <Text
-              size={TextSize.S}
+              size="s"
               className={cl.ErrorMessage}
-              theme={TextTheme.ERROR}
+              variant="error"
             >
               {error}
             </Text>

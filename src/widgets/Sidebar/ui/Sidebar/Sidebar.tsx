@@ -8,7 +8,6 @@ import { LangSwitcher } from '@/features/LangSwitcher';
 import { ThemeSwitcher } from '@/features/ThemeSwitcher';
 import ArrIcon from '@/shared/assets/icons/arrow-icon.svg';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { ToggleFeatures } from '@/shared/lib/features';
 import { getSidebarItems } from '../../model/selector/getSidebarItems';
 import { SidebarItem } from '../SidebarItem/SidebarItem';
 import { SidebarRedesigned } from '../SidebarRedesigned/SidebarRedesigned';
@@ -67,10 +66,6 @@ export const Sidebar = memo((props: SidebarProps) => {
   );
 
   return (
-    <ToggleFeatures
-      feature="isAppRedesigned"
-      on={<SidebarRedesigned />}
-      off={sidebarDeprecated}
-    />
+    <SidebarRedesigned />
   );
 });

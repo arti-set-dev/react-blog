@@ -1,5 +1,9 @@
 import { memo, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Listbox } from '@/shared/ui/redesigned/Popups';
+import { Text } from '@/shared/ui/redesigned/Text';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { VStack } from '@/shared/ui/redesigned/Stack';
 import { Select, SelectOptions } from '@/shared/ui/deprecated/Select';
 import { ArticleSortField } from '@/entities/Article';
 import { classNames } from '@/shared/lib/classNames/classNames';
@@ -53,19 +57,39 @@ export const ArticleSortSelector = memo((props: ArticleSortSelectorProps) => {
   );
 
   return (
-    <div className={classNames(cl.ArticleSortSelector, {}, [className])}>
-      <Select
-        currValue={sort}
-        onChange={onChangeSort}
-        options={sortFieldOptions}
-        label={t('Sort by')}
-      />
-      <Select
-        currValue={order}
-        onChange={onChangeOrder}
-        options={orderOptions}
-        label={t('by')}
-      />
-    </div>
+    <ToggleFeatures
+      feature="isAppRedesigned"
+      on={(
+        <VStack gap="4" className={classNames(cl.ArticleSortSelector, {}, [className])}>
+          <Text size="m">{t('Sort by')}</Text>
+          <Listbox
+            value={sort}
+            onChange={onChangeSort}
+            items={sortFieldOptions}
+          />
+          <Listbox
+            value={order}
+            onChange={onChangeOrder}
+            items={orderOptions}
+          />
+        </VStack>
+      )}
+      off={(
+        <div className={classNames(cl.ArticleSortSelector, {}, [className])}>
+          <Select
+            currValue={sort}
+            onChange={onChangeSort}
+            options={sortFieldOptions}
+            label={t('Sort by')}
+          />
+          <Select
+            currValue={order}
+            onChange={onChangeOrder}
+            options={orderOptions}
+            label={t('by')}
+          />
+        </div>
+      )}
+    />
   );
 });

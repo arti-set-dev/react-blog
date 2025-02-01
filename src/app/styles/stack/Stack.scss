@@ -1,0 +1,42 @@
+@use "./Hstack.scss";
+@use "./Vstack.scss";
+
+.gap-0 {
+  gap: 0;
+}
+
+.gap-4 {
+  gap: 4px;
+}
+
+.gap-8 {
+  gap: 8px;
+}
+
+.gap-16 {
+  gap: 16px;
+}
+
+.gap-24 {
+  gap: 24px;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-space-between {
+  justify-content: space-between;
+}
+
+.justify-space-end {
+  justify-content: end;
+}
+
+.justify-space-start {
+  justify-content: start;
+}
+
+.align-center {
+  align-items: center;
+}
