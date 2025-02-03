@@ -1,5 +1,6 @@
 import { memo, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Skeleton } from '@/shared/ui/redesigned/Skeleton/Skeleton';
 import { Icon } from '@/shared/ui/redesigned/Icon/Icon';
 import { getVstack } from '@/shared/lib/stack/getVstack/getVstack';
 import { Avatar } from '@/shared/ui/redesigned/Avatar/Avatar';
@@ -14,7 +15,6 @@ import ViewsIcon from '@/shared/assets/icons/eye-icon.svg';
 import { getRouteArticleDetails } from '@/shared/const/router';
 import { AppLink } from '@/shared/ui/redesigned/AppLink';
 import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button';
-import { Skeleton } from '@/shared/ui/deprecated/Skeleton';
 import { Text } from '@/shared/ui/redesigned/Text';
 import { LazyImage } from '@/shared/ui/redesigned/LazyImage';
 import { classNames } from '@/shared/lib/classNames/classNames';
@@ -110,12 +110,13 @@ export const ArticleItemRedesigned = memo((props: ArticleItemProps) => {
 
   return (
     <VStack
+      tag="li"
       data-testid="ArticlesItem"
       className={classNames('', {}, [className, cl[view]])}
     >
       {blank ? (
-        <Card isHovered>
-          <Text>
+        <Card offset="0" max className={cl.Card}>
+          <Text variant="inverted" className={cl.createdAt}>
             {article.createdAt}
           </Text>
           <AppLink
@@ -124,14 +125,14 @@ export const ArticleItemRedesigned = memo((props: ArticleItemProps) => {
           >
             <LazyImage
               fallback={<Skeleton width="100%" height={200} />}
-              width={280}
+              width="100%"
               height={200}
               src={article.img}
               alt={article.title}
             />
           </AppLink>
-          <VStack>
-            <HStack>
+          <Card tag="div" offset="16" className={getVstack({ gap: 16 })}>
+            <HStack justify="between">
               {articleTypes}
               {views}
             </HStack>
@@ -143,11 +144,11 @@ export const ArticleItemRedesigned = memo((props: ArticleItemProps) => {
                 {article.title}
               </Text>
             </AppLink>
-          </VStack>
+          </Card>
         </Card>
       ) : (
-        <Card>
-          <Text>
+        <Card isHovered max offset="0" className={cl.Card}>
+          <Text variant="inverted" className={cl.createdAt}>
             {article.createdAt}
           </Text>
           <AppLink
@@ -155,13 +156,14 @@ export const ArticleItemRedesigned = memo((props: ArticleItemProps) => {
           >
             <LazyImage
               fallback={<Skeleton width="100%" height={200} />}
+              width="100%"
               height={200}
               src={article.img}
               alt={article.title}
             />
           </AppLink>
-          <VStack>
-            <HStack>
+          <Card tag="div" offset="16" className={getVstack({ gap: 16 })}>
+            <HStack justify="between">
               {articleTypes}
               {views}
             </HStack>
@@ -172,7 +174,7 @@ export const ArticleItemRedesigned = memo((props: ArticleItemProps) => {
                 {article.title}
               </Text>
             </AppLink>
-          </VStack>
+          </Card>
         </Card>
       )}
     </VStack>
