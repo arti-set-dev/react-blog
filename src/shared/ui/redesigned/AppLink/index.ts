@@ -1,1 +1,1 @@
-export * from '@/shared/ui/deprecated/AppLink/AppLink';
+export * from '@/shared/ui/redesigned/AppLink/AppLink';

@@ -1,5 +1,9 @@
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
+import {
+  ArticleItemSkeletonRedesigned,
+} from '../ArticleItem/ArticleItemRedesigned/ArticleItemSkeletonRedesigned';
+import { ToggleFeatures } from '@/shared/lib/features';
 import { Text, TextSize } from '@/shared/ui/deprecated/Text';
 import { List } from '@/shared/ui/deprecated/List';
 import { classNames } from '@/shared/lib/classNames/classNames';
@@ -64,7 +68,15 @@ export const ArticleList = memo((props: ArticleListProps) => {
             .fill(0)
             .map((item, index) => (
               // eslint-disable-next-line react/no-array-index-key
-              <ArticleItemSkeleton key={index} view={view} />
+              <ToggleFeatures
+                feature="isAppRedesigned"
+                on={
+                  <ArticleItemSkeletonRedesigned key={index} view={view} />
+                }
+                off={
+                  <ArticleItemSkeleton key={index} view={view} />
+                }
+              />
             ))}
         </>
       )}

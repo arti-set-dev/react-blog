@@ -30,8 +30,9 @@ export const ArticlesFilters = memo((props: ArticlesFiltersProps) => {
   const { t } = useTranslation();
 
   return (
-    <Card isOffset className={classNames('', {}, [className, getVstack({ gap: 24 })])}>
+    <Card offset="16" className={classNames('', {}, [className, getVstack({ gap: 24 })])}>
       <Input
+        background="light"
         value={search}
         variant="outlined"
         onChange={onChangeSearch}

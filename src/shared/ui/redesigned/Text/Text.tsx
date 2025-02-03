@@ -33,12 +33,14 @@ export const Text = memo((props: TextProps) => {
     children,
     tag = 'div',
     'data-testid': dataTestId = 'Text',
+    ...otherProps
   } = props;
 
   const Tag = tag;
 
   return (
     <Tag
+      {...otherProps}
       data-testid={`${dataTestId}.Tag`}
       className={classNames(cl.Text, {}, [
         className,

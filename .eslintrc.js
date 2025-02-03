@@ -40,7 +40,9 @@ module.exports = {
         ['data-testid',
           'feature',
           'to',
-          'size', 'weight', 'variant', 'name', 'target', 'justify', 'align', 'direction', 'gap', 'tag', 'as', 'border'],
+          'size',
+          'background',
+          'weight', 'variant', 'name', 'target', 'justify', 'align', 'direction', 'gap', 'tag', 'as', 'border'],
     }],
     'max-len': ['error', {
       ignoreComments: true,

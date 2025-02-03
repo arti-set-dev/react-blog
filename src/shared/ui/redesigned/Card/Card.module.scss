@@ -3,6 +3,10 @@
   background-color: var(--bg-light-color);
   transition: transform var(--ui-transition) ease;
 
+  &.max {
+    width: 100%;
+  }
+
   &.offset {
     padding: var(--inner-offset);
   }
@@ -16,8 +20,20 @@
     background-color: transparent;
   }
 
+  &.inverted {
+    background-color: var(--bg-inverted-color);
+  }
+
+  &.active {
+    background-color: var(--bg-color);
+  }
+
   &.offset_0 {
     padding: 0;
+  }
+
+  &.offset_4 {
+    padding: 4px;
   }
 
   &.offset_8 {

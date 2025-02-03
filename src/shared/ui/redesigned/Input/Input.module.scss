@@ -82,6 +82,10 @@
   transition: transform var(--ui-transition) ease, font-size var(--ui-transition) ease;
   pointer-events: none;
 
+  &.transparent {
+    background-color: transparent;
+  }
+
   &.outlined {
     z-index: 1;
     margin-left: var(--input-offset);
@@ -92,6 +96,10 @@
     &.focused {
       transform: translateY(-7px);
     }
+  }
+
+  &.light {
+    background-color: var(--bg-light-color);
   }
 
   &.focused {

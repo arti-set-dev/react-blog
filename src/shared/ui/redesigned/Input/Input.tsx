@@ -17,6 +17,7 @@ type HTMLInputProps = Omit<
 export type InputType = 'text' | 'password' | 'number';
 
 export type InputVariant = 'inverted' | 'outlined';
+export type InputBackground = 'transparent' | 'light';
 
 interface InputProps extends HTMLInputProps {
   className?: string;
@@ -30,6 +31,7 @@ interface InputProps extends HTMLInputProps {
   isNumeric?: boolean;
   error?: string;
   addon?: ReactNode;
+  background?: InputBackground;
 }
 
 export const Input = memo((props: InputProps) => {
@@ -45,6 +47,7 @@ export const Input = memo((props: InputProps) => {
     isNumeric,
     error,
     addon,
+    background = 'transparent',
     ...otherProps
   } = props;
   const [isFocus, setIsFocus] = useState(false);
@@ -92,6 +95,7 @@ export const Input = memo((props: InputProps) => {
             className={classNames(cl.InputPlaceholder, mods, [
               className,
               cl[variant],
+              cl[background],
             ])}
           >
             {placeholder}

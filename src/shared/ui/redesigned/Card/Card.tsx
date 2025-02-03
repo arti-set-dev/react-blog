@@ -3,8 +3,9 @@ import { useTranslation } from 'react-i18next';
 import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 import cl from './Card.module.scss';
 
-export type CardVariant = 'primary' | 'outline';
-export type CardOffset = '0' | '8' | '16' | '24';
+export type CardVariant = 'primary' | 'outline' | 'inverted' | 'active';
+export type CardOffset = '0' | '4' | '8' | '16' | '24';
+type TagType = 'h1' | 'h2' | 'h3' | 'p' | 'strong' | 'b' | 'div';
 
 interface CardProps {
   className?: string;
@@ -13,10 +14,13 @@ interface CardProps {
   isOffset?: boolean;
   offset?: CardOffset;
   variant?: CardVariant;
+  tag?: TagType;
+  max?: boolean;
 }
 
 const mapOffsetToClass: Record<CardOffset, string> = {
   0: 'offset_0',
+  4: 'offset_4',
   8: 'offset_8',
   16: 'offset_16',
   24: 'offset_24',
@@ -24,7 +28,7 @@ const mapOffsetToClass: Record<CardOffset, string> = {
 
 export const Card = memo((props: CardProps) => {
   const {
-    className, children, isHovered, isOffset, variant = 'primary', offset = '8', ...otherProps
+    className, children, isHovered, isOffset, variant = 'primary', offset = '8', tag = 'article', max, ...otherProps
   } = props;
   const { t } = useTranslation();
 
@@ -33,11 +37,14 @@ export const Card = memo((props: CardProps) => {
   const mods: Mods = {
     [cl.hovered]: isHovered,
     [cl.offset]: isOffset,
+    [cl.max]: max,
   };
 
+  const Tag = tag;
+
   return (
-    <article {...otherProps} className={classNames(cl.Card, mods, [className, cl[variant], offsetClass])}>
+    <Tag {...otherProps} className={classNames(cl.Card, mods, [className, cl[variant], cl[offsetClass]])}>
       {children}
-    </article>
+    </Tag>
   );
 });
