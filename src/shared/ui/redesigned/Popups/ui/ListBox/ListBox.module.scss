@@ -6,9 +6,12 @@
   width: 100%;
   text-align: left;
   color: var(--text-primary-color);
-  background-color: var(--bg-color);
   transition: border var(--ui-transition) ease;
   cursor: pointer;
+
+  &.primary {
+    background-color: var(--bg-color);
+  }
 
   &[data-headlessui-state="open"] {
     border-radius: var(--radius-s) var(--radius-s) 0 0;
@@ -20,6 +23,29 @@
 
   &[disabled] {
     border: transparent;
+  }
+
+  &.outline {
+    border: 1px solid var(--text-primary-color);
+    padding: var(--input-offset);
+    background-color: transparent;
+
+    &[disabled] {
+      border-color: currentcolor;
+      opacity: 0.7;
+    }
+
+    .Label {
+      margin-left: var(--input-offset);
+      background-color: var(--bg-color);
+    }
+  }
+
+  &.outline + .Options {
+    border: 1px solid var(--text-primary-color);
+    border-top: none;
+    border-radius: 0 0 var(--radius-s) var(--radius-s);
+    width: 100%;
   }
 }
 

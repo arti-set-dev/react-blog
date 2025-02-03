@@ -2,7 +2,6 @@ import { useTranslation } from 'react-i18next';
 import { memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import { ValidateFields } from '@/shared/types/validation';
-import { classNames } from '@/shared/lib/classNames/classNames';
 
 import { Currency } from '@/entities/Currency';
 import { Country } from '@/entities/Country';
@@ -169,26 +168,24 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
 
   return (
     <DynamicModuleLoader reducers={reducers}>
-      <div className={classNames('', {}, [className])}>
-        <ProfileCard
-          data={formData}
-          error={error}
-          isLoading={isLoading}
-          onCancelEdit={onCancelEdit}
-          onChangeAge={onChangeAge}
-          onChangeCity={onChangeCity}
-          onChangeCountry={onChangeCountry}
-          onChangeFirstname={onChangeFirstname}
-          onChangeLastname={onChangeLastname}
-          onChangeAvatar={onChangeAvatar}
-          onChangeUsername={onChangeUsername}
-          onChangeCurrency={onChangeCurrency}
-          onEdit={onEdit}
-          onSave={onSave}
-          readonly={readonly}
-          fieldErrors={fieldErrors}
-        />
-      </div>
+      <ProfileCard
+        data={formData}
+        error={error}
+        isLoading={isLoading}
+        onCancelEdit={onCancelEdit}
+        onChangeAge={onChangeAge}
+        onChangeCity={onChangeCity}
+        onChangeCountry={onChangeCountry}
+        onChangeFirstname={onChangeFirstname}
+        onChangeLastname={onChangeLastname}
+        onChangeAvatar={onChangeAvatar}
+        onChangeUsername={onChangeUsername}
+        onChangeCurrency={onChangeCurrency}
+        onEdit={onEdit}
+        onSave={onSave}
+        readonly={readonly}
+        fieldErrors={fieldErrors}
+      />
     </DynamicModuleLoader>
   );
 });

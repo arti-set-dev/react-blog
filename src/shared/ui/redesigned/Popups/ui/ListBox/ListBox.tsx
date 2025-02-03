@@ -7,6 +7,8 @@ import ArrIcon from '@/shared/assets/icons/arrow-icon.svg';
 import cl from './ListBox.module.scss';
 import popupCl from '../../styles/Popups.module.scss';
 
+export type ListBoxVariant = 'primary' | 'outline';
+
 export interface ListBoxItem<T extends string> {
   value: string;
   content: ReactNode;
@@ -21,11 +23,12 @@ interface ListBoxProps<T extends string> {
   onChange: (value: T) => void;
   readonly?: boolean;
   label?: string;
+  variant?: ListBoxVariant;
 }
 
 export const Listbox = <T extends string>(props: ListBoxProps<T>) => {
   const {
-    className, items, value, defaultValue, onChange, readonly, label,
+    className, items, value, defaultValue, onChange, readonly, label, variant = 'primary',
   } = props;
 
   return (
@@ -36,7 +39,9 @@ export const Listbox = <T extends string>(props: ListBoxProps<T>) => {
       value={value}
       onChange={onChange}
     >
-      <HListBox.Button className={classNames(cl.Trigger, {}, [className, getHstack({ gap: 4, align: 'center' })])}>
+      <HListBox.Button
+        className={classNames(cl.Trigger, {}, [className, getHstack({ gap: 4, align: 'center' }), cl[variant]])}
+      >
         {label && <span className={cl.Label}>{label}</span>}
         {value ?? defaultValue}
         <Icon width={10} height={10} Svg={ArrIcon} />

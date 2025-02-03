@@ -1,14 +1,11 @@
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Icon } from '../Icon';
+import { Icon } from '../Icon/Icon';
 import { Skeleton } from '../Skeleton';
 import { LazyImage } from '../../redesigned/LazyImage';
 import cl from './Avatar.module.scss';
 import ProfileIcon from '@/shared/assets/icons/profile-icon.svg';
 
-export enum AvatarLoading {
-  LAZY = 'lazy',
-  EAGER = 'eager',
-}
+export type AvatarLoading = 'lazy' | 'eager';
 
 interface AvatarProps {
   className?: string;
@@ -24,7 +21,7 @@ export const Avatar = (props: AvatarProps) => {
     src,
     alt,
     size = 100,
-    loading = AvatarLoading.LAZY,
+    loading = 'lazy',
   } = props;
 
   const fallback = <Skeleton width={size} height={size} border="50%" />;
