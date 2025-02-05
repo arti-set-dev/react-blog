@@ -1,11 +1,13 @@
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { VStack } from '@/shared/ui/redesigned/Stack';
-import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button';
-import { Input } from '@/shared/ui/deprecated/Input';
-import { Text, TextTheme } from '@/shared/ui/deprecated/Text';
-import { classNames } from '@/shared/lib/classNames/classNames';
+import {
+  AddCommentFormRedesigned,
+} from './AddCommentFormRedesigned/AddCommentFormRedesigned';
+import { ToggleFeatures } from '@/shared/lib/features';
+import {
+  AddCommentFormDeprecated,
+} from './AddCommentFormDeprecated/AddCommentFormDeprecated';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import {
   DynamicModuleLoader,
@@ -19,7 +21,6 @@ import {
   getCommentFormError,
   getCommentFormText,
 } from '../../model/selectors/addNewCommentSelectors';
-import cl from './AddCommentForm.module.scss';
 
 export interface AddCommentFormProps {
   className?: string;
@@ -51,36 +52,13 @@ export const AddCommentForm = memo((props: AddCommentFormProps) => {
 
   return (
     <DynamicModuleLoader reducers={reducers}>
-      <form
-        data-testid="AddCommentForm"
-        className={classNames(cl.AddCommentForm, {}, [className])}
-      >
-        <Input
-          data-testid="AddCommentForm.Input"
-          value={text}
-          onChange={onCommentTextChange}
-          placeholder={t('Write your comment')}
-        />
-        {error && (
-          <VStack gap="8">
-            <Input
-              value={text}
-              onChange={onCommentTextChange}
-              placeholder={t('Write your comment')}
-            />
-            <Text theme={TextTheme.ERROR}>
-              {t('There was an error when sending a message')}
-            </Text>
-          </VStack>
+      <ToggleFeatures
+        feature="isAppRedesigned"
+        on={(
+          <AddCommentFormRedesigned onSendComment={onSendComment} />
         )}
-        <Button
-          data-testid="AddCommentForm.Button"
-          onClick={onSendHandler}
-          theme={ButtonTheme.OUTLINE}
-        >
-          {t('Send')}
-        </Button>
-      </form>
+        off={<AddCommentFormDeprecated onSendComment={onSendComment} />}
+      />
     </DynamicModuleLoader>
   );
 });

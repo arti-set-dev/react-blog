@@ -5,7 +5,7 @@ import cl from './Card.module.scss';
 
 export type CardVariant = 'primary' | 'outline' | 'inverted' | 'active';
 export type CardOffset = '0' | '4' | '8' | '16' | '24';
-type TagType = 'h1' | 'h2' | 'h3' | 'p' | 'strong' | 'b' | 'div';
+type TagType = 'article' | 'aside' | 'h3' | 'main' | 'div' | 'form' | 'li';
 
 interface CardProps {
   className?: string;

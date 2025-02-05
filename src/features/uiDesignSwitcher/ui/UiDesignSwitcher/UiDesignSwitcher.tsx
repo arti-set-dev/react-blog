@@ -49,7 +49,7 @@ export const UiDesignSwitcher = memo((props: UiDesignSwitcherProps) => {
 
   return (
     <HStack>
-      <Text>{t('Вариант интерфейса')}</Text>
+      <Text>{t('Option interface')}</Text>
       {isLoading ? (
         <Skeleton width={100} height={20} />
       ) : (

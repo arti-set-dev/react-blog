@@ -1,13 +1,15 @@
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { VStack } from '@/shared/ui/redesigned/Stack';
+import { getVstack } from '@/shared/lib/stack/getVstack/getVstack';
+import { Card } from '@/shared/ui/redesigned/Card';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { VStack, HStack } from '@/shared/ui/redesigned/Stack';
 import { Text } from '@/shared/ui/deprecated/Text';
-import { Skeleton } from '@/shared/ui/deprecated/Skeleton';
-import { List } from '@/shared/ui/deprecated/List';
-import { classNames } from '@/shared/lib/classNames/classNames';
+import { Skeleton as SkeletonDeprecated } from '@/shared/ui/deprecated/Skeleton';
 import { Comment } from '../../model/types/comments';
 import cl from './Comments.module.scss';
 import { CommentCard } from '../CommentCard/CommentCard';
+import { Skeleton } from '@/shared/ui/redesigned/Skeleton';
 
 interface CommentsProps {
   className?: string;
@@ -26,7 +28,7 @@ export const Comments = memo((props: CommentsProps) => {
 
   if (comments?.length) {
     content = (
-      <List className={cl.List}>
+      <VStack tag="ul" max className={cl.List}>
         {comments.map((comment) => (
           <CommentCard
             key={comment.id}
@@ -34,17 +36,36 @@ export const Comments = memo((props: CommentsProps) => {
             isLoading={isLoading}
           />
         ))}
-      </List>
+      </VStack>
     );
   }
 
   if (isLoading) {
     content = (
-      <VStack gap="16">
-        <Skeleton width="100%" height={40} />
-        <Skeleton width="100%" height={40} />
-        <Skeleton width="100%" height={40} />
-      </VStack>
+      <ToggleFeatures
+        feature="isAppRedesigned"
+        on={(
+          <Card
+            offset="16"
+            data-testid="CommentCard.Loading"
+            className={getVstack({ gap: 16 })}
+            max
+          >
+            <HStack gap="16">
+              <Skeleton width={30} height={30} border="50%" />
+              <Skeleton width={200} height={20} />
+            </HStack>
+            <Skeleton width="100%" height={20} />
+          </Card>
+        )}
+        off={(
+          <VStack gap="16" max>
+            <SkeletonDeprecated width="100%" height={40} />
+            <SkeletonDeprecated width="100%" height={40} />
+            <SkeletonDeprecated width="100%" height={40} />
+          </VStack>
+        )}
+      />
     );
   }
 
@@ -52,5 +73,10 @@ export const Comments = memo((props: CommentsProps) => {
     content = <Text>{t('There was an error when downloading data')}</Text>;
   }
 
-  return <div className={classNames('', {}, [className])}>{content}</div>;
+  return (
+    // eslint-disable-next-line react/jsx-no-useless-fragment
+    <>
+      {content}
+    </>
+  );
 });

@@ -29,7 +29,7 @@ export const ArticleAdditionalInfo = memo((props: ArticleAdditionalInfoProps) =>
     <VStack gap="32" className={classNames('', {}, [className])}>
       <HStack gap="8">
         <Avatar size={32} src={author?.avatar} />
-        <Text>{author?.username}</Text>
+        <Text weight="bold">{author?.username}</Text>
         <Text>{createdAt}</Text>
       </HStack>
       <Button onClick={onEdit} variant="outline">{t('Edit')}</Button>

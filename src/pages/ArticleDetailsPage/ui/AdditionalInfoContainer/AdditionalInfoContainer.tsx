@@ -2,10 +2,12 @@ import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { ArticleAdditionalInfo } from '@/widgets/ArticleAdditionalInfo';
+import { Skeleton } from '@/shared/ui/redesigned/Skeleton';
+import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
 import { getRouteProfile } from '@/shared/const/router';
 import { getArticleDetailsData } from '@/entities/Article';
 import { Card } from '@/shared/ui/redesigned/Card';
-import { ArticleAdditionalInfo } from '@/widgets/ArticleAdditionalInfo';
 
 interface AdditionalInfoContainerProps {
   className?: string;
@@ -23,7 +25,18 @@ export const AdditionalInfoContainer = memo((props: AdditionalInfoContainerProps
   }, [article, navigate]);
 
   if (!article) {
-    return null;
+    return (
+      <Card offset="16">
+        <VStack gap="32" max>
+          <HStack gap="8" max>
+            <Skeleton width={32} height={32} border="50%" />
+            <Skeleton width={200} height={16} border="20px" />
+            <Skeleton width={200} height={16} border="20px" />
+          </HStack>
+          <Skeleton width="100%" height={36} border="20px" />
+        </VStack>
+      </Card>
+    );
   }
 
   return (

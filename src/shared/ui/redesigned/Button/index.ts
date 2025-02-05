@@ -1,1 +1,1 @@
-export * from '@/shared/ui/deprecated/Button/Button';
+export * from '@/shared/ui/redesigned/Button/Button';

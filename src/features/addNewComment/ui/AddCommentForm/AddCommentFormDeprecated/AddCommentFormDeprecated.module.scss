@@ -1,0 +1,17 @@
+.AddCommentFormDeprecated {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--gap);
+  border-radius: var(--radius-s);
+  padding: var(--gap);
+  width: 100%;
+  background-color: var(--bg-light-color);
+  gap: var(--gap);
+}
+
+.errorWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-mini);
+}

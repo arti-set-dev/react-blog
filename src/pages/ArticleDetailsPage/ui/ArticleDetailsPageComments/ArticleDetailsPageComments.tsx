@@ -1,6 +1,7 @@
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
+import { VStack } from '@/shared/ui/redesigned/Stack';
 import {
   TextSize, TextTheme, TextWeight, Text,
 } from '@/shared/ui/deprecated/Text';
@@ -44,7 +45,7 @@ export const ArticleDetailsPageComments = memo(
     });
 
     return (
-      <div className={classNames('', {}, [className])}>
+      <VStack gap="16" max className={classNames('', {}, [className])}>
         <Text
           className={cl.Title}
           theme={TextTheme.PRIMARY}
@@ -59,7 +60,7 @@ export const ArticleDetailsPageComments = memo(
           isLoading={commentsIsloading}
           comments={comments}
         />
-      </div>
+      </VStack>
     );
   },
 );

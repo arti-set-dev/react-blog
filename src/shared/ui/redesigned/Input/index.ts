@@ -1,1 +1,1 @@
-export * from '@/shared/ui/deprecated/Input/Input';
+export * from '@/shared/ui/redesigned/Input/Input';
