@@ -1,0 +1,9 @@
+.Image {
+  &.radius_l {
+    border-radius: var(--radius-l);
+  }
+
+  &.radius_xs {
+    border-radius: var(--radius-xs);
+  }
+}

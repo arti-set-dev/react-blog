@@ -57,7 +57,7 @@ export const ArticleItemRedesigned = memo((props: ArticleItemProps) => {
         data-testid="ArticlesItem"
         className={classNames('', {}, [className, cl[view]])}
       >
-        <Card offset="24" className={getVstack({ gap: 16 })}>
+        <Card isOverflow offset="24" className={getVstack({ gap: 16 })}>
           <HStack>
             <Avatar
               size={30}
@@ -115,7 +115,7 @@ export const ArticleItemRedesigned = memo((props: ArticleItemProps) => {
       className={classNames('', {}, [className, cl[view]])}
     >
       {blank ? (
-        <Card offset="0" max className={cl.Card}>
+        <Card isOverflow offset="0" max className={cl.Card}>
           <Text variant="inverted" className={cl.createdAt}>
             {article.createdAt}
           </Text>
@@ -147,7 +147,7 @@ export const ArticleItemRedesigned = memo((props: ArticleItemProps) => {
           </Card>
         </Card>
       ) : (
-        <Card isHovered max offset="0" className={cl.Card}>
+        <Card isOverflow isHovered max offset="0" className={cl.Card}>
           <Text variant="inverted" className={cl.createdAt}>
             {article.createdAt}
           </Text>

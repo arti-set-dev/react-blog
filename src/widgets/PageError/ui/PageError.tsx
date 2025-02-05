@@ -22,7 +22,7 @@ export const PageError = (props: PageErrorProps) => {
     <div className={classNames(cl.PageError, {}, [className])}>
       <h1>{t('Something went wrong')}</h1>
       <Button className={cl.BtnReload} onClick={reloadPage}>
-        {t('Reaload page')}
+        {t('Reload page')}
       </Button>
     </div>
   );

@@ -2,7 +2,7 @@ import { memo } from 'react';
 import { ArticleItemRedesigned } from './ArticleItemRedesigned/ArticleItemRedesigned';
 import {
   ArticleItemDeprecated,
-} from '../ArticleItemDeprecated/ArticleItemDeprecated';
+} from './ArticleItemDeprecated/ArticleItemDeprecated';
 import { ToggleFeatures } from '@/shared/lib/features';
 import { ArticleView } from '../../model/consts/consts';
 import { Article } from '../../model/types/article';

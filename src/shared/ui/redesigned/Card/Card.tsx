@@ -16,6 +16,7 @@ interface CardProps {
   variant?: CardVariant;
   tag?: TagType;
   max?: boolean;
+  isOverflow?: boolean;
 }
 
 const mapOffsetToClass: Record<CardOffset, string> = {
@@ -28,7 +29,9 @@ const mapOffsetToClass: Record<CardOffset, string> = {
 
 export const Card = memo((props: CardProps) => {
   const {
-    className, children, isHovered, isOffset, variant = 'primary', offset = '8', tag = 'article', max, ...otherProps
+    className,
+    children,
+    isHovered, isOffset, variant = 'primary', offset = '8', tag = 'article', max, isOverflow = false, ...otherProps
   } = props;
   const { t } = useTranslation();
 
@@ -38,6 +41,7 @@ export const Card = memo((props: CardProps) => {
     [cl.hovered]: isHovered,
     [cl.offset]: isOffset,
     [cl.max]: max,
+    [cl.overflow]: isOverflow,
   };
 
   const Tag = tag;

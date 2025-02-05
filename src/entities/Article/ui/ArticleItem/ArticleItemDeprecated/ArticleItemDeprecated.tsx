@@ -1,11 +1,11 @@
 import { memo, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { ArticleBlockType } from '../../model/types/articleType';
-import { ArticleView } from '../../model/consts/consts';
-import { useArticle } from '../../lib/hooks/useArticle';
-import { ArticleTextBlock } from '../../model/types/article';
-import { ArticleItemProps } from '../ArticleItem/ArticleItem';
-import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
+import { ArticleBlockType } from '../../../model/types/articleType';
+import { ArticleView } from '../../../model/consts/consts';
+import { useArticle } from '../../../lib/hooks/useArticle';
+import { ArticleTextBlock } from '../../../model/types/article';
+import { ArticleItemProps } from '../ArticleItem';
+import { ArticleTextBlockComponent } from '../../ArticleTextBlockComponent/ArticleTextBlockComponent';
 import ViewsIcon from '@/shared/assets/icons/eye-icon.svg';
 import { getRouteArticleDetails } from '@/shared/const/router';
 import { AppLink } from '@/shared/ui/deprecated/AppLink';

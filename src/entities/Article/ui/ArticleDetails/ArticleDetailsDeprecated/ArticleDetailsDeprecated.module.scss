@@ -1,0 +1,44 @@
+.ArticleDetailsDeprecated {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Avatar {
+  margin-bottom: var(--gap);
+}
+
+.Skeletons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: var(--gap);
+}
+
+.Meta {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: var(--gap);
+  gap: var(--gap-mini);
+}
+
+.MetaLink {
+  display: flex;
+  align-items: center;
+  gap: var(--gap-mini);
+
+  svg {
+    width: var(--icon-size-l);
+    height: var(--icon-size-l);
+    stroke: var(--text-primary-color);
+  }
+}
+
+.Block {
+  margin-bottom: var(--gap);
+}
+
+.Error {
+  height: 100%;
+}

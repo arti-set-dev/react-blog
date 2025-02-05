@@ -1,6 +1,7 @@
 import { memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
+import { UiDesignSwitcher } from '@/features/uiDesignSwitcher';
 import { HStack } from '@/shared/ui/redesigned/Stack';
 import { AppLink } from '@/shared/ui/deprecated/AppLink';
 import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button';
@@ -42,6 +43,7 @@ export const Navbar = memo((props: NavbarProps) => {
             {t('Create new post')}
           </AppLink>
           <HStack gap="16">
+            <UiDesignSwitcher />
             <NotificationButton />
             <AvatarDropdown />
           </HStack>

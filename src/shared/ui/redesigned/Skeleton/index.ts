@@ -1,1 +1,1 @@
-export * from '@/shared/ui/deprecated/Skeleton/Skeleton';
+export * from '@/shared/ui/redesigned/Skeleton/Skeleton';

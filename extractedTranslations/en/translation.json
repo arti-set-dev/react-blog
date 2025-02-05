@@ -45,6 +45,7 @@
   "Profile error": "Profile error",
   "Read more": "",
   "Reaload page": "",
+  "Reload page": "",
   "Save": "Save",
   "Science": "Science",
   "Search": "",
@@ -91,6 +92,16 @@
   "name": "",
   "revival": "",
   "toggle sidebar": "",
+  "{{count}} views": "",
+  "{{count}} views_plural": "",
+  "{{count}} просмотр": "",
+  "{{count}} просмотр_plural": "",
+  "{{count}} просмотра": "",
+  "{{count}} просмотра_plural": "",
+  "{{count}} просмотров": "",
+  "{{count}} просмотров_plural": "",
+  "Вариант интерфейса": "",
   "Ошибка при загрузке данных": "Ошибка при загрузке данных",
-  "Статья найдена": "Статья найдена"
+  "Статья найдена": "Статья найдена",
+  "просмотров": ""
 }

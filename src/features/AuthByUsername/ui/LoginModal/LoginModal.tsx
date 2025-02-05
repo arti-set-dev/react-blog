@@ -1,6 +1,6 @@
 import { memo, Suspense } from 'react';
+import { Modal } from '@/shared/ui/redesigned/Modal';
 import { Loader, LoaderOffset } from '@/shared/ui/deprecated/Loader';
-import { Modal } from '@/shared/ui/deprecated/Modal';
 import { LoginFormAsync } from '../LoginForm/LoginForm.async';
 
 interface LoginModalProps {

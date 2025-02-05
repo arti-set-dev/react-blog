@@ -1,7 +1,11 @@
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
-import { Card } from '@/shared/ui/deprecated/Card';
+import { AdditionalInfoContainer } from '../AdditionalInfoContainer/AdditionalInfoContainer';
+import { DetailsContainer } from '../DetailsContainer/DetailsContainer';
+import { StickyContentLayout } from '@/shared/layouts/SticlyContentLayout';
+import { ArticleRating } from '@/features/articleRating';
+import { ToggleFeatures } from '@/shared/lib/features';
 import { Text, TextSize } from '@/shared/ui/deprecated/Text';
 import { ArticleDetails } from '@/entities/Article';
 import { ArticleRecommendationsList } from '@/features/articleRecommendationsList';
@@ -35,13 +39,31 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-      <Page className={classNames(cl.ArticleDetailsPage, {}, [className])}>
-        <ArticleDetailsPageHeader />
-        <ArticleDetails id={id} />
-        <Card isOffset>{t('There will be a rating in the speed of time')}</Card>
-        <ArticleRecommendationsList />
-        <ArticleDetailsPageComments id={id} />
-      </Page>
+      <ToggleFeatures
+        feature="isAppRedesigned"
+        on={(
+          <StickyContentLayout
+            content={(
+              <Page className={classNames(cl.ArticleDetailsPage, {}, [className])}>
+                <DetailsContainer />
+                <ArticleRating articleId={id} />
+                <ArticleRecommendationsList />
+                <ArticleDetailsPageComments id={id} />
+              </Page>
+            )}
+            right={<AdditionalInfoContainer />}
+          />
+        )}
+        off={(
+          <Page className={classNames(cl.ArticleDetailsPage, {}, [className])}>
+            <ArticleDetailsPageHeader />
+            <ArticleDetails id={id} />
+            <ArticleRating articleId={id} />
+            <ArticleRecommendationsList />
+            <ArticleDetailsPageComments id={id} />
+          </Page>
+        )}
+      />
     </DynamicModuleLoader>
   );
 };

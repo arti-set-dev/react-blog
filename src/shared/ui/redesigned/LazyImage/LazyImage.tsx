@@ -5,11 +5,16 @@ import {
   ReactElement,
   useLayoutEffect,
 } from 'react';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import cl from './LazyImage.module.scss';
+
+export type ImageBorder = 'radius_l' | 'radius_xs';
 
 interface LazyImageProps extends ImgHTMLAttributes<HTMLImageElement> {
   className?: string;
   fallback?: ReactElement;
   errorFallback?: ReactElement;
+  border?: ImageBorder;
 }
 
 export const LazyImage = memo((props: LazyImageProps) => {
@@ -19,6 +24,7 @@ export const LazyImage = memo((props: LazyImageProps) => {
     alt = '',
     fallback,
     errorFallback,
+    border = '',
     ...otherProps
   } = props;
   const [isLoading, setIsLoading] = useState(false);
@@ -51,7 +57,10 @@ export const LazyImage = memo((props: LazyImageProps) => {
       src={src}
       alt={alt}
       {...otherProps}
-      className={className}
+      className={classNames(cl.Image, {}, [
+        className,
+        cl[border],
+      ])}
     />
   );
 });

@@ -1,6 +1,5 @@
 .Card {
   position: relative;
-  overflow: hidden;
   border-radius: var(--radius-l);
   background-color: var(--bg-light-color);
   transition: transform var(--ui-transition) ease;
@@ -24,6 +23,10 @@
 
   &.inverted {
     background-color: var(--bg-inverted-color);
+  }
+
+  &.overflow {
+    overflow: hidden;
   }
 
   &.active {

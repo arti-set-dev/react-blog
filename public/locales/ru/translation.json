@@ -10,7 +10,7 @@
   "toggle sidebar": "переключить боковую панель",
   "Page not found": "Страница не найдена",
   "Something went wrong": "Что-то пошло не так.",
-  "Reaload page": "Перезагрузить страницу",
+  "Reload page": "Перезагрузить страницу",
   "Language": "Русский",
   "Lang": "Ру",
   "close modal": "закрыть модальное окно",
@@ -35,5 +35,9 @@
   "Your rating": "Your rating",
   "add five": "add five",
   "Welcome to the news page!": "Welcome to the news page!",
-  "Here you can view posts on various topics": "Here you can view posts on various topics"
+  "Here you can view posts on various topics": "Here you can view posts on various topics",
+  "{{count}} views_zero": "{{count}} просмотров",
+  "{{count}} views_one": "{{count}} просмотр",
+  "{{count}} views_few": "{{count}} просмотров",
+  "{{count}} views_many": "{{count}} просмотров"
 }
