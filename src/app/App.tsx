@@ -2,6 +2,7 @@ import { Suspense, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { useSelector } from 'react-redux';
+import { useAppToolbar } from './lib/useAppToolbar';
 import { Loader } from '@/shared/ui/deprecated/Loader';
 import { MainLayout } from '@/shared/layouts/MainLayout';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
@@ -17,6 +18,7 @@ const App = () => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
   const inited = useSelector(getUserInited);
+  const toolbar = useAppToolbar();
 
   useEffect(() => {
     dispatch(initAuthData());
@@ -34,7 +36,12 @@ const App = () => {
 
     <div id="app" className={classNames('app_redesigned', {}, [theme])}>
       <Suspense fallback={<Loader />}>
-        <MainLayout header={<Navbar />} content={<AppRouter />} sidebar={<Sidebar />} toolbar={<div>222322</div>} />
+        <MainLayout
+          header={<Navbar />}
+          content={<AppRouter />}
+          sidebar={<Sidebar />}
+          toolbar={toolbar}
+        />
       </Suspense>
     </div>
 

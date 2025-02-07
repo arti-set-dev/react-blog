@@ -1,8 +1,6 @@
 .MainLayout {
   display: grid;
   grid-template-columns: min-content 1fr 100px;
-  grid-template-rows: repeat(2, 1fr);
-  height: 100vh;
 }
 
 .header {
@@ -10,16 +8,27 @@
 }
 
 .sidebar {
+  position: sticky;
+  top: 0;
   grid-area: 2 / 1 / 3 / 2;
   padding: var(--inner-offset);
+  height: calc(100vh - (var(--navbar-height)));
 }
 
 .content {
   justify-items: center;
   grid-area: 2 / 2 / 3 / 3;
+  overflow: hidden;
+}
+
+.contentRedesigned {
+  overflow: initial;
 }
 
 .rightbar {
+  position: sticky;
+  top: 0;
   grid-area: 2 / 3 / 3 / 4;
   padding: var(--inner-offset);
+  height: calc(100vh - (var(--navbar-height)));
 }

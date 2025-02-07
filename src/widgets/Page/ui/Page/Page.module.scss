@@ -1,9 +1,6 @@
 .Page {
-  overflow: auto;
   padding: var(--inner-offset);
   width: 100%;
-  height: calc(100vh - var(--navbar-height));
-  max-width: 1200px;
 }
 
 .TriggerElem {

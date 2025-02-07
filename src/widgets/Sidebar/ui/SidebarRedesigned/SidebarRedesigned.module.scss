@@ -5,7 +5,7 @@
   overflow: hidden;
   border-radius: var(--radius-l);
   padding: var(--gap) 0;
-  height: calc(100svh - (var(--navbar-height) + (var(--inner-offset) * 2)));
+  height: 100%;
   min-width: var(--sidebar-width);
   background-color: var(--bg-light-color);
   gap: var(--gap);
