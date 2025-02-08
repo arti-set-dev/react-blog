@@ -4,6 +4,7 @@ import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDe
 import { Country } from '@/entities/Country';
 import { Currency } from '@/entities/Currency';
 import { ProfileCard } from './ProfileCard';
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
 
 export default {
   title: 'entities/ProfileCard',
@@ -18,7 +19,8 @@ const Template: ComponentStory<typeof ProfileCard> = (args) => (
 );
 
 export const Primary = Template.bind({});
-Primary.args = {
+
+const primaryArgs = {
   data: {
     username: 'admin',
     age: 22,
@@ -29,10 +31,12 @@ Primary.args = {
     lastname: 'Lastname',
     // eslint-disable-next-line max-len
     avatar:
-      // eslint-disable-next-line max-len
+    // eslint-disable-next-line max-len
       'https://images.unsplash.com/photo-1511367461989-f85a21fda167?q=80&w=1931&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
   },
 };
+
+Primary.args = primaryArgs;
 Primary.decorators = [StoreDecorator({})];
 
 export const withError = Template.bind({});
@@ -40,6 +44,10 @@ withError.args = {
   error: 'true',
 };
 withError.decorators = [StoreDecorator({})];
+
+export const PrimaryRedesigned = Template.bind({});
+PrimaryRedesigned.args = primaryArgs;
+PrimaryRedesigned.decorators = [NewDesignDecorator, StoreDecorator({})];
 
 export const Loading = Template.bind({});
 Loading.args = {

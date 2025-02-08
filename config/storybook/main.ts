@@ -25,7 +25,7 @@ export default {
       build: '',
       html: '',
       entry: '',
-      src: path.resolve(__dirname, '..', '..', '@'),
+      src: path.resolve(__dirname, '..', '..', 'src'),
       locales: '',
       buildLocales: '',
     };

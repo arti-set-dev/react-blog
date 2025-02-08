@@ -2,6 +2,7 @@ import React, { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cl from './Icon.module.scss';
+import { Button } from '../Button';
 
 type SvgProps = Omit<React.SVGProps<SVGSVGElement>, 'onClick'>
 
@@ -42,7 +43,14 @@ export const Icon = memo((props: IconProps) => {
 
   if (clickable) {
     return (
-      <button type="button" className={classNames(cl.button, {}, [className])} onClick={props.onClick}>{icon}</button>
+      <Button
+        variant="icon"
+        type="button"
+        className={classNames(cl.button, {}, [className])}
+        onClick={props.onClick}
+      >
+        {icon}
+      </Button>
     );
   }
 

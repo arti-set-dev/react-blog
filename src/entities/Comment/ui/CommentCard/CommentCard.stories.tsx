@@ -1,11 +1,11 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { UserRole } from '@/entities/User';
+
 import { CommentCard } from './CommentCard';
-import avatarImage from './avatar.jpg';
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
 
 export default {
-  title: 'entities/CommentCard',
+  title: 'entities/Comment/CommentCard',
   component: CommentCard,
   argTypes: {
     backgroundColor: { control: 'color' },
@@ -15,36 +15,27 @@ export default {
 const Template: ComponentStory<typeof CommentCard> = (args) => (
   <CommentCard {...args} />
 );
+const normalArgs = {
+  comment: {
+    id: '1',
+    text: 'hello world',
+    user: { id: '1', username: 'Vasya' },
+  },
+};
 
 export const Normal = Template.bind({});
-Normal.args = {
-  comment: {
-    id: '1',
-    text: 'hello world',
-    user: { id: '1', username: 'Vasya', roles: [UserRole.ADMIN] },
-  },
-};
+Normal.args = normalArgs;
 
-export const Avatar = Template.bind({});
-Avatar.args = {
-  comment: {
-    id: '1',
-    text: 'hello world',
-    user: {
-      id: '1',
-      username: 'Vasya',
-      avatar: avatarImage,
-      roles: [UserRole.ADMIN],
-    },
-  },
-};
+export const NormalRedesigned = Template.bind({});
+NormalRedesigned.args = normalArgs;
+NormalRedesigned.decorators = [NewDesignDecorator];
 
 export const Loading = Template.bind({});
 Loading.args = {
   comment: {
     id: '1',
     text: 'hello world',
-    user: { id: '1', username: 'Vasya', roles: [UserRole.ADMIN] },
+    user: { id: '1', username: 'Vasya' },
   },
   isLoading: true,
 };

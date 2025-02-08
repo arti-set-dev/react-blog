@@ -10,6 +10,7 @@ import { ThemeSwitcher } from '@/features/ThemeSwitcher';
 import ArrIcon from '@/shared/assets/icons/arrow-icon.svg';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cl from './SidebarRedesigned.module.scss';
+import { Button } from '@/shared/ui/redesigned/Button';
 
 interface SidebarRedesignedProps {
   className?: string;
@@ -40,16 +41,16 @@ export const SidebarRedesigned = memo((props: SidebarRedesignedProps) => {
         className,
       ])}
     >
-      <Icon
-        clickable
+      <Button
+        variant="icon"
+        size="xs"
         data-testid="sidebar-toggle"
         className={classNames(cl.CollapseBtn, {}, [className])}
         onClick={toggleSidebar}
         aria-label={t('toggle sidebar')}
-        Svg={ArrIcon}
-        width={15}
-        height={15}
-      />
+      >
+        <Icon width="100%" height="100%" Svg={ArrIcon} />
+      </Button>
       <nav>
         <VStack tag="ul" gap="4">
           {itemsList}
