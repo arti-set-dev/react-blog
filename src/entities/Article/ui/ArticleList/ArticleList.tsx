@@ -63,22 +63,31 @@ export const ArticleList = memo((props: ArticleListProps) => {
     >
       {articles.length ? articles.map(renderArticle) : null}
       {isLoading && (
-        <>
-          {new Array(view === ArticleView.COLUMN ? 3 : 9)
-            .fill(0)
-            .map((item, index) => (
-              // eslint-disable-next-line react/no-array-index-key
-              <ToggleFeatures
-                feature="isAppRedesigned"
-                on={
-                  <ArticleItemSkeletonRedesigned key={index} view={view} />
-                }
-                off={
-                  <ArticleItemSkeleton key={index} view={view} />
-                }
-              />
-            ))}
-        </>
+        <ToggleFeatures
+          feature="isAppRedesigned"
+          on={(
+            <>
+              <ArticleItemSkeletonRedesigned view={view} />
+              <ArticleItemSkeletonRedesigned view={view} />
+              <ArticleItemSkeletonRedesigned view={view} />
+              <ArticleItemSkeletonRedesigned view={view} />
+              <ArticleItemSkeletonRedesigned view={view} />
+              <ArticleItemSkeletonRedesigned view={view} />
+              <ArticleItemSkeletonRedesigned view={view} />
+            </>
+          )}
+          off={(
+            <>
+              <ArticleItemSkeleton view={view} />
+              <ArticleItemSkeleton view={view} />
+              <ArticleItemSkeleton view={view} />
+              <ArticleItemSkeleton view={view} />
+              <ArticleItemSkeleton view={view} />
+              <ArticleItemSkeleton view={view} />
+              <ArticleItemSkeleton view={view} />
+            </>
+          )}
+        />
       )}
     </List>
   );

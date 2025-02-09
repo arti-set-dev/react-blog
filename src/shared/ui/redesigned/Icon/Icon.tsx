@@ -27,6 +27,9 @@ interface ClickableIconProps extends IconBaseProps {
 type IconProps = NonClickableIconProps | ClickableIconProps;
 
 export const Icon = memo((props: IconProps) => {
+  document.querySelectorAll('path').forEach((el) => {
+    if (!el.getAttribute('d')) console.log('Empty d in:', el);
+  });
   const {
     className, width = 25, height = 25, Svg, clickable, ...otherProps
   } = props;

@@ -49,7 +49,7 @@ export const ArticleSortSelector = memo((props: ArticleSortSelectorProps) => {
         content: t('name'),
       },
       {
-        value: ArticleSortField.CREATED,
+        value: ArticleSortField.VIEWS,
         content: t('Views'),
       },
     ],
