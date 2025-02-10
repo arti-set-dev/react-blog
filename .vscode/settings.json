@@ -1,10 +1,30 @@
 {
-  "stylelint.validate": ["css", "sass", "scss", "less"],
-  "stylelint.config": null,
+  "stylelint.enable": true,
+  "stylelint.validate": [
+    "css",
+    "scss"
+  ],
+  "css.validate": false,
+  "scss.validate": false,
+  "less.validate": false,
   "editor.codeActionsOnSave": {
     "source.fixAll.stylelint": "explicit",
     "source.fixAll.eslint": "explicit"
   },
+  "files.watcherExclude": {
+    "**/.vscode/templates/**": true
+  },
+  "stylelint.exclude": [
+    "**/.vscode/templates/**"
+  ],
   "files.eol": "\n",
-  "cSpell.words": ["arti", "Swither", "возростанию"]
+  "cSpell.words": [
+    "arti",
+    "Swither",
+    "возростанию"
+  ],
+  "i18n-ally.localesPaths": [
+    "public/locales",
+    "src/shared/config/i18n"
+  ]
 }

@@ -1,12 +1,11 @@
-import { useTranslation } from 'react-i18next';
-import { ReactNode } from 'react';
+import { DetailedHTMLProps, HTMLAttributes, ReactNode } from 'react';
 import { classNames, Mods } from '@/shared/lib/classNames/classNames';
-import cl from './Flex.module.scss';
+import cls from './Flex.module.scss';
 
-export type FlexJustify = 'start' | 'center' | 'end' | 'between';
+export type FlexJustify = 'start' | 'center' | 'end' | 'between' | 'around';
 export type FlexAlign = 'start' | 'center' | 'end';
 export type FlexDirection = 'row' | 'column';
-export type FlexGap = '4' | '8' | '16' | '32';
+export type FlexGap = '4' | '8' | '16' | '24' | '32';
 export type FlexTagType =
   | 'section'
   | 'article'
@@ -19,22 +18,25 @@ export type FlexTagType =
   | 'ul'
   | 'li';
 
+export type FlexRole = 'dialog';
+
 const justifyClasses: Record<FlexJustify, string> = {
-  start: cl.justifyStart,
-  center: cl.justifyCenter,
-  between: cl.justifyBetween,
-  end: cl.justifyEnd,
+  start: cls.justifyStart,
+  center: cls.justifyCenter,
+  end: cls.justifyEnd,
+  between: cls.justifyBetween,
+  around: cls.justifyAround,
 };
 
 const alignClasses: Record<FlexAlign, string> = {
-  start: cl.alignStart,
-  center: cl.alignCenter,
-  end: cl.alignEnd,
+  start: cls.alignStart,
+  center: cls.alignCenter,
+  end: cls.alignEnd,
 };
 
 const directionClasses: Record<FlexDirection, string> = {
-  column: cl.directionColumn,
-  row: cl.directionRow,
+  row: cls.directionRow,
+  column: cls.directionColumn,
 };
 
 const tagClasses: Record<FlexTagType, string> = {
@@ -51,21 +53,29 @@ const tagClasses: Record<FlexTagType, string> = {
 };
 
 const gapClasses: Record<FlexGap, string> = {
-  16: cl.gap16,
-  32: cl.gap32,
-  4: cl.gap4,
-  8: cl.gap8,
+  4: cls.gap4,
+  8: cls.gap8,
+  16: cls.gap16,
+  24: cls.gap24,
+  32: cls.gap32,
 };
 
-export interface FlexProps {
+type ElementType<T extends keyof JSX.IntrinsicElements> = DetailedHTMLProps<
+  HTMLAttributes<HTMLElement>,
+  HTMLElement
+> &
+  JSX.IntrinsicElements[T];
+
+export interface FlexProps extends Omit<ElementType<FlexTagType>, 'ref'> {
   className?: string;
   children: ReactNode;
   justify?: FlexJustify;
   align?: FlexAlign;
-  direction: FlexDirection;
+  direction?: FlexDirection;
   gap?: FlexGap;
   max?: boolean;
   tag?: FlexTagType;
+  role?: string;
 }
 
 export const Flex = (props: FlexProps) => {
@@ -75,30 +85,34 @@ export const Flex = (props: FlexProps) => {
     justify = 'start',
     align = 'center',
     direction = 'row',
-    gap = '16',
-    max = false,
+    gap,
+    max,
     tag = 'div',
+    role,
     ...otherProps
   } = props;
-  const { t } = useTranslation();
 
   const classes = [
     className,
     justifyClasses[justify],
     alignClasses[align],
     directionClasses[direction],
-    gapClasses[gap],
+    gap && gapClasses[gap],
     tagClasses[tag],
   ];
 
   const mods: Mods = {
-    [cl.max]: max,
+    [cls.max]: max,
   };
 
   const Tag = tag;
 
   return (
-    <Tag className={classNames(cl.Flex, mods, classes)} {...otherProps}>
+    <Tag
+      role={role}
+      className={classNames(cls.Flex, mods, classes)}
+      {...otherProps}
+    >
       {children}
     </Tag>
   );

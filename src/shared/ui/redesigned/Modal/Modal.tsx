@@ -4,9 +4,11 @@ import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 import CloseIcon from '@/shared/assets/icons/close-icon.svg';
 import { useModal } from '@/shared/lib/hooks/useModal/useModal';
 import { Overlay } from '../Overlay/Overlay';
-import { Button, ButtonTheme } from '../../deprecated/Button/Button';
+import { Button } from '../../redesigned/Button/Button';
 import cl from './Modal.module.scss';
 import { Portal } from '../Portal/Portal';
+import { VStack } from '../Stack';
+import { Icon } from '../Icon/Icon';
 
 interface ModalProps {
   className?: string;
@@ -16,10 +18,6 @@ interface ModalProps {
   children: ReactNode;
 }
 
-/**
- * Outdated, use the component from the Redesigned folder
- * @deprecated
- */
 export const Modal = (props: ModalProps) => {
   const {
     children, className, isOpen, onClose, lazy,
@@ -43,20 +41,23 @@ export const Modal = (props: ModalProps) => {
   return (
     <Portal>
       <Overlay isOpen={isOpen} onClick={closing}>
-        <div
+        <VStack
+          role="dialog"
+          aria-modal={isOpen}
+          aria-hidden={!isOpen}
           onClick={onWindowClick}
           className={classNames(cl.ModalWindow, mods, [className])}
         >
           <Button
             onClick={closing}
-            theme={ButtonTheme.ICON}
+            variant="icon"
             className={cl.ModalBtn}
             aria-label={t('close modal')}
           >
-            <CloseIcon />
+            <Icon Svg={CloseIcon} />
           </Button>
           {children}
-        </div>
+        </VStack>
       </Overlay>
     </Portal>
   );

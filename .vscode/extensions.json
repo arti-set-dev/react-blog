@@ -1,0 +1,7 @@
+{
+    "recommendations": [
+        "dbaeumer.vscode-eslint",
+        "rhangai.file-template",
+        "stylelint.vscode-stylelint"
+    ]
+} 
