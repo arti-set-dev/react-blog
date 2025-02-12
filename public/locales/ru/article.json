@@ -13,9 +13,10 @@
   "The date of creation": "Дате создания",
   "name": "заголовок",
   "Views": "просмотрам",
-  "All": "Economics",
+  "All": "Все",
   "Economics": "Экономика",
-  "it": "айти",
+  "it": "IT",
   "Science": "Наука",
-  "No articles were found": "Статей не найдено"
+  "No articles were found": "Статей не найдено",
+  "Politics": "Политика"
 }

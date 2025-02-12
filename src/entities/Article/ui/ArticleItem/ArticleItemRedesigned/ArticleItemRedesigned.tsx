@@ -28,7 +28,7 @@ export const ArticleItemRedesigned = memo((props: ArticleItemProps) => {
 
   const articleTypes = useMemo(
     () => (
-      <HStack gap="4">
+      <HStack gap="4" width="60%" overflow="auto">
         {article.type.map((type, index) => (
           // eslint-disable-next-line react/no-array-index-key
           <Card offset="4" variant="active" tag="div" key={index}>
@@ -132,7 +132,7 @@ export const ArticleItemRedesigned = memo((props: ArticleItemProps) => {
             />
           </AppLink>
           <Card tag="div" offset="16" className={getVstack({ gap: 16 })}>
-            <HStack justify="between">
+            <HStack justify="between" gap="8">
               {articleTypes}
               {views}
             </HStack>
@@ -163,7 +163,7 @@ export const ArticleItemRedesigned = memo((props: ArticleItemProps) => {
             />
           </AppLink>
           <Card tag="div" offset="16" className={getVstack({ gap: 16 })}>
-            <HStack justify="between">
+            <HStack justify="between" gap="8">
               {articleTypes}
               {views}
             </HStack>

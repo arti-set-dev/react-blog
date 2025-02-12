@@ -1,7 +1,8 @@
 .StickyContentLayout {
   display: grid;
+  justify-content: center;
   grid-template-areas: "left content right";
-  grid-template-columns: min-content 1fr 230px;
+  grid-template-columns: min-content minmax(300px, 1200px) 230px;
   width: 100%;
   gap: var(--gap);
 }

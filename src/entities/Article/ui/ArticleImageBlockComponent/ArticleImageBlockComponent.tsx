@@ -8,18 +8,19 @@ import { ArticleImageBlock } from '../../model/types/article';
 interface ArticleImageBlockComponentProps {
   className?: string;
   block: ArticleImageBlock;
+  height?: number;
 }
 
 export const ArticleImageBlockComponent = memo(
   (props: ArticleImageBlockComponentProps) => {
-    const { className, block } = props;
+    const { className, block, height = 500 } = props;
     const { t } = useTranslation();
 
     return (
       <figure
         className={classNames(cl.ArticleImageBlockComponent, {}, [className])}
       >
-        <img className={cl.Image} src={block.src} alt={block.title} />
+        <img height={height} width="100%" className={cl.Image} src={block.src} alt={block.title} />
         {block.title && (
           <Text align={TextAlign.CENTER} size={TextSize.XS}>
             {block.title}

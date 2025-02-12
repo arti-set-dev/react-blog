@@ -12,9 +12,10 @@
   "The date of creation": "The date of creation",
   "name": "title",
   "Views": "views",
-  "All": "Economics",
+  "All": "All",
   "Economics": "Economics",
-  "it": "it",
+  "it": "IT",
   "Science": "Science",
-  "No articles were found": "No articles were found"
+  "No articles were found": "No articles were found",
+  "Politics": "Politics"
 }

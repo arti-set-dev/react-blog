@@ -15,4 +15,5 @@ export enum ArticleType {
   IT = 'IT',
   SCIENCE = 'SCIENCE',
   ECONOMICS = 'ECONOMICS',
+  POLITICS = 'POLITICS',
 }

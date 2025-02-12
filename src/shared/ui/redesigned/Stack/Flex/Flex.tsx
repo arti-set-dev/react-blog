@@ -19,6 +19,14 @@ export type FlexTagType =
   | 'li';
 
 export type FlexRole = 'dialog';
+export type OverflowType = 'initial' | 'hidden' | 'scroll' | 'auto';
+
+const overflowClasses: Record<OverflowType, string> = {
+  initial: cls.initial,
+  hidden: cls.hidden,
+  scroll: cls.scroll,
+  auto: cls.auto,
+};
 
 const justifyClasses: Record<FlexJustify, string> = {
   start: cls.justifyStart,
@@ -76,6 +84,8 @@ export interface FlexProps extends Omit<ElementType<FlexTagType>, 'ref'> {
   max?: boolean;
   tag?: FlexTagType;
   role?: string;
+  overflow?: OverflowType;
+  width?: string | number;
 }
 
 export const Flex = (props: FlexProps) => {
@@ -89,6 +99,8 @@ export const Flex = (props: FlexProps) => {
     max,
     tag = 'div',
     role,
+    overflow = 'initial',
+    width,
     ...otherProps
   } = props;
 
@@ -99,6 +111,7 @@ export const Flex = (props: FlexProps) => {
     directionClasses[direction],
     gap && gapClasses[gap],
     tagClasses[tag],
+    overflow && overflowClasses[overflow],
   ];
 
   const mods: Mods = {
@@ -109,6 +122,7 @@ export const Flex = (props: FlexProps) => {
 
   return (
     <Tag
+      style={{ width }}
       role={role}
       className={classNames(cls.Flex, mods, classes)}
       {...otherProps}

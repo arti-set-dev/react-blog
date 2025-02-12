@@ -40,6 +40,7 @@ module.exports = {
         ['data-testid',
           'feature',
           'role',
+          'overflow',
           'to',
           'size',
           'background',
