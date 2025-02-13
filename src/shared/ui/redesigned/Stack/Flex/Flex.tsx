@@ -16,7 +16,8 @@ export type FlexTagType =
   | 'nav'
   | 'div'
   | 'ul'
-  | 'li';
+  | 'li'
+  | 'figure';
 
 export type FlexRole = 'dialog';
 export type OverflowType = 'initial' | 'hidden' | 'scroll' | 'auto';
@@ -58,6 +59,7 @@ const tagClasses: Record<FlexTagType, string> = {
   nav: '',
   section: '',
   ul: '',
+  figure: '',
 };
 
 const gapClasses: Record<FlexGap, string> = {

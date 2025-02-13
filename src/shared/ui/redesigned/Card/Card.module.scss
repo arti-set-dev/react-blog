@@ -21,6 +21,11 @@
     background-color: transparent;
   }
 
+  &.outline-inverted {
+    border: 1px solid var(--bg-inverted-color);
+    background-color: transparent;
+  }
+
   &.inverted {
     background-color: var(--bg-inverted-color);
   }

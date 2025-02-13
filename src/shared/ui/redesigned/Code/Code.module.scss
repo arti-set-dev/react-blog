@@ -1,0 +1,35 @@
+// .Code {
+//   position: relative;
+//   margin: 0;
+//   border: 1px solid var(--text-primary-color);
+//   border-radius: var(--radius-s);
+//   padding: var(--inner-offset);
+//   background-color: var(--bg-light-color);
+// }
+
+// .Overlay {
+//   overflow: auto;
+//   width: 100%;
+// }
+
+// .CopyBtn {
+//   position: absolute;
+//   right: var(--gap-mini);
+//   top: var(--gap-mini);
+
+//   svg {
+//     fill: var(--text-primary-color);
+//   }
+
+//   .CheckIconSuccess {
+//     fill: transparent;
+
+//     path {
+//       stroke: var(--success-color);
+//     }
+//   }
+
+//   .WarningIcon path {
+//     stroke: var(--error-color);
+//   }
+// }

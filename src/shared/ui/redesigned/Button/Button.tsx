@@ -10,6 +10,8 @@ export type ButtonVariant =
 
 export type ButtonSize = 'xs' | 'l' | 'xl';
 
+export type ButtonPosition = 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right';
+
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
   variant?: ButtonVariant;
@@ -18,6 +20,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   disabled?: boolean;
   children?: ReactNode;
   fullWidth?: boolean;
+  position?: ButtonPosition;
 }
 
 export const Button = forwardRef((props: ButtonProps, ref: ForwardedRef<HTMLButtonElement>) => {
@@ -29,19 +32,21 @@ export const Button = forwardRef((props: ButtonProps, ref: ForwardedRef<HTMLButt
     type = 'button',
     disabled,
     fullWidth,
+    position = '',
     ...otherProps
   } = props;
 
   const mods: Mods = {
     [cl.disabled]: disabled,
     [cl.fullWidth]: fullWidth,
+    [cl.isAbsolute]: position !== '',
   };
 
   return (
     <button
       disabled={disabled}
       type={type}
-      className={classNames(cl.Button, mods, [className, cl[variant], cl[size]])}
+      className={classNames(cl.Button, mods, [className, cl[variant], cl[size], cl[position]])}
       ref={ref}
       {...otherProps}
     >

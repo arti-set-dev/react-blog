@@ -3,9 +3,9 @@ import { useTranslation } from 'react-i18next';
 import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 import cl from './Card.module.scss';
 
-export type CardVariant = 'primary' | 'outline' | 'inverted' | 'active';
+export type CardVariant = 'primary' | 'outline' | 'outline-inverted' | 'inverted' | 'active';
 export type CardOffset = '0' | '4' | '8' | '16' | '24';
-type TagType = 'article' | 'aside' | 'h3' | 'main' | 'div' | 'form' | 'li';
+type TagType = 'article' | 'aside' | 'h3' | 'main' | 'div' | 'form' | 'li' | 'pre';
 
 interface CardProps {
   className?: string;

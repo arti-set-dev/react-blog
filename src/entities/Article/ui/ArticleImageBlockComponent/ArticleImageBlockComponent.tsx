@@ -1,9 +1,13 @@
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Text, TextAlign, TextSize } from '@/shared/ui/deprecated/Text';
+import { Text as TextDeprecated, TextAlign, TextSize } from '@/shared/ui/deprecated/Text';
+import { Text } from '@/shared/ui/redesigned/Text';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cl from './ArticleImageBlockComponent.module.scss';
 import { ArticleImageBlock } from '../../model/types/article';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { VStack } from '@/shared/ui/redesigned/Stack';
+import { LazyImage } from '@/shared/ui/redesigned/LazyImage';
 
 interface ArticleImageBlockComponentProps {
   className?: string;
@@ -17,16 +21,31 @@ export const ArticleImageBlockComponent = memo(
     const { t } = useTranslation();
 
     return (
-      <figure
-        className={classNames(cl.ArticleImageBlockComponent, {}, [className])}
-      >
-        <img height={height} width="100%" className={cl.Image} src={block.src} alt={block.title} />
-        {block.title && (
-          <Text align={TextAlign.CENTER} size={TextSize.XS}>
-            {block.title}
-          </Text>
+      <ToggleFeatures
+        feature="isAppRedesigned"
+        on={(
+          <VStack tag="figure" gap="16" align="center" max>
+            <LazyImage src={block.src} alt={block.title} height={height} width="100%" />
+            {block.title && (
+              <Text align="center" size="xs">
+                {block.title}
+              </Text>
+            )}
+          </VStack>
         )}
-      </figure>
+        off={(
+          <figure
+            className={classNames(cl.ArticleImageBlockComponent, {}, [className])}
+          >
+            <img height={height} width="100%" className={cl.Image} src={block.src} alt={block.title} />
+            {block.title && (
+              <TextDeprecated align={TextAlign.CENTER} size={TextSize.XS}>
+                {block.title}
+              </TextDeprecated>
+            )}
+          </figure>
+        )}
+      />
     );
   },
 );

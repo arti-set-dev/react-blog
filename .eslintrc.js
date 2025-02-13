@@ -41,6 +41,7 @@ module.exports = {
           'feature',
           'role',
           'overflow',
+          'position',
           'to',
           'size',
           'background',
