@@ -65,13 +65,13 @@ export const ArticleDetailsRedesigned = memo((props: ArticleDetailsRedesignedPro
   if (isLoading) {
     content = (
       <VStack gap="16" max>
-        <Skeleton height={300} width="180%" border="20px" />
-        <Skeleton height={20} width="400px" border="20px" />
-        <Skeleton height={20} width="300px" border="20px" />
-        <Skeleton height={100} width="100%" border="20px" />
-        <Skeleton height={100} width="100%" border="20px" />
-        <Skeleton height={100} width="100%" border="20px" />
-        <Skeleton height={100} width="100%" border="20px" />
+        <Skeleton height={300} width="180%" border="20" />
+        <Skeleton height={20} width="400px" border="20" />
+        <Skeleton height={20} width="300px" border="20" />
+        <Skeleton height={100} width="100%" border="20" />
+        <Skeleton height={100} width="100%" border="20" />
+        <Skeleton height={100} width="100%" border="20" />
+        <Skeleton height={100} width="100%" border="20" />
       </VStack>
     );
   } else if (error) {

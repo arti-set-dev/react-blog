@@ -32,10 +32,10 @@ export const NotificationList = (props: NotificationListProps) => {
             gap="16"
             tag="div"
           >
-            <Skeleton width="100%" border="10px" />
-            <Skeleton width="100%" border="10px" />
-            <Skeleton width="100%" border="10px" />
-            <Skeleton width="100%" border="10px" />
+            <Skeleton width="100%" border="10" />
+            <Skeleton width="100%" border="10" />
+            <Skeleton width="100%" border="10" />
+            <Skeleton width="100%" border="10" />
           </VStack>
         )}
         off={(

@@ -14,6 +14,30 @@
   background-size: 200% 100%;
   animation: skeleton 1.5s infinite linear;
 
+  &.radius_4 {
+    border-radius: 4px;
+  }
+
+  &.radius_8 {
+    border-radius: 8px;
+  }
+
+  &.radius_10 {
+    border-radius: 10px;
+  }
+
+  &.radius_12 {
+    border-radius: 12px;
+  }
+
+  &.radius_20 {
+    border-radius: 20px;
+  }
+
+  &.circle {
+    border-radius: 50%;
+  }
+
   @keyframes skeleton {
     0% {
       background-position: 100%;

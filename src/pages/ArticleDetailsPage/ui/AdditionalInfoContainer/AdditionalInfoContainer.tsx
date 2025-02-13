@@ -29,11 +29,11 @@ export const AdditionalInfoContainer = memo((props: AdditionalInfoContainerProps
       <Card offset="16">
         <VStack gap="32" max>
           <HStack gap="8" max>
-            <Skeleton width={32} height={32} border="50%" />
-            <Skeleton width={200} height={16} border="20px" />
-            <Skeleton width={200} height={16} border="20px" />
+            <Skeleton width={32} height={32} border="circle" />
+            <Skeleton width={200} height={16} border="20" />
+            <Skeleton width={200} height={16} border="20" />
           </HStack>
-          <Skeleton width="100%" height={36} border="20px" />
+          <Skeleton width="100%" height={36} border="20" />
         </VStack>
       </Card>
     );

@@ -43,7 +43,7 @@ export const CommentCard = memo((props: CommentCardProps) => {
             className={getVstack({ gap: 16 })}
           >
             <HStack gap="16">
-              <Skeleton width={30} height={30} border="50%" />
+              <Skeleton width={30} height={30} border="circle" />
               <Skeleton width="100%" height={20} />
             </HStack>
           </Card>

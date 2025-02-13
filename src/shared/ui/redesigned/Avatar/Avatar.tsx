@@ -24,7 +24,7 @@ export const Avatar = (props: AvatarProps) => {
     loading = 'lazy',
   } = props;
 
-  const fallback = <Skeleton width={size} height={size} border="50%" />;
+  const fallback = <Skeleton width={size} height={size} border="circle" />;
   const errorFallback = <Icon width={size} height={size} Svg={ProfileIcon} />;
 
   return (

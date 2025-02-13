@@ -52,7 +52,7 @@ export const Comments = memo((props: CommentsProps) => {
             max
           >
             <HStack gap="16">
-              <Skeleton width={30} height={30} border="50%" />
+              <Skeleton width={30} height={30} border="circle" />
               <Skeleton width={200} height={20} />
             </HStack>
             <Skeleton width="100%" height={20} />

@@ -20,7 +20,7 @@ export const ArticleItemSkeletonRedesigned = memo((props: ArticleItemSkeletonPro
           <Skeleton
             width={30}
             height={30}
-            border="50%"
+            border="circle"
           />
           <Skeleton
             width={100}
@@ -40,16 +40,16 @@ export const ArticleItemSkeletonRedesigned = memo((props: ArticleItemSkeletonPro
 
   return (
     <Card max offset="16" className={getVstack({ gap: 16 })}>
-      <Skeleton border="10px" width="100%" height="200px" />
+      <Skeleton border="10" width="100%" height="200px" />
       <VStack>
         <HStack max>
           <Skeleton
-            border="10px"
+            border="10"
             width="100px"
             height="16px"
           />
           <Skeleton
-            border="10px"
+            border="10"
             width="100px"
             height="16px"
           />
