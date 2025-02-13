@@ -3,6 +3,22 @@
   stroke: var(--text-primary-color);
   stroke-width: 0;
   pointer-events: none;
+
+  &.primary {
+    color: var(--bg-primary-color);
+  }
+
+  &.error {
+    color: var(--error-color);
+  }
+
+  &.inverted {
+    color: var(--bg-inverted-color);
+  }
+
+  &.normal {
+    color: var(--text-primary-color);
+  }
 }
 
 .button {

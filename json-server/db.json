@@ -1,14 +1,14 @@
 {
   "notifications": [
     {
-      "id": "1", 
+      "id": "1",
       "title": "Notification 1",
       "description": "Some event occurred",
       "userId": "1"
     },
     {
       "id": "2",
-      "title": "Notification 2", 
+      "title": "Notification 2",
       "description": "Some event occurred",
       "userId": "1",
       "href": "http://localhost:3000/admin"
@@ -16,7 +16,7 @@
     {
       "id": "3",
       "title": "Notification 3",
-      "description": "Some event occurred", 
+      "description": "Some event occurred",
       "userId": "1",
       "href": "http://localhost:3000/admin"
     },
@@ -109,7 +109,7 @@
       ]
     },
     {
-      "id": "2", 
+      "id": "2",
       "title": "Python news",
       "subtitle": "What's new in Python in 2022?",
       "img": "https://images.unsplash.com/photo-1677293130537-bb902c697c8b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -122,7 +122,7 @@
       "blocks": [
         {
           "id": "1",
-          "type": "TEXT", 
+          "type": "TEXT",
           "title": "Main Python Innovations",
           "paragraphs": [
             "Python continues to actively develop, and several significant updates were introduced in 2022. One of the key events was the release of Python 3.10 and work on Python 3.11, which promises to be even faster and more convenient for developers.",
@@ -182,7 +182,7 @@
     },
     {
       "id": "3",
-      "title": "Quantum Computing", 
+      "title": "Quantum Computing",
       "subtitle": "Fundamentals of Quantum Computing and its Potential",
       "img": "https://images.unsplash.com/photo-1617839625591-e5a789593135?q=80&w=1780&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "views": 1340,
@@ -253,7 +253,7 @@
       ]
     },
     {
-      "id": "4", 
+      "id": "4",
       "title": "Economics in the COVID-19 Era",
       "subtitle": "Impact of the pandemic on global markets and future trends",
       "img": "https://images.unsplash.com/photo-1601382270349-49c15bddf738?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -478,7 +478,7 @@
       "subtitle": "Innovations and their impact on the modern financial market",
       "img": "https://images.unsplash.com/photo-1628054330565-7d42aa5ae1fa?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "views": 1280,
-      "createdAt": "29.08.2022", 
+      "createdAt": "29.08.2022",
       "userId": "1",
       "type": [
         "ECONOMICS",
@@ -501,7 +501,7 @@
           "code": "<!DOCTYPE html>\n<html>\n  <body>\n    <h1>Financial Technologies</h1>\n    <p>Overview of latest trends in Fintech.</p>\n  </body>\n</html>;"
         },
         {
-          "id": "5", 
+          "id": "5",
           "type": "TEXT",
           "title": "Fintech Branch Trends",
           "paragraphs": [
@@ -523,7 +523,7 @@
         },
         {
           "id": "7",
-          "type": "TEXT", 
+          "type": "TEXT",
           "title": "Impact of Fintech on Traditional Financial Institutions",
           "paragraphs": [
             "Financial technologies have a significant impact on traditional banks and financial institutions. Some of them are beginning to implement technological innovations to keep up with the latest trends.",
@@ -627,7 +627,7 @@
       "subtitle": "Prospects and Challenges in New Technology Development",
       "img": "https://images.unsplash.com/photo-1587727383733-f5222d6855b5?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "views": 900,
-      "createdAt": "11.10.2022", 
+      "createdAt": "11.10.2022",
       "userId": "1",
       "type": [
         "IT"
@@ -700,7 +700,7 @@
       "subtitle": "The relationship between natural resources and economic growth",
       "img": "https://images.unsplash.com/photo-1642940399279-3a0b7f820fe7?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "views": 450,
-      "createdAt": "15.11.2022", 
+      "createdAt": "15.11.2022",
       "userId": "1",
       "type": [
         "ECONOMICS",
@@ -775,7 +775,7 @@
       "subtitle": "Analysis of Current Trends and Global Efforts to Combat Climate Change",
       "img": "https://images.unsplash.com/photo-1579004464832-0c014afa448c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "views": 300,
-      "createdAt": "29.11.2022", 
+      "createdAt": "29.11.2022",
       "userId": "1",
       "type": [
         "POLITICS"
@@ -845,7 +845,7 @@
       ]
     },
     {
-      "id": "12", 
+      "id": "12",
       "title": "Cybersecurity",
       "subtitle": "Current threats and protection methods in the digital world",
       "img": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -858,7 +858,7 @@
       "blocks": [
         {
           "id": "1",
-          "type": "TEXT", 
+          "type": "TEXT",
           "title": "Introduction to Cybersecurity",
           "paragraphs": [
             "Cybersecurity is the practice of protecting computers, servers, mobile devices, systems and data from malicious attacks. With the growing number of cyberattacks each year, the necessity of information protection becomes increasingly relevant.",
@@ -993,7 +993,7 @@
       ]
     },
     {
-      "id": "14", 
+      "id": "14",
       "title": "Globalization",
       "subtitle": "Changes and Impact on World Economy and Politics",
       "img": "https://images.unsplash.com/photo-1627215750463-3386c8ed92ee?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -1007,7 +1007,7 @@
       "blocks": [
         {
           "id": "1",
-          "type": "TEXT", 
+          "type": "TEXT",
           "title": "Introduction to Globalization",
           "paragraphs": [
             "Globalization is a process of integration and interaction between different countries and cultures, encompassing economic, political and cultural spheres. With the emergence of new technologies and increased international trade, globalization has become an integral part of the modern world.",
@@ -1066,7 +1066,7 @@
     },
     {
       "id": "15",
-      "title": "Social Networks and Society", 
+      "title": "Social Networks and Society",
       "subtitle": "What's new in JS in 2022?",
       "img": "https://images.unsplash.com/photo-1517292987719-0369a794ec0f?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "views": 450,
@@ -1139,7 +1139,7 @@
     },
     {
       "id": "16",
-      "title": "Social Networks and Society", 
+      "title": "Social Networks and Society",
       "subtitle": "The Impact of Social Platforms on Modern Society",
       "img": "https://images.unsplash.com/photo-1517292987719-0369a794ec0f?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "views": 450,
@@ -1214,7 +1214,7 @@
       ]
     },
     {
-      "id": "17", 
+      "id": "17",
       "title": "Renewable Energy Sources",
       "subtitle": "The Potential and Future of Clean Energy",
       "img": "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -1227,7 +1227,7 @@
       "blocks": [
         {
           "id": "1",
-          "type": "TEXT", 
+          "type": "TEXT",
           "title": "Introduction to Renewable Energy Sources",
           "paragraphs": [
             "Renewable energy sources are becoming increasingly relevant in light of global climate issues and depletion of natural resources. They offer a sustainable alternative to traditional fossil fuels and can significantly reduce carbon emissions.",
@@ -1245,7 +1245,7 @@
           "title": "Types of Renewable Energy Sources",
           "paragraphs": [
             "1. Solar energy: uses solar panel technology to convert sunlight into electricity. This is one of the fastest growing sectors in renewable energy.",
-            "2. Wind energy: wind turbines convert the kinetic energy of wind into electricity. This sector is also seeing significant growth, especially in Europe and North America.", 
+            "2. Wind energy: wind turbines convert the kinetic energy of wind into electricity. This sector is also seeing significant growth, especially in Europe and North America.",
             "3. Hydroelectric power: creating power plants on rivers and water bodies allows converting the power of flowing water into electrical energy."
           ]
         },
@@ -1366,7 +1366,7 @@
       "subtitle": "Challenges Facing Humanity and Possible Solutions",
       "img": "https://images.unsplash.com/photo-1624324378932-68e20f332982?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "views": 1200,
-      "createdAt": "15.08.2022", 
+      "createdAt": "15.08.2022",
       "userId": "1",
       "type": [
         "SCIENCE"
@@ -1437,7 +1437,7 @@
     {
       "id": "20",
       "title": "Energy in the XXI Century",
-      "subtitle": "Trends and Technologies of the Future", 
+      "subtitle": "Trends and Technologies of the Future",
       "img": "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "views": 900,
       "createdAt": "15.01.2023",
@@ -1512,7 +1512,7 @@
       "subtitle": "New Technologies and Their Impact on Public Transport",
       "img": "https://images.unsplash.com/photo-1473042904451-00171c69419d?q=80&w=2099&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "views": 800,
-      "createdAt": "20.01.2023", 
+      "createdAt": "20.01.2023",
       "userId": "1",
       "type": [
         "SCIENCE",
@@ -1725,7 +1725,7 @@
       "subtitle": "Understanding Basic Concepts and Threats",
       "img": "https://images.unsplash.com/photo-1510915228340-29c85a43dcfe?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "views": 1200,
-      "createdAt": "15.02.2025", 
+      "createdAt": "15.02.2025",
       "userId": "1",
       "type": [
         "IT"
@@ -1817,7 +1817,7 @@
     {
       "id": "26",
       "title": "The Future of Cybersecurity",
-      "subtitle": "Trends and Technologies That Will Define Cyber Protection", 
+      "subtitle": "Trends and Technologies That Will Define Cyber Protection",
       "img": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "views": 780,
       "createdAt": "25.02.2025",
@@ -2041,8 +2041,7 @@
         "isAppRedesigned": true
       },
       "jsonSettings": {
-        "isArticlePageWasOpened": true,
-        "theme": "light"
+        "isArticlePageWasOpened": true
       },
       "avatar": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
@@ -2140,7 +2139,7 @@
   ],
   "article-ratings": [
     {
-      "id": "2", 
+      "id": "2",
       "rate": 4,
       "feedback": "Good article",
       "userId": "1",

@@ -5,10 +5,12 @@ import cl from './Icon.module.scss';
 import { Button } from '../Button';
 
 type SvgProps = Omit<React.SVGProps<SVGSVGElement>, 'onClick'>
+export type IconColor = 'primary' | 'error' | 'inverted' | 'normal';
 
 interface IconBaseProps extends SvgProps {
   className?: string;
   Svg: React.VFC<React.SVGProps<SVGSVGElement>>;
+  color?: IconColor;
 }
 
 interface NonClickableIconProps extends IconBaseProps {
@@ -27,11 +29,8 @@ interface ClickableIconProps extends IconBaseProps {
 type IconProps = NonClickableIconProps | ClickableIconProps;
 
 export const Icon = memo((props: IconProps) => {
-  document.querySelectorAll('path').forEach((el) => {
-    if (!el.getAttribute('d')) console.log('Empty d in:', el);
-  });
   const {
-    className, width = 25, height = 25, Svg, clickable, ...otherProps
+    className, width = 25, height = 25, color = '', Svg, clickable, ...otherProps
   } = props;
   const { t } = useTranslation();
 
@@ -39,7 +38,7 @@ export const Icon = memo((props: IconProps) => {
     <Svg
       width={width}
       height={height}
-      className={classNames(cl.Icon, {}, [])}
+      className={classNames(cl.Icon, {}, [cl[color]])}
       {...otherProps}
     />
   );

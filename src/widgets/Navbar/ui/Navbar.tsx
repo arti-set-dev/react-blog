@@ -6,14 +6,15 @@ import { HStack } from '@/shared/ui/redesigned/Stack';
 import { AppLink } from '@/shared/ui/deprecated/AppLink';
 import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button';
 import { Container } from '@/shared/ui/deprecated/Container';
-import { Text, TextSize } from '@/shared/ui/deprecated/Text';
-import { getRouteArticleCreate } from '@/shared/const/router';
+import { getRouteArticleCreate, getRouteMain } from '@/shared/const/router';
 import { getUserAuthData } from '@/entities/User';
 import { LoginModal } from '@/features/AuthByUsername';
 import { AvatarDropdown } from '@/features/avatarDropdown';
 import { NotificationButton } from '@/features/notificationButton';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cl from './Navbar.module.scss';
+import { Icon } from '@/shared/ui/redesigned/Icon/Icon';
+import LogoIcon from '@/shared/assets/icons/logo.svg';
 
 interface NavbarProps {
   className?: string;
@@ -38,7 +39,9 @@ export const Navbar = memo((props: NavbarProps) => {
     return (
       <header className={classNames(cl.Navbar, {}, [className])}>
         <Container className={cl.Container}>
-          <Text size={TextSize.L}>{t('Logo App')}</Text>
+          <AppLink to={getRouteMain()}>
+            <Icon color="primary" width={200} height={40} Svg={LogoIcon} />
+          </AppLink>
           <AppLink to={getRouteArticleCreate()} className={cl.NewPostText}>
             {t('Create new post')}
           </AppLink>
@@ -55,6 +58,9 @@ export const Navbar = memo((props: NavbarProps) => {
   return (
     <header className={classNames(cl.Navbar, {}, [className])}>
       <Container className={cl.Container}>
+        <AppLink to={getRouteMain()}>
+          <Icon color="primary" width={200} height={40} Svg={LogoIcon} />
+        </AppLink>
         <Button theme={ButtonTheme.OUTLINE} onClick={onShowModal}>
           {t('Login')}
         </Button>

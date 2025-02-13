@@ -42,6 +42,7 @@ module.exports = {
           'role',
           'overflow',
           'position',
+          'color',
           'to',
           'size',
           'background',
