@@ -35,6 +35,7 @@
       background: linear-gradient(180deg, var(--bg-inverted-color) 0%, transparent 100%);
       transform: translateY(-100%);
       transition: transform var(--ui-transition) ease;
+      pointer-events: none;
     }
 
     &:hover {

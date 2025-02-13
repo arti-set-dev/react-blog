@@ -1066,9 +1066,9 @@
     },
     {
       "id": "15",
-      "title": "Social Networks and Society",
-      "subtitle": "What's new in JS in 2022?",
-      "img": "https://images.unsplash.com/photo-1517292987719-0369a794ec0f?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "title": "The Evolution of Social Media",
+      "subtitle": "How Social Networks are Transforming Our World",
+      "img": "https://images.unsplash.com/photo-1554177255-61502b352de3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "views": 450,
       "createdAt": "18.03.2023",
       "userId": "1",
@@ -1080,59 +1080,59 @@
         {
           "id": "1",
           "type": "TEXT",
-          "title": "Block Title",
+          "title": "Introduction",
           "paragraphs": [
-            "The program traditionally called 'Hello, world!' is very simple. It outputs the phrase 'Hello, world!', or something similar, using some programming language.",
-            "JavaScript is a language that can be executed in different environments. In our case, we're talking about browsers and the Node.js server platform. If you haven't written a single line of JS code yet and are reading this text in a browser on a desktop computer, you're literally seconds away from your first JavaScript program.",
-            "There are other ways to run JS code in the browser. When it comes to typical usage of JavaScript programs, they are loaded into the browser to enable web page functionality. Usually, code is organized into separate files with the .js extension that are linked to web pages, but program code can also be included directly in the page code. All this is done using the <script> tag. When the browser detects such code, it executes it. Details about the script tag can be found on w3school.com. In particular, let's look at an example demonstrating work with a web page using JavaScript, shown on this resource. This example can be run using the resources of this site (look for the Try it Yourself button), but we'll do something slightly different. Specifically, we'll create a new file in a text editor (for example, VS Code or Notepad++) which we'll call hello.html, and add the following code to it:"
+            "Social media has fundamentally changed how we communicate, share information, and interact with the world around us. From its humble beginnings to today's complex platforms, social media continues to evolve and shape society.",
+            "In this article, we'll explore the impact of social media on various aspects of modern life, from personal relationships to global movements, and examine both its benefits and challenges.",
+            "Understanding these changes is crucial for navigating our increasingly connected world."
           ]
         },
         {
           "id": "4",
           "type": "CODE",
-          "code": "<!DOCTYPE html>\n<html>\n  <body>\n    <p id=\"hello\"></p>\n\n    <script>\n      document.getElementById(\"hello\").innerHTML = \"Hello, world!\";\n    </script>\n  </body>\n</html>;"
+          "code": "<!DOCTYPE html>\n<html>\n  <body>\n    <div class=\"social-media-stats\">\n      <h2>Global Social Media Usage</h2>\n      <p>Daily active users: 4.9 billion</p>\n      <p>Average time spent: 2.5 hours</p>\n    </div>\n  </body>\n</html>;"
         },
         {
           "id": "5",
           "type": "TEXT",
-          "title": "Block Title",
+          "title": "The Power of Connection",
           "paragraphs": [
-            "The program traditionally called 'Hello, world!' is very simple. It outputs the phrase 'Hello, world!', or something similar, using some programming language.",
-            "There are other ways to run JS code in the browser. When it comes to typical usage of JavaScript programs, they are loaded into the browser to enable web page functionality. Usually, code is organized into separate files with the .js extension that are linked to web pages, but program code can also be included directly in the page code. All this is done using the <script> tag. When the browser detects such code, it executes it. Details about the script tag can be found on w3school.com. In particular, let's look at an example demonstrating work with a web page using JavaScript, shown on this resource. This example can be run using the resources of this site (look for the Try it Yourself button), but we'll do something slightly different. Specifically, we'll create a new file in a text editor (for example, VS Code or Notepad++) which we'll call hello.html, and add the following code to it:"
+            "Social media platforms have created unprecedented opportunities for global connection. People can now instantly connect with others across the world, share experiences, and build communities around shared interests.",
+            "These digital spaces have become vital tools for business, education, and social movements, demonstrating the transformative power of connected networks."
           ]
         },
         {
           "id": "2",
           "type": "IMAGE",
-          "src": "https://images.unsplash.com/photo-1517292987719-0369a794ec0f?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-          "title": "Figure 1 - website screenshot"
+          "src": "https://images.unsplash.com/photo-1554177255-61502b352de3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "title": "Social Media Connectivity"
         },
         {
           "id": "3",
           "type": "CODE",
-          "code": "const path = require('path');\n\nconst server = jsonServer.create();\n\nconst router = jsonServer.router(path.resolve(__dirname, 'db.json'));\n\nserver.use(jsonServer.defaults({}));\nserver.use(jsonServer.bodyParser);"
+          "code": "// Social Media Analytics\nconst analyzeEngagement = (data) => {\n  return {\n    likes: data.interactions.likes,\n    shares: data.interactions.shares,\n    comments: data.interactions.comments\n  };\n};"
         },
         {
           "id": "7",
           "type": "TEXT",
-          "title": "Block Title",
+          "title": "Challenges and Concerns",
           "paragraphs": [
-            "JavaScript is a language that can be executed in different environments. In our case, we're talking about browsers and the Node.js server platform. If you haven't written a single line of JS code yet and are reading this text in a browser on a desktop computer, you're literally seconds away from your first JavaScript program.",
-            "There are other ways to run JS code in the browser. When it comes to typical usage of JavaScript programs, they are loaded into the browser to enable web page functionality. Usually, code is organized into separate files with the .js extension that are linked to web pages, but program code can also be included directly in the page code. All this is done using the <script> tag. When the browser detects such code, it executes it. Details about the script tag can be found on w3school.com. In particular, let's look at an example demonstrating work with a web page using JavaScript, shown on this resource. This example can be run using the resources of this site (look for the Try it Yourself button), but we'll do something slightly different. Specifically, we'll create a new file in a text editor (for example, VS Code or Notepad++) which we'll call hello.html, and add the following code to it:"
+            "Despite its benefits, social media also presents significant challenges. Privacy concerns, misinformation, and digital addiction have become pressing issues that society must address.",
+            "The impact on mental health, particularly among younger users, has sparked important discussions about responsible platform design and digital wellness."
           ]
         },
         {
           "id": "8",
           "type": "IMAGE",
-          "src": "https://images.unsplash.com/photo-1517292987719-0369a794ec0f?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-          "title": "Figure 1 - website screenshot"
+          "src": "https://images.unsplash.com/photo-1554177255-61502b352de3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "title": "Digital Wellness"
         },
         {
           "id": "9",
           "type": "TEXT",
-          "title": "Block Title",
+          "title": "Looking Ahead",
           "paragraphs": [
-            "JavaScript is a language that can be executed in different environments. In our case, we're talking about browsers and the Node.js server platform. If you haven't written a single line of JS code yet and are reading this text in a browser on a desktop computer, you're literally seconds away from your first JavaScript program."
+            "As we look to the future, social media will continue to evolve with emerging technologies like virtual reality and artificial intelligence. Understanding and shaping this evolution will be crucial for creating positive digital spaces that benefit society as a whole."
           ]
         }
       ]
