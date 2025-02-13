@@ -98,6 +98,12 @@
   border-radius: var(--radius-s);
   padding: var(--button-offset);
   color: var(--primary-inverted-color);
+
+  @media (any-hover: hover) {
+    &:hover {
+      background-color: var(--bg-color);
+    }
+  }
 }
 
 .disabled {

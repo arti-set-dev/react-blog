@@ -20,6 +20,8 @@
     position: absolute;
     right: var(--inner-offset);
     top: var(--inner-offset);
+    opacity: 0;
+    transition: opacity var(--ui-transition) ease;
   }
 
   .Card {
@@ -38,6 +40,10 @@
     &:hover {
       &::before {
         transform: initial;
+      }
+
+      .createdAt {
+        opacity: 1;
       }
     }
   }
