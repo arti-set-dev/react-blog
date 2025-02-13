@@ -5,9 +5,10 @@ import { useNavigate } from 'react-router-dom';
 import { ArticleAdditionalInfo } from '@/widgets/ArticleAdditionalInfo';
 import { Skeleton } from '@/shared/ui/redesigned/Skeleton';
 import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
-import { getRouteProfile } from '@/shared/const/router';
+import { getRouteArticleEdit } from '@/shared/const/router';
 import { getArticleDetailsData } from '@/entities/Article';
 import { Card } from '@/shared/ui/redesigned/Card';
+import { getCanEditArticle } from '../../model/selectors/article';
 
 interface AdditionalInfoContainerProps {
   className?: string;
@@ -18,9 +19,10 @@ export const AdditionalInfoContainer = memo((props: AdditionalInfoContainerProps
   const { t } = useTranslation();
   const article = useSelector(getArticleDetailsData);
   const navigate = useNavigate();
+  const canEdit = useSelector(getCanEditArticle);
   const onEditArticle = useCallback(() => {
     if (article) {
-      navigate(getRouteProfile(article.id));
+      navigate(getRouteArticleEdit(article.id));
     }
   }, [article, navigate]);
 
@@ -42,6 +44,7 @@ export const AdditionalInfoContainer = memo((props: AdditionalInfoContainerProps
   return (
     <Card offset="16">
       <ArticleAdditionalInfo
+        canEdit={canEdit}
         onEdit={onEditArticle}
         author={article?.user}
         createdAt={article?.createdAt}

@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { HStack } from '@/shared/ui/redesigned/Stack';
 import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button';
-import { getRouteArticles, getRouteProfile } from '@/shared/const/router';
+import { getRouteArticleEdit, getRouteArticles } from '@/shared/const/router';
 import { getArticleDetailsData } from '@/entities/Article';
 import { getCanEditArticle } from '../../model/selectors/article';
 
@@ -26,7 +26,7 @@ export const ArticleDetailsPageHeader = memo(
 
     const onEditArticle = useCallback(() => {
       if (article) {
-        navigate(getRouteProfile(article.id));
+        navigate(getRouteArticleEdit(article.id));
       }
     }, [article, navigate]);
 
