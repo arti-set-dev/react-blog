@@ -14,17 +14,19 @@ import { ArticleTextBlockComponent } from '../../ArticleTextBlockComponent/Artic
 import ViewsIcon from '@/shared/assets/icons/eye-icon.svg';
 import { getRouteArticleDetails } from '@/shared/const/router';
 import { AppLink } from '@/shared/ui/redesigned/AppLink';
-import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button';
+import { Button } from '@/shared/ui/redesigned/Button';
 import { Text } from '@/shared/ui/redesigned/Text';
 import { LazyImage } from '@/shared/ui/redesigned/LazyImage';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cl from './ArticleItemRedesigned.module.scss';
+import { useArticle } from '../../../lib/hooks/useArticle';
 
 export const ArticleItemRedesigned = memo((props: ArticleItemProps) => {
   const {
     className, article, view, blank,
   } = props;
   const { t } = useTranslation();
+  const { onOpenArticle } = useArticle(article.id);
 
   const articleTypes = useMemo(
     () => (
@@ -58,7 +60,7 @@ export const ArticleItemRedesigned = memo((props: ArticleItemProps) => {
         className={classNames('', {}, [className, cl[view]])}
       >
         <Card isOverflow offset="24" className={getVstack({ gap: 16 })}>
-          <HStack>
+          <HStack gap="8">
             <Avatar
               size={30}
               src={article.user.avatar}
@@ -100,7 +102,7 @@ export const ArticleItemRedesigned = memo((props: ArticleItemProps) => {
             />
           )}
           <HStack gap="16" justify="between">
-            <Button theme={ButtonTheme.OUTLINE}>{t('Read more')}</Button>
+            <Button variant="outline" onClick={onOpenArticle}>{t('Read more')}</Button>
             {views}
           </HStack>
         </Card>
