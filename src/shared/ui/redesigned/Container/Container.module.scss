@@ -2,4 +2,8 @@
   margin: 0 auto;
   padding: 0 var(--container-offset);
   max-width: var(--container-width);
+
+  &.max {
+    width: 100%;
+  }
 }

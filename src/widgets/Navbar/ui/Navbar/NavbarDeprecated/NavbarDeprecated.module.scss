@@ -5,15 +5,11 @@
   width: 100%;
 }
 
-.Navbar {
+.NavbarDeprecated {
   display: flex;
   align-items: center;
   height: var(--navbar-height);
   background-color: var(--bg-light-color);
-}
-
-.Dropdown {
-
 }
 
 .NewPostText {

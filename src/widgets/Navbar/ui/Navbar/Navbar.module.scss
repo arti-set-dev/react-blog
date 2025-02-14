@@ -1,0 +1,34 @@
+.Container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.Navbar {
+  display: flex;
+  align-items: center;
+  height: var(--navbar-height);
+  background-color: var(--bg-light-color);
+}
+
+.NewPostText {
+  margin-right: var(--gap);
+  margin-left: auto;
+}
+
+.Nav {
+  margin-left: auto;
+}
+
+.Menulist {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--gap);
+}
+
+.Navlink {
+  font-weight: 400;
+  font-size: var(--font-size-m);
+  line-height: 100%;
+}

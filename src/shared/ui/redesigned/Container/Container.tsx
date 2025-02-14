@@ -5,15 +5,12 @@ import cl from './Container.module.scss';
 interface ContainerProps {
   className?: string;
   children: ReactNode;
+  max?: boolean;
 }
 
-/**
- * Outdated, use the component from the Redesigned folder
- * @deprecated
- */
 export const Container = (props: ContainerProps) => {
-  const { children, className } = props;
+  const { children, className, max } = props;
   return (
-    <div className={classNames(cl.Container, {}, [className])}>{children}</div>
+    <div className={classNames(cl.Container, { [cl.max]: max }, [className])}>{children}</div>
   );
 };

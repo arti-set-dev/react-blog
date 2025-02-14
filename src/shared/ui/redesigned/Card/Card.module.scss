@@ -58,6 +58,34 @@
     padding: 24px;
   }
 
+  &.radius_0 {
+    border-radius: 0;
+  }
+
+  &.radius_4 {
+    border-radius: 4px;
+  }
+
+  &.radius_8 {
+    border-radius: 8px;
+  }
+
+  &.radius_10 {
+    border-radius: 10px;
+  }
+
+  &.radius_12 {
+    border-radius: 12px;
+  }
+
+  &.radius_20 {
+    border-radius: 20px;
+  }
+
+  &.radius_24 {
+    border-radius: 24px;
+  }
+
   &.hovered {
     &:hover {
       transform: scale(1.03);
