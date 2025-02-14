@@ -1,6 +1,6 @@
 import { ForwardedRef, forwardRef, ReactNode } from 'react';
 import { LinkProps, NavLink } from 'react-router-dom';
-import { classNames, Mods } from '@/shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import cl from './AppLink.module.scss';
 import { Icon } from '../Icon/Icon';
 
@@ -27,18 +27,20 @@ export const AppLink = forwardRef((props: AppLinkProps, ref: ForwardedRef<HTMLAn
     ...otherProps
   } = props;
 
-  const mods: Mods = {
-    [cl.hovered]: isHovered,
-  };
-
   return (
     <NavLink
       to={to}
-      className={({ isActive }) => classNames(cl.AppLink, mods, [className, cl[variant]])}
+      className={
+        ({ isActive }) => classNames(
+          cl.AppLink,
+          { [cl.hovered]: isHovered, [activeClassName]: isActive },
+          [className, cl[variant]],
+        )
+      }
       ref={ref}
       {...otherProps}
     >
-      {Svg && <Icon Svg={Svg} />}
+      {Svg && <Icon width={25} height={25} Svg={Svg} />}
       {children}
     </NavLink>
   );
