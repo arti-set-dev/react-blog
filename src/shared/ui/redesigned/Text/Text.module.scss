@@ -53,4 +53,12 @@
   &.right {
     text-align: right;
   }
+
+  &.isHovered {
+    @media (any-hover: hover) {
+      &:hover {
+        color: var(--bg-primary-color);
+      }
+    }
+  }
 }

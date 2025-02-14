@@ -1,7 +1,6 @@
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button } from '@/shared/ui/redesigned/Button';
-import { Icon } from '@/shared/ui/redesigned/Icon/Icon';
 import TopIcon from '@/shared/assets/icons/up-arrow-icon.svg';
 
 interface ScrollToTopProps {
@@ -17,8 +16,6 @@ export const ScrollToTop = memo((props: ScrollToTopProps) => {
   };
 
   return (
-    <Button onClick={onScroll} variant="icon">
-      <Icon Svg={TopIcon} />
-    </Button>
+    <Button isHovered Svg={TopIcon} onClick={onScroll} variant="icon" />
   );
 });

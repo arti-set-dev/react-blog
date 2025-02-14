@@ -2,7 +2,6 @@ import React, { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cl from './Icon.module.scss';
-import { Button } from '../Button';
 
 type SvgProps = Omit<React.SVGProps<SVGSVGElement>, 'onClick'>
 export type IconColor = 'primary' | 'error' | 'inverted' | 'normal';
@@ -34,7 +33,7 @@ export const Icon = memo((props: IconProps) => {
   } = props;
   const { t } = useTranslation();
 
-  const icon = (
+  return (
     <Svg
       width={width}
       height={height}
@@ -42,19 +41,4 @@ export const Icon = memo((props: IconProps) => {
       {...otherProps}
     />
   );
-
-  if (clickable) {
-    return (
-      <Button
-        variant="icon"
-        type="button"
-        className={classNames(cl.button, {}, [className])}
-        onClick={props.onClick}
-      >
-        {icon}
-      </Button>
-    );
-  }
-
-  return icon;
 });

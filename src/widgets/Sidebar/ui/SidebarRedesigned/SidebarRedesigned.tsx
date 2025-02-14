@@ -2,7 +2,6 @@ import { memo, useState, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { VStack } from '@/shared/ui/redesigned/Stack';
-import { Icon } from '@/shared/ui/redesigned/Icon/Icon';
 import { getSidebarItems } from '../../model/selector/getSidebarItems';
 import { SidebarItem } from '../SidebarItem/SidebarItem';
 import { LangSwitcher } from '@/features/LangSwitcher';
@@ -42,15 +41,15 @@ export const SidebarRedesigned = memo((props: SidebarRedesignedProps) => {
       ])}
     >
       <Button
+        isHovered
+        Svg={ArrIcon}
         variant="icon"
         size="xs"
         data-testid="sidebar-toggle"
         className={classNames(cl.CollapseBtn, {}, [className])}
         onClick={toggleSidebar}
         aria-label={t('toggle sidebar')}
-      >
-        <Icon width="100%" height="100%" Svg={ArrIcon} />
-      </Button>
+      />
       <nav>
         <VStack tag="ul" gap="4">
           {itemsList}

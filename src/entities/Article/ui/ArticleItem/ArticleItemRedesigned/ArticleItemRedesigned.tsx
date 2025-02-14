@@ -59,7 +59,7 @@ export const ArticleItemRedesigned = memo((props: ArticleItemProps) => {
         data-testid="ArticlesItem"
         className={classNames('', {}, [className, cl[view]])}
       >
-        <Card isOverflow offset="24" className={getVstack({ gap: 16 })}>
+        <Card max isOverflow offset="24" className={getVstack({ gap: 16 })}>
           <HStack gap="8">
             <Avatar
               size={30}
@@ -76,7 +76,7 @@ export const ArticleItemRedesigned = memo((props: ArticleItemProps) => {
           </HStack>
           <AppLink to={getRouteArticleDetails(article.id)}>
             <VStack gap="16">
-              <Text size="xl">
+              <Text isHovered size="xl">
                 {article.title}
               </Text>
               <Text size="m">
@@ -142,7 +142,7 @@ export const ArticleItemRedesigned = memo((props: ArticleItemProps) => {
               to={getRouteArticleDetails(article.id)}
               target="_blank"
             >
-              <Text size="m" weight="bold">
+              <Text isHovered size="m" weight="bold">
                 {article.title}
               </Text>
             </AppLink>
@@ -172,7 +172,7 @@ export const ArticleItemRedesigned = memo((props: ArticleItemProps) => {
             <AppLink
               to={getRouteArticleDetails(article.id)}
             >
-              <Text size="m" weight="bold">
+              <Text isHovered size="m" weight="bold">
                 {article.title}
               </Text>
             </AppLink>

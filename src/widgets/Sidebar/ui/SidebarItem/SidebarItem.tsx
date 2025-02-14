@@ -1,7 +1,6 @@
 import { memo } from 'react';
 import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
-import { Icon } from '@/shared/ui/redesigned/Icon/Icon';
 import { AppLink } from '@/shared/ui/redesigned/AppLink/AppLink';
 import { getUserAuthData } from '@/entities/User';
 import { classNames } from '@/shared/lib/classNames/classNames';
@@ -24,11 +23,12 @@ export const SidebarItem = memo((props: SidebarItemProps) => {
 
   return (
     <AppLink
+      isHovered
+      Svg={item.Icon}
       activeClassName={cl.active}
       to={item.path}
       className={classNames(cl.SidebarItemRedesigned, { [cl.collapsed]: collapsed }, [])}
     >
-      <Icon Svg={item.Icon} />
       {t(item.text)}
     </AppLink>
   );

@@ -21,6 +21,7 @@ interface TextProps {
   children?: React.ReactNode;
   tag?: TagType;
   'data-testid'?: string;
+  isHovered?: boolean;
 }
 
 export const Text = memo((props: TextProps) => {
@@ -33,6 +34,7 @@ export const Text = memo((props: TextProps) => {
     children,
     tag = 'div',
     'data-testid': dataTestId = 'Text',
+    isHovered = false,
     ...otherProps
   } = props;
 
@@ -42,7 +44,7 @@ export const Text = memo((props: TextProps) => {
     <Tag
       {...otherProps}
       data-testid={`${dataTestId}.Tag`}
-      className={classNames(cl.Text, {}, [
+      className={classNames(cl.Text, { [cl.isHovered]: isHovered }, [
         className,
         cl[weight],
         cl[size],

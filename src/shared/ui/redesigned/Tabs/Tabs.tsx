@@ -35,6 +35,7 @@ export const Tabs = memo((props: TabsProps) => {
     <Flex direction={direction} align="start" gap="4" className={classNames(cl.Tabs, {}, [className])}>
       {tabs.map((tab) => (
         <Button
+          isHovered
           key={tab.value}
           variant={tab.value === value ? 'active' : 'clear'}
           onClick={clickHandle(tab)}

@@ -3,6 +3,7 @@ import {
 } from 'react';
 import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 import cl from './Button.module.scss';
+import { Icon } from '../Icon/Icon';
 
 export type ButtonType = 'button' | 'reset' | 'submit';
 export type ButtonVariant =
@@ -21,6 +22,8 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children?: ReactNode;
   fullWidth?: boolean;
   position?: ButtonPosition;
+  isHovered?: boolean;
+  Svg?: React.VFC<React.SVGProps<SVGSVGElement>>;
 }
 
 export const Button = forwardRef((props: ButtonProps, ref: ForwardedRef<HTMLButtonElement>) => {
@@ -33,6 +36,8 @@ export const Button = forwardRef((props: ButtonProps, ref: ForwardedRef<HTMLButt
     disabled,
     fullWidth,
     position = '',
+    isHovered = false,
+    Svg,
     ...otherProps
   } = props;
 
@@ -40,6 +45,7 @@ export const Button = forwardRef((props: ButtonProps, ref: ForwardedRef<HTMLButt
     [cl.disabled]: disabled,
     [cl.fullWidth]: fullWidth,
     [cl.isAbsolute]: position !== '',
+    [cl.isHovered]: isHovered,
   };
 
   return (
@@ -50,6 +56,7 @@ export const Button = forwardRef((props: ButtonProps, ref: ForwardedRef<HTMLButt
       ref={ref}
       {...otherProps}
     >
+      {Svg && <Icon width="100%" height="100%" Svg={Svg} />}
       {children}
     </button>
   );

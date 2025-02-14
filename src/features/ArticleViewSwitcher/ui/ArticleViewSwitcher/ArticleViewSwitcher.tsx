@@ -2,7 +2,6 @@ import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { getHstack } from '@/shared/lib/stack/getHstack/getHstack';
 import { Button } from '@/shared/ui/redesigned/Button/Button';
-import { Icon } from '@/shared/ui/redesigned/Icon/Icon';
 import { toggleFeatures, ToggleFeatures } from '@/shared/lib/features';
 import { Button as ButtonDeprecated, ButtonTheme } from '@/shared/ui/deprecated/Button';
 import { Icon as IconDeprecated } from '@/shared/ui/deprecated/Icon';
@@ -54,15 +53,15 @@ export const ArticleViewSwitcher = memo((props: ArticleViewSwitcherProps) => {
         <div className={classNames('', {}, [className, getHstack({ gap: 8 })])}>
           {viewTypes.map((viewType) => (
             <Button
+              isHovered
+              Svg={viewType.icon}
               key={viewType.view}
               className={classNames(cl.Button, {
                 [cl.Current]: viewType.view === view,
               })}
               onClick={onClick(viewType.view)}
               variant="icon"
-            >
-              <Icon Svg={viewType.icon} width="100%" height="100%" />
-            </Button>
+            />
           ))}
         </div>
       )}
