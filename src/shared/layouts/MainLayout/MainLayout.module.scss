@@ -4,12 +4,15 @@
 }
 
 .header {
+  position: sticky;
+  top: 0;
+  z-index: var(--navbar-z-index);
   grid-area: 1 / 1 / 2 / 4;
 }
 
 .sidebar {
   position: sticky;
-  top: 0;
+  top: var(--navbar-height);
   grid-area: 2 / 1 / 3 / 2;
   padding: var(--inner-offset);
   height: calc(100vh - (var(--navbar-height)));
@@ -27,7 +30,7 @@
 
 .rightbar {
   position: sticky;
-  top: 0;
+  top: var(--navbar-height);
   grid-area: 2 / 3 / 3 / 4;
   padding: var(--inner-offset);
   height: calc(100vh - (var(--navbar-height)));

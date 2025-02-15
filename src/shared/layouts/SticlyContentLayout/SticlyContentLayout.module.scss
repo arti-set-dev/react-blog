@@ -25,7 +25,7 @@
 .left,
 .right {
   position: sticky;
-  top: var(--inner-offset);
+  top: calc(var(--navbar-height) + var(--inner-offset));
   margin-top: var(--inner-offset);
   height: fit-content;
 }
