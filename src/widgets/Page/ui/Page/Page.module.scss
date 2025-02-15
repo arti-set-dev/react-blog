@@ -1,4 +1,11 @@
 .Page {
+  overflow-y: auto;
+  padding: var(--inner-offset);
+  width: 100%;
+  height: calc(100vh - var(--navbar-height));
+}
+
+.PageRedesigned {
   padding: var(--inner-offset);
   width: 100%;
 }

@@ -1,4 +1,5 @@
 import { createSelector } from '@reduxjs/toolkit';
+import { toggleFeatures } from '@/shared/lib/features';
 import {
   getRouteMain,
   getRouteAbout,
@@ -6,6 +7,10 @@ import {
   getRouteArticles,
 } from '@/shared/const/router';
 import { getUserAuthData } from '@/entities/User';
+import HomeIconDeprecated from '@/shared/assets/icons/home-icon.svg';
+import AboutIconDeprecated from '@/shared/assets/icons/about-icon.svg';
+import ProfileIconDeprecated from '@/shared/assets/icons/profile-icon.svg';
+import ArticleIconDeprecated from '@/shared/assets/icons/articles-icon.svg';
 
 import HomeIcon from '@/shared/assets/icons/home-icon-new.svg';
 import ProfileIcon from '@/shared/assets/icons/profile-icon-new.svg';
@@ -17,13 +22,21 @@ export const getSidebarItems = createSelector(getUserAuthData, (userData) => {
   const sidebarItemsList: SidebarItemType[] = [
     {
       path: getRouteMain(),
-      Icon: HomeIcon,
+      Icon: toggleFeatures({
+        name: 'isAppRedesigned',
+        off: () => HomeIconDeprecated,
+        on: () => HomeIcon,
+      }),
       text: 'Main',
       authOnly: false,
     },
     {
       path: getRouteAbout(),
-      Icon: AboutIcon,
+      Icon: toggleFeatures({
+        name: 'isAppRedesigned',
+        off: () => AboutIconDeprecated,
+        on: () => AboutIcon,
+      }),
       text: 'About',
       authOnly: false,
     },
@@ -34,13 +47,21 @@ export const getSidebarItems = createSelector(getUserAuthData, (userData) => {
       {
         // eslint-disable-next-line no-unsafe-optional-chaining
         path: getRouteProfile(userData?.id),
-        Icon: ProfileIcon,
+        Icon: toggleFeatures({
+          name: 'isAppRedesigned',
+          off: () => ProfileIconDeprecated,
+          on: () => ProfileIcon,
+        }),
         text: 'Profile',
         authOnly: true,
       },
       {
         path: getRouteArticles(),
-        Icon: ArticleIcon,
+        Icon: toggleFeatures({
+          name: 'isAppRedesigned',
+          off: () => ArticleIconDeprecated,
+          on: () => ArticleIcon,
+        }),
         text: 'Articles',
         authOnly: true,
       },

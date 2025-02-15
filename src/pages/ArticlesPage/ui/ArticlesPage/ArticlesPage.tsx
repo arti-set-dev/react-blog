@@ -53,7 +53,6 @@ const ArticlesPage = (props: ArticlesPageProps) => {
             <Page
               data-testid="ArticlesPage"
               onScrollEnd={onLoadNextPart}
-              className={classNames(cl.ArticlesPage, {}, [className])}
             >
               <ArticleInfiniteList />
               {error && <Text>{t('Data boot error')}</Text>}

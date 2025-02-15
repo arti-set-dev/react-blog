@@ -13,6 +13,7 @@ import { useThrottle } from '@/shared/lib/hooks/useThrottle/useThrottle';
 import { getScrollByPath } from '../../model/selectors/scrollSaveSelectors';
 import { ScrollSaveActions } from '../../model/slices/ScrollSaveSlice';
 import cl from './Page.module.scss';
+import { toggleFeatures } from '@/shared/lib/features';
 
 interface PageProps extends TestsProps {
   className?: string;
@@ -28,9 +29,19 @@ export const Page = memo((props: PageProps) => {
   const { pathname } = useLocation();
   const scrollPosition = useSelector((state: StateSchema) => getScrollByPath(state, pathname));
 
+  const pageClass = toggleFeatures({
+    name: 'isAppRedesigned',
+    off: () => cl.Page,
+    on: () => cl.PageRedesigned,
+  });
+
   useInfiniteScroll({
     triggerRef,
-    wrapperRef: undefined,
+    wrapperRef: toggleFeatures({
+      name: 'isAppRedesigned',
+      on: () => undefined,
+      off: () => wrapperRef,
+    }),
     callback: onScrollEnd,
   });
 
@@ -52,7 +63,7 @@ export const Page = memo((props: PageProps) => {
       data-testid={props['data-testid'] ?? 'Page'}
       onScroll={onScroll}
       ref={wrapperRef}
-      className={classNames(cl.Page, {}, [className])}
+      className={classNames(pageClass, {}, [className])}
     >
       {children}
       {onScrollEnd && <div className={cl.TriggerElem} ref={triggerRef} />}

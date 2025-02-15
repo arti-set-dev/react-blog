@@ -13,6 +13,7 @@ import { AppRouter } from './providers/router';
 import { Navbar } from '@/widgets/Navbar';
 import { Sidebar } from '@/widgets/Sidebar';
 import { withTheme } from './providers/ThemeProvider/ui/withTheme';
+import { ToggleFeatures } from '@/shared/lib/features';
 
 const App = memo(() => {
   const { theme } = useTheme();
@@ -34,17 +35,32 @@ const App = memo(() => {
   }
 
   return (
-
-    <div id="app" className={classNames('app_redesigned', {}, [theme])}>
-      <Suspense fallback={<Loader />}>
-        <MainLayout
-          header={<Navbar />}
-          content={<AppRouter />}
-          sidebar={<Sidebar />}
-          toolbar={toolbar}
-        />
-      </Suspense>
-    </div>
+    <ToggleFeatures
+      feature="isAppRedesigned"
+      on={(
+        <div id="app" className={classNames('app_redesigned', {}, [theme])}>
+          <Suspense fallback={<Loader />}>
+            <MainLayout
+              header={<Navbar />}
+              content={<AppRouter />}
+              sidebar={<Sidebar />}
+              toolbar={toolbar}
+            />
+          </Suspense>
+        </div>
+      )}
+      off={(
+        <div id="app" className={classNames('app', {}, [theme])}>
+          <Suspense fallback={<Loader />}>
+            <Navbar />
+            <main className="main">
+              <Sidebar />
+              {inited && <AppRouter />}
+            </main>
+          </Suspense>
+        </div>
+      )}
+    />
 
   );
 });

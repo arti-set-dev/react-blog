@@ -12,6 +12,7 @@ import { getSidebarItems } from '../../model/selector/getSidebarItems';
 import { SidebarItem } from '../SidebarItem/SidebarItem';
 import { SidebarRedesigned } from '../SidebarRedesigned/SidebarRedesigned';
 import cl from './Sidebar.module.scss';
+import { ToggleFeatures } from '@/shared/lib/features';
 
 interface SidebarProps {
   className?: string;
@@ -51,7 +52,7 @@ export const Sidebar = memo((props: SidebarProps) => {
         onClick={toggleSidebar}
         aria-label={t('toggle sidebar')}
       >
-        <Icon Svg={ArrIcon} width="100%" height="100%" />
+        <Icon Svg={ArrIcon} width="18px" height="18px" />
       </Button>
       <nav>
         <VStack tag="ul" gap="16">
@@ -66,6 +67,10 @@ export const Sidebar = memo((props: SidebarProps) => {
   );
 
   return (
-    <SidebarRedesigned />
+    <ToggleFeatures
+      feature="isAppRedesigned"
+      on={<SidebarRedesigned />}
+      off={sidebarDeprecated}
+    />
   );
 });

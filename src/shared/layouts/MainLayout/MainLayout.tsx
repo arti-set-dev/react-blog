@@ -18,16 +18,17 @@ export const MainLayout = memo((props: MainLayoutProps) => {
   } = props;
   const { t } = useTranslation();
 
+  const contentClass = toggleFeatures({
+    name: 'isAppRedesigned',
+    on: () => cl.contentRedesigned,
+    off: () => cl.content,
+  });
+
   return (
     <div className={classNames(cl.MainLayout, {}, [className])}>
       <div className={cl.header}>{header}</div>
       <div className={cl.sidebar}>{sidebar}</div>
-      <div className={toggleFeatures({
-        name: 'isAppRedesigned',
-        on: () => cl.contentRedesigned,
-        off: () => cl.content,
-      })}
-      >
+      <div className={contentClass}>
         {content}
       </div>
       <div className={cl.rightbar}>{toolbar}</div>
