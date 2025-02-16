@@ -26,7 +26,7 @@ interface NavbarDeprecatedProps {
 export const NavbarAuthDataDeprecated = () => {
   const { t } = useTranslation();
   return (
-    <header className={classNames(cl.NavbarDeprecated, {}, [])}>
+    <header className={classNames(cl.Navbar, {}, [])}>
       <Container className={cl.Container}>
         <AppLink to={getRouteMain()}>
           <Icon color="primary" width={200} height={40} Svg={LogoIcon} />
@@ -49,10 +49,6 @@ export const NavbarDeprecated = memo((props: NavbarDeprecatedProps) => {
     className, authData, isAuthModal, onCloseModal, onShowModal,
   } = props;
   const { t } = useTranslation();
-
-  if (authData) {
-    return <NavbarAuthDataDeprecated />;
-  }
 
   return (
     <header className={classNames(cl.Navbar, {}, [className])}>

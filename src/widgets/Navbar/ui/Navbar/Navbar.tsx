@@ -40,12 +40,14 @@ export const Navbar = memo((props: NavbarProps) => {
       feature="isAppRedesigned"
       on={(
         <NavbarRedesigned
+          isAuthModal={isAuthModal}
           onShowModal={onShowModal}
           onCloseModal={onCloseModal}
         />
       )}
       off={(
         <NavbarDeprecated
+          isAuthModal={isAuthModal}
           onShowModal={onShowModal}
           onCloseModal={onCloseModal}
         />

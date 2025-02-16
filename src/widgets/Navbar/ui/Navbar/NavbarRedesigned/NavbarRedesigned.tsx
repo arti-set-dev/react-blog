@@ -53,13 +53,9 @@ export const NavbarRedesigned = memo((props: NavbarRedesignedProps) => {
   } = props;
   const { t } = useTranslation();
 
-  if (authData) {
-    return <NavbarAuthDataRedesigned />;
-  }
-
   return (
-    <Card tag="header" offset="0">
-      <Container className={getHstack({ gap: 16, justify: 'space-between', align: 'center' })}>
+    <Card tag="header" offset="0" height={NAVBAR_HEIGHT} className={getHstack({ align: 'center' })}>
+      <Container max className={getHstack({ gap: 16, justify: 'space-between', align: 'center' })}>
         <AppLink to={getRouteMain()}>
           <Icon color="primary" width={200} height={40} Svg={LogoIcon} />
         </AppLink>
