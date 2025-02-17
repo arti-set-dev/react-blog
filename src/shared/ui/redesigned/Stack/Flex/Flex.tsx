@@ -23,10 +23,10 @@ export type FlexRole = 'dialog';
 export type OverflowType = 'initial' | 'hidden' | 'scroll' | 'auto';
 
 const overflowClasses: Record<OverflowType, string> = {
-  initial: cls.initial,
-  hidden: cls.hidden,
-  scroll: cls.scroll,
-  auto: cls.auto,
+  initial: cls.overflowInitial,
+  hidden: cls.overflowHidden,
+  scroll: cls.overflowScroll,
+  auto: cls.overflowAuto,
 };
 
 const justifyClasses: Record<FlexJustify, string> = {
@@ -124,7 +124,7 @@ export const Flex = (props: FlexProps) => {
 
   return (
     <Tag
-      style={{ width }}
+      style={{ maxWidth: width }}
       role={role}
       className={classNames(cls.Flex, mods, classes)}
       {...otherProps}

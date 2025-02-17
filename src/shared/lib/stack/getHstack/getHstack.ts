@@ -1,5 +1,5 @@
 export type Gap = 0 | 4 | 8 | 16 | 24;
-export type Justify = 'space-between' | 'center' | 'end' | 'start';
+export type Justify = 'between' | 'center' | 'end' | 'start';
 export type Align = 'center' | 'start' | 'end';
 
 interface HStackOptions {

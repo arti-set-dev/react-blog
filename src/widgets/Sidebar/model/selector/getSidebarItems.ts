@@ -1,5 +1,5 @@
 import { createSelector } from '@reduxjs/toolkit';
-import { toggleFeatures } from '@/shared/lib/features';
+import { toggleFeatures } from '../../../../shared/lib/features';
 import {
   getRouteMain,
   getRouteAbout,
@@ -16,10 +16,10 @@ import HomeIcon from '@/shared/assets/icons/home-icon-new.svg';
 import ProfileIcon from '@/shared/assets/icons/profile-icon-new.svg';
 import AboutIcon from '@/shared/assets/icons/about-icon-new.svg';
 import ArticleIcon from '@/shared/assets/icons/article-icon-new.svg';
-import { SidebarItemType } from '../types/sidebar';
+import { NavigationItemType } from '../../../../entities/Navigation/model/types/navigation';
 
-export const getSidebarItems = createSelector(getUserAuthData, (userData) => {
-  const sidebarItemsList: SidebarItemType[] = [
+export const getNavigationItems = createSelector(getUserAuthData, (userData) => {
+  const sidebarItemsList: NavigationItemType[] = [
     {
       path: getRouteMain(),
       Icon: toggleFeatures({

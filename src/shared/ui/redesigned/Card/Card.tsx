@@ -4,7 +4,7 @@ import cl from './Card.module.scss';
 
 export type CardVariant = 'primary' | 'outline' | 'outline-inverted' | 'inverted' | 'active';
 export type CardOffset = '0' | '4' | '8' | '16' | '24';
-type TagType = 'article' | 'aside' | 'h3' | 'main' | 'div' | 'form' | 'li' | 'pre' | 'header';
+type TagType = 'article' | 'aside' | 'h3' | 'main' | 'div' | 'form' | 'li' | 'pre' | 'header' | 'footer';
 export type BorderRadius = '0' | '4' | '8' | '10' | '12' | '20';
 
 interface CardProps {
@@ -19,6 +19,7 @@ interface CardProps {
   isOverflow?: boolean;
   border?: BorderRadius;
   height?: number;
+  width?: number;
 }
 
 const mapBorderRadius: Record<BorderRadius, string> = {
@@ -50,6 +51,7 @@ export const Card = memo((props: CardProps) => {
     offset = '8',
     tag = 'article',
     max,
+    width,
     isOverflow = false,
     ...otherProps
   } = props;
@@ -69,7 +71,7 @@ export const Card = memo((props: CardProps) => {
     <Tag
       {...otherProps}
       className={classNames(cl.Card, mods, [className, cl[variant], cl[offsetClass], cl[borderClass]])}
-      style={{ height }}
+      style={{ height, width }}
     >
       {children}
     </Tag>

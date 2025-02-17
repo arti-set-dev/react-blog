@@ -2,7 +2,7 @@ import { memo, useState, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { VStack } from '@/shared/ui/redesigned/Stack';
-import { getSidebarItems } from '../../model/selector/getSidebarItems';
+import { getNavigationItems } from '../../model/selector/getSidebarItems';
 import { SidebarItem } from '../SidebarItem/SidebarItem';
 import { LangSwitcher } from '@/features/LangSwitcher';
 import { ThemeSwitcher } from '@/features/ThemeSwitcher';
@@ -20,7 +20,7 @@ export const SidebarRedesigned = memo((props: SidebarRedesignedProps) => {
   const { t } = useTranslation();
   const [collapsed, setCollapsed] = useState(false);
 
-  const sidebarItemsList = useSelector(getSidebarItems);
+  const sidebarItemsList = useSelector(getNavigationItems);
   const toggleSidebar = () => {
     setCollapsed((prev) => !prev);
   };

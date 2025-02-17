@@ -8,7 +8,7 @@ import { LangSwitcher } from '@/features/LangSwitcher';
 import { ThemeSwitcher } from '@/features/ThemeSwitcher';
 import ArrIcon from '@/shared/assets/icons/arrow-icon.svg';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { getSidebarItems } from '../../model/selector/getSidebarItems';
+import { getNavigationItems } from '../../model/selector/getSidebarItems';
 import { SidebarItem } from '../SidebarItem/SidebarItem';
 import { SidebarRedesigned } from '../SidebarRedesigned/SidebarRedesigned';
 import cl from './Sidebar.module.scss';
@@ -22,7 +22,7 @@ export const Sidebar = memo((props: SidebarProps) => {
   const { className } = props;
   const [collapsed, setCollapsed] = useState(false);
   const { t } = useTranslation();
-  const sidebarItemsList = useSelector(getSidebarItems);
+  const sidebarItemsList = useSelector(getNavigationItems);
 
   const toggleSidebar = () => {
     setCollapsed((prev) => !prev);

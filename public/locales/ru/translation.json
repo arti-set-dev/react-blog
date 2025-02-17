@@ -40,5 +40,8 @@
   "{{count}} views_one": "{{count}} просмотр",
   "{{count}} views_few": "{{count}} просмотров",
   "{{count}} views_many": "{{count}} просмотров",
-  "Option interface": "Option interface"
+  "Option interface": "Option interface",
+  "Copyright": "© 2025 Все права защищены",
+  "Service rules": "Правила обслуживания",
+  "Privacy Policy": "Политика конфиденциальности"
 }

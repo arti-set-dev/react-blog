@@ -14,6 +14,7 @@ import { getScrollByPath } from '../../model/selectors/scrollSaveSelectors';
 import { ScrollSaveActions } from '../../model/slices/ScrollSaveSlice';
 import cl from './Page.module.scss';
 import { toggleFeatures } from '@/shared/lib/features';
+import { Footer } from '../../../Footer';
 
 interface PageProps extends TestsProps {
   className?: string;
@@ -33,6 +34,12 @@ export const Page = memo((props: PageProps) => {
     name: 'isAppRedesigned',
     off: () => cl.Page,
     on: () => cl.PageRedesigned,
+  });
+
+  const footer = toggleFeatures({
+    name: 'isAppRedesigned',
+    off: () => <Footer />,
+    on: () => null,
   });
 
   useInfiniteScroll({
@@ -67,6 +74,7 @@ export const Page = memo((props: PageProps) => {
     >
       {children}
       {onScrollEnd && <div className={cl.TriggerElem} ref={triggerRef} />}
+      {footer}
     </section>
   );
 });

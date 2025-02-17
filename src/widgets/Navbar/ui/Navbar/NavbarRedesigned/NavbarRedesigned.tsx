@@ -29,7 +29,7 @@ export const NavbarAuthDataRedesigned = () => {
   const { t } = useTranslation();
   return (
     <Card tag="header" offset="0" border="0" height={NAVBAR_HEIGHT} className={getHstack({ align: 'center' })}>
-      <Container max className={getHstack({ gap: 16, justify: 'space-between', align: 'center' })}>
+      <Container max className={getHstack({ gap: 16, justify: 'between', align: 'center' })}>
         <AppLink to={getRouteMain()}>
           <Icon color="primary" width={200} height={40} Svg={LogoIcon} />
         </AppLink>
@@ -55,7 +55,7 @@ export const NavbarRedesigned = memo((props: NavbarRedesignedProps) => {
 
   return (
     <Card tag="header" offset="0" height={NAVBAR_HEIGHT} className={getHstack({ align: 'center' })}>
-      <Container max className={getHstack({ gap: 16, justify: 'space-between', align: 'center' })}>
+      <Container max className={getHstack({ gap: 16, justify: 'between', align: 'center' })}>
         <AppLink to={getRouteMain()}>
           <Icon color="primary" width={200} height={40} Svg={LogoIcon} />
         </AppLink>

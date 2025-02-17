@@ -5,16 +5,14 @@ import { AppLink } from '@/shared/ui/redesigned/AppLink/AppLink';
 import { AppLink as AppLinkDeprecated } from '@/shared/ui/deprecated/AppLink';
 import { ToggleFeatures } from '@/shared/lib/features';
 import { getUserAuthData } from '@/entities/User';
-import { classNames } from '@/shared/lib/classNames/classNames';
-import cl from './SidebarItem.module.scss';
-import { NavigationItemProps } from '../../../../entities/Navigation';
+import { NavigationItemType } from '../model/types/navigation';
 
-interface SidebarItemProps extends NavigationItemProps {
-  collapsed: boolean;
+export interface NavigationItemProps {
+  item: NavigationItemType;
 }
 
-export const SidebarItem = memo((props: SidebarItemProps) => {
-  const { item, collapsed } = props;
+export const NavigationItem = memo((props: NavigationItemProps) => {
+  const { item } = props;
   const isAuth = useSelector(getUserAuthData);
   const { t } = useTranslation();
 
@@ -28,9 +26,7 @@ export const SidebarItem = memo((props: SidebarItemProps) => {
       on={(
         <AppLink
           Svg={item.Icon}
-          activeClassName={cl.active}
           to={item.path}
-          className={classNames(cl.SidebarItemRedesigned, { [cl.collapsed]: collapsed }, [])}
         >
           {t(item.text)}
         </AppLink>
@@ -38,7 +34,6 @@ export const SidebarItem = memo((props: SidebarItemProps) => {
       off={(
         <AppLinkDeprecated
           to={item.path}
-          className={classNames(cl.SidebarItem, { [cl.collapsed]: collapsed }, [])}
         >
           {item.Icon && <item.Icon width="25px" height="25px" />}
           {t(item.text)}

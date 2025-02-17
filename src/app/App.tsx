@@ -14,6 +14,7 @@ import { Navbar } from '@/widgets/Navbar';
 import { Sidebar } from '@/widgets/Sidebar';
 import { withTheme } from './providers/ThemeProvider/ui/withTheme';
 import { ToggleFeatures } from '@/shared/lib/features';
+import { Footer } from '@/widgets/Footer';
 
 const App = memo(() => {
   const { theme } = useTheme();
@@ -45,6 +46,7 @@ const App = memo(() => {
               content={<AppRouter />}
               sidebar={<Sidebar />}
               toolbar={toolbar}
+              footer={<Footer />}
             />
           </Suspense>
         </div>
