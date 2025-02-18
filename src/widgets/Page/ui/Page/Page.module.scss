@@ -1,14 +1,19 @@
 .Page {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   overflow-y: auto;
   padding: var(--inner-offset);
   padding-bottom: 0;
   width: 100%;
   height: calc(100vh - var(--navbar-height));
+  gap: var(--gap);
 }
 
 .PageRedesigned {
-  padding: var(--inner-offset);
+  padding: var(--inner-offset) var(--container-offset);
   width: 100%;
+  max-width: var(--container-width);
 }
 
 .TriggerElem {

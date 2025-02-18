@@ -2,7 +2,7 @@
   display: grid;
   justify-content: center;
   grid-template-areas: "left content right";
-  grid-template-columns: min-content minmax(300px, var(--container-width)) 230px;
+  grid-template-columns: 250px minmax(300px, var(--container-width)) 250px;
   width: 100%;
   gap: var(--gap);
 }

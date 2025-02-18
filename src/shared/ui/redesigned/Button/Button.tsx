@@ -23,6 +23,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   fullWidth?: boolean;
   position?: ButtonPosition;
   isHovered?: boolean;
+  isActive?: boolean;
   Svg?: React.VFC<React.SVGProps<SVGSVGElement>>;
 }
 
@@ -37,6 +38,7 @@ export const Button = forwardRef((props: ButtonProps, ref: ForwardedRef<HTMLButt
     fullWidth,
     position = '',
     isHovered = false,
+    isActive = false,
     Svg,
     ...otherProps
   } = props;
@@ -46,6 +48,7 @@ export const Button = forwardRef((props: ButtonProps, ref: ForwardedRef<HTMLButt
     [cl.fullWidth]: fullWidth,
     [cl.isAbsolute]: position !== '',
     [cl.isHovered]: isHovered,
+    [cl.isActive]: isActive,
   };
 
   return (

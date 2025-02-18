@@ -1,6 +1,6 @@
 .MainLayout {
   display: grid;
-  grid-template-columns: 305px 1fr 140px;
+  grid-template-columns: 305px 1fr 305px;
 }
 
 .header {
@@ -25,6 +25,7 @@
 }
 
 .contentRedesigned {
+  justify-items: center;
   overflow: initial;
 }
 

@@ -33,7 +33,7 @@ const articlesPageSlice = createSlice({
     entities: {},
     page: 1,
     hasMore: true,
-    limit: 13,
+    limit: 15,
     _inited: false,
     sort: ArticleSortField.CREATED,
     order: 'asc',
@@ -65,7 +65,7 @@ const articlesPageSlice = createSlice({
         ARTICLE_VIEW_LOCALSTORAGE_KEY,
       ) as ArticleView;
       state.view = view;
-      state.limit = view === ArticleView.COLUMN ? 4 : 11;
+      state.limit = view === ArticleView.COLUMN ? 4 : 15;
       state._inited = true;
     },
   },

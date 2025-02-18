@@ -54,11 +54,9 @@ export const ArticleViewSwitcher = memo((props: ArticleViewSwitcherProps) => {
           {viewTypes.map((viewType) => (
             <Button
               isHovered
+              isActive={viewType.view === view}
               Svg={viewType.icon}
               key={viewType.view}
-              className={classNames(cl.Button, {
-                [cl.Current]: viewType.view === view,
-              })}
               onClick={onClick(viewType.view)}
               variant="icon"
             />

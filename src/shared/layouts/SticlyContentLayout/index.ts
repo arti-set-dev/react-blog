@@ -1,3 +1,3 @@
-import { StickyContentLayout } from './SticlyContentLayout';
+import { StickyContentLayout } from './StickyContentLayout';
 
 export { StickyContentLayout };
