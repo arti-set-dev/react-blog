@@ -10,15 +10,13 @@ export function buildSlice<
 >(options: CreateSliceOptions<State, CaseReducers, Name>) {
   const slice = createSlice(options);
 
-  const useActions = (): typeof slice.actions => {
+  const useActions = () => {
     const dispatch = useDispatch();
 
-    // @ts-ignore
-    return useMemo(
-      // @ts-ignore
-      () => bindActionCreators(slice.actions, dispatch),
-      [dispatch],
-    );
+    return useMemo(() => bindActionCreators(
+        slice.actions as Record<string, (...args: any[]) => any>,
+        dispatch,
+    ), [dispatch]);
   };
 
   return {
