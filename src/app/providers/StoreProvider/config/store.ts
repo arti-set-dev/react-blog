@@ -42,10 +42,10 @@ export function createReduxStore(
     }).concat(rtkApi.middleware),
   });
 
-  // @ts-ignore
-  store.reducerManager = reducerManager;
-
-  return store;
+  return {
+    ...store,
+    reducerManager,
+  } as typeof store & { reducerManager: ReturnType<typeof createReducerManager> };
 }
 
 export type AppDispatch = ReturnType<typeof createReduxStore>['dispatch'];
