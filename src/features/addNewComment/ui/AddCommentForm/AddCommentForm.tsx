@@ -54,9 +54,7 @@ export const AddCommentForm = memo((props: AddCommentFormProps) => {
     <DynamicModuleLoader reducers={reducers}>
       <ToggleFeatures
         feature="isAppRedesigned"
-        on={(
-          <AddCommentFormRedesigned onSendComment={onSendComment} />
-        )}
+        on={<AddCommentFormRedesigned onSendComment={onSendComment} />}
         off={<AddCommentFormDeprecated onSendComment={onSendComment} />}
       />
     </DynamicModuleLoader>

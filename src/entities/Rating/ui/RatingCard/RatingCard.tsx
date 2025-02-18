@@ -3,13 +3,18 @@ import { BrowserView, MobileView } from 'react-device-detect';
 import { useTranslation } from 'react-i18next';
 import { Modal } from '@/shared/ui/redesigned/Modal';
 import { VStack, HStack } from '@/shared/ui/redesigned/Stack';
-import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button';
-import { Card } from '@/shared/ui/deprecated/Card';
-import { Input } from '@/shared/ui/deprecated/Input';
+import { Button as ButtonDeprecated, ButtonTheme } from '@/shared/ui/deprecated/Button';
+import { Card as CardDeprecated } from '@/shared/ui/deprecated/Card';
+import { Card } from '@/shared/ui/redesigned/Card';
+import { Input as InputDeprecated } from '@/shared/ui/deprecated/Input';
 import { StarRating } from '@/shared/ui/deprecated/StarRating';
-import { Text, TextSize } from '@/shared/ui/deprecated/Text';
+import { Text as TextDeprecated, TextSize } from '@/shared/ui/deprecated/Text';
 import { Drawer } from '@/shared/ui/deprecated/Drawer';
 import { classNames } from '@/shared/lib/classNames/classNames';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { Input } from '@/shared/ui/redesigned/Input';
+import { Button } from '@/shared/ui/redesigned/Button';
+import { Text } from '@/shared/ui/redesigned/Text';
 
 interface RatingCardProps {
   className?: string;
@@ -59,59 +64,124 @@ export const RatingCard = (props: RatingCardProps) => {
   }, [onAccept, starsCount]);
 
   const modalContent = (
-    <VStack max gap="32">
-      <Text size={TextSize.L}>{feedbackTitle}</Text>
-      <Input
-        data-testid="RatingCard.Input"
-        value={feedback}
-        onChange={setFeedback}
-        placeholder={t('Your rating')}
-      />
-      <HStack gap="16" max justify="end">
-        <Button
-          data-testid="RatingCard.Cancel"
-          onClick={cancelHandle}
-          theme={ButtonTheme.OUTLINE_RED}
-        >
-          {t('Cancel')}
-        </Button>
-        <Button
-          data-testid="RatingCard.Send"
-          onClick={acceptHandle}
-          theme={ButtonTheme.OUTLINE}
-        >
-          {t('Send')}
-        </Button>
-      </HStack>
-    </VStack>
+    <ToggleFeatures
+      feature="isAppRedesigned"
+      on={(
+        <VStack max gap="32">
+          <Text size="l">{feedbackTitle}</Text>
+          <Input
+            data-testid="RatingCard.Input"
+            value={feedback}
+            onChange={setFeedback}
+            placeholder={t('Your rating')}
+          />
+          <HStack gap="16" max justify="end">
+            <Button
+              data-testid="RatingCard.Cancel"
+              onClick={cancelHandle}
+              variant="outline-red"
+            >
+              {t('Cancel')}
+            </Button>
+            <Button
+              data-testid="RatingCard.Send"
+              onClick={acceptHandle}
+              variant="outline"
+            >
+              {t('Send')}
+            </Button>
+          </HStack>
+        </VStack>
+      )}
+      off={(
+        <VStack max gap="32">
+          <TextDeprecated size={TextSize.L}>{feedbackTitle}</TextDeprecated>
+          <InputDeprecated
+            data-testid="RatingCard.Input"
+            value={feedback}
+            onChange={setFeedback}
+            placeholder={t('Your rating')}
+          />
+          <HStack gap="16" max justify="end">
+            <ButtonDeprecated
+              data-testid="RatingCard.Cancel"
+              onClick={cancelHandle}
+              theme={ButtonTheme.OUTLINE_RED}
+            >
+              {t('Cancel')}
+            </ButtonDeprecated>
+            <ButtonDeprecated
+              data-testid="RatingCard.Send"
+              onClick={acceptHandle}
+              theme={ButtonTheme.OUTLINE}
+            >
+              {t('Send')}
+            </ButtonDeprecated>
+          </HStack>
+        </VStack>
+      )}
+    />
   );
-
   return (
-    <Card
-      data-testid="RatingCard"
-      isOffset
-      className={classNames('', {}, [className])}
-    >
-      <VStack gap="16" align="center">
-        <Text size={TextSize.L}>
-          {starsCount ? t('Thanks for your rating') : title}
-        </Text>
-        <StarRating
-          selectStars={starsCount}
-          size={40}
-          onSelect={onSelectStars}
-        />
-      </VStack>
-      <BrowserView>
-        <Modal isOpen={isModalOpen} lazy>
-          {modalContent}
-        </Modal>
-      </BrowserView>
-      <MobileView>
-        <Drawer isOpen={isModalOpen} onClose={cancelHandle} lazy>
-          {modalContent}
-        </Drawer>
-      </MobileView>
-    </Card>
+    <ToggleFeatures
+      feature="isAppRedesigned"
+      on={(
+        <Card
+          tag="div"
+          data-testid="RatingCard"
+          isOffset
+          className={classNames('', {}, [className])}
+        >
+          <VStack gap="16" align="center">
+            <Text size="l">
+              {starsCount ? t('Thanks for your rating') : title}
+            </Text>
+            <StarRating
+              selectStars={starsCount}
+              size={40}
+              onSelect={onSelectStars}
+            />
+          </VStack>
+          <BrowserView>
+            <Modal isOpen={isModalOpen} lazy>
+              {modalContent}
+            </Modal>
+          </BrowserView>
+          <MobileView>
+            <Drawer isOpen={isModalOpen} onClose={cancelHandle} lazy>
+              {modalContent}
+            </Drawer>
+          </MobileView>
+        </Card>
+      )}
+      off={(
+        <CardDeprecated
+          data-testid="RatingCard"
+          isOffset
+          className={classNames('', {}, [className])}
+        >
+          <VStack gap="16" align="center">
+            <Text size="l">
+              {starsCount ? t('Thanks for your rating') : title}
+            </Text>
+            <StarRating
+              selectStars={starsCount}
+              size={40}
+              onSelect={onSelectStars}
+            />
+          </VStack>
+          <BrowserView>
+            <Modal isOpen={isModalOpen} lazy>
+              {modalContent}
+            </Modal>
+          </BrowserView>
+          <MobileView>
+            <Drawer isOpen={isModalOpen} onClose={cancelHandle} lazy>
+              {modalContent}
+            </Drawer>
+          </MobileView>
+        </CardDeprecated>
+      )}
+    />
   );
 };
