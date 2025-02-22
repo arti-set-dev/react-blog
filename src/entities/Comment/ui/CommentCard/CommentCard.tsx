@@ -21,6 +21,7 @@ import cl from './CommentCard.module.scss';
 import { getUserAuthData } from '@/entities/User';
 import { Button } from '@/shared/ui/redesigned/Button';
 import { Input } from '@/shared/ui/redesigned/Input';
+import { getCommentValidateErrors } from '../../model/selectors/getCommentValidateErrors';
 
 interface CommentCardProps {
   className?: string;
@@ -39,9 +40,18 @@ export const CommentCard = memo((props: CommentCardProps) => {
   const canEdit = authData?.id === comment?.user?.id;
   const [isEditing, setIsEditing] = useState(false);
   const [editedText, setEditedText] = useState<string>(comment?.text || '');
+  const validateErrors = useSelector(getCommentValidateErrors);
 
-  const onEditHandler = () => {
+  const onDisabledHandler = () => {
+    if (editedText === '') {
+      return true;
+    }
+    return false;
+  };
+
+  const onSaveHandler = () => {
     onEditComment?.(comment.id, editedText);
+
     setIsEditing(false);
   };
 
@@ -52,7 +62,7 @@ export const CommentCard = memo((props: CommentCardProps) => {
   const editControls = (
     isEditing ? (
       <HStack gap="8">
-        <Button variant="outline" onClick={onEditHandler}>{t('Save')}</Button>
+        <Button variant="outline" onClick={onSaveHandler} disabled={onDisabledHandler()}>{t('Save')}</Button>
         <Button variant="outline" onClick={() => setIsEditing(false)}>{t('Cancel')}</Button>
       </HStack>
     ) : (

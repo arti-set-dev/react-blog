@@ -8,6 +8,7 @@ import { StateSchema } from '@/app/providers/StoreProvider';
 import { Comment } from '@/entities/Comment';
 import { fetchCommentsByArticleId } from '../services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import { ArticleDetailsCommentsSchema } from '../types/ArticleDetailsCommentsSchema';
+import { updateCommentForArticle } from '../services/updateCommentForArticle/updateCommentForArticle';
 
 const commentsAdapter = createEntityAdapter<Comment>({
   selectId: (comment) => comment.id,
@@ -47,6 +48,18 @@ const articleDetailsCommentsSlice = createSlice({
         commentsAdapter.setAll(state, action.payload);
       },
     );
+    // update comment
+    builder.addCase(updateCommentForArticle.pending, (state, action) => {
+      state.isLoading = true;
+    });
+    builder.addCase(updateCommentForArticle.rejected, (state, action) => {
+      state.isLoading = false;
+    });
+    builder.addCase(updateCommentForArticle.fulfilled, (state, action) => {
+      state.isLoading = false;
+      state.validateErrors = undefined;
+      commentsAdapter.upsertOne(state, action.payload);
+    });
   },
 });
 

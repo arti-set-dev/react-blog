@@ -40,6 +40,7 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
   const error = useSelector(getProfileError);
   const readonly = useSelector(getProfileReadonly);
   const validateErrors = useSelector(getProfileValidateErrors);
+
   const validateErrorTranslates = {
     [ValidateProfileError.NO_DATA_USER_FIRSTNAME]: t(
       'The firstname field is required',

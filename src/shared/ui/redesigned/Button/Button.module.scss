@@ -90,6 +90,16 @@
   line-height: 100%;
   color: var(--text-primary-color);
 
+  &[disabled] {
+    @media (any-hover: hover) {
+      &:hover {
+        color: inherit;
+        background-color: inherit;
+        cursor: default;
+      }
+    }
+  }
+
   @media (any-hover: hover) {
     &:hover {
       color: var(--text-inverted-color);

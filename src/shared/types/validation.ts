@@ -7,4 +7,5 @@ export interface ValidateFields {
   city?: string;
   username?: string;
   avatar?: string;
+  empty?: string;
 }
