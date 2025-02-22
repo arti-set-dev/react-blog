@@ -15,7 +15,7 @@
     display: none;
   }
 
-  &.inverted {
+  &.lined {
     border-bottom: 1px solid var(--text-primary-color);
     color: var(--text-primary-color);
     transition: border var(--ui-transition) ease, opacity var(--ui-transition) ease;

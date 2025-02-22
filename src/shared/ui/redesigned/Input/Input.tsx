@@ -3,7 +3,8 @@ import React, {
   memo,
   useEffect,
   useRef,
-  useState, ReactNode,
+  useState,
+  ReactNode,
 } from 'react';
 import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 import { Text } from '../Text/Text';
@@ -15,8 +16,7 @@ type HTMLInputProps = Omit<
 >;
 
 export type InputType = 'text' | 'password' | 'number';
-
-export type InputVariant = 'inverted' | 'outlined';
+export type InputVariant = 'lined' | 'outlined';
 export type InputBackground = 'transparent' | 'light';
 
 interface InputProps extends HTMLInputProps {
@@ -41,10 +41,9 @@ export const Input = memo((props: InputProps) => {
     onChange,
     placeholder,
     type = 'text',
-    variant = 'inverted',
+    variant = 'lined',
     autofocus,
     readonly,
-    isNumeric,
     error,
     addon,
     background = 'transparent',
@@ -57,14 +56,11 @@ export const Input = memo((props: InputProps) => {
     if (inputRef?.current?.value !== '') {
       setIsFocus(true);
     }
-  }, [inputRef?.current?.value]);
+  }, [value]);
 
-  const onFoucus = () => {
-    setIsFocus(true);
-  };
-
+  const onFocus = () => setIsFocus(true);
   const onBlur = () => {
-    if (inputRef?.current?.value === '') {
+    if (!value) {
       setIsFocus(false);
     }
   };
@@ -79,70 +75,32 @@ export const Input = memo((props: InputProps) => {
     [cl.error]: !!error,
   };
 
-  const addonContent = (
-    <div className={cl.Addon}>
-      {addon}
-    </div>
-  );
+  const addonContent = addon && <div className={cl.Addon}>{addon}</div>;
 
   return (
-    // eslint-disable-next-line react/jsx-no-useless-fragment
-    <>
-      {placeholder ? (
-        <div className={cl.InputWrapper}>
-          {addon && addonContent}
-          <span
-            className={classNames(cl.InputPlaceholder, mods, [
-              className,
-              cl[variant],
-              cl[background],
-            ])}
-          >
-            {placeholder}
-          </span>
-          <input
-            ref={inputRef}
-            type={type}
-            value={value}
-            onChange={onChangeHandler}
-            onFocus={onFoucus}
-            onBlur={onBlur}
-            className={classNames(cl.Input, mods, [className, cl[variant]])}
-            readOnly={readonly}
-            {...otherProps}
-          />
-          {error && (
-            <Text
-              data-testid="Input.Error"
-              size="s"
-              className={cl.ErrorMessage}
-              variant="error"
-            >
-              {error}
-            </Text>
-          )}
-        </div>
-      ) : (
-        <div className={cl.InputWrapper}>
-          {addon && addonContent}
-          <input
-            type={type}
-            value={value}
-            onChange={() => onChange?.(value)}
-            className={classNames(cl.Input, {}, [className])}
-            {...otherProps}
-          />
-          {error && (
-            <Text
-              size="s"
-              className={cl.ErrorMessage}
-              variant="error"
-            >
-              {error}
-            </Text>
-          )}
-        </div>
+    <div className={cl.InputWrapper}>
+      {addonContent}
+      {placeholder && (
+        <span className={classNames(cl.InputPlaceholder, mods, [className, cl[variant], cl[background]])}>
+          {placeholder}
+        </span>
       )}
-    </>
+      <input
+        ref={inputRef}
+        type={type}
+        value={value}
+        onChange={onChangeHandler}
+        onFocus={onFocus}
+        onBlur={onBlur}
+        className={classNames(cl.Input, mods, [className, cl[variant]])}
+        readOnly={readonly}
+        {...otherProps}
+      />
+      {error && (
+        <Text data-testid="Input.Error" size="s" className={cl.ErrorMessage} variant="error">
+          {error}
+        </Text>
+      )}
+    </div>
   );
 });

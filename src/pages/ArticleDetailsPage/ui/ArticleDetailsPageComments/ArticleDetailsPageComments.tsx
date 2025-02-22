@@ -16,8 +16,10 @@ import {
   getArticleCommentsError,
   getArticleCommentsIsloading,
 } from '../../model/selectors/comments';
-import { getArticleComments } from '../../model/slices/ArticleDetailsCommentsSlice';
+import { articleDetailsCommentsActions, getArticleComments } from '../../model/slices/ArticleDetailsCommentsSlice';
 import cl from './ArticleDetailsPageComments.module.scss';
+import { deleteCommentForArticle } from '../../model/services/deleteCommentForArticle/deleteCommentForArticle';
+import { updateCommentForArticle } from '../../model/services/updateCommentForArticle/updateCommentForArticle';
 
 interface ArticleDetailsPageCommentsProps {
   className?: string;
@@ -33,6 +35,10 @@ export const ArticleDetailsPageComments = memo(
     const commentsError = useSelector(getArticleCommentsError);
     const dispatch = useAppDispatch();
 
+    useInitialEffect(() => {
+      dispatch(fetchCommentsByArticleId(id));
+    });
+
     const onSendComment = useCallback(
       (text: string) => {
         dispatch(addCommentForArticle(text));
@@ -40,9 +46,22 @@ export const ArticleDetailsPageComments = memo(
       [dispatch],
     );
 
-    useInitialEffect(() => {
-      dispatch(fetchCommentsByArticleId(id));
-    });
+    const onDeleteComment = useCallback(
+      (commentId: string) => {
+        dispatch(deleteCommentForArticle(commentId));
+        dispatch(fetchCommentsByArticleId(id));
+      },
+      [dispatch, id],
+    );
+
+    const onEditComment = useCallback(
+      (commentId: string, text: string) => {
+        dispatch(articleDetailsCommentsActions.updateComment({ id: commentId, text }));
+        dispatch(updateCommentForArticle({ commentId, text }));
+        dispatch(fetchCommentsByArticleId(id));
+      },
+      [dispatch, id],
+    );
 
     return (
       <VStack gap="16" max className={classNames('', {}, [className])}>
@@ -59,6 +78,8 @@ export const ArticleDetailsPageComments = memo(
           error={commentsError}
           isLoading={commentsIsloading}
           comments={comments}
+          onDeleteComment={onDeleteComment}
+          onEditComment={onEditComment}
         />
       </VStack>
     );

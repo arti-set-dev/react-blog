@@ -1895,42 +1895,6 @@
       "id": "AEM4Dvc"
     },
     {
-      "articleId": "1",
-      "userId": "2",
-      "text": "123asfasf",
-      "id": "IFEOWl0"
-    },
-    {
-      "articleId": "1",
-      "userId": "2",
-      "text": "привет мир",
-      "id": "dBacYRZ"
-    },
-    {
-      "articleId": "1",
-      "userId": "2",
-      "text": "хехехехе",
-      "id": "rBX_C-e"
-    },
-    {
-      "articleId": "1",
-      "userId": "2",
-      "text": "фыафыа",
-      "id": "5k0ApX-"
-    },
-    {
-      "articleId": "1",
-      "userId": "2",
-      "text": "sdfsdfsd",
-      "id": "w-HDIRq"
-    },
-    {
-      "articleId": "1",
-      "userId": "2",
-      "text": "asdasdasd",
-      "id": "MVvGQoZ"
-    },
-    {
       "articleId": "3",
       "userId": "1",
       "text": "comment 1",
@@ -2025,6 +1989,12 @@
       "userId": "1",
       "text": "wdwd",
       "id": "joHhVl4"
+    },
+    {
+      "articleId": "1",
+      "userId": "2",
+      "text": "swswsws",
+      "id": "iuCdvOs"
     }
   ],
   "users": [
@@ -2105,7 +2075,7 @@
     },
     {
       "id": "2",
-      "firstname": "user 23",
+      "firstname": "user 23ss",
       "lastname": "dwdwd",
       "age": 24,
       "currency": "KZT",

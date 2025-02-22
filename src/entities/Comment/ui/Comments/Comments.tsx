@@ -16,11 +16,13 @@ interface CommentsProps {
   comments?: Comment[];
   isLoading?: boolean;
   error?: string;
+  onDeleteComment?: (commentId: string) => void;
+  onEditComment?: (commentId: string, text: string) => void;
 }
 
 export const Comments = memo((props: CommentsProps) => {
   const {
-    className, comments, isLoading, error,
+    className, comments, isLoading, error, onDeleteComment, onEditComment,
   } = props;
   const { t } = useTranslation('article-details');
 
@@ -34,6 +36,8 @@ export const Comments = memo((props: CommentsProps) => {
             key={comment.id}
             comment={comment}
             isLoading={isLoading}
+            onDeleteComment={onDeleteComment}
+            onEditComment={onEditComment}
           />
         ))}
       </VStack>
