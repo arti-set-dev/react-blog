@@ -2,6 +2,7 @@
   border: none;
   padding: 0;
   background-color: transparent;
+  transition: background-color var(--ui-transition) ease, color var(--ui-transition) ease;
   cursor: pointer;
 }
 
@@ -88,7 +89,6 @@
   font-size: var(--font-size-m);
   line-height: 100%;
   color: var(--text-primary-color);
-  transition: background-color var(--ui-transition) ease, color var(--ui-transition) ease;
 
   @media (any-hover: hover) {
     &:hover {
@@ -106,6 +106,13 @@
   font-size: var(--font-size-m);
   line-height: 100%;
   color: var(--error-color);
+
+  @media (any-hover: hover) {
+    &:hover {
+      color: var(--text-inverted-color);
+      background-color: var(--error-color);
+    }
+  }
 }
 
 .text-inverted {
