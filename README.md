@@ -181,9 +181,27 @@ of: a function that will work out after turning off the feature
 To automatically delete features, use the Remove-feature.ts script,
 which accepts 2 arguments
 1. The name of the removed feature
-2. Condition (on \ OFF)
+2. Condition (on \ Off)
 
 ----
+### getHstack / Vstack
+
+The main goal of these functions is to set standardized styles with a pre-prepared set of margins and CSS properties within the design system, minimizing the need for custom CSS.
+
+To define the styles themselves, the functions [getHstack](./src/shared/lib/stack/getHstack/getHstack.ts) and [getVstack](./src/shared/lib/stack/getVstack/getVstack.ts) are used.
+
+Basic example:
+
+```typescript jsx
+getVstack({ gap: 16, justify: 'center' })
+```
+
+These functions provide the primary arrangement of blocks within the parent component.
+
+There are only two functions:
+
+- **getVstack** - vertical positioning
+- **getHstack** - horizontal positioning
 
 
 ## Entities
