@@ -1997,12 +1997,6 @@
     {
       "articleId": "1",
       "userId": "2",
-      "text": "нп уауа",
-      "id": "tEGf9Zu"
-    },
-    {
-      "articleId": "1",
-      "userId": "2",
       "text": "ыйыйы",
       "id": "DCESBie"
     },
@@ -2041,7 +2035,7 @@
       "features": {
         "isArticleRatingEnabled": false,
         "isCounterEnabled": true,
-        "isAppRedesigned": true
+        "isAppRedesigned": false
       },
       "jsonSettings": {
         "isArticlePageWasOpened": true,

@@ -124,7 +124,7 @@ export const Input = memo((props: InputProps) => {
           <input
             type={type}
             value={value}
-            onChange={() => onChange?.(value)}
+            onChange={onChangeHandler}
             className={classNames(cl.Input, {}, [className])}
             {...otherProps}
           />

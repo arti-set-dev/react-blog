@@ -22,6 +22,7 @@ import { getUserAuthData } from '@/entities/User';
 import { Button } from '@/shared/ui/redesigned/Button';
 import { Input } from '@/shared/ui/redesigned/Input';
 import { getCommentValidateErrors } from '../../model/selectors/getCommentValidateErrors';
+import { Input as InputDeprecated, InputTheme } from '@/shared/ui/deprecated/Input';
 
 interface CommentCardProps {
   className?: string;
@@ -153,19 +154,33 @@ export const CommentCard = memo((props: CommentCardProps) => {
           data-testid="CommentCard.Content"
           className={classNames(cl.CommentCard, {}, [className])}
         >
-          <AppLinkDeprecated to={getRouteProfile(comment?.user?.id ?? '')} className={cl.Header}>
-            {comment?.user?.avatar && (
-              <AvatarDeprecated
-                alt={comment?.user?.username}
-                size={30}
-                src={comment?.user?.avatar}
-              />
-            )}
-            <TextDeprecated size={TextSize.M} weight={TextWeight.BOLD}>
-              {comment?.user?.username}
-            </TextDeprecated>
-          </AppLinkDeprecated>
-          <TextDeprecated>{comment.text}</TextDeprecated>
+          <HStack gap="8" align="center" className={cl.Header}>
+            <AppLinkDeprecated
+              to={getRouteProfile(comment?.user?.id ?? '')}
+              className={getHstack({ gap: 8, align: 'center' })}
+            >
+              {comment?.user?.avatar && (
+                <AvatarDeprecated
+                  alt={comment?.user?.username}
+                  size={30}
+                  src={comment?.user?.avatar}
+                />
+              )}
+              <TextDeprecated size={TextSize.M} weight={TextWeight.BOLD}>
+                {comment?.user?.username}
+              </TextDeprecated>
+            </AppLinkDeprecated>
+            {canEdit && editControls}
+          </HStack>
+          {isEditing ? (
+            <InputDeprecated
+              value={editedText}
+              onChange={onChangeHandler}
+              theme={InputTheme.INVERTED}
+            />
+          ) : (
+            <TextDeprecated>{comment.text}</TextDeprecated>
+          )}
         </li>
       )}
     />
