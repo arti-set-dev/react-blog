@@ -1,4 +1,4 @@
-import { memo, useCallback } from 'react';
+import { memo, useCallback, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { VStack } from '@/shared/ui/redesigned/Stack';
@@ -9,7 +9,6 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import { AddCommentForm } from '@/features/addNewComment';
 import { Comments } from '@/entities/Comment';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle';
 import {
@@ -20,11 +19,14 @@ import { articleDetailsCommentsActions, getArticleComments } from '../../model/s
 import cl from './ArticleDetailsPageComments.module.scss';
 import { deleteCommentForArticle } from '../../model/services/deleteCommentForArticle/deleteCommentForArticle';
 import { updateCommentForArticle } from '../../model/services/updateCommentForArticle/updateCommentForArticle';
+import { StateSchema } from '@/app/providers/StoreProvider';
 
 interface ArticleDetailsPageCommentsProps {
   className?: string;
   id?: string;
 }
+
+const isReducerMounted = (state: StateSchema) => Boolean(state.articleDetailsPage);
 
 export const ArticleDetailsPageComments = memo(
   (props: ArticleDetailsPageCommentsProps) => {
@@ -34,10 +36,13 @@ export const ArticleDetailsPageComments = memo(
     const commentsIsloading = useSelector(getArticleCommentsIsloading);
     const commentsError = useSelector(getArticleCommentsError);
     const dispatch = useAppDispatch();
+    const isMounted = useSelector(isReducerMounted);
 
-    useInitialEffect(() => {
-      dispatch(fetchCommentsByArticleId(id));
-    });
+    useEffect(() => {
+      if (id && isMounted) {
+        dispatch(fetchCommentsByArticleId(id));
+      }
+    }, [dispatch, id, isMounted]);
 
     const onSendComment = useCallback(
       (text: string) => {
