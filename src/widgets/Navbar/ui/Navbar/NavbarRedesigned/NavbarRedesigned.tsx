@@ -13,6 +13,7 @@ import { NotificationButton } from '@/features/notificationButton';
 import { UiDesignSwitcher } from '@/features/uiDesignSwitcher';
 import { getHstack } from '@/shared/lib/stack/getHstack/getHstack';
 import { LoginModal } from '@/features/AuthByUsername';
+
 import { Button } from '@/shared/ui/redesigned/Button';
 
 interface NavbarRedesignedProps {
@@ -39,7 +40,9 @@ export const NavbarAuthDataRedesigned = () => {
             {t('Create new post')}
           </AppLink>
           <UiDesignSwitcher />
-          <NotificationButton />
+          <NotificationButton
+            uiSwitcher={<UiDesignSwitcher variant="button" />}
+          />
           <AvatarDropdown />
         </HStack>
       </Container>

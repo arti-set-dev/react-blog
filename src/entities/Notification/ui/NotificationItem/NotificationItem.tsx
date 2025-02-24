@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next';
+import { ReactElement } from 'react';
 import { VStack } from '@/shared/ui/redesigned/Stack';
 import { AppLink as AppLinkDeprecated } from '@/shared/ui/deprecated/AppLink';
 import { Text as TextDeprecated, TextSize } from '@/shared/ui/deprecated/Text';
@@ -14,10 +15,11 @@ import { AppLink } from '@/shared/ui/redesigned/AppLink';
 interface NotificationItemProps {
   className?: string;
   notification: Notification;
+  uiSwitcher?: ReactElement;
 }
 
 export const NotificationItem = (props: NotificationItemProps) => {
-  const { className, notification } = props;
+  const { className, notification, uiSwitcher } = props;
   const { t } = useTranslation();
 
   return (
@@ -35,6 +37,9 @@ export const NotificationItem = (props: NotificationItemProps) => {
           {notification.href && (
             <AppLink to={notification.href}>{t('Go to link')}</AppLink>
           )}
+          {notification.isUiSwitch && (
+            uiSwitcher
+          )}
         </Card>
       )}
       off={(
@@ -47,6 +52,9 @@ export const NotificationItem = (props: NotificationItemProps) => {
           <TextDeprecated>{notification.description}</TextDeprecated>
           {notification.href && (
             <AppLinkDeprecated to={notification.href}>{t('Go to link')}</AppLinkDeprecated>
+          )}
+          {notification.isUiSwitch && (
+            uiSwitcher
           )}
         </VStack>
       )}

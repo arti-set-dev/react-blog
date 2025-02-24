@@ -1,27 +1,30 @@
 import { useTranslation } from 'react-i18next';
+import { FetchBaseQueryError } from '@reduxjs/toolkit/query';
+import { SerializedError } from '@reduxjs/toolkit';
+import { ReactElement } from 'react';
 import { VStack } from '@/shared/ui/redesigned/Stack';
 import { Skeleton as SkeletonDeprecated } from '@/shared/ui/deprecated/Skeleton';
 import { Text as TextDeprecated, TextTheme } from '@/shared/ui/deprecated/Text';
 import { Text } from '@/shared/ui/redesigned/Text';
-import { useNotificationList } from '../../api/notificationApi';
 import { NotificationItem } from '../../ui/NotificationItem/NotificationItem';
 import { ToggleFeatures } from '@/shared/lib/features';
 import { Skeleton } from '@/shared/ui/redesigned/Skeleton/Skeleton';
+import { Notification } from '../../model/types/notification';
 
 interface NotificationListProps {
   className?: string;
+  id?: string;
+  notifications?: Notification[];
+  isLoading?: boolean;
+  error?: FetchBaseQueryError | string | SerializedError | undefined;
+  uiSwitcher?: ReactElement;
 }
 
 export const NotificationList = (props: NotificationListProps) => {
-  const { className } = props;
-  const { t } = useTranslation();
   const {
-    data: notifications,
-    error,
-    isLoading,
-  } = useNotificationList(null, {
-    pollingInterval: 5000,
-  });
+    className, id, notifications, isLoading, error, uiSwitcher,
+  } = props;
+  const { t } = useTranslation();
 
   if (isLoading) {
     return (
@@ -85,7 +88,7 @@ export const NotificationList = (props: NotificationListProps) => {
       gap="16"
     >
       {notifications?.map((notification) => (
-        <NotificationItem notification={notification} key={notification.id} />
+        <NotificationItem uiSwitcher={uiSwitcher} notification={notification} key={notification.id} />
       ))}
     </VStack>
   );

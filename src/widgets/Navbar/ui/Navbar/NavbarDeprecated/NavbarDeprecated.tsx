@@ -36,7 +36,9 @@ export const NavbarAuthDataDeprecated = () => {
         </AppLink>
         <HStack gap="16">
           <UiDesignSwitcher />
-          <NotificationButton />
+          <NotificationButton
+            uiSwitcher={<UiDesignSwitcher variant="button" />}
+          />
           <AvatarDropdown />
         </HStack>
       </Container>

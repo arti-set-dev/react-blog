@@ -3,31 +3,38 @@
     {
       "id": "1",
       "title": "Notification 1",
+      "description": "A new topic is available to you",
+      "userId": "1",
+      "isUiSwitch": true
+    },
+    {
+      "id": "2",
+      "title": "Notification 1",
       "description": "Some event occurred",
       "userId": "1"
     },
     {
-      "id": "2",
+      "id": "3",
       "title": "Notification 2",
       "description": "Some event occurred",
       "userId": "1",
       "href": "http://localhost:3000/admin"
     },
     {
-      "id": "3",
+      "id": "4",
       "title": "Notification 3",
       "description": "Some event occurred",
       "userId": "1",
       "href": "http://localhost:3000/admin"
     },
     {
-      "id": "4",
+      "id": "5",
       "title": "Notification 4",
       "description": "Some event occurred",
       "userId": "1"
     },
     {
-      "id": "5",
+      "id": "6",
       "title": "Notification 1",
       "description": "Some event occurred",
       "userId": "2"
@@ -2016,8 +2023,6 @@
         "ADMIN"
       ],
       "features": {
-        "isArticleRatingEnabled": true,
-        "isCounterEnabled": true,
         "isAppRedesigned": true
       },
       "jsonSettings": {

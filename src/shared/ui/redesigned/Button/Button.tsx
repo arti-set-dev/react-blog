@@ -25,6 +25,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   isHovered?: boolean;
   isActive?: boolean;
   Svg?: React.VFC<React.SVGProps<SVGSVGElement>>;
+  notification?: number;
 }
 
 export const Button = forwardRef((props: ButtonProps, ref: ForwardedRef<HTMLButtonElement>) => {
@@ -40,6 +41,7 @@ export const Button = forwardRef((props: ButtonProps, ref: ForwardedRef<HTMLButt
     isHovered = false,
     isActive = false,
     Svg,
+    notification,
     ...otherProps
   } = props;
 
@@ -51,16 +53,38 @@ export const Button = forwardRef((props: ButtonProps, ref: ForwardedRef<HTMLButt
     [cl.isActive]: isActive,
   };
 
+  const notificationButton = (
+    <div className={cl.notificationWrapper}>
+      <div className={cl.notification}>
+        {notification}
+      </div>
+      <button
+        disabled={disabled}
+        type={type}
+        className={classNames(cl.Button, mods, [className, cl[variant], cl[size], cl[position]])}
+        ref={ref}
+        {...otherProps}
+      >
+        {Svg && <Icon width="100%" height="100%" Svg={Svg} />}
+        {children}
+      </button>
+    </div>
+  );
+
   return (
-    <button
-      disabled={disabled}
-      type={type}
-      className={classNames(cl.Button, mods, [className, cl[variant], cl[size], cl[position]])}
-      ref={ref}
-      {...otherProps}
-    >
-      {Svg && <Icon width="100%" height="100%" Svg={Svg} />}
-      {children}
-    </button>
+    notification
+      ? notificationButton
+      : (
+        <button
+          disabled={disabled}
+          type={type}
+          className={classNames(cl.Button, mods, [className, cl[variant], cl[size], cl[position]])}
+          ref={ref}
+          {...otherProps}
+        >
+          {Svg && <Icon width="100%" height="100%" Svg={Svg} />}
+          {children}
+        </button>
+      )
   );
 });

@@ -1,6 +1,5 @@
 import { Story } from '@storybook/react';
-import { getAllFeatureFlags } from '@/shared/lib/features/lib/setGetFeatures';
-import { setFeatureFlags } from '@/shared/lib/features/serGetFeatures';
+import { getAllFeatureFlags, setFeatureFlags } from '@/shared/lib/features/lib/setGetFeatures';
 
 export const NewDesignDecorator = (StoryComponent: Story) => {
   setFeatureFlags({ ...getAllFeatureFlags(), isAppRedesigned: true });
