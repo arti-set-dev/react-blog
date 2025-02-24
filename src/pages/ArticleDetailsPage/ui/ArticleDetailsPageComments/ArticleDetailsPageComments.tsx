@@ -3,9 +3,9 @@ import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { VStack } from '@/shared/ui/redesigned/Stack';
 import {
-  TextSize, TextTheme, TextWeight, Text,
+  TextSize, TextTheme, TextWeight, Text as TextDeprecated,
 } from '@/shared/ui/deprecated/Text';
-import { classNames } from '@/shared/lib/classNames/classNames';
+import { Text } from '@/shared/ui/redesigned/Text';
 import { AddCommentForm } from '@/features/addNewComment';
 import { Comments } from '@/entities/Comment';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
@@ -20,6 +20,7 @@ import cl from './ArticleDetailsPageComments.module.scss';
 import { deleteCommentForArticle } from '../../model/services/deleteCommentForArticle/deleteCommentForArticle';
 import { updateCommentForArticle } from '../../model/services/updateCommentForArticle/updateCommentForArticle';
 import { StateSchema } from '@/app/providers/StoreProvider';
+import { ToggleFeatures } from '@/shared/lib/features';
 
 interface ArticleDetailsPageCommentsProps {
   className?: string;
@@ -69,15 +70,29 @@ export const ArticleDetailsPageComments = memo(
     );
 
     return (
-      <VStack gap="16" max className={classNames('', {}, [className])}>
-        <Text
-          className={cl.Title}
-          theme={TextTheme.PRIMARY}
-          weight={TextWeight.BOLD}
-          size={TextSize.XL}
-        >
-          {t('Comments')}
-        </Text>
+      <VStack gap="16" fullWidth>
+        <ToggleFeatures
+          feature="isAppRedesigned"
+          on={(
+            <Text
+              variant="primary"
+              weight="bold"
+              size="xl"
+            >
+              {t('Comments')}
+            </Text>
+          )}
+          off={(
+            <TextDeprecated
+              className={cl.Title}
+              theme={TextTheme.PRIMARY}
+              weight={TextWeight.BOLD}
+              size={TextSize.XL}
+            >
+              {t('Comments')}
+            </TextDeprecated>
+          )}
+        />
         <AddCommentForm onSendComment={onSendComment} />
         <Comments
           error={commentsError}

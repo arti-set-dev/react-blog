@@ -30,7 +30,7 @@ export const FooterDeprecated = memo((props: FooterDeprecatedProps) => {
         justify: 'between',
       })])}
     >
-      <HStack align="start" justify="between" gap="32" max width={400}>
+      <HStack align="start" justify="between" gap="32" fullWidth width={400}>
         <VStack gap="16">
           <AppLink to={getRouteMain()}>
             <Icon color="primary" width={200} height={40} Svg={LogoIcon} />

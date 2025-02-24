@@ -22,7 +22,7 @@ export const ArticleTextBlockComponent = memo(
       <ToggleFeatures
         feature="isAppRedesigned"
         on={(
-          <VStack gap="24" max>
+          <VStack gap="24" fullWidth>
             {block.title && (
               <Text
                 tag="h2"

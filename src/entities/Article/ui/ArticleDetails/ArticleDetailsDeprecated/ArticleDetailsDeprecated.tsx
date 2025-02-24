@@ -66,7 +66,7 @@ export const ArticleDetailsDeprecated = memo((props: ArticleDetailsDeprecatedPro
 
   if (isLoading) {
     content = (
-      <VStack gap="16" max>
+      <VStack gap="16" fullWidth>
         <Skeleton height={180} width={180} border="50%" />
         <Skeleton align={SkeletonAlign.LEFT} height={20} width="400px" />
         <Skeleton align={SkeletonAlign.LEFT} height={20} width="300px" />
@@ -87,7 +87,7 @@ export const ArticleDetailsDeprecated = memo((props: ArticleDetailsDeprecatedPro
   } else {
     content = (
       <>
-        <HStack justify="center" max>
+        <HStack justify="center" fullWidth>
           <Avatar
             className={cl.Avatar}
             size={180}
@@ -95,7 +95,7 @@ export const ArticleDetailsDeprecated = memo((props: ArticleDetailsDeprecatedPro
             alt={t('Article Details Page')}
           />
         </HStack>
-        <VStack data-testid="ArticleDetails.Info" max gap="16">
+        <VStack data-testid="ArticleDetails.Info" fullWidth gap="16">
           <Text
             tag="h1"
             theme={TextTheme.PRIMARY}

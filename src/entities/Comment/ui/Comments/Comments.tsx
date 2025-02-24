@@ -28,7 +28,7 @@ export const Comments = memo((props: CommentsProps) => {
 
   if (comments?.length) {
     content = (
-      <VStack tag="ul" max className={cl.List}>
+      <VStack tag="ul" fullWidth className={cl.List}>
         {comments.map((comment) => (
           <CommentCard
             key={comment.id}
@@ -50,7 +50,7 @@ export const Comments = memo((props: CommentsProps) => {
           <CommentsSkeleton />
         )}
         off={(
-          <VStack gap="16" max>
+          <VStack gap="16" fullWidth>
             <SkeletonDeprecated width="100%" height={40} />
             <SkeletonDeprecated width="100%" height={40} />
             <SkeletonDeprecated width="100%" height={40} />

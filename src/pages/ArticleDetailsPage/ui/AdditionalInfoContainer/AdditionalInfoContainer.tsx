@@ -29,8 +29,8 @@ export const AdditionalInfoContainer = memo((props: AdditionalInfoContainerProps
   if (!article) {
     return (
       <Card offset="16">
-        <VStack gap="32" max>
-          <HStack gap="8" max>
+        <VStack gap="32" fullWidth>
+          <HStack gap="8" fullWidth>
             <Skeleton width={32} height={32} border="circle" />
             <Skeleton width={200} height={16} border="20" />
             <Skeleton width={200} height={16} border="20" />

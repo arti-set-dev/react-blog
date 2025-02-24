@@ -14,7 +14,7 @@ import cl from './ProfileCardRedesigned.module.scss';
 import { ProfileCardProps } from '../ProfileCard/ProfileCard';
 
 export const ProfileCardLoaderRedesigned = () => (
-  <VStack align="center" justify="center" max>
+  <VStack align="center" justify="center" fullWidth>
     <Loader />
   </VStack>
 );

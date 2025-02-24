@@ -24,7 +24,7 @@ export const ArticleImageBlockComponent = memo(
       <ToggleFeatures
         feature="isAppRedesigned"
         on={(
-          <VStack tag="figure" gap="16" align="center" max>
+          <VStack tag="figure" gap="16" align="center" fullWidth>
             <LazyImage src={block.src} alt={block.title} height={height} width="100%" />
             {block.title && (
               <Text align="center" size="xs">

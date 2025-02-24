@@ -12,7 +12,7 @@ export const ScrollToolbar = memo((props: ScrollToolbarProps) => {
   const { t } = useTranslation();
 
   return (
-    <VStack max align="center" justify="center">
+    <VStack fullHeight align="center" justify="center">
       <ScrollToTop />
     </VStack>
   );

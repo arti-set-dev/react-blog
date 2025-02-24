@@ -64,7 +64,7 @@ export const ArticleDetailsRedesigned = memo((props: ArticleDetailsRedesignedPro
 
   if (isLoading) {
     content = (
-      <VStack gap="16" max>
+      <VStack gap="16" fullWidth>
         <Skeleton height={300} width="180%" border="20" />
         <Skeleton height={20} width="400px" border="20" />
         <Skeleton height={20} width="300px" border="20" />
@@ -94,7 +94,7 @@ export const ArticleDetailsRedesigned = memo((props: ArticleDetailsRedesignedPro
             alt={t('Article Details Page')}
           />
         </HStack>
-        <VStack data-testid="ArticleDetails.Info" max gap="16">
+        <VStack data-testid="ArticleDetails.Info" fullWidth gap="16">
           <Text
             tag="h1"
             variant="primary"

@@ -83,7 +83,8 @@ export interface FlexProps extends Omit<ElementType<FlexTagType>, 'ref'> {
   align?: FlexAlign;
   direction?: FlexDirection;
   gap?: FlexGap;
-  max?: boolean;
+  fullWidth?: boolean;
+  fullHeight?: boolean;
   tag?: FlexTagType;
   role?: string;
   overflow?: OverflowType;
@@ -98,7 +99,8 @@ export const Flex = (props: FlexProps) => {
     align = 'center',
     direction = 'row',
     gap,
-    max,
+    fullWidth,
+    fullHeight,
     tag = 'div',
     role,
     overflow = 'initial',
@@ -117,7 +119,8 @@ export const Flex = (props: FlexProps) => {
   ];
 
   const mods: Mods = {
-    [cls.max]: max,
+    [cls.fullWidth]: fullWidth,
+    [cls.fullHeight]: fullHeight,
   };
 
   const Tag = tag;

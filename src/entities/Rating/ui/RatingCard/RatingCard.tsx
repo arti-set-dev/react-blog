@@ -67,7 +67,7 @@ export const RatingCard = (props: RatingCardProps) => {
     <ToggleFeatures
       feature="isAppRedesigned"
       on={(
-        <VStack max gap="32">
+        <VStack fullWidth gap="32">
           <Text size="l">{feedbackTitle}</Text>
           <Input
             data-testid="RatingCard.Input"
@@ -75,7 +75,7 @@ export const RatingCard = (props: RatingCardProps) => {
             onChange={setFeedback}
             placeholder={t('Your rating')}
           />
-          <HStack gap="16" max justify="end">
+          <HStack gap="16" fullWidth justify="end">
             <Button
               data-testid="RatingCard.Cancel"
               onClick={cancelHandle}
@@ -94,7 +94,7 @@ export const RatingCard = (props: RatingCardProps) => {
         </VStack>
       )}
       off={(
-        <VStack max gap="32">
+        <VStack fullWidth gap="32">
           <TextDeprecated size={TextSize.L}>{feedbackTitle}</TextDeprecated>
           <InputDeprecated
             data-testid="RatingCard.Input"
@@ -102,7 +102,7 @@ export const RatingCard = (props: RatingCardProps) => {
             onChange={setFeedback}
             placeholder={t('Your rating')}
           />
-          <HStack gap="16" max justify="end">
+          <HStack gap="16" fullWidth justify="end">
             <ButtonDeprecated
               data-testid="RatingCard.Cancel"
               onClick={cancelHandle}

@@ -1,4 +1,4 @@
-import { memo, useCallback } from 'react';
+import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import {
@@ -14,7 +14,6 @@ import {
   ReducerList,
 } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import {
-  addNewCommentActions,
   addNewCommentReducer,
 } from '../../model/slices/addNewCommentSlice';
 import {
@@ -37,18 +36,6 @@ export const AddCommentForm = memo((props: AddCommentFormProps) => {
   const reducers: ReducerList = {
     addNewComment: addNewCommentReducer,
   };
-
-  const onCommentTextChange = useCallback(
-    (value: string) => {
-      dispatch(addNewCommentActions.setText(value));
-    },
-    [dispatch],
-  );
-
-  const onSendHandler = useCallback(() => {
-    onSendComment(text || '');
-    onCommentTextChange('');
-  }, [onCommentTextChange, onSendComment, text]);
 
   return (
     <DynamicModuleLoader reducers={reducers}>
