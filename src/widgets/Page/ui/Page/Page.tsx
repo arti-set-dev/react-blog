@@ -10,11 +10,10 @@ import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch
 import { useInfiniteScroll } from '@/shared/lib/hooks/useInfiniteScroll/useInfiniteScroll';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { useThrottle } from '@/shared/lib/hooks/useThrottle/useThrottle';
-import { getScrollByPath } from '../../model/selectors/scrollSaveSelectors';
-import { ScrollSaveActions } from '../../model/slices/ScrollSaveSlice';
 import cl from './Page.module.scss';
 import { toggleFeatures } from '@/shared/lib/features';
 import { Footer } from '../../../Footer';
+import { getScrollByPath, ScrollSaveActions } from '@/features/scrollSave';
 
 interface PageProps extends TestsProps {
   className?: string;

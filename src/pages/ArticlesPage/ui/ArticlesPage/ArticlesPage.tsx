@@ -2,7 +2,6 @@
 import { useTranslation } from 'react-i18next';
 import { memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
-import { useSearchParams } from 'react-router-dom';
 import { FiltersContainer } from '../FiltersContainer/FiltersContainer';
 import { ViewSwitcherContainer } from '../ViewSwitherContainer/ViewSwitcherContainer';
 import { StickyContentLayout } from '@/shared/layouts/SticlyContentLayout';
@@ -21,7 +20,7 @@ import { articlesPageReducer } from '../../model/slices/articlesPageSlice';
 import cl from './ArticlesPage.module.scss';
 import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlePage/fetchNextArticlePage';
 import { ArticlesPageFilters } from '../ArticlesPageFilters/ArticlesPageFilters';
-import { ArticleInfiniteList } from '../ArticleInfiniteList/ArticleInfiniteList';
+import { ArticleListContainer } from '../ArticleListContainer/ArticleListContainer';
 
 interface ArticlesPageProps {
   className?: string;
@@ -36,7 +35,6 @@ const ArticlesPage = (props: ArticlesPageProps) => {
   const { t } = useTranslation();
   const dispatch = useAppDispatch();
   const error = useSelector(getArticlesPageIsError);
-  const [searchParams] = useSearchParams();
 
   const onLoadNextPart = useCallback(() => {
     dispatch(fetchNextArticlesPage());
@@ -54,7 +52,7 @@ const ArticlesPage = (props: ArticlesPageProps) => {
               data-testid="ArticlesPage"
               onScrollEnd={onLoadNextPart}
             >
-              <ArticleInfiniteList />
+              <ArticleListContainer />
               {error && <Text>{t('Data boot error')}</Text>}
               <ArticlePageGreeting />
             </Page>
@@ -68,7 +66,7 @@ const ArticlesPage = (props: ArticlesPageProps) => {
           className={classNames(cl.ArticlesPage, {}, [className])}
         >
           <ArticlesPageFilters />
-          <ArticleInfiniteList />
+          <ArticleListContainer />
           {error && <Text>{t('Data boot error')}</Text>}
         </Page>
       )}

@@ -14,8 +14,8 @@ import { UserSchema } from '@/entities/User';
 import { LoginSchema } from '@/features/AuthByUsername';
 import { ArticleDetailsPageSchema } from '@/pages/ArticleDetailsPage';
 import { ArticlesPageSchema } from '@/pages/ArticlesPage';
-import { ScrollSaveSchema } from '@/widgets/Page';
 import { rtkApi } from '@/shared/api/rtkApi';
+import { ScrollSaveSchema } from '@/features/scrollSave';
 
 export interface StateSchema {
   counter: CounterSchema;
