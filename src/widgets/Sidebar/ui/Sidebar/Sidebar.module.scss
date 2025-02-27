@@ -4,8 +4,8 @@
   flex-direction: column;
   overflow: hidden;
   padding: var(--inner-offset);
+  padding-top: 100px;
   width: 100%;
-  height: calc(100svh - var(--navbar-height));
   max-width: var(--sidebar-width);
   background-color: var(--bg-light-color);
   transition: max-width var(--ui-transition) ease;

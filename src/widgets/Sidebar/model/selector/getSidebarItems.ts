@@ -40,6 +40,16 @@ export const getNavigationItems = createSelector(getUserAuthData, (userData) => 
       text: 'About',
       authOnly: false,
     },
+    {
+      path: getRouteArticles(),
+      Icon: toggleFeatures({
+        name: 'isAppRedesigned',
+        off: () => ArticleIconDeprecated,
+        on: () => ArticleIcon,
+      }),
+      text: 'Articles',
+      authOnly: false,
+    },
   ];
 
   if (userData) {
@@ -53,16 +63,6 @@ export const getNavigationItems = createSelector(getUserAuthData, (userData) => 
           on: () => ProfileIcon,
         }),
         text: 'Profile',
-        authOnly: true,
-      },
-      {
-        path: getRouteArticles(),
-        Icon: toggleFeatures({
-          name: 'isAppRedesigned',
-          off: () => ArticleIconDeprecated,
-          on: () => ArticleIcon,
-        }),
-        text: 'Articles',
         authOnly: true,
       },
     );

@@ -37,3 +37,15 @@ reviews:
             type: approve
             time: '2024-12-11T13:51:07.523Z'
             resolved: true
+  main.Posts of the week:
+    locales:
+      ru:
+        comments:
+          - user:
+              name: roman
+              email: website.development593@gmail.com
+            id: PfTjRfRPRPBwzMXepVEqU
+            comment: ''
+            suggestion: Посты недели
+            type: request_change
+            time: '2025-02-26T11:45:35.320Z'

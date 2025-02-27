@@ -10,9 +10,12 @@
 }
 
 .PageRedesigned {
+  display: flex;
+  flex-direction: column;
   padding: var(--inner-offset) var(--container-offset);
   width: 100%;
   max-width: var(--container-width);
+  gap: var(--gap);
 }
 
 .TriggerElem {

@@ -1,6 +1,5 @@
 import { memo, Suspense, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-
 import { useSelector } from 'react-redux';
 import { useAppToolbar } from './lib/useAppToolbar';
 import { Loader } from '@/shared/ui/deprecated/Loader';
@@ -54,10 +53,12 @@ const App = memo(() => {
       off={(
         <div id="app" className={classNames('app', {}, [theme])}>
           <Suspense fallback={<Loader />}>
-            <Navbar />
             <main className="main">
               <Sidebar />
-              {inited && <AppRouter />}
+              <div className="page-wrapper">
+                <Navbar />
+                {inited && <AppRouter />}
+              </div>
             </main>
           </Suspense>
         </div>

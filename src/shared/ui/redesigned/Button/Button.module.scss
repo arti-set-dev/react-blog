@@ -102,8 +102,9 @@
 
   @media (any-hover: hover) {
     &:hover {
+      border-color: var(--bg-primary-color);
       color: var(--text-inverted-color);
-      background-color: var(--text-primary-color);
+      background-color: var(--bg-primary-color);
     }
   }
 }
@@ -134,6 +135,13 @@
   padding: var(--button-offset);
   color: var(--primary-inverted-color);
   background-color: var(--bg-color);
+
+  @media (any-hover: hover) {
+    &:hover {
+      color: var(--text-inverted-color);
+      background-color: var(--bg-primary-color);
+    }
+  }
 }
 
 .clear {

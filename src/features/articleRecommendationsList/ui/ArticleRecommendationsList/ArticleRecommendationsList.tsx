@@ -13,17 +13,19 @@ import cl from './ArticleRecommendationsList.module.scss';
 
 interface ArticleRecommendationsListProps {
   className?: string;
+  display?: ArticleListDisplay;
+  totalPosts?: number;
 }
 
 export const ArticleRecommendationsList = memo(
   (props: ArticleRecommendationsListProps) => {
-    const { className } = props;
+    const { className, display = ArticleListDisplay.FLEX, totalPosts = 7 } = props;
     const { t } = useTranslation();
     const {
       isLoading,
       data: articles,
       error,
-    } = useArticleRecommendationsList(7);
+    } = useArticleRecommendationsList(totalPosts);
 
     if (isLoading || error || !articles) {
       return null;
@@ -54,7 +56,7 @@ export const ArticleRecommendationsList = memo(
         </Text>
         <ArticleList
           className={cl.List}
-          display={ArticleListDisplay.FLEX}
+          display={display}
           articles={articles}
           blank
         />

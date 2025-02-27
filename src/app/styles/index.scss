@@ -61,6 +61,10 @@ figure {
   }
 }
 
+.page-wrapper {
+  width: 100%;
+}
+
 .app_redesigned {
   overflow: auto;
   height: 100vh;
@@ -86,6 +90,7 @@ figure {
 
 .main {
   display: flex;
+  height: 100vh;
 }
 
 *::-webkit-scrollbar {

@@ -4,7 +4,7 @@ import cl from './Card.module.scss';
 
 export type CardVariant = 'primary' | 'outline' | 'outline-inverted' | 'inverted' | 'active';
 export type CardOffset = '0' | '4' | '8' | '16' | '24';
-type TagType = 'article' | 'aside' | 'h3' | 'main' | 'div' | 'form' | 'li' | 'pre' | 'header' | 'footer';
+type TagType = 'article' | 'aside' | 'h3' | 'main' | 'div' | 'form' | 'li' | 'pre' | 'header' | 'footer' | 'section';
 export type BorderRadius = '0' | '4' | '8' | '10' | '12' | '20';
 
 interface CardProps {
