@@ -12,7 +12,7 @@
 .PageRedesigned {
   display: flex;
   flex-direction: column;
-  padding: var(--inner-offset) var(--container-offset);
+  padding: var(--inner-offset);
   width: 100%;
   max-width: var(--container-width);
   gap: var(--gap);
