@@ -49,7 +49,7 @@ export const MainHeroDeprecated = memo((props: MainHeroDeprecatedProps) => {
           </HStack>
         </VStack>
         <VStack flexBasis="50%">
-          <LazyImage width="500" height="500" alt="" aria-hidden src="/hero-bg.svg" />
+          <LazyImage width="500" height="500" alt="" aria-hidden src="/images/hero-bg.svg" />
         </VStack>
         <LoginModal
           authId={userId}
