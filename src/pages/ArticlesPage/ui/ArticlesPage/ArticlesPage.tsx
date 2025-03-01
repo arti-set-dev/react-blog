@@ -20,6 +20,7 @@ import { ArticlesPageFilters } from '../ArticlesPageFilters/ArticlesPageFilters'
 import { ArticleListContainer } from '../ArticleListContainer/ArticleListContainer';
 import { articleListReducer, getArticlesListError } from '@/entities/Article';
 import { fetchNextArticlesPage } from '@/features/fetchNextArticlePage';
+import { Container } from '@/shared/ui/redesigned/Container';
 
 interface ArticlesPageProps {
   className?: string;
@@ -64,9 +65,11 @@ const ArticlesPage = (props: ArticlesPageProps) => {
           onScrollEnd={onLoadNextPart}
           className={classNames(cl.ArticlesPage, {}, [className])}
         >
-          <ArticlesPageFilters />
-          <ArticleListContainer />
-          {error && <Text>{t('Data boot error')}</Text>}
+          <Container max>
+            <ArticlesPageFilters />
+            <ArticleListContainer />
+            {error && <Text>{t('Data boot error')}</Text>}
+          </Container>
         </Page>
       )}
     />

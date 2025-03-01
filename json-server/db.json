@@ -2023,7 +2023,7 @@
         "ADMIN"
       ],
       "features": {
-        "isAppRedesigned": true
+        "isAppRedesigned": false
       },
       "jsonSettings": {
         "isArticlePageWasOpened": true

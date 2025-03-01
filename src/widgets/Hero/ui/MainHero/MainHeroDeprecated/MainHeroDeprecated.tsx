@@ -41,7 +41,7 @@ export const MainHeroDeprecated = memo((props: MainHeroDeprecatedProps) => {
           </VStack>
           <HStack gap="16">
             {userId ? (
-              <Button variant="primary" onClick={onOpenCreateNewArticle}>{t('Create an article')}</Button>
+              <Button variant="outline" onClick={onOpenCreateNewArticle}>{t('Create an article')}</Button>
             ) : (
               <Button variant="primary" onClick={() => setIsAuthModal(true)}>{t('Create an article')}</Button>
             )}

@@ -12,6 +12,8 @@ import { CurrencySelect } from '@/entities/Currency';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cl from './ProfileCardRedesigned.module.scss';
 import { ProfileCardProps } from '../ProfileCard/ProfileCard';
+import { getVstack } from '@/shared/lib/stack/getVstack/getVstack';
+import { Card } from '@/shared/ui/redesigned/Card';
 
 export const ProfileCardLoaderRedesigned = () => (
   <VStack align="center" justify="center" fullWidth>
@@ -62,11 +64,11 @@ export const ProfileCardRedesigned = memo((props: ProfileCardProps) => {
   const { canEdit } = useProfile();
 
   return (
-    <VStack gap="32" align="center" className={classNames('', {}, [className])}>
+    <Card offset="24" className={classNames('', {}, [className, getVstack({ gap: 24, align: 'center' })])}>
       {data?.avatar && (
         <Avatar size={100} src={data.avatar} alt={t('Profile avatar')} />
       )}
-      <HStack>
+      <HStack gap="16">
         {canEdit && (
           // eslint-disable-next-line react/jsx-no-useless-fragment
           <>
@@ -101,6 +103,7 @@ export const ProfileCardRedesigned = memo((props: ProfileCardProps) => {
       </HStack>
       <div className={cl.data}>
         <Input
+          background="light"
           variant="outlined"
           onChange={onChangeFirstname}
           readonly={readonly}
@@ -110,6 +113,7 @@ export const ProfileCardRedesigned = memo((props: ProfileCardProps) => {
           data-testid="ProfileCard.firstname"
         />
         <Input
+          background="light"
           variant="outlined"
           onChange={onChangeLastname}
           readonly={readonly}
@@ -119,6 +123,7 @@ export const ProfileCardRedesigned = memo((props: ProfileCardProps) => {
           data-testid="ProfileCard.lastname"
         />
         <Input
+          background="light"
           variant="outlined"
           onChange={onChangeAge}
           readonly={readonly}
@@ -126,6 +131,7 @@ export const ProfileCardRedesigned = memo((props: ProfileCardProps) => {
           value={data?.age?.toString()}
         />
         <Input
+          background="light"
           variant="outlined"
           onChange={onChangeCity}
           readonly={readonly}
@@ -144,6 +150,7 @@ export const ProfileCardRedesigned = memo((props: ProfileCardProps) => {
           currValue={data?.country}
         />
         <Input
+          background="light"
           variant="outlined"
           onChange={onChangeUsername}
           readonly={readonly}
@@ -152,6 +159,7 @@ export const ProfileCardRedesigned = memo((props: ProfileCardProps) => {
           error={fieldErrors?.username}
         />
         <Input
+          background="light"
           variant="outlined"
           onChange={onChangeAvatar}
           readonly={readonly}
@@ -159,6 +167,6 @@ export const ProfileCardRedesigned = memo((props: ProfileCardProps) => {
           value={data?.avatar}
         />
       </div>
-    </VStack>
+    </Card>
   );
 });
