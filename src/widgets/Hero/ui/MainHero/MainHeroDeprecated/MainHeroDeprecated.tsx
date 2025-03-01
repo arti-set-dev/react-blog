@@ -1,4 +1,4 @@
-import { memo, useState } from 'react';
+import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Card } from '@/shared/ui/redesigned/Card';
 import { getHstack } from '@/shared/lib/stack/getHstack/getHstack';
@@ -7,8 +7,8 @@ import { Text } from '@/shared/ui/redesigned/Text';
 import { Button } from '@/shared/ui/redesigned/Button';
 import { LazyImage } from '@/shared/ui/redesigned/LazyImage';
 import { LoginModal } from '@/features/AuthByUsername';
-import { getRouteArticleCreate } from '@/shared/const/router';
 import { Container } from '@/shared/ui/redesigned/Container';
+import { getRouteArticleCreate } from '@/shared/const/router';
 
 interface MainHeroDeprecatedProps {
     className?: string;
@@ -16,13 +16,14 @@ interface MainHeroDeprecatedProps {
     onOpenCreateNewArticle?: () => void;
     onOpenArticles?: () => void;
     onCloseModal: () => void;
+    isAuthModal?: boolean;
+    setIsAuthModal?: (value: boolean) => void;
 }
 
 export const MainHeroDeprecated = memo((props: MainHeroDeprecatedProps) => {
   const {
-    className, userId, onOpenCreateNewArticle, onOpenArticles, onCloseModal,
+    className, userId, onOpenCreateNewArticle, onOpenArticles, onCloseModal, isAuthModal, setIsAuthModal,
   } = props;
-  const [isAuthModal, setIsAuthModal] = useState(false);
   const { t } = useTranslation('main');
 
   return (
@@ -43,7 +44,7 @@ export const MainHeroDeprecated = memo((props: MainHeroDeprecatedProps) => {
             {userId ? (
               <Button variant="outline" onClick={onOpenCreateNewArticle}>{t('Create an article')}</Button>
             ) : (
-              <Button variant="primary" onClick={() => setIsAuthModal(true)}>{t('Create an article')}</Button>
+              <Button variant="primary" onClick={() => setIsAuthModal?.(true)}>{t('Create an article')}</Button>
             )}
             <Button variant="outline" onClick={onOpenArticles}>{t('See the latest publications')}</Button>
           </HStack>
@@ -52,7 +53,6 @@ export const MainHeroDeprecated = memo((props: MainHeroDeprecatedProps) => {
           <LazyImage width="500" height="500" alt="" aria-hidden src="/images/hero-bg.svg" />
         </VStack>
         <LoginModal
-          authId={userId}
           redirectPath={getRouteArticleCreate()}
           isOpen={isAuthModal}
           onClose={onCloseModal}

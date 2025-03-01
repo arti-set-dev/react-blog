@@ -41,6 +41,20 @@
     }
   }
 
+  &.light {
+    background-color: var(--bg-light-color);
+
+    .Label {
+      background-color: var(--bg-light-color);
+    }
+  }
+
+  &.dark {
+    .Label {
+      background-color: var(--bg-color);
+    }
+  }
+
   &.outline + .Options {
     border: 1px solid var(--text-primary-color);
     border-top: none;

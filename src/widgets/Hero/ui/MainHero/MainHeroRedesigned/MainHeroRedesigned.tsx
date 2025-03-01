@@ -1,4 +1,4 @@
-import { memo, useState } from 'react';
+import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Card } from '@/shared/ui/redesigned/Card';
@@ -16,13 +16,14 @@ interface MainHeroRedesignedProps {
     onOpenCreateNewArticle?: () => void;
     onOpenArticles?: () => void;
     onCloseModal: () => void;
+    isAuthModal?: boolean;
+    setIsAuthModal?: (value: boolean) => void;
 }
 
 export const MainHeroRedesigned = memo((props: MainHeroRedesignedProps) => {
   const {
-    className, userId, onOpenCreateNewArticle, onOpenArticles, onCloseModal,
+    className, userId, onOpenCreateNewArticle, onOpenArticles, onCloseModal, isAuthModal, setIsAuthModal,
   } = props;
-  const [isAuthModal, setIsAuthModal] = useState(false);
   const { t } = useTranslation('main');
 
   return (
@@ -40,7 +41,7 @@ export const MainHeroRedesigned = memo((props: MainHeroRedesignedProps) => {
           {userId ? (
             <Button variant="primary" onClick={onOpenCreateNewArticle}>{t('Create an article')}</Button>
           ) : (
-            <Button variant="primary" onClick={() => setIsAuthModal(true)}>{t('Create an article')}</Button>
+            <Button variant="primary" onClick={() => setIsAuthModal?.(true)}>{t('Create an article')}</Button>
           )}
           <Button variant="outline" onClick={onOpenArticles}>{t('See the latest publications')}</Button>
         </HStack>
@@ -49,7 +50,6 @@ export const MainHeroRedesigned = memo((props: MainHeroRedesignedProps) => {
         <LazyImage width="500" height="500" alt="" aria-hidden src="/images/hero-bg.svg" />
       </VStack>
       <LoginModal
-        authId={userId}
         redirectPath={getRouteArticleCreate()}
         isOpen={isAuthModal}
         onClose={onCloseModal}

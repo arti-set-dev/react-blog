@@ -140,11 +140,13 @@ export const ProfileCardRedesigned = memo((props: ProfileCardProps) => {
           error={fieldErrors?.city}
         />
         <CurrencySelect
+          background="light"
           readonly={readonly}
           onChange={onChangeCurrency}
           currValue={data?.currency}
         />
         <CountrySelect
+          background="light"
           readonly={readonly}
           onChange={onChangeCountry}
           currValue={data?.country}

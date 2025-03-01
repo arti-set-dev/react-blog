@@ -4,12 +4,14 @@ import { ToggleFeatures } from '@/shared/lib/features';
 import { Listbox } from '@/shared/ui/redesigned/Popups';
 import { Listbox as ListboxDeprecated } from '@/shared/ui/deprecated/Popups';
 import { Currency } from '../../model/types/currency';
+import { ListBoxBackground } from '@/shared/ui/redesigned/Popups/ui/ListBox/ListBox';
 
 interface CurrencySelectProps {
   className?: string;
   currValue?: Currency;
   onChange?: (value: Currency) => void;
   readonly?: boolean;
+  background?: ListBoxBackground;
 }
 
 const options = [
@@ -20,7 +22,7 @@ const options = [
 
 export const CurrencySelect = memo((props: CurrencySelectProps) => {
   const {
-    className, currValue, onChange, readonly,
+    className, currValue, onChange, readonly, background = 'light',
   } = props;
   const { t } = useTranslation();
 
@@ -36,6 +38,7 @@ export const CurrencySelect = memo((props: CurrencySelectProps) => {
       feature="isAppRedesigned"
       on={(
         <Listbox
+          background={background}
           variant="outline"
           className={className}
           value={currValue}

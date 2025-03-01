@@ -36,6 +36,8 @@ export const MainHero = memo((props: MainHeroProps) => {
       feature="isAppRedesigned"
       on={(
         <MainHeroRedesigned
+          isAuthModal={isAuthModal}
+          setIsAuthModal={setIsAuthModal}
           onCloseModal={onCloseModal}
           onOpenArticles={onOpenArticles}
           onOpenCreateNewArticle={onOpenCreateNewArticle}
@@ -44,6 +46,8 @@ export const MainHero = memo((props: MainHeroProps) => {
       )}
       off={(
         <MainHeroDeprecated
+          isAuthModal={isAuthModal}
+          setIsAuthModal={setIsAuthModal}
           onCloseModal={onCloseModal}
           onOpenArticles={onOpenArticles}
           onOpenCreateNewArticle={onOpenCreateNewArticle}

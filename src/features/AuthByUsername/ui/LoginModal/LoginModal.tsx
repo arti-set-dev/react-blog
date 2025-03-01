@@ -9,23 +9,25 @@ interface LoginModalProps {
   isOpen?: boolean;
   onClose: () => void;
   redirectPath?: string;
-  authId?: string;
 }
 
 export const LoginModal = memo((props: LoginModalProps) => {
   const {
-    className, isOpen, onClose, redirectPath, authId,
+    className, isOpen, onClose, redirectPath,
   } = props;
   const navigate = useNavigate();
 
-  if (redirectPath && authId) {
-    navigate(redirectPath);
-  }
+  const handleSuccess = () => {
+    onClose();
+    if (redirectPath) {
+      navigate(redirectPath);
+    }
+  };
 
   return (
     <Modal lazy isOpen={isOpen} onClose={onClose}>
       <Suspense fallback={<Loader offset={LoaderOffset.L} />}>
-        <LoginFormAsync onSucces={onClose} />
+        <LoginFormAsync onSucces={handleSuccess} />
       </Suspense>
     </Modal>
   );

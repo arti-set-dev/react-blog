@@ -8,6 +8,7 @@ import cl from './ListBox.module.scss';
 import popupCl from '../../styles/Popups.module.scss';
 
 export type ListBoxVariant = 'primary' | 'outline';
+export type ListBoxBackground = 'light' | 'dark';
 
 export interface ListBoxItem<T extends string> {
   value: string;
@@ -23,12 +24,13 @@ interface ListBoxProps<T extends string> {
   onChange: (value: T) => void;
   readonly?: boolean;
   label?: string;
+  background?: ListBoxBackground;
   variant?: ListBoxVariant;
 }
 
 export const Listbox = <T extends string>(props: ListBoxProps<T>) => {
   const {
-    className, items, value, defaultValue, onChange, readonly, label, variant = 'primary',
+    className, items, value, defaultValue, onChange, readonly, label, variant = 'primary', background = '',
   } = props;
 
   return (
@@ -40,7 +42,10 @@ export const Listbox = <T extends string>(props: ListBoxProps<T>) => {
       onChange={onChange}
     >
       <HListBox.Button
-        className={classNames(cl.Trigger, {}, [className, getHstack({ gap: 4, align: 'center' }), cl[variant]])}
+        className={classNames(cl.Trigger, {}, [
+          className,
+          getHstack({ gap: 4, align: 'center' }),
+          cl[variant], cl[background]])}
       >
         {label && <span className={cl.Label}>{label}</span>}
         {value ?? defaultValue}

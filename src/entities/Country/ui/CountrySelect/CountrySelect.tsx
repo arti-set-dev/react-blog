@@ -4,12 +4,14 @@ import { ToggleFeatures } from '@/shared/lib/features';
 import { Listbox } from '@/shared/ui/redesigned/Popups';
 import { Listbox as ListboxDeprecated } from '@/shared/ui/deprecated/Popups';
 import { Country } from '../../model/types/country';
+import { ListBoxBackground } from '@/shared/ui/redesigned/Popups/ui/ListBox/ListBox';
 
 interface CountrySelectProps {
   className?: string;
   currValue?: Country;
   onChange?: (value: Country) => void;
   readonly?: boolean;
+  background?: ListBoxBackground;
 }
 
 const options = [
@@ -20,7 +22,7 @@ const options = [
 
 export const CountrySelect = memo((props: CountrySelectProps) => {
   const {
-    className, currValue, onChange, readonly,
+    className, currValue, onChange, readonly, background = 'light',
   } = props;
   const { t } = useTranslation();
 
@@ -36,6 +38,7 @@ export const CountrySelect = memo((props: CountrySelectProps) => {
       feature="isAppRedesigned"
       on={(
         <Listbox
+          background={background}
           variant="outline"
           readonly={readonly}
           value={currValue}
