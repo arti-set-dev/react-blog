@@ -2,7 +2,7 @@ import { memo, ReactNode } from 'react';
 import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 import cl from './Card.module.scss';
 
-export type CardVariant = 'primary' | 'outline' | 'outline-inverted' | 'inverted' | 'active';
+export type CardVariant = 'primary' | 'outline' | 'outline-inverted' | 'inverted' | 'active' | 'transparent';
 export type CardOffset = '0' | '4' | '8' | '16' | '24';
 type TagType = 'article' | 'aside' | 'h3' | 'main' | 'div' | 'form' | 'li' | 'pre' | 'header' | 'footer' | 'section';
 export type BorderRadius = '0' | '4' | '8' | '10' | '12' | '20';
@@ -12,6 +12,7 @@ interface CardProps {
   children: ReactNode;
   isHovered?: boolean;
   isOffset?: boolean;
+  flexBasis?: string;
   offset?: CardOffset;
   variant?: CardVariant;
   tag?: TagType;
@@ -46,6 +47,7 @@ export const Card = memo((props: CardProps) => {
     children,
     isHovered,
     isOffset,
+    flexBasis,
     border = '20',
     variant = 'primary',
     offset = '8',
@@ -71,7 +73,7 @@ export const Card = memo((props: CardProps) => {
     <Tag
       {...otherProps}
       className={classNames(cl.Card, mods, [className, cl[variant], cl[offsetClass], cl[borderClass]])}
-      style={{ height, width }}
+      style={{ height, width, flexBasis }}
     >
       {children}
     </Tag>

@@ -30,6 +30,10 @@
     color: var(--text-primary-color);
   }
 
+  &.primary-light {
+    color: var(--bg-primary-color);
+  }
+
   &.inverted {
     color: var(--text-inverted-color);
   }

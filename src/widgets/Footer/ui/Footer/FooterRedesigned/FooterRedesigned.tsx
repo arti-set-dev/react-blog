@@ -35,7 +35,9 @@ export const FooterRedesigned = memo((props: FooterRedesignedProps) => {
           <AppLink to={getRouteMain()}>
             <Icon color="primary" width={200} height={40} Svg={LogoIcon} />
           </AppLink>
-          <Text>{t('Copyright')}</Text>
+          <VStack width="140px">
+            <Text>{t('Copyright')}</Text>
+          </VStack>
         </VStack>
         <VStack tag="ul" gap="16">
           {itemsList}

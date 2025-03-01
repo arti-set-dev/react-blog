@@ -8,7 +8,7 @@ import { ToggleFeatures } from '@/shared/lib/features';
 import {
   ArticleDetailsDeprecated,
 } from './ArticleDetailsDeprecated/ArticleDetailsDeprecated';
-import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice';
+import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice/articleDetailsSlice';
 import {
   DynamicModuleLoader,
   ReducerList,
@@ -19,7 +19,7 @@ import {
   getArticleDetailsError,
   getArticleDetailsData,
   getArticleDetailsIsLoading,
-} from '../../model/selectors/articleDetails';
+} from '../../model/selectors/articleDetails/articleDetails';
 
 export interface ArticleDetailsProps {
   className?: string;

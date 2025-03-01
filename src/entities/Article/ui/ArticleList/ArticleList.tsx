@@ -14,14 +14,15 @@ import { ArticleItem } from '../ArticleItem/ArticleItem';
 import { ArticleItemSkeleton } from '../ArticleItem/ArticleItemSkeleton';
 
 export enum ArticleListDisplay {
-  FLEX = 'display-flex',
   GRID = 'display-grid',
+  FLEX = 'display-flex',
 }
 
 interface ArticleListProps {
   className?: string;
-  articles: Article[];
+  articles?: Article[];
   isLoading?: boolean;
+  error?: boolean;
   view?: ArticleView;
   display?: ArticleListDisplay;
   blank?: boolean;
@@ -31,6 +32,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
   const {
     className,
     articles,
+    error,
     view = ArticleView.GRID,
     isLoading,
     display = ArticleListDisplay.GRID,
@@ -48,8 +50,12 @@ export const ArticleList = memo((props: ArticleListProps) => {
     />
   );
 
-  if (!isLoading && !articles.length) {
+  if (!isLoading && !articles?.length) {
     return <Text size={TextSize.L}>{t('No articles were found')}</Text>;
+  }
+
+  if (error) {
+    <Text size={TextSize.L}>{t('When loading articles, an error occurred')}</Text>;
   }
 
   return (
@@ -61,7 +67,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
         cl[display],
       ])}
     >
-      {articles.length ? articles.map(renderArticle) : null}
+      {articles?.length ? articles.map(renderArticle) : null}
       {isLoading && (
         <ToggleFeatures
           feature="isAppRedesigned"

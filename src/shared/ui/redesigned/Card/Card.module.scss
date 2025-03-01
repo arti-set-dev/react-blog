@@ -30,6 +30,10 @@
     background-color: var(--bg-inverted-color);
   }
 
+  &.transparent {
+    background-color: transparent;
+  }
+
   &.overflow {
     overflow: hidden;
   }

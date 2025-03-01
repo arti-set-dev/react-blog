@@ -39,9 +39,19 @@
   "Here you can view posts on various topics": "Here you can view posts on various topics",
   "{{count}} views": "{{count}} views",
   "Option interface": "Option interface",
-  "Copyright": "© 2025 All rights reserved",
+  "Copyright": "© 2025 Netowork All rights reserved",
   "Service rules": "Service rules",
   "Privacy Policy": "Privacy Policy",
   "The field cannot be empty": "The field cannot be empty",
-  "main.Become an author": "Become an author"
+  "main.Become an author": "Become an author",
+  "When loading articles, an error occurred": "When loading articles, an error occurred",
+  "Publication rules": "How does the service work?",
+  "Rule 1": "Register in the service",
+  "Rule 2": "Go to the page of the creation of a new articles",
+  "Rule 3": "Start sharing thoughts with the whole worldworld",
+  "Rule desc 1": "Articles more willingly read with a well completed profileile",
+  "Rule desc 2": "Notice to specify categories that are to bear your articles",
+  "Rule desc 3": "Write posts on any topic when you please",
+  "About desc 1": " - provide a space where creators can share their ideas, insights, and expertise with the world. Our platform is built for those who seek meaningful discussions and want to inspire others with their content.",
+  "About desc 2": "Join our growing community of writers, thinkers, and innovators. Whether you want to explore new perspectives or contribute your own, you’ll find a place here."
 }

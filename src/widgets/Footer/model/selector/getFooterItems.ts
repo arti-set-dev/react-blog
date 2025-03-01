@@ -34,7 +34,7 @@ export const getFooterItems = createSelector(getUserAuthData, (userData) => {
       {
         path: getRouteArticles(),
         text: 'Articles',
-        authOnly: true,
+        authOnly: false,
       },
     );
   }

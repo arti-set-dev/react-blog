@@ -6,11 +6,11 @@ export type TextAlign = 'left' | 'center' | 'right';
 
 export type TextSize = 's' | 'xs' | 'm' | 'l' | 'xl' | 'xxl';
 
-export type TextVariant = 'error' | 'primary' | 'inverted';
+export type TextVariant = 'error' | 'primary' | 'inverted' | 'primary-light';
 
 export type TextWeight = 'normal' | 'bold';
 
-type TagType = 'h1' | 'h2' | 'h3' | 'p' | 'strong' | 'b' | 'div';
+type TagType = 'h1' | 'h2' | 'h3' | 'p' | 'strong' | 'b' | 'div' | 'span';
 
 interface TextProps {
   className?: string;

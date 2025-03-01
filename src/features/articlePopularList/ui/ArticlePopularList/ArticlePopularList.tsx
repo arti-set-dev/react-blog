@@ -1,10 +1,9 @@
 import { useTranslation } from 'react-i18next';
 import { memo } from 'react';
 import {
-  TextSize, TextTheme, TextWeight, Text,
-} from '@/shared/ui/deprecated/Text';
-import { Loader } from '@/shared/ui/deprecated/Loader';
-import { ArticleList, ArticleListDisplay } from '@/entities/Article';
+  Text,
+} from '@/shared/ui/redesigned/Text';
+import { ArticleList, ArticleListDisplay, ArticleSortField } from '@/entities/Article';
 // eslint-disable-next-line import/no-duplicates
 import cl from './ArticlePopularList.module.scss';
 import { useArticlePopularList } from '../../api/ArticlePopularApi';
@@ -23,14 +22,24 @@ export const ArticlePopularList = memo(
       isLoading,
       data: articles,
       error,
-    } = useArticlePopularList(totalPosts);
-
-    if (isLoading || error || !articles) {
-      return null;
-    }
+    } = useArticlePopularList({
+      sort: ArticleSortField.VIEWS,
+      limit: totalPosts,
+      order: 'desc',
+    });
 
     if (isLoading) {
-      return <Loader />;
+      return (
+        <ArticleList
+          isLoading={isLoading}
+          className={cl.List}
+          display={display}
+        />
+      );
+    }
+
+    if (!articles) {
+      return <Text>{t('Not artilces found')}</Text>;
     }
 
     if (error) {
@@ -38,22 +47,12 @@ export const ArticlePopularList = memo(
     }
 
     return (
-      <>
-        <Text
-          tag="h2"
-          theme={TextTheme.PRIMARY}
-          weight={TextWeight.BOLD}
-          size={TextSize.XL}
-        >
-          {t('Posts of the week')}
-        </Text>
-        <ArticleList
-          className={cl.List}
-          display={display}
-          articles={articles}
-          blank
-        />
-      </>
+      <ArticleList
+        isLoading={isLoading}
+        className={cl.List}
+        display={display}
+        articles={articles}
+      />
     );
   },
 );

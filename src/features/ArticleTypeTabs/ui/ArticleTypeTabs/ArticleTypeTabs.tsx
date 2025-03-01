@@ -4,15 +4,19 @@ import { ToggleFeatures } from '@/shared/lib/features';
 import { Tabs } from '@/shared/ui/redesigned/Tabs/Tabs';
 import { TabItem, Tabs as TabsDeprecated } from '@/shared/ui/deprecated/Tabs';
 import { ArticleType } from '@/entities/Article';
+import { FlexDirection } from '@/shared/ui/redesigned/Stack/Flex/Flex';
 
 interface ArticleTypeTabsProps {
   className?: string;
   value: ArticleType;
+  direction?: FlexDirection;
   onChangeType: (type: ArticleType) => void;
 }
 
 export const ArticleTypeTabs = memo((props: ArticleTypeTabsProps) => {
-  const { className, value, onChangeType } = props;
+  const {
+    className, value, direction = 'column', onChangeType,
+  } = props;
   const { t } = useTranslation('article');
 
   const typeTabs = useMemo<TabItem[]>(
@@ -52,7 +56,7 @@ export const ArticleTypeTabs = memo((props: ArticleTypeTabsProps) => {
     <ToggleFeatures
       feature="isAppRedesigned"
       on={(
-        <Tabs direction="column" tabs={typeTabs} value={value} onTabClick={onTabClick} />
+        <Tabs direction={direction} tabs={typeTabs} value={value} onTabClick={onTabClick} />
       )}
       off={(
         <TabsDeprecated tabs={typeTabs} value={value} onTabClick={onTabClick} />

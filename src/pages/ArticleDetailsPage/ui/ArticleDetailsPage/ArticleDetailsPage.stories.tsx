@@ -1,10 +1,10 @@
 /* eslint-disable max-len */
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { ArticleBlockType, Article, ArticleType } from '@/entities/Article';
 import { UserRole } from '@/entities/User';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 import ArticleDetailsPage from './ArticleDetailsPage';
+import { Article, ArticleType, ArticleBlockType } from '@/entities/Article';
 
 export default {
   title: 'pages/ArticleDetailsPage',

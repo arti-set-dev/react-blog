@@ -10,7 +10,7 @@ export default {
   },
 } as ComponentMeta<typeof ArticleCategory>;
 
-const Template: ComponentStory<typeof ArticleCategory> = (args) => <ArticleCategory {...args} />;
+const Template: ComponentStory<typeof ArticleCategory> = (args) => <ArticleCategory />;
 
 export const Default = Template.bind({});
 Default.args = {};

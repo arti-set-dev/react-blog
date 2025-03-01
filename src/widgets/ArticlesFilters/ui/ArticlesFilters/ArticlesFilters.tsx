@@ -2,7 +2,6 @@ import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Icon } from '@/shared/ui/redesigned/Icon/Icon';
 import { Input } from '@/shared/ui/redesigned/Input/Input';
-import { ArticleSortField, ArticleType } from '@/entities/Article';
 import { SortOrder } from '@/shared/types/SortOrder';
 import { getVstack } from '@/shared/lib/stack/getVstack/getVstack';
 import { ArticleSortSelector } from '@/features/ArticleSortSelector';
@@ -10,6 +9,7 @@ import { ArticleTypeTabs } from '@/features/ArticleTypeTabs';
 import SearchIcon from '@/shared/assets/icons/search-icon.svg';
 import { Card } from '@/shared/ui/redesigned/Card/Card';
 import { classNames } from '@/shared/lib/classNames/classNames';
+import { ArticleSortField, ArticleType } from '@/entities/Article';
 
 interface ArticlesFiltersProps {
   className?: string;

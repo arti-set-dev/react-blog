@@ -27,6 +27,7 @@ export const MainHeroDeprecated = memo((props: MainHeroDeprecatedProps) => {
 
   return (
     <Card
+      variant="transparent"
       offset="24"
       tag="section"
       border="0"

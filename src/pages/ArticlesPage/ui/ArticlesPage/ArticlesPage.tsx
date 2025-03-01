@@ -15,26 +15,25 @@ import {
 } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Page } from '@/widgets/Page';
-import { getArticlesPageIsError } from '../../model/selectors/articlesPageSelectors';
-import { articlesPageReducer } from '../../model/slices/articlesPageSlice';
 import cl from './ArticlesPage.module.scss';
-import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlePage/fetchNextArticlePage';
 import { ArticlesPageFilters } from '../ArticlesPageFilters/ArticlesPageFilters';
 import { ArticleListContainer } from '../ArticleListContainer/ArticleListContainer';
+import { articleListReducer, getArticlesListError } from '@/entities/Article';
+import { fetchNextArticlesPage } from '@/features/fetchNextArticlePage';
 
 interface ArticlesPageProps {
   className?: string;
 }
 
 const reducers: ReducerList = {
-  articlesPage: articlesPageReducer,
+  articlesList: articleListReducer,
 };
 
 const ArticlesPage = (props: ArticlesPageProps) => {
   const { className } = props;
   const { t } = useTranslation();
   const dispatch = useAppDispatch();
-  const error = useSelector(getArticlesPageIsError);
+  const error = useSelector(getArticlesListError);
 
   const onLoadNextPart = useCallback(() => {
     dispatch(fetchNextArticlesPage());
