@@ -13,13 +13,15 @@ import { Text } from '@/shared/ui/redesigned/Text';
 import { Card } from '@/shared/ui/redesigned/Card';
 import { VStack } from '@/shared/ui/redesigned/Stack';
 import SendIcon from '@/shared/assets/icons/send-icon.svg';
+import { getUserAuthData } from '@/entities/User';
 
 export const AddCommentFormRedesigned = memo((props: AddCommentFormProps) => {
   const { className, onSendComment } = props;
-  const { t } = useTranslation();
+  const { t } = useTranslation('article-details');
   const text = useSelector(getCommentFormText);
   const error = useSelector(getCommentFormError);
   const dispatch = useAppDispatch();
+  const authData = useSelector(getUserAuthData);
 
   const onCommentTextChange = useCallback(
     (value: string) => {
@@ -32,6 +34,20 @@ export const AddCommentFormRedesigned = memo((props: AddCommentFormProps) => {
     onSendComment(text || '');
     onCommentTextChange('');
   }, [onCommentTextChange, onSendComment, text]);
+
+  if (!authData) {
+    return (
+      <Card
+        tag="form"
+        offset="24"
+        data-testid="AddCommentForm"
+        max
+        className={getHstack({ gap: 24, align: 'center' })}
+      >
+        <Text size="l">{t('Login to our platform and join in the lively discussions')}</Text>
+      </Card>
+    );
+  }
 
   return (
     <Card

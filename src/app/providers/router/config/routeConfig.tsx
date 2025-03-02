@@ -36,7 +36,7 @@ export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
   [AppRoutes.PROFILE]: {
     path: getRouteProfile(':id'),
     element: <ProfilePage />,
-    authOnly: true,
+    authOnly: false,
   },
 
   [AppRoutes.ARTICLES]: {
@@ -48,7 +48,7 @@ export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
   [AppRoutes.ARTICLES_DETAILS]: {
     path: getRouteArticleDetails(':id'),
     element: <ArticleDetailsPage />,
-    authOnly: true,
+    authOnly: false,
   },
 
   [AppRoutes.ARTICLES_CREATE]: {

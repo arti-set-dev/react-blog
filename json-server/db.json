@@ -2124,67 +2124,24 @@
   ],
   "article-ratings": [
     {
-      "id": "2",
-      "rate": 4,
-      "feedback": "Good article",
-      "userId": "1",
-      "articleId": "2"
-    },
-    {
-      "userId": "1",
-      "articleId": "3",
-      "rate": 3,
-      "feedback": "",
-      "id": "I7ofk1u"
-    },
-    {
-      "userId": "1",
-      "articleId": "9",
-      "rate": 5,
-      "feedback": "asdasdasdasd",
-      "id": "Y7MhPzo"
-    },
-    {
-      "userId": "1",
-      "articleId": "10",
-      "rate": 1,
-      "feedback": "trash",
-      "id": "II0a75O"
-    },
-    {
-      "userId": "1",
-      "articleId": "7",
-      "rate": 3,
-      "feedback": "",
-      "id": "bcPnbbZ"
-    },
-    {
-      "userId": "1",
-      "articleId": "4",
-      "rate": 3,
-      "feedback": "Nice!",
-      "id": "rOygRc0"
-    },
-    {
-      "userId": "1",
-      "articleId": "5",
-      "rate": 2,
-      "feedback": "bad",
-      "id": "sB4_2if"
-    },
-    {
       "userId": "1",
       "articleId": "6",
-      "rate": 5,
-      "feedback": "Good!",
-      "id": "fMSRXkv"
+      "rate": 2,
+      "id": 1
     },
     {
       "userId": "1",
       "articleId": "1",
-      "rate": 4,
-      "feedback": "Nice!",
-      "id": "-Kvua4b"
+      "rate": 1,
+      "feedback": "qsqs",
+      "id": 2
+    },
+    {
+      "userId": "1",
+      "articleId": "4",
+      "rate": 2,
+      "feedback": "dwdwd",
+      "id": 3
     }
   ],
   "profile-ratings": [

@@ -10,6 +10,10 @@
   cursor: default;
 }
 
+.disabled {
+  pointer-events: none;
+}
+
 .hovered {
   fill: var(--text-primary-color);
   cursor: pointer;

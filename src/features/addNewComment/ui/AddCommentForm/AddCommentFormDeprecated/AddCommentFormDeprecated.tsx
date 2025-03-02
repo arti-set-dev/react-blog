@@ -7,17 +7,21 @@ import { addNewCommentActions } from '../../../model/slices/addNewCommentSlice';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button';
 import { Input } from '@/shared/ui/deprecated/Input';
-import { Text, TextTheme } from '@/shared/ui/deprecated/Text';
+import {
+  Text, TextSize, TextTheme,
+} from '@/shared/ui/deprecated/Text';
 import { VStack } from '@/shared/ui/redesigned/Stack';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cl from './AddCommentFormDeprecated.module.scss';
+import { getUserAuthData } from '@/entities/User';
 
 export const AddCommentFormDeprecated = memo((props: AddCommentFormProps) => {
   const { className, onSendComment } = props;
-  const { t } = useTranslation();
+  const { t } = useTranslation('article-details');
   const text = useSelector(getCommentFormText);
   const error = useSelector(getCommentFormError);
   const dispatch = useAppDispatch();
+  const authData = useSelector(getUserAuthData);
 
   const onCommentTextChange = useCallback(
     (value: string) => {
@@ -30,6 +34,17 @@ export const AddCommentFormDeprecated = memo((props: AddCommentFormProps) => {
     onSendComment(text || '');
     onCommentTextChange('');
   }, [onCommentTextChange, onSendComment, text]);
+
+  if (!authData) {
+    return (
+      <form
+        data-testid="AddCommentForm"
+        className={classNames(cl.AddCommentFormDeprecated, {}, [className])}
+      >
+        <Text size={TextSize.L}>{t('Login to our platform and join in the lively discussions')}</Text>
+      </form>
+    );
+  }
 
   return (
     <form

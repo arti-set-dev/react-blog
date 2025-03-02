@@ -24,6 +24,7 @@ interface RatingCardProps {
   onCancel?: (starsCount: number) => void;
   onAccept?: (starsCount: number, feedback?: string) => void;
   rate?: number;
+  isAuth?: boolean;
 }
 
 export const RatingCard = (props: RatingCardProps) => {
@@ -34,9 +35,10 @@ export const RatingCard = (props: RatingCardProps) => {
     feedbackTitle,
     hasFeedback,
     onAccept,
+    isAuth,
     rate = 0,
   } = props;
-  const { t } = useTranslation();
+  const { t } = useTranslation('article-details');
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [starsCount, setStarsCount] = useState(rate);
   const [feedback, setFeedback] = useState('');
@@ -122,6 +124,7 @@ export const RatingCard = (props: RatingCardProps) => {
       )}
     />
   );
+
   return (
     <ToggleFeatures
       feature="isAppRedesigned"
@@ -137,6 +140,7 @@ export const RatingCard = (props: RatingCardProps) => {
               {starsCount ? t('Thanks for your rating') : title}
             </Text>
             <StarRating
+              disabled={!isAuth}
               selectStars={starsCount}
               size={40}
               onSelect={onSelectStars}
@@ -165,6 +169,7 @@ export const RatingCard = (props: RatingCardProps) => {
               {starsCount ? t('Thanks for your rating') : title}
             </Text>
             <StarRating
+              disabled={!isAuth}
               selectStars={starsCount}
               size={40}
               onSelect={onSelectStars}

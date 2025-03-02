@@ -9,6 +9,7 @@ interface StarRatingProps {
   onSelect?: (starsCount: number) => void;
   size?: number;
   selectStars?: number;
+  disabled?: boolean;
 }
 
 const stars = [1, 2, 3, 4, 5];
@@ -19,7 +20,7 @@ const stars = [1, 2, 3, 4, 5];
  */
 export const StarRating = (props: StarRatingProps) => {
   const {
-    className, selectStars = 0, onSelect, size = 30,
+    className, selectStars = 0, onSelect, size = 30, disabled,
   } = props;
 
   const [currentStarsCount, setCurrentStarsCount] = useState(selectStars);
@@ -27,6 +28,7 @@ export const StarRating = (props: StarRatingProps) => {
 
   const mods: Mods = {
     [cl.hovered]: currentStarsCount >= stars.length ? cl.hovered : cl.default,
+    [cl.disabled]: disabled,
   };
 
   const onHover = (starsCount: number) => () => {

@@ -62,7 +62,7 @@ export const getNavigationItems = createSelector(getUserAuthData, (userData) => 
           off: () => ProfileIconDeprecated,
           on: () => ProfileIcon,
         }),
-        text: 'Profile',
+        text: 'My profile',
         authOnly: true,
       },
     );

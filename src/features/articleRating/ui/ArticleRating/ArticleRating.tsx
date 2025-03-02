@@ -67,13 +67,16 @@ const ArticleRating = memo((props: ArticleRatingProps) => {
 
   const rating = data?.[0];
 
+  const ratingTitle = userData ? t('Rate this article') : t('Please login in to leave a review');
+
   return (
     <RatingCard
+      isAuth={Boolean(userData?.id)}
       onAccept={onAccept}
       onCancel={onCancel}
       rate={rating?.rate}
       className={classNames('', {}, [className])}
-      title={t('Rate this article')}
+      title={ratingTitle}
       feedbackTitle={t(
         'Leave your feedback on the article, it helps improve the quality',
       )}
