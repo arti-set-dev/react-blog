@@ -20,3 +20,10 @@ export interface ArticleListSchema extends EntityState<Article> {
   types: ArticleType;
   _inited: boolean;
 }
+
+export interface ArticleRecommendationsSchema
+  extends EntityState<Article> {
+  isLoading: boolean;
+  error?: string;
+  data?: Comment[];
+}

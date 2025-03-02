@@ -1,7 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { ThunkConfig } from '@/app/providers/StoreProvider';
 
-export const deleteCommentForArticle = createAsyncThunk<
+export const deleteComment = createAsyncThunk<
   string,
   string,
   ThunkConfig<string>

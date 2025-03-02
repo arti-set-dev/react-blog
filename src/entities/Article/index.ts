@@ -8,7 +8,7 @@ import { ArticleDetails } from './ui/ArticleDetails/ArticleDetails';
 import type { Article } from './model/types/article';
 import type { ArticleDetailsSchema } from './model/types/articleDetailsSchema';
 import { ArticleList, ArticleListDisplay } from './ui/ArticleList/ArticleList';
-import { getArticleDetailsData } from './model/selectors/articleDetails/articleDetails';
+import { getArticleDetailsData, getCanEditArticle } from './model/selectors/articleDetails/articleDetails';
 import {
   getArticlesListError,
   getArticlesListIsHasMore,
@@ -24,7 +24,8 @@ import {
 } from './model/selectors/articleList/articleList';
 import { fetchArticlesList } from './model/services/fetchArticlesList/fetchArticlesList';
 import { articleListActions, articleListReducer, getArticles } from './model/slice/articleListSlice/articleListSlice';
-import type { ArticleListSchema } from './model/types/articleListSchema';
+import type { ArticleRecommendationsSchema, ArticleListSchema } from './model/types/articleListSchema';
+import { articleDetailsRecommendationsReducer } from './model/slice/articleListSlice/ArticleRecommendationsSlice';
 
 export {
   ArticleListDisplay,
@@ -53,4 +54,7 @@ export {
   getArticlesListType,
   getArticlesListNum,
   getArticles,
+  getCanEditArticle,
+  ArticleRecommendationsSchema,
+  articleDetailsRecommendationsReducer,
 };

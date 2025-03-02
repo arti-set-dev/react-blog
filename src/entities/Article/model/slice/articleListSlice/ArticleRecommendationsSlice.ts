@@ -1,23 +1,24 @@
 /* eslint-disable max-len */
 import { createEntityAdapter, createSlice } from '@reduxjs/toolkit';
 import { StateSchema } from '@/app/providers/StoreProvider';
-import { Article } from '@/entities/Article';
-import { fetchArticleRecommendations } from '../services/fetchArticleRecommendations/fetchArticleRecommendations';
-import { ArticleDetailsRecommendationsSchema } from '../types/ArticleDetailsRecommendationsSchema';
+import { Article } from '../../..';
+import { fetchArticleRecommendations } from '../../services/fetchArticleRecommendations/fetchArticleRecommendations';
+
+import { ArticleRecommendationsSchema } from '../../types/articleListSchema';
 
 const recommendationsAdapter = createEntityAdapter<Article>({
   selectId: (article) => article.id,
 });
 
 export const getArticleRecommendations = recommendationsAdapter.getSelectors<StateSchema>(
-  (state) => state.articleDetailsPage?.recommendations
+  (state) => state?.recommendations
       || recommendationsAdapter.getInitialState(),
 );
 
-const articleDetailsRecommendationsSlice = createSlice({
+const articleRecommendationsSlice = createSlice({
   name: 'articleDetailsRecommendationsSlice',
   initialState:
-    recommendationsAdapter.getInitialState<ArticleDetailsRecommendationsSchema>(
+    recommendationsAdapter.getInitialState<ArticleRecommendationsSchema>(
       {
         isLoading: false,
         error: undefined,
@@ -43,4 +44,4 @@ const articleDetailsRecommendationsSlice = createSlice({
   },
 });
 
-export const { reducer: articleDetailsRecommendationsReducer } = articleDetailsRecommendationsSlice;
+export const { reducer: articleDetailsRecommendationsReducer } = articleRecommendationsSlice;

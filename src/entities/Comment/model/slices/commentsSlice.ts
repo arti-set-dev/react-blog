@@ -5,22 +5,22 @@ import {
   PayloadAction,
 } from '@reduxjs/toolkit';
 import { StateSchema } from '@/app/providers/StoreProvider';
-import { Comment } from '@/entities/Comment';
-import { fetchCommentsByArticleId } from '../services/fetchCommentsByArticleId/fetchCommentsByArticleId';
-import { ArticleDetailsCommentsSchema } from '../types/ArticleDetailsCommentsSchema';
-import { updateCommentForArticle } from '../services/updateCommentForArticle/updateCommentForArticle';
+import { Comment } from '../..';
+import { fetchComments } from '../services/fetchComments/fetchComments';
+import { updateComment } from '../services/updateComment/updateComment';
+import { CommentsSchema } from '../types/comments';
 
 const commentsAdapter = createEntityAdapter<Comment>({
   selectId: (comment) => comment.id,
 });
 
 export const getArticleComments = commentsAdapter.getSelectors<StateSchema>(
-  (state) => state.articleDetailsPage?.comments ?? commentsAdapter.getInitialState(),
+  (state) => state?.comments ?? commentsAdapter.getInitialState(),
 );
 
-const articleDetailsCommentsSlice = createSlice({
-  name: 'articleDetailsCommentsSlice',
-  initialState: commentsAdapter.getInitialState<ArticleDetailsCommentsSchema>({
+const commentsSlice = createSlice({
+  name: 'commentsSlice',
+  initialState: commentsAdapter.getInitialState<CommentsSchema>({
     isLoading: false,
     error: undefined,
     ids: [],
@@ -33,29 +33,29 @@ const articleDetailsCommentsSlice = createSlice({
   },
   extraReducers: (builder) => {
     // fetch comments
-    builder.addCase(fetchCommentsByArticleId.pending, (state, action) => {
+    builder.addCase(fetchComments.pending, (state, action) => {
       state.error = undefined;
       state.isLoading = true;
     });
-    builder.addCase(fetchCommentsByArticleId.rejected, (state, action) => {
+    builder.addCase(fetchComments.rejected, (state, action) => {
       state.isLoading = false;
       state.error = action.payload;
     });
     builder.addCase(
-      fetchCommentsByArticleId.fulfilled,
+      fetchComments.fulfilled,
       (state, action: PayloadAction<Comment[]>) => {
         state.isLoading = false;
         commentsAdapter.setAll(state, action.payload);
       },
     );
     // update comment
-    builder.addCase(updateCommentForArticle.pending, (state, action) => {
+    builder.addCase(updateComment.pending, (state, action) => {
       state.isLoading = true;
     });
-    builder.addCase(updateCommentForArticle.rejected, (state, action) => {
+    builder.addCase(updateComment.rejected, (state, action) => {
       state.isLoading = false;
     });
-    builder.addCase(updateCommentForArticle.fulfilled, (state, action) => {
+    builder.addCase(updateComment.fulfilled, (state, action) => {
       state.isLoading = false;
       state.validateErrors = undefined;
       commentsAdapter.upsertOne(state, action.payload);
@@ -64,6 +64,6 @@ const articleDetailsCommentsSlice = createSlice({
 });
 
 export const {
-  reducer: articleDetailsCommentsReducer,
-  actions: articleDetailsCommentsActions,
-} = articleDetailsCommentsSlice;
+  reducer: commentsReducer,
+  actions: commentsActions,
+} = commentsSlice;

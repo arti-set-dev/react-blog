@@ -6,9 +6,8 @@ import { ArticleAdditionalInfo } from '@/widgets/ArticleAdditionalInfo';
 import { Skeleton } from '@/shared/ui/redesigned/Skeleton';
 import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
 import { getRouteArticleEdit } from '@/shared/const/router';
-import { getArticleDetailsData } from '@/entities/Article';
+import { getArticleDetailsData, getCanEditArticle } from '@/entities/Article';
 import { Card } from '@/shared/ui/redesigned/Card';
-import { getCanEditArticle } from '../../model/selectors/article';
 
 interface AdditionalInfoContainerProps {
   className?: string;

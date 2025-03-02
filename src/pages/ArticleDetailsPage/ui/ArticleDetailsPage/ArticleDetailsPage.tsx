@@ -7,7 +7,10 @@ import { StickyContentLayout } from '@/shared/layouts/SticlyContentLayout';
 import { ArticleRating } from '@/features/articleRating';
 import { ToggleFeatures } from '@/shared/lib/features';
 import { Text, TextSize } from '@/shared/ui/deprecated/Text';
-import { ArticleDetails } from '@/entities/Article';
+import {
+  ArticleDetails,
+  articleDetailsRecommendationsReducer,
+} from '@/entities/Article';
 import { ArticleRecommendationsList } from '@/features/articleRecommendationsList';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import {
@@ -15,19 +18,22 @@ import {
   ReducerList,
 } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { Page } from '@/widgets/Page';
-import { articleDetailsPageReducer } from '../../model/slices';
 import { ArticleDetailsPageComments } from '../ArticleDetailsPageComments/ArticleDetailsPageComments';
 import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 import cl from './ArticleDetailsPage.module.scss';
 import { Button } from '@/shared/ui/redesigned/Button';
 import { getRouteArticles } from '@/shared/const/router';
+import { commentsReducer } from '@/entities/Comment';
+import { Container } from '@/shared/ui/redesigned/Container';
+import { getVstack } from '@/shared/lib/stack/getVstack/getVstack';
 
 interface ArticleDetailsPageProps {
   className?: string;
 }
 
 const reducers: ReducerList = {
-  articleDetailsPage: articleDetailsPageReducer,
+  comments: commentsReducer,
+  recommendations: articleDetailsRecommendationsReducer,
 };
 
 const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
@@ -63,11 +69,13 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
         )}
         off={(
           <Page className={classNames(cl.ArticleDetailsPage, {}, [className])}>
-            <ArticleDetailsPageHeader />
-            <ArticleDetails id={id} />
-            <ArticleRating articleId={id} />
-            <ArticleRecommendationsList />
-            <ArticleDetailsPageComments id={id} />
+            <Container max className={getVstack({ gap: 16 })}>
+              <ArticleDetailsPageHeader />
+              <ArticleDetails id={id} />
+              <ArticleRating articleId={id} />
+              <ArticleRecommendationsList />
+              <ArticleDetailsPageComments id={id} />
+            </Container>
           </Page>
         )}
       />

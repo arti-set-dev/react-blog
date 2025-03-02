@@ -1,8 +1,8 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { ThunkConfig } from '@/app/providers/StoreProvider';
-import { Comment } from '@/entities/Comment';
+import { Comment } from '../../..';
 
-export const updateCommentForArticle = createAsyncThunk<
+export const updateComment = createAsyncThunk<
   Comment,
   { commentId: string; text: string },
   ThunkConfig<string>

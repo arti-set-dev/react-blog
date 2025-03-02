@@ -7,18 +7,20 @@ import {
 } from '@/shared/ui/deprecated/Text';
 import { Text } from '@/shared/ui/redesigned/Text';
 import { AddCommentForm } from '@/features/addNewComment';
-import { Comments } from '@/entities/Comment';
-import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
-import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle';
 import {
-  getArticleCommentsError,
-  getArticleCommentsIsloading,
-} from '../../model/selectors/comments';
-import { articleDetailsCommentsActions, getArticleComments } from '../../model/slices/ArticleDetailsCommentsSlice';
+  Comments,
+  fetchComments,
+  addComment,
+  deleteComment,
+  updateComment,
+  commentsActions, getArticleComments,
+} from '@/entities/Comment';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import {
+  getCommentsError,
+  getCommentsIsloading,
+} from '../../../../entities/Comment/model/selectors/comments';
 import cl from './ArticleDetailsPageComments.module.scss';
-import { deleteCommentForArticle } from '../../model/services/deleteCommentForArticle/deleteCommentForArticle';
-import { updateCommentForArticle } from '../../model/services/updateCommentForArticle/updateCommentForArticle';
 import { StateSchema } from '@/app/providers/StoreProvider';
 import { ToggleFeatures } from '@/shared/lib/features';
 
@@ -27,44 +29,44 @@ interface ArticleDetailsPageCommentsProps {
   id?: string;
 }
 
-const isReducerMounted = (state: StateSchema) => Boolean(state.articleDetailsPage);
+const isReducerMounted = (state: StateSchema) => Boolean(state.comments);
 
 export const ArticleDetailsPageComments = memo(
   (props: ArticleDetailsPageCommentsProps) => {
     const { className, id } = props;
     const { t } = useTranslation();
     const comments = useSelector(getArticleComments.selectAll);
-    const commentsIsloading = useSelector(getArticleCommentsIsloading);
-    const commentsError = useSelector(getArticleCommentsError);
+    const commentsIsloading = useSelector(getCommentsIsloading);
+    const commentsError = useSelector(getCommentsError);
     const dispatch = useAppDispatch();
     const isMounted = useSelector(isReducerMounted);
 
     useEffect(() => {
       if (id && isMounted) {
-        dispatch(fetchCommentsByArticleId(id));
+        dispatch(fetchComments(id));
       }
     }, [dispatch, id, isMounted]);
 
     const onSendComment = useCallback(
       (text: string) => {
-        dispatch(addCommentForArticle(text));
+        dispatch(addComment(text));
       },
       [dispatch],
     );
 
     const onDeleteComment = useCallback(
       (commentId: string) => {
-        dispatch(deleteCommentForArticle(commentId));
-        dispatch(fetchCommentsByArticleId(id));
+        dispatch(deleteComment(commentId));
+        dispatch(fetchComments(id));
       },
       [dispatch, id],
     );
 
     const onEditComment = useCallback(
       (commentId: string, text: string) => {
-        dispatch(articleDetailsCommentsActions.updateComment({ id: commentId, text }));
-        dispatch(updateCommentForArticle({ commentId, text }));
-        dispatch(fetchCommentsByArticleId(id));
+        dispatch(commentsActions.updateComment({ id: commentId, text }));
+        dispatch(updateComment({ commentId, text }));
+        dispatch(fetchComments(id));
       },
       [dispatch, id],
     );

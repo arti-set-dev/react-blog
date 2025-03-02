@@ -1,5 +1,5 @@
 // eslint-disable-next-line arti-set-fsd-checker-plugin/layer-imports,arti-set-fsd-checker-plugin/public-api-imports,max-len
-import { addCommentForArticle } from '@/pages/ArticleDetailsPage/model/services/addCommentForArticle/addCommentForArticle';
+import { addComment } from '@/entities/Comment/model/services/addComment/addComment';
 import { AddNewCommentSchema } from '../types/addNewComment';
 import { addNewCommentReducer } from './addNewCommentSlice';
 
@@ -11,7 +11,7 @@ describe('addNewCommentSlice.test', () => {
     expect(
       addNewCommentReducer(
         state as AddNewCommentSchema,
-        addCommentForArticle.pending,
+        addComment.pending,
       ),
     ).toEqual({
       text: 'some comment',
@@ -24,7 +24,7 @@ describe('addNewCommentSlice.test', () => {
     expect(
       addNewCommentReducer(
         state as AddNewCommentSchema,
-        addCommentForArticle.rejected,
+        addComment.rejected,
       ),
     ).toEqual({
       error: 'error',

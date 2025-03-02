@@ -8,13 +8,13 @@ import {
 import { AxiosInstance } from 'axios';
 import { ProfileSchema } from '@/features/editableProfileCard';
 import { AddNewCommentSchema } from '@/features/addNewComment';
-import { ArticleDetailsSchema, ArticleListSchema } from '@/entities/Article';
+import { ArticleRecommendationsSchema, ArticleDetailsSchema, ArticleListSchema } from '@/entities/Article';
 import { CounterSchema } from '@/entities/Counter';
 import { UserSchema } from '@/entities/User';
 import { LoginSchema } from '@/features/AuthByUsername';
-import { ArticleDetailsPageSchema } from '@/pages/ArticleDetailsPage';
 import { rtkApi } from '@/shared/api/rtkApi';
 import { ScrollSaveSchema } from '@/features/scrollSave';
+import { CommentsSchema } from '@/entities/Comment';
 
 export interface StateSchema {
   counter: CounterSchema;
@@ -28,7 +28,8 @@ export interface StateSchema {
   articleDetails?: ArticleDetailsSchema;
   addNewComment?: AddNewCommentSchema;
   articlesList?: ArticleListSchema;
-  articleDetailsPage?: ArticleDetailsPageSchema;
+  comments?: CommentsSchema;
+  recommendations?: ArticleRecommendationsSchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;
