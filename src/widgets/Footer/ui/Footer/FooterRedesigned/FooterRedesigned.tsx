@@ -9,48 +9,49 @@ import LogoIcon from '@/shared/assets/icons/logo.svg';
 import { Text } from '@/shared/ui/redesigned/Text';
 import { getHstack } from '@/shared/lib/stack/getHstack/getHstack';
 import { Icon } from '@/shared/ui/redesigned/Icon';
+import { Container } from '@/shared/ui/redesigned/Container';
 
 interface FooterRedesignedProps {
     className?: string;
     itemsList: ReactNode[];
-    width?: number;
 }
 
 export const FooterRedesigned = memo((props: FooterRedesignedProps) => {
-  const { className, itemsList, width = 1200 } = props;
+  const { className, itemsList } = props;
   const { t } = useTranslation();
 
   return (
-    <Card
-      tag="footer"
-      offset="16"
-      width={width}
-      className={classNames('', {}, [className, getHstack({
-        gap: 16,
-        justify: 'between',
-      })])}
-    >
-      <HStack align="start" justify="between" gap="32" fullWidth width={400}>
-        <VStack gap="16">
-          <AppLink to={getRouteMain()}>
-            <Icon color="primary" width={200} height={40} Svg={LogoIcon} />
-          </AppLink>
-          <VStack width="140px">
-            <Text>{t('Copyright')}</Text>
+    <Container>
+      <Card
+        tag="footer"
+        offset="16"
+        className={classNames('', {}, [className, getHstack({
+          gap: 16,
+          justify: 'between',
+        })])}
+      >
+        <HStack align="start" justify="between" gap="32" fullWidth width={400}>
+          <VStack gap="16">
+            <AppLink to={getRouteMain()}>
+              <Icon color="primary" width={200} height={40} Svg={LogoIcon} />
+            </AppLink>
+            <VStack width="140px">
+              <Text>{t('Copyright')}</Text>
+            </VStack>
           </VStack>
-        </VStack>
+          <VStack tag="ul" gap="16">
+            {itemsList}
+          </VStack>
+        </HStack>
         <VStack tag="ul" gap="16">
-          {itemsList}
+          <li>
+            <AppLink to={getRouteMain()}>{t('Service rules')}</AppLink>
+          </li>
+          <li>
+            <AppLink to={getRouteMain()}>{t('Privacy Policy')}</AppLink>
+          </li>
         </VStack>
-      </HStack>
-      <VStack tag="ul" gap="16">
-        <li>
-          <AppLink to={getRouteMain()}>{t('Service rules')}</AppLink>
-        </li>
-        <li>
-          <AppLink to={getRouteMain()}>{t('Privacy Policy')}</AppLink>
-        </li>
-      </VStack>
-    </Card>
+      </Card>
+    </Container>
   );
 });

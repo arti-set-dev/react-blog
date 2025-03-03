@@ -1,6 +1,8 @@
 .ProfileCardDeprecated {
-  padding: var(--inner-offset);
+  display: flex;
+  flex-direction: column;
   width: 100%;
+  gap: var(--gap);
 }
 
 .data {

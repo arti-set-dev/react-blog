@@ -11,8 +11,6 @@ interface FooterProps {
     className?: string;
 }
 
-const FOOTER_WIDTH = 1200;
-
 export const Footer = memo((props: FooterProps) => {
   const { className } = props;
   const { t } = useTranslation();
@@ -30,8 +28,8 @@ export const Footer = memo((props: FooterProps) => {
   return (
     <ToggleFeatures
       feature="isAppRedesigned"
-      on={<FooterRedesigned width={FOOTER_WIDTH} itemsList={itemsList} />}
-      off={<FooterDeprecated width={FOOTER_WIDTH} itemsList={itemsList} />}
+      on={<FooterRedesigned itemsList={itemsList} />}
+      off={<FooterDeprecated itemsList={itemsList} />}
     />
   );
 });

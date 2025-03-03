@@ -6,7 +6,6 @@ import { useProfile } from '../../lib/hooks/useProfile';
 import { Button } from '@/shared/ui/redesigned/Button/Button';
 import { Avatar } from '@/shared/ui/redesigned/Avatar/Avatar';
 import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
-import { Loader } from '@/shared/ui/redesigned/Loader/Loader';
 import { CountrySelect } from '@/entities/Country';
 import { CurrencySelect } from '@/entities/Currency';
 import { classNames } from '@/shared/lib/classNames/classNames';
@@ -14,11 +13,26 @@ import cl from './ProfileCardRedesigned.module.scss';
 import { ProfileCardProps } from '../ProfileCard/ProfileCard';
 import { getVstack } from '@/shared/lib/stack/getVstack/getVstack';
 import { Card } from '@/shared/ui/redesigned/Card';
+import { Skeleton } from '@/shared/ui/redesigned/Skeleton';
 
 export const ProfileCardLoaderRedesigned = () => (
-  <VStack align="center" justify="center" fullWidth>
-    <Loader />
-  </VStack>
+  <Card offset="24" className={classNames('', {}, [getVstack({ gap: 24, align: 'center' })])}>
+    <Skeleton border="circle" width={100} height={100} />
+    <HStack gap="16">
+      <Skeleton width={80} height={30} />
+      <Skeleton width={80} height={30} />
+    </HStack>
+    <div className={cl.data}>
+      <Skeleton width="100%" border="10" height={40} />
+      <Skeleton width="100%" border="10" height={40} />
+      <Skeleton width="100%" border="10" height={40} />
+      <Skeleton width="100%" border="10" height={40} />
+      <Skeleton width="100%" border="10" height={40} />
+      <Skeleton width="100%" border="10" height={40} />
+      <Skeleton width="100%" border="10" height={40} />
+      <Skeleton width="100%" border="10" height={40} />
+    </div>
+  </Card>
 );
 
 export const ProfileCardErrorRedesigned = () => {
@@ -26,13 +40,6 @@ export const ProfileCardErrorRedesigned = () => {
 
   return (
     <VStack gap="16">
-      <Text
-        size="xl"
-        variant="primary"
-        weight="bold"
-      >
-        {t('Profile')}
-      </Text>
       <Text variant="error" size="l">
         {t('Profile error')}
       </Text>
