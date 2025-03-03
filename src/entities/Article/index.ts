@@ -26,6 +26,7 @@ import { fetchArticlesList } from './model/services/fetchArticlesList/fetchArtic
 import { articleListActions, articleListReducer, getArticles } from './model/slice/articleListSlice/articleListSlice';
 import type { ArticleRecommendationsSchema, ArticleListSchema } from './model/types/articleListSchema';
 import { articleDetailsRecommendationsReducer } from './model/slice/articleListSlice/ArticleRecommendationsSlice';
+import { updateViewsArticle } from './model/services/updateViewsArticle/updateViewsArticle';
 
 export {
   ArticleListDisplay,
@@ -57,4 +58,5 @@ export {
   getCanEditArticle,
   ArticleRecommendationsSchema,
   articleDetailsRecommendationsReducer,
+  updateViewsArticle,
 };

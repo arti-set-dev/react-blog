@@ -20,6 +20,7 @@ import {
   getArticleDetailsData,
   getArticleDetailsIsLoading,
 } from '../../model/selectors/articleDetails/articleDetails';
+import { updateViewsArticle } from '../../model/services/updateViewsArticle/updateViewsArticle';
 
 export interface ArticleDetailsProps {
   className?: string;
@@ -42,6 +43,8 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
     if (__PROJECT__ !== 'storybook') {
       dispatch(fetchArticleById(id));
     }
+
+    dispatch(updateViewsArticle(id ?? ''));
   }, [dispatch, id]);
 
   return (
