@@ -70,7 +70,7 @@
   margin: 0;
   border-radius: 0 0 var(--radius-s) var(--radius-s);
   padding: var(--button-offset) 0;
-  width: max-content;
+  width: 100%;
   box-shadow: var(--box-shadow);
   background-color: var(--bg-color);
 }
@@ -93,7 +93,7 @@
 .Label {
   position: absolute;
   left: 0;
-  top: 0;
+  top: calc(0px - var(--input-offset));
   display: inline-block;
   font-size: var(--font-size-s);
   color: var(--text-primary-color);

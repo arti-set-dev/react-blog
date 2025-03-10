@@ -1,5 +1,5 @@
-import { User } from '@/entities/User';
 import { ArticleType, ArticleBlockType } from '../types/articleType';
+import { User } from '@/entities/User';
 
 export interface ArticleBlockBase {
   id: string;
@@ -31,11 +31,19 @@ export type ArticleBlock =
 export interface Article {
   id: string;
   title: string;
-  user: User;
+  userId?: string;
+  user?: User;
   subtitle: string;
   img: string;
   views: number;
   createdAt: string;
   type: ArticleType[];
   blocks: ArticleBlock[];
+}
+
+export interface ArticleEditable extends Article {
+  tabValue?: ArticleBlockType | string;
+  currentBlock?: ArticleCodeBlock | ArticleTextBlock | ArticleImageBlock;
+  savedBlocks?: ArticleBlock[];
+  types?: ArticleType[];
 }

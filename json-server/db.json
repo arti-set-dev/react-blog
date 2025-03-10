@@ -120,7 +120,7 @@
       "title": "Python news",
       "subtitle": "What's new in Python in 2022?",
       "img": "https://images.unsplash.com/photo-1677293130537-bb902c697c8b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "views": 1022,
+      "views": 1023,
       "createdAt": "26.02.2022",
       "userId": "2",
       "type": [
@@ -1586,10 +1586,179 @@
       ]
     },
     {
-      "id": "22"
+      "id": "22",
+      "title": "Development of Robotics",
+      "subtitle": "Technological Achievements and Their Applications",
+      "img": "https://images.unsplash.com/photo-1518314916381-77a37c2a49ae?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "views": 751,
+      "createdAt": "05.02.2023",
+      "userId": "1",
+      "type": [
+        "SCIENCE",
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Rapid Development of Robotics",
+          "paragraphs": [
+            "Robotics is becoming an important part of our lives. From manufacturing to medicine, robots are being used in a wide variety of fields.",
+            "Thanks to new technologies and algorithms, modern robotics is reaching levels that could only be dreamed of before."
+          ]
+        },
+        {
+          "id": "4",
+          "type": "CODE",
+          "code": "<!DOCTYPE html>\n<html>\n  <body>\n    <h1>Development of Robotics</h1>\n    <p>Analysis of technological achievements in robotics.</p>\n  </body>\n</html>;"
+        },
+        {
+          "id": "5",
+          "type": "TEXT",
+          "title": "Modern Achievements",
+          "paragraphs": [
+            "Lightweight and multifunctional robots are now used in manufacturing processes, increasing productivity and quality.",
+            "In medicine, robots assist in performing surgeries, improving accuracy and reducing patient recovery time."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "IMAGE",
+          "src": "https://images.unsplash.com/photo-1518314916381-77a37c2a49ae?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "title": "Figure 1 - surgical robot"
+        },
+        {
+          "id": "3",
+          "type": "CODE",
+          "code": "const roboticsApplications = ['healthcare', 'manufacturing', 'exploration'];\n\nroboticsApplications.forEach(application => console.log(`Application: ${application}`));"
+        },
+        {
+          "id": "7",
+          "type": "TEXT",
+          "title": "Future of Robotics",
+          "paragraphs": [
+            "The prospects for robotics development are enormous. Every day robots become smarter and capable of performing complex tasks.",
+            "The development of software and artificial intelligence systems will contribute to the further integration of robots into everyday life."
+          ]
+        },
+        {
+          "id": "8",
+          "type": "IMAGE",
+          "src": "https://images.unsplash.com/photo-1518314916381-77a37c2a49ae?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "title": "Figure 2 - robot in manufacturing"
+        },
+        {
+          "id": "9",
+          "type": "TEXT",
+          "title": "Conclusion",
+          "paragraphs": [
+            "The development of robotics continues to open new horizons for humanity. The possibilities for robot applications seem limitless and continue to increase with each passing year."
+          ]
+        }
+      ]
     },
     {
-      "id": "23"
+      "id": "23",
+      "title": "The Future of Green Technologies ",
+      "subtitle": "How Sustainable Technologies are Changing Our World ssws",
+      "img": "https://images.unsplash.com/photo-1533413598044-92e0b8e24cbc?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "views": 832,
+      "createdAt": "02.08.2023",
+      "userId": "1",
+      "type": [
+        "IT",
+        "SCIENCE"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Introduction to Green Technologies",
+          "paragraphs": [
+            "Green technologies are innovations aimed at reducing the impact of human activities on the environment. They include renewable energy sources, waste recycling, and sustainable agriculture.",
+            "With population growth and increasing resource consumption, it is becoming increasingly evident that traditional methods of production and consumption are no longer viable. Therefore, the transition to green technologies is becoming a necessity."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "CODE",
+          "code": "const greenTech = require('green-tech');\n\nconst innovations = greenTech.getRecentInnovations();\n\nconsole.log(innovations);"
+        },
+        {
+          "id": "3",
+          "type": "TEXT",
+          "title": "Main Areas of Green Technologies",
+          "paragraphs": [
+            "1. Renewable Energy: solar, wind, and hydropower provide clean energy and help reduce carbon emissions.",
+            "2. Sustainable Construction: use of environmentally friendly materials and technologies, such as green roofs and energy-efficient systems.",
+            "3. Recycling and Waste Management: new methods of recycling and waste reduction help minimize negative environmental impact."
+          ]
+        },
+        {
+          "id": "4",
+          "type": "IMAGE",
+          "src": "https://images.unsplash.com/photo-1533413598044-92e0b8e24cbc?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "title": "Figure 1 - solar panels"
+        },
+        {
+          "id": "5",
+          "type": "TEXT",
+          "title": "Benefits of Green Technologies",
+          "paragraphs": [
+            "1. Pollution Reduction: reducing carbon dioxide emissions and other pollutants helps improve air quality.",
+            "2. Economic Benefits: sustainable technologies can reduce energy costs and improve energy efficiency.",
+            "3. Protection of Natural Resources: using renewable resources helps preserve finite resources for future generations.",
+            "4. Protection of Natural Resources: using renewable resources helps preserve finite resources for future generations."
+          ]
+        },
+        {
+          "id": "6",
+          "type": "IMAGE",
+          "src": "https://images.unsplash.com/photo-1533413598044-92e0b8e24cbc?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "title": "Figure 2 - waste recycling"
+        },
+        {
+          "id": "7",
+          "type": "TEXT",
+          "title": "Conclusion",
+          "paragraphs": [
+            "The future of green technologies looks promising. Innovations in this field have the potential to transform our economy and way of life. Adopting sustainable technologies will be an important step towards a healthier and more sustainable future."
+          ]
+        },
+        {
+          "id": "e5156e29-e21c-463e-b88a-5708722cb212",
+          "type": "IMAGE",
+          "src": "ewewe",
+          "title": "ewe"
+        }
+      ],
+      "user": {
+        "id": "1",
+        "username": "admin",
+        "password": "123",
+        "roles": [
+          "ADMIN"
+        ],
+        "features": {
+          "isAppRedesigned": true
+        },
+        "jsonSettings": {
+          "isArticlePageWasOpened": true
+        },
+        "avatar": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      },
+      "currentBlock": {
+        "id": "5",
+        "type": "TEXT",
+        "title": "Benefits of Green Technologies",
+        "paragraphs": [
+          "1. Pollution Reduction: reducing carbon dioxide emissions and other pollutants helps improve air quality.",
+          "2. Economic Benefits: sustainable technologies can reduce energy costs and improve energy efficiency.",
+          "3. Protection of Natural Resources: using renewable resources helps preserve finite resources for future generations.",
+          "4. Protection of Natural Resources: using renewable resources helps preserve finite resources for future generations."
+        ]
+      },
+      "tabValue": ""
     },
     {
       "id": "24",

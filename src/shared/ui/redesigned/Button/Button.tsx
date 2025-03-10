@@ -65,7 +65,7 @@ export const Button = forwardRef((props: ButtonProps, ref: ForwardedRef<HTMLButt
         ref={ref}
         {...otherProps}
       >
-        {Svg && <Icon width="100%" height="100%" Svg={Svg} />}
+        {Svg && <Icon width="100%" height="100%" Svg={Svg} className={className} />}
         {children}
       </button>
     </div>

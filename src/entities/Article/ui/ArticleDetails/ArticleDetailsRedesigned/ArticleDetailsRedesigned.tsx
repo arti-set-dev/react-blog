@@ -91,7 +91,7 @@ export const ArticleDetailsRedesigned = memo((props: ArticleDetailsRedesignedPro
             width="100%"
             height="300px"
             src={article?.img}
-            alt={t('Article Details Page')}
+            alt={article?.title}
           />
         </HStack>
         <VStack data-testid="ArticleDetails.Info" fullWidth gap="16">

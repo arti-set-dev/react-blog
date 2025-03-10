@@ -63,14 +63,14 @@ export const ArticleItemRedesigned = memo((props: ArticleItemProps) => {
           <HStack gap="8">
             <Avatar
               size={30}
-              src={article.user.avatar}
-              alt={article.user.username}
+              src={article.user?.avatar}
+              alt={article.user?.username}
             />
             <Text
               size="m"
               weight="bold"
             >
-              {article.user.username}
+              {article.user?.username}
             </Text>
             <Text size="s">{article.createdAt}</Text>
           </HStack>

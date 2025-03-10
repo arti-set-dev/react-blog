@@ -8,7 +8,9 @@ import {
 import { AxiosInstance } from 'axios';
 import { ProfileSchema } from '@/features/editableProfileCard';
 import { AddNewCommentSchema } from '@/features/addNewComment';
-import { ArticleRecommendationsSchema, ArticleDetailsSchema, ArticleListSchema } from '@/entities/Article';
+import {
+  ArticleRecommendationsSchema, ArticleDetailsSchema, ArticleListSchema,
+} from '@/entities/Article';
 import { CounterSchema } from '@/entities/Counter';
 import { UserSchema } from '@/entities/User';
 import { LoginSchema } from '@/features/AuthByUsername';

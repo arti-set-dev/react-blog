@@ -2,7 +2,9 @@ import { memo, ReactNode } from 'react';
 import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 import cl from './Card.module.scss';
 
-export type CardVariant = 'primary' | 'outline' | 'outline-inverted' | 'inverted' | 'active' | 'transparent';
+export type CardVariant =
+  'primary' | 'outline' | 'outline-inverted' | 'outline-inverted-bg' | 'inverted' | 'active' | 'transparent';
+export type CardPositionSticky = 'sticky-top' | 'sticky-bottom';
 export type CardOffset = '0' | '4' | '8' | '16' | '24';
 type TagType = 'article' | 'aside' | 'h3' | 'main' | 'div' | 'form' | 'li' | 'pre' | 'header' | 'footer' | 'section';
 export type BorderRadius = '0' | '4' | '8' | '10' | '12' | '20';
@@ -21,6 +23,8 @@ interface CardProps {
   border?: BorderRadius;
   height?: number;
   width?: number;
+  position?: CardPositionSticky;
+  positionOffset?: number | string
 }
 
 const mapBorderRadius: Record<BorderRadius, string> = {
@@ -54,6 +58,8 @@ export const Card = memo((props: CardProps) => {
     tag = 'article',
     max,
     width,
+    positionOffset,
+    position = '',
     isOverflow = false,
     ...otherProps
   } = props;
@@ -72,8 +78,10 @@ export const Card = memo((props: CardProps) => {
   return (
     <Tag
       {...otherProps}
-      className={classNames(cl.Card, mods, [className, cl[variant], cl[offsetClass], cl[borderClass]])}
-      style={{ height, width, flexBasis }}
+      className={classNames(cl.Card, mods, [className, cl[variant], cl[offsetClass], cl[borderClass], cl[position]])}
+      style={{
+        height, width, flexBasis, bottom: positionOffset,
+      }}
     >
       {children}
     </Tag>

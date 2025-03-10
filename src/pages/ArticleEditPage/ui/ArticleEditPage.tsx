@@ -1,10 +1,11 @@
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
-import { Text } from '@/shared/ui/deprecated/Text';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Page } from '@/widgets/Page';
 import cl from './ArticleEditPage.module.scss';
+import { ArticleCreate } from '@/features/articleCreate';
+import { ArticleEdit } from '@/features/articleEdit';
 
 interface ArticleEditPageProps {
   className?: string;
@@ -19,9 +20,9 @@ const ArticleEditPage = memo((props: ArticleEditPageProps) => {
   return (
     <Page className={classNames(cl.ArticleEditPage, {}, [className])}>
       {isEdit ? (
-        <Text>{t('Editing an article with ID -') + id}</Text>
+        <ArticleEdit id={id} />
       ) : (
-        <Text>{t('Creating a new article')}</Text>
+        <ArticleCreate />
       )}
     </Page>
   );

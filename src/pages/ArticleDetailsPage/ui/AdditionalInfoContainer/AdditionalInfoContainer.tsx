@@ -1,13 +1,19 @@
-import { memo, useCallback } from 'react';
+import { memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { ArticleAdditionalInfo } from '@/widgets/ArticleAdditionalInfo';
 import { Skeleton } from '@/shared/ui/redesigned/Skeleton';
 import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
-import { getRouteArticleEdit } from '@/shared/const/router';
-import { getArticleDetailsData, getCanEditArticle } from '@/entities/Article';
+import { getRouteArticleEdit, getRouteArticles } from '@/shared/const/router';
+import { articleListActions, getArticleDetailsData, getCanEditArticle } from '@/entities/Article';
 import { Card } from '@/shared/ui/redesigned/Card';
+import { getUserAuthData } from '@/entities/User';
+import { Modal } from '@/shared/ui/redesigned/Modal';
+import { Text } from '@/shared/ui/redesigned/Text';
+import { Button } from '@/shared/ui/redesigned/Button';
+import { useDeleteArticle } from '@/features/articleDelete';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 
 interface AdditionalInfoContainerProps {
   className?: string;
@@ -16,14 +22,52 @@ interface AdditionalInfoContainerProps {
 export const AdditionalInfoContainer = memo((props: AdditionalInfoContainerProps) => {
   const { className } = props;
   const { t } = useTranslation();
+  const dispatch = useAppDispatch();
+  const [isOpenModal, setIsOpenModal] = useState(false);
   const article = useSelector(getArticleDetailsData);
+  const userData = useSelector(getUserAuthData);
   const navigate = useNavigate();
   const canEdit = useSelector(getCanEditArticle);
+  const [deleteArticle, { isLoading, error }] = useDeleteArticle();
   const onEditArticle = useCallback(() => {
     if (article) {
       navigate(getRouteArticleEdit(article.id));
     }
   }, [article, navigate]);
+  const onDeleteArticle = useCallback(async () => {
+    if (article) {
+      try {
+        await deleteArticle(article.id).unwrap();
+        dispatch(articleListActions.removeArticle(article.id));
+        navigate(getRouteArticles());
+      } catch (e) {
+        console.error(e);
+      }
+    }
+  }, [article, deleteArticle, dispatch, navigate]);
+
+  const onOpenModal = useCallback(() => {
+    setIsOpenModal(true);
+  }, []);
+
+  const onCloseModal = () => {
+    setIsOpenModal(false);
+  };
+
+  const modalContent = (
+    <Modal lazy isOpen={isOpenModal} onClose={onCloseModal}>
+      <VStack gap="32">
+        <Text weight="bold" size="xl">{t('You want to delete the article?')}</Text>
+        <HStack gap="8" justify="center" fullWidth>
+          <Button onClick={onCloseModal} variant="outline">{t('Cancel')}</Button>
+          {isLoading
+            ? <Skeleton width={200} height={30} border="8" />
+            : <Button onClick={onDeleteArticle} variant="outline-red">{t('Delete')}</Button>}
+        </HStack>
+        {error && <Text variant="error">{t('An error occurred')}</Text>}
+      </VStack>
+    </Modal>
+  );
 
   if (!article) {
     return (
@@ -45,9 +89,11 @@ export const AdditionalInfoContainer = memo((props: AdditionalInfoContainerProps
       <ArticleAdditionalInfo
         canEdit={canEdit}
         onEdit={onEditArticle}
-        author={article?.user}
+        onDelete={onOpenModal}
+        author={userData}
         createdAt={article?.createdAt}
         views={article?.views}
+        modalContent={modalContent}
       />
     </Card>
   );

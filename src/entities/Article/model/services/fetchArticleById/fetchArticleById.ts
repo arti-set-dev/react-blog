@@ -9,16 +9,16 @@ export const fetchArticleById = createAsyncThunk<
 >('article/fetchArticleById', async (articleId, thunkAPI) => {
   const { extra, dispatch, rejectWithValue } = thunkAPI;
 
+  if (!articleId) {
+    return rejectWithValue('Invalid article ID');
+  }
+
   try {
     const response = await extra.api.get<Article>(`/articles/${articleId}`, {
       params: {
         _expand: 'user',
       },
     });
-
-    if (!articleId) {
-      throw new Error('Article not found');
-    }
 
     if (!response.data) {
       throw new Error();

@@ -2,6 +2,7 @@
   color: var(--text-primary-color);
   stroke: var(--text-primary-color);
   stroke-width: 0;
+  transition: color var(--ui-transition) ease;
 
   &.primary {
     color: var(--bg-primary-color);

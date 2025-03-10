@@ -92,7 +92,7 @@ export const ArticleDetailsDeprecated = memo((props: ArticleDetailsDeprecatedPro
             className={cl.Avatar}
             size={180}
             src={article?.img}
-            alt={t('Article Details Page')}
+            alt={article?.title}
           />
         </HStack>
         <VStack data-testid="ArticleDetails.Info" fullWidth gap="16">

@@ -11,7 +11,7 @@ import { Text } from '../Text/Text';
 import cl from './Input.module.scss';
 
 type HTMLInputProps = Omit<
-  InputHTMLAttributes<HTMLInputElement>,
+  InputHTMLAttributes<HTMLInputElement | HTMLTextAreaElement>,
   'value' | 'onChange' | 'readOnly'
 >;
 
@@ -32,6 +32,7 @@ interface InputProps extends HTMLInputProps {
   error?: string;
   addon?: ReactNode;
   background?: InputBackground;
+  textarea?: boolean;
 }
 
 export const Input = memo((props: InputProps) => {
@@ -47,10 +48,12 @@ export const Input = memo((props: InputProps) => {
     error,
     addon,
     background = 'transparent',
+    textarea,
     ...otherProps
   } = props;
   const [isFocus, setIsFocus] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
+  const textareaRef = useRef<HTMLTextAreaElement>(null);
 
   useEffect(() => {
     if (inputRef?.current?.value !== '') {
@@ -65,7 +68,7 @@ export const Input = memo((props: InputProps) => {
     }
   };
 
-  const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     onChange?.(e.target.value);
   };
 
@@ -73,9 +76,38 @@ export const Input = memo((props: InputProps) => {
     [cl.focused]: isFocus,
     [cl.readonly]: readonly,
     [cl.error]: !!error,
+    [cl.textarea]: textarea,
   };
 
   const addonContent = addon && <div className={cl.Addon}>{addon}</div>;
+
+  if (textarea) {
+    return (
+      <div className={cl.InputWrapper}>
+        {addonContent}
+        {placeholder && (
+          <span className={classNames(cl.InputPlaceholder, mods, [className, cl[variant], cl[background]])}>
+            {placeholder}
+          </span>
+        )}
+        <textarea
+          ref={textareaRef}
+          value={value}
+          onChange={onChangeHandler}
+          onFocus={onFocus}
+          onBlur={onBlur}
+          className={classNames(cl.Input, mods, [className, cl[variant]])}
+          readOnly={readonly}
+          {...otherProps}
+        />
+        {error && (
+          <Text data-testid="Input.Error" size="s" className={cl.ErrorMessage} variant="error">
+            {error}
+          </Text>
+        )}
+      </div>
+    );
+  }
 
   return (
     <div className={cl.InputWrapper}>

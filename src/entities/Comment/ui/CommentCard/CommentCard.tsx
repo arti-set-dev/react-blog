@@ -21,7 +21,6 @@ import cl from './CommentCard.module.scss';
 import { getUserAuthData } from '@/entities/User';
 import { Button } from '@/shared/ui/redesigned/Button';
 import { Input } from '@/shared/ui/redesigned/Input';
-import { getCommentValidateErrors } from '../../model/selectors/getCommentValidateErrors';
 import { Input as InputDeprecated, InputTheme } from '@/shared/ui/deprecated/Input';
 
 interface CommentCardProps {
@@ -41,7 +40,6 @@ export const CommentCard = memo((props: CommentCardProps) => {
   const canEdit = authData?.id === comment?.user?.id;
   const [isEditing, setIsEditing] = useState(false);
   const [editedText, setEditedText] = useState<string>(comment?.text || '');
-  const validateErrors = useSelector(getCommentValidateErrors);
 
   const onDisabledHandler = () => {
     if (editedText === '') {

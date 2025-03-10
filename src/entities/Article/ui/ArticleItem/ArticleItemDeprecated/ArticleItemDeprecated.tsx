@@ -60,15 +60,15 @@ export const ArticleItemDeprecated = memo((props: ArticleItemProps) => {
             <Avatar
               className={cl.Avatar}
               size={30}
-              src={article.user.avatar}
-              alt={article.user.username}
+              src={article.user?.avatar}
+              alt={article.user?.username}
             />
             <Text
               className={cl.Username}
               size={TextSize.M}
               weight={TextWeight.BOLD}
             >
-              {article.user.username}
+              {article.user?.username}
             </Text>
             <Text size={TextSize.S}>{article.createdAt}</Text>
           </div>

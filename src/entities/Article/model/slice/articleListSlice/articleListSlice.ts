@@ -66,9 +66,11 @@ const articleListSlice = createSlice({
       state.limit = view === ArticleView.COLUMN ? 4 : 15;
       state._inited = true;
     },
+    removeArticle: (state, action: PayloadAction<string>) => {
+      articlesAdapter.removeOne(state, action.payload);
+    },
   },
   extraReducers: (builder) => {
-    // fetch comments
     builder.addCase(fetchArticlesList.pending, (state, action) => {
       state.error = undefined;
       state.isLoading = true;

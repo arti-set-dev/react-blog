@@ -14,19 +14,20 @@ interface TabsProps {
   className?: string;
   tabs: TabItem[];
   value: string;
-  onTabClick: (tab: TabItem) => void;
+  onTabClick?: (tab: TabItem) => void;
   direction?: FlexDirection;
+  fullWidth?: boolean;
 }
 
 export const Tabs = memo((props: TabsProps) => {
   const {
-    className, tabs, value, onTabClick, direction = 'row',
+    className, tabs, value, onTabClick, direction = 'row', fullWidth,
   } = props;
   const { t } = useTranslation();
 
   const clickHandle = useCallback(
     (tab: TabItem) => () => {
-      onTabClick(tab);
+      onTabClick?.(tab);
     },
     [onTabClick],
   );
@@ -35,6 +36,8 @@ export const Tabs = memo((props: TabsProps) => {
     <Flex direction={direction} align="start" gap="4" className={classNames(cl.Tabs, {}, [className])}>
       {tabs.map((tab) => (
         <Button
+          className={className}
+          fullWidth={fullWidth}
           isHovered
           key={tab.value}
           variant={tab.value === value ? 'active' : 'clear'}

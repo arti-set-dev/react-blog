@@ -26,11 +26,12 @@ interface ListBoxProps<T extends string> {
   label?: string;
   background?: ListBoxBackground;
   variant?: ListBoxVariant;
+  width?: number | string
 }
 
 export const Listbox = <T extends string>(props: ListBoxProps<T>) => {
   const {
-    className, items, value, defaultValue, onChange, readonly, label, variant = 'primary', background = '',
+    className, items, value, defaultValue, onChange, readonly, label, variant = 'primary', background = '', width,
   } = props;
 
   return (
@@ -39,6 +40,7 @@ export const Listbox = <T extends string>(props: ListBoxProps<T>) => {
       as="div"
       className={classNames(popupCl.Popup, {}, [className])}
       value={value}
+      style={{ maxWidth: width }}
       onChange={onChange}
     >
       <HListBox.Button
