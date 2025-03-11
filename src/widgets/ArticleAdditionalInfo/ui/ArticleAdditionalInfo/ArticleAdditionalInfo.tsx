@@ -6,6 +6,9 @@ import { Avatar } from '@/shared/ui/redesigned/Avatar/Avatar';
 import { VStack, HStack } from '@/shared/ui/redesigned/Stack';
 import { User } from '@/entities/User';
 import { classNames } from '@/shared/lib/classNames/classNames';
+import { AppLink } from '@/shared/ui/redesigned/AppLink';
+import { getRouteProfile } from '@/shared/const/router';
+import { getHstack } from '@/shared/lib/stack/getHstack/getHstack';
 
 interface ArticleAdditionalInfoProps {
   className?: string;
@@ -34,9 +37,11 @@ export const ArticleAdditionalInfo = memo((props: ArticleAdditionalInfoProps) =>
   return (
     <VStack gap="32" className={classNames('', {}, [className])}>
       <HStack gap="8">
-        <Avatar size={32} src={author?.avatar} />
-        <Text weight="bold">{author?.username}</Text>
-        <Text>{createdAt}</Text>
+        <AppLink to={getRouteProfile(author?.id ?? '')} className={getHstack({ gap: 8, align: 'center' })}>
+          <Avatar size={32} src={author?.avatar} />
+          <Text weight="bold">{author?.username}</Text>
+          <Text>{createdAt}</Text>
+        </AppLink>
       </HStack>
       {canEdit && (
         <HStack gap="8">
