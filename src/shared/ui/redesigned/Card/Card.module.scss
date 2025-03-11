@@ -66,6 +66,10 @@
     background-color: var(--bg-color);
   }
 
+  &.outline-inverted {
+    border: 1px solid var(--bg-inverted-color);
+  }
+
   &.outline-inverted-bg {
     border: 1px solid var(--bg-inverted-color);
     background-color: var(--bg-color);

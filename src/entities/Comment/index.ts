@@ -6,8 +6,6 @@ import { fetchComments } from './model/services/fetchComments/fetchComments';
 import { addComment } from './model/services/addComment/addComment';
 import { commentsActions, commentsReducer, getArticleComments }
   from './model/slices/commentsSlice';
-import { articleDetailsRecommendationsReducer }
-  from '../Article/model/slice/articleListSlice/ArticleRecommendationsSlice';
 
 export {
   Comments,
@@ -21,5 +19,4 @@ export {
   getArticleComments,
   commentsActions,
   commentsReducer,
-  articleDetailsRecommendationsReducer,
 };

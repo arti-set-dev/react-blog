@@ -9,7 +9,6 @@ import { ToggleFeatures } from '@/shared/lib/features';
 import { Text, TextSize } from '@/shared/ui/deprecated/Text';
 import {
   ArticleDetails,
-  articleDetailsRecommendationsReducer,
 } from '@/entities/Article';
 import { ArticleRecommendationsList } from '@/features/articleRecommendationsList';
 import { classNames } from '@/shared/lib/classNames/classNames';
@@ -33,7 +32,6 @@ interface ArticleDetailsPageProps {
 
 const reducers: ReducerList = {
   comments: commentsReducer,
-  recommendations: articleDetailsRecommendationsReducer,
 };
 
 const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {

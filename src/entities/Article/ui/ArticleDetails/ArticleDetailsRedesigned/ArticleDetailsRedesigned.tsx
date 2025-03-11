@@ -1,4 +1,4 @@
-import { memo, useCallback } from 'react';
+import { memo, useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { getHstack } from '@/shared/lib/stack/getHstack/getHstack';
 import { Icon } from '@/shared/ui/redesigned/Icon/Icon';
@@ -18,6 +18,7 @@ import {
   Text,
 } from '@/shared/ui/redesigned/Text';
 import { VStack, HStack } from '@/shared/ui/redesigned/Stack';
+import { Card } from '@/shared/ui/redesigned/Card';
 
 interface ArticleDetailsRedesignedProps extends ArticleDetailsProps {
   className?: string;
@@ -31,6 +32,20 @@ export const ArticleDetailsRedesigned = memo((props: ArticleDetailsRedesignedPro
     className, error, isLoading, article,
   } = props;
   const { t } = useTranslation();
+
+  const articleTypes = useMemo(
+    () => (
+      <HStack gap="4" width="60%" overflow="auto">
+        {article?.type.map((type, index) => (
+          // eslint-disable-next-line react/no-array-index-key
+          <Card offset="4" variant="active" tag="div" key={index}>
+            {type}
+          </Card>
+        ))}
+      </HStack>
+    ),
+    [article?.type],
+  );
 
   const renderBlock = useCallback((block: ArticleBlock) => {
     switch (block.type) {
@@ -94,6 +109,7 @@ export const ArticleDetailsRedesigned = memo((props: ArticleDetailsRedesignedPro
             alt={article?.title}
           />
         </HStack>
+        {articleTypes}
         <VStack data-testid="ArticleDetails.Info" fullWidth gap="16">
           <Text
             tag="h1"
