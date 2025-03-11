@@ -3,11 +3,13 @@ import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 import cl from './Card.module.scss';
 
 export type CardVariant =
-  'primary' | 'outline' | 'outline-inverted' | 'outline-inverted-bg' | 'inverted' | 'active' | 'transparent';
-export type CardPositionSticky = 'sticky-top' | 'sticky-bottom';
+  'primary' | 'outline' | 'outline-inverted' | 'outline-inverted-bg' | 'inverted' | 'active' | 'transparent' | 'accent';
+export type CardPosition = 'absolute' | 'sticky' | 'fixed';
+export type CardPositionCorner = 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right' | 'bottom';
 export type CardOffset = '0' | '4' | '8' | '16' | '24';
 type TagType = 'article' | 'aside' | 'h3' | 'main' | 'div' | 'form' | 'li' | 'pre' | 'header' | 'footer' | 'section';
 export type BorderRadius = '0' | '4' | '8' | '10' | '12' | '20';
+export type CardAnimation = 'show';
 
 interface CardProps {
   className?: string;
@@ -19,12 +21,15 @@ interface CardProps {
   variant?: CardVariant;
   tag?: TagType;
   max?: boolean;
+  animation?: CardAnimation | string;
   isOverflow?: boolean;
   border?: BorderRadius;
   height?: number;
   width?: number;
-  position?: CardPositionSticky;
+  position?: CardPosition;
+  positionCorner?: CardPositionCorner;
   positionOffset?: number | string
+  isHidden?: boolean;
 }
 
 const mapBorderRadius: Record<BorderRadius, string> = {
@@ -58,9 +63,12 @@ export const Card = memo((props: CardProps) => {
     tag = 'article',
     max,
     width,
-    positionOffset,
     position = '',
+    positionCorner = '',
+    positionOffset,
+    animation = '',
     isOverflow = false,
+    isHidden,
     ...otherProps
   } = props;
 
@@ -71,6 +79,7 @@ export const Card = memo((props: CardProps) => {
     [cl.offset]: isOffset,
     [cl.max]: max,
     [cl.overflow]: isOverflow,
+    [cl.isHidden]: isHidden,
   };
 
   const Tag = tag;
@@ -78,7 +87,11 @@ export const Card = memo((props: CardProps) => {
   return (
     <Tag
       {...otherProps}
-      className={classNames(cl.Card, mods, [className, cl[variant], cl[offsetClass], cl[borderClass], cl[position]])}
+      className={classNames(
+        cl.Card,
+        mods,
+        [className, cl[variant], cl[offsetClass], cl[borderClass], cl[position], cl[positionCorner], cl[animation]],
+      )}
       style={{
         height, width, flexBasis, bottom: positionOffset,
       }}

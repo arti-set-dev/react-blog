@@ -2,6 +2,10 @@
   margin: 0;
   line-height: 100%;
 
+  &.xxs {
+    font-size: var(--font-size-xxs);
+  }
+
   &.s {
     font-size: var(--font-size-s);
   }

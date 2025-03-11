@@ -61,7 +61,7 @@ export const AdditionalInfoContainer = memo((props: AdditionalInfoContainerProps
         <HStack gap="8" justify="center" fullWidth>
           <Button onClick={onCloseModal} variant="outline">{t('Cancel')}</Button>
           {isLoading
-            ? <Skeleton width={200} height={30} border="8" />
+            ? <Skeleton width={130} height={46} border="8" />
             : <Button onClick={onDeleteArticle} variant="outline-red">{t('Delete')}</Button>}
         </HStack>
         {error && <Text variant="error">{t('An error occurred')}</Text>}

@@ -11,6 +11,8 @@ export type ButtonVariant =
 
 export type ButtonSize = 'xs' | 'l' | 'xl';
 
+export type ButtonAnimation = 'shake';
+
 export type ButtonPosition = 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right';
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -22,10 +24,10 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children?: ReactNode;
   fullWidth?: boolean;
   position?: ButtonPosition;
+  animation?: ButtonAnimation | string;
   isHovered?: boolean;
   isActive?: boolean;
   Svg?: React.VFC<React.SVGProps<SVGSVGElement>>;
-  notification?: number;
 }
 
 export const Button = forwardRef((props: ButtonProps, ref: ForwardedRef<HTMLButtonElement>) => {
@@ -40,8 +42,8 @@ export const Button = forwardRef((props: ButtonProps, ref: ForwardedRef<HTMLButt
     position = '',
     isHovered = false,
     isActive = false,
+    animation = '',
     Svg,
-    notification,
     ...otherProps
   } = props;
 
@@ -53,38 +55,16 @@ export const Button = forwardRef((props: ButtonProps, ref: ForwardedRef<HTMLButt
     [cl.isActive]: isActive,
   };
 
-  const notificationButton = (
-    <div className={cl.notificationWrapper}>
-      <div className={cl.notification}>
-        {notification}
-      </div>
-      <button
-        disabled={disabled}
-        type={type}
-        className={classNames(cl.Button, mods, [className, cl[variant], cl[size], cl[position]])}
-        ref={ref}
-        {...otherProps}
-      >
-        {Svg && <Icon width="100%" height="100%" Svg={Svg} className={className} />}
-        {children}
-      </button>
-    </div>
-  );
-
   return (
-    notification
-      ? notificationButton
-      : (
-        <button
-          disabled={disabled}
-          type={type}
-          className={classNames(cl.Button, mods, [className, cl[variant], cl[size], cl[position]])}
-          ref={ref}
-          {...otherProps}
-        >
-          {Svg && <Icon width="100%" height="100%" Svg={Svg} />}
-          {children}
-        </button>
-      )
+    <button
+      disabled={disabled}
+      type={type}
+      className={classNames(cl.Button, mods, [className, cl[variant], cl[size], cl[position], cl[animation]])}
+      ref={ref}
+      {...otherProps}
+    >
+      {Svg && <Icon width="100%" height="100%" Svg={Svg} />}
+      {children}
+    </button>
   );
 });

@@ -39,7 +39,7 @@ export const EditBlockText = ({
 
   return (
     <Card
-      position="sticky-bottom"
+      position="sticky"
       positionOffset={100}
       tag="div"
       max

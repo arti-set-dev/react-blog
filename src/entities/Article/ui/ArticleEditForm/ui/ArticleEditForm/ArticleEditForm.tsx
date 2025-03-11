@@ -222,7 +222,7 @@ export const ArticleEditForm = memo((props: ArticleEditFormProps) => {
         />
       )}
 
-      <Card max tag="div" position="sticky-bottom">
+      <Card max tag="div" position="sticky" positionCorner="bottom">
         <Tabs
           fullWidth
           tabs={typeTabs}

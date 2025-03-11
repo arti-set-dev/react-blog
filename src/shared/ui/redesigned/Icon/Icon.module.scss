@@ -4,6 +4,10 @@
   stroke-width: 0;
   transition: color var(--ui-transition) ease;
 
+  &.show {
+    animation: show 1s ease-in-out;
+  }
+
   &.primary {
     color: var(--bg-primary-color);
   }
@@ -29,4 +33,18 @@
   background-color: transparent;
   cursor: pointer;
   pointer-events: painted;
+}
+
+@keyframes show {
+  0% {
+    transform: scale(0);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(1);
+  }
 }

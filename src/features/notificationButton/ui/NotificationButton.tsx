@@ -10,6 +10,9 @@ import { NotificationList } from '@/entities/Notification';
 import NotificationIcon from '@/shared/assets/icons/notification-icon-new.svg';
 import { getUserAuthData } from '@/entities/User';
 import { useNotificationList } from '../api/notificationApi';
+import { Card } from '@/shared/ui/redesigned/Card';
+import { Text } from '@/shared/ui/redesigned/Text';
+import { getVstack } from '@/shared/lib/stack/getVstack/getVstack';
 
 interface NotificationButtonProps {
   className?: string;
@@ -36,12 +39,26 @@ export const NotificationButton = (props: NotificationButtonProps) => {
 
   const trigger = (
     <Button
+      animation={notifications?.length ? 'shake' : ''}
       onClick={onOpenDrower}
       variant="icon"
       aria-label={t('Toggle notification')}
-      notification={notifications?.length}
     >
       <Icon Svg={NotificationIcon} width="100%" height="100%" />
+      <Card
+        isHidden={!notifications?.length}
+        animation={notifications?.length ? 'show' : ''}
+        height={15}
+        width={15}
+        tag="div"
+        offset="0"
+        variant="accent"
+        className={getVstack({ align: 'center', justify: 'center' })}
+        position="absolute"
+        positionCorner="top-right"
+      >
+        <Text variant="inverted" size="xxs">{notifications?.length}</Text>
+      </Card>
     </Button>
   );
 
