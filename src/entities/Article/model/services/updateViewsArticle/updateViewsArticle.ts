@@ -10,23 +10,26 @@ export const updateViewsArticle = createAsyncThunk<
   const { extra, rejectWithValue } = thunkAPI;
 
   try {
-    const { data: article } = await extra.api.get<Article>(`/articles/${articleId}`);
+    const response = await extra.api.get<Article>(`/articles/${articleId}`);
 
-    if (!article) {
-      throw new Error('Article not found');
+    if (!response.data || Object.keys(response.data).length === 0) {
+      throw new Error('Article not found or empty');
     }
+
+    const article = response.data;
 
     const updatedViews = article.views + 1;
 
-    const response = await extra.api.patch<Article>(`/articles/${articleId}`, {
-      views: updatedViews,
-    });
+    const patchResponse = await extra.api.patch<{ views: number }>(
+      `/articles/${articleId}`,
+      { views: updatedViews },
+    );
 
-    if (!response.data) {
+    if (!patchResponse.data) {
       throw new Error();
     }
 
-    return response.data.views;
+    return patchResponse.data.views;
   } catch (error) {
     console.log(error);
     return rejectWithValue('error');
