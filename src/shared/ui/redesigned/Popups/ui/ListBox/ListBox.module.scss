@@ -70,7 +70,7 @@
   margin: 0;
   border-radius: 0 0 var(--radius-s) var(--radius-s);
   padding: var(--button-offset) 0;
-  width: 100%;
+  width: max-content;
   box-shadow: var(--box-shadow);
   background-color: var(--bg-color);
 }
