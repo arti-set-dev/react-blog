@@ -13,7 +13,8 @@ interface TabsProps {
   className?: string;
   tabs: TabItem[];
   value: string;
-  onTabClick: (tab: TabItem) => void;
+  onTabClick?: (tab: TabItem) => void;
+  fullWidth?: boolean;
 }
 
 /**
@@ -22,13 +23,13 @@ interface TabsProps {
  */
 export const Tabs = memo((props: TabsProps) => {
   const {
-    className, tabs, value, onTabClick,
+    className, tabs, value, onTabClick, fullWidth,
   } = props;
   const { t } = useTranslation();
 
   const clickHandle = useCallback(
     (tab: TabItem) => () => {
-      onTabClick(tab);
+      onTabClick?.(tab);
     },
     [onTabClick],
   );
@@ -37,6 +38,7 @@ export const Tabs = memo((props: TabsProps) => {
     <div className={classNames(cl.Tabs, {}, [className])}>
       {tabs.map((tab) => (
         <Button
+          fullWidth={fullWidth}
           key={tab.value}
           theme={tab.value === value ? ButtonTheme.ACTIVE : ButtonTheme.OUTLINE}
           onClick={clickHandle(tab)}

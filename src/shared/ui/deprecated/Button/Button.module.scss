@@ -69,6 +69,10 @@
     &:hover {
       color: var(--text-inverted-color);
       background-color: var(--text-primary-color);
+
+      svg {
+        color: var(--text-inverted-color);
+      }
     }
   }
 }
@@ -81,6 +85,14 @@
   font-size: var(--font-size-m);
   line-height: 100%;
   color: var(--error-color);
+  transition: background-color var(--ui-transition) ease, color var(--ui-transition) ease;
+
+  @media (any-hover: hover) {
+    &:hover {
+      color: var(--text-inverted-color);
+      background-color: var(--error-color);
+    }
+  }
 }
 
 .text-inverted {
@@ -96,11 +108,21 @@
 
 .disabled {
   opacity: 0.5;
+  pointer-events: none;
 }
 
 .active {
+  border: 1px solid var(--text-primary-color);
   border-radius: var(--radius-s);
   padding: calc(var(--button-offset) - 2px);
+  font-weight: 400;
+  font-size: var(--font-size-m);
+  line-height: 100%;
   color: var(--text-inverted-color);
   background-color: var(--text-primary-color);
+  transition: background-color var(--ui-transition) ease, color var(--ui-transition) ease;
+
+  svg {
+    color: var(--text-inverted-color);
+  }
 }

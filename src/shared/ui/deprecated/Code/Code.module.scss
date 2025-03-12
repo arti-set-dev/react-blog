@@ -1,9 +1,11 @@
 .Code {
   position: relative;
+  overflow: auto;
   margin: 0;
   border: 1px solid var(--text-primary-color);
   border-radius: var(--radius-s);
   padding: var(--inner-offset);
+  width: 100%;
   background-color: var(--bg-light-color);
 }
 

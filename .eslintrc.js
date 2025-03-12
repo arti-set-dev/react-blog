@@ -48,6 +48,7 @@ module.exports = {
           'background',
           'src',
           'positionCorner',
+          'positionOffset',
           'animation',
           'weight', 'variant', 'name', 'target', 'justify', 'align', 'direction', 'gap', 'tag', 'as', 'border'],
     }],

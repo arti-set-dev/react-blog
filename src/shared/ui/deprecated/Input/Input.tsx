@@ -1,16 +1,12 @@
 import React, {
-  InputHTMLAttributes,
-  memo,
-  useEffect,
-  useRef,
-  useState,
+  InputHTMLAttributes, memo, useEffect, useRef, useState,
 } from 'react';
 import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 import { Text, TextSize, TextTheme } from '../Text/Text';
 import cl from './Input.module.scss';
 
 type HTMLInputProps = Omit<
-  InputHTMLAttributes<HTMLInputElement>,
+  InputHTMLAttributes<HTMLInputElement | HTMLTextAreaElement>,
   'value' | 'onChange' | 'readOnly'
 >;
 
@@ -35,6 +31,7 @@ interface InputProps extends HTMLInputProps {
   readonly?: boolean;
   isNumeric?: boolean;
   error?: string;
+  textarea?: boolean;
 }
 
 /**
@@ -52,11 +49,13 @@ export const Input = memo((props: InputProps) => {
     autofocus,
     readonly,
     isNumeric,
+    textarea,
     error,
     ...otherProps
   } = props;
   const [isFocus, setIsFocus] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
+  const textareaRef = useRef<HTMLTextAreaElement>(null);
 
   useEffect(() => {
     if (inputRef?.current?.value !== '') {
@@ -64,7 +63,7 @@ export const Input = memo((props: InputProps) => {
     }
   }, [inputRef?.current?.value]);
 
-  const onFoucus = () => {
+  const onFocus = () => {
     setIsFocus(true);
   };
 
@@ -74,7 +73,7 @@ export const Input = memo((props: InputProps) => {
     }
   };
 
-  const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     onChange?.(e.target.value);
   };
 
@@ -82,7 +81,35 @@ export const Input = memo((props: InputProps) => {
     [cl.focused]: isFocus,
     [cl.readonly]: readonly,
     [cl.error]: !!error,
+    [cl.textarea]: textarea,
   };
+
+  if (textarea) {
+    return (
+      <div className={cl.InputWrapper}>
+        {placeholder && (
+          <span className={classNames(cl.InputPlaceholder, mods, [className, cl[theme]])}>
+            {placeholder}
+          </span>
+        )}
+        <textarea
+          ref={textareaRef}
+          value={value}
+          onChange={onChangeHandler}
+          onFocus={onFocus}
+          onBlur={onBlur}
+          className={classNames(cl.Input, mods, [className, cl[theme]])}
+          readOnly={readonly}
+          {...otherProps}
+        />
+        {error && (
+          <Text data-testid="Input.Error" size={TextSize.S} theme={TextTheme.ERROR} className={cl.ErrorMessage}>
+            {error}
+          </Text>
+        )}
+      </div>
+    );
+  }
 
   return (
     // eslint-disable-next-line react/jsx-no-useless-fragment
@@ -102,7 +129,7 @@ export const Input = memo((props: InputProps) => {
             type={type}
             value={value}
             onChange={onChangeHandler}
-            onFocus={onFoucus}
+            onFocus={onFocus}
             onBlur={onBlur}
             className={classNames(cl.Input, mods, [className, cl[theme]])}
             readOnly={readonly}

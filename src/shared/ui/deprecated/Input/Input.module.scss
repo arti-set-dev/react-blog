@@ -8,6 +8,13 @@
   font-size: var(--font-size-xs);
   background-color: transparent;
 
+  &.textarea {
+    margin-top: var(--input-offset);
+    min-width: 100%;
+    min-height: 100px;
+    max-width: 100%;
+  }
+
   &::-webkit-search-decoration,
   &::-webkit-search-cancel-button,
   &::-webkit-search-results-button,

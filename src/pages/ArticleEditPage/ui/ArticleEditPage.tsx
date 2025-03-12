@@ -10,6 +10,7 @@ import { ToggleFeatures } from '@/shared/lib/features';
 import { StickyContentLayout } from '@/shared/layouts/SticlyContentLayout';
 import { Button } from '@/shared/ui/redesigned/Button';
 import { getRouteArticleDetails } from '@/shared/const/router';
+import { Container } from '@/shared/ui/redesigned/Container';
 
 interface ArticleEditPageProps {
   className?: string;
@@ -44,7 +45,9 @@ const ArticleEditPage = memo((props: ArticleEditPageProps) => {
           )}
           off={(
             <Page className={classNames(cl.ArticleEditPage, {}, [className])}>
-              <ArticleEdit id={id} />
+              <Container max>
+                <ArticleEdit id={id} />
+              </Container>
             </Page>
           )}
         />
