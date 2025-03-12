@@ -52,7 +52,26 @@ const ArticleEditPage = memo((props: ArticleEditPageProps) => {
           )}
         />
       ) : (
-        <ArticleCreate />
+        <ToggleFeatures
+          feature="isAppRedesigned"
+          on={(
+            <StickyContentLayout
+              left={<Button variant="outline" onClick={onBackToArticle}>{t('Back')}</Button>}
+              content={(
+                <Page className={classNames(cl.ArticleEditPage, {}, [className])}>
+                  <ArticleCreate />
+                </Page>
+              )}
+            />
+          )}
+          off={(
+            <Page className={classNames(cl.ArticleEditPage, {}, [className])}>
+              <Container max>
+                <ArticleCreate />
+              </Container>
+            </Page>
+          )}
+        />
       )}
     </>
   );

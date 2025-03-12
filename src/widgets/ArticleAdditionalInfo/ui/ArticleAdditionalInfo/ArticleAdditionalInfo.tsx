@@ -47,7 +47,7 @@ export const ArticleAdditionalInfo = memo((props: ArticleAdditionalInfoProps) =>
         <HStack gap="8">
           <Button onClick={onEdit} variant="outline">{t('Edit')}</Button>
           <Button onClick={onDelete} variant="outline-red">{t('Delete')}</Button>
-          {modalContent && modalContent}
+          {modalContent}
         </HStack>
       )}
       <Text>{t('{{count}} views', { count: views })}</Text>
