@@ -14,6 +14,7 @@ import { Sidebar } from '@/widgets/Sidebar';
 import { withTheme } from './providers/ThemeProvider/ui/withTheme';
 import { ToggleFeatures } from '@/shared/lib/features';
 import { Footer } from '@/widgets/Footer';
+import { useAppTitle } from './lib/useAppTitle';
 
 const App = memo(() => {
   const { theme } = useTheme();
@@ -21,6 +22,8 @@ const App = memo(() => {
   const navigate = useNavigate();
   const inited = useSelector(getUserInited);
   const toolbar = useAppToolbar();
+
+  useAppTitle();
 
   useEffect(() => {
     dispatch(initAuthData());
