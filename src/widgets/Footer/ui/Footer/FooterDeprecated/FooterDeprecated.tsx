@@ -31,29 +31,27 @@ export const FooterDeprecated = memo((props: FooterDeprecatedProps) => {
           justify: 'between',
         })])}
       >
-        <Container max className={getHstack({ justify: 'between' })}>
-          <HStack align="start" justify="between" gap="32" fullWidth width={400}>
-            <VStack gap="16">
-              <AppLink to={getRouteMain()}>
-                <Icon color="primary" width={200} height={40} Svg={LogoIcon} />
-              </AppLink>
-              <VStack width="140px">
-                <Text>{t('Copyright')}</Text>
-              </VStack>
+        <HStack align="start" justify="between" gap="32" fullWidth width={400}>
+          <VStack gap="16">
+            <AppLink to={getRouteMain()}>
+              <Icon color="primary" width={200} height={40} Svg={LogoIcon} />
+            </AppLink>
+            <VStack width="140px">
+              <Text>{t('Copyright')}</Text>
             </VStack>
-            <VStack tag="ul" gap="16">
-              {itemsList}
-            </VStack>
-          </HStack>
-          <VStack tag="ul" gap="16">
-            <li>
-              <AppLink to={getRouteMain()}>{t('Service rules')}</AppLink>
-            </li>
-            <li>
-              <AppLink to={getRouteMain()}>{t('Privacy Policy')}</AppLink>
-            </li>
           </VStack>
-        </Container>
+          <VStack tag="ul" gap="16">
+            {itemsList}
+          </VStack>
+        </HStack>
+        <VStack tag="ul" gap="16">
+          <li>
+            <AppLink to={getRouteMain()}>{t('Service rules')}</AppLink>
+          </li>
+          <li>
+            <AppLink to={getRouteMain()}>{t('Privacy Policy')}</AppLink>
+          </li>
+        </VStack>
       </Card>
     </Container>
   );
