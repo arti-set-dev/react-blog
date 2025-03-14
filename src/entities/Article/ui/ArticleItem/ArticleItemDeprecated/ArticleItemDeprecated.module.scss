@@ -151,20 +151,7 @@
   }
 
   .TextBlock {
-    position: relative;
-    overflow: hidden;
     margin-bottom: var(--gap);
-    max-height: 200px;
-
-    &::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 100%;
-      height: 20px;
-      background: linear-gradient(0deg, var(--bg-light-color) 0%, transparent 100%);
-    }
   }
 
   .Footer {
@@ -172,5 +159,22 @@
     align-items: center;
     justify-content: space-between;
     width: 100%;
+  }
+}
+
+.isShadow {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 20px;
+  height: 100px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 20px;
+    background: linear-gradient(0deg, var(--bg-light-color) 0%, transparent 100%);
   }
 }

@@ -18,5 +18,5 @@ export const ArticleListContainer = memo(() => {
     return <Text>{t('Data boot error')}</Text>;
   }
 
-  return <ArticleList view={view} isLoading={isLoading} articles={articles} />;
+  return <ArticleList virtualized view={view} isLoading={isLoading} articles={articles} />;
 });

@@ -69,6 +69,9 @@ const articleListSlice = createSlice({
     removeArticle: (state, action: PayloadAction<string>) => {
       articlesAdapter.removeOne(state, action.payload);
     },
+    addArticle: (state, action: PayloadAction<Article>) => {
+      articlesAdapter.addOne(state, action.payload);
+    },
   },
   extraReducers: (builder) => {
     builder.addCase(fetchArticlesList.pending, (state, action) => {

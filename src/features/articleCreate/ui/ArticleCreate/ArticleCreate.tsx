@@ -12,7 +12,7 @@ import {
   ArticleTextBlock,
   createEmptyBlock,
   createTextBlock,
-  validateBlock, ArticleType, Article,
+  validateBlock, ArticleType, Article, articleListActions,
 } from '@/entities/Article';
 import { TabItem } from '@/shared/ui/deprecated/Tabs';
 import { getUserAuthData } from '@/entities/User';
@@ -20,6 +20,7 @@ import { useCreateArticle } from '../../api/articleCreateApi';
 import { getRouteArticleDetails } from '@/shared/const/router';
 import { LOCAL_STORAGE_ARTICLE_DATA } from '@/shared/const/localstorage';
 import { formatDate } from '@/shared/lib/date/formatDate';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 
 interface ArticleCreateProps {
   className?: string;
@@ -29,6 +30,7 @@ export const ArticleCreate = memo((props: ArticleCreateProps) => {
   const { className } = props;
   const { t } = useTranslation();
   const navigate = useNavigate();
+  const dispatch = useAppDispatch();
   const userData = useSelector(getUserAuthData);
   const [createArticle, { isLoading, error }] = useCreateArticle();
   const [tabValue, setTabValue] = useState<ArticleBlockType | string>('');
@@ -113,6 +115,7 @@ export const ArticleCreate = memo((props: ArticleCreateProps) => {
 
     try {
       await createArticle(newArticle).unwrap();
+      dispatch(articleListActions.addArticle(newArticle));
       localStorage.removeItem(LOCAL_STORAGE_ARTICLE_DATA);
       navigate(getRouteArticleDetails(newArticle.id));
     } catch (err) {

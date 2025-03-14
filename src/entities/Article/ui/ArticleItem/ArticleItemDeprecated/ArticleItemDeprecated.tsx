@@ -73,7 +73,7 @@ export const ArticleItemDeprecated = memo((props: ArticleItemProps) => {
             <Text size={TextSize.S}>{article.createdAt}</Text>
           </div>
           <AppLink to={getRouteArticleDetails(article.id)}>
-            <Text className={cl.Title} size={TextSize.XL}>
+            <Text cropped="1" className={cl.Title} size={TextSize.XL}>
               {article.title}
             </Text>
           </AppLink>
@@ -89,12 +89,14 @@ export const ArticleItemDeprecated = memo((props: ArticleItemProps) => {
               alt={article.title}
             />
           </AppLink>
-          {textBlocks && (
-            <ArticleTextBlockComponent
-              className={cl.TextBlock}
-              block={textBlocks}
-            />
-          )}
+          <div className={classNames('', { [cl.isShadow]: !!textBlocks }, [])}>
+            {textBlocks && (
+              <ArticleTextBlockComponent
+                className={cl.TextBlock}
+                block={textBlocks}
+              />
+            )}
+          </div>
           <div onClick={onOpenArticle} className={cl.Footer}>
             <Button theme={ButtonTheme.OUTLINE}>{t('Read more')}</Button>
             {views}
@@ -138,7 +140,7 @@ export const ArticleItemDeprecated = memo((props: ArticleItemProps) => {
               to={getRouteArticleDetails(article.id)}
               target="_blank"
             >
-              <Text size={TextSize.M} weight={TextWeight.BOLD}>
+              <Text cropped="1" size={TextSize.M} weight={TextWeight.BOLD}>
                 {article.title}
               </Text>
             </AppLink>
@@ -170,7 +172,7 @@ export const ArticleItemDeprecated = memo((props: ArticleItemProps) => {
               className={cl.Link}
               to={getRouteArticleDetails(article.id)}
             >
-              <Text size={TextSize.M} weight={TextWeight.BOLD}>
+              <Text cropped="1" size={TextSize.M} weight={TextWeight.BOLD}>
                 {article.title}
               </Text>
             </AppLink>

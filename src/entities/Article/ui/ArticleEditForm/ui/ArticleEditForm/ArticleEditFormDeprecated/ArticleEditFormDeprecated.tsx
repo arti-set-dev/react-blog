@@ -176,7 +176,7 @@ export const ArticleEditFormDeprecated = memo((props: ArticleEditFormProps) => {
         />
       )}
 
-      <Card border="0" max tag="div" position="sticky" positionOffset="-20px">
+      <Card border="0" max tag="div" position="sticky" positionCorner="bottom">
         <Tabs
           fullWidth
           tabs={typeTabs}

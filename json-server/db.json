@@ -336,7 +336,7 @@
       "title": "History of Artificial Intelligence",
       "subtitle": "Development of AI from first ideas to modern technologies",
       "img": "https://images.unsplash.com/photo-1666597107756-ef489e9f1f09?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "views": 1507,
+      "views": 1510,
       "createdAt": "20.06.2022",
       "userId": "1",
       "type": [
@@ -410,7 +410,7 @@
       "title": "Environmental Pollution",
       "subtitle": "Analysis of Causes and Consequences of the Ecological Crisis",
       "img": "https://images.unsplash.com/photo-1704797771332-fca2526315dd?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "views": 670,
+      "views": 671,
       "createdAt": "13.07.2022",
       "userId": "1",
       "type": [
@@ -633,7 +633,7 @@
       "title": "Technology Startups",
       "subtitle": "Prospects and Challenges in New Technology Development",
       "img": "https://images.unsplash.com/photo-1587727383733-f5222d6855b5?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "views": 900,
+      "views": 901,
       "createdAt": "11.10.2022",
       "userId": "1",
       "type": [
@@ -1660,9 +1660,9 @@
     {
       "id": "23",
       "title": "The Future of Green Technologies ",
-      "subtitle": "How Sustainable Technologies are Changing Our World ssws",
+      "subtitle": "How Sustainable Technologies are Changing Our World",
       "img": "https://images.unsplash.com/photo-1533413598044-92e0b8e24cbc?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "views": 858,
+      "views": 865,
       "createdAt": "02.08.2023",
       "userId": "1",
       "type": [
@@ -1851,6 +1851,2598 @@
     },
     {
       "id": "26",
+      "title": "The Future of Cybersecurity",
+      "subtitle": "Trends and Technologies That Will Define Cyber Protection",
+      "img": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "views": 781,
+      "createdAt": "25.02.2025",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Introduction to the Future of Cybersecurity",
+          "paragraphs": [
+            "Cybersecurity is a rapidly evolving field with various new technologies and methodologies aimed at protecting against cyber threats. What path will this field take in the coming years?",
+            "In this article, we will explore the key trends and innovations that will shape the future of cybersecurity."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "TEXT",
+          "title": "Key Trends",
+          "paragraphs": [
+            "1. Increased use of AI for threat detection and prevention.",
+            "2. Growing number of cyberattacks on Internet of Things (IoT) devices.",
+            "3. Increasing need for cyber risk management at the business level.",
+            "4. Development of legal frameworks and data security standards."
+          ]
+        },
+        {
+          "id": "3",
+          "type": "IMAGE",
+          "src": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "title": "Figure 3 - the future of cybersecurity"
+        },
+        {
+          "id": "4",
+          "type": "TEXT",
+          "title": "Conclusion",
+          "paragraphs": [
+            "The future of cybersecurity is tied to the rapid development of technology and changes in protection approaches. Continuous updating of knowledge and skills in this field will become an important aspect for security professionals."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "26",
+      "title": "The Future of Cybersecurity",
+      "subtitle": "Trends and Technologies That Will Define Cyber Protection",
+      "img": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "views": 781,
+      "createdAt": "25.02.2025",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Introduction to the Future of Cybersecurity",
+          "paragraphs": [
+            "Cybersecurity is a rapidly evolving field with various new technologies and methodologies aimed at protecting against cyber threats. What path will this field take in the coming years?",
+            "In this article, we will explore the key trends and innovations that will shape the future of cybersecurity."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "TEXT",
+          "title": "Key Trends",
+          "paragraphs": [
+            "1. Increased use of AI for threat detection and prevention.",
+            "2. Growing number of cyberattacks on Internet of Things (IoT) devices.",
+            "3. Increasing need for cyber risk management at the business level.",
+            "4. Development of legal frameworks and data security standards."
+          ]
+        },
+        {
+          "id": "3",
+          "type": "IMAGE",
+          "src": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "title": "Figure 3 - the future of cybersecurity"
+        },
+        {
+          "id": "4",
+          "type": "TEXT",
+          "title": "Conclusion",
+          "paragraphs": [
+            "The future of cybersecurity is tied to the rapid development of technology and changes in protection approaches. Continuous updating of knowledge and skills in this field will become an important aspect for security professionals."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "27",
+      "title": "The Future of Cybersecurity",
+      "subtitle": "Trends and Technologies That Will Define Cyber Protection",
+      "img": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "views": 781,
+      "createdAt": "25.02.2025",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Introduction to the Future of Cybersecurity",
+          "paragraphs": [
+            "Cybersecurity is a rapidly evolving field with various new technologies and methodologies aimed at protecting against cyber threats. What path will this field take in the coming years?",
+            "In this article, we will explore the key trends and innovations that will shape the future of cybersecurity."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "TEXT",
+          "title": "Key Trends",
+          "paragraphs": [
+            "1. Increased use of AI for threat detection and prevention.",
+            "2. Growing number of cyberattacks on Internet of Things (IoT) devices.",
+            "3. Increasing need for cyber risk management at the business level.",
+            "4. Development of legal frameworks and data security standards."
+          ]
+        },
+        {
+          "id": "3",
+          "type": "IMAGE",
+          "src": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "title": "Figure 3 - the future of cybersecurity"
+        },
+        {
+          "id": "4",
+          "type": "TEXT",
+          "title": "Conclusion",
+          "paragraphs": [
+            "The future of cybersecurity is tied to the rapid development of technology and changes in protection approaches. Continuous updating of knowledge and skills in this field will become an important aspect for security professionals."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "28",
+      "title": "The Future of Cybersecurity",
+      "subtitle": "Trends and Technologies That Will Define Cyber Protection",
+      "img": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "views": 781,
+      "createdAt": "25.02.2025",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Introduction to the Future of Cybersecurity",
+          "paragraphs": [
+            "Cybersecurity is a rapidly evolving field with various new technologies and methodologies aimed at protecting against cyber threats. What path will this field take in the coming years?",
+            "In this article, we will explore the key trends and innovations that will shape the future of cybersecurity."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "TEXT",
+          "title": "Key Trends",
+          "paragraphs": [
+            "1. Increased use of AI for threat detection and prevention.",
+            "2. Growing number of cyberattacks on Internet of Things (IoT) devices.",
+            "3. Increasing need for cyber risk management at the business level.",
+            "4. Development of legal frameworks and data security standards."
+          ]
+        },
+        {
+          "id": "3",
+          "type": "IMAGE",
+          "src": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "title": "Figure 3 - the future of cybersecurity"
+        },
+        {
+          "id": "4",
+          "type": "TEXT",
+          "title": "Conclusion",
+          "paragraphs": [
+            "The future of cybersecurity is tied to the rapid development of technology and changes in protection approaches. Continuous updating of knowledge and skills in this field will become an important aspect for security professionals."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "29",
+      "title": "The Future of Cybersecurity",
+      "subtitle": "Trends and Technologies That Will Define Cyber Protection",
+      "img": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "views": 781,
+      "createdAt": "25.02.2025",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Introduction to the Future of Cybersecurity",
+          "paragraphs": [
+            "Cybersecurity is a rapidly evolving field with various new technologies and methodologies aimed at protecting against cyber threats. What path will this field take in the coming years?",
+            "In this article, we will explore the key trends and innovations that will shape the future of cybersecurity."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "TEXT",
+          "title": "Key Trends",
+          "paragraphs": [
+            "1. Increased use of AI for threat detection and prevention.",
+            "2. Growing number of cyberattacks on Internet of Things (IoT) devices.",
+            "3. Increasing need for cyber risk management at the business level.",
+            "4. Development of legal frameworks and data security standards."
+          ]
+        },
+        {
+          "id": "3",
+          "type": "IMAGE",
+          "src": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "title": "Figure 3 - the future of cybersecurity"
+        },
+        {
+          "id": "4",
+          "type": "TEXT",
+          "title": "Conclusion",
+          "paragraphs": [
+            "The future of cybersecurity is tied to the rapid development of technology and changes in protection approaches. Continuous updating of knowledge and skills in this field will become an important aspect for security professionals."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "30",
+      "title": "The Future of Cybersecurity",
+      "subtitle": "Trends and Technologies That Will Define Cyber Protection",
+      "img": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "views": 781,
+      "createdAt": "25.02.2025",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Introduction to the Future of Cybersecurity",
+          "paragraphs": [
+            "Cybersecurity is a rapidly evolving field with various new technologies and methodologies aimed at protecting against cyber threats. What path will this field take in the coming years?",
+            "In this article, we will explore the key trends and innovations that will shape the future of cybersecurity."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "TEXT",
+          "title": "Key Trends",
+          "paragraphs": [
+            "1. Increased use of AI for threat detection and prevention.",
+            "2. Growing number of cyberattacks on Internet of Things (IoT) devices.",
+            "3. Increasing need for cyber risk management at the business level.",
+            "4. Development of legal frameworks and data security standards."
+          ]
+        },
+        {
+          "id": "3",
+          "type": "IMAGE",
+          "src": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "title": "Figure 3 - the future of cybersecurity"
+        },
+        {
+          "id": "4",
+          "type": "TEXT",
+          "title": "Conclusion",
+          "paragraphs": [
+            "The future of cybersecurity is tied to the rapid development of technology and changes in protection approaches. Continuous updating of knowledge and skills in this field will become an important aspect for security professionals."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "31",
+      "title": "The Future of Cybersecurity",
+      "subtitle": "Trends and Technologies That Will Define Cyber Protection",
+      "img": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "views": 781,
+      "createdAt": "25.02.2025",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Introduction to the Future of Cybersecurity",
+          "paragraphs": [
+            "Cybersecurity is a rapidly evolving field with various new technologies and methodologies aimed at protecting against cyber threats. What path will this field take in the coming years?",
+            "In this article, we will explore the key trends and innovations that will shape the future of cybersecurity."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "TEXT",
+          "title": "Key Trends",
+          "paragraphs": [
+            "1. Increased use of AI for threat detection and prevention.",
+            "2. Growing number of cyberattacks on Internet of Things (IoT) devices.",
+            "3. Increasing need for cyber risk management at the business level.",
+            "4. Development of legal frameworks and data security standards."
+          ]
+        },
+        {
+          "id": "3",
+          "type": "IMAGE",
+          "src": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "title": "Figure 3 - the future of cybersecurity"
+        },
+        {
+          "id": "4",
+          "type": "TEXT",
+          "title": "Conclusion",
+          "paragraphs": [
+            "The future of cybersecurity is tied to the rapid development of technology and changes in protection approaches. Continuous updating of knowledge and skills in this field will become an important aspect for security professionals."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "32",
+      "title": "The Future of Cybersecurity",
+      "subtitle": "Trends and Technologies That Will Define Cyber Protection",
+      "img": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "views": 781,
+      "createdAt": "25.02.2025",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Introduction to the Future of Cybersecurity",
+          "paragraphs": [
+            "Cybersecurity is a rapidly evolving field with various new technologies and methodologies aimed at protecting against cyber threats. What path will this field take in the coming years?",
+            "In this article, we will explore the key trends and innovations that will shape the future of cybersecurity."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "TEXT",
+          "title": "Key Trends",
+          "paragraphs": [
+            "1. Increased use of AI for threat detection and prevention.",
+            "2. Growing number of cyberattacks on Internet of Things (IoT) devices.",
+            "3. Increasing need for cyber risk management at the business level.",
+            "4. Development of legal frameworks and data security standards."
+          ]
+        },
+        {
+          "id": "3",
+          "type": "IMAGE",
+          "src": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "title": "Figure 3 - the future of cybersecurity"
+        },
+        {
+          "id": "4",
+          "type": "TEXT",
+          "title": "Conclusion",
+          "paragraphs": [
+            "The future of cybersecurity is tied to the rapid development of technology and changes in protection approaches. Continuous updating of knowledge and skills in this field will become an important aspect for security professionals."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "33",
+      "title": "The Future of Cybersecurity",
+      "subtitle": "Trends and Technologies That Will Define Cyber Protection",
+      "img": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "views": 781,
+      "createdAt": "25.02.2025",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Introduction to the Future of Cybersecurity",
+          "paragraphs": [
+            "Cybersecurity is a rapidly evolving field with various new technologies and methodologies aimed at protecting against cyber threats. What path will this field take in the coming years?",
+            "In this article, we will explore the key trends and innovations that will shape the future of cybersecurity."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "TEXT",
+          "title": "Key Trends",
+          "paragraphs": [
+            "1. Increased use of AI for threat detection and prevention.",
+            "2. Growing number of cyberattacks on Internet of Things (IoT) devices.",
+            "3. Increasing need for cyber risk management at the business level.",
+            "4. Development of legal frameworks and data security standards."
+          ]
+        },
+        {
+          "id": "3",
+          "type": "IMAGE",
+          "src": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "title": "Figure 3 - the future of cybersecurity"
+        },
+        {
+          "id": "4",
+          "type": "TEXT",
+          "title": "Conclusion",
+          "paragraphs": [
+            "The future of cybersecurity is tied to the rapid development of technology and changes in protection approaches. Continuous updating of knowledge and skills in this field will become an important aspect for security professionals."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "34",
+      "title": "The Future of Cybersecurity",
+      "subtitle": "Trends and Technologies That Will Define Cyber Protection",
+      "img": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "views": 781,
+      "createdAt": "25.02.2025",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Introduction to the Future of Cybersecurity",
+          "paragraphs": [
+            "Cybersecurity is a rapidly evolving field with various new technologies and methodologies aimed at protecting against cyber threats. What path will this field take in the coming years?",
+            "In this article, we will explore the key trends and innovations that will shape the future of cybersecurity."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "TEXT",
+          "title": "Key Trends",
+          "paragraphs": [
+            "1. Increased use of AI for threat detection and prevention.",
+            "2. Growing number of cyberattacks on Internet of Things (IoT) devices.",
+            "3. Increasing need for cyber risk management at the business level.",
+            "4. Development of legal frameworks and data security standards."
+          ]
+        },
+        {
+          "id": "3",
+          "type": "IMAGE",
+          "src": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "title": "Figure 3 - the future of cybersecurity"
+        },
+        {
+          "id": "4",
+          "type": "TEXT",
+          "title": "Conclusion",
+          "paragraphs": [
+            "The future of cybersecurity is tied to the rapid development of technology and changes in protection approaches. Continuous updating of knowledge and skills in this field will become an important aspect for security professionals."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "35",
+      "title": "The Future of Cybersecurity",
+      "subtitle": "Trends and Technologies That Will Define Cyber Protection",
+      "img": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "views": 781,
+      "createdAt": "25.02.2025",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Introduction to the Future of Cybersecurity",
+          "paragraphs": [
+            "Cybersecurity is a rapidly evolving field with various new technologies and methodologies aimed at protecting against cyber threats. What path will this field take in the coming years?",
+            "In this article, we will explore the key trends and innovations that will shape the future of cybersecurity."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "TEXT",
+          "title": "Key Trends",
+          "paragraphs": [
+            "1. Increased use of AI for threat detection and prevention.",
+            "2. Growing number of cyberattacks on Internet of Things (IoT) devices.",
+            "3. Increasing need for cyber risk management at the business level.",
+            "4. Development of legal frameworks and data security standards."
+          ]
+        },
+        {
+          "id": "3",
+          "type": "IMAGE",
+          "src": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "title": "Figure 3 - the future of cybersecurity"
+        },
+        {
+          "id": "4",
+          "type": "TEXT",
+          "title": "Conclusion",
+          "paragraphs": [
+            "The future of cybersecurity is tied to the rapid development of technology and changes in protection approaches. Continuous updating of knowledge and skills in this field will become an important aspect for security professionals."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "36",
+      "title": "The Future of Cybersecurity",
+      "subtitle": "Trends and Technologies That Will Define Cyber Protection",
+      "img": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "views": 781,
+      "createdAt": "25.02.2025",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Introduction to the Future of Cybersecurity",
+          "paragraphs": [
+            "Cybersecurity is a rapidly evolving field with various new technologies and methodologies aimed at protecting against cyber threats. What path will this field take in the coming years?",
+            "In this article, we will explore the key trends and innovations that will shape the future of cybersecurity."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "TEXT",
+          "title": "Key Trends",
+          "paragraphs": [
+            "1. Increased use of AI for threat detection and prevention.",
+            "2. Growing number of cyberattacks on Internet of Things (IoT) devices.",
+            "3. Increasing need for cyber risk management at the business level.",
+            "4. Development of legal frameworks and data security standards."
+          ]
+        },
+        {
+          "id": "3",
+          "type": "IMAGE",
+          "src": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "title": "Figure 3 - the future of cybersecurity"
+        },
+        {
+          "id": "4",
+          "type": "TEXT",
+          "title": "Conclusion",
+          "paragraphs": [
+            "The future of cybersecurity is tied to the rapid development of technology and changes in protection approaches. Continuous updating of knowledge and skills in this field will become an important aspect for security professionals."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "37",
+      "title": "The Future of Cybersecurity",
+      "subtitle": "Trends and Technologies That Will Define Cyber Protection",
+      "img": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "views": 781,
+      "createdAt": "25.02.2025",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Introduction to the Future of Cybersecurity",
+          "paragraphs": [
+            "Cybersecurity is a rapidly evolving field with various new technologies and methodologies aimed at protecting against cyber threats. What path will this field take in the coming years?",
+            "In this article, we will explore the key trends and innovations that will shape the future of cybersecurity."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "TEXT",
+          "title": "Key Trends",
+          "paragraphs": [
+            "1. Increased use of AI for threat detection and prevention.",
+            "2. Growing number of cyberattacks on Internet of Things (IoT) devices.",
+            "3. Increasing need for cyber risk management at the business level.",
+            "4. Development of legal frameworks and data security standards."
+          ]
+        },
+        {
+          "id": "3",
+          "type": "IMAGE",
+          "src": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "title": "Figure 3 - the future of cybersecurity"
+        },
+        {
+          "id": "4",
+          "type": "TEXT",
+          "title": "Conclusion",
+          "paragraphs": [
+            "The future of cybersecurity is tied to the rapid development of technology and changes in protection approaches. Continuous updating of knowledge and skills in this field will become an important aspect for security professionals."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "38",
+      "title": "The Future of Cybersecurity",
+      "subtitle": "Trends and Technologies That Will Define Cyber Protection",
+      "img": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "views": 781,
+      "createdAt": "25.02.2025",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Introduction to the Future of Cybersecurity",
+          "paragraphs": [
+            "Cybersecurity is a rapidly evolving field with various new technologies and methodologies aimed at protecting against cyber threats. What path will this field take in the coming years?",
+            "In this article, we will explore the key trends and innovations that will shape the future of cybersecurity."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "TEXT",
+          "title": "Key Trends",
+          "paragraphs": [
+            "1. Increased use of AI for threat detection and prevention.",
+            "2. Growing number of cyberattacks on Internet of Things (IoT) devices.",
+            "3. Increasing need for cyber risk management at the business level.",
+            "4. Development of legal frameworks and data security standards."
+          ]
+        },
+        {
+          "id": "3",
+          "type": "IMAGE",
+          "src": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "title": "Figure 3 - the future of cybersecurity"
+        },
+        {
+          "id": "4",
+          "type": "TEXT",
+          "title": "Conclusion",
+          "paragraphs": [
+            "The future of cybersecurity is tied to the rapid development of technology and changes in protection approaches. Continuous updating of knowledge and skills in this field will become an important aspect for security professionals."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "39",
+      "title": "The Future of Cybersecurity",
+      "subtitle": "Trends and Technologies That Will Define Cyber Protection",
+      "img": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "views": 781,
+      "createdAt": "25.02.2025",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Introduction to the Future of Cybersecurity",
+          "paragraphs": [
+            "Cybersecurity is a rapidly evolving field with various new technologies and methodologies aimed at protecting against cyber threats. What path will this field take in the coming years?",
+            "In this article, we will explore the key trends and innovations that will shape the future of cybersecurity."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "TEXT",
+          "title": "Key Trends",
+          "paragraphs": [
+            "1. Increased use of AI for threat detection and prevention.",
+            "2. Growing number of cyberattacks on Internet of Things (IoT) devices.",
+            "3. Increasing need for cyber risk management at the business level.",
+            "4. Development of legal frameworks and data security standards."
+          ]
+        },
+        {
+          "id": "3",
+          "type": "IMAGE",
+          "src": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "title": "Figure 3 - the future of cybersecurity"
+        },
+        {
+          "id": "4",
+          "type": "TEXT",
+          "title": "Conclusion",
+          "paragraphs": [
+            "The future of cybersecurity is tied to the rapid development of technology and changes in protection approaches. Continuous updating of knowledge and skills in this field will become an important aspect for security professionals."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "40",
+      "title": "The Future of Cybersecurity",
+      "subtitle": "Trends and Technologies That Will Define Cyber Protection",
+      "img": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "views": 781,
+      "createdAt": "25.02.2025",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Introduction to the Future of Cybersecurity",
+          "paragraphs": [
+            "Cybersecurity is a rapidly evolving field with various new technologies and methodologies aimed at protecting against cyber threats. What path will this field take in the coming years?",
+            "In this article, we will explore the key trends and innovations that will shape the future of cybersecurity."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "TEXT",
+          "title": "Key Trends",
+          "paragraphs": [
+            "1. Increased use of AI for threat detection and prevention.",
+            "2. Growing number of cyberattacks on Internet of Things (IoT) devices.",
+            "3. Increasing need for cyber risk management at the business level.",
+            "4. Development of legal frameworks and data security standards."
+          ]
+        },
+        {
+          "id": "3",
+          "type": "IMAGE",
+          "src": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "title": "Figure 3 - the future of cybersecurity"
+        },
+        {
+          "id": "4",
+          "type": "TEXT",
+          "title": "Conclusion",
+          "paragraphs": [
+            "The future of cybersecurity is tied to the rapid development of technology and changes in protection approaches. Continuous updating of knowledge and skills in this field will become an important aspect for security professionals."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "41",
+      "title": "The Future of Cybersecurity",
+      "subtitle": "Trends and Technologies That Will Define Cyber Protection",
+      "img": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "views": 781,
+      "createdAt": "25.02.2025",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Introduction to the Future of Cybersecurity",
+          "paragraphs": [
+            "Cybersecurity is a rapidly evolving field with various new technologies and methodologies aimed at protecting against cyber threats. What path will this field take in the coming years?",
+            "In this article, we will explore the key trends and innovations that will shape the future of cybersecurity."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "TEXT",
+          "title": "Key Trends",
+          "paragraphs": [
+            "1. Increased use of AI for threat detection and prevention.",
+            "2. Growing number of cyberattacks on Internet of Things (IoT) devices.",
+            "3. Increasing need for cyber risk management at the business level.",
+            "4. Development of legal frameworks and data security standards."
+          ]
+        },
+        {
+          "id": "3",
+          "type": "IMAGE",
+          "src": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "title": "Figure 3 - the future of cybersecurity"
+        },
+        {
+          "id": "4",
+          "type": "TEXT",
+          "title": "Conclusion",
+          "paragraphs": [
+            "The future of cybersecurity is tied to the rapid development of technology and changes in protection approaches. Continuous updating of knowledge and skills in this field will become an important aspect for security professionals."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "42",
+      "title": "The Future of Cybersecurity",
+      "subtitle": "Trends and Technologies That Will Define Cyber Protection",
+      "img": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "views": 781,
+      "createdAt": "25.02.2025",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Introduction to the Future of Cybersecurity",
+          "paragraphs": [
+            "Cybersecurity is a rapidly evolving field with various new technologies and methodologies aimed at protecting against cyber threats. What path will this field take in the coming years?",
+            "In this article, we will explore the key trends and innovations that will shape the future of cybersecurity."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "TEXT",
+          "title": "Key Trends",
+          "paragraphs": [
+            "1. Increased use of AI for threat detection and prevention.",
+            "2. Growing number of cyberattacks on Internet of Things (IoT) devices.",
+            "3. Increasing need for cyber risk management at the business level.",
+            "4. Development of legal frameworks and data security standards."
+          ]
+        },
+        {
+          "id": "3",
+          "type": "IMAGE",
+          "src": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "title": "Figure 3 - the future of cybersecurity"
+        },
+        {
+          "id": "4",
+          "type": "TEXT",
+          "title": "Conclusion",
+          "paragraphs": [
+            "The future of cybersecurity is tied to the rapid development of technology and changes in protection approaches. Continuous updating of knowledge and skills in this field will become an important aspect for security professionals."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "43",
+      "title": "The Future of Cybersecurity",
+      "subtitle": "Trends and Technologies That Will Define Cyber Protection",
+      "img": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "views": 781,
+      "createdAt": "25.02.2025",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Introduction to the Future of Cybersecurity",
+          "paragraphs": [
+            "Cybersecurity is a rapidly evolving field with various new technologies and methodologies aimed at protecting against cyber threats. What path will this field take in the coming years?",
+            "In this article, we will explore the key trends and innovations that will shape the future of cybersecurity."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "TEXT",
+          "title": "Key Trends",
+          "paragraphs": [
+            "1. Increased use of AI for threat detection and prevention.",
+            "2. Growing number of cyberattacks on Internet of Things (IoT) devices.",
+            "3. Increasing need for cyber risk management at the business level.",
+            "4. Development of legal frameworks and data security standards."
+          ]
+        },
+        {
+          "id": "3",
+          "type": "IMAGE",
+          "src": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "title": "Figure 3 - the future of cybersecurity"
+        },
+        {
+          "id": "4",
+          "type": "TEXT",
+          "title": "Conclusion",
+          "paragraphs": [
+            "The future of cybersecurity is tied to the rapid development of technology and changes in protection approaches. Continuous updating of knowledge and skills in this field will become an important aspect for security professionals."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "44",
+      "title": "The Future of Cybersecurity",
+      "subtitle": "Trends and Technologies That Will Define Cyber Protection",
+      "img": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "views": 781,
+      "createdAt": "25.02.2025",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Introduction to the Future of Cybersecurity",
+          "paragraphs": [
+            "Cybersecurity is a rapidly evolving field with various new technologies and methodologies aimed at protecting against cyber threats. What path will this field take in the coming years?",
+            "In this article, we will explore the key trends and innovations that will shape the future of cybersecurity."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "TEXT",
+          "title": "Key Trends",
+          "paragraphs": [
+            "1. Increased use of AI for threat detection and prevention.",
+            "2. Growing number of cyberattacks on Internet of Things (IoT) devices.",
+            "3. Increasing need for cyber risk management at the business level.",
+            "4. Development of legal frameworks and data security standards."
+          ]
+        },
+        {
+          "id": "3",
+          "type": "IMAGE",
+          "src": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "title": "Figure 3 - the future of cybersecurity"
+        },
+        {
+          "id": "4",
+          "type": "TEXT",
+          "title": "Conclusion",
+          "paragraphs": [
+            "The future of cybersecurity is tied to the rapid development of technology and changes in protection approaches. Continuous updating of knowledge and skills in this field will become an important aspect for security professionals."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "46",
+      "title": "The Future of Cybersecurity",
+      "subtitle": "Trends and Technologies That Will Define Cyber Protection",
+      "img": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "views": 781,
+      "createdAt": "25.02.2025",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Introduction to the Future of Cybersecurity",
+          "paragraphs": [
+            "Cybersecurity is a rapidly evolving field with various new technologies and methodologies aimed at protecting against cyber threats. What path will this field take in the coming years?",
+            "In this article, we will explore the key trends and innovations that will shape the future of cybersecurity."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "TEXT",
+          "title": "Key Trends",
+          "paragraphs": [
+            "1. Increased use of AI for threat detection and prevention.",
+            "2. Growing number of cyberattacks on Internet of Things (IoT) devices.",
+            "3. Increasing need for cyber risk management at the business level.",
+            "4. Development of legal frameworks and data security standards."
+          ]
+        },
+        {
+          "id": "3",
+          "type": "IMAGE",
+          "src": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "title": "Figure 3 - the future of cybersecurity"
+        },
+        {
+          "id": "4",
+          "type": "TEXT",
+          "title": "Conclusion",
+          "paragraphs": [
+            "The future of cybersecurity is tied to the rapid development of technology and changes in protection approaches. Continuous updating of knowledge and skills in this field will become an important aspect for security professionals."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "47",
+      "title": "The Future of Cybersecurity",
+      "subtitle": "Trends and Technologies That Will Define Cyber Protection",
+      "img": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "views": 781,
+      "createdAt": "25.02.2025",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Introduction to the Future of Cybersecurity",
+          "paragraphs": [
+            "Cybersecurity is a rapidly evolving field with various new technologies and methodologies aimed at protecting against cyber threats. What path will this field take in the coming years?",
+            "In this article, we will explore the key trends and innovations that will shape the future of cybersecurity."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "TEXT",
+          "title": "Key Trends",
+          "paragraphs": [
+            "1. Increased use of AI for threat detection and prevention.",
+            "2. Growing number of cyberattacks on Internet of Things (IoT) devices.",
+            "3. Increasing need for cyber risk management at the business level.",
+            "4. Development of legal frameworks and data security standards."
+          ]
+        },
+        {
+          "id": "3",
+          "type": "IMAGE",
+          "src": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "title": "Figure 3 - the future of cybersecurity"
+        },
+        {
+          "id": "4",
+          "type": "TEXT",
+          "title": "Conclusion",
+          "paragraphs": [
+            "The future of cybersecurity is tied to the rapid development of technology and changes in protection approaches. Continuous updating of knowledge and skills in this field will become an important aspect for security professionals."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "48",
+      "title": "The Future of Cybersecurity",
+      "subtitle": "Trends and Technologies That Will Define Cyber Protection",
+      "img": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "views": 781,
+      "createdAt": "25.02.2025",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Introduction to the Future of Cybersecurity",
+          "paragraphs": [
+            "Cybersecurity is a rapidly evolving field with various new technologies and methodologies aimed at protecting against cyber threats. What path will this field take in the coming years?",
+            "In this article, we will explore the key trends and innovations that will shape the future of cybersecurity."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "TEXT",
+          "title": "Key Trends",
+          "paragraphs": [
+            "1. Increased use of AI for threat detection and prevention.",
+            "2. Growing number of cyberattacks on Internet of Things (IoT) devices.",
+            "3. Increasing need for cyber risk management at the business level.",
+            "4. Development of legal frameworks and data security standards."
+          ]
+        },
+        {
+          "id": "3",
+          "type": "IMAGE",
+          "src": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "title": "Figure 3 - the future of cybersecurity"
+        },
+        {
+          "id": "4",
+          "type": "TEXT",
+          "title": "Conclusion",
+          "paragraphs": [
+            "The future of cybersecurity is tied to the rapid development of technology and changes in protection approaches. Continuous updating of knowledge and skills in this field will become an important aspect for security professionals."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "49",
+      "title": "The Future of Cybersecurity",
+      "subtitle": "Trends and Technologies That Will Define Cyber Protection",
+      "img": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "views": 781,
+      "createdAt": "25.02.2025",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Introduction to the Future of Cybersecurity",
+          "paragraphs": [
+            "Cybersecurity is a rapidly evolving field with various new technologies and methodologies aimed at protecting against cyber threats. What path will this field take in the coming years?",
+            "In this article, we will explore the key trends and innovations that will shape the future of cybersecurity."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "TEXT",
+          "title": "Key Trends",
+          "paragraphs": [
+            "1. Increased use of AI for threat detection and prevention.",
+            "2. Growing number of cyberattacks on Internet of Things (IoT) devices.",
+            "3. Increasing need for cyber risk management at the business level.",
+            "4. Development of legal frameworks and data security standards."
+          ]
+        },
+        {
+          "id": "3",
+          "type": "IMAGE",
+          "src": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "title": "Figure 3 - the future of cybersecurity"
+        },
+        {
+          "id": "4",
+          "type": "TEXT",
+          "title": "Conclusion",
+          "paragraphs": [
+            "The future of cybersecurity is tied to the rapid development of technology and changes in protection approaches. Continuous updating of knowledge and skills in this field will become an important aspect for security professionals."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "50",
+      "title": "The Future of Cybersecurity",
+      "subtitle": "Trends and Technologies That Will Define Cyber Protection",
+      "img": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "views": 781,
+      "createdAt": "25.02.2025",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Introduction to the Future of Cybersecurity",
+          "paragraphs": [
+            "Cybersecurity is a rapidly evolving field with various new technologies and methodologies aimed at protecting against cyber threats. What path will this field take in the coming years?",
+            "In this article, we will explore the key trends and innovations that will shape the future of cybersecurity."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "TEXT",
+          "title": "Key Trends",
+          "paragraphs": [
+            "1. Increased use of AI for threat detection and prevention.",
+            "2. Growing number of cyberattacks on Internet of Things (IoT) devices.",
+            "3. Increasing need for cyber risk management at the business level.",
+            "4. Development of legal frameworks and data security standards."
+          ]
+        },
+        {
+          "id": "3",
+          "type": "IMAGE",
+          "src": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "title": "Figure 3 - the future of cybersecurity"
+        },
+        {
+          "id": "4",
+          "type": "TEXT",
+          "title": "Conclusion",
+          "paragraphs": [
+            "The future of cybersecurity is tied to the rapid development of technology and changes in protection approaches. Continuous updating of knowledge and skills in this field will become an important aspect for security professionals."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "51",
+      "title": "The Future of Cybersecurity",
+      "subtitle": "Trends and Technologies That Will Define Cyber Protection",
+      "img": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "views": 781,
+      "createdAt": "25.02.2025",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Introduction to the Future of Cybersecurity",
+          "paragraphs": [
+            "Cybersecurity is a rapidly evolving field with various new technologies and methodologies aimed at protecting against cyber threats. What path will this field take in the coming years?",
+            "In this article, we will explore the key trends and innovations that will shape the future of cybersecurity."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "TEXT",
+          "title": "Key Trends",
+          "paragraphs": [
+            "1. Increased use of AI for threat detection and prevention.",
+            "2. Growing number of cyberattacks on Internet of Things (IoT) devices.",
+            "3. Increasing need for cyber risk management at the business level.",
+            "4. Development of legal frameworks and data security standards."
+          ]
+        },
+        {
+          "id": "3",
+          "type": "IMAGE",
+          "src": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "title": "Figure 3 - the future of cybersecurity"
+        },
+        {
+          "id": "4",
+          "type": "TEXT",
+          "title": "Conclusion",
+          "paragraphs": [
+            "The future of cybersecurity is tied to the rapid development of technology and changes in protection approaches. Continuous updating of knowledge and skills in this field will become an important aspect for security professionals."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "52",
+      "title": "The Future of Cybersecurity",
+      "subtitle": "Trends and Technologies That Will Define Cyber Protection",
+      "img": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "views": 781,
+      "createdAt": "25.02.2025",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Introduction to the Future of Cybersecurity",
+          "paragraphs": [
+            "Cybersecurity is a rapidly evolving field with various new technologies and methodologies aimed at protecting against cyber threats. What path will this field take in the coming years?",
+            "In this article, we will explore the key trends and innovations that will shape the future of cybersecurity."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "TEXT",
+          "title": "Key Trends",
+          "paragraphs": [
+            "1. Increased use of AI for threat detection and prevention.",
+            "2. Growing number of cyberattacks on Internet of Things (IoT) devices.",
+            "3. Increasing need for cyber risk management at the business level.",
+            "4. Development of legal frameworks and data security standards."
+          ]
+        },
+        {
+          "id": "3",
+          "type": "IMAGE",
+          "src": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "title": "Figure 3 - the future of cybersecurity"
+        },
+        {
+          "id": "4",
+          "type": "TEXT",
+          "title": "Conclusion",
+          "paragraphs": [
+            "The future of cybersecurity is tied to the rapid development of technology and changes in protection approaches. Continuous updating of knowledge and skills in this field will become an important aspect for security professionals."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "53",
+      "title": "The Future of Cybersecurity",
+      "subtitle": "Trends and Technologies That Will Define Cyber Protection",
+      "img": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "views": 781,
+      "createdAt": "25.02.2025",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Introduction to the Future of Cybersecurity",
+          "paragraphs": [
+            "Cybersecurity is a rapidly evolving field with various new technologies and methodologies aimed at protecting against cyber threats. What path will this field take in the coming years?",
+            "In this article, we will explore the key trends and innovations that will shape the future of cybersecurity."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "TEXT",
+          "title": "Key Trends",
+          "paragraphs": [
+            "1. Increased use of AI for threat detection and prevention.",
+            "2. Growing number of cyberattacks on Internet of Things (IoT) devices.",
+            "3. Increasing need for cyber risk management at the business level.",
+            "4. Development of legal frameworks and data security standards."
+          ]
+        },
+        {
+          "id": "3",
+          "type": "IMAGE",
+          "src": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "title": "Figure 3 - the future of cybersecurity"
+        },
+        {
+          "id": "4",
+          "type": "TEXT",
+          "title": "Conclusion",
+          "paragraphs": [
+            "The future of cybersecurity is tied to the rapid development of technology and changes in protection approaches. Continuous updating of knowledge and skills in this field will become an important aspect for security professionals."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "54",
+      "title": "The Future of Cybersecurity",
+      "subtitle": "Trends and Technologies That Will Define Cyber Protection",
+      "img": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "views": 781,
+      "createdAt": "25.02.2025",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Introduction to the Future of Cybersecurity",
+          "paragraphs": [
+            "Cybersecurity is a rapidly evolving field with various new technologies and methodologies aimed at protecting against cyber threats. What path will this field take in the coming years?",
+            "In this article, we will explore the key trends and innovations that will shape the future of cybersecurity."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "TEXT",
+          "title": "Key Trends",
+          "paragraphs": [
+            "1. Increased use of AI for threat detection and prevention.",
+            "2. Growing number of cyberattacks on Internet of Things (IoT) devices.",
+            "3. Increasing need for cyber risk management at the business level.",
+            "4. Development of legal frameworks and data security standards."
+          ]
+        },
+        {
+          "id": "3",
+          "type": "IMAGE",
+          "src": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "title": "Figure 3 - the future of cybersecurity"
+        },
+        {
+          "id": "4",
+          "type": "TEXT",
+          "title": "Conclusion",
+          "paragraphs": [
+            "The future of cybersecurity is tied to the rapid development of technology and changes in protection approaches. Continuous updating of knowledge and skills in this field will become an important aspect for security professionals."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "55",
+      "title": "The Future of Cybersecurity",
+      "subtitle": "Trends and Technologies That Will Define Cyber Protection",
+      "img": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "views": 781,
+      "createdAt": "25.02.2025",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Introduction to the Future of Cybersecurity",
+          "paragraphs": [
+            "Cybersecurity is a rapidly evolving field with various new technologies and methodologies aimed at protecting against cyber threats. What path will this field take in the coming years?",
+            "In this article, we will explore the key trends and innovations that will shape the future of cybersecurity."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "TEXT",
+          "title": "Key Trends",
+          "paragraphs": [
+            "1. Increased use of AI for threat detection and prevention.",
+            "2. Growing number of cyberattacks on Internet of Things (IoT) devices.",
+            "3. Increasing need for cyber risk management at the business level.",
+            "4. Development of legal frameworks and data security standards."
+          ]
+        },
+        {
+          "id": "3",
+          "type": "IMAGE",
+          "src": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "title": "Figure 3 - the future of cybersecurity"
+        },
+        {
+          "id": "4",
+          "type": "TEXT",
+          "title": "Conclusion",
+          "paragraphs": [
+            "The future of cybersecurity is tied to the rapid development of technology and changes in protection approaches. Continuous updating of knowledge and skills in this field will become an important aspect for security professionals."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "56",
+      "title": "The Future of Cybersecurity",
+      "subtitle": "Trends and Technologies That Will Define Cyber Protection",
+      "img": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "views": 781,
+      "createdAt": "25.02.2025",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Introduction to the Future of Cybersecurity",
+          "paragraphs": [
+            "Cybersecurity is a rapidly evolving field with various new technologies and methodologies aimed at protecting against cyber threats. What path will this field take in the coming years?",
+            "In this article, we will explore the key trends and innovations that will shape the future of cybersecurity."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "TEXT",
+          "title": "Key Trends",
+          "paragraphs": [
+            "1. Increased use of AI for threat detection and prevention.",
+            "2. Growing number of cyberattacks on Internet of Things (IoT) devices.",
+            "3. Increasing need for cyber risk management at the business level.",
+            "4. Development of legal frameworks and data security standards."
+          ]
+        },
+        {
+          "id": "3",
+          "type": "IMAGE",
+          "src": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "title": "Figure 3 - the future of cybersecurity"
+        },
+        {
+          "id": "4",
+          "type": "TEXT",
+          "title": "Conclusion",
+          "paragraphs": [
+            "The future of cybersecurity is tied to the rapid development of technology and changes in protection approaches. Continuous updating of knowledge and skills in this field will become an important aspect for security professionals."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "57",
+      "title": "The Future of Cybersecurity",
+      "subtitle": "Trends and Technologies That Will Define Cyber Protection",
+      "img": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "views": 781,
+      "createdAt": "25.02.2025",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Introduction to the Future of Cybersecurity",
+          "paragraphs": [
+            "Cybersecurity is a rapidly evolving field with various new technologies and methodologies aimed at protecting against cyber threats. What path will this field take in the coming years?",
+            "In this article, we will explore the key trends and innovations that will shape the future of cybersecurity."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "TEXT",
+          "title": "Key Trends",
+          "paragraphs": [
+            "1. Increased use of AI for threat detection and prevention.",
+            "2. Growing number of cyberattacks on Internet of Things (IoT) devices.",
+            "3. Increasing need for cyber risk management at the business level.",
+            "4. Development of legal frameworks and data security standards."
+          ]
+        },
+        {
+          "id": "3",
+          "type": "IMAGE",
+          "src": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "title": "Figure 3 - the future of cybersecurity"
+        },
+        {
+          "id": "4",
+          "type": "TEXT",
+          "title": "Conclusion",
+          "paragraphs": [
+            "The future of cybersecurity is tied to the rapid development of technology and changes in protection approaches. Continuous updating of knowledge and skills in this field will become an important aspect for security professionals."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "58",
+      "title": "The Future of Cybersecurity",
+      "subtitle": "Trends and Technologies That Will Define Cyber Protection",
+      "img": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "views": 781,
+      "createdAt": "25.02.2025",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Introduction to the Future of Cybersecurity",
+          "paragraphs": [
+            "Cybersecurity is a rapidly evolving field with various new technologies and methodologies aimed at protecting against cyber threats. What path will this field take in the coming years?",
+            "In this article, we will explore the key trends and innovations that will shape the future of cybersecurity."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "TEXT",
+          "title": "Key Trends",
+          "paragraphs": [
+            "1. Increased use of AI for threat detection and prevention.",
+            "2. Growing number of cyberattacks on Internet of Things (IoT) devices.",
+            "3. Increasing need for cyber risk management at the business level.",
+            "4. Development of legal frameworks and data security standards."
+          ]
+        },
+        {
+          "id": "3",
+          "type": "IMAGE",
+          "src": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "title": "Figure 3 - the future of cybersecurity"
+        },
+        {
+          "id": "4",
+          "type": "TEXT",
+          "title": "Conclusion",
+          "paragraphs": [
+            "The future of cybersecurity is tied to the rapid development of technology and changes in protection approaches. Continuous updating of knowledge and skills in this field will become an important aspect for security professionals."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "59",
+      "title": "The Future of Cybersecurity",
+      "subtitle": "Trends and Technologies That Will Define Cyber Protection",
+      "img": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "views": 781,
+      "createdAt": "25.02.2025",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Introduction to the Future of Cybersecurity",
+          "paragraphs": [
+            "Cybersecurity is a rapidly evolving field with various new technologies and methodologies aimed at protecting against cyber threats. What path will this field take in the coming years?",
+            "In this article, we will explore the key trends and innovations that will shape the future of cybersecurity."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "TEXT",
+          "title": "Key Trends",
+          "paragraphs": [
+            "1. Increased use of AI for threat detection and prevention.",
+            "2. Growing number of cyberattacks on Internet of Things (IoT) devices.",
+            "3. Increasing need for cyber risk management at the business level.",
+            "4. Development of legal frameworks and data security standards."
+          ]
+        },
+        {
+          "id": "3",
+          "type": "IMAGE",
+          "src": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "title": "Figure 3 - the future of cybersecurity"
+        },
+        {
+          "id": "4",
+          "type": "TEXT",
+          "title": "Conclusion",
+          "paragraphs": [
+            "The future of cybersecurity is tied to the rapid development of technology and changes in protection approaches. Continuous updating of knowledge and skills in this field will become an important aspect for security professionals."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "60",
+      "title": "The Future of Cybersecurity",
+      "subtitle": "Trends and Technologies That Will Define Cyber Protection",
+      "img": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "views": 781,
+      "createdAt": "25.02.2025",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Introduction to the Future of Cybersecurity",
+          "paragraphs": [
+            "Cybersecurity is a rapidly evolving field with various new technologies and methodologies aimed at protecting against cyber threats. What path will this field take in the coming years?",
+            "In this article, we will explore the key trends and innovations that will shape the future of cybersecurity."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "TEXT",
+          "title": "Key Trends",
+          "paragraphs": [
+            "1. Increased use of AI for threat detection and prevention.",
+            "2. Growing number of cyberattacks on Internet of Things (IoT) devices.",
+            "3. Increasing need for cyber risk management at the business level.",
+            "4. Development of legal frameworks and data security standards."
+          ]
+        },
+        {
+          "id": "3",
+          "type": "IMAGE",
+          "src": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "title": "Figure 3 - the future of cybersecurity"
+        },
+        {
+          "id": "4",
+          "type": "TEXT",
+          "title": "Conclusion",
+          "paragraphs": [
+            "The future of cybersecurity is tied to the rapid development of technology and changes in protection approaches. Continuous updating of knowledge and skills in this field will become an important aspect for security professionals."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "61",
+      "title": "The Future of Cybersecurity",
+      "subtitle": "Trends and Technologies That Will Define Cyber Protection",
+      "img": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "views": 781,
+      "createdAt": "25.02.2025",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Introduction to the Future of Cybersecurity",
+          "paragraphs": [
+            "Cybersecurity is a rapidly evolving field with various new technologies and methodologies aimed at protecting against cyber threats. What path will this field take in the coming years?",
+            "In this article, we will explore the key trends and innovations that will shape the future of cybersecurity."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "TEXT",
+          "title": "Key Trends",
+          "paragraphs": [
+            "1. Increased use of AI for threat detection and prevention.",
+            "2. Growing number of cyberattacks on Internet of Things (IoT) devices.",
+            "3. Increasing need for cyber risk management at the business level.",
+            "4. Development of legal frameworks and data security standards."
+          ]
+        },
+        {
+          "id": "3",
+          "type": "IMAGE",
+          "src": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "title": "Figure 3 - the future of cybersecurity"
+        },
+        {
+          "id": "4",
+          "type": "TEXT",
+          "title": "Conclusion",
+          "paragraphs": [
+            "The future of cybersecurity is tied to the rapid development of technology and changes in protection approaches. Continuous updating of knowledge and skills in this field will become an important aspect for security professionals."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "62",
+      "title": "The Future of Cybersecurity",
+      "subtitle": "Trends and Technologies That Will Define Cyber Protection",
+      "img": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "views": 781,
+      "createdAt": "25.02.2025",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Introduction to the Future of Cybersecurity",
+          "paragraphs": [
+            "Cybersecurity is a rapidly evolving field with various new technologies and methodologies aimed at protecting against cyber threats. What path will this field take in the coming years?",
+            "In this article, we will explore the key trends and innovations that will shape the future of cybersecurity."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "TEXT",
+          "title": "Key Trends",
+          "paragraphs": [
+            "1. Increased use of AI for threat detection and prevention.",
+            "2. Growing number of cyberattacks on Internet of Things (IoT) devices.",
+            "3. Increasing need for cyber risk management at the business level.",
+            "4. Development of legal frameworks and data security standards."
+          ]
+        },
+        {
+          "id": "3",
+          "type": "IMAGE",
+          "src": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "title": "Figure 3 - the future of cybersecurity"
+        },
+        {
+          "id": "4",
+          "type": "TEXT",
+          "title": "Conclusion",
+          "paragraphs": [
+            "The future of cybersecurity is tied to the rapid development of technology and changes in protection approaches. Continuous updating of knowledge and skills in this field will become an important aspect for security professionals."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "63",
+      "title": "The Future of Cybersecurity",
+      "subtitle": "Trends and Technologies That Will Define Cyber Protection",
+      "img": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "views": 781,
+      "createdAt": "25.02.2025",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Introduction to the Future of Cybersecurity",
+          "paragraphs": [
+            "Cybersecurity is a rapidly evolving field with various new technologies and methodologies aimed at protecting against cyber threats. What path will this field take in the coming years?",
+            "In this article, we will explore the key trends and innovations that will shape the future of cybersecurity."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "TEXT",
+          "title": "Key Trends",
+          "paragraphs": [
+            "1. Increased use of AI for threat detection and prevention.",
+            "2. Growing number of cyberattacks on Internet of Things (IoT) devices.",
+            "3. Increasing need for cyber risk management at the business level.",
+            "4. Development of legal frameworks and data security standards."
+          ]
+        },
+        {
+          "id": "3",
+          "type": "IMAGE",
+          "src": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "title": "Figure 3 - the future of cybersecurity"
+        },
+        {
+          "id": "4",
+          "type": "TEXT",
+          "title": "Conclusion",
+          "paragraphs": [
+            "The future of cybersecurity is tied to the rapid development of technology and changes in protection approaches. Continuous updating of knowledge and skills in this field will become an important aspect for security professionals."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "64",
+      "title": "The Future of Cybersecurity",
+      "subtitle": "Trends and Technologies That Will Define Cyber Protection",
+      "img": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "views": 781,
+      "createdAt": "25.02.2025",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Introduction to the Future of Cybersecurity",
+          "paragraphs": [
+            "Cybersecurity is a rapidly evolving field with various new technologies and methodologies aimed at protecting against cyber threats. What path will this field take in the coming years?",
+            "In this article, we will explore the key trends and innovations that will shape the future of cybersecurity."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "TEXT",
+          "title": "Key Trends",
+          "paragraphs": [
+            "1. Increased use of AI for threat detection and prevention.",
+            "2. Growing number of cyberattacks on Internet of Things (IoT) devices.",
+            "3. Increasing need for cyber risk management at the business level.",
+            "4. Development of legal frameworks and data security standards."
+          ]
+        },
+        {
+          "id": "3",
+          "type": "IMAGE",
+          "src": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "title": "Figure 3 - the future of cybersecurity"
+        },
+        {
+          "id": "4",
+          "type": "TEXT",
+          "title": "Conclusion",
+          "paragraphs": [
+            "The future of cybersecurity is tied to the rapid development of technology and changes in protection approaches. Continuous updating of knowledge and skills in this field will become an important aspect for security professionals."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "65",
+      "title": "The Future of Cybersecurity",
+      "subtitle": "Trends and Technologies That Will Define Cyber Protection",
+      "img": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "views": 781,
+      "createdAt": "25.02.2025",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Introduction to the Future of Cybersecurity",
+          "paragraphs": [
+            "Cybersecurity is a rapidly evolving field with various new technologies and methodologies aimed at protecting against cyber threats. What path will this field take in the coming years?",
+            "In this article, we will explore the key trends and innovations that will shape the future of cybersecurity."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "TEXT",
+          "title": "Key Trends",
+          "paragraphs": [
+            "1. Increased use of AI for threat detection and prevention.",
+            "2. Growing number of cyberattacks on Internet of Things (IoT) devices.",
+            "3. Increasing need for cyber risk management at the business level.",
+            "4. Development of legal frameworks and data security standards."
+          ]
+        },
+        {
+          "id": "3",
+          "type": "IMAGE",
+          "src": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "title": "Figure 3 - the future of cybersecurity"
+        },
+        {
+          "id": "4",
+          "type": "TEXT",
+          "title": "Conclusion",
+          "paragraphs": [
+            "The future of cybersecurity is tied to the rapid development of technology and changes in protection approaches. Continuous updating of knowledge and skills in this field will become an important aspect for security professionals."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "66",
+      "title": "The Future of Cybersecurity",
+      "subtitle": "Trends and Technologies That Will Define Cyber Protection",
+      "img": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "views": 781,
+      "createdAt": "25.02.2025",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Introduction to the Future of Cybersecurity",
+          "paragraphs": [
+            "Cybersecurity is a rapidly evolving field with various new technologies and methodologies aimed at protecting against cyber threats. What path will this field take in the coming years?",
+            "In this article, we will explore the key trends and innovations that will shape the future of cybersecurity."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "TEXT",
+          "title": "Key Trends",
+          "paragraphs": [
+            "1. Increased use of AI for threat detection and prevention.",
+            "2. Growing number of cyberattacks on Internet of Things (IoT) devices.",
+            "3. Increasing need for cyber risk management at the business level.",
+            "4. Development of legal frameworks and data security standards."
+          ]
+        },
+        {
+          "id": "3",
+          "type": "IMAGE",
+          "src": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "title": "Figure 3 - the future of cybersecurity"
+        },
+        {
+          "id": "4",
+          "type": "TEXT",
+          "title": "Conclusion",
+          "paragraphs": [
+            "The future of cybersecurity is tied to the rapid development of technology and changes in protection approaches. Continuous updating of knowledge and skills in this field will become an important aspect for security professionals."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "67",
+      "title": "The Future of Cybersecurity",
+      "subtitle": "Trends and Technologies That Will Define Cyber Protection",
+      "img": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "views": 781,
+      "createdAt": "25.02.2025",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Introduction to the Future of Cybersecurity",
+          "paragraphs": [
+            "Cybersecurity is a rapidly evolving field with various new technologies and methodologies aimed at protecting against cyber threats. What path will this field take in the coming years?",
+            "In this article, we will explore the key trends and innovations that will shape the future of cybersecurity."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "TEXT",
+          "title": "Key Trends",
+          "paragraphs": [
+            "1. Increased use of AI for threat detection and prevention.",
+            "2. Growing number of cyberattacks on Internet of Things (IoT) devices.",
+            "3. Increasing need for cyber risk management at the business level.",
+            "4. Development of legal frameworks and data security standards."
+          ]
+        },
+        {
+          "id": "3",
+          "type": "IMAGE",
+          "src": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "title": "Figure 3 - the future of cybersecurity"
+        },
+        {
+          "id": "4",
+          "type": "TEXT",
+          "title": "Conclusion",
+          "paragraphs": [
+            "The future of cybersecurity is tied to the rapid development of technology and changes in protection approaches. Continuous updating of knowledge and skills in this field will become an important aspect for security professionals."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "68",
+      "title": "The Future of Cybersecurity",
+      "subtitle": "Trends and Technologies That Will Define Cyber Protection",
+      "img": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "views": 781,
+      "createdAt": "25.02.2025",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Introduction to the Future of Cybersecurity",
+          "paragraphs": [
+            "Cybersecurity is a rapidly evolving field with various new technologies and methodologies aimed at protecting against cyber threats. What path will this field take in the coming years?",
+            "In this article, we will explore the key trends and innovations that will shape the future of cybersecurity."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "TEXT",
+          "title": "Key Trends",
+          "paragraphs": [
+            "1. Increased use of AI for threat detection and prevention.",
+            "2. Growing number of cyberattacks on Internet of Things (IoT) devices.",
+            "3. Increasing need for cyber risk management at the business level.",
+            "4. Development of legal frameworks and data security standards."
+          ]
+        },
+        {
+          "id": "3",
+          "type": "IMAGE",
+          "src": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "title": "Figure 3 - the future of cybersecurity"
+        },
+        {
+          "id": "4",
+          "type": "TEXT",
+          "title": "Conclusion",
+          "paragraphs": [
+            "The future of cybersecurity is tied to the rapid development of technology and changes in protection approaches. Continuous updating of knowledge and skills in this field will become an important aspect for security professionals."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "69",
+      "title": "The Future of Cybersecurity",
+      "subtitle": "Trends and Technologies That Will Define Cyber Protection",
+      "img": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "views": 781,
+      "createdAt": "25.02.2025",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Introduction to the Future of Cybersecurity",
+          "paragraphs": [
+            "Cybersecurity is a rapidly evolving field with various new technologies and methodologies aimed at protecting against cyber threats. What path will this field take in the coming years?",
+            "In this article, we will explore the key trends and innovations that will shape the future of cybersecurity."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "TEXT",
+          "title": "Key Trends",
+          "paragraphs": [
+            "1. Increased use of AI for threat detection and prevention.",
+            "2. Growing number of cyberattacks on Internet of Things (IoT) devices.",
+            "3. Increasing need for cyber risk management at the business level.",
+            "4. Development of legal frameworks and data security standards."
+          ]
+        },
+        {
+          "id": "3",
+          "type": "IMAGE",
+          "src": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "title": "Figure 3 - the future of cybersecurity"
+        },
+        {
+          "id": "4",
+          "type": "TEXT",
+          "title": "Conclusion",
+          "paragraphs": [
+            "The future of cybersecurity is tied to the rapid development of technology and changes in protection approaches. Continuous updating of knowledge and skills in this field will become an important aspect for security professionals."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "70",
+      "title": "The Future of Cybersecurity",
+      "subtitle": "Trends and Technologies That Will Define Cyber Protection",
+      "img": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "views": 781,
+      "createdAt": "25.02.2025",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Introduction to the Future of Cybersecurity",
+          "paragraphs": [
+            "Cybersecurity is a rapidly evolving field with various new technologies and methodologies aimed at protecting against cyber threats. What path will this field take in the coming years?",
+            "In this article, we will explore the key trends and innovations that will shape the future of cybersecurity."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "TEXT",
+          "title": "Key Trends",
+          "paragraphs": [
+            "1. Increased use of AI for threat detection and prevention.",
+            "2. Growing number of cyberattacks on Internet of Things (IoT) devices.",
+            "3. Increasing need for cyber risk management at the business level.",
+            "4. Development of legal frameworks and data security standards."
+          ]
+        },
+        {
+          "id": "3",
+          "type": "IMAGE",
+          "src": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "title": "Figure 3 - the future of cybersecurity"
+        },
+        {
+          "id": "4",
+          "type": "TEXT",
+          "title": "Conclusion",
+          "paragraphs": [
+            "The future of cybersecurity is tied to the rapid development of technology and changes in protection approaches. Continuous updating of knowledge and skills in this field will become an important aspect for security professionals."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "71",
+      "title": "The Future of Cybersecurity",
+      "subtitle": "Trends and Technologies That Will Define Cyber Protection",
+      "img": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "views": 781,
+      "createdAt": "25.02.2025",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Introduction to the Future of Cybersecurity",
+          "paragraphs": [
+            "Cybersecurity is a rapidly evolving field with various new technologies and methodologies aimed at protecting against cyber threats. What path will this field take in the coming years?",
+            "In this article, we will explore the key trends and innovations that will shape the future of cybersecurity."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "TEXT",
+          "title": "Key Trends",
+          "paragraphs": [
+            "1. Increased use of AI for threat detection and prevention.",
+            "2. Growing number of cyberattacks on Internet of Things (IoT) devices.",
+            "3. Increasing need for cyber risk management at the business level.",
+            "4. Development of legal frameworks and data security standards."
+          ]
+        },
+        {
+          "id": "3",
+          "type": "IMAGE",
+          "src": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "title": "Figure 3 - the future of cybersecurity"
+        },
+        {
+          "id": "4",
+          "type": "TEXT",
+          "title": "Conclusion",
+          "paragraphs": [
+            "The future of cybersecurity is tied to the rapid development of technology and changes in protection approaches. Continuous updating of knowledge and skills in this field will become an important aspect for security professionals."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "72",
+      "title": "The Future of Cybersecurity",
+      "subtitle": "Trends and Technologies That Will Define Cyber Protection",
+      "img": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "views": 781,
+      "createdAt": "25.02.2025",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Introduction to the Future of Cybersecurity",
+          "paragraphs": [
+            "Cybersecurity is a rapidly evolving field with various new technologies and methodologies aimed at protecting against cyber threats. What path will this field take in the coming years?",
+            "In this article, we will explore the key trends and innovations that will shape the future of cybersecurity."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "TEXT",
+          "title": "Key Trends",
+          "paragraphs": [
+            "1. Increased use of AI for threat detection and prevention.",
+            "2. Growing number of cyberattacks on Internet of Things (IoT) devices.",
+            "3. Increasing need for cyber risk management at the business level.",
+            "4. Development of legal frameworks and data security standards."
+          ]
+        },
+        {
+          "id": "3",
+          "type": "IMAGE",
+          "src": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "title": "Figure 3 - the future of cybersecurity"
+        },
+        {
+          "id": "4",
+          "type": "TEXT",
+          "title": "Conclusion",
+          "paragraphs": [
+            "The future of cybersecurity is tied to the rapid development of technology and changes in protection approaches. Continuous updating of knowledge and skills in this field will become an important aspect for security professionals."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "73",
+      "title": "The Future of Cybersecurity",
+      "subtitle": "Trends and Technologies That Will Define Cyber Protection",
+      "img": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "views": 781,
+      "createdAt": "25.02.2025",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Introduction to the Future of Cybersecurity",
+          "paragraphs": [
+            "Cybersecurity is a rapidly evolving field with various new technologies and methodologies aimed at protecting against cyber threats. What path will this field take in the coming years?",
+            "In this article, we will explore the key trends and innovations that will shape the future of cybersecurity."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "TEXT",
+          "title": "Key Trends",
+          "paragraphs": [
+            "1. Increased use of AI for threat detection and prevention.",
+            "2. Growing number of cyberattacks on Internet of Things (IoT) devices.",
+            "3. Increasing need for cyber risk management at the business level.",
+            "4. Development of legal frameworks and data security standards."
+          ]
+        },
+        {
+          "id": "3",
+          "type": "IMAGE",
+          "src": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "title": "Figure 3 - the future of cybersecurity"
+        },
+        {
+          "id": "4",
+          "type": "TEXT",
+          "title": "Conclusion",
+          "paragraphs": [
+            "The future of cybersecurity is tied to the rapid development of technology and changes in protection approaches. Continuous updating of knowledge and skills in this field will become an important aspect for security professionals."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "74",
+      "title": "The Future of Cybersecurity",
+      "subtitle": "Trends and Technologies That Will Define Cyber Protection",
+      "img": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "views": 781,
+      "createdAt": "25.02.2025",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Introduction to the Future of Cybersecurity",
+          "paragraphs": [
+            "Cybersecurity is a rapidly evolving field with various new technologies and methodologies aimed at protecting against cyber threats. What path will this field take in the coming years?",
+            "In this article, we will explore the key trends and innovations that will shape the future of cybersecurity."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "TEXT",
+          "title": "Key Trends",
+          "paragraphs": [
+            "1. Increased use of AI for threat detection and prevention.",
+            "2. Growing number of cyberattacks on Internet of Things (IoT) devices.",
+            "3. Increasing need for cyber risk management at the business level.",
+            "4. Development of legal frameworks and data security standards."
+          ]
+        },
+        {
+          "id": "3",
+          "type": "IMAGE",
+          "src": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "title": "Figure 3 - the future of cybersecurity"
+        },
+        {
+          "id": "4",
+          "type": "TEXT",
+          "title": "Conclusion",
+          "paragraphs": [
+            "The future of cybersecurity is tied to the rapid development of technology and changes in protection approaches. Continuous updating of knowledge and skills in this field will become an important aspect for security professionals."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "75",
+      "title": "The Future of Cybersecurity",
+      "subtitle": "Trends and Technologies That Will Define Cyber Protection",
+      "img": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "views": 781,
+      "createdAt": "25.02.2025",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Introduction to the Future of Cybersecurity",
+          "paragraphs": [
+            "Cybersecurity is a rapidly evolving field with various new technologies and methodologies aimed at protecting against cyber threats. What path will this field take in the coming years?",
+            "In this article, we will explore the key trends and innovations that will shape the future of cybersecurity."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "TEXT",
+          "title": "Key Trends",
+          "paragraphs": [
+            "1. Increased use of AI for threat detection and prevention.",
+            "2. Growing number of cyberattacks on Internet of Things (IoT) devices.",
+            "3. Increasing need for cyber risk management at the business level.",
+            "4. Development of legal frameworks and data security standards."
+          ]
+        },
+        {
+          "id": "3",
+          "type": "IMAGE",
+          "src": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "title": "Figure 3 - the future of cybersecurity"
+        },
+        {
+          "id": "4",
+          "type": "TEXT",
+          "title": "Conclusion",
+          "paragraphs": [
+            "The future of cybersecurity is tied to the rapid development of technology and changes in protection approaches. Continuous updating of knowledge and skills in this field will become an important aspect for security professionals."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "76",
+      "title": "The Future of Cybersecurity",
+      "subtitle": "Trends and Technologies That Will Define Cyber Protection",
+      "img": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "views": 781,
+      "createdAt": "25.02.2025",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Introduction to the Future of Cybersecurity",
+          "paragraphs": [
+            "Cybersecurity is a rapidly evolving field with various new technologies and methodologies aimed at protecting against cyber threats. What path will this field take in the coming years?",
+            "In this article, we will explore the key trends and innovations that will shape the future of cybersecurity."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "TEXT",
+          "title": "Key Trends",
+          "paragraphs": [
+            "1. Increased use of AI for threat detection and prevention.",
+            "2. Growing number of cyberattacks on Internet of Things (IoT) devices.",
+            "3. Increasing need for cyber risk management at the business level.",
+            "4. Development of legal frameworks and data security standards."
+          ]
+        },
+        {
+          "id": "3",
+          "type": "IMAGE",
+          "src": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "title": "Figure 3 - the future of cybersecurity"
+        },
+        {
+          "id": "4",
+          "type": "TEXT",
+          "title": "Conclusion",
+          "paragraphs": [
+            "The future of cybersecurity is tied to the rapid development of technology and changes in protection approaches. Continuous updating of knowledge and skills in this field will become an important aspect for security professionals."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "77",
+      "title": "The Future of Cybersecurity",
+      "subtitle": "Trends and Technologies That Will Define Cyber Protection",
+      "img": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "views": 781,
+      "createdAt": "25.02.2025",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Introduction to the Future of Cybersecurity",
+          "paragraphs": [
+            "Cybersecurity is a rapidly evolving field with various new technologies and methodologies aimed at protecting against cyber threats. What path will this field take in the coming years?",
+            "In this article, we will explore the key trends and innovations that will shape the future of cybersecurity."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "TEXT",
+          "title": "Key Trends",
+          "paragraphs": [
+            "1. Increased use of AI for threat detection and prevention.",
+            "2. Growing number of cyberattacks on Internet of Things (IoT) devices.",
+            "3. Increasing need for cyber risk management at the business level.",
+            "4. Development of legal frameworks and data security standards."
+          ]
+        },
+        {
+          "id": "3",
+          "type": "IMAGE",
+          "src": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "title": "Figure 3 - the future of cybersecurity"
+        },
+        {
+          "id": "4",
+          "type": "TEXT",
+          "title": "Conclusion",
+          "paragraphs": [
+            "The future of cybersecurity is tied to the rapid development of technology and changes in protection approaches. Continuous updating of knowledge and skills in this field will become an important aspect for security professionals."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "78",
+      "title": "The Future of Cybersecurity",
+      "subtitle": "Trends and Technologies That Will Define Cyber Protection",
+      "img": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "views": 781,
+      "createdAt": "25.02.2025",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Introduction to the Future of Cybersecurity",
+          "paragraphs": [
+            "Cybersecurity is a rapidly evolving field with various new technologies and methodologies aimed at protecting against cyber threats. What path will this field take in the coming years?",
+            "In this article, we will explore the key trends and innovations that will shape the future of cybersecurity."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "TEXT",
+          "title": "Key Trends",
+          "paragraphs": [
+            "1. Increased use of AI for threat detection and prevention.",
+            "2. Growing number of cyberattacks on Internet of Things (IoT) devices.",
+            "3. Increasing need for cyber risk management at the business level.",
+            "4. Development of legal frameworks and data security standards."
+          ]
+        },
+        {
+          "id": "3",
+          "type": "IMAGE",
+          "src": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "title": "Figure 3 - the future of cybersecurity"
+        },
+        {
+          "id": "4",
+          "type": "TEXT",
+          "title": "Conclusion",
+          "paragraphs": [
+            "The future of cybersecurity is tied to the rapid development of technology and changes in protection approaches. Continuous updating of knowledge and skills in this field will become an important aspect for security professionals."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "79",
+      "title": "The Future of Cybersecurity",
+      "subtitle": "Trends and Technologies That Will Define Cyber Protection",
+      "img": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "views": 781,
+      "createdAt": "25.02.2025",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Introduction to the Future of Cybersecurity",
+          "paragraphs": [
+            "Cybersecurity is a rapidly evolving field with various new technologies and methodologies aimed at protecting against cyber threats. What path will this field take in the coming years?",
+            "In this article, we will explore the key trends and innovations that will shape the future of cybersecurity."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "TEXT",
+          "title": "Key Trends",
+          "paragraphs": [
+            "1. Increased use of AI for threat detection and prevention.",
+            "2. Growing number of cyberattacks on Internet of Things (IoT) devices.",
+            "3. Increasing need for cyber risk management at the business level.",
+            "4. Development of legal frameworks and data security standards."
+          ]
+        },
+        {
+          "id": "3",
+          "type": "IMAGE",
+          "src": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "title": "Figure 3 - the future of cybersecurity"
+        },
+        {
+          "id": "4",
+          "type": "TEXT",
+          "title": "Conclusion",
+          "paragraphs": [
+            "The future of cybersecurity is tied to the rapid development of technology and changes in protection approaches. Continuous updating of knowledge and skills in this field will become an important aspect for security professionals."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "80",
       "title": "The Future of Cybersecurity",
       "subtitle": "Trends and Technologies That Will Define Cyber Protection",
       "img": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",

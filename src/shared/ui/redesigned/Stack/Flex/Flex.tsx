@@ -90,6 +90,7 @@ export interface FlexProps extends Omit<ElementType<FlexTagType>, 'ref'> {
   role?: string;
   overflow?: OverflowType;
   width?: string | number;
+  height?: string | number;
   flexBasis?: string;
 }
 
@@ -107,6 +108,7 @@ export const Flex = (props: FlexProps) => {
     role,
     overflow = 'initial',
     width,
+    height,
     flexBasis,
     ...otherProps
   } = props;
@@ -130,7 +132,7 @@ export const Flex = (props: FlexProps) => {
 
   return (
     <Tag
-      style={{ maxWidth: width, flexBasis }}
+      style={{ maxWidth: width, flexBasis, height }}
       role={role}
       className={classNames(cls.Flex, mods, classes)}
       {...otherProps}

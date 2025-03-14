@@ -15,7 +15,7 @@ export const ArticleItemSkeletonRedesigned = memo((props: ArticleItemSkeletonPro
 
   if (view === ArticleView.COLUMN) {
     return (
-      <Card max offset="24" className={getVstack({ gap: 16 })}>
+      <Card tag="div" max offset="24" className={getVstack({ gap: 16 })}>
         <HStack gap="8" align="center">
           <Skeleton
             width={30}
@@ -39,7 +39,7 @@ export const ArticleItemSkeletonRedesigned = memo((props: ArticleItemSkeletonPro
   }
 
   return (
-    <Card max offset="16" className={getVstack({ gap: 16 })}>
+    <Card max offset="16" height={292} className={getVstack({ gap: 16 })}>
       <Skeleton border="10" width="100%" height="200px" />
       <VStack>
         <HStack fullWidth gap="8">

@@ -12,7 +12,7 @@ export const ScrollToTop = memo((props: ScrollToTopProps) => {
   const { t } = useTranslation();
 
   const onScroll = () => {
-    document.getElementById('app')?.scrollTo({ top: 0, behavior: 'smooth' });
+    document.documentElement.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (

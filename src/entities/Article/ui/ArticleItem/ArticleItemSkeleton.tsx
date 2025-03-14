@@ -16,7 +16,7 @@ export const ArticleItemSkeleton = memo((props: ArticleItemSkeletonProps) => {
 
   if (view === ArticleView.COLUMN) {
     return (
-      <li className={classNames('', {}, [className, cl[view]])}>
+      <li className={classNames(cl.ArticleItem, {}, [className, cl[view]])}>
         <Card className={classNames(cl.Card, {}, [className])}>
           <div className={cl.Header}>
             <Skeleton

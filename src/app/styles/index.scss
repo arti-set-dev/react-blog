@@ -44,12 +44,9 @@ figure {
 }
 
 #root {
-  overflow: hidden;
 }
 
 .app {
-  overflow: auto;
-  height: 100vh;
   font-family: var(--font-family, sans-serif), serif;
   color: var(--primary-color);
   background-color: var(--bg-color);
@@ -58,6 +55,7 @@ figure {
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 100vh;
   }
 }
 
@@ -66,8 +64,6 @@ figure {
 }
 
 .app_redesigned {
-  overflow: auto;
-  height: 100vh;
   font-family: var(--font-family-redesigned, sans-serif), serif;
   color: var(--primary-color);
   background-color: var(--bg-color);
@@ -90,20 +86,22 @@ figure {
 
 .main {
   display: flex;
-  height: 100vh;
 }
 
-*::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
-}
+.app,
+.app_redesigned {
+  *::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
 
-*::-webkit-scrollbar-track {
-  background: transparent;
-}
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
 
-*::-webkit-scrollbar-thumb {
-  border: 0 solid transparent;
-  border-radius: 20px;
-  background-color: var(--bg-light-color);
+  *::-webkit-scrollbar-thumb {
+    border: 0 solid transparent;
+    border-radius: 20px;
+    background-color: var(--bg-light-color);
+  }
 }

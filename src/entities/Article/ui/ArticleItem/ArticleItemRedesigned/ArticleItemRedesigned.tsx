@@ -76,10 +76,10 @@ export const ArticleItemRedesigned = memo((props: ArticleItemProps) => {
           </HStack>
           <AppLink to={getRouteArticleDetails(article.id)}>
             <VStack gap="16">
-              <Text isHovered size="xl">
+              <Text cropped="1" isHovered size="xl">
                 {article.title}
               </Text>
-              <Text size="m">
+              <Text cropped="1" size="m">
                 {article.subtitle}
               </Text>
             </VStack>
@@ -90,17 +90,24 @@ export const ArticleItemRedesigned = memo((props: ArticleItemProps) => {
           >
             <LazyImage
               width="100%"
-              height={300}
+              height={400}
               src={article.img}
               alt={article.title}
             />
           </AppLink>
-          {textBlocks && (
-            <ArticleTextBlockComponent
-              className={cl.TextComponent}
-              block={textBlocks}
-            />
-          )}
+          <HStack
+            overflow="hidden"
+            align="start"
+            height={90}
+            className={classNames('', { [cl.isShadow]: !!textBlocks }, [])}
+          >
+            {textBlocks && (
+              <ArticleTextBlockComponent
+                className={cl.TextComponent}
+                block={textBlocks}
+              />
+            )}
+          </HStack>
           <HStack gap="16" justify="between">
             <Button variant="outline" onClick={onOpenArticle}>{t('Read more')}</Button>
             {views}
@@ -142,7 +149,7 @@ export const ArticleItemRedesigned = memo((props: ArticleItemProps) => {
               to={getRouteArticleDetails(article.id)}
               target="_blank"
             >
-              <Text isHovered size="m" weight="bold">
+              <Text cropped="1" isHovered size="m" weight="bold">
                 {article.title}
               </Text>
             </AppLink>
@@ -172,7 +179,7 @@ export const ArticleItemRedesigned = memo((props: ArticleItemProps) => {
             <AppLink
               to={getRouteArticleDetails(article.id)}
             >
-              <Text isHovered size="m" weight="bold">
+              <Text cropped="1" isHovered size="m" weight="bold">
                 {article.title}
               </Text>
             </AppLink>

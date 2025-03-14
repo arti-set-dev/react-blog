@@ -51,7 +51,7 @@ export const ArticleEditFormSkeleton = memo((props: ArticleEditFormSkeletonProps
         </Card>
       )}
       off={(
-        <Card offset="24" className={getVstack({ gap: 24 })}>
+        <Card border="0" offset="24" className={getVstack({ gap: 24 })}>
           <SkeletonDeprecated width="100%" border="4" height={30} />
 
           <SkeletonDeprecated width="100%" border="4" height={40} />
