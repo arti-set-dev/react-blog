@@ -81,6 +81,10 @@
     color: var(--bg-primary-color);
   }
 
+  &.primary-accent {
+    color: var(--text-primary-accent-color);
+  }
+
   &.inverted {
     color: var(--text-inverted-color);
   }

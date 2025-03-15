@@ -57,7 +57,7 @@ export const NotificationButton = (props: NotificationButtonProps) => {
         position="absolute"
         positionCorner="top-right"
       >
-        <Text variant="inverted" size="xxs">{notifications?.length}</Text>
+        <Text variant="primary-accent" size="xxs">{notifications?.length}</Text>
       </Card>
     </Button>
   );

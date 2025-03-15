@@ -47,7 +47,7 @@ export const MainHeroRedesigned = memo((props: MainHeroRedesignedProps) => {
         </HStack>
       </VStack>
       <VStack flexBasis="50%">
-        <LazyImage width="500" height="500" alt="" aria-hidden src="/images/hero-bg.svg" />
+        <LazyImage width="600" height="600" alt="" aria-hidden src="/images/hero-bg.svg" />
       </VStack>
       <LoginModal
         redirectPath={getRouteArticleCreate()}

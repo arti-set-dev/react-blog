@@ -44,13 +44,13 @@ export const MainHeroDeprecated = memo((props: MainHeroDeprecatedProps) => {
             {userId ? (
               <Button variant="outline" onClick={onOpenCreateNewArticle}>{t('Create an article')}</Button>
             ) : (
-              <Button variant="primary" onClick={() => setIsAuthModal?.(true)}>{t('Create an article')}</Button>
+              <Button variant="outline" onClick={() => setIsAuthModal?.(true)}>{t('Create an article')}</Button>
             )}
             <Button variant="outline" onClick={onOpenArticles}>{t('See the latest publications')}</Button>
           </HStack>
         </VStack>
         <VStack flexBasis="50%">
-          <LazyImage width="500" height="500" alt="" aria-hidden src="/images/hero-bg.svg" />
+          <LazyImage width="600" height="600" alt="" aria-hidden src="/images/hero-bg.svg" />
         </VStack>
         <LoginModal
           redirectPath={getRouteArticleCreate()}

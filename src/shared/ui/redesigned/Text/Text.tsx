@@ -6,7 +6,7 @@ export type TextAlign = 'left' | 'center' | 'right';
 
 export type TextSize = 'xxs' | 's' | 'xs' | 'm' | 'l' | 'xl' | 'xxl';
 
-export type TextVariant = 'error' | 'primary' | 'inverted' | 'primary-light';
+export type TextVariant = 'error' | 'primary' | 'inverted' | 'primary-light' | 'primary-accent';
 
 export type TextWeight = 'normal' | 'bold';
 

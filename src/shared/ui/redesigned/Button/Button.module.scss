@@ -5,7 +5,10 @@
   font-size: var(--font-size-m);
   line-height: 100%;
   background-color: transparent;
-  transition: background-color var(--ui-transition) ease, color var(--ui-transition) ease;
+  transition:
+    background-color var(--ui-transition) ease,
+    color var(--ui-transition) ease,
+    border var(--ui-transition) ease;
   cursor: pointer;
 
   &.shake {
@@ -100,6 +103,7 @@
   &[disabled] {
     @media (any-hover: hover) {
       &:hover {
+        border-color: inherit;
         color: inherit;
         background-color: inherit;
         cursor: default;
@@ -110,7 +114,7 @@
   @media (any-hover: hover) {
     &:hover {
       border-color: var(--bg-primary-color);
-      color: var(--text-inverted-color);
+      color: var(--text-primary-accent-color);
       background-color: var(--bg-primary-color);
     }
   }
@@ -127,7 +131,7 @@
 
   @media (any-hover: hover) {
     &:hover {
-      color: var(--text-inverted-color);
+      color: var(--text-primary-accent-color);
       background-color: var(--error-color);
     }
   }
@@ -145,7 +149,7 @@
 
   @media (any-hover: hover) {
     &:hover {
-      color: var(--text-inverted-color);
+      color: var(--text-primary-accent-color);
       background-color: var(--bg-primary-color);
     }
   }
@@ -187,11 +191,11 @@
   font-weight: 400;
   font-size: var(--font-size-m);
   line-height: 100%;
-  color: var(--text-inverted-color);
+  color: var(--text-primary-accent-color);
   background-color: var(--bg-primary-color);
 
   svg {
-    color: var(--text-inverted-color);
+    color: var(--text-primary-accent-color);
   }
 }
 

@@ -125,7 +125,7 @@ export const ArticleItemRedesigned = memo((props: ArticleItemProps) => {
     >
       {blank ? (
         <Card isOverflow offset="0" max className={cl.Card}>
-          <Text variant="inverted" className={cl.createdAt}>
+          <Text variant="primary-accent" className={cl.createdAt}>
             {article.createdAt}
           </Text>
           <AppLink
@@ -157,7 +157,7 @@ export const ArticleItemRedesigned = memo((props: ArticleItemProps) => {
         </Card>
       ) : (
         <Card isOverflow isHovered max offset="0" className={cl.Card}>
-          <Text variant="inverted" className={cl.createdAt}>
+          <Text variant="primary-accent" className={cl.createdAt}>
             {article.createdAt}
           </Text>
           <AppLink
