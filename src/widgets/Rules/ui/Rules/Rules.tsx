@@ -4,22 +4,22 @@ import { ToggleFeatures } from '@/shared/lib/features';
 import { RulesRedesigned } from './RulesRedesigned/RulesRedesigned';
 import { RulesDeprecated } from './RulesDeprecated/RulesDeprecated';
 
-interface RulesProps {
+export interface RulesProps {
     className?: string;
+    isHead?: boolean;
 }
 
 export const Rules = memo((props: RulesProps) => {
-  const { className } = props;
   const { t } = useTranslation();
 
   return (
     <ToggleFeatures
       feature="isAppRedesigned"
       on={(
-        <RulesRedesigned />
+        <RulesRedesigned {...props} />
       )}
       off={(
-        <RulesDeprecated />
+        <RulesDeprecated {...props} />
       )}
     />
   );

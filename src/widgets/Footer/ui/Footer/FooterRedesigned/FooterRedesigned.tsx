@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Card } from '@/shared/ui/redesigned/Card';
 import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
-import { getRouteMain } from '@/shared/const/router';
+import { getRouteMain, getRoutePrivacyPolicy, getRouteServiceRules } from '@/shared/const/router';
 import { AppLink } from '@/shared/ui/redesigned/AppLink';
 import LogoIcon from '@/shared/assets/icons/logo.svg';
 import { Text } from '@/shared/ui/redesigned/Text';
@@ -24,7 +24,7 @@ export const FooterRedesigned = memo((props: FooterRedesignedProps) => {
     <Container>
       <Card
         tag="footer"
-        offset="16"
+        offset="24"
         className={classNames('', {}, [className, getHstack({
           gap: 16,
           justify: 'between',
@@ -45,10 +45,10 @@ export const FooterRedesigned = memo((props: FooterRedesignedProps) => {
         </HStack>
         <VStack tag="ul" gap="16">
           <li>
-            <AppLink to={getRouteMain()}>{t('Service rules')}</AppLink>
+            <AppLink to={getRouteServiceRules()}>{t('Service rules')}</AppLink>
           </li>
           <li>
-            <AppLink to={getRouteMain()}>{t('Privacy Policy')}</AppLink>
+            <AppLink to={getRoutePrivacyPolicy()}>{t('Privacy Policy')}</AppLink>
           </li>
         </VStack>
       </Card>

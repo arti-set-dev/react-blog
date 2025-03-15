@@ -5,19 +5,16 @@ import { Card } from '@/shared/ui/redesigned/Card';
 import { LazyImage } from '@/shared/ui/redesigned/LazyImage';
 import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
 import { Text } from '@/shared/ui/redesigned/Text';
+import { RulesProps } from '../Rules';
 
-interface RulesRedesignedProps {
-    className?: string;
-}
-
-export const RulesRedesigned = memo((props: RulesRedesignedProps) => {
-  const { className } = props;
+export const RulesRedesigned = memo((props: RulesProps) => {
+  const { className, isHead } = props;
   const { t } = useTranslation();
 
   return (
     <Card offset="24" className={getVstack({ gap: 24 })}>
       <Text
-        tag="h2"
+        tag={isHead ? 'h1' : 'h2'}
         variant="primary"
         weight="bold"
         size="xl"

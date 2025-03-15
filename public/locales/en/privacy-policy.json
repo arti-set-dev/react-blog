@@ -1,0 +1,53 @@
+{
+  "title": "Netowork Privacy Policy",
+  "general": {
+    "title": "1. General Provisions",
+    "text1": "This Privacy Policy (hereinafter referred to as the 'Policy') describes how Netowork (hereinafter referred to as 'We', 'Our Company') collects, uses, and protects users' personal data (hereinafter referred to as 'You', 'User') when using the Netowork.com website and related services.",
+    "text2": "By using our service, you agree to the terms of this Policy."
+  },
+  "data_collection": {
+    "title": "2. Data Collection and Usage",
+    "text": "We may collect the following types of information:",
+    "items": [
+      "First and last name",
+      "Email address",
+      "Phone number",
+      "Profile information (if registration is required)",
+      "IP address, browser, and device data",
+      "Cookies and similar technologies"
+    ]
+  },
+  "data_sharing": {
+    "title": "3. Data Sharing with Third Parties",
+    "text": "We do not sell or share personal data with third parties, except in the following cases:",
+    "items": [
+      "When required by law or government authorities",
+      "For analytics services (Google Analytics, Microsoft Clarity)",
+      "To ensure Netowork operates via partner services"
+    ]
+  },
+  "data_protection": {
+    "title": "4. Data Protection",
+    "text": "We take measures to protect your data from leaks, unauthorized access, and alterations. However, 100% security on the internet cannot be guaranteed."
+  },
+  "cookies": {
+    "title": "5. Cookies",
+    "text": "Our service uses cookies to enhance user experience. You can disable cookies in your browser settings."
+  },
+  "rights": {
+    "title": "6. Your Rights",
+    "text1": "You have the right to request information about stored data, correct or delete it, and withdraw consent for data processing.",
+    "text2": "To exercise your rights, contact us at "
+  },
+  "changes": {
+    "title": "7. Changes to the Policy",
+    "text": "We may update this Policy, and the current version will always be available on Netowork.com."
+  },
+  "contacts": {
+    "title": "8. Contacts",
+    "text": "For privacy-related inquiries, you can contact us:",
+    "email": "Email: netowork@gmail.com",
+    "website": "Website: Netowork.com"
+  }
+}
+

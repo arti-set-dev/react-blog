@@ -6,20 +6,17 @@ import { getVstack } from '@/shared/lib/stack/getVstack/getVstack';
 import { Text } from '@/shared/ui/redesigned/Text';
 import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
 import { LazyImage } from '@/shared/ui/redesigned/LazyImage';
+import { RulesProps } from '../Rules';
 
-interface RulesDeprecatedProps {
-    className?: string;
-}
-
-export const RulesDeprecated = memo((props: RulesDeprecatedProps) => {
-  const { className } = props;
+export const RulesDeprecated = memo((props: RulesProps) => {
+  const { className, isHead } = props;
   const { t } = useTranslation();
 
   return (
     <Card variant="transparent" border="0" offset="24">
       <Container className={getVstack({ gap: 24 })}>
         <Text
-          tag="h2"
+          tag={isHead ? 'h1' : 'h2'}
           variant="primary"
           weight="bold"
           size="xl"

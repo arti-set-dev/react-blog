@@ -96,3 +96,19 @@
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+.number {
+  list-style-type: number;
+}
+
+.marker {
+  position: relative;
+
+  &::before {
+    content: "";
+    border-radius: 50%;
+    width: 5px;
+    height: 5px;
+    background-color: var(--text-primary-color);
+  }
+}

@@ -4,7 +4,7 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import cl from './AppLink.module.scss';
 import { Icon } from '../Icon/Icon';
 
-export type AppLinkVariant = 'inverted' | 'primary' | 'secondary' | 'red';
+export type AppLinkVariant = 'inverted' | 'primary' | 'primary-light' | 'secondary' | 'red';
 
 interface AppLinkProps extends LinkProps {
   className?: string;

@@ -21,6 +21,7 @@ export type FlexTagType =
 
 export type FlexRole = 'dialog';
 export type OverflowType = 'initial' | 'hidden' | 'scroll' | 'auto';
+export type ListVariant = 'number' | 'marker';
 
 const overflowClasses: Record<OverflowType, string> = {
   initial: cls.overflowInitial,
@@ -92,6 +93,7 @@ export interface FlexProps extends Omit<ElementType<FlexTagType>, 'ref'> {
   width?: string | number;
   height?: string | number;
   flexBasis?: string;
+  listVariant?: ListVariant;
 }
 
 export const Flex = (props: FlexProps) => {
@@ -110,6 +112,7 @@ export const Flex = (props: FlexProps) => {
     width,
     height,
     flexBasis,
+    listVariant,
     ...otherProps
   } = props;
 
@@ -121,6 +124,7 @@ export const Flex = (props: FlexProps) => {
     gap && gapClasses[gap],
     tagClasses[tag],
     overflow && overflowClasses[overflow],
+    listVariant && cls[listVariant],
   ];
 
   const mods: Mods = {

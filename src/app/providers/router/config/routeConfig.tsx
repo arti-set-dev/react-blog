@@ -8,6 +8,8 @@ import { ForbiddenPage } from '@/pages/ForbiddenPage';
 import { MainPage } from '@/pages/MainPage';
 import { NotFoundPage } from '@/pages/PageNotFound';
 import { ProfilePage } from '@/pages/ProfilePage';
+import { ServiceRulesPage } from '@/pages/ServiceRulesPage';
+import { PrivacyPolicyPage } from '@/pages/PrivacyPolicyPage';
 import {
   AppRoutes,
   getRouteForbidden,
@@ -18,7 +20,7 @@ import {
   getRouteArticles,
   getRouteProfile,
   getRouteAbout,
-  getRouteMain,
+  getRouteMain, getRouteServiceRules, getRoutePrivacyPolicy,
 } from '@/shared/const/router';
 import { AppRoutesProps } from '@/shared/types/router';
 
@@ -73,6 +75,16 @@ export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
   [AppRoutes.FORBBIDDEN]: {
     path: getRouteForbidden(),
     element: <ForbiddenPage />,
+  },
+
+  [AppRoutes.SERVES_RULES]: {
+    path: getRouteServiceRules(),
+    element: <ServiceRulesPage />,
+  },
+
+  [AppRoutes.PRIVACY_POLICY]: {
+    path: getRoutePrivacyPolicy(),
+    element: <PrivacyPolicyPage />,
   },
 
   // last
