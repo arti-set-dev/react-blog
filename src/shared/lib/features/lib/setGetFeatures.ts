@@ -9,6 +9,12 @@ export function setFeatureFlags(newFeatureFlags?: FeatureFlags) {
 }
 
 export function getFeatureFlag(flag: keyof FeatureFlags) {
+  const isEmpty = (obj: object) => Object.keys(obj).length === 0;
+
+  if (isEmpty(featureFlags)) {
+    featureFlags.isAppRedesigned = true;
+  }
+
   return featureFlags[flag];
 }
 

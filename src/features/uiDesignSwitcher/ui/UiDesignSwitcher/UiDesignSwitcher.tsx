@@ -55,29 +55,17 @@ export const UiDesignSwitcher = memo((props: UiDesignSwitcherProps) => {
     }
   };
 
-  const onSwitchNewTheme = async () => {
+  const onToggleTheme = async () => {
     if (authData) {
       setIsLoading(true);
-      await dispatch(
-        updateFeatureFlag({
-          userId: authData?.id,
-          newFeatures: {
-            isAppRedesigned: true,
-          },
-        }),
-      ).unwrap();
-      setIsLoading(false);
-    }
-  };
 
-  const onSwitchOldTheme = async () => {
-    if (authData) {
-      setIsLoading(true);
+      const currentFlag = authData?.features?.isAppRedesigned ?? false;
+
       await dispatch(
         updateFeatureFlag({
           userId: authData?.id,
           newFeatures: {
-            isAppRedesigned: false,
+            isAppRedesigned: !currentFlag,
           },
         }),
       ).unwrap();
@@ -95,7 +83,7 @@ export const UiDesignSwitcher = memo((props: UiDesignSwitcherProps) => {
               isLoading ? (
                 <Skeleton width="100%" height={40} />
               ) : (
-                <Button variant="clear" onClick={onSwitchNewTheme}>{t('Switch to new theme now')}</Button>
+                <Button variant="clear" onClick={onToggleTheme}>{t('Switch to new theme now')}</Button>
               )
             }
             off={
@@ -104,7 +92,7 @@ export const UiDesignSwitcher = memo((props: UiDesignSwitcherProps) => {
               ) : (
                 <ButtonDeprecated
                   theme={ButtonTheme.OUTLINE}
-                  onClick={onSwitchNewTheme}
+                  onClick={onToggleTheme}
                 >
                   {t('Switch to new theme now')}
                 </ButtonDeprecated>
@@ -119,7 +107,7 @@ export const UiDesignSwitcher = memo((props: UiDesignSwitcherProps) => {
               isLoading ? (
                 <Skeleton border="8" width="100%" height={40} />
               ) : (
-                <Button variant="clear" onClick={onSwitchOldTheme}>{t('Return to old theme')}</Button>
+                <Button variant="clear" onClick={onToggleTheme}>{t('Return to old theme')}</Button>
               )
             }
             off={
@@ -128,7 +116,7 @@ export const UiDesignSwitcher = memo((props: UiDesignSwitcherProps) => {
               ) : (
                 <ButtonDeprecated
                   theme={ButtonTheme.OUTLINE}
-                  onClick={onSwitchOldTheme}
+                  onClick={onToggleTheme}
                 >
                   {t('Return to old theme')}
                 </ButtonDeprecated>

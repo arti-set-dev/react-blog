@@ -57,7 +57,7 @@ export const NavbarRedesigned = memo((props: NavbarRedesignedProps) => {
   const { t } = useTranslation();
 
   return (
-    <Card tag="header" offset="0" height={NAVBAR_HEIGHT} className={getHstack({ align: 'center' })}>
+    <Card tag="header" border="0" offset="0" height={NAVBAR_HEIGHT} className={getHstack({ align: 'center' })}>
       <Container max className={getHstack({ gap: 16, justify: 'between', align: 'center' })}>
         <AppLink to={getRouteMain()}>
           <Icon color="primary" width={200} height={40} Svg={LogoIcon} />

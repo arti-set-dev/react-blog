@@ -9,6 +9,8 @@ import { Button } from '@/shared/ui/redesigned/Button';
 import { LazyImage } from '@/shared/ui/redesigned/LazyImage';
 import { LoginModal } from '@/features/AuthByUsername';
 import { getRouteArticleCreate } from '@/shared/const/router';
+import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
+import { Theme } from '@/shared/const/theme';
 
 interface MainHeroRedesignedProps {
     className?: string;
@@ -25,6 +27,7 @@ export const MainHeroRedesigned = memo((props: MainHeroRedesignedProps) => {
     className, userId, onOpenCreateNewArticle, onOpenArticles, onCloseModal, isAuthModal, setIsAuthModal,
   } = props;
   const { t } = useTranslation('main');
+  const { theme } = useTheme();
 
   return (
     <Card
@@ -47,7 +50,11 @@ export const MainHeroRedesigned = memo((props: MainHeroRedesignedProps) => {
         </HStack>
       </VStack>
       <VStack flexBasis="50%">
-        <LazyImage width="600" height="600" alt="" aria-hidden src="/images/hero-bg.svg" />
+        {theme === Theme.DARK ? (
+          <LazyImage width="600" height="600" alt="" aria-hidden src="/images/hero-bg-light.svg" />
+        ) : (
+          <LazyImage width="600" height="600" alt="" aria-hidden src="/images/hero-bg.svg" />
+        )}
       </VStack>
       <LoginModal
         redirectPath={getRouteArticleCreate()}
