@@ -63,6 +63,13 @@ figure {
   width: 100%;
 }
 
+.app-router-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - var(--header-height));
+}
+
 .app_redesigned {
   font-family: var(--font-family-redesigned, sans-serif), serif;
   color: var(--primary-color);

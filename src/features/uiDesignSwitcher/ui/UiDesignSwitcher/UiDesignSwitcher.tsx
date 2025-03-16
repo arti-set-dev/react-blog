@@ -11,6 +11,7 @@ import { Skeleton as SkeletonDeprecated } from '@/shared/ui/deprecated/Skeleton'
 import { Skeleton } from '@/shared/ui/redesigned/Skeleton';
 import { Button as ButtonDeprecated, ButtonTheme } from '@/shared/ui/deprecated/Button';
 import { Button } from '@/shared/ui/redesigned/Button';
+import { LOCAL_STORAGE_LAST_DESIGN_KEY } from '@/shared/const/localstorage';
 
 export type UiDesignSwitcherVariant = 'list' | 'button';
 
@@ -43,6 +44,9 @@ export const UiDesignSwitcher = memo((props: UiDesignSwitcherProps) => {
   const onChange = async (value: string) => {
     if (authData) {
       setIsLoading(true);
+
+      const themeValue = authData.features?.isAppRedesigned === true ? 'old' : 'new';
+
       await dispatch(
         updateFeatureFlag({
           userId: authData.id,
@@ -51,6 +55,7 @@ export const UiDesignSwitcher = memo((props: UiDesignSwitcherProps) => {
           },
         }),
       ).unwrap();
+      localStorage.setItem(LOCAL_STORAGE_LAST_DESIGN_KEY, themeValue);
       setIsLoading(false);
     }
   };
@@ -60,6 +65,7 @@ export const UiDesignSwitcher = memo((props: UiDesignSwitcherProps) => {
       setIsLoading(true);
 
       const currentFlag = authData?.features?.isAppRedesigned ?? false;
+      const themeValue = authData.features?.isAppRedesigned === true ? 'old' : 'new';
 
       await dispatch(
         updateFeatureFlag({
@@ -69,6 +75,7 @@ export const UiDesignSwitcher = memo((props: UiDesignSwitcherProps) => {
           },
         }),
       ).unwrap();
+      localStorage.setItem(LOCAL_STORAGE_LAST_DESIGN_KEY, themeValue);
       setIsLoading(false);
     }
   };

@@ -22,7 +22,11 @@ const ThemeProvider = (props: ThemeProviderProps) => {
       setTheme(initialTheme);
       setIsThemeInited(true);
     }
-  }, [initialTheme, isThemeInited]);
+  }, [initialTheme, isThemeInited, theme]);
+
+  useEffect(() => {
+    localStorage.setItem(LOCAL_STORAGE_THEME_KEY, theme);
+  }, [theme]);
 
   const defaultProps = useMemo(
     () => ({

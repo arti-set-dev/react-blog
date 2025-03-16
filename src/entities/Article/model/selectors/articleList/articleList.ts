@@ -4,7 +4,7 @@ import { ArticleSortField, ArticleType } from '../../types/articleType';
 
 export const getArticlesListIsLoading = (state: StateSchema) => state.articlesList?.isLoading || false;
 export const getArticlesListError = (state: StateSchema) => state.articlesList?.error;
-export const getArticlesListView = (state: StateSchema) => state.articlesList?.view || ArticleView.COLUMN;
+export const getArticlesListView = (state: StateSchema) => state.articlesList?.view ?? ArticleView.COLUMN;
 export const getArticlesListNum = (state: StateSchema) => state.articlesList?.page || 1;
 export const getArticlesListLimit = (state: StateSchema) => state.articlesList?.limit || 13;
 export const getArticlesListIsHasMore = (state: StateSchema) => state.articlesList?.hasMore;

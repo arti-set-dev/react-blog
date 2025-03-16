@@ -30,6 +30,8 @@
   align-items: center;
   justify-content: space-between;
   overflow: initial;
+  padding: var(--inner-offset);
+  gap: var(--gap);
 }
 
 .rightbar {
@@ -43,6 +45,5 @@
 .footer {
   justify-items: center;
   grid-area: 3 / 1 / 4 / 4;
-  padding: var(--inner-offset);
   width: 100%;
 }

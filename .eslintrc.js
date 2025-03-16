@@ -51,6 +51,7 @@ module.exports = {
           'positionOffset',
           'animation',
           'listVariant',
+          'maxWidth',
           'weight', 'variant', 'name', 'target', 'justify', 'align', 'direction', 'gap', 'tag', 'as', 'border'],
     }],
     'max-len': ['error', {

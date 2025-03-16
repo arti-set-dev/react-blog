@@ -12,7 +12,7 @@ export const RulesRedesigned = memo((props: RulesProps) => {
   const { t } = useTranslation();
 
   return (
-    <Card offset="24" className={getVstack({ gap: 24 })}>
+    <Card tag="section" offset="24" className={getVstack({ gap: 24 })}>
       <Text
         tag={isHead ? 'h1' : 'h2'}
         variant="primary"

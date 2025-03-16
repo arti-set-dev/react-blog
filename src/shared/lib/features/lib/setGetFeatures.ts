@@ -1,6 +1,13 @@
 import { FeatureFlags } from '@/shared/types/featureFlags';
+import { LOCAL_STORAGE_LAST_DESIGN_KEY } from '@/shared/const/localstorage';
 
-let featureFlags: FeatureFlags = {};
+if (!localStorage.getItem(LOCAL_STORAGE_LAST_DESIGN_KEY)) {
+  localStorage.setItem(LOCAL_STORAGE_LAST_DESIGN_KEY, 'new');
+}
+
+let featureFlags: FeatureFlags = {
+  isAppRedesigned: localStorage.getItem(LOCAL_STORAGE_LAST_DESIGN_KEY) === 'new',
+};
 
 export function setFeatureFlags(newFeatureFlags?: FeatureFlags) {
   if (newFeatureFlags) {
@@ -9,12 +16,6 @@ export function setFeatureFlags(newFeatureFlags?: FeatureFlags) {
 }
 
 export function getFeatureFlag(flag: keyof FeatureFlags) {
-  const isEmpty = (obj: object) => Object.keys(obj).length === 0;
-
-  if (isEmpty(featureFlags)) {
-    featureFlags.isAppRedesigned = true;
-  }
-
   return featureFlags[flag];
 }
 

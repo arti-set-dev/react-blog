@@ -24,8 +24,9 @@ interface CardProps {
   animation?: CardAnimation | string;
   isOverflow?: boolean;
   border?: BorderRadius;
-  height?: number;
-  width?: number;
+  height?: number | string;
+  width?: number | string;
+  maxWidth?: number | string;
   position?: CardPosition;
   positionCorner?: CardPositionCorner;
   positionOffset?: number | string
@@ -67,6 +68,7 @@ export const Card = memo((props: CardProps) => {
     positionCorner = '',
     positionOffset,
     animation = '',
+    maxWidth,
     isOverflow = false,
     isHidden,
     ...otherProps
@@ -93,7 +95,7 @@ export const Card = memo((props: CardProps) => {
         [className, cl[variant], cl[offsetClass], cl[borderClass], cl[position], cl[positionCorner], cl[animation]],
       )}
       style={{
-        height, width, flexBasis, bottom: positionOffset,
+        height, width, flexBasis, bottom: positionOffset, maxWidth,
       }}
     >
       {children}

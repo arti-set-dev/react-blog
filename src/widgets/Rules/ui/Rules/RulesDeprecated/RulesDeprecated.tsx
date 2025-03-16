@@ -13,7 +13,7 @@ export const RulesDeprecated = memo((props: RulesProps) => {
   const { t } = useTranslation();
 
   return (
-    <Card variant="transparent" border="0" offset="24">
+    <Card tag="section" variant="transparent" border="0" offset="24">
       <Container className={getVstack({ gap: 24 })}>
         <Text
           tag={isHead ? 'h1' : 'h2'}

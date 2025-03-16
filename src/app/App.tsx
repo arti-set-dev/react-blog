@@ -15,6 +15,7 @@ import { withTheme } from './providers/ThemeProvider/ui/withTheme';
 import { ToggleFeatures } from '@/shared/lib/features';
 import { Footer } from '@/widgets/Footer';
 import { useAppTitle } from './lib/useAppTitle';
+import { AppLoaderLayout } from '@/shared/layouts/AppLoaderLayout';
 
 const App = memo(() => {
   const { theme } = useTheme();
@@ -31,9 +32,19 @@ const App = memo(() => {
 
   if (!inited) {
     return (
-      <div className={classNames('app app--all-center', {}, [theme])}>
-        <Loader />
-      </div>
+      <ToggleFeatures
+        feature="isAppRedesigned"
+        on={(
+          <div className={classNames('app_redesigned', {}, [theme])}>
+            <AppLoaderLayout />
+          </div>
+        )}
+        off={(
+          <div className={classNames('app app--all-center', {}, [theme])}>
+            <Loader />
+          </div>
+        )}
+      />
     );
   }
 
