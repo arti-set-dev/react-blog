@@ -7,7 +7,6 @@ import { ViewSwitcherContainer } from '../ViewSwitherContainer/ViewSwitcherConta
 import { StickyContentLayout } from '@/shared/layouts/SticlyContentLayout';
 import { ToggleFeatures } from '@/shared/lib/features';
 import { Text } from '@/shared/ui/deprecated/Text';
-import { ArticlePageGreeting } from '@/features/articlePageGreeting';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import {
   DynamicModuleLoader,
@@ -54,7 +53,6 @@ const ArticlesPage = (props: ArticlesPageProps) => {
             >
               <ArticleListContainer />
               {error && <Text>{t('Data boot error')}</Text>}
-              <ArticlePageGreeting />
             </Page>
           )}
         />

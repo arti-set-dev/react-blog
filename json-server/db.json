@@ -3,7 +3,7 @@
     {
       "id": "1",
       "title": "Notification 1",
-      "description": "A new topic is available to you",
+      "description": "A new topic <a href='#'>is</a> available to you",
       "userId": "1",
       "isUiSwitch": true
     },
@@ -44,9 +44,9 @@
     {
       "id": "1",
       "title": "Latest JavaScript Updates",
-      "subtitle": "What new features appeared in JS in 2022?",
+      "subtitle": "What new features appeared in JS in 2022? 2",
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
-      "views": 1022,
+      "views": 1024,
       "createdAt": "26.02.2020",
       "userId": "1",
       "type": [
@@ -113,7 +113,23 @@
             "Modern technologies such as ES6+, React, Vue.js, and others significantly simplify development and allow creating dynamic interfaces with minimal time investment."
           ]
         }
-      ]
+      ],
+      "user": {
+        "id": "1",
+        "username": "admin",
+        "password": "123",
+        "roles": [
+          "ADMIN"
+        ],
+        "features": {
+          "isAppRedesigned": true
+        },
+        "jsonSettings": {
+          "isArticlePageWasOpened": true,
+          "theme": "dark"
+        },
+        "avatar": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      }
     },
     {
       "id": "2",
@@ -410,7 +426,7 @@
       "title": "Environmental Pollution",
       "subtitle": "Analysis of Causes and Consequences of the Ecological Crisis",
       "img": "https://images.unsplash.com/photo-1704797771332-fca2526315dd?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "views": 671,
+      "views": 673,
       "createdAt": "13.07.2022",
       "userId": "1",
       "type": [
@@ -559,7 +575,7 @@
       "title": "Politics and Society",
       "subtitle": "Analysis of Political Impact on Social Processes",
       "img": "https://images.unsplash.com/photo-1717348427429-e5398af7ae4e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "views": 1148,
+      "views": 1149,
       "createdAt": "09.09.2022",
       "userId": "1",
       "type": [
@@ -706,7 +722,7 @@
       "title": "Ecology and Economics",
       "subtitle": "The relationship between natural resources and economic growth",
       "img": "https://images.unsplash.com/photo-1642940399279-3a0b7f820fe7?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "views": 453,
+      "views": 454,
       "createdAt": "15.11.2022",
       "userId": "1",
       "type": [
@@ -781,7 +797,7 @@
       "title": "Climate Change",
       "subtitle": "Analysis of Current Trends and Global Efforts to Combat Climate Change",
       "img": "https://images.unsplash.com/photo-1579004464832-0c014afa448c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "views": 300,
+      "views": 303,
       "createdAt": "29.11.2022",
       "userId": "1",
       "type": [
@@ -1662,7 +1678,7 @@
       "title": "The Future of Green Technologies ",
       "subtitle": "How Sustainable Technologies are Changing Our World",
       "img": "https://images.unsplash.com/photo-1533413598044-92e0b8e24cbc?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "views": 872,
+      "views": 873,
       "createdAt": "02.08.2023",
       "userId": "1",
       "type": [
@@ -1998,7 +2014,7 @@
       "title": "The Future of Cybersecurity",
       "subtitle": "Trends and Technologies That Will Define Cyber Protection",
       "img": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "views": 781,
+      "views": 782,
       "createdAt": "25.02.2025",
       "userId": "1",
       "type": [
@@ -2094,7 +2110,7 @@
       "title": "The Future of Cybersecurity",
       "subtitle": "Trends and Technologies That Will Define Cyber Protection",
       "img": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "views": 781,
+      "views": 782,
       "createdAt": "25.02.2025",
       "userId": "1",
       "type": [
@@ -2142,7 +2158,7 @@
       "title": "The Future of Cybersecurity",
       "subtitle": "Trends and Technologies That Will Define Cyber Protection",
       "img": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "views": 781,
+      "views": 782,
       "createdAt": "25.02.2025",
       "userId": "1",
       "type": [
@@ -2238,7 +2254,7 @@
       "title": "The Future of Cybersecurity",
       "subtitle": "Trends and Technologies That Will Define Cyber Protection",
       "img": "https://images.unsplash.com/photo-1605918321371-584f5deab0a2?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "views": 781,
+      "views": 782,
       "createdAt": "25.02.2025",
       "userId": "1",
       "type": [
@@ -4516,12 +4532,6 @@
       "id": "p5rMadd"
     },
     {
-      "articleId": "10",
-      "userId": "1",
-      "text": "sqsqsqs",
-      "id": "lz_wSi-"
-    },
-    {
       "articleId": "9",
       "userId": "2",
       "text": "hi",
@@ -4626,6 +4636,12 @@
       "userId": "1",
       "text": "dwd",
       "id": "WkqPfBH"
+    },
+    {
+      "articleId": "10",
+      "userId": "1",
+      "text": "feeef",
+      "id": "JUXhZWh"
     }
   ],
   "users": [
@@ -4695,7 +4711,7 @@
     {
       "id": "1",
       "firstname": "user 113",
-      "lastname": "dwdwdss1",
+      "lastname": "dwdwdss",
       "age": 24,
       "currency": "EUR",
       "city": "New York",
@@ -4710,7 +4726,7 @@
       "age": 24,
       "currency": "KZT",
       "city": "New York",
-      "username": "admin",
+      "username": "user",
       "avatar": "https://plus.unsplash.com/premium_photo-1664536392779-049ba8fde933?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "country": "USA"
     },
@@ -4764,6 +4780,27 @@
       "rate": 3,
       "feedback": "",
       "id": 4
+    },
+    {
+      "userId": "1",
+      "articleId": "30",
+      "rate": 2,
+      "feedback": "nice!",
+      "id": 5
+    },
+    {
+      "userId": "1",
+      "articleId": "31",
+      "rate": 2,
+      "feedback": "",
+      "id": 6
+    },
+    {
+      "userId": "1",
+      "articleId": "10",
+      "rate": 3,
+      "feedback": "",
+      "id": 7
     }
   ],
   "profile-ratings": [
