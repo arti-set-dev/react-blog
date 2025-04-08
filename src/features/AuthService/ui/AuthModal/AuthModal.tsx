@@ -2,7 +2,7 @@ import { memo, Suspense } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Modal } from '@/shared/ui/redesigned/Modal';
 import { Loader, LoaderOffset } from '@/shared/ui/deprecated/Loader';
-import { LoginFormAsync } from '../LoginForm/LoginForm.async';
+import { AuthFormAsync } from '../AuthForm/AuthForm.async';
 
 interface LoginModalProps {
   className?: string;
@@ -27,7 +27,7 @@ export const LoginModal = memo((props: LoginModalProps) => {
   return (
     <Modal lazy isOpen={isOpen} onClose={onClose}>
       <Suspense fallback={<Loader offset={LoaderOffset.L} />}>
-        <LoginFormAsync onSucces={handleSuccess} />
+        <AuthFormAsync onSuccess={handleSuccess} />
       </Suspense>
     </Modal>
   );

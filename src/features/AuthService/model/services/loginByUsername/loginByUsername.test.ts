@@ -21,6 +21,7 @@ describe('loginByUsername.test', () => {
 
   test('successful common', async () => {
     const userValue: User = {
+      email: 'test@test.com',
       username: '123',
       id: '1',
       roles: [UserRole.ADMIN],

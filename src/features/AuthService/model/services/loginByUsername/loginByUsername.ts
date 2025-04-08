@@ -7,6 +7,12 @@ interface LoginByUsernameProps {
   password: string;
 }
 
+interface AuthResponse {
+  user: User;
+  accessToken: string;
+  refreshToken: string;
+}
+
 export const loginByUsername = createAsyncThunk<
   User,
   LoginByUsernameProps,
@@ -15,17 +21,24 @@ export const loginByUsername = createAsyncThunk<
   const { extra, dispatch, rejectWithValue } = thunkAPI;
 
   try {
-    const response = await extra.api.post<User>('/login', authData);
+    const response = await extra.api.post<AuthResponse>('/login', {
+      username: authData.username,
+      password: authData.password,
+    });
 
     if (!response.data) {
       throw new Error();
     }
 
-    dispatch(userActions.setAuthData(response.data));
+    const { user, accessToken, refreshToken } = response.data;
+    dispatch(userActions.setAuthData(user));
 
-    return response.data;
+    localStorage.setItem('accessToken', accessToken);
+    localStorage.setItem('refreshToken', refreshToken);
+
+    return user;
   } catch (error) {
     console.log(error);
-    return rejectWithValue('error');
+    return rejectWithValue('Ошибка аутентификации');
   }
 });

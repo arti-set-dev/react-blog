@@ -1,12 +1,11 @@
 import React, { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { Button, ButtonTheme, ButtonType } from '@/shared/ui/deprecated/Button';
-import { Input } from '@/shared/ui/deprecated/Input';
+import { Button } from '@/shared/ui/redesigned/Button';
+import { Input } from '@/shared/ui/redesigned/Input';
 import {
-  Text, TextSize, TextTheme, TextWeight,
-} from '@/shared/ui/deprecated/Text';
-import { classNames } from '@/shared/lib/classNames/classNames';
+  Text,
+} from '@/shared/ui/redesigned/Text';
 import {
   DynamicModuleLoader,
   ReducerList,
@@ -18,7 +17,7 @@ import { loginByUsername } from '../../model/services/loginByUsername/loginByUse
 import { getLoginUsername } from '../../model/selectors/getLoginUsername/getLoginUsername';
 import { getLoginPassword } from '../../model/selectors/getLoginPassword/getLoginPassword';
 import { getLoginIsLoading } from '../../model/selectors/getLoginIsLoading/getLoginIsLoading';
-import cl from './LoginForm.module.scss';
+import { VStack } from '@/shared/ui/redesigned/Stack';
 
 export interface LoginFormProps {
   className?: string;
@@ -66,18 +65,19 @@ const LoginForm = memo((props: LoginFormProps) => {
 
   return (
     <DynamicModuleLoader removeAfterUnmount reducers={initialReducers}>
-      <form className={classNames(cl.LoginForm, {}, [className])}>
+      <VStack fullWidth align="center" gap="32" tag="form">
         <Text
-          theme={TextTheme.PRIMARY}
-          size={TextSize.XL}
-          weight={TextWeight.BOLD}
+          align="center"
+          variant="primary"
+          size="xl"
+          weight="bold"
         >
           {t('Login')}
         </Text>
-        <div className={cl.LoginFields}>
+        <VStack fullWidth gap="16">
           <Input
             autofocus
-            placeholder={t('Your name')}
+            placeholder={t('Your username')}
             value={username}
             onChange={onChangeUsername}
           />
@@ -86,18 +86,18 @@ const LoginForm = memo((props: LoginFormProps) => {
             value={password}
             onChange={onChangePassword}
           />
-        </div>
+        </VStack>
         <Button
-          type={ButtonType.SUBMIT}
-          theme={ButtonTheme.PRIMARY}
-          className={cl.LoginBtn}
+          fullWidth
+          type="submit"
+          variant="primary"
           onClick={onLoginClick}
           disabled={isLoading}
         >
           {t('Login')}
         </Button>
-        {error && <Text theme={TextTheme.ERROR}>{t('Error login')}</Text>}
-      </form>
+        {error && <Text variant="error">{t('Error login')}</Text>}
+      </VStack>
     </DynamicModuleLoader>
   );
 });
