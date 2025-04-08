@@ -1,0 +1,17 @@
+.hiddenInput {
+  display: none;
+}
+
+.preview {
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.previewWrapper {
+  cursor: pointer;
+}
+
+.previewCircle {
+  overflow: hidden;
+  border-radius: var(--radius-circle);
+}

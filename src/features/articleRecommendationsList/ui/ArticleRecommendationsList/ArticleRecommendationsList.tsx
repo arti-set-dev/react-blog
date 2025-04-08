@@ -7,7 +7,6 @@ import {
 import { Loader } from '@/shared/ui/deprecated/Loader';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { ArticleList, ArticleListDisplay } from '@/entities/Article';
-// eslint-disable-next-line import/no-duplicates
 import { useArticleRecommendationsList } from '../../api/ArticleRecommendationsApi';
 import cl from './ArticleRecommendationsList.module.scss';
 
@@ -25,7 +24,7 @@ export const ArticleRecommendationsList = memo(
       isLoading,
       data: articles,
       error,
-    } = useArticleRecommendationsList(totalPosts);
+    } = useArticleRecommendationsList({ limit: totalPosts });
 
     if (isLoading || error || !articles) {
       return null;

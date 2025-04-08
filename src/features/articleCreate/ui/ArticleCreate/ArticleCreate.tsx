@@ -12,7 +12,7 @@ import {
   ArticleTextBlock,
   createEmptyBlock,
   createTextBlock,
-  validateBlock, ArticleType, Article, articleListActions,
+  validateBlock, ArticleType, articleListActions,
 } from '@/entities/Article';
 import { TabItem } from '@/shared/ui/deprecated/Tabs';
 import { getUserAuthData } from '@/entities/User';
@@ -43,11 +43,13 @@ export const ArticleCreate = memo((props: ArticleCreateProps) => {
 
   const [articleTitle, setArticleTitle] = useState('');
   const [articleDescription, setArticleDescription] = useState('');
-  const [articlePreview, setArticlePreview] = useState('');
+  const [articlePreview, setArticlePreview] = useState<File | null>(null);
+
+  const [blockImageFiles, setBlockImageFiles] = useState<Record<string, File | null>>({});
 
   const isArticleValid = useMemo(() => articleTitle.trim() !== ''
     && articleDescription.trim() !== ''
-    && articlePreview.trim() !== ''
+    && articlePreview !== null
     && savedBlocks.length > 0
     && savedBlocks.every(validateBlock), [articleTitle, articleDescription, articlePreview, savedBlocks]);
 
@@ -98,28 +100,50 @@ export const ArticleCreate = memo((props: ArticleCreateProps) => {
     setTypes((prev) => (prev.includes(value) ? prev.filter((t) => t !== value) : [...prev, value]));
   }, []);
 
+  const handleBlockFileChange = useCallback((file: File | null) => {
+    if (currentBlock && currentBlock.type === 'IMAGE') {
+      setBlockImageFiles((prev) => ({
+        ...prev,
+        [currentBlock.id]: file,
+      }));
+    }
+  }, [currentBlock]);
+
   const onSaveArticle = async () => {
     if (!userData) return;
 
-    const newArticle: Article = {
-      id: crypto.randomUUID(),
-      title: articleTitle,
-      subtitle: articleDescription,
-      img: articlePreview,
-      userId: userData.id,
-      views: 0,
-      createdAt: formatDate(new Date()),
-      type: types,
-      blocks: savedBlocks,
-    };
+    const formData = new FormData();
+
+    formData.append('title', articleTitle);
+    formData.append('subtitle', articleDescription);
+    formData.append('userId', userData.id);
+    formData.append('views', '0');
+    formData.append('createdAt', formatDate(new Date()));
+
+    formData.append('type', JSON.stringify(types));
+
+    formData.append('blocks', JSON.stringify(savedBlocks));
+
+    if (articlePreview) {
+      formData.append('img', articlePreview);
+    }
+
+    const imageBlocks = savedBlocks.filter((block) => block.type === 'IMAGE') as ArticleImageBlock[];
+    imageBlocks.forEach((block) => {
+      const blockImageFile = blockImageFiles[block.id];
+      if (blockImageFile) {
+        formData.append('blockImgs', blockImageFile);
+      }
+    });
 
     try {
-      await createArticle(newArticle).unwrap();
-      dispatch(articleListActions.addArticle(newArticle));
+      const response = await createArticle(formData).unwrap();
+      console.log(response);
+      dispatch(articleListActions.addArticle(response));
       localStorage.removeItem(LOCAL_STORAGE_ARTICLE_DATA);
-      navigate(getRouteArticleDetails(newArticle.id));
+      navigate(getRouteArticleDetails(response.id ?? ''));
     } catch (err) {
-      console.error(err);
+      console.error('Error creating article:', err);
     }
   };
 
@@ -130,11 +154,11 @@ export const ArticleCreate = memo((props: ArticleCreateProps) => {
         const draft = JSON.parse(savedDraft);
         setArticleTitle(draft.articleTitle || '');
         setArticleDescription(draft.articleDescription || '');
-        setArticlePreview(draft.articlePreview || '');
+        setArticlePreview(draft.articlePreview || null);
         setSavedBlocks(draft.savedBlocks || []);
         setTypes(draft.types || []);
       } catch (error) {
-        console.error('Ошибка при загрузке черновика:', error);
+        console.error('Error loading draft:', error);
       }
     }
   }, []);
@@ -143,7 +167,7 @@ export const ArticleCreate = memo((props: ArticleCreateProps) => {
     const draft = JSON.stringify({
       articleTitle,
       articleDescription,
-      articlePreview,
+      articlePreview: articlePreview?.name ?? '',
       savedBlocks,
       types,
     });
@@ -166,13 +190,14 @@ export const ArticleCreate = memo((props: ArticleCreateProps) => {
       handleSaveBlock={handleSaveBlock}
       isArticleValid={isArticleValid}
       handleTabChange={handleTabChange}
-      articlePreview={articlePreview}
+      articlePreview={articlePreview?.name ?? ''}
       setArticlePreview={setArticlePreview}
       types={types}
       onSaveArticle={onSaveArticle}
       handleAddType={handleAddType}
       isLoading={isLoading}
       error={error}
+      onBlockFileChange={handleBlockFileChange}
     />
   );
 });

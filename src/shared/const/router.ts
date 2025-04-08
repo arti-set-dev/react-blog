@@ -1,7 +1,7 @@
 export enum AppRoutes {
   MAIN = 'main',
   ABOUT = 'about',
-  PROFILE = 'profile',
+  PROFILE = 'profiles',
   ARTICLES = 'articles',
   ARTICLES_DETAILS = 'articles_details',
   ARTICLES_CREATE = 'articles_create',
@@ -10,13 +10,14 @@ export enum AppRoutes {
   FORBBIDDEN = 'forbidden',
   SERVES_RULES = 'service_rules',
   PRIVACY_POLICY = 'privacy_policy',
+  VERIFY_PROFILE = 'verify_profile',
   // last
   NOT_FOUND = 'not_found',
 }
 
 export const getRouteMain = () => '/';
 export const getRouteAbout = () => '/about';
-export const getRouteProfile = (id: string) => `/profile/${id}`;
+export const getRouteProfile = (id: string) => `/profiles/${id}`;
 export const getRouteArticles = () => '/articles';
 export const getRouteArticleDetails = (id: string) => `/articles/${id}`;
 export const getRouteArticleCreate = () => '/articles/new';
@@ -25,6 +26,7 @@ export const getRouteAdminPanel = () => '/admin';
 export const getRouteForbidden = () => '/forbidden';
 export const getRouteServiceRules = () => '/service_rules';
 export const getRoutePrivacyPolicy = () => '/privacy_policy';
+export const getRouteVerifyProfile = () => '/verify_profile';
 
 export const AppRouteByPathPattern: Record<string, AppRoutes> = {
   [getRouteMain()]: AppRoutes.MAIN,
@@ -38,4 +40,5 @@ export const AppRouteByPathPattern: Record<string, AppRoutes> = {
   [getRouteForbidden()]: AppRoutes.FORBBIDDEN,
   [getRouteServiceRules()]: AppRoutes.SERVES_RULES,
   [getRoutePrivacyPolicy()]: AppRoutes.PRIVACY_POLICY,
+  [getRouteVerifyProfile()]: AppRoutes.VERIFY_PROFILE,
 };

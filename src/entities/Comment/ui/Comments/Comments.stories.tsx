@@ -22,12 +22,16 @@ Normal.args = {
     {
       id: '1',
       text: 'hello world',
-      user: { id: '1', username: 'Vasya', roles: [UserRole.ADMIN] },
+      user: {
+        id: '1', username: 'Vasya', email: 'test@test.com', roles: [UserRole.ADMIN],
+      },
     },
     {
       id: '2',
       text: 'Comment 2',
-      user: { id: '1', username: 'Petya', roles: [UserRole.ADMIN] },
+      user: {
+        id: '1', username: 'Petya', email: 'test@test.com', roles: [UserRole.ADMIN],
+      },
     },
   ],
 };

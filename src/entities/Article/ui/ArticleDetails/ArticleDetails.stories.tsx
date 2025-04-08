@@ -26,9 +26,10 @@ const article: Article = {
   img: 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
   views: 1022,
   createdAt: '26.02.2022',
-  user: {
+  author: {
     id: '1',
     username: 'Roman',
+    email: 'test@test.com',
     roles: [UserRole.ADMIN],
   },
   type: [ArticleType.IT],

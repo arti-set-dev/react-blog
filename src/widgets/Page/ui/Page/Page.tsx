@@ -1,5 +1,5 @@
 import {
-  memo, MutableRefObject, ReactNode, useRef, UIEvent,
+  memo, MutableRefObject, ReactNode, useRef, UIEvent, useEffect,
 } from 'react';
 import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
@@ -14,6 +14,7 @@ import cl from './Page.module.scss';
 import { toggleFeatures } from '@/shared/lib/features';
 import { Footer } from '../../../Footer';
 import { getScrollByPath, ScrollSaveActions } from '@/features/scrollSave';
+import { Container } from '@/shared/ui/redesigned/Container';
 
 interface PageProps extends TestsProps {
   className?: string;
@@ -48,28 +49,34 @@ export const Page = memo((props: PageProps) => {
   });
 
   useInitialEffect(() => {
-    wrapperRef.current.scrollTop = scrollPosition;
+    document.documentElement.scrollTop = scrollPosition;
   });
+
+  useEffect(() => {
+    document.documentElement.scrollTop = 0;
+  }, [pathname]);
 
   const onScroll = useThrottle((e: UIEvent<HTMLDivElement>) => {
     dispatch(
       ScrollSaveActions.setScrollPosition({
-        position: e.currentTarget.scrollTop,
+        position: document.documentElement.scrollTop,
         path: pathname,
       }),
     );
   }, 1000);
 
   return (
-    <main
-      data-testid={props['data-testid'] ?? 'Page'}
-      onScroll={onScroll}
-      ref={wrapperRef}
-      className={classNames(pageClass, {}, [className])}
-    >
-      {children}
-      {onScrollEnd && <div className={cl.TriggerElem} ref={triggerRef} />}
-      {footer}
-    </main>
+    <Container max>
+      <main
+        data-testid={props['data-testid'] ?? 'Page'}
+        onScroll={onScroll}
+        ref={wrapperRef}
+        className={classNames(pageClass, {}, [className])}
+      >
+        {children}
+        {onScrollEnd && <div className={cl.TriggerElem} ref={triggerRef} />}
+        {footer}
+      </main>
+    </Container>
   );
 });

@@ -22,6 +22,12 @@
     justify-content: center;
     min-height: 200px;
   }
+
+  * {
+    &:last-child {
+      grid-column: 1 / 3;
+    }
+  }
 }
 
 .AvatarWrapper {

@@ -37,8 +37,7 @@ export const ArticleDetailsRedesigned = memo((props: ArticleDetailsRedesignedPro
     () => (
       <HStack gap="4" width="60%" overflow="auto">
         {article?.type.map((type, index) => (
-          // eslint-disable-next-line react/no-array-index-key
-          <Card offset="4" variant="active" tag="div" key={index}>
+          <Card offset="4" variant="active" tag="div" key={`${type}-${index}`}>
             {type}
           </Card>
         ))}
@@ -48,26 +47,28 @@ export const ArticleDetailsRedesigned = memo((props: ArticleDetailsRedesignedPro
   );
 
   const renderBlock = useCallback((block: ArticleBlock) => {
+    const blockId = block.id || crypto.randomUUID();
+
     switch (block.type) {
     case ArticleBlockType.CODE:
       return (
         <ArticleCodeBlockComponent
-          key={block.id}
-          block={block}
+          key={blockId}
+          block={{ ...block, id: blockId }}
         />
       );
     case ArticleBlockType.IMAGE:
       return (
         <ArticleImageBlockComponent
-          key={block.id}
-          block={block}
+          key={blockId}
+          block={{ ...block, id: blockId }}
         />
       );
     case ArticleBlockType.TEXT:
       return (
         <ArticleTextBlockComponent
-          key={block.id}
-          block={block}
+          key={blockId}
+          block={{ ...block, id: blockId }}
         />
       );
     default:

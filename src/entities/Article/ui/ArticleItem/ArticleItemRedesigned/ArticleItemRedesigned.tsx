@@ -26,7 +26,7 @@ export const ArticleItemRedesigned = memo((props: ArticleItemProps) => {
     className, article, view, blank,
   } = props;
   const { t } = useTranslation();
-  const { onOpenArticle } = useArticle(article.id);
+  const { onOpenArticle } = useArticle(article.id ?? '');
 
   const articleTypes = useMemo(
     () => (
@@ -63,18 +63,18 @@ export const ArticleItemRedesigned = memo((props: ArticleItemProps) => {
           <HStack gap="8">
             <Avatar
               size={30}
-              src={article.user?.avatar}
-              alt={article.user?.username}
+              src={article.author?.avatar}
+              alt={article.author?.username}
             />
             <Text
               size="m"
               weight="bold"
             >
-              {article.user?.username}
+              {article.author?.username}
             </Text>
             <Text size="s">{article.createdAt}</Text>
           </HStack>
-          <AppLink to={getRouteArticleDetails(article.id)}>
+          <AppLink to={getRouteArticleDetails(article.id ?? '')}>
             <VStack gap="16">
               <Text cropped="1" isHovered size="xl">
                 {article.title}
@@ -86,7 +86,7 @@ export const ArticleItemRedesigned = memo((props: ArticleItemProps) => {
           </AppLink>
           {articleTypes}
           <AppLink
-            to={getRouteArticleDetails(article.id)}
+            to={getRouteArticleDetails(article.id ?? '')}
           >
             <LazyImage
               width="100%"
@@ -129,7 +129,7 @@ export const ArticleItemRedesigned = memo((props: ArticleItemProps) => {
             {article.createdAt}
           </Text>
           <AppLink
-            to={getRouteArticleDetails(article.id)}
+            to={getRouteArticleDetails(article.id ?? '')}
             target="_blank"
           >
             <LazyImage
@@ -146,7 +146,7 @@ export const ArticleItemRedesigned = memo((props: ArticleItemProps) => {
               {views}
             </HStack>
             <AppLink
-              to={getRouteArticleDetails(article.id)}
+              to={getRouteArticleDetails(article.id ?? '')}
               target="_blank"
             >
               <Text cropped="1" isHovered size="m" weight="bold">
@@ -161,7 +161,7 @@ export const ArticleItemRedesigned = memo((props: ArticleItemProps) => {
             {article.createdAt}
           </Text>
           <AppLink
-            to={getRouteArticleDetails(article.id)}
+            to={getRouteArticleDetails(article.id ?? '')}
           >
             <LazyImage
               fallback={<Skeleton width="100%" height={200} />}
@@ -177,7 +177,7 @@ export const ArticleItemRedesigned = memo((props: ArticleItemProps) => {
               {views}
             </HStack>
             <AppLink
-              to={getRouteArticleDetails(article.id)}
+              to={getRouteArticleDetails(article.id ?? '')}
             >
               <Text cropped="1" isHovered size="m" weight="bold">
                 {article.title}

@@ -4,7 +4,7 @@ import { SerializedError } from '@reduxjs/toolkit';
 import { ReactElement } from 'react';
 import { VStack } from '@/shared/ui/redesigned/Stack';
 import { Skeleton as SkeletonDeprecated } from '@/shared/ui/deprecated/Skeleton';
-import { Text as TextDeprecated, TextTheme } from '@/shared/ui/deprecated/Text';
+import { Text as TextDeprecated, TextSize, TextTheme } from '@/shared/ui/deprecated/Text';
 import { Text } from '@/shared/ui/redesigned/Text';
 import { NotificationItem } from '../../ui/NotificationItem/NotificationItem';
 import { ToggleFeatures } from '@/shared/lib/features';
@@ -75,6 +75,32 @@ export const NotificationList = (props: NotificationListProps) => {
           >
             <TextDeprecated theme={TextTheme.ERROR}>
               {t('There was an error loading notifications')}
+            </TextDeprecated>
+          </VStack>
+        )}
+      />
+    );
+  }
+
+  if (!notifications?.length) {
+    return (
+      <ToggleFeatures
+        feature="isAppRedesigned"
+        on={(
+          <VStack
+            tag="div"
+          >
+            <Text size="m">
+              {t('No notifications')}
+            </Text>
+          </VStack>
+        )}
+        off={(
+          <VStack
+            tag="div"
+          >
+            <TextDeprecated size={TextSize.M}>
+              {t('No notifications')}
             </TextDeprecated>
           </VStack>
         )}

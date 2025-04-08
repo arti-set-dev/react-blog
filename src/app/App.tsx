@@ -5,7 +5,6 @@ import { useAppToolbar } from './lib/useAppToolbar';
 import { Loader } from '@/shared/ui/deprecated/Loader';
 import { MainLayout } from '@/shared/layouts/MainLayout';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { initAuthData, getUserInited } from '@/entities/User';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
 import { AppRouter } from './providers/router';
@@ -16,6 +15,7 @@ import { ToggleFeatures } from '@/shared/lib/features';
 import { Footer } from '@/widgets/Footer';
 import { useAppTitle } from './lib/useAppTitle';
 import { AppLoaderLayout } from '@/shared/layouts/AppLoaderLayout';
+import { checkAuth, getUserInited, initAuthData } from '@/entities/User';
 
 const App = memo(() => {
   const { theme } = useTheme();
@@ -27,6 +27,9 @@ const App = memo(() => {
   useAppTitle();
 
   useEffect(() => {
+    if (localStorage.getItem('token')) {
+      dispatch(checkAuth());
+    }
     dispatch(initAuthData());
   }, [dispatch]);
 
@@ -66,15 +69,20 @@ const App = memo(() => {
       )}
       off={(
         <div id="app" className={classNames('app', {}, [theme])}>
-          <Suspense fallback={<Loader />}>
-            <main className="main">
+          <main className="main">
+            <Suspense fallback={(
+              <div className="main-wrapper">
+                <Loader />
+              </div>
+            )}
+            >
               <Sidebar />
               <div className="page-wrapper">
                 <Navbar />
                 {inited && <AppRouter />}
               </div>
-            </main>
-          </Suspense>
+            </Suspense>
+          </main>
         </div>
       )}
     />

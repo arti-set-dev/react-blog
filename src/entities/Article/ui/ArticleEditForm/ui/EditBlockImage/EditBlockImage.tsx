@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next';
+import { useState } from 'react';
 import { ArticleImageBlock } from '../../../../model/types/article';
 import { validateBlock } from '../../../../lib/validation/validateArticleBlocks';
 import { Card } from '@/shared/ui/redesigned/Card';
@@ -8,12 +9,13 @@ import { HStack } from '@/shared/ui/redesigned/Stack';
 import { Button } from '@/shared/ui/redesigned/Button';
 import { ToggleFeatures } from '@/shared/lib/features';
 import { Input as InputDeprecated } from '@/shared/ui/deprecated/Input';
-
+import { UploadFile } from '@/shared/ui/redesigned/UploadFile';
 import { Button as ButtonDeprecated, ButtonTheme } from '@/shared/ui/deprecated/Button';
 
 interface EditBlockImageProps {
   block: ArticleImageBlock;
   onChange?: (block: ArticleImageBlock) => void;
+  onFileChange?: (file: File | null) => void;
   onCancel?: () => void;
   onSave?: () => void;
 }
@@ -21,17 +23,21 @@ interface EditBlockImageProps {
 export const EditBlockImage = ({
   block,
   onChange,
+  onFileChange,
   onCancel,
   onSave,
 }: EditBlockImageProps) => {
   const { t } = useTranslation();
+  const [imageFile, setImageFile] = useState<File | null>(null);
   const isValid = validateBlock(block);
 
-  const handleSrcChange = (value: string) => {
+  const handleFileSelect = (file: File) => {
+    setImageFile(file);
     onChange?.({
       ...block,
-      src: value,
+      src: URL.createObjectURL(file),
     });
+    onFileChange?.(file);
   };
 
   const handleTitleChange = (value: string) => {
@@ -54,11 +60,10 @@ export const EditBlockImage = ({
           offset="16"
           className={getVstack({ gap: 16 })}
         >
-          <Input
-            value={block.src}
-            onChange={handleSrcChange}
-            variant="outlined"
-            placeholder={t('Enter URL images')}
+          <UploadFile
+            accept="image/*"
+            onFileSelect={handleFileSelect}
+            placeholder={t('Upload image')}
           />
           <Input
             value={block.title}
@@ -82,10 +87,10 @@ export const EditBlockImage = ({
           offset="16"
           className={getVstack({ gap: 16 })}
         >
-          <InputDeprecated
-            value={block.src}
-            onChange={handleSrcChange}
-            placeholder={t('Enter URL images')}
+          <UploadFile
+            accept="image/*"
+            onFileSelect={handleFileSelect}
+            placeholder={t('Upload image')}
           />
           <InputDeprecated
             value={block.title}

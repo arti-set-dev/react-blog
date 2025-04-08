@@ -110,7 +110,7 @@ export const Input = memo((props: InputProps) => {
   }
 
   return (
-    <div className={cl.InputWrapper}>
+    <div className={classNames(cl.InputWrapper, { [cl.readonly]: readonly }, [])}>
       {addonContent}
       {placeholder && (
         <span className={classNames(cl.InputPlaceholder, mods, [className, cl[variant], cl[background]])}>

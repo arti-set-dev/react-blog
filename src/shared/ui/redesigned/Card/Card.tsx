@@ -8,7 +8,7 @@ export type CardPosition = 'absolute' | 'sticky' | 'fixed';
 export type CardPositionCorner = 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right' | 'bottom';
 export type CardOffset = '0' | '4' | '8' | '16' | '24';
 type TagType = 'article' | 'aside' | 'h3' | 'main' | 'div' | 'form' | 'li' | 'pre' | 'header' | 'footer' | 'section';
-export type BorderRadius = '0' | '4' | '8' | '10' | '12' | '20';
+export type BorderRadius = '0' | '4' | '8' | '10' | '12' | '20' | 'circle';
 export type CardAnimation = 'show';
 
 interface CardProps {
@@ -40,6 +40,7 @@ const mapBorderRadius: Record<BorderRadius, string> = {
   10: 'radius_10',
   12: 'radius_12',
   20: 'radius_20',
+  circle: 'radius_circle',
 };
 
 const mapOffsetToClass: Record<CardOffset, string> = {

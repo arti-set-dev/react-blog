@@ -29,10 +29,10 @@ export type ArticleBlock =
   | ArticleImageBlock;
 
 export interface Article {
-  id: string;
+  id?: string;
   title: string;
   userId?: string;
-  user?: User;
+  author?: User;
   subtitle: string;
   img: string;
   views: number;

@@ -74,7 +74,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
   const renderArticle = (article: Article) => (
     <ArticleItem
       className={cl.ArticleListItem}
-      key={article.id}
+      key={article.id ?? ''}
       article={article}
       view={view}
       blank={blank}

@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { memo, useCallback } from 'react';
+import { memo, useCallback, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { ValidateFields } from '@/shared/types/validation';
 
@@ -7,7 +7,7 @@ import { Currency } from '@/entities/Currency';
 import { Country } from '@/entities/Country';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { ProfileCard } from '@/entities/Profile';
+import { ProfileCard, useProfile } from '@/entities/Profile';
 import {
   DynamicModuleLoader,
   ReducerList,
@@ -40,6 +40,8 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
   const error = useSelector(getProfileError);
   const readonly = useSelector(getProfileReadonly);
   const validateErrors = useSelector(getProfileValidateErrors);
+  const [selectedFile, setSelectedFile] = useState<File | undefined>(undefined);
+  const { canEdit } = useProfile();
 
   const validateErrorTranslates = {
     [ValidateProfileError.NO_DATA_USER_FIRSTNAME]: t(
@@ -100,8 +102,8 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
   }, [dispatch]);
 
   const onSave = useCallback(() => {
-    dispatch(updateProfileData());
-  }, [dispatch]);
+    dispatch(updateProfileData(selectedFile));
+  }, [dispatch, selectedFile]);
 
   const onChangeFirstname = useCallback(
     (value?: string) => {
@@ -154,10 +156,10 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
   );
 
   const onChangeAvatar = useCallback(
-    (value?: string) => {
-      dispatch(profileActions.updateProfile({ avatar: value || '' }));
+    (value?: File) => {
+      setSelectedFile(value);
     },
-    [dispatch],
+    [],
   );
 
   const onChangeUsername = useCallback(

@@ -7,8 +7,8 @@ import { getRouteAdminPanel, getRouteProfile } from '@/shared/const/router';
 import {
   isUserAdmin,
   isUserManager,
-  userActions,
   getUserAuthData,
+  logout,
 } from '@/entities/User';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 
@@ -27,7 +27,7 @@ export const AvatarDropdown = (props: AvatarDropdownProps) => {
   const isAdminPanelAvailable = isAdmin || isManager;
 
   const onLogout = useCallback(() => {
-    dispatch(userActions.logout());
+    dispatch(logout());
   }, [dispatch]);
 
   const items = [

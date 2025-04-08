@@ -86,7 +86,7 @@ export const Input = memo((props: InputProps) => {
 
   if (textarea) {
     return (
-      <div className={cl.InputWrapper}>
+      <div className={classNames(cl.InputWrapper, { [cl.readonly]: readonly }, [])}>
         {placeholder && (
           <span className={classNames(cl.InputPlaceholder, mods, [className, cl[theme]])}>
             {placeholder}

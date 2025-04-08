@@ -17,13 +17,14 @@ import { Text, TextSize, TextWeight } from '@/shared/ui/deprecated/Text';
 import { LazyImage } from '@/shared/ui/redesigned/LazyImage';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cl from './ArticleItemDeprecated.module.scss';
+import { HStack } from '@/shared/ui/redesigned/Stack';
 
 export const ArticleItemDeprecated = memo((props: ArticleItemProps) => {
   const {
     className, article, view, blank,
   } = props;
   const { t } = useTranslation();
-  const { onOpenArticle } = useArticle(article.id);
+  const { onOpenArticle } = useArticle(article.id ?? '');
 
   const articleTypes = useMemo(
     () => (
@@ -55,52 +56,58 @@ export const ArticleItemDeprecated = memo((props: ArticleItemProps) => {
         data-testid="ArticlesItem"
         className={classNames(cl.ArticleItem, {}, [className, cl[view]])}
       >
-        <Card isHovered className={cl.Card}>
-          <div className={cl.Header}>
+        <Card className={cl.Card}>
+          <HStack gap="8">
             <Avatar
-              className={cl.Avatar}
               size={30}
-              src={article.user?.avatar}
-              alt={article.user?.username}
+              src={article.author?.avatar}
+              alt={article.author?.username}
             />
             <Text
-              className={cl.Username}
               size={TextSize.M}
               weight={TextWeight.BOLD}
             >
-              {article.user?.username}
+              {article.author?.username}
             </Text>
             <Text size={TextSize.S}>{article.createdAt}</Text>
-          </div>
-          <AppLink to={getRouteArticleDetails(article.id)}>
+          </HStack>
+          <AppLink to={getRouteArticleDetails(article.id ?? '')}>
             <Text cropped="1" className={cl.Title} size={TextSize.XL}>
               {article.title}
+            </Text>
+            <Text cropped="1" className={cl.Subtitle} size={TextSize.M}>
+              {article.subtitle}
             </Text>
           </AppLink>
           {articleTypes}
           <AppLink
             className={cl.LinkImg}
-            to={getRouteArticleDetails(article.id)}
+            to={getRouteArticleDetails(article.id ?? '')}
           >
             <LazyImage
               height={300}
-              className={cl.Img}
+              width="100%"
               src={article.img}
               alt={article.title}
             />
           </AppLink>
-          <div className={classNames('', { [cl.isShadow]: !!textBlocks }, [])}>
+          <HStack
+            overflow="hidden"
+            align="start"
+            height={90}
+            className={classNames('', { [cl.isShadow]: !!textBlocks }, [])}
+          >
             {textBlocks && (
               <ArticleTextBlockComponent
-                className={cl.TextBlock}
+                className={cl.TextComponent}
                 block={textBlocks}
               />
             )}
-          </div>
-          <div onClick={onOpenArticle} className={cl.Footer}>
-            <Button theme={ButtonTheme.OUTLINE}>{t('Read more')}</Button>
+          </HStack>
+          <HStack gap="16" justify="between">
+            <Button theme={ButtonTheme.OUTLINE} onClick={onOpenArticle}>{t('Read more')}</Button>
             {views}
-          </div>
+          </HStack>
         </Card>
       </li>
     );
@@ -112,19 +119,17 @@ export const ArticleItemDeprecated = memo((props: ArticleItemProps) => {
       className={classNames(cl.ArticleItem, {}, [className, cl[view]])}
     >
       {blank ? (
-        <Card isHovered className={cl.Card}>
+        <Card className={cl.Card}>
           <time dateTime={article.createdAt} className={cl.CreatedAt}>
             {article.createdAt}
           </time>
           <AppLink
             className={cl.LinkImg}
-            to={getRouteArticleDetails(article.id)}
-            target="_blank"
+            to={getRouteArticleDetails(article.id ?? '')}
           >
             <LazyImage
               fallback={<Skeleton width="100%" height={200} />}
               className={cl.Img}
-              width={280}
               height={200}
               src={article.img}
               alt={article.title}
@@ -137,8 +142,7 @@ export const ArticleItemDeprecated = memo((props: ArticleItemProps) => {
             </div>
             <AppLink
               className={cl.Link}
-              to={getRouteArticleDetails(article.id)}
-              target="_blank"
+              to={getRouteArticleDetails(article.id ?? '')}
             >
               <Text cropped="1" size={TextSize.M} weight={TextWeight.BOLD}>
                 {article.title}
@@ -153,7 +157,7 @@ export const ArticleItemDeprecated = memo((props: ArticleItemProps) => {
           </time>
           <AppLink
             className={cl.LinkImg}
-            to={getRouteArticleDetails(article.id)}
+            to={getRouteArticleDetails(article.id ?? '')}
           >
             <LazyImage
               fallback={<Skeleton width="100%" height={200} />}
@@ -170,7 +174,7 @@ export const ArticleItemDeprecated = memo((props: ArticleItemProps) => {
             </div>
             <AppLink
               className={cl.Link}
-              to={getRouteArticleDetails(article.id)}
+              to={getRouteArticleDetails(article.id ?? '')}
             >
               <Text cropped="1" size={TextSize.M} weight={TextWeight.BOLD}>
                 {article.title}

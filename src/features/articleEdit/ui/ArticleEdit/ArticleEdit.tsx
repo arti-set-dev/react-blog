@@ -14,9 +14,8 @@ import {
   ArticleBlockType,
   ArticleTextBlock,
   ArticleImageBlock,
-  ArticleCodeBlock, validateBlock, createEmptyBlock, ArticleBlock, ArticleType, Article,
-  updateArticleData,
-  articleDetailsActions, getArticleDetailsForm,
+  ArticleCodeBlock, validateBlock, createEmptyBlock, ArticleBlock, ArticleType,
+  articleDetailsActions, getArticleDetailsForm, useUpdateArticleMutation,
 } from '@/entities/Article';
 import { DynamicModuleLoader, ReducerList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { TabItem } from '@/shared/ui/deprecated/Tabs';
@@ -37,6 +36,7 @@ export const ArticleEdit = memo((props: ArticleEditProps) => {
   const { className, id } = props;
   const { t } = useTranslation();
   const dispatch = useAppDispatch();
+  const [updateArticle, { isLoading: isUpdating }] = useUpdateArticleMutation();
   const isLoading = useSelector(getArticleDetailsIsLoading);
   const error = useSelector(getArticleDetailsError);
   const article = useSelector(getArticleDetailsForm);
@@ -57,8 +57,8 @@ export const ArticleEdit = memo((props: ArticleEditProps) => {
     dispatch(articleDetailsActions.updateArticleField({ subtitle: value ?? '' }));
   };
 
-  const handleChangePreview = (value: string) => {
-    dispatch(articleDetailsActions.updateArticleField({ img: value ?? '' }));
+  const handleChangePreview = (value: File) => {
+    dispatch(articleDetailsActions.updateArticleField({ img: value.name ?? '' }));
   };
 
   const isArticleValid = useMemo(() => article?.title?.trim() !== ''
@@ -129,23 +129,23 @@ export const ArticleEdit = memo((props: ArticleEditProps) => {
   }, [article?.type, dispatch]);
 
   const onUpdateArticle = async () => {
-    if (!userData) return;
+    if (!userData || !article?.id) return;
 
-    const currArticle: Article = {
-      id: article?.id ?? '',
+    const dataToSend = {
       title: article?.title ?? '',
       subtitle: article?.subtitle ?? '',
-      img: article?.img ?? '',
       userId: userData.id,
-      views: article?.views ?? 0,
+      views: 0,
       createdAt: formatDate(new Date()),
-      type: article?.types ?? [],
+      type: article?.type ?? [],
       blocks: article?.blocks ?? [],
+      img: article?.img ?? '',
+      blockImgs: [],
     };
 
     try {
-      dispatch(updateArticleData());
-      navigate(getRouteArticleDetails(currArticle.id));
+      await updateArticle({ id: article.id, data: dataToSend }).unwrap();
+      navigate(getRouteArticleDetails(article.id));
     } catch (err) {
       console.error(err);
     }

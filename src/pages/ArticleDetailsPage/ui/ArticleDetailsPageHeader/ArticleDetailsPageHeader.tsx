@@ -29,8 +29,8 @@ export const ArticleDetailsPageHeader = memo(
     const onDeleteArticle = useCallback(async () => {
       if (article) {
         try {
-          await deleteArticle(article.id).unwrap();
-          dispatch(articleListActions.removeArticle(article.id));
+          await deleteArticle(article.id ?? '').unwrap();
+          dispatch(articleListActions.removeArticle(article.id ?? ''));
           navigate(getRouteArticles());
         } catch (e) {
           console.error(e);
@@ -52,7 +52,7 @@ export const ArticleDetailsPageHeader = memo(
 
     const onEditArticle = useCallback(() => {
       if (article) {
-        navigate(getRouteArticleEdit(article.id));
+        navigate(getRouteArticleEdit(article.id ?? ''));
       }
     }, [article, navigate]);
 

@@ -52,6 +52,7 @@ module.exports = {
           'animation',
           'listVariant',
           'maxWidth',
+          'accept',
           'weight', 'variant', 'name', 'target', 'justify', 'align', 'direction', 'gap', 'tag', 'as', 'border'],
     }],
     'max-len': ['error', {

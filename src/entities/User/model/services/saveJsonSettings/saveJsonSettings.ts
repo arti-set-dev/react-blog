@@ -1,9 +1,9 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { setJsonSettingsMutation } from '../../api/userApi';
-import { getJsonSettings } from '../selectors/jsonSettings';
-import { JsonSettings } from '../types/jsonSettings';
 import { ThunkConfig } from '@/app/providers/StoreProvider';
-import { getUserAuthData } from '../selectors/getUserAuthData/getUserAuthData';
+import { JsonSettings } from '../../types/jsonSettings';
+import { getUserAuthData } from '../../selectors/getUserAuthData/getUserAuthData';
+import { getJsonSettings } from '../../selectors/jsonSettings';
+import { setJsonSettingsMutation } from '../../../api/userApi';
 
 export const saveJsonSettings = createAsyncThunk<
   JsonSettings,

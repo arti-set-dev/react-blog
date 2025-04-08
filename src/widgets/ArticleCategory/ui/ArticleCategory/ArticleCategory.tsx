@@ -16,6 +16,7 @@ export const ArticleCategory = memo(() => {
     data: articles, isError, isFetching,
   } = useFetchArticlesList({
     type,
+    limit: 8,
   });
 
   const onChangeType = useCallback((value: ArticleType) => {

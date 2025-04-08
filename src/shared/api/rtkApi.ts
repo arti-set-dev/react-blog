@@ -5,6 +5,7 @@ export const rtkApi = createApi({
   reducerPath: 'api',
   baseQuery: fetchBaseQuery({
     baseUrl: __API__ || 'https://default-api.com',
+    credentials: 'include',
     prepareHeaders: (headers) => {
       const token = localStorage.getItem(USER_LOCALSTORAGE_KEY);
 

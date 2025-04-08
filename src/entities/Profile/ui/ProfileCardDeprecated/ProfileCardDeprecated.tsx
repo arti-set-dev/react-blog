@@ -121,13 +121,13 @@ export const ProfileCardDeprecated = memo((props: ProfileCardProps) => {
       </HStack>
       {data?.avatar && (
         <VStack align="center" className={cl.AvatarWrapper}>
-          <Avatar size={180} src={data.avatar} alt={t('Profile avatar')} />
+          <Avatar size={180} readonly={canEdit ? readonly : true} src={data.avatar} alt={t('Profile avatar')} />
         </VStack>
       )}
       <div className={cl.data}>
         <Input
           onChange={onChangeFirstname}
-          readonly={readonly}
+          readonly={canEdit ? readonly : true}
           placeholder={t('Your name')}
           value={data?.firstname}
           error={fieldErrors?.firstname}
@@ -135,7 +135,7 @@ export const ProfileCardDeprecated = memo((props: ProfileCardProps) => {
         />
         <Input
           onChange={onChangeLastname}
-          readonly={readonly}
+          readonly={canEdit ? readonly : true}
           placeholder={t('Your lastname')}
           value={data?.lastname}
           error={fieldErrors?.lastname}
@@ -143,39 +143,33 @@ export const ProfileCardDeprecated = memo((props: ProfileCardProps) => {
         />
         <Input
           onChange={onChangeAge}
-          readonly={readonly}
+          readonly={canEdit ? readonly : true}
           placeholder={t('Your age')}
           value={data?.age?.toString()}
         />
         <Input
           onChange={onChangeCity}
-          readonly={readonly}
+          readonly={canEdit ? readonly : true}
           placeholder={t('Your city')}
           value={data?.city}
           error={fieldErrors?.city}
         />
         <CurrencySelect
-          readonly={readonly}
+          readonly={canEdit ? readonly : true}
           onChange={onChangeCurrency}
           currValue={data?.currency}
         />
         <CountrySelect
-          readonly={readonly}
+          readonly={canEdit ? readonly : true}
           onChange={onChangeCountry}
           currValue={data?.country}
         />
         <Input
           onChange={onChangeUsername}
-          readonly={readonly}
+          readonly={canEdit ? readonly : true}
           placeholder={t('Your username')}
           value={data?.username}
           error={fieldErrors?.username}
-        />
-        <Input
-          onChange={onChangeAvatar}
-          readonly={readonly}
-          placeholder={t('Your avatar')}
-          value={data?.avatar}
         />
       </div>
     </div>

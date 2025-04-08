@@ -10,6 +10,7 @@ import { NotFoundPage } from '@/pages/PageNotFound';
 import { ProfilePage } from '@/pages/ProfilePage';
 import { ServiceRulesPage } from '@/pages/ServiceRulesPage';
 import { PrivacyPolicyPage } from '@/pages/PrivacyPolicyPage';
+import { VerifyProfilePage } from '@/pages/VerifyProfilePage';
 import {
   AppRoutes,
   getRouteForbidden,
@@ -21,6 +22,7 @@ import {
   getRouteProfile,
   getRouteAbout,
   getRouteMain, getRouteServiceRules, getRoutePrivacyPolicy,
+  getRouteVerifyProfile,
 } from '@/shared/const/router';
 import { AppRoutesProps } from '@/shared/types/router';
 
@@ -85,6 +87,11 @@ export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
   [AppRoutes.PRIVACY_POLICY]: {
     path: getRoutePrivacyPolicy(),
     element: <PrivacyPolicyPage />,
+  },
+
+  [AppRoutes.VERIFY_PROFILE]: {
+    path: getRouteVerifyProfile(),
+    element: <VerifyProfilePage />,
   },
 
   // last

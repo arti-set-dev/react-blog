@@ -143,6 +143,10 @@
     border-radius: 24px;
   }
 
+  &.radius_circle {
+    border-radius: 50%;
+  }
+
   &.hovered {
     &:hover {
       transform: scale(1.03);

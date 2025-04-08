@@ -1,1 +1,1 @@
-export * from '@/shared/ui/deprecated/Loader/Loader';
+export * from '@/shared/ui/redesigned/Loader/Loader';

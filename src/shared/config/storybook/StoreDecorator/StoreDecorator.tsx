@@ -1,6 +1,6 @@
 import { Story } from '@storybook/react';
 import { StateSchema, StoreProvider } from '@/app/providers/StoreProvider';
-import { loginReducer } from '@/features/AuthByUsername/testing';
+import { authReducer } from '@/features/AuthService/testing';
 import { profileReducer } from '@/features/editableProfileCard/testing';
 import { ReducerList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import {
@@ -11,7 +11,7 @@ import { commentsReducer }
   from '@/entities/Comment/testing';
 
 const defaultAsyncReducers: ReducerList = {
-  loginForm: loginReducer,
+  loginForm: authReducer,
   profile: profileReducer,
   articleDetails: articleDetailsReducer,
   addNewComment: addNewCommentReducer,

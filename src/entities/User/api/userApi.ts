@@ -3,7 +3,7 @@ import { User } from '../model/types/user';
 import { rtkApi } from '@/shared/api/rtkApi';
 
 interface SetJsonSettings {
-  userId: string;
+  userId?: string;
   jsonSettings: JsonSettings;
 }
 

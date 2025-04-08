@@ -57,7 +57,7 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
             content={(
               <Page className={classNames(cl.ArticleDetailsPage, {}, [className])}>
                 <DetailsContainer />
-                <ArticleRating articleId={id} />
+                <ArticleRating articleId={Number(id)} />
                 <ArticleRecommendationsList />
                 <ArticleDetailsPageComments id={id} />
               </Page>
@@ -70,7 +70,7 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
             <Container max className={getVstack({ gap: 16 })}>
               <ArticleDetailsPageHeader />
               <ArticleDetails id={id} />
-              <ArticleRating articleId={id} />
+              <ArticleRating articleId={Number(id)} />
               <ArticleRecommendationsList />
               <ArticleDetailsPageComments id={id} />
             </Container>

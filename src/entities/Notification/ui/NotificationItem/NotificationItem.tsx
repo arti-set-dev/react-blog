@@ -35,7 +35,7 @@ export const NotificationItem = (props: NotificationItemProps) => {
           <Text size="m">{notification.title}</Text>
           <Text>{notification.description}</Text>
           {notification.href && (
-            <AppLink to={notification.href}>{t('Go to link')}</AppLink>
+            <AppLink to={notification.href}>{notification.hrefDescr}</AppLink>
           )}
           {notification.isUiSwitch && (
             uiSwitcher
@@ -51,7 +51,7 @@ export const NotificationItem = (props: NotificationItemProps) => {
           <TextDeprecated size={TextSize.M}>{notification.title}</TextDeprecated>
           <TextDeprecated>{notification.description}</TextDeprecated>
           {notification.href && (
-            <AppLinkDeprecated to={notification.href}>{t('Go to link')}</AppLinkDeprecated>
+            <AppLinkDeprecated to={notification.href}>{notification.hrefDescr}</AppLinkDeprecated>
           )}
           {notification.isUiSwitch && (
             uiSwitcher

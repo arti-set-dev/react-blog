@@ -1,16 +1,11 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { ThunkConfig } from '@/app/providers/StoreProvider';
-import { User, userActions } from '@/entities/User';
+import { AuthResponse, User, userActions } from '@/entities/User';
+import { USER_LOCALSTORAGE_KEY } from '@/shared/const/localstorage';
 
 interface LoginByUsernameProps {
   username: string;
   password: string;
-}
-
-interface AuthResponse {
-  user: User;
-  accessToken: string;
-  refreshToken: string;
 }
 
 export const loginByUsername = createAsyncThunk<
@@ -21,7 +16,7 @@ export const loginByUsername = createAsyncThunk<
   const { extra, dispatch, rejectWithValue } = thunkAPI;
 
   try {
-    const response = await extra.api.post<AuthResponse>('/login', {
+    const response = await extra.api.post<AuthResponse>('/auth/login', {
       username: authData.username,
       password: authData.password,
     });
@@ -30,15 +25,15 @@ export const loginByUsername = createAsyncThunk<
       throw new Error();
     }
 
-    const { user, accessToken, refreshToken } = response.data;
+    const { user, accessToken } = response.data;
+
     dispatch(userActions.setAuthData(user));
 
-    localStorage.setItem('accessToken', accessToken);
-    localStorage.setItem('refreshToken', refreshToken);
+    localStorage.setItem(USER_LOCALSTORAGE_KEY, accessToken);
 
     return user;
   } catch (error) {
     console.log(error);
-    return rejectWithValue('Ошибка аутентификации');
+    return rejectWithValue('Authentication error');
   }
 });

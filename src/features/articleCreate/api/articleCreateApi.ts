@@ -3,11 +3,13 @@ import { rtkApi } from '@/shared/api/rtkApi';
 
 const articleApi = rtkApi.injectEndpoints({
   endpoints: (build) => ({
-    createArticle: build.mutation<Article, Article>({
-      query: (article) => ({
-        url: '/articles',
+    createArticle: build.mutation<Article, FormData>({
+      query: (formData) => ({
+        url: '/posts',
         method: 'POST',
-        body: article,
+        body: formData,
+        headers: {},
+        formData: true,
       }),
     }),
   }),

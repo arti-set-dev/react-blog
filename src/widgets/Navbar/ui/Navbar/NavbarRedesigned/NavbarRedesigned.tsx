@@ -1,5 +1,6 @@
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
+import { AuthModal } from '@/features/AuthService';
 import { getRouteArticleCreate, getRouteMain } from '@/shared/const/router';
 import { User } from '@/entities/User';
 import { Container } from '@/shared/ui/redesigned/Container';
@@ -12,7 +13,6 @@ import { AvatarDropdown } from '@/features/avatarDropdown';
 import { NotificationButton } from '@/features/notificationButton';
 import { UiDesignSwitcher } from '@/features/uiDesignSwitcher';
 import { getHstack } from '@/shared/lib/stack/getHstack/getHstack';
-import { LoginModal } from '@/features/AuthByUsername';
 
 import { Button } from '@/shared/ui/redesigned/Button';
 
@@ -65,7 +65,7 @@ export const NavbarRedesigned = memo((props: NavbarRedesignedProps) => {
         <Button variant="outline" onClick={onShowModal}>
           {t('Login')}
         </Button>
-        <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
+        <AuthModal isOpen={isAuthModal} onClose={onCloseModal} />
       </Container>
     </Card>
   );

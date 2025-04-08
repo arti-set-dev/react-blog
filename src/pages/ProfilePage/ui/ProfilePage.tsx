@@ -19,14 +19,14 @@ const ProfilePage = () => {
       on={(
         <Page data-testid="ProfilePage" className={cl.ProfilePage}>
           <EditableProfileCard id={id} />
-          <ProfileRating profileId={id} />
+          <ProfileRating profileId={Number(id)} />
         </Page>
       )}
       off={(
         <Page data-testid="ProfilePage" className={cl.ProfilePage}>
           <Container max className={classNames(cl.ProfilePage, {}, [getVstack({ gap: 24 })])}>
             <EditableProfileCard id={id} />
-            <ProfileRating profileId={id} />
+            <ProfileRating profileId={Number(id)} />
           </Container>
         </Page>
       )}

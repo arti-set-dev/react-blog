@@ -1,5 +1,6 @@
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
+import { AuthModal } from '@/features/AuthService';
 import cl from './NavbarDeprecated.module.scss';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { NotificationButton } from '@/features/notificationButton';
@@ -13,7 +14,6 @@ import { UiDesignSwitcher } from '@/features/uiDesignSwitcher';
 import { AvatarDropdown } from '@/features/avatarDropdown';
 import LogoIcon from '@/shared/assets/icons/logo.svg';
 import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button';
-import { LoginModal } from '@/features/AuthByUsername';
 
 interface NavbarDeprecatedProps {
     className?: string;
@@ -61,7 +61,7 @@ export const NavbarDeprecated = memo((props: NavbarDeprecatedProps) => {
         <Button theme={ButtonTheme.OUTLINE} onClick={onShowModal}>
           {t('Login')}
         </Button>
-        <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
+        <AuthModal isOpen={isAuthModal} onClose={onCloseModal} />
       </Container>
     </header>
   );

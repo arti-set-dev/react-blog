@@ -5,21 +5,23 @@ import { getArticleDetailsForm } from '../../selectors/articleDetails/articleDet
 
 export const updateArticleData = createAsyncThunk<
   Article,
-  void,
+  FormData,
   ThunkConfig<string>
 >(
   'article/updateArticleData',
-  async (_, thunkAPI) => {
+  async (formData, thunkAPI) => {
     const { extra, rejectWithValue, getState } = thunkAPI;
 
-    const formData = getArticleDetailsForm(getState());
+    const article = getArticleDetailsForm(getState());
 
     try {
-      const response = await extra.api.put<Article>(`/articles/${formData?.id}`, formData);
+      const response = await extra.api.patch<Article>(`/posts/${article?.id}`, formData);
 
       if (!response.data) {
         throw new Error('No data returned');
       }
+
+      console.log(response);
 
       return response.data;
     } catch (error) {

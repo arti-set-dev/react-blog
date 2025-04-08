@@ -1,7 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { ThunkConfig } from '@/app/providers/StoreProvider';
 import { addQueryParams } from '@/shared/lib/url/addQueryParams/addQueryParams';
 import { Article } from '../../types/article';
+import { ThunkConfig } from '@/app/providers/StoreProvider';
 import {
   getArticlesListLimit,
   getArticlesListNum,
@@ -39,15 +39,19 @@ export const fetchArticlesList = createAsyncThunk<
       type,
     });
 
-    const response = await extra.api.get<Article[]>('/articles', {
+    const response = await extra.api.get<{
+      items: Article[];
+      total: number;
+      page: number;
+      limit: number;
+      totalPages: number;
+    }>('/posts', {
       params: {
-        _expand: 'user',
-        _limit: limit,
-        _page: page,
-        _sort: sort,
-        _order: order,
-        q: search,
-        type_like: type === ArticleType.ALL ? undefined : type,
+        limit,
+        page,
+        sort,
+        order,
+        search,
       },
     });
 
@@ -56,8 +60,8 @@ export const fetchArticlesList = createAsyncThunk<
     }
 
     const filteredData = type === ArticleType.ALL
-      ? response.data
-      : response.data.filter((article) => article.type.includes(type));
+      ? response.data.items
+      : response.data.items.filter((article) => article.type.includes(type));
 
     return filteredData;
   } catch (error) {

@@ -1,4 +1,6 @@
-import { memo, useMemo } from 'react';
+import {
+  memo, useMemo, useState, useCallback,
+} from 'react';
 import { useTranslation } from 'react-i18next';
 import { getVstack } from '@/shared/lib/stack/getVstack/getVstack';
 import { Text } from '@/shared/ui/redesigned/Text';
@@ -17,6 +19,7 @@ import TextIcon from '@/shared/assets/icons/text-icon.svg';
 import ImageIcon from '@/shared/assets/icons/image-icon.svg';
 import CodeIcon from '@/shared/assets/icons/code-icon.svg';
 import { BlockPreview } from '../../BlockPreview/BlockPreview';
+import { UploadFile } from '@/shared/ui/redesigned/UploadFile';
 
 export const ArticleEditFormRedesigned = memo((props: ArticleEditFormProps) => {
   const {
@@ -42,8 +45,20 @@ export const ArticleEditFormRedesigned = memo((props: ArticleEditFormProps) => {
     error,
     types,
     handleAddType,
+    onBlockFileChange,
   } = props;
   const { t } = useTranslation();
+  const [blockImageFiles, setBlockImageFiles] = useState<Record<string, File | null>>({});
+
+  const handleBlockFileChange = useCallback((file: File | null) => {
+    if (currentBlock && currentBlock.type === 'IMAGE') {
+      setBlockImageFiles((prev) => ({
+        ...prev,
+        [currentBlock.id]: file,
+      }));
+      onBlockFileChange?.(file);
+    }
+  }, [currentBlock, onBlockFileChange]);
 
   const typeTabs = useMemo<TabItem[]>(() => {
     const tabTextContent = (
@@ -100,12 +115,10 @@ export const ArticleEditFormRedesigned = memo((props: ArticleEditFormProps) => {
         {t('Create new article')}
       </Text>
 
-      <Input
-        value={articlePreview}
-        onChange={setArticlePreview}
-        background="light"
-        variant="outlined"
-        placeholder={t('Enter the url for article preview')}
+      <UploadFile
+        accept="image/*"
+        onFileSelect={setArticlePreview}
+        placeholder={t('Upload article preview')}
       />
       <Input
         value={articleTitle}
@@ -156,11 +169,12 @@ export const ArticleEditFormRedesigned = memo((props: ArticleEditFormProps) => {
               {t('Save article')}
             </Button>
           )}
-
+      </HStack>
+      <VStack gap="16" align="center">
         {error
           && (
             <>
-              <Text>{t('An error arose when publishing an article')}</Text>
+              <Text variant="error">{t('An error arose when publishing an article')}</Text>
               <Button
                 onClick={onSaveArticle}
                 variant="outline"
@@ -170,13 +184,14 @@ export const ArticleEditFormRedesigned = memo((props: ArticleEditFormProps) => {
               </Button>
             </>
           )}
-      </HStack>
+      </VStack>
 
-      {tabValue && (
+      {tabValue && currentBlock && (
         <EditBlockSwitcher
           type={tabValue as ArticleBlockType}
           block={currentBlock}
           onChange={handleBlockChange}
+          onFileChange={handleBlockFileChange}
           onCancel={handleCancel}
           onSave={handleSaveBlock}
         />

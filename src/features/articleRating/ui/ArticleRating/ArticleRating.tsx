@@ -14,7 +14,7 @@ import { Skeleton } from '@/shared/ui/redesigned/Skeleton';
 
 export interface ArticleRatingProps {
   className?: string;
-  articleId?: string;
+  articleId: number;
 }
 
 const ArticleRating = memo((props: ArticleRatingProps) => {
@@ -22,8 +22,8 @@ const ArticleRating = memo((props: ArticleRatingProps) => {
   const { t } = useTranslation('article-details');
   const userData = useSelector(getUserAuthData);
   const { data, isLoading, error } = useArticleRating({
-    articleId: articleId ?? '',
-    userId: userData?.id ?? '',
+    articleId,
+    userId: Number(userData?.id),
   });
   const [rateArticleMutation] = useRateArticle();
 
@@ -31,8 +31,8 @@ const ArticleRating = memo((props: ArticleRatingProps) => {
     (starsCount: number, feedback?: string) => {
       try {
         rateArticleMutation({
-          userId: userData?.id ?? '',
-          articleId: articleId ?? '',
+          userId: Number(userData?.id),
+          articleId,
           rate: starsCount,
           feedback,
         });

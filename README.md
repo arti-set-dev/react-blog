@@ -222,7 +222,7 @@ There are only two functions:
 - [articleEditForm](./src/features/articleEditForm)
 - [articleRating](./src/features/articleRating)
 - [articleRecommendationsList](./src/features/articleRecommendationsList)
-- [AuthByUsername](./src/features/AuthByUsername)
+- [AuthByUsername](./src/features/AuthService)
 - [avatarDropdown](./src/features/avatarDropdown)
 - [editableProfileCard](./src/features/editableProfileCard)
 - [LangSwitcher](./src/features/LangSwitcher)

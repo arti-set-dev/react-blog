@@ -24,7 +24,7 @@ const article: Article = {
   img: image,
   createdAt: '19.07.2022',
   views: 123,
-  user: { id: '1', username: '123' },
+  author: { id: '1', username: '123', email: 'test@test.com' },
   blocks: [],
   type: [],
   title: 'News',

@@ -7,11 +7,11 @@ import { validateProfileData } from '../validateProfileData/validateProfileData'
 
 export const updateProfileData = createAsyncThunk<
   Profile,
-  void,
+  File | undefined,
   ThunkConfig<ValidateProfileError[]>
->('profile/updateProfileData', async (_, thunkAPI) => {
+>('profile/updateProfileData', async (file, thunkAPI) => {
   const {
-    extra, dispatch, rejectWithValue, getState,
+    extra, rejectWithValue, getState,
   } = thunkAPI;
 
   const formData = getProfileForm(getState());
@@ -23,9 +23,28 @@ export const updateProfileData = createAsyncThunk<
   }
 
   try {
-    const response = await extra.api.put<Profile>(
-      `/profile/${formData?.id}`,
-      formData,
+    const profileFormData = new FormData();
+
+    profileFormData.append('username', formData?.username || '');
+    profileFormData.append('firstname', formData?.firstname || '');
+    profileFormData.append('lastname', formData?.lastname || '');
+    profileFormData.append('age', formData?.age?.toString() || '');
+    profileFormData.append('city', formData?.city || '');
+    profileFormData.append('country', formData?.country || '');
+    profileFormData.append('currency', formData?.currency || '');
+
+    if (file) {
+      profileFormData.append('avatar', file);
+    }
+
+    const response = await extra.api.patch<Profile>(
+      `/profiles/${formData?.id}`,
+      profileFormData,
+      {
+        headers: {
+          'Content-Type': 'multipart/form-data',
+        },
+      },
     );
 
     if (!response.data) {

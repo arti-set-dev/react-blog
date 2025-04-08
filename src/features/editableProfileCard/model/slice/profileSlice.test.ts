@@ -13,7 +13,7 @@ const data = {
   country: Country.Germany,
   city: 'city',
   username: 'username',
-  avatar: 'avatar',
+  avatar: 'avatar.png',
 };
 
 describe('profileSlice.test', () => {
@@ -68,7 +68,7 @@ describe('profileSlice.test', () => {
     expect(
       profileReducer(
         state as ProfileSchema,
-        updateProfileData.fulfilled(data, ''),
+        updateProfileData.fulfilled(data, '', undefined),
       ),
     ).toEqual({
       isLoading: false,

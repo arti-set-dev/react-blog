@@ -1,17 +1,20 @@
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Card } from '@/shared/ui/redesigned/Card';
-import { ArticlePopularList } from '@/features/articlePopularList';
 import { getVstack } from '@/shared/lib/stack/getVstack/getVstack';
-import { ArticleListDisplay } from '@/entities/Article';
+import { Article, ArticleList, ArticleListDisplay } from '@/entities/Article';
 import { Text } from '@/shared/ui/redesigned/Text';
 
 interface PopularPostsRedesignedProps {
     className?: string;
+    articles?: Article[];
+    isFetching: boolean;
 }
 
 export const PopularPostsRedesigned = memo((props: PopularPostsRedesignedProps) => {
-  const { className } = props;
+  const {
+    className, articles, isFetching,
+  } = props;
   const { t } = useTranslation('main');
 
   return (
@@ -24,7 +27,11 @@ export const PopularPostsRedesigned = memo((props: PopularPostsRedesignedProps) 
       >
         {t('Posts of the week')}
       </Text>
-      <ArticlePopularList totalPosts={8} display={ArticleListDisplay.GRID} />
+      <ArticleList
+        isLoading={isFetching}
+        display={ArticleListDisplay.GRID}
+        articles={articles}
+      />
     </Card>
   );
 });

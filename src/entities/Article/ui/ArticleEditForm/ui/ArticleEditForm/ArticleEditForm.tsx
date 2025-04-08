@@ -29,7 +29,7 @@ export interface ArticleEditFormProps {
   setArticleTitle?: (value: string) => void;
   articleDescription?: string;
   setArticleDescription?: (value: string) => void;
-  setArticlePreview?: (value: string) => void;
+  setArticlePreview?: (value: File) => void;
   tabValue?: string;
   currentBlock?: ArticleTextBlock | ArticleImageBlock | ArticleCodeBlock;
   handleBlockChange?: (block: ArticleCodeBlock | ArticleTextBlock | ArticleImageBlock) => void;
@@ -43,6 +43,7 @@ export interface ArticleEditFormProps {
   onSaveArticle?: () => void;
   isLoading?: boolean;
   error?: FetchBaseQueryError | SerializedError | undefined | string;
+  onBlockFileChange?: (file: File | null) => void;
 }
 
 export const ArticleEditForm = memo((props: ArticleEditFormProps) => {

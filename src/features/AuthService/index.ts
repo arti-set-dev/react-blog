@@ -1,4 +1,9 @@
-import { LoginModal } from './ui/LoginModal/LoginModal';
-import type { LoginSchema } from './model/types/loginSchema';
+import { AuthModal } from './ui/AuthModal/AuthModal';
+import type { AuthSchema } from './model/types/authSchema';
+import { authActions } from './model/slice/authSlice';
+import { authVerify } from './model/services/authVerify/authVerify';
+import { useVerifyEmailMutation } from './model/api/authVerifyApi/authVerifyApi';
 
-export { LoginModal, LoginSchema };
+export {
+  AuthModal, AuthSchema, authActions, authVerify, useVerifyEmailMutation,
+};

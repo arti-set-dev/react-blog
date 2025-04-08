@@ -7,7 +7,16 @@ import { Icon } from '../Icon/Icon';
 
 export type ButtonType = 'button' | 'reset' | 'submit';
 export type ButtonVariant =
-  'icon' | 'outline-inverted' | 'outline' | 'outline-red' | 'text-inverted'|'primary'|'text-primary'|'active' | 'clear';
+  'icon' |
+  'outline-inverted' |
+  'outline' |
+  'outline-red' |
+  'text-inverted' |
+  'primary' |
+  'text-primary' |
+  'active' |
+  'clear' |
+  'text-light';
 
 export type ButtonSize = 'xs' | 'l' | 'xl';
 

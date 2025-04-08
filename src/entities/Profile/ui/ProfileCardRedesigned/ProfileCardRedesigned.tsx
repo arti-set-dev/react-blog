@@ -72,9 +72,13 @@ export const ProfileCardRedesigned = memo((props: ProfileCardProps) => {
 
   return (
     <Card offset="24" className={classNames('', {}, [className, getVstack({ gap: 24, align: 'center' })])}>
-      {data?.avatar && (
-        <Avatar size={100} src={data.avatar} alt={t('Profile avatar')} />
-      )}
+      <Avatar
+        size={100}
+        readonly={canEdit ? readonly : true}
+        src={data?.avatar}
+        alt={t('Profile avatar')}
+        onChangeAvatar={onChangeAvatar}
+      />
       <HStack gap="16">
         {canEdit && (
           // eslint-disable-next-line react/jsx-no-useless-fragment
@@ -113,7 +117,7 @@ export const ProfileCardRedesigned = memo((props: ProfileCardProps) => {
           background="light"
           variant="outlined"
           onChange={onChangeFirstname}
-          readonly={readonly}
+          readonly={canEdit ? readonly : true}
           placeholder={t('Your name')}
           value={data?.firstname}
           error={fieldErrors?.firstname}
@@ -123,7 +127,7 @@ export const ProfileCardRedesigned = memo((props: ProfileCardProps) => {
           background="light"
           variant="outlined"
           onChange={onChangeLastname}
-          readonly={readonly}
+          readonly={canEdit ? readonly : true}
           placeholder={t('Your lastname')}
           value={data?.lastname}
           error={fieldErrors?.lastname}
@@ -133,7 +137,7 @@ export const ProfileCardRedesigned = memo((props: ProfileCardProps) => {
           background="light"
           variant="outlined"
           onChange={onChangeAge}
-          readonly={readonly}
+          readonly={canEdit ? readonly : true}
           placeholder={t('Your age')}
           value={data?.age?.toString()}
         />
@@ -141,20 +145,20 @@ export const ProfileCardRedesigned = memo((props: ProfileCardProps) => {
           background="light"
           variant="outlined"
           onChange={onChangeCity}
-          readonly={readonly}
+          readonly={canEdit ? readonly : true}
           placeholder={t('Your city')}
           value={data?.city}
           error={fieldErrors?.city}
         />
         <CurrencySelect
           background="light"
-          readonly={readonly}
+          readonly={canEdit ? readonly : true}
           onChange={onChangeCurrency}
           currValue={data?.currency}
         />
         <CountrySelect
           background="light"
-          readonly={readonly}
+          readonly={canEdit ? readonly : true}
           onChange={onChangeCountry}
           currValue={data?.country}
         />
@@ -162,18 +166,10 @@ export const ProfileCardRedesigned = memo((props: ProfileCardProps) => {
           background="light"
           variant="outlined"
           onChange={onChangeUsername}
-          readonly={readonly}
+          readonly={canEdit ? readonly : true}
           placeholder={t('Your username')}
           value={data?.username}
           error={fieldErrors?.username}
-        />
-        <Input
-          background="light"
-          variant="outlined"
-          onChange={onChangeAvatar}
-          readonly={readonly}
-          placeholder={t('Your avatar')}
-          value={data?.avatar}
         />
       </div>
     </Card>

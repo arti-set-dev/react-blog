@@ -37,6 +37,7 @@ import { useArticle } from './lib/hooks/useArticle';
 import { fetchArticleById } from './model/services/fetchArticleById/fetchArticleById';
 import { articleDetailsActions, articleDetailsReducer } from './model/slice/articleDetailsSlice/articleDetailsSlice';
 import { updateArticleData } from './model/services/updateArticleData/updateArticleData';
+import { useUpdateArticleMutation } from './model/api/updateArticleData';
 
 export {
   ArticleListDisplay,
@@ -81,7 +82,8 @@ export {
   getArticleDetailsError,
   getArticleDetailsIsLoading,
   articleDetailsReducer,
-  updateArticleData,
   articleDetailsActions,
+  updateArticleData,
+  useUpdateArticleMutation,
   getArticleDetailsForm,
 };

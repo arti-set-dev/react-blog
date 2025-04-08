@@ -153,6 +153,11 @@
       background-color: var(--bg-primary-color);
     }
   }
+
+  &[disabled] {
+    color: var(--primary-inverted-color);
+    background-color: var(--bg-color);
+  }
 }
 
 .clear {
@@ -197,6 +202,13 @@
   svg {
     color: var(--text-primary-accent-color);
   }
+}
+
+.text-light {
+  font-weight: 400;
+  font-size: var(--font-size-m);
+  line-height: 100%;
+  color: var(--bg-primary-color);
 }
 
 .isAbsolute {

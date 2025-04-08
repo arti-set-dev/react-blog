@@ -1,15 +1,17 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { loginByUsername } from '../services/loginByUsername/loginByUsername';
-import { LoginSchema } from '../types/loginSchema';
+import { AuthSchema } from '../types/authSchema';
+import { registration } from '../services/registration/registration';
 
-const initialState: LoginSchema = {
+const initialState: AuthSchema = {
   isLoading: false,
+  email: '',
   password: '',
   username: '',
 };
 
-export const loginSlice = createSlice({
-  name: 'login',
+export const authSlice = createSlice({
+  name: 'auth',
   initialState,
   reducers: {
     setUsername: (state, action: PayloadAction<string>) => {
@@ -19,8 +21,14 @@ export const loginSlice = createSlice({
     setPassword: (state, action: PayloadAction<string>) => {
       state.password = action.payload;
     },
+
+    setEmail: (state, action: PayloadAction<string>) => {
+      state.email = action.payload;
+    },
+
   },
   extraReducers: (builder) => {
+    // login
     builder.addCase(loginByUsername.pending, (state, action) => {
       state.error = undefined;
       state.isLoading = true;
@@ -32,10 +40,23 @@ export const loginSlice = createSlice({
     builder.addCase(loginByUsername.fulfilled, (state, action) => {
       state.isLoading = false;
     });
+
+    // registration
+    builder.addCase(registration.pending, (state, action) => {
+      state.error = undefined;
+      state.isLoading = true;
+    });
+    builder.addCase(registration.rejected, (state, action) => {
+      state.isLoading = false;
+      state.error = action.payload;
+    });
+    builder.addCase(registration.fulfilled, (state, action) => {
+      state.isLoading = false;
+    });
   },
 });
 
-export const { actions: loginActions } = loginSlice;
-export const { reducer: loginReducer } = loginSlice;
+export const { actions: authActions } = authSlice;
+export const { reducer: authReducer } = authSlice;
 
-export default loginSlice.reducer;
+export default authSlice.reducer;

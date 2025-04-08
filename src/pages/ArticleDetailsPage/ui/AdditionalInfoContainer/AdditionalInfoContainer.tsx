@@ -29,16 +29,17 @@ export const AdditionalInfoContainer = memo((props: AdditionalInfoContainerProps
   const navigate = useNavigate();
   const canEdit = useSelector(getCanEditArticle);
   const [deleteArticle, { isLoading, error }] = useDeleteArticle();
+
   const onEditArticle = useCallback(() => {
     if (article) {
-      navigate(getRouteArticleEdit(article.id));
+      navigate(getRouteArticleEdit(article.id ?? ''));
     }
   }, [article, navigate]);
   const onDeleteArticle = useCallback(async () => {
     if (article) {
       try {
-        await deleteArticle(article.id).unwrap();
-        dispatch(articleListActions.removeArticle(article.id));
+        await deleteArticle(article.id ?? '').unwrap();
+        dispatch(articleListActions.removeArticle(article.id ?? ''));
         navigate(getRouteArticles());
       } catch (e) {
         console.error(e);
@@ -90,7 +91,7 @@ export const AdditionalInfoContainer = memo((props: AdditionalInfoContainerProps
         canEdit={canEdit}
         onEdit={onEditArticle}
         onDelete={onOpenModal}
-        author={userData}
+        author={article.author}
         createdAt={article?.createdAt}
         views={article?.views}
         modalContent={modalContent}

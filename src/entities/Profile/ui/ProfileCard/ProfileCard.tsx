@@ -27,7 +27,7 @@ export interface ProfileCardProps {
   onChangeAge?: (value?: string) => void;
   onChangeCountry?: (country: Country) => void;
   onChangeCurrency?: (currency: Currency) => void;
-  onChangeAvatar?: (value?: string) => void;
+  onChangeAvatar?: (value?: File) => void;
   onChangeUsername?: (value?: string) => void;
   fieldErrors?: ValidateFields;
 }

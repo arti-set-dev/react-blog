@@ -1,13 +1,16 @@
-import { EditBlockText } from '../EditBlockText/EditBlockText';
-import { ArticleCodeBlock, ArticleImageBlock, ArticleTextBlock } from '../../../../model/types/article';
+import {
+  ArticleBlock, ArticleCodeBlock, ArticleImageBlock, ArticleTextBlock,
+} from '../../../../model/types/article';
 import { ArticleBlockType } from '../../../../model/types/articleType';
+import { EditBlockText } from '../EditBlockText/EditBlockText';
 import { EditBlockImage } from '../EditBlockImage/EditBlockImage';
 import { EditBlockCode } from '../EditBlockCode/EditBlockCode';
 
 interface EditBlockSwitcherProps {
   type: ArticleBlockType;
-  block?: ArticleTextBlock | ArticleImageBlock | ArticleCodeBlock;
-  onChange?: (block: ArticleTextBlock | ArticleImageBlock | ArticleCodeBlock) => void;
+  block: ArticleBlock;
+  onChange?: (block: ArticleBlock) => void;
+  onFileChange?: (file: File | null) => void;
   onCancel?: () => void;
   onSave?: () => void;
 }
@@ -16,11 +19,11 @@ export const EditBlockSwitcher = ({
   type,
   block,
   onChange,
+  onFileChange,
   onCancel,
   onSave,
 }: EditBlockSwitcherProps) => {
-  switch (type) {
-  case ArticleBlockType.TEXT:
+  if (type === ArticleBlockType.TEXT) {
     return (
       <EditBlockText
         block={block as ArticleTextBlock}
@@ -29,16 +32,21 @@ export const EditBlockSwitcher = ({
         onSave={onSave}
       />
     );
-  case ArticleBlockType.IMAGE:
+  }
+
+  if (type === ArticleBlockType.IMAGE) {
     return (
       <EditBlockImage
         block={block as ArticleImageBlock}
         onChange={onChange}
+        onFileChange={onFileChange}
         onCancel={onCancel}
         onSave={onSave}
       />
     );
-  case ArticleBlockType.CODE:
+  }
+
+  if (type === ArticleBlockType.CODE) {
     return (
       <EditBlockCode
         block={block as ArticleCodeBlock}
@@ -47,7 +55,7 @@ export const EditBlockSwitcher = ({
         onSave={onSave}
       />
     );
-  default:
-    return null;
   }
+
+  return null;
 };

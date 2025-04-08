@@ -1,12 +1,12 @@
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
+import { AuthModal } from '@/features/AuthService';
 import { Card } from '@/shared/ui/redesigned/Card';
 import { getHstack } from '@/shared/lib/stack/getHstack/getHstack';
 import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
 import { Text } from '@/shared/ui/redesigned/Text';
 import { Button } from '@/shared/ui/redesigned/Button';
 import { LazyImage } from '@/shared/ui/redesigned/LazyImage';
-import { LoginModal } from '@/features/AuthByUsername';
 import { Container } from '@/shared/ui/redesigned/Container';
 import { getRouteArticleCreate } from '@/shared/const/router';
 
@@ -52,7 +52,7 @@ export const MainHeroDeprecated = memo((props: MainHeroDeprecatedProps) => {
         <VStack flexBasis="50%">
           <LazyImage width="600" height="600" alt="" aria-hidden src="/images/hero-bg.svg" />
         </VStack>
-        <LoginModal
+        <AuthModal
           redirectPath={getRouteArticleCreate()}
           isOpen={isAuthModal}
           onClose={onCloseModal}
