@@ -51,7 +51,7 @@ export const SidebarRedesigned = memo((props: SidebarRedesignedProps) => {
         aria-label={t('toggle sidebar')}
       />
       <nav>
-        <VStack tag="ul" gap="4">
+        <VStack tag="ul">
           {itemsList}
         </VStack>
       </nav>

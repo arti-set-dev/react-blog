@@ -10,6 +10,7 @@
 .PageRedesigned {
   display: flex;
   flex-direction: column;
+  padding: 0 var(--container-offset);
   max-width: var(--container-width);
   gap: var(--gap);
 }

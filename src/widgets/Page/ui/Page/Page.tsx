@@ -14,7 +14,6 @@ import cl from './Page.module.scss';
 import { toggleFeatures } from '@/shared/lib/features';
 import { Footer } from '../../../Footer';
 import { getScrollByPath, ScrollSaveActions } from '@/features/scrollSave';
-import { Container } from '@/shared/ui/redesigned/Container';
 
 interface PageProps extends TestsProps {
   className?: string;
@@ -66,17 +65,15 @@ export const Page = memo((props: PageProps) => {
   }, 1000);
 
   return (
-    <Container max>
-      <main
-        data-testid={props['data-testid'] ?? 'Page'}
-        onScroll={onScroll}
-        ref={wrapperRef}
-        className={classNames(pageClass, {}, [className])}
-      >
-        {children}
-        {onScrollEnd && <div className={cl.TriggerElem} ref={triggerRef} />}
-        {footer}
-      </main>
-    </Container>
+    <main
+      data-testid={props['data-testid'] ?? 'Page'}
+      onScroll={onScroll}
+      ref={wrapperRef}
+      className={classNames(pageClass, {}, [className])}
+    >
+      {children}
+      {onScrollEnd && <div className={cl.TriggerElem} ref={triggerRef} />}
+      {footer}
+    </main>
   );
 });
