@@ -1,8 +1,8 @@
 import {
-  forwardRef, memo,
+  forwardRef, memo, useCallback,
 } from 'react';
 import { useTranslation } from 'react-i18next';
-import { VirtuosoGrid } from 'react-virtuoso';
+import { VirtuosoGrid, GridComponents } from 'react-virtuoso';
 import { Text, TextSize } from '@/shared/ui/deprecated/Text';
 import cl from './ArticleList.module.scss';
 import { ArticleView } from '../../model/consts/consts';
@@ -31,21 +31,24 @@ interface ArticleListProps {
   display?: ArticleListDisplay;
   blank?: boolean;
   virtualized?: boolean;
-  // eslint-disable-next-line react/no-unused-prop-types
-  style?: React.CSSProperties;
+  onScrollEnd?: () => void;
   // eslint-disable-next-line react/no-unused-prop-types
   children?: React.ReactNode;
 }
 
-const gridComponents = {
+const Footer = () => (
+  <div />
+);
+
+const gridComponents: GridComponents = {
   List: forwardRef<HTMLDivElement, ArticleListProps>(
     ({
-      style, children, className, display, view, isLoading, articles, ...props
+      children, className, display, view, isLoading, articles, ...props
     }, ref) => (
       <div
+        role="list"
         ref={ref}
         {...props}
-        style={{ ...style }}
         className={classNames(cl.ArticleList, {}, [
           className,
           cl[view ?? ArticleView.GRID],
@@ -68,18 +71,43 @@ export const ArticleList = memo((props: ArticleListProps) => {
     display = ArticleListDisplay.GRID,
     blank = false,
     virtualized = false,
+    onScrollEnd,
   } = props;
   const { t } = useTranslation();
 
-  const renderArticle = (article: Article) => (
-    <ArticleItem
-      className={cl.ArticleListItem}
-      key={article.id ?? ''}
-      article={article}
-      view={view}
-      blank={blank}
-    />
-  );
+  const loadMore = useCallback(() => {
+    if (onScrollEnd) {
+      onScrollEnd();
+    }
+  }, [onScrollEnd]);
+
+  const itemContent = useCallback((index: number) => {
+    const article = articles[index];
+
+    if (!article) {
+      return (
+        <ToggleFeatures
+          feature="isAppRedesigned"
+          on={(
+            <ArticleItemSkeletonRedesigned key={index} view={view ?? ArticleView.GRID} />
+          )}
+          off={(
+            <ArticleItemSkeleton key={index} view={view ?? ArticleView.GRID} />
+          )}
+        />
+      );
+    }
+
+    return (
+      <ArticleItem
+        className={cl.ArticleListItem}
+        key={article.id ?? ''}
+        article={article}
+        view={view}
+        blank={blank}
+      />
+    );
+  }, [articles, view, blank]);
 
   if (!isLoading && !articles.length) {
     return <Text size={TextSize.L}>{t('No articles were found')}</Text>;
@@ -93,46 +121,17 @@ export const ArticleList = memo((props: ArticleListProps) => {
     return (
       <VirtuosoGrid
         useWindowScroll
+        data={articles}
         totalCount={isLoading ? articles.length + 7 : articles.length}
-        components={{
-          List: forwardRef((listProps, ref) => (
-            <gridComponents.List
-              {...listProps}
-              ref={ref}
-              display={display}
-              view={view}
-              isLoading={isLoading}
-              articles={articles}
-            />
-          )),
-        }}
-        itemContent={(index) => {
-          const article = articles[index];
-
-          if (!article) {
-            return (
-              <ToggleFeatures
-                feature="isAppRedesigned"
-                on={(
-                  <ArticleItemSkeletonRedesigned key={index} view={view ?? ArticleView.GRID} />
-                )}
-                off={(
-                  <ArticleItemSkeleton key={index} view={view ?? ArticleView.GRID} />
-                )}
-              />
-            );
-          }
-
-          return (
-            <ArticleItem
-              className={cl.ArticleListItem}
-              key={articles[index].id}
-              article={articles[index]}
-              view={view}
-              blank={blank}
-            />
-          );
-        }}
+        endReached={loadMore}
+        increaseViewportBy={0}
+        itemContent={itemContent}
+        components={{ ...gridComponents, Footer }}
+        className={classNames('', { [cl.virtualized]: virtualized }, [
+          className,
+          cl[view],
+          cl[display],
+        ])}
       />
     );
   }
@@ -146,7 +145,15 @@ export const ArticleList = memo((props: ArticleListProps) => {
         cl[display],
       ])}
     >
-      {articles?.length ? articles.map(renderArticle) : null}
+      {articles?.length ? articles.map((article) => (
+        <ArticleItem
+          className={cl.ArticleListItem}
+          key={article.id ?? ''}
+          article={article}
+          view={view}
+          blank={blank}
+        />
+      )) : null}
       {isLoading && (
         <ToggleFeatures
           feature="isAppRedesigned"

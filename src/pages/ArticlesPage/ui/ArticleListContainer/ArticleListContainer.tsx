@@ -7,7 +7,12 @@ import {
   getArticles,
 } from '@/entities/Article';
 
-export const ArticleListContainer = memo(() => {
+interface ArticleListContainerProps {
+  onScrollEnd: () => void;
+}
+
+export const ArticleListContainer = memo((props: ArticleListContainerProps) => {
+  const { onScrollEnd } = props;
   const { t } = useTranslation();
   const articles = useSelector(getArticles.selectAll);
   const isLoading = useSelector(getArticlesListIsLoading);
@@ -18,5 +23,13 @@ export const ArticleListContainer = memo(() => {
     return <Text>{t('Data boot error')}</Text>;
   }
 
-  return <ArticleList virtualized view={view} isLoading={isLoading} articles={articles} />;
+  return (
+    <ArticleList
+      onScrollEnd={onScrollEnd}
+      virtualized
+      view={view}
+      isLoading={isLoading}
+      articles={articles}
+    />
+  );
 });

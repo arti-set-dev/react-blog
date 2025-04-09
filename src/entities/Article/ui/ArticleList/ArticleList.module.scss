@@ -37,3 +37,22 @@
   align-items: center;
   height: 100%;
 }
+
+.virtualized {
+  &.grid {
+    .ArticleList {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+      overflow: initial;
+      gap: var(--gap);
+    }
+  }
+
+  &.column {
+    .ArticleList {
+      display: flex;
+      flex-direction: column;
+      gap: var(--gap);
+    }
+  }
+}

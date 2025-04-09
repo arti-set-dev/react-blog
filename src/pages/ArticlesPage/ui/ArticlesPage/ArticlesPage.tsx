@@ -33,6 +33,11 @@ const ArticlesPage = (props: ArticlesPageProps) => {
   const { t } = useTranslation();
   const dispatch = useAppDispatch();
   const error = useSelector(getArticlesListError);
+  // const [articles, setArticles] = useState<Article[]>([]);
+
+  // useEffect(() => {
+  //   dispatch(fetchArticlesList({}));
+  // }, [dispatch]);
 
   const onLoadNextPart = useCallback(() => {
     dispatch(fetchNextArticlesPage());
@@ -50,7 +55,7 @@ const ArticlesPage = (props: ArticlesPageProps) => {
               data-testid="ArticlesPage"
               onScrollEnd={onLoadNextPart}
             >
-              <ArticleListContainer />
+              <ArticleListContainer onScrollEnd={onLoadNextPart} />
               {error && <Text>{t('Data boot error')}</Text>}
             </Page>
           )}
@@ -63,7 +68,7 @@ const ArticlesPage = (props: ArticlesPageProps) => {
           className={classNames(cl.ArticlesPage, {}, [className])}
         >
           <ArticlesPageFilters />
-          <ArticleListContainer />
+          <ArticleListContainer onScrollEnd={onLoadNextPart} />
           {error && <Text>{t('Data boot error')}</Text>}
         </Page>
       )}

@@ -1,6 +1,4 @@
-import { UserRole } from '@/entities/User';
 import { AboutPage } from '@/pages/AboutPage';
-import { AdminPanelPage } from '@/pages/AdminPanelPage';
 import { ArticleDetailsPage } from '@/pages/ArticleDetailsPage';
 import { ArticleEditPage } from '@/pages/ArticleEditPage';
 import { ArticlesPage } from '@/pages/ArticlesPage';
@@ -14,7 +12,6 @@ import { VerifyProfilePage } from '@/pages/VerifyProfilePage';
 import {
   AppRoutes,
   getRouteForbidden,
-  getRouteAdminPanel,
   getRouteArticleEdit,
   getRouteArticleCreate,
   getRouteArticleDetails,
@@ -65,13 +62,6 @@ export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
     path: getRouteArticleEdit(':id'),
     element: <ArticleEditPage />,
     authOnly: true,
-  },
-
-  [AppRoutes.ADMIN_PANEL]: {
-    path: getRouteAdminPanel(),
-    element: <AdminPanelPage />,
-    authOnly: true,
-    roles: [UserRole.MANAGER, UserRole.ADMIN],
   },
 
   [AppRoutes.FORBBIDDEN]: {
