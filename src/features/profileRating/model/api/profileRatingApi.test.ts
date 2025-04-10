@@ -1,7 +1,3 @@
-/**
- * @jest-environment jsdom
- */
-
 import { rtkApi } from '@/shared/api/rtkApi';
 import { Rating } from '@/entities/Rating';
 
@@ -19,21 +15,6 @@ jest.mock('@/shared/api/rtkApi', () => ({
     }),
   },
 }));
-
-// Используем расширенный интерфейс вместо Partial<Rating>
-interface ProfileRating {
-  userId: number;
-  profileId: number;
-  rate: number;
-  feedback?: string;
-}
-
-const mockRating: ProfileRating = {
-  userId: 1,
-  profileId: 1,
-  rate: 4,
-  feedback: 'Отличный профиль!',
-};
 
 describe('profileRatingApi', () => {
   it('должен корректно внедрять endpoints', () => {
@@ -121,7 +102,6 @@ describe('profileRatingApi', () => {
       }),
     }).endpoints.rateProfile.useMutation();
 
-    // Мокаем реджект для имитации ошибки
     (rateProfile as jest.Mock).mockRejectedValue(error);
 
     const ratingData = {

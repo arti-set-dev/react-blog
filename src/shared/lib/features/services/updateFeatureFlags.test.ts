@@ -15,14 +15,12 @@ describe('updateFeatureFlag', () => {
 
     thunk = new TestAsyncThunk(updateFeatureFlag);
 
-    // Мокаем window.location.reload
     Object.defineProperty(window, 'location', {
       value: {
         reload: mockReload,
       },
     });
 
-    // Устанавливаем мок значение для getAllFeatureFlags
     (getAllFeatureFlags as jest.Mock).mockReturnValue({
       isArticleRatingEnabled: true,
       isCounterEnabled: true,
@@ -36,12 +34,10 @@ describe('updateFeatureFlag', () => {
 
     const userId = '1';
 
-    // Мокаем успешный ответ API
     thunk.api.patch.mockReturnValue(Promise.resolve({ data: {} }));
 
     await thunk.callThunk({ userId, newFeatures });
 
-    // Проверяем, что API вызывается с правильными параметрами
     expect(thunk.api.patch).toHaveBeenCalledWith(
       `/users/${userId}`,
       {
@@ -52,7 +48,6 @@ describe('updateFeatureFlag', () => {
       },
     );
 
-    // Проверяем, что страница перезагружается
     expect(mockReload).toHaveBeenCalled();
 
     expect(thunk.dispatch).toHaveBeenCalledTimes(2);
@@ -65,15 +60,12 @@ describe('updateFeatureFlag', () => {
 
     const userId = '1';
 
-    // Мокаем ошибку API
     thunk.api.patch.mockRejectedValue(new Error('Error'));
 
-    // Шпионим за console.log
     const consoleSpy = jest.spyOn(console, 'log');
 
     await thunk.callThunk({ userId, newFeatures });
 
-    // Проверяем, что API вызывается с правильными параметрами
     expect(thunk.api.patch).toHaveBeenCalledWith(
       `/users/${userId}`,
       {
@@ -84,10 +76,8 @@ describe('updateFeatureFlag', () => {
       },
     );
 
-    // Проверяем, что страница НЕ перезагружается при ошибке
     expect(mockReload).not.toHaveBeenCalled();
 
-    // Проверяем, что ошибка логируется
     expect(consoleSpy).toHaveBeenCalled();
 
     expect(thunk.dispatch).toHaveBeenCalledTimes(2);

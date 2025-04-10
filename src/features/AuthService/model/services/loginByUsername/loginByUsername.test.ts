@@ -1,10 +1,8 @@
-import axios from 'axios';
 import { userActions, User, UserRole } from '@/entities/User';
 import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
 import { loginByUsername } from './loginByUsername';
 
 jest.mock('axios');
-const mockedAxios = jest.mocked(axios, true);
 
 describe('loginByUsername.test', () => {
   beforeEach(() => {

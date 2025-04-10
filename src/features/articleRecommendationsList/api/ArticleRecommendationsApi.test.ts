@@ -1,6 +1,5 @@
 import { rtkApi } from '@/shared/api/rtkApi';
 
-// Мокаем типы без импорта реальных модулей
 type Article = {
   id: string;
   title: string;
@@ -53,14 +52,6 @@ const mockArticle: Article = {
   type: [ArticleType.IT],
   blocks: [],
   userId: '1',
-};
-
-const mockResponse = {
-  items: [mockArticle],
-  total: 1,
-  page: 1,
-  limit: 15,
-  totalPages: 1,
 };
 
 type ArticlesResponse = {

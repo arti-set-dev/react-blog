@@ -2,7 +2,6 @@ import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk
 import { registration } from './registration';
 import { userActions, UserRole } from '@/entities/User';
 
-// Мокаем localStorage
 const mockLocalStorage = {
   setItem: jest.fn(),
   getItem: jest.fn(),

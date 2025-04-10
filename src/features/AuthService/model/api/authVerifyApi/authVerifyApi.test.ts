@@ -1,6 +1,5 @@
 import { rtkApi } from '@/shared/api/rtkApi';
 
-// Мокаем типы без импорта реальных модулей
 type User = {
   id: string;
   username: string;
@@ -76,7 +75,6 @@ describe('authVerifyApi', () => {
       }),
     }).endpoints.verifyEmail.useMutation();
 
-    // Мокаем реджект для имитации ошибки
     (verifyEmail as jest.Mock).mockRejectedValue(error);
 
     const token = 'invalid-token';
@@ -96,7 +94,6 @@ describe('authVerifyApi', () => {
       }),
     }).endpoints.verifyEmail.useMutation();
 
-    // Мокаем успешный ответ
     (verifyEmail as jest.Mock).mockResolvedValue(mockUser);
 
     const token = 'valid-token';

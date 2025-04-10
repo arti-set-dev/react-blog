@@ -59,7 +59,6 @@ describe('articleDeleteApi', () => {
       }),
     }).endpoints.deleteArticle.useMutation();
 
-    // Мокаем реджект для имитации ошибки
     (deleteArticle as jest.Mock).mockRejectedValue(error);
 
     const articleId = '123';

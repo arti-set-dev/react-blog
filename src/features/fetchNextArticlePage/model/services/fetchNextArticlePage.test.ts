@@ -1,12 +1,10 @@
 import { fetchNextArticlesPage } from './fetchNextArticlePage';
 import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
 
-// Создаем mock-функции
 const mockGetArticlesListIsHasMore = jest.fn();
 const mockGetArticlesListIsLoading = jest.fn();
 const mockGetArticlesListNum = jest.fn();
 
-// Мокаем модули
 jest.mock('@/entities/Article/model/selectors/articleList/articleList', () => ({
   getArticlesListIsHasMore: (...args: any[]) => mockGetArticlesListIsHasMore(...args),
   getArticlesListIsLoading: (...args: any[]) => mockGetArticlesListIsLoading(...args),
@@ -28,7 +26,6 @@ describe('fetchNextArticlesPage', () => {
 
     await testAsyncThunk.callThunk();
 
-    // Проверяем, что не происходит диспатча с setPage
     const dispatchCalls = testAsyncThunk.dispatch.mock.calls;
     const hasSetPageCall = dispatchCalls.some((call) => {
       const action = call[0];
@@ -49,7 +46,6 @@ describe('fetchNextArticlesPage', () => {
 
     await testAsyncThunk.callThunk();
 
-    // Проверяем, что не происходит диспатча с setPage
     const dispatchCalls = testAsyncThunk.dispatch.mock.calls;
     const hasSetPageCall = dispatchCalls.some((call) => {
       const action = call[0];
@@ -70,7 +66,6 @@ describe('fetchNextArticlesPage', () => {
 
     await testAsyncThunk.callThunk();
 
-    // Проверяем, что не происходит диспатча с setPage
     const dispatchCalls = testAsyncThunk.dispatch.mock.calls;
     const hasSetPageCall = dispatchCalls.some((call) => {
       const action = call[0];
@@ -93,13 +88,11 @@ describe('fetchNextArticlesPage', () => {
 
     const dispatchCalls = testAsyncThunk.dispatch.mock.calls;
 
-    // Проверяем наличие функции в диспатче
     const hasFunctionCall = dispatchCalls.some((call) => {
       const action = call[0];
       return typeof action === 'function';
     });
 
-    // Проверяем наличие действия setPage с правильным параметром
     const hasSetPageCall = dispatchCalls.some((call) => {
       const action = call[0];
       return action

@@ -1,14 +1,6 @@
 import { rtkApi } from '@/shared/api/rtkApi';
 import { Rating } from '@/entities/Rating';
 
-interface ArticleRating {
-  id: number;
-  userId: number;
-  articleId: number;
-  rate: number;
-  feedback?: string;
-}
-
 jest.mock('@/shared/api/rtkApi', () => ({
   rtkApi: {
     injectEndpoints: jest.fn().mockReturnValue({
@@ -23,14 +15,6 @@ jest.mock('@/shared/api/rtkApi', () => ({
     }),
   },
 }));
-
-const mockRating: ArticleRating = {
-  id: 1,
-  userId: 1,
-  articleId: 1,
-  rate: 4,
-  feedback: 'Отличная статья!',
-};
 
 describe('articleRatingApi', () => {
   it('should inject endpoints correctly', () => {
@@ -118,7 +102,6 @@ describe('articleRatingApi', () => {
       }),
     }).endpoints.rareArticle.useMutation();
 
-    // Мокаем реджект для имитации ошибки
     (rateArticle as jest.Mock).mockRejectedValue(error);
 
     const ratingData = {

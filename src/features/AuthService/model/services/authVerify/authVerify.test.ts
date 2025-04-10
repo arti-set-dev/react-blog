@@ -1,7 +1,6 @@
 import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
 import { authVerify } from './authVerify';
 
-// Мокаем типы без импорта реальных модулей
 type User = {
   id: string;
   username: string;

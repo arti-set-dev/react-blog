@@ -88,7 +88,6 @@ describe('articleCreateApi', () => {
       }),
     }).endpoints.createArticle.useMutation();
 
-    // Мокаем реджект для имитации ошибки
     (createArticle as jest.Mock).mockRejectedValue(error);
 
     const formData = new FormData();

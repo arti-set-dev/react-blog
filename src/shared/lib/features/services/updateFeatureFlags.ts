@@ -16,7 +16,6 @@ export const updateFeatureFlag = createAsyncThunk<
   const { rejectWithValue, extra } = thunkApi;
 
   try {
-    // Используем API напрямую вместо updateFeatureFlagsMutation
     await extra.api.patch(`/users/${userId}`, {
       features: {
         ...getAllFeatureFlags(),
@@ -24,7 +23,6 @@ export const updateFeatureFlag = createAsyncThunk<
       },
     });
 
-    // Перезагрузка страницы после успешного обновления
     window.location.reload();
     return undefined;
   } catch (e) {
