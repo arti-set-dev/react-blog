@@ -3,7 +3,6 @@ import { ThunkConfig } from '@/app/providers/StoreProvider';
 import { JsonSettings } from '../../types/jsonSettings';
 import { getUserAuthData } from '../../selectors/getUserAuthData/getUserAuthData';
 import { getJsonSettings } from '../../selectors/jsonSettings';
-import { setJsonSettingsMutation } from '../../../api/userApi';
 
 export const saveJsonSettings = createAsyncThunk<
   JsonSettings,
@@ -11,7 +10,7 @@ export const saveJsonSettings = createAsyncThunk<
   ThunkConfig<string>
 >('user/saveJsonSettings', async (newJsonSettings, thunkAPI) => {
   const {
-    rejectWithValue, getState, dispatch,
+    rejectWithValue, getState, extra,
   } = thunkAPI;
   const userData = getUserAuthData(getState());
   const currentSettings = getJsonSettings(getState());
@@ -21,19 +20,18 @@ export const saveJsonSettings = createAsyncThunk<
   }
 
   try {
-    const response = await dispatch(setJsonSettingsMutation({
-      userId: userData.id,
+    const response = await extra.api.patch(`/users/${userData.id}`, {
       jsonSettings: {
         ...currentSettings,
         ...newJsonSettings,
       },
-    })).unwrap();
+    });
 
-    if (!response.jsonSettings) {
+    if (!response.data.jsonSettings) {
       return rejectWithValue('Error while saving json settings');
     }
 
-    return response.jsonSettings;
+    return response.data.jsonSettings;
   } catch (error) {
     console.log(error);
     return rejectWithValue('Error while saving json settings');

@@ -112,6 +112,7 @@ describe('articleDetailsSlice.test', () => {
     ).toEqual({
       isLoading: false,
       data: article,
+      form: article,
     });
   });
 });

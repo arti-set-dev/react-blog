@@ -14,8 +14,12 @@ export const updateArticleData = createAsyncThunk<
 
     const article = getArticleDetailsForm(getState());
 
+    if (!article?.id) {
+      return rejectWithValue('Failed to update article');
+    }
+
     try {
-      const response = await extra.api.patch<Article>(`/posts/${article?.id}`, formData);
+      const response = await extra.api.patch<Article>(`/posts/${article.id}`, formData);
 
       if (!response.data) {
         throw new Error('No data returned');

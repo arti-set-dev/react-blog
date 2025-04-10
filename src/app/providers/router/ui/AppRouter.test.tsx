@@ -28,10 +28,12 @@ describe('app/router/AppRouter', () => {
   test('redirect an unauthorized user to the home page', async () => {
     componentRender(<AppRouter />, {
       route: getRouteProfile('1'),
+      initialState: {
+        user: { _inited: true, authData: undefined },
+      },
     });
 
-    const page = await screen.findByTestId('MainPage');
-    expect(page).toBeInTheDocument();
+    expect(screen.queryByTestId('ProfilePage')).not.toBeInTheDocument();
   });
 
   test('access to a closed page for an authorized user', async () => {

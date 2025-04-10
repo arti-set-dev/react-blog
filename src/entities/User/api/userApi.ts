@@ -25,7 +25,17 @@ const userApi = rtkApi.injectEndpoints({
       }),
     }),
   }),
+  overrideExisting: false,
 });
 
-export const setJsonSettingsMutation = userApi.endpoints.setJsonSettings.initiate;
-export const getUserDataByIdQuery = userApi.endpoints.getUserDataById.initiate;
+export const { setJsonSettings, getUserDataById } = userApi.endpoints;
+
+export const setJsonSettingsMutation = (options: SetJsonSettings) => ({
+  type: 'setJsonSettings',
+  payload: options,
+});
+
+export const getUserDataByIdQuery = (userId: string) => ({
+  type: 'getUserDataById',
+  payload: userId,
+});

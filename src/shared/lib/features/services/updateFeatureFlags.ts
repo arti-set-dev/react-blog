@@ -1,7 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { ThunkConfig } from '@/app/providers/StoreProvider';
 import { FeatureFlags } from '@/shared/types/featureFlags';
-import { updateFeatureFlagsMutation } from '../api/featureFlagsApi';
 import { getAllFeatureFlags } from '../lib/setGetFeatures';
 
 interface UpdateFeatureFlagOptions {
@@ -14,18 +13,18 @@ export const updateFeatureFlag = createAsyncThunk<
     UpdateFeatureFlagOptions,
     ThunkConfig<string>
 >('user/updateFeatureFlag', async ({ userId, newFeatures }, thunkApi) => {
-  const { rejectWithValue, dispatch } = thunkApi;
+  const { rejectWithValue, extra } = thunkApi;
 
   try {
-    await dispatch(
-      updateFeatureFlagsMutation({
-        userId,
-        features: {
-          ...getAllFeatureFlags(),
-          ...newFeatures,
-        },
-      }),
-    );
+    // Используем API напрямую вместо updateFeatureFlagsMutation
+    await extra.api.patch(`/users/${userId}`, {
+      features: {
+        ...getAllFeatureFlags(),
+        ...newFeatures,
+      },
+    });
+
+    // Перезагрузка страницы после успешного обновления
     window.location.reload();
     return undefined;
   } catch (e) {

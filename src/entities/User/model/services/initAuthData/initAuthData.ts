@@ -3,14 +3,13 @@ import { jwtDecode } from 'jwt-decode';
 import { USER_LOCALSTORAGE_KEY } from '@/shared/const/localstorage';
 import { ThunkConfig } from '@/app/providers/StoreProvider';
 import { User } from '../../types/user';
-import { getUserDataByIdQuery } from '../../../api/userApi';
 
 export const initAuthData = createAsyncThunk<
   User,
   void,
   ThunkConfig<string>
 >('user/initAuthData', async (_, thunkAPI) => {
-  const { rejectWithValue, dispatch } = thunkAPI;
+  const { rejectWithValue, extra } = thunkAPI;
 
   const token = localStorage.getItem(USER_LOCALSTORAGE_KEY);
 
@@ -25,13 +24,13 @@ export const initAuthData = createAsyncThunk<
       return rejectWithValue('Invalid token payload');
     }
 
-    const response = await dispatch(getUserDataByIdQuery(payload.id)).unwrap();
+    const response = await extra.api.get<User>(`/users/${payload.id}`);
 
-    if (!response.jsonSettings) {
+    if (!response.data.jsonSettings) {
       return rejectWithValue('Error while saving json settings');
     }
 
-    return response;
+    return response.data;
   } catch (error) {
     console.error('Error in initAuthData:', error);
     localStorage.removeItem(USER_LOCALSTORAGE_KEY);

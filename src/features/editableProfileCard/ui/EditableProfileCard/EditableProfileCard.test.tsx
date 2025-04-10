@@ -69,8 +69,8 @@ describe('features/EditableProfileCard', () => {
     expect(screen.getByTestId('Input.Error.Tag')).toBeInTheDocument();
   });
 
-  test('If there are no errors, then a PUT request is sent to the server', async () => {
-    const mockPutRequest = jest.spyOn($api, 'put');
+  test('If there are no errors, then a PATCH request is sent to the server', async () => {
+    const mockPatchRequest = jest.spyOn($api, 'patch');
     componentRender(<EditableProfileCard id="1" />, options);
     await userEvent.click(screen.getByTestId('ProfileCard.EditButton'));
 
@@ -78,6 +78,6 @@ describe('features/EditableProfileCard', () => {
 
     await userEvent.click(screen.getByTestId('ProfileCard.SaveButton'));
 
-    expect(mockPutRequest).toHaveBeenCalled();
+    expect(mockPatchRequest).toHaveBeenCalled();
   });
 });

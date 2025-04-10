@@ -23,10 +23,10 @@ describe('updateProfileData.test', () => {
         form: data,
       },
     });
-    thunk.api.put.mockReturnValue(Promise.resolve({ data }));
+    thunk.api.patch.mockReturnValue(Promise.resolve({ data }));
     const result = await thunk.callThunk(undefined);
 
-    expect(thunk.api.put).toHaveBeenCalled();
+    expect(thunk.api.patch).toHaveBeenCalled();
     expect(result.meta.requestStatus).toBe('fulfilled');
     expect(result.payload).toEqual(data);
   });
@@ -37,7 +37,7 @@ describe('updateProfileData.test', () => {
         form: data,
       },
     });
-    thunk.api.put.mockReturnValue(Promise.resolve({ status: 403 }));
+    thunk.api.patch.mockReturnValue(Promise.resolve({ status: 403 }));
     const result = await thunk.callThunk(undefined);
 
     expect(result.meta.requestStatus).toBe('rejected');
