@@ -58,12 +58,14 @@ export const EditBlockText = ({
             onChange={handleTitleChange}
             variant="outlined"
             placeholder={t('Enter the heading of the block')}
+            data-testid="BlockForm.Title"
           />
           <Input
             textarea
             value={block.paragraphs.join('\n')}
             onChange={handleParagraphsChange}
             placeholder={t('Enter the heading text')}
+            data-testid="BlockForm.Text"
           />
           <HStack gap="8">
             <Button variant="outline-red" onClick={onCancel}>{t('Cancel')}</Button>
@@ -86,12 +88,14 @@ export const EditBlockText = ({
             value={block.title}
             onChange={handleTitleChange}
             placeholder={t('Enter the heading of the block')}
+            data-testid="BlockForm.Title"
           />
           <InputDeprecated
             textarea
             value={block.paragraphs.join('\n')}
             onChange={handleParagraphsChange}
             placeholder={t('Enter the heading text')}
+            data-testid="BlockForm.Text"
           />
           <HStack gap="8">
             <ButtonDeprecated

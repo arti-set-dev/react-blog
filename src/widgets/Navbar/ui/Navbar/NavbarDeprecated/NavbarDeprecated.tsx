@@ -26,9 +26,9 @@ interface NavbarDeprecatedProps {
 export const NavbarAuthDataDeprecated = () => {
   const { t } = useTranslation();
   return (
-    <header className={classNames(cl.Navbar, {}, [])}>
+    <header className={classNames(cl.Navbar, {}, [])} data-testid="Navbar">
       <Container className={cl.Container}>
-        <AppLink to={getRouteMain()}>
+        <AppLink to={getRouteMain()} data-testid="Navbar.Logo">
           <Icon color="primary" width={200} height={40} Svg={LogoIcon} />
         </AppLink>
         <AppLink to={getRouteArticleCreate()} className={cl.NewPostText}>
@@ -39,7 +39,7 @@ export const NavbarAuthDataDeprecated = () => {
           <NotificationButton
             uiSwitcher={<UiDesignSwitcher variant="button" />}
           />
-          <AvatarDropdown />
+          <AvatarDropdown data-testid="Navbar.AvatarDropdown" />
         </HStack>
       </Container>
     </header>
@@ -52,16 +52,24 @@ export const NavbarDeprecated = memo((props: NavbarDeprecatedProps) => {
   } = props;
   const { t } = useTranslation();
 
+  if (authData) {
+    return <NavbarAuthDataDeprecated />;
+  }
+
   return (
-    <header className={classNames(cl.Navbar, {}, [className])}>
+    <header className={classNames(cl.Navbar, {}, [className])} data-testid="Navbar">
       <Container className={cl.Container}>
-        <AppLink to={getRouteMain()}>
+        <AppLink to={getRouteMain()} data-testid="Navbar.Logo">
           <Icon color="primary" width={200} height={40} Svg={LogoIcon} />
         </AppLink>
-        <Button theme={ButtonTheme.OUTLINE} onClick={onShowModal}>
+        <Button
+          theme={ButtonTheme.OUTLINE}
+          onClick={onShowModal}
+          data-testid="Navbar.LoginButton"
+        >
           {t('Login')}
         </Button>
-        <AuthModal isOpen={isAuthModal} onClose={onCloseModal} />
+        {isAuthModal && <AuthModal isOpen={isAuthModal} onClose={onCloseModal} data-testid="AuthModal" />}
       </Container>
     </header>
   );

@@ -7,11 +7,13 @@ interface OverlayProps {
   children?: React.ReactNode;
   isOpen?: boolean;
   overflowOff?: boolean;
+  'data-testid'?: string;
 }
 
 export const Overlay = (props: OverlayProps) => {
   const {
     className, onClick, children, isOpen, overflowOff = false,
+    'data-testid': dataTestId = 'overlay',
   } = props;
 
   const mods: Mods = {
@@ -21,6 +23,7 @@ export const Overlay = (props: OverlayProps) => {
 
   return (
     <div
+      data-testid={dataTestId}
       onClick={onClick}
       className={classNames(cl.Overlay, mods, [className])}
     >

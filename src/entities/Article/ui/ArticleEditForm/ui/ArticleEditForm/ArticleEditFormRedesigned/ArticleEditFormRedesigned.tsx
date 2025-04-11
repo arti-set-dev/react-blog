@@ -126,6 +126,7 @@ export const ArticleEditFormRedesigned = memo((props: ArticleEditFormProps) => {
         background="light"
         variant="outlined"
         placeholder={t('Enter the heading of the article')}
+        data-testid="ArticleEditForm.Title"
       />
 
       <Input
@@ -134,6 +135,7 @@ export const ArticleEditFormRedesigned = memo((props: ArticleEditFormProps) => {
         background="light"
         variant="outlined"
         placeholder={t('Enter the description of the article')}
+        data-testid="ArticleEditForm.Description"
       />
       <HStack gap="16">
         {articleTypes.map((type) => {

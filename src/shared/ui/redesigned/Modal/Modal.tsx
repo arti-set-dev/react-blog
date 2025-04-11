@@ -16,11 +16,12 @@ interface ModalProps {
   onClose?: () => void;
   lazy?: boolean;
   children: ReactNode;
+  'data-testid'?: string;
 }
 
 export const Modal = (props: ModalProps) => {
   const {
-    children, className, isOpen, onClose, lazy,
+    children, className, isOpen, onClose, lazy, 'data-testid': dataTestId,
   } = props;
 
   const { closing, onWindowClick, isMounted } = useModal({
@@ -47,6 +48,7 @@ export const Modal = (props: ModalProps) => {
           aria-hidden={!isOpen}
           onClick={onWindowClick}
           className={classNames(cl.ModalWindow, mods, [className])}
+          data-testid={dataTestId}
         >
           <Button
             onClick={closing}

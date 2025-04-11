@@ -9,11 +9,12 @@ interface LoginModalProps {
   isOpen?: boolean;
   onClose: () => void;
   redirectPath?: string;
+  'data-testid'?: string;
 }
 
 export const AuthModal = memo((props: LoginModalProps) => {
   const {
-    className, isOpen, onClose, redirectPath,
+    className, isOpen, onClose, redirectPath, 'data-testid': dataTestId,
   } = props;
   const navigate = useNavigate();
 
@@ -25,7 +26,7 @@ export const AuthModal = memo((props: LoginModalProps) => {
   };
 
   return (
-    <Modal lazy isOpen={isOpen} onClose={onClose}>
+    <Modal lazy isOpen={isOpen} onClose={onClose} data-testid={dataTestId}>
       <Suspense fallback={<Loader />}>
         <AuthFormAsync onSuccess={handleSuccess} />
       </Suspense>

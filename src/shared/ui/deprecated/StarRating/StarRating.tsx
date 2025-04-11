@@ -27,24 +27,23 @@ export const StarRating = (props: StarRatingProps) => {
   const [isSelected, setIsSelected] = useState(Boolean(selectStars));
 
   const mods: Mods = {
-    [cl.hovered]: currentStarsCount >= stars.length ? cl.hovered : cl.default,
     [cl.disabled]: disabled,
   };
 
   const onHover = (starsCount: number) => () => {
-    if (!isSelected) {
+    if (!isSelected && !disabled) {
       setCurrentStarsCount(starsCount);
     }
   };
 
   const onLeave = () => {
-    if (!isSelected) {
+    if (!isSelected && !disabled) {
       setCurrentStarsCount(0);
     }
   };
 
   const onClick = (starsCount: number) => () => {
-    if (!isSelected) {
+    if (!isSelected && !disabled) {
       onSelect?.(starsCount);
       setCurrentStarsCount(starsCount);
       setIsSelected(true);
@@ -52,12 +51,17 @@ export const StarRating = (props: StarRatingProps) => {
   };
 
   return (
-    <div className={classNames('', mods, [className])}>
+    <div
+      className={classNames(cl.StarRating, mods, [className])}
+      data-testid="StarRating"
+    >
       {stars.map((starNumber) => (
         <Icon
-          className={classNames(cl.Icon, { [cl.Selected]: isSelected }, [
-            currentStarsCount >= starNumber ? cl.hovered : cl.default,
-          ])}
+          className={classNames(cl.Icon, {
+            [cl.Selected]: isSelected,
+            [cl.hovered]: currentStarsCount >= starNumber,
+            [cl.default]: currentStarsCount < starNumber,
+          })}
           data-testid={`StarRating.${starNumber}`}
           data-selected={currentStarsCount >= starNumber}
           width={size}

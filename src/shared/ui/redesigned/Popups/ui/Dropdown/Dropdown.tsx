@@ -20,19 +20,20 @@ interface DropdownProps {
   items: DropdownItem[];
   trigger: ReactNode;
   direction?: DropdownDirection;
+  'data-testid'?: string;
 }
 
 export const Dropdown = (props: DropdownProps) => {
   const {
-    className, items, trigger, direction = 'bottom left',
+    className, items, trigger, direction = 'bottom left', 'data-testid': dataTestId,
   } = props;
 
   const menuClasses = [mapDirectionClass[direction]];
 
   return (
-    <Menu as="div" className={classNames(popupCl.Popup, {}, [className])}>
+    <Menu as="div" className={classNames(popupCl.Popup, {}, [className])} data-testid={dataTestId}>
       <Menu.Button className={popupCl.Trigger}>{trigger}</Menu.Button>
-      <Menu.Items className={classNames(cl.Items, {}, menuClasses)}>
+      <Menu.Items className={classNames(cl.Items, {}, menuClasses)} data-testid={`${dataTestId}.Items`}>
         {items.map((item, index) => {
           const content = ({ active }: { active: boolean }) => (
             // eslint-disable-next-line react/jsx-no-useless-fragment

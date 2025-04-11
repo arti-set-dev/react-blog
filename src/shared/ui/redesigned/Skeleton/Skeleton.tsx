@@ -37,6 +37,7 @@ export const Skeleton = (props: SkeletonProps) => {
 
   return (
     <div
+      data-testid="skeleton"
       style={styles}
       className={classNames(cl.Skeleton, {}, [className, cl[borderRadius]])}
     />

@@ -52,6 +52,7 @@ export const EditBlockCode = ({
             value={block.code}
             onChange={handleCodeChange}
             placeholder={t('Insert a fragment of the code')}
+            data-testid="BlockForm.Code"
           />
           <HStack gap="8">
             <Button variant="outline-red" onClick={onCancel}>{t('Cancel')}</Button>
@@ -75,6 +76,7 @@ export const EditBlockCode = ({
             value={block.code}
             onChange={handleCodeChange}
             placeholder={t('Insert a fragment of the code')}
+            data-testid="BlockForm.Code"
           />
           <HStack gap="8">
             <ButtonDeprecated

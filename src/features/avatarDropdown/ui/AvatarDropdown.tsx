@@ -12,10 +12,11 @@ import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch
 
 interface AvatarDropdownProps {
   className?: string;
+  'data-testid'?: string;
 }
 
 export const AvatarDropdown = (props: AvatarDropdownProps) => {
-  const { className } = props;
+  const { className, 'data-testid': dataTestId } = props;
   const { t } = useTranslation();
   const dispatch = useAppDispatch();
   const authData = useSelector(getUserAuthData);
@@ -40,13 +41,12 @@ export const AvatarDropdown = (props: AvatarDropdownProps) => {
   ];
 
   return (
-
     <Dropdown
       items={items}
       trigger={
         <Avatar size={25} src={authData?.avatar} alt={authData?.username} />
       }
+      data-testid={dataTestId}
     />
-
   );
 };

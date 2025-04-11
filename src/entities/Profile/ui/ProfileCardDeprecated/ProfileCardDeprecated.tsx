@@ -16,7 +16,7 @@ import cl from './ProfileCardDeprecated.module.scss';
 import { Skeleton } from '@/shared/ui/deprecated/Skeleton';
 
 export const ProfileCardLoaderDeprecated = () => (
-  <div className={classNames(cl.ProfileCardDeprecated, {}, [])}>
+  <div data-testid="ProfileCardLoader" className={classNames(cl.ProfileCardDeprecated, {}, [])}>
     <Skeleton width={100} height={100} border="50%" />
     <div className={cl.data}>
       <Skeleton width="100%" height={40} />
@@ -35,7 +35,7 @@ export const ProfileCardErrorDeprecated = () => {
   const { t } = useTranslation('profile');
 
   return (
-    <div className={classNames(cl.ProfileCardDeprecated, {}, [])}>
+    <div data-testid="ProfileCardError" className={classNames(cl.ProfileCardDeprecated, {}, [])}>
       <HStack justify="between">
         <Text
           size={TextSize.XL}

@@ -64,11 +64,13 @@ export const EditBlockImage = ({
             accept="image/*"
             onFileSelect={handleFileSelect}
             placeholder={t('Upload image')}
+            data-testid="BlockForm.ImageUploader"
           />
           <Input
             value={block.title}
             onChange={handleTitleChange}
             placeholder={t('Enter the description of the image')}
+            data-testid="BlockForm.ImageTitle"
           />
           <HStack gap="8">
             <Button variant="outline-red" onClick={onCancel}>{t('Cancel')}</Button>
@@ -91,11 +93,13 @@ export const EditBlockImage = ({
             accept="image/*"
             onFileSelect={handleFileSelect}
             placeholder={t('Upload image')}
+            data-testid="BlockForm.ImageUploader"
           />
           <InputDeprecated
             value={block.title}
             onChange={handleTitleChange}
             placeholder={t('Enter the description of the image')}
+            data-testid="BlockForm.ImageTitle"
           />
           <HStack gap="8">
             <ButtonDeprecated

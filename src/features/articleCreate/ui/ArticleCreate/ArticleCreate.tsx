@@ -138,7 +138,6 @@ export const ArticleCreate = memo((props: ArticleCreateProps) => {
 
     try {
       const response = await createArticle(formData).unwrap();
-      console.log(response);
       dispatch(articleListActions.addArticle(response));
       localStorage.removeItem(LOCAL_STORAGE_ARTICLE_DATA);
       navigate(getRouteArticleDetails(response.id ?? ''));

@@ -33,7 +33,13 @@ export const Tabs = memo((props: TabsProps) => {
   );
 
   return (
-    <Flex direction={direction} align="start" gap="4" className={classNames(cl.Tabs, {}, [className])}>
+    <Flex
+      direction={direction}
+      align="start"
+      gap="4"
+      className={classNames(cl.Tabs, {}, [className])}
+      data-testid="Tabs"
+    >
       {tabs.map((tab) => (
         <Button
           className={className}

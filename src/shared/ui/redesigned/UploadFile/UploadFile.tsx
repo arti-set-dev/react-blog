@@ -15,6 +15,7 @@ interface UploadFileProps {
   preview?: boolean;
   previewCircle?: boolean;
   previewSize?: number;
+  'data-testid'?: string;
 }
 
 export const UploadFile = memo((props: UploadFileProps) => {
@@ -27,6 +28,7 @@ export const UploadFile = memo((props: UploadFileProps) => {
     preview = false,
     previewCircle = false,
     previewSize = 100,
+    'data-testid': dataTestId,
   } = props;
 
   const [fileName, setFileName] = useState<string>('');
@@ -58,6 +60,7 @@ export const UploadFile = memo((props: UploadFileProps) => {
         accept={accept}
         multiple={multiple}
         className={cl.hiddenInput}
+        data-testid={`${dataTestId}.Input`}
       />
       <VStack gap="8">
         {preview && previewUrl ? (
@@ -77,6 +80,7 @@ export const UploadFile = memo((props: UploadFileProps) => {
           <Button
             variant="text-light"
             onClick={handlePlaceholderClick}
+            data-testid={dataTestId}
           >
             {placeholder}
           </Button>

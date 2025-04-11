@@ -15,6 +15,7 @@ export const Loader = (props: LoaderProps) => {
   } = props;
   return (
     <div
+      data-testid="loader"
       className={classNames(cl.Loader, {}, [className, cl[variant]])}
     />
   );
