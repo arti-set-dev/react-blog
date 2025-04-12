@@ -4,11 +4,11 @@ import { selectByTestId } from '../../helpers/selectByTestId';
 
 export const login = (
   username: string = 'testuser',
-  password: string = '123',
+  password: string = '1234',
 ) => cy
   .request({
     method: 'POST',
-    url: 'http://localhost:8000/login',
+    url: 'http://localhost:5000/auth/login',
     body: {
       username,
       password,

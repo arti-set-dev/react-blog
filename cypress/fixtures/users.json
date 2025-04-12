@@ -1,0 +1,35 @@
+{
+  "users": [
+    {
+      "username": "admin",
+      "email": "admin@mail.com",
+      "avatar": "avatar-image-1.png",
+      "password": "1234",
+      "isEmailVerified": true,
+      "activationLink": null,
+      "roles": ["ADMIN"],
+      "features": {
+        "isAppRedesigned": true
+      },
+      "jsonSettings": {
+        "isArticlePageWasOpened": true,
+        "theme": "dark"
+      }
+    },
+    {
+      "username": "user",
+      "email": "user@mail.com",
+      "password": "1234",
+      "isEmailVerified": true,
+      "activationLink": null,
+      "roles": ["USER"],
+      "features": {
+        "isAppRedesigned": true
+      },
+      "jsonSettings": {
+        "isArticlePageWasOpened": true,
+        "theme": "light"
+      }
+    }
+  ]
+} 

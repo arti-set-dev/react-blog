@@ -4,12 +4,16 @@ describe('The user visits the article page', () => {
   beforeEach(() => {
     cy.login();
     cy.createArticle().then((article) => {
-      currentArticleId = article.id;
-      cy.visit(`articles/${article.id}`);
+      if (article?.id) {
+        currentArticleId = article.id;
+        cy.visit(`articles/${article.id}`);
+      }
     });
   });
   afterEach(() => {
-    cy.removeArticle(currentArticleId);
+    if (currentArticleId) {
+      cy.removeArticle(currentArticleId);
+    }
   });
   it('and sees the contents of the article', () => {
     cy.getByTestId('ArticleDetails.Info').should('exist');

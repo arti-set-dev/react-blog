@@ -1,0 +1,48 @@
+{
+  "title": "Latest JavaScript Updates",
+  "subtitle": "What new features appeared in JS in 2022?",
+  "img": "photo-1627398242454-45a1465c2479.avif",
+  "views": 1024,
+  "userId": 1,
+  "type": ["IT"],
+  "blocks": [
+    {
+      "type": "TEXT",
+      "title": "Introduction",
+      "paragraphs": [
+        "One of the first code examples that beginners learn is the 'Hello, world!' program. Its purpose is to display a simple string on the screen.",
+        "JavaScript is a powerful programming language that is supported both in browsers and on the server through Node.js. If you've never written JS code before, you're just a few steps away from your first program."
+      ]
+    },
+    {
+      "type": "CODE",
+      "code": "<!DOCTYPE html>\n<html>\n  <body>\n    <p id=\"hello\"></p>\n    <script>\n      document.getElementById(\"hello\").innerHTML = \"Hello, world!\";\n    </script>\n  </body>\n</html>"
+    },
+    {
+      "type": "TEXT",
+      "title": "Connecting JavaScript to Pages",
+      "paragraphs": [
+        "JavaScript can be inline and external. Inline JS is written directly inside the HTML document, while external JS is connected as a separate file.",
+        "To connect an external JavaScript file, the <script> tag with the src attribute is used."
+      ]
+    },
+    {
+      "type": "IMAGE",
+      "src": "photo-1627398242454-45a1465c2479.avif",
+      "title": "Code example in editor"
+    }
+  ],
+  "user": {
+    "id": "1",
+    "username": "admin",
+    "roles": ["ADMIN"],
+    "features": {
+      "isAppRedesigned": true
+    },
+    "jsonSettings": {
+      "isArticlePageWasOpened": true,
+      "theme": "dark"
+    },
+    "avatar": "avatar-image-1.png"
+  }
+} 
