@@ -18,5 +18,21 @@
   "it": "IT",
   "Science": "Наука",
   "No articles were found": "Статей не найдено",
-  "Politics": "Политика"
+  "Politics": "Политика",
+  "{{count}} views_zero": "{{count}} просмотров",
+  "{{count}} views_one": "{{count}} просмотр",
+  "{{count}} views_few": "{{count}} просмотров",
+  "{{count}} views_many": "{{count}} просмотров",
+  "Edit": "Ред.",
+  "Delete": "Удалить",
+  "You want to delete the article?": "Вы хотите удалить статью?",
+  "Cancel": "Отменить",
+  "An error occurred": "Произошла ошибка",
+  "IT": "IT",
+  "Back": "Назад",
+  "Share": "Поделиться",
+  "Save": "Сохранить",
+  "Copy": "Копировать",
+  "Author": "Автор",
+  "Created": "Создано"
 }

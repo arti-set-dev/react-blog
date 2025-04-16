@@ -25,6 +25,7 @@ interface TextProps {
   tag?: TagType;
   'data-testid'?: string;
   isHovered?: boolean;
+  style?: React.CSSProperties;
 }
 
 const mapTextCropped: Record<TextCropped, string> = {
@@ -51,6 +52,7 @@ export const Text = memo((props: TextProps) => {
     tag = 'div',
     'data-testid': dataTestId = 'Text',
     isHovered = false,
+    style,
     ...otherProps
   } = props;
 
@@ -64,6 +66,7 @@ export const Text = memo((props: TextProps) => {
 
   return (
     <Tag
+      style={style}
       {...otherProps}
       data-testid={`${dataTestId}.Tag`}
       className={classNames(cl.Text, mods, [

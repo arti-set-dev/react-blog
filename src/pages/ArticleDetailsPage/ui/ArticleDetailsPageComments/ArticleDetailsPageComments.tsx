@@ -34,7 +34,7 @@ const isReducerMounted = (state: StateSchema) => Boolean(state.comments);
 export const ArticleDetailsPageComments = memo(
   (props: ArticleDetailsPageCommentsProps) => {
     const { className, id } = props;
-    const { t } = useTranslation();
+    const { t } = useTranslation('article-details');
     const comments = useSelector(getArticleComments.selectAll);
     const commentsIsloading = useSelector(getCommentsIsloading);
     const commentsError = useSelector(getCommentsError);

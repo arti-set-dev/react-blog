@@ -10,11 +10,19 @@
   "article-details": {
     "We recommend reading": "Рекомендуем прочитать"
   },
+  "Data boot error": "Ошибка при загрузке данных",
   "Editing an article with ID -": "Редактирование статьи с ID -",
   "Creating a new article": "Создание новой статьи",
-  "Rate this article": "Rate this article",
-  "Leave your feedback on the article, it helps improve the quality": "Leave your feedback on the article, it helps improve the quality",
-  "article id is not defined": "article id is not defined",
+  "Rate this article": "Оцените эту статью",
+  "Leave your feedback on the article, it helps improve the quality": "Оставьте свой отзыв о статье, это помогает улучшить качество",
+  "article id is not defined": "ID статьи не определен",
   "Login to our platform and join in the lively discussions": "Зарегистрируйтесь на нашей платформе и принимайте участие в оживлённых дискуссиях",
-  "Please login in to leave a review": "Пожалуйста зарегистрируйтесь чтобы оставить отзыв"
+  "Please login in to leave a review": "Пожалуйста зарегистрируйтесь чтобы оставить отзыв",
+  "We recommend reading": "Мы рекомендуем прочитать",
+  "Save": "Сохранить",
+  "Cancel": "Отменить",
+  "Edit": "Редактировать",
+  "Delete": "Удалить",
+  "You want to delete the article?": "Вы хотите удалить статью?",
+  "An error occurred": "Произошла ошибка"
 }

@@ -74,7 +74,7 @@ export const ProfileCardDeprecated = memo((props: ProfileCardProps) => {
     fieldErrors,
     className,
   } = props;
-  const { t } = useTranslation();
+  const { t } = useTranslation('profile');
   const { canEdit } = useProfile();
 
   return (

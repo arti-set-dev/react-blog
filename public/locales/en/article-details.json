@@ -1,6 +1,6 @@
 {
   "Article not found": "Article not found",
-  "article-details-page": "Article Details Page",
+  "Article Details Page": "Article Details Page",
   "There was an error loading the article": "There was an error loading the article",
   "Comments": "Comments",
   "There are no comments": "There are no comments",
@@ -11,11 +11,17 @@
   "article-details": {
     "We recommend reading": "We recommend reading"
   },
+  "Data boot error": "Data boot error",
   "Editing an article with ID -": "Editing an article with ID -",
   "Creating a new article": "Creating a new article",
   "Rate this article": "Rate this article",
   "Leave your feedback on the article, it helps improve the quality": "Leave your feedback on the article, it helps improve the quality",
   "article id is not defined": "article id is not defined",
   "Login to our platform and join in the lively discussions": "Login to our platform and join in the lively discussions",
-  "Please login in to leave a review": "Please login in to leave a review"
+  "Please login in to leave a review": "Please login in to leave a review",
+  "Save": "Save",
+  "Cancel": "Cancel",
+  "Edit": "Edit",
+  "Delete": "Delete",
+  "We recommend reading": "We recommend reading"
 }

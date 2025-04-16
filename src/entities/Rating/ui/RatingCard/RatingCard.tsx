@@ -38,7 +38,7 @@ export const RatingCard = (props: RatingCardProps) => {
     isAuth,
     rate = 0,
   } = props;
-  const { t } = useTranslation('article-details');
+  const { t } = useTranslation();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [starsCount, setStarsCount] = useState(rate);
   const [feedback, setFeedback] = useState('');

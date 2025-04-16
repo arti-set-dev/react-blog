@@ -21,7 +21,6 @@ import cl from './CommentCard.module.scss';
 import { getUserAuthData } from '@/entities/User';
 import { Button } from '@/shared/ui/redesigned/Button';
 import { Input } from '@/shared/ui/redesigned/Input';
-import { Input as InputDeprecated, InputTheme } from '@/shared/ui/deprecated/Input';
 
 interface CommentCardProps {
   className?: string;
@@ -35,7 +34,7 @@ export const CommentCard = memo((props: CommentCardProps) => {
   const {
     className, comment, isLoading, onDeleteComment, onEditComment,
   } = props;
-  const { t } = useTranslation();
+  const { t } = useTranslation('article-details');
   const authData = useSelector(getUserAuthData);
   const canEdit = authData?.id === comment?.user?.id;
   const [isEditing, setIsEditing] = useState(false);
@@ -171,10 +170,10 @@ export const CommentCard = memo((props: CommentCardProps) => {
             {canEdit && editControls}
           </HStack>
           {isEditing ? (
-            <InputDeprecated
+            <Input
               value={editedText}
               onChange={onChangeHandler}
-              theme={InputTheme.INVERTED}
+              variant="lined"
             />
           ) : (
             <TextDeprecated>{comment.text}</TextDeprecated>

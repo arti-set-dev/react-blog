@@ -46,7 +46,7 @@ export const ArticleSortSelector = memo((props: ArticleSortSelectorProps) => {
       },
       {
         value: ArticleSortField.TITLE,
-        content: t('name'),
+        content: t('Name'),
       },
       {
         value: ArticleSortField.VIEWS,

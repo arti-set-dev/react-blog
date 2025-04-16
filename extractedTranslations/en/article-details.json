@@ -4,10 +4,14 @@
   "Back": "",
   "Cancel": "",
   "Comments": "",
+  "Data boot error": "",
+  "Delete": "",
+  "Edit": "",
   "Leave your feedback on the article, it helps improve the quality": "Leave your feedback on the article, it helps improve the quality",
   "Login to our platform and join in the lively discussions": "Login to our platform and join in the lively discussions",
   "Please login in to leave a review": "Please login in to leave a review",
   "Rate this article": "Rate this article",
+  "Save": "",
   "Send": "",
   "Thanks for your rating": "",
   "There are no comments": "",
@@ -18,5 +22,7 @@
   "We recommend reading": "",
   "Write your comment": "",
   "Your rating": "",
-  "article id is not defined": "article id is not defined"
+  "article id is not defined": "article id is not defined",
+  "{{count}} views": "",
+  "{{count}} views_plural": ""
 }

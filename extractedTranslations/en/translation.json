@@ -13,6 +13,7 @@
   "Article Details Page": "Article Details Page",
   "Article not found": "Article not found",
   "Article preview": "",
+  "Articles": "",
   "Articles Page": "Articles Page",
   "Back": "",
   "CODE": "",
@@ -48,6 +49,7 @@
   "Go to link": "Go to link",
   "Have an account?": "",
   "Here you can view posts on various topics": "Here you can view posts on various topics",
+  "Home": "",
   "IMAGE": "",
   "Incorrect age": "",
   "Indicate the currency": "Indicate the currency",
@@ -55,13 +57,22 @@
   "Interface option": "Interface option",
   "Lang": "",
   "Language": "",
+  "Loading": {
+    "": {
+      "": {
+        "": ""
+      }
+    }
+  },
   "Login": "",
   "Login to our platform and join in the lively discussions": "",
   "Logo App": "",
   "Logout": "",
   "Main": "",
   "Main Page": "Main Page",
+  "Name": "",
   "Netowork": "",
+  "New": "",
   "New design": "",
   "No account yet?": "",
   "No articles were found": "",
@@ -70,6 +81,7 @@
   "No currency selected": "",
   "No notifications": "",
   "Not enough data": "",
+  "Old": "",
   "Old design": "",
   "Online newspaper": "",
   "Option interface": "Option interface",

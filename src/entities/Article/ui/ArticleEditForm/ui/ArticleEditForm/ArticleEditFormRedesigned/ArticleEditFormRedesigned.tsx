@@ -45,9 +45,10 @@ export const ArticleEditFormRedesigned = memo((props: ArticleEditFormProps) => {
     error,
     types,
     handleAddType,
+    id,
     onBlockFileChange,
   } = props;
-  const { t } = useTranslation();
+  const { t } = useTranslation('article-edit');
   const [blockImageFiles, setBlockImageFiles] = useState<Record<string, File | null>>({});
 
   const handleBlockFileChange = useCallback((file: File | null) => {
@@ -103,16 +104,16 @@ export const ArticleEditFormRedesigned = memo((props: ArticleEditFormProps) => {
   ), [handleDeleteBlock, handleEditBlock, savedBlocks]);
 
   const articleTypes = useMemo(() => [
-    { value: ArticleType.IT, content: ArticleType.IT },
-    { value: ArticleType.ECONOMICS, content: ArticleType.ECONOMICS },
-    { value: ArticleType.SCIENCE, content: ArticleType.SCIENCE },
-    { value: ArticleType.POLITICS, content: ArticleType.POLITICS },
-  ], []);
+    { value: ArticleType.IT, content: t('IT') },
+    { value: ArticleType.ECONOMICS, content: t('Economics') },
+    { value: ArticleType.SCIENCE, content: t('Science') },
+    { value: ArticleType.POLITICS, content: t('Politics') },
+  ], [t]);
 
   return (
     <Card offset="24" className={getVstack({ gap: 24 })}>
       <Text tag="h1" size="xl" weight="bold">
-        {t('Create new article')}
+        {id ? t('Edit article') : t('Create new article')}
       </Text>
 
       <UploadFile

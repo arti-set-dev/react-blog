@@ -19,7 +19,7 @@ interface ArticleRecommendationsListProps {
 export const ArticleRecommendationsList = memo(
   (props: ArticleRecommendationsListProps) => {
     const { className, display = ArticleListDisplay.FLEX, totalPosts = 7 } = props;
-    const { t } = useTranslation();
+    const { t } = useTranslation('article-details');
     const {
       isLoading,
       data: articles,

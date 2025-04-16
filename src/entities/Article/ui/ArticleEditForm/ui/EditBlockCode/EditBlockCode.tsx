@@ -24,7 +24,7 @@ export const EditBlockCode = ({
   onCancel,
   onSave,
 }: EditBlockCodeProps) => {
-  const { t } = useTranslation();
+  const { t } = useTranslation('article-edit');
   const isValid = validateBlock(block);
 
   const handleCodeChange = (value: string) => {

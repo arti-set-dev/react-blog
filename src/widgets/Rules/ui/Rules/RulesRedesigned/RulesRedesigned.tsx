@@ -24,22 +24,22 @@ export const RulesRedesigned = memo((props: RulesProps) => {
       <HStack tag="ul" gap="16" justify="between" align="start">
         <VStack flexBasis="33%" tag="li" gap="16" align="center">
           <VStack align="center" width="325px" gap="16">
-            <Text weight="bold" size="l" align="center">{t('Rule 1')}</Text>
-            <Text align="center">{t('Rule desc 1')}</Text>
+            <Text weight="bold" size="l" align="center" style={{ minHeight: '50px' }}>{t('Rule 1')}</Text>
+            <Text align="center" style={{ minHeight: '28px' }}>{t('Rule desc 1')}</Text>
           </VStack>
           <LazyImage height={300} alt="" aria-hidden src="/images/rule-Image-1.svg" />
         </VStack>
         <VStack flexBasis="33%" tag="li" gap="16" align="center">
           <VStack align="center" width="325px" gap="16">
-            <Text weight="bold" size="l" align="center">{t('Rule 2')}</Text>
-            <Text align="center">{t('Rule desc 2')}</Text>
+            <Text weight="bold" size="l" align="center" style={{ minHeight: '50px' }}>{t('Rule 2')}</Text>
+            <Text align="center" style={{ minHeight: '28px' }}>{t('Rule desc 2')}</Text>
           </VStack>
           <LazyImage height={300} alt="" aria-hidden src="/images/rule-Image-2.svg" />
         </VStack>
         <VStack flexBasis="33%" tag="li" gap="16" align="center">
           <VStack align="center" width="325px" gap="16">
-            <Text weight="bold" size="l" align="center">{t('Rule 3')}</Text>
-            <Text align="center">{t('Rule desc 3')}</Text>
+            <Text weight="bold" size="l" align="center" style={{ minHeight: '50px' }}>{t('Rule 3')}</Text>
+            <Text align="center" style={{ minHeight: '28px' }}>{t('Rule desc 3')}</Text>
           </VStack>
           <LazyImage height={300} alt="" aria-hidden src="/images/rule-Image-3.svg" />
         </VStack>

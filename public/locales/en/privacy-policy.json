@@ -28,10 +28,10 @@
       "personal_identifiers": {
         "title": "3.1 Personal Identifiers",
         "text": "This includes:",
-        "items": [
-          "First and last name",
-          "Email address",
-          "Phone number",
+    "items": [
+      "First and last name",
+      "Email address",
+      "Phone number",
           "User ID and account credentials",
           "Date of birth",
           "Profile information and preferences",

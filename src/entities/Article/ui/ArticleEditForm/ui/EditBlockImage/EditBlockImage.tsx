@@ -27,7 +27,7 @@ export const EditBlockImage = ({
   onCancel,
   onSave,
 }: EditBlockImageProps) => {
-  const { t } = useTranslation();
+  const { t } = useTranslation('article-edit');
   const [imageFile, setImageFile] = useState<File | null>(null);
   const isValid = validateBlock(block);
 

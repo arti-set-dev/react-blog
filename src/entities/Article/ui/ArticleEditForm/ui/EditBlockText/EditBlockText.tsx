@@ -23,7 +23,7 @@ export const EditBlockText = ({
   onCancel,
   onSave,
 }: EditBlockTextProps) => {
-  const { t } = useTranslation();
+  const { t } = useTranslation('article-edit');
   const isValid = validateBlock(block);
 
   const handleTitleChange = (value: string) => {

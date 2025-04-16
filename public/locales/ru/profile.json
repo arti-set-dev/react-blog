@@ -10,7 +10,7 @@
   "Your city": "Ваш город",
   "Your currency": "Ваша валюта",
   "Your country": "Ваша страна",
-  "Your username": "Ваше имя пользователя",
+  "Your username": "Ваш никнейм",
   "Your avatar": "Ваш аватар",
   "Profile avatar": "Аватар профиля",
   "Your Country": "Ваша страна",
@@ -32,5 +32,8 @@
   },
   "Rate this Profile": "Оцените профиль",
   "Please login in to leave a review": "Пожалуйста зарегистрируйтесь чтобы оставить отзыв",
-  "Leave your feedback on the profile, it helps improve the quality": "Leave your feedback on the profile, it helps improve the quality"
+  "Leave your feedback on the profile, it helps improve the quality": "Оставьте свой отзыв о профиле, это помогает улучшить качество",
+  "Create an article": "Создать статью",
+  "Switch to new theme now": "Переключиться на новую тему сейчас",
+  "Return to old theme": "Вернуться к старой теме"
 }

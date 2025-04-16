@@ -17,5 +17,18 @@
   "it": "IT",
   "Science": "Science",
   "No articles were found": "No articles were found",
-  "Politics": "Politics"
+  "Politics": "Politics",
+  "{{count}} views": "{{count}} views",
+  "Edit": "Edit",
+  "Delete": "Delete",
+  "You want to delete the article?": "You want to delete the article?",
+  "Cancel": "Cancel",
+  "An error occurred": "An error occurred",
+  "IT": "IT",
+  "Back": "Back",
+  "Share": "Share",
+  "Save": "Save",
+  "Copy": "Copy",
+  "Author": "Author",
+  "Created": "Created"
 }

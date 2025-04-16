@@ -20,7 +20,7 @@ interface AdditionalInfoContainerProps {
 
 export const AdditionalInfoContainer = memo((props: AdditionalInfoContainerProps) => {
   const { className } = props;
-  const { t } = useTranslation();
+  const { t } = useTranslation('article');
   const dispatch = useAppDispatch();
   const [isOpenModal, setIsOpenModal] = useState(false);
   const article = useSelector(getArticleDetailsData);

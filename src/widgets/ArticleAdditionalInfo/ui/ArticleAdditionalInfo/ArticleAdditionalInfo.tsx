@@ -32,7 +32,7 @@ export const ArticleAdditionalInfo = memo((props: ArticleAdditionalInfoProps) =>
     canEdit,
     modalContent,
   } = props;
-  const { t } = useTranslation();
+  const { t } = useTranslation('article');
 
   return (
     <VStack gap="32" className={classNames('', {}, [className])}>

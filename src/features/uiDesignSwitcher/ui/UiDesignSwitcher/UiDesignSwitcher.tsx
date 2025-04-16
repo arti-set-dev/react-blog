@@ -144,7 +144,7 @@ export const UiDesignSwitcher = memo((props: UiDesignSwitcherProps) => {
           <Listbox
             onChange={onChange}
             items={items}
-            value={isAppRedesigned ? 'new' : 'old'}
+            value={isAppRedesigned ? t('New') : t('Old')}
             className={className}
           />
         )}

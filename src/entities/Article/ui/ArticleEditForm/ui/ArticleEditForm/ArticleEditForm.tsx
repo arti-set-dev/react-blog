@@ -22,6 +22,7 @@ import {
 
 export interface ArticleEditFormProps {
   className?: string;
+  id?: string;
   savedBlocks?: ArticleBlock[];
   handleEditBlock?: (block: ArticleBlock) => void;
   handleDeleteBlock?: (id: string) => void;

@@ -154,6 +154,7 @@ export const ArticleEdit = memo((props: ArticleEditProps) => {
   return (
     <DynamicModuleLoader reducers={reducers}>
       <ArticleEditForm
+        id={id}
         savedBlocks={article?.blocks}
         articleTitle={article?.title}
         articleDescription={article?.subtitle}
