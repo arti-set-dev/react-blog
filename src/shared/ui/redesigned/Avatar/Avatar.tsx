@@ -9,6 +9,8 @@ import ProfileIcon from '@/shared/assets/icons/profile-icon.svg';
 import { UploadFile } from '../UploadFile';
 import { Card } from '../Card';
 import { getVstack } from '@/shared/lib/stack/getVstack/getVstack';
+import { HStack } from '../Stack';
+import AdminIcon from '@/shared/assets/icons/shield-icon.svg';
 
 export type AvatarLoading = 'lazy' | 'eager';
 
@@ -20,6 +22,7 @@ interface AvatarProps {
   size?: number;
   loading?: AvatarLoading;
   readonly?: boolean;
+  isAdmin?: boolean;
 }
 
 export const Avatar = (props: AvatarProps) => {
@@ -31,6 +34,7 @@ export const Avatar = (props: AvatarProps) => {
     size = 100,
     loading = 'lazy',
     readonly = true,
+    isAdmin = false,
   } = props;
 
   const { t } = useTranslation();
@@ -68,16 +72,38 @@ export const Avatar = (props: AvatarProps) => {
           </Card>
         )
         : (
-          <LazyImage
-            fallback={fallback}
-            errorFallback={errorFallback}
-            loading={loading}
-            width={size}
-            height={size}
-            className={classNames(cl.Avatar, {}, [className])}
-            src={src}
-            alt={alt}
-          />
+          // eslint-disable-next-line react/jsx-no-useless-fragment
+          <>
+            {isAdmin
+              ? (
+                <HStack gap="8" align="center">
+                  <Icon width={25} height={25} Svg={AdminIcon} />
+                  <LazyImage
+                    fallback={fallback}
+                    errorFallback={errorFallback}
+                    loading={loading}
+                    width={size}
+                    height={size}
+                    className={classNames(cl.Avatar, {}, [className])}
+                    src={src}
+                    alt={alt}
+                  />
+                </HStack>
+              )
+              : (
+                <LazyImage
+                  fallback={fallback}
+                  errorFallback={errorFallback}
+                  loading={loading}
+                  width={size}
+                  height={size}
+                  className={classNames(cl.Avatar, {}, [className])}
+                  src={src}
+                  alt={alt}
+                />
+              )}
+
+          </>
         )}
     </>
   );

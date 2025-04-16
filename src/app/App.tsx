@@ -1,8 +1,8 @@
 import { memo, Suspense, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { useAppToolbar } from './lib/useAppToolbar';
 import { Loader } from '@/shared/ui/deprecated/Loader';
+import { Loader as LoaderRedesigned } from '@/shared/ui/redesigned/Loader';
 import { MainLayout } from '@/shared/layouts/MainLayout';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { classNames } from '@/shared/lib/classNames/classNames';
@@ -20,7 +20,6 @@ import { checkAuth, getUserInited, initAuthData } from '@/entities/User';
 const App = memo(() => {
   const { theme } = useTheme();
   const dispatch = useAppDispatch();
-  const navigate = useNavigate();
   const inited = useSelector(getUserInited);
   const toolbar = useAppToolbar();
 
@@ -56,7 +55,7 @@ const App = memo(() => {
       feature="isAppRedesigned"
       on={(
         <div id="app" className={classNames('app_redesigned', {}, [theme])}>
-          <Suspense fallback={<Loader />}>
+          <Suspense fallback={<LoaderRedesigned />}>
             <MainLayout
               header={<Navbar />}
               content={<AppRouter />}

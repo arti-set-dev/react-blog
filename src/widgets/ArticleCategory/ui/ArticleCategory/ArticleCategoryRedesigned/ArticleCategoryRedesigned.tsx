@@ -31,7 +31,12 @@ export const ArticleCategoryRedesigned = memo((props: ArticleCategoryProps) => {
         {t('Popular categories')}
       </Text>
       <ArticleTypeTabs direction="row" value={type} onChangeType={onChangeType} />
-      <ArticleList articles={articles} isLoading={isLoading} error={error} />
+      <ArticleList
+        invertOnHover
+        articles={articles}
+        isLoading={isLoading}
+        error={error}
+      />
     </Card>
   );
 });

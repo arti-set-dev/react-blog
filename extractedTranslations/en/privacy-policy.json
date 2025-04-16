@@ -1,31 +1,114 @@
 {
+  "california_residents": {
+    "items": "",
+    "text1": "",
+    "text2": "",
+    "text3": "",
+    "title": ""
+  },
+  "changes": {
+    "text1": "",
+    "text2": "",
+    "text3": "",
+    "title": ""
+  },
+  "children": {
+    "text1": "",
+    "text2": "",
+    "title": ""
+  },
+  "contacts": {
+    "address": "",
+    "email": "",
+    "form": "",
+    "phone": "",
+    "text1": "",
+    "title": ""
+  },
   "cookies": {
+    "categories": "",
     "text": "",
+    "text1": "",
+    "text2": "",
+    "text3": "",
     "title": ""
   },
   "data_collection": {
+    "categories": "",
+    "collection_methods": {
+      "items": "",
+      "text": "",
+      "title": ""
+    },
     "items": "",
+    "purposes": {
+      "items": "",
+      "text": "",
+      "title": ""
+    },
     "text": "",
     "title": ""
   },
   "data_protection": {
+    "items": "",
     "text": "",
+    "text1": "",
+    "text2": "",
+    "title": ""
+  },
+  "data_retention": {
+    "items": "",
+    "text1": "",
+    "text2": "",
+    "text3": "",
     "title": ""
   },
   "data_sharing": {
+    "categories": "",
     "items": "",
     "text": "",
     "title": ""
   },
+  "dispute_resolution": {
+    "text1": "",
+    "text2": "",
+    "title": ""
+  },
+  "eea_residents": {
+    "items": "",
+    "text1": "",
+    "text2": "",
+    "text3": "",
+    "title": ""
+  },
+  "effective_date": "",
   "general": {
+    "text1": "",
+    "text2": "",
+    "text3": "",
+    "text4": "",
+    "title": ""
+  },
+  "international_transfers": {
+    "items": "",
+    "text1": "",
+    "text2": "",
+    "text3": "",
+    "title": ""
+  },
+  "legal_basis": {
+    "items": "",
     "text1": "",
     "text2": "",
     "title": ""
   },
   "rights": {
+    "items": "",
     "text1": "",
     "text2": "",
+    "text3": "",
     "title": ""
   },
+  "table_of_contents": "",
   "title": ""
 }

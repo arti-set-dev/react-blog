@@ -1,7 +1,9 @@
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Page } from '@/widgets/Page';
-import { PrivacyPolicy } from '@/widgets/PrivacyPolicy';
+import { PrivacyPolicy, PrivacyPolicyContent } from '@/widgets/PrivacyPolicy';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { StickyContentLayout } from '@/shared/layouts/SticlyContentLayout';
 
 interface PrivacyPolicyPageProps {
   className?: string;
@@ -12,9 +14,24 @@ const PrivacyPolicyPage = memo((props: PrivacyPolicyPageProps) => {
   const { t } = useTranslation();
 
   return (
-    <Page>
-      <PrivacyPolicy />
-    </Page>
+    <ToggleFeatures
+      feature="isAppRedesigned"
+      on={(
+        <StickyContentLayout
+          content={(
+            <Page>
+              <PrivacyPolicy />
+            </Page>
+          )}
+          right={<PrivacyPolicyContent />}
+        />
+      )}
+      off={(
+        <Page>
+          <PrivacyPolicy />
+        </Page>
+      )}
+    />
   );
 });
 

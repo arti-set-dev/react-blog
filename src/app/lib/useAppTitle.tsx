@@ -38,6 +38,12 @@ export function useAppTitle() {
     case AppRoutes.PROFILE:
       title = 'Netowork | Profile';
       break;
+    case AppRoutes.ARTICLES_CREATE:
+      title = 'Netowork | Create article';
+      break;
+    case AppRoutes.PRIVACY_POLICY:
+      title = 'Netowork | Privacy Policy';
+      break;
     default:
       title = 'Netowork';
     }

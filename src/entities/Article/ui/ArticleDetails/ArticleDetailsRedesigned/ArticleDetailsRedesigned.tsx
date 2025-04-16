@@ -88,6 +88,11 @@ export const ArticleDetailsRedesigned = memo((props: ArticleDetailsRedesignedPro
         <Skeleton height={100} width="100%" border="20" />
         <Skeleton height={100} width="100%" border="20" />
         <Skeleton height={100} width="100%" border="20" />
+        <Skeleton height={100} width="100%" border="20" />
+        <Skeleton height={100} width="100%" border="20" />
+        <Skeleton height={100} width="100%" border="20" />
+        <Skeleton height={100} width="100%" border="20" />
+        <Skeleton height={100} width="100%" border="20" />
       </VStack>
     );
   } else if (error) {

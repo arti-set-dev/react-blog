@@ -1,53 +1,287 @@
 {
   "title": "Netowork Privacy Policy",
+  "effective_date": "Effective Date: January 15, 2023",
+  "table_of_contents": "Table of Contents",
   "general": {
     "title": "1. General Provisions",
-    "text1": "This Privacy Policy (hereinafter referred to as the 'Policy') describes how Netowork (hereinafter referred to as 'We', 'Our Company') collects, uses, and protects users' personal data (hereinafter referred to as 'You', 'User') when using the Netowork.com website and related services.",
-    "text2": "By using our service, you agree to the terms of this Policy."
+    "text1": "This Privacy Policy (hereinafter referred to as the 'Policy') describes how Netowork LLC, registration number 123456789, located at 15 Limassol Avenue, Nicosia, 2112, Cyprus (hereinafter referred to as 'We', 'Our Company', 'Netowork', 'us', or 'our') collects, uses, processes, stores, shares, discloses and protects users' personal data (hereinafter referred to as 'You', 'User', 'your') when using the Netowork.com website and related services, applications, tools, and features (collectively, the 'Services').",
+    "text2": "By accessing or using our Services, you acknowledge that you have read, understood, and agree to be bound by this Privacy Policy. If you do not agree with any part of this Policy, you must not use our Services.",
+    "text3": "This Policy is an integral part of our Terms of Service. Any capitalized terms not defined in this Policy shall have the meaning assigned to them in the Terms of Service.",
+    "text4": "We are committed to protecting your privacy and ensuring the security of your personal information. This Policy explains our practices regarding the collection, use, and disclosure of your information through the use of our Services."
+  },
+  "legal_basis": {
+    "title": "2. Legal Basis for Processing",
+    "text1": "We process your personal data in accordance with:",
+    "items": [
+      "Your consent (which you can withdraw at any time)",
+      "Fulfillment of contractual obligations when you use our Services",
+      "Compliance with legal obligations under applicable law",
+      "Our legitimate interests, such as improving our Services, ensuring security, and detecting fraudulent activities",
+      "Protection of your vital interests or those of another person"
+    ],
+    "text2": "We will not process your personal data for purposes incompatible with those disclosed in this Policy without providing you with notice and, if applicable, obtaining your consent."
   },
   "data_collection": {
-    "title": "2. Data Collection and Usage",
-    "text": "We may collect the following types of information:",
-    "items": [
-      "First and last name",
-      "Email address",
-      "Phone number",
-      "Profile information (if registration is required)",
-      "IP address, browser, and device data",
-      "Cookies and similar technologies"
-    ]
+    "title": "3. Data Collection and Usage",
+    "text": "We collect personal data for specific, explicit, and legitimate purposes, and we do not process it further in a manner incompatible with those purposes. We may collect and process the following categories of personal information:",
+    "categories": {
+      "personal_identifiers": {
+        "title": "3.1 Personal Identifiers",
+        "text": "This includes:",
+        "items": [
+          "First and last name",
+          "Email address",
+          "Phone number",
+          "User ID and account credentials",
+          "Date of birth",
+          "Profile information and preferences",
+          "Social media account information (when you connect your social media accounts)"
+        ]
+      },
+      "technical_data": {
+        "title": "3.2 Technical Data",
+        "text": "When you interact with our Services, we automatically collect:",
+        "items": [
+          "IP address",
+          "Browser type and version",
+          "Operating system",
+          "Device information (including device ID and model)",
+          "User agent strings",
+          "Time zone and language settings",
+          "Network information",
+          "Log data and usage statistics"
+        ]
+      },
+      "activity_data": {
+        "title": "3.3 Activity Data",
+        "text": "Information about your interactions with our Services:",
+        "items": [
+          "Pages or content viewed",
+          "Features used",
+          "Search queries",
+          "Clickstream data",
+          "User-generated content",
+          "Session duration and frequency",
+          "Interactions with other users",
+          "Timestamps of activities"
+        ]
+      },
+      "location_data": {
+        "title": "3.4 Location Data",
+        "text": "Information about your geographic location:",
+        "items": [
+          "Precise location (with your consent, where required)",
+          "Approximate location derived from IP address",
+          "City and country information"
+        ]
+      },
+      "financial_data": {
+        "title": "3.5 Financial Information",
+        "text": "If applicable, we may process:",
+        "items": [
+          "Payment method details",
+          "Billing address",
+          "Transaction history",
+          "Subscription information"
+        ],
+        "note": "Note: Full payment card details are processed by our payment processors, not by Netowork directly."
+      }
+    },
+    "collection_methods": {
+      "title": "3.6 Methods of Collection",
+      "text": "We collect information through various methods:",
+      "items": [
+        "Direct provision by you when you register, create a profile, or use our Services",
+        "Automated technologies such as cookies, web beacons, and similar technologies",
+        "Third-party sources, including social media platforms (when you link accounts), business partners, and publicly available sources",
+        "Analytics providers and advertising networks"
+      ]
+    },
+    "purposes": {
+      "title": "3.7 Purposes of Processing",
+      "text": "We use your personal data for the following purposes:",
+      "items": [
+        "Providing, maintaining, and improving our Services",
+        "Creating and managing your account",
+        "Processing transactions and administering subscriptions",
+        "Authenticating users and ensuring security",
+        "Personalizing your experience and content",
+        "Communicating with you about our Services, updates, and promotional offers",
+        "Analyzing usage patterns to improve functionality",
+        "Detecting and preventing fraudulent activities, security breaches, and other potentially prohibited or illegal activities",
+        "Enforcing our Terms of Service and other legal rights",
+        "Complying with legal obligations"
+      ]
+    }
   },
   "data_sharing": {
-    "title": "3. Data Sharing with Third Parties",
-    "text": "We do not sell or share personal data with third parties, except in the following cases:",
+    "title": "4. Data Sharing with Third Parties",
+    "text": "We value your privacy and do not sell your personal information. However, we may share your information with the following categories of recipients under specific circumstances:",
+    "categories": {
+      "service_providers": {
+        "title": "4.1 Service Providers",
+        "text": "Third-party vendors, consultants, and service providers who perform services on our behalf, including:",
+        "items": [
+          "Cloud service providers for infrastructure and storage",
+          "Payment processors for transaction handling",
+          "Customer support services",
+          "Email delivery services",
+          "Analytics providers",
+          "Security and fraud prevention services"
+        ],
+        "note": "These service providers are contractually bound to use personal information only as necessary to provide services to us and in accordance with our instructions."
+      },
+      "business_transfers": {
+        "title": "4.2 Business Transfers",
+        "text": "In connection with any merger, sale of company assets, financing, or acquisition of all or a portion of our business by another company, user information may be shared or transferred. We will notify you via email and/or prominent notice on our Services of any change in ownership or uses of your personal information."
+      },
+      "legal_requirements": {
+        "title": "4.3 Legal Requirements",
+        "text": "We may disclose your information if required to do so by law or in response to valid requests by public authorities (e.g., a court or government agency). We may also disclose your information to:",
+        "items": [
+          "Enforce our Terms of Service and other agreements",
+          "Protect and defend our rights or property",
+          "Prevent or investigate possible wrongdoing in connection with the Services",
+          "Protect the personal safety of users of the Services or the public",
+          "Protect against legal liability"
+        ]
+      },
+      "with_consent": {
+        "title": "4.4 With Your Consent",
+        "text": "We may share your personal information with third parties when you have given us your consent to do so."
+      },
+      "aggregated_data": {
+        "title": "4.5 Aggregated or De-identified Data",
+        "text": "We may share aggregated or de-identified information, which cannot reasonably be used to identify you, for various purposes including improving our Services and developing new features."
+      }
+    }
+  },
+  "international_transfers": {
+    "title": "5. International Data Transfers",
+    "text1": "We operate globally and may transfer your personal information to countries other than your country of residence, including Cyprus, where our main servers are located. These countries may have different data protection laws than your country.",
+    "text2": "When we transfer your personal information internationally, we implement appropriate safeguards in accordance with applicable law to ensure your data remains protected. These safeguards may include:",
     "items": [
-      "When required by law or government authorities",
-      "For analytics services (Google Analytics, Microsoft Clarity)",
-      "To ensure Netowork operates via partner services"
-    ]
+      "Standard Contractual Clauses approved by the European Commission",
+      "Binding Corporate Rules for transfers within our corporate group",
+      "Derogations for specific situations, such as your explicit consent",
+      "Adequacy decisions recognizing certain countries as providing adequate protection"
+    ],
+    "text3": "By using our Services, you acknowledge that your personal information may be transferred to and processed in countries outside your country of residence."
   },
   "data_protection": {
-    "title": "4. Data Protection",
-    "text": "We take measures to protect your data from leaks, unauthorized access, and alterations. However, 100% security on the internet cannot be guaranteed."
+    "title": "6. Data Protection",
+    "text1": "We implement appropriate technical, organizational, and physical safeguards designed to protect your personal information from accidental loss and unauthorized access, use, alteration, or disclosure. These measures include:",
+    "items": [
+      "Encryption of sensitive personal information both in transit and at rest",
+      "Regular security assessments and penetration testing of our systems",
+      "Implementation of access control mechanisms to limit access to personal information",
+      "Monitoring systems for potential security breaches",
+      "Regular backups to prevent data loss",
+      "Employee training on privacy and security practices",
+      "Physical security measures at our facilities"
+    ],
+    "text2": "While we strive to protect your personal information, no method of electronic transmission or storage is 100% secure. Therefore, we cannot guarantee absolute security. If you have reason to believe that your interaction with us is no longer secure, please immediately notify us by contacting privacy@netowork.com."
+  },
+  "data_retention": {
+    "title": "7. Data Retention",
+    "text1": "We retain your personal information for as long as necessary to fulfill the purposes for which we collected it, including to satisfy legal, accounting, or reporting requirements.",
+    "text2": "To determine the appropriate retention period, we consider:",
+    "items": [
+      "The amount, nature, and sensitivity of the personal information",
+      "The potential risk of harm from unauthorized use or disclosure",
+      "The purposes for which we process the data and whether we can achieve those purposes through other means",
+      "Applicable legal, regulatory, or contractual requirements"
+    ],
+    "text3": "When we no longer need your personal information, we will securely delete or anonymize it. In some circumstances, we may pseudonymize your personal information (so it can no longer be associated with you) for research or statistical purposes, in which case we may use this information indefinitely without further notice to you."
   },
   "cookies": {
-    "title": "5. Cookies",
-    "text": "Our service uses cookies to enhance user experience. You can disable cookies in your browser settings."
+    "title": "8. Cookies and Similar Technologies",
+    "text1": "Our Services use cookies, web beacons, pixels, and similar tracking technologies to enhance your experience, analyze usage, and deliver personalized content. These technologies collect information about your device, browsing actions, and patterns.",
+    "categories": {
+      "essential": {
+        "title": "8.1 Essential Cookies",
+        "text": "Necessary for the operation of our Services, such as session management, authentication, and security. These cookies cannot be disabled."
+      },
+      "functional": {
+        "title": "8.2 Functional Cookies",
+        "text": "Enable enhanced functionality and personalization, such as language preferences and remembering your settings."
+      },
+      "analytics": {
+        "title": "8.3 Analytics and Performance Cookies",
+        "text": "Collect information about how you use our Services to help us improve them, such as which pages you visit most frequently."
+      },
+      "advertising": {
+        "title": "8.4 Advertising and Targeting Cookies",
+        "text": "Track your browsing habits to deliver advertising relevant to your interests."
+      }
+    },
+    "text2": "You can manage your cookie preferences through your browser settings. However, disabling certain cookies may limit your ability to use some features of our Services.",
+    "text3": "For more detailed information about the cookies we use and how to manage them, please refer to our Cookie Policy."
   },
   "rights": {
-    "title": "6. Your Rights",
-    "text1": "You have the right to request information about stored data, correct or delete it, and withdraw consent for data processing.",
-    "text2": "To exercise your rights, contact us at "
+    "title": "9. Your Rights",
+    "text1": "Depending on your jurisdiction, you may have certain rights regarding your personal information, which may include:",
+    "items": [
+      "Right to Access: Request access to the personal information we hold about you.",
+      "Right to Rectification: Request correction of inaccurate or incomplete personal information.",
+      "Right to Erasure: Request deletion of your personal information under certain circumstances.",
+      "Right to Restrict Processing: Request limitation of the processing of your personal information.",
+      "Right to Data Portability: Receive your personal information in a structured, commonly used, and machine-readable format.",
+      "Right to Object: Object to processing of your personal information for certain purposes.",
+      "Right to Withdraw Consent: Withdraw consent at any time where we rely on consent to process your personal information.",
+      "Right to File a Complaint: File a complaint with a supervisory authority."
+    ],
+    "text2": "To exercise your rights, please contact us using the information provided in the 'Contact Us' section. We will respond to your request within the timeframe required by applicable law.",
+    "text3": "We may need to verify your identity before fulfilling your request. In some cases, we may be unable to fulfill your request, such as when we have a legitimate business or legal reason to retain your information. If we deny your request, we will explain why."
+  },
+  "children": {
+    "title": "10. Children's Privacy",
+    "text1": "Our Services are not directed to individuals under the age of 16. We do not knowingly collect personal information from children. If you are a parent or guardian and believe that your child has provided us with personal information, please contact us so that we can delete such information.",
+    "text2": "If we learn that we have collected personal information from a child under the age of 16 without verifiable parental consent, we will take steps to delete that information as quickly as possible."
   },
   "changes": {
-    "title": "7. Changes to the Policy",
-    "text": "We may update this Policy, and the current version will always be available on Netowork.com."
+    "title": "11. Changes to the Policy",
+    "text1": "We may update this Privacy Policy from time to time in response to changing legal, technical, or business developments. When we update our Privacy Policy, we will take appropriate measures to inform you, consistent with the significance of the changes we make.",
+    "text2": "If we make material changes to this Privacy Policy, we will notify you by email or through a notice on our website before the changes become effective. We encourage you to periodically review this Privacy Policy for the latest information on our privacy practices.",
+    "text3": "Your continued use of our Services after any modifications to the Privacy Policy constitutes your acknowledgment of the modifications and your consent to abide and be bound by the updated Privacy Policy."
+  },
+  "dispute_resolution": {
+    "title": "12. Dispute Resolution",
+    "text1": "If you have any concerns or complaints about our privacy practices, please contact us first. We will try to resolve your concern or complaint.",
+    "text2": "If you are located in the European Economic Area, you have the right to lodge a complaint with your local data protection authority if you are dissatisfied with our response."
   },
   "contacts": {
-    "title": "8. Contacts",
-    "text": "For privacy-related inquiries, you can contact us:",
-    "email": "Email: netowork@gmail.com",
-    "website": "Website: Netowork.com"
+    "title": "13. Contact Us",
+    "text1": "If you have any questions, concerns, or requests regarding this Privacy Policy or our privacy practices, please contact our Data Protection Officer:",
+    "email": "Email: privacy@netowork.com",
+    "phone": "Phone: +357 22 123456",
+    "address": "Postal Address: Netowork LLC, 15 Limassol Avenue, Nicosia, 2112, Cyprus",
+    "form": "Online Form: Available on our Contact Us page"
+  },
+  "california_residents": {
+    "title": "14. Additional Information for California Residents",
+    "text1": "If you are a California resident, you have specific rights under the California Consumer Privacy Act (CCPA) and California Privacy Rights Act (CPRA), including:",
+    "items": [
+      "Right to Know: Request disclosure of the personal information we collect, use, disclose, and sell about you.",
+      "Right to Delete: Request deletion of your personal information, subject to certain exceptions.",
+      "Right to Correct: Request correction of inaccurate personal information.",
+      "Right to Opt-Out: Opt-out of the sale or sharing of your personal information for cross-context behavioral advertising.",
+      "Right to Limit Use: Limit the use and disclosure of sensitive personal information."
+    ],
+    "text2": "We do not sell your personal information as defined under the CCPA/CPRA. We have not sold your personal information in the preceding 12 months.",
+    "text3": "To exercise your rights, please contact us using the information provided in the 'Contact Us' section or visit our 'Do Not Sell My Personal Information' page. We will verify your request using information you provide."
+  },
+  "eea_residents": {
+    "title": "15. Additional Information for EEA, UK, and Swiss Residents",
+    "text1": "If you are located in the European Economic Area (EEA), United Kingdom (UK), or Switzerland, you have specific rights under the General Data Protection Regulation (GDPR) or equivalent laws.",
+    "text2": "Our legal basis for processing your personal information depends on the specific information and the context in which we collect it. We generally process your personal information only where:",
+    "items": [
+      "We need to perform a contract with you",
+      "You have given us consent to do so",
+      "The processing is in our legitimate interests and not overridden by your rights",
+      "We need to comply with legal obligations"
+    ],
+    "text3": "If you have questions about the legal basis for processing your personal information, please contact us using the information provided in the 'Contact Us' section."
   }
 }
 

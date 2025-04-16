@@ -31,6 +31,7 @@ export const PopularPostsRedesigned = memo((props: PopularPostsRedesignedProps) 
         isLoading={isFetching}
         display={ArticleListDisplay.GRID}
         articles={articles}
+        invertOnHover
       />
     </Card>
   );

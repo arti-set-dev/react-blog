@@ -1,5 +1,7 @@
 .AppLink {
+  font-size: var(--font-size-xs);
   line-height: 100%;
+  transition: color var(--ui-transition);
 
   &.hovered {
     @media (any-hover: hover) {

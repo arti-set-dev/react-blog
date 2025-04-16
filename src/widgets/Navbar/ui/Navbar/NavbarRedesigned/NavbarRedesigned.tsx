@@ -13,8 +13,8 @@ import { AvatarDropdown } from '@/features/avatarDropdown';
 import { NotificationButton } from '@/features/notificationButton';
 import { UiDesignSwitcher } from '@/features/uiDesignSwitcher';
 import { getHstack } from '@/shared/lib/stack/getHstack/getHstack';
-
 import { Button } from '@/shared/ui/redesigned/Button';
+import CreateIcon from '@/shared/assets/icons/create-icon.svg';
 
 interface NavbarRedesignedProps {
     className?: string;
@@ -36,7 +36,8 @@ export const NavbarAuthDataRedesigned = () => {
         </AppLink>
 
         <HStack gap="16" align="center">
-          <AppLink isHovered to={getRouteArticleCreate()}>
+          <AppLink isHovered to={getRouteArticleCreate()} className={getHstack({ align: 'end', gap: 8 })}>
+            <Icon color="inverted" width={18} height={18} Svg={CreateIcon} />
             {t('Create new post')}
           </AppLink>
           <UiDesignSwitcher />

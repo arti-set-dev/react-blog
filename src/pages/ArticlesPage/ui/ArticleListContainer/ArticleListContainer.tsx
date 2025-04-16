@@ -26,7 +26,6 @@ export const ArticleListContainer = memo((props: ArticleListContainerProps) => {
   return (
     <ArticleList
       onScrollEnd={onScrollEnd}
-      virtualized
       view={view}
       isLoading={isLoading}
       articles={articles}

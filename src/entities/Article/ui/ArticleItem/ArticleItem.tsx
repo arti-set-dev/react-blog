@@ -10,6 +10,7 @@ import { Article } from '../../model/types/article';
 export interface ArticleItemProps {
   className?: string;
   article: Article;
+  invertOnHover?: boolean;
   view: ArticleView;
   blank?: boolean;
 }

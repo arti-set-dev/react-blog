@@ -74,11 +74,17 @@ export const ArticleDetailsDeprecated = memo((props: ArticleDetailsDeprecatedPro
         <Skeleton height={100} width="100%" />
         <Skeleton height={100} width="100%" />
         <Skeleton height={100} width="100%" />
+        <Skeleton height={100} width="100%" />
+        <Skeleton height={100} width="100%" />
+        <Skeleton height={100} width="100%" />
+        <Skeleton height={100} width="100%" />
+        <Skeleton height={100} width="100%" />
+        <Skeleton height={100} width="100%" />
       </VStack>
     );
   } else if (error) {
     content = (
-      <HStack className={cl.Error}>
+      <HStack className={cl.Error} align="center" justify="center">
         <Text size={TextSize.L} theme={TextTheme.ERROR}>
           {t('There was an error loading the article')}
         </Text>

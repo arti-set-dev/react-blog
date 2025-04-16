@@ -24,11 +24,14 @@ export type ButtonAnimation = 'shake';
 
 export type ButtonPosition = 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right';
 
+export type ButtonAlign = 'left' | 'center' | 'right';
+
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
   variant?: ButtonVariant;
   type?: ButtonType;
   size?: ButtonSize;
+  align?: ButtonAlign;
   disabled?: boolean;
   children?: ReactNode;
   fullWidth?: boolean;
@@ -53,6 +56,7 @@ export const Button = forwardRef((props: ButtonProps, ref: ForwardedRef<HTMLButt
     isActive = false,
     animation = '',
     Svg,
+    align = 'center',
     ...otherProps
   } = props;
 
@@ -68,7 +72,11 @@ export const Button = forwardRef((props: ButtonProps, ref: ForwardedRef<HTMLButt
     <button
       disabled={disabled}
       type={type}
-      className={classNames(cl.Button, mods, [className, cl[variant], cl[size], cl[position], cl[animation]])}
+      className={classNames(
+        cl.Button,
+        mods,
+        [className, cl[variant], cl[size], cl[position], cl[animation], cl[align]],
+      )}
       ref={ref}
       {...otherProps}
     >

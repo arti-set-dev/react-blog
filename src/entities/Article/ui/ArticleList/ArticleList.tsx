@@ -28,6 +28,7 @@ interface ArticleListProps {
   isLoading?: boolean;
   error?: boolean;
   view?: ArticleView;
+  invertOnHover?: boolean;
   display?: ArticleListDisplay;
   blank?: boolean;
   virtualized?: boolean;
@@ -67,6 +68,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
     articles = [],
     error,
     view = ArticleView.GRID,
+    invertOnHover = false,
     isLoading,
     display = ArticleListDisplay.GRID,
     blank = false,
@@ -105,9 +107,10 @@ export const ArticleList = memo((props: ArticleListProps) => {
         article={article}
         view={view}
         blank={blank}
+        invertOnHover={invertOnHover}
       />
     );
-  }, [articles, view, blank]);
+  }, [articles, view, blank, invertOnHover]);
 
   if (!isLoading && !articles.length) {
     return <Text size={TextSize.L}>{t('No articles were found')}</Text>;
@@ -124,7 +127,9 @@ export const ArticleList = memo((props: ArticleListProps) => {
         data={articles}
         totalCount={isLoading ? articles.length + 7 : articles.length}
         endReached={loadMore}
-        increaseViewportBy={0}
+        increaseViewportBy={2000}
+        overscan={2000}
+        initialItemCount={10}
         itemContent={itemContent}
         components={{ ...gridComponents, Footer }}
         className={classNames('', { [cl.virtualized]: virtualized }, [
@@ -152,6 +157,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
           article={article}
           view={view}
           blank={blank}
+          invertOnHover={invertOnHover}
         />
       )) : null}
       {isLoading && (

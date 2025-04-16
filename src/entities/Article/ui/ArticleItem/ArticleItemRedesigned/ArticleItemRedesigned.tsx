@@ -9,10 +9,9 @@ import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
 import { ArticleBlockType } from '../../../model/types/articleType';
 import { ArticleView } from '../../../model/consts/consts';
 import { ArticleTextBlock } from '../../../model/types/article';
-import { ArticleItemProps } from '../ArticleItem';
 import { ArticleTextBlockComponent } from '../../ArticleTextBlockComponent/ArticleTextBlockComponent';
 import ViewsIcon from '@/shared/assets/icons/eye-icon.svg';
-import { getRouteArticleDetails } from '@/shared/const/router';
+import { getRouteArticleDetails, getRouteProfile } from '@/shared/const/router';
 import { AppLink } from '@/shared/ui/redesigned/AppLink';
 import { Button } from '@/shared/ui/redesigned/Button';
 import { Text } from '@/shared/ui/redesigned/Text';
@@ -20,13 +19,17 @@ import { LazyImage } from '@/shared/ui/redesigned/LazyImage';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cl from './ArticleItemRedesigned.module.scss';
 import { useArticle } from '../../../lib/hooks/useArticle';
+import { ArticleItemProps } from '../ArticleItem';
+import { getHstack } from '@/shared/lib/stack/getHstack/getHstack';
+import { UserRole } from '@/entities/User';
 
 export const ArticleItemRedesigned = memo((props: ArticleItemProps) => {
   const {
-    className, article, view, blank,
+    className, article, view, blank, invertOnHover = false,
   } = props;
   const { t } = useTranslation();
   const { onOpenArticle } = useArticle(article.id ?? '');
+  const isAdmin = article.author?.roles?.some((role) => role === UserRole.ADMIN);
 
   const articleTypes = useMemo(
     () => (
@@ -61,17 +64,20 @@ export const ArticleItemRedesigned = memo((props: ArticleItemProps) => {
       >
         <Card max isOverflow offset="24" className={getVstack({ gap: 16 })}>
           <HStack gap="8">
-            <Avatar
-              size={30}
-              src={article.author?.avatar}
-              alt={article.author?.username}
-            />
-            <Text
-              size="m"
-              weight="bold"
-            >
-              {article.author?.username}
-            </Text>
+            <AppLink to={getRouteProfile(article.author?.id ?? '')} className={getHstack({ gap: 8, align: 'center' })}>
+              <Avatar
+                isAdmin={isAdmin}
+                size={30}
+                src={article.author?.avatar}
+                alt={article.author?.username}
+              />
+              <Text
+                size="m"
+                weight="bold"
+              >
+                {article.author?.username}
+              </Text>
+            </AppLink>
             <Text size="s">{article.createdAt}</Text>
           </HStack>
           <AppLink to={getRouteArticleDetails(article.id ?? '')}>
@@ -156,7 +162,14 @@ export const ArticleItemRedesigned = memo((props: ArticleItemProps) => {
           </Card>
         </Card>
       ) : (
-        <Card isOverflow isHovered max offset="0" className={cl.Card}>
+        <Card
+          variant={invertOnHover ? 'active' : 'primary'}
+          isOverflow
+          isHovered
+          max
+          offset="0"
+          className={cl.Card}
+        >
           <Text variant="primary-accent" className={cl.createdAt}>
             {article.createdAt}
           </Text>
@@ -171,7 +184,12 @@ export const ArticleItemRedesigned = memo((props: ArticleItemProps) => {
               alt={article.title}
             />
           </AppLink>
-          <Card tag="div" offset="16" className={getVstack({ gap: 16 })}>
+          <Card
+            tag="div"
+            variant={invertOnHover ? 'active' : 'transparent'}
+            offset="16"
+            className={getVstack({ gap: 16 })}
+          >
             <HStack justify="between" gap="8">
               {articleTypes}
               {views}
