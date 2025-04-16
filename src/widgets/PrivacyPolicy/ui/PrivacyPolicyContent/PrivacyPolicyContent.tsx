@@ -7,7 +7,7 @@ import { getVstack } from '@/shared/lib/stack/getVstack/getVstack';
 import { Button } from '@/shared/ui/redesigned/Button';
 
 interface PrivacyPolicyContentProps {
-  className?: string;
+    className?: string;
 }
 
 export const PrivacyPolicyContent = memo((props: PrivacyPolicyContentProps) => {

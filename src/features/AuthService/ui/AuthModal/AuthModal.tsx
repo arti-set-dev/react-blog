@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import { Modal } from '@/shared/ui/redesigned/Modal';
 import { Loader } from '@/shared/ui/redesigned/Loader';
 import { AuthFormAsync } from '../AuthForm/AuthForm.async';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { Modal as ModalDeprecated } from '@/shared/ui/deprecated/Modal/Modal';
 
 interface LoginModalProps {
   className?: string;
@@ -26,10 +28,22 @@ export const AuthModal = memo((props: LoginModalProps) => {
   };
 
   return (
-    <Modal lazy isOpen={isOpen} onClose={onClose} data-testid={dataTestId}>
-      <Suspense fallback={<Loader />}>
-        <AuthFormAsync onSuccess={handleSuccess} />
-      </Suspense>
-    </Modal>
+    <ToggleFeatures
+      feature="isAppRedesigned"
+      on={(
+        <Modal lazy isOpen={isOpen} onClose={onClose} data-testid={dataTestId}>
+          <Suspense fallback={<Loader />}>
+            <AuthFormAsync onSuccess={handleSuccess} />
+          </Suspense>
+        </Modal>
+      )}
+      off={(
+        <ModalDeprecated lazy isOpen={isOpen} onClose={onClose} data-testid={dataTestId}>
+          <Suspense fallback={<Loader />}>
+            <AuthFormAsync onSuccess={handleSuccess} />
+          </Suspense>
+        </ModalDeprecated>
+      )}
+    />
   );
 });
