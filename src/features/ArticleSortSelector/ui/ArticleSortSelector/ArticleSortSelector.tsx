@@ -86,7 +86,7 @@ export const ArticleSortSelector = memo((props: ArticleSortSelectorProps) => {
             currValue={order}
             onChange={onChangeOrder}
             options={orderOptions}
-            label={t('by')}
+            label={t('Sort by')}
           />
         </div>
       )}
