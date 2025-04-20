@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next';
+import { BrowserView, MobileView } from 'react-device-detect';
 import { ArticleTextBlock } from '../../../../model/types/article';
 import { validateBlock } from '../../../../lib/validation/validateArticleBlocks';
 import { Card } from '@/shared/ui/redesigned/Card';
@@ -44,75 +45,154 @@ export const EditBlockText = ({
     <ToggleFeatures
       feature="isAppRedesigned"
       on={(
-        <Card
-          position="sticky"
-          positionOffset={100}
-          tag="div"
-          max
-          variant="outline-inverted-bg"
-          offset="16"
-          className={getVstack({ gap: 16 })}
-        >
-          <Input
-            value={block.title}
-            onChange={handleTitleChange}
-            variant="outlined"
-            placeholder={t('Enter the heading of the block')}
-            data-testid="BlockForm.Title"
-          />
-          <Input
-            textarea
-            value={block.paragraphs.join('\n')}
-            onChange={handleParagraphsChange}
-            placeholder={t('Enter the heading text')}
-            data-testid="BlockForm.Text"
-          />
-          <HStack gap="8">
-            <Button variant="outline-red" onClick={onCancel}>{t('Cancel')}</Button>
-            <Button variant="outline" onClick={onSave} disabled={!isValid}>{t('Save')}</Button>
-          </HStack>
-        </Card>
+        <>
+          <BrowserView renderWithFragment>
+            <Card
+              position="sticky"
+              positionOffset={100}
+              tag="div"
+              max
+              variant="outline-inverted-bg"
+              offset="16"
+              className={getVstack({ gap: 16 })}
+            >
+              <Input
+                value={block.title}
+                onChange={handleTitleChange}
+                variant="outlined"
+                placeholder={t('Enter the heading of the block')}
+                data-testid="BlockForm.Title"
+              />
+              <Input
+                textarea
+                value={block.paragraphs.join('\n')}
+                onChange={handleParagraphsChange}
+                placeholder={t('Enter the heading text')}
+                data-testid="BlockForm.Text"
+              />
+              <HStack gap="8">
+                <Button variant="outline-red" onClick={onCancel}>{t('Cancel')}</Button>
+                <Button variant="outline" onClick={onSave} disabled={!isValid}>{t('Save')}</Button>
+              </HStack>
+            </Card>
+          </BrowserView>
+          <MobileView renderWithFragment>
+            <Card
+              position="sticky"
+              positionOffset={200}
+              tag="div"
+              max
+              variant="outline-inverted-bg"
+              offset="16"
+              className={getVstack({ gap: 16 })}
+            >
+              <Input
+                value={block.title}
+                onChange={handleTitleChange}
+                variant="outlined"
+                placeholder={t('Enter the heading of the block')}
+                data-testid="BlockForm.Title"
+              />
+              <Input
+                textarea
+                value={block.paragraphs.join('\n')}
+                onChange={handleParagraphsChange}
+                placeholder={t('Enter the heading text')}
+                data-testid="BlockForm.Text"
+              />
+              <HStack gap="8">
+                <Button variant="outline-red" onClick={onCancel}>{t('Cancel')}</Button>
+                <Button variant="outline" onClick={onSave} disabled={!isValid}>{t('Save')}</Button>
+              </HStack>
+            </Card>
+          </MobileView>
+        </>
       )}
       off={(
-        <Card
-          border="0"
-          position="sticky"
-          positionOffset={75}
-          tag="div"
-          max
-          variant="outline-inverted-bg"
-          offset="16"
-          className={getVstack({ gap: 16 })}
-        >
-          <InputDeprecated
-            value={block.title}
-            onChange={handleTitleChange}
-            placeholder={t('Enter the heading of the block')}
-            data-testid="BlockForm.Title"
-          />
-          <InputDeprecated
-            textarea
-            value={block.paragraphs.join('\n')}
-            onChange={handleParagraphsChange}
-            placeholder={t('Enter the heading text')}
-            data-testid="BlockForm.Text"
-          />
-          <HStack gap="8">
-            <ButtonDeprecated
-              theme={ButtonTheme.OUTLINE_RED}
-              onClick={onCancel}
+        <>
+          <BrowserView renderWithFragment>
+            <Card
+              border="0"
+              position="sticky"
+              positionOffset={75}
+              tag="div"
+              max
+              variant="outline-inverted-bg"
+              offset="16"
+              className={getVstack({ gap: 16 })}
             >
-              {t('Cancel')}
-            </ButtonDeprecated>
-            <ButtonDeprecated
-              theme={ButtonTheme.OUTLINE}
-              onClick={onSave}
-              disabled={!isValid}
+              <InputDeprecated
+                value={block.title}
+                onChange={handleTitleChange}
+                placeholder={t('Enter the heading of the block')}
+                data-testid="BlockForm.Title"
+              />
+              <InputDeprecated
+                textarea
+                value={block.paragraphs.join('\n')}
+                onChange={handleParagraphsChange}
+                placeholder={t('Enter the heading text')}
+                data-testid="BlockForm.Text"
+              />
+              <HStack gap="8">
+                <ButtonDeprecated
+                  theme={ButtonTheme.OUTLINE_RED}
+                  onClick={onCancel}
+                >
+                  {t('Cancel')}
+                </ButtonDeprecated>
+                <ButtonDeprecated
+                  theme={ButtonTheme.OUTLINE}
+                  onClick={onSave}
+                  disabled={!isValid}
+                >
+                  {t('Save')}
+                </ButtonDeprecated>
+              </HStack>
+            </Card>
+          </BrowserView>
+          <MobileView renderWithFragment>
+            <Card
+              border="0"
+              position="sticky"
+              positionOffset={150}
+              tag="div"
+              max
+              variant="outline-inverted-bg"
+              offset="16"
+              className={getVstack({ gap: 16 })}
             >
-              {t('Save')}
-            </ButtonDeprecated>
-          </HStack>
-        </Card>
+              <InputDeprecated
+                value={block.title}
+                onChange={handleTitleChange}
+                placeholder={t('Enter the heading of the block')}
+                data-testid="BlockForm.Title"
+              />
+              <InputDeprecated
+                textarea
+                value={block.paragraphs.join('\n')}
+                onChange={handleParagraphsChange}
+                placeholder={t('Enter the heading text')}
+                data-testid="BlockForm.Text"
+              />
+              <HStack gap="8">
+                <ButtonDeprecated
+                  theme={ButtonTheme.OUTLINE_RED}
+                  onClick={onCancel}
+                >
+                  {t('Cancel')}
+                </ButtonDeprecated>
+                <ButtonDeprecated
+                  theme={ButtonTheme.OUTLINE}
+                  onClick={onSave}
+                  disabled={!isValid}
+                >
+                  {t('Save')}
+                </ButtonDeprecated>
+              </HStack>
+            </Card>
+          </MobileView>
+        </>
       )}
     />
   );

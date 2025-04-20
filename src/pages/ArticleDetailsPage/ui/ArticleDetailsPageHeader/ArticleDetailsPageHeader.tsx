@@ -5,8 +5,9 @@ import { useSelector } from 'react-redux';
 import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
 import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button';
 import { getRouteArticleEdit, getRouteArticles } from '@/shared/const/router';
-import { articleListActions, getArticleDetailsData, getCanEditArticle } from '@/entities/Article';
-import { useDeleteArticle } from '@/features/articleDelete';
+import {
+  articleListActions, getArticleDetailsData, getCanEditArticle, useDeleteArticle,
+} from '@/entities/Article';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Modal } from '@/shared/ui/redesigned/Modal';
 import { Text } from '@/shared/ui/redesigned/Text';
@@ -19,7 +20,7 @@ interface ArticleDetailsPageHeaderProps {
 export const ArticleDetailsPageHeader = memo(
   (props: ArticleDetailsPageHeaderProps) => {
     const { className } = props;
-    const { t } = useTranslation();
+    const { t } = useTranslation('article');
     const dispatch = useAppDispatch();
     const canEdit = useSelector(getCanEditArticle);
     const article = useSelector(getArticleDetailsData);

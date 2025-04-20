@@ -1,7 +1,6 @@
 import { memo, useMemo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { VStack } from '@/shared/ui/redesigned/Stack';
 import { Button, ButtonSize, ButtonTheme } from '@/shared/ui/deprecated/Button';
 import { Icon } from '@/shared/ui/deprecated/Icon';
 import { LangSwitcher } from '@/features/LangSwitcher';
@@ -13,6 +12,7 @@ import { SidebarItem } from '../SidebarItem/SidebarItem';
 import { SidebarRedesigned } from '../SidebarRedesigned/SidebarRedesigned';
 import cl from './Sidebar.module.scss';
 import { ToggleFeatures } from '@/shared/lib/features';
+import { Flex } from '@/shared/ui/redesigned/Stack/Flex/Flex';
 
 interface SidebarProps {
   className?: string;
@@ -54,10 +54,21 @@ export const Sidebar = memo((props: SidebarProps) => {
       >
         <Icon Svg={ArrIcon} width="18px" height="18px" />
       </Button>
-      <nav>
-        <VStack tag="ul" gap="16">
+      <nav className={cl.SidebarList}>
+        <Flex
+          tag="ul"
+          gap="16"
+          direction="column"
+          align="start"
+          responsive={{
+            lg: {
+              direction: 'row',
+              align: 'center',
+            },
+          }}
+        >
           {itemsList}
-        </VStack>
+        </Flex>
       </nav>
       <div className={cl.Switchers}>
         <ThemeSwitcher />

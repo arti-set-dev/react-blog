@@ -1,6 +1,7 @@
 import { memo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
+import { BrowserView, MobileView } from 'react-device-detect';
 import { AppLink } from '@/shared/ui/redesigned/AppLink';
 import { Avatar } from '@/shared/ui/redesigned/Avatar/Avatar';
 import { ToggleFeatures } from '@/shared/lib/features';
@@ -21,6 +22,11 @@ import cl from './CommentCard.module.scss';
 import { getUserAuthData } from '@/entities/User';
 import { Button } from '@/shared/ui/redesigned/Button';
 import { Input } from '@/shared/ui/redesigned/Input';
+import { Icon } from '@/shared/ui/redesigned/Icon';
+import SaveIcon from '@/shared/assets/icons/check-icon.svg';
+import CloseIcon from '@/shared/assets/icons/close-icon.svg';
+import EditIcon from '@/shared/assets/icons/create-icon.svg';
+import DeleteIcon from '@/shared/assets/icons/delete-icon.svg';
 
 interface CommentCardProps {
   className?: string;
@@ -34,7 +40,7 @@ export const CommentCard = memo((props: CommentCardProps) => {
   const {
     className, comment, isLoading, onDeleteComment, onEditComment,
   } = props;
-  const { t } = useTranslation('article-details');
+  const { t } = useTranslation('article');
   const authData = useSelector(getUserAuthData);
   const canEdit = authData?.id === comment?.user?.id;
   const [isEditing, setIsEditing] = useState(false);
@@ -60,13 +66,37 @@ export const CommentCard = memo((props: CommentCardProps) => {
   const editControls = (
     isEditing ? (
       <HStack gap="8">
-        <Button variant="outline" onClick={onSaveHandler} disabled={onDisabledHandler()}>{t('Save')}</Button>
-        <Button variant="outline" onClick={() => setIsEditing(false)}>{t('Cancel')}</Button>
+        <BrowserView renderWithFragment>
+          <Button variant="outline" onClick={onSaveHandler} disabled={onDisabledHandler()}>{t('Save')}</Button>
+          <Button variant="outline" onClick={() => setIsEditing(false)}>{t('Cancel')}</Button>
+        </BrowserView>
+        <MobileView renderWithFragment>
+          <Button variant="icon" onClick={onSaveHandler} disabled={onDisabledHandler()}>
+            <Icon color="success" Svg={SaveIcon} />
+          </Button>
+          <Button variant="icon" onClick={() => setIsEditing(false)}>
+            <Icon color="error" Svg={CloseIcon} />
+          </Button>
+        </MobileView>
       </HStack>
     ) : (
       <HStack gap="8">
-        <Button variant="outline" onClick={() => setIsEditing(true)}>{t('Edit')}</Button>
-        <Button variant="outline-red" onClick={() => onDeleteComment?.(comment.id)}>{t('Delete')}</Button>
+        <BrowserView renderWithFragment>
+          <Button variant="outline" onClick={() => setIsEditing(true)}>
+            {t('Edit')}
+          </Button>
+          <Button variant="outline-red" onClick={() => onDeleteComment?.(comment.id)}>
+            {t('Delete')}
+          </Button>
+        </BrowserView>
+        <MobileView renderWithFragment>
+          <Button variant="icon" onClick={() => setIsEditing(true)}>
+            <Icon Svg={EditIcon} />
+          </Button>
+          <Button variant="icon" onClick={() => onDeleteComment?.(comment.id)}>
+            <Icon color="error" Svg={DeleteIcon} />
+          </Button>
+        </MobileView>
       </HStack>
     )
   );

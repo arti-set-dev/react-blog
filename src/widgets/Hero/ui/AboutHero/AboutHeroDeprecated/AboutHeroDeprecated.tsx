@@ -18,7 +18,7 @@ export const AboutHeroDeprecated = memo((props: AboutHeroDeprecatedProps) => {
   return (
     <Card
       variant="transparent"
-      offset="24"
+      offset="0"
       tag="section"
       className={classNames(getHstack({ gap: 16, justify: 'center' }))}
     >

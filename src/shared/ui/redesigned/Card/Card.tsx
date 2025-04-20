@@ -1,4 +1,4 @@
-import { memo, ReactNode } from 'react';
+import { memo, ReactNode, CSSProperties } from 'react';
 import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 import cl from './Card.module.scss';
 
@@ -17,6 +17,7 @@ interface CardProps {
   isHovered?: boolean;
   isOffset?: boolean;
   flexBasis?: string;
+  style?: CSSProperties;
   offset?: CardOffset;
   variant?: CardVariant;
   tag?: TagType;
@@ -69,6 +70,7 @@ export const Card = memo((props: CardProps) => {
     positionCorner = '',
     positionOffset,
     animation = '',
+    style,
     maxWidth,
     isOverflow = false,
     isHidden,
@@ -96,7 +98,7 @@ export const Card = memo((props: CardProps) => {
         [className, cl[variant], cl[offsetClass], cl[borderClass], cl[position], cl[positionCorner], cl[animation]],
       )}
       style={{
-        height, width, flexBasis, bottom: positionOffset, maxWidth,
+        height, width, flexBasis, bottom: positionOffset, maxWidth, ...style,
       }}
     >
       {children}

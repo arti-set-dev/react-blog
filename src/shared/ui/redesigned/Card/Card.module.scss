@@ -113,6 +113,10 @@
 
   &.offset_24 {
     padding: 24px;
+
+    @media (max-width: 576px) {
+      padding: 16px;
+    }
   }
 
   &.radius_0 {

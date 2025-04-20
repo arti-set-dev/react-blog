@@ -38,6 +38,7 @@ import { fetchArticleById } from './model/services/fetchArticleById/fetchArticle
 import { articleDetailsActions, articleDetailsReducer } from './model/slice/articleDetailsSlice/articleDetailsSlice';
 import { updateArticleData } from './model/services/updateArticleData/updateArticleData';
 import { useUpdateArticleMutation } from './model/api/updateArticleData';
+import { useDeleteArticle } from './model/api/deleteArticleApi/articleDeleteApi';
 
 export {
   ArticleListDisplay,
@@ -86,4 +87,5 @@ export {
   updateArticleData,
   useUpdateArticleMutation,
   getArticleDetailsForm,
+  useDeleteArticle,
 };

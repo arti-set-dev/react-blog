@@ -10,6 +10,16 @@
   background-color: var(--bg-light-color);
   gap: var(--gap);
 
+  @media (max-width: 1890px) {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid var(--bg-color);
+    padding: var(--inner-offset);
+    max-width: 100%;
+    box-shadow: var(--box-shadow);
+  }
+
   svg {
     flex-shrink: 0;
   }
@@ -36,6 +46,10 @@
   margin-left: var(--gap);
   width: max-content;
   gap: var(--gap-mini);
+
+  @media (max-width: 1890px) {
+    margin: 0;
+  }
 }
 
 .CollapseBtn {
@@ -46,8 +60,16 @@
   width: 15px;
   height: 15px;
   transform: translateY(-50%);
+
+  @media (max-width: 1890px) {
+    display: none;
+  }
 }
 
 .SidebarListItem {
   width: 100%;
+
+  @media (max-width: 1890px) {
+    width: auto;
+  }
 }

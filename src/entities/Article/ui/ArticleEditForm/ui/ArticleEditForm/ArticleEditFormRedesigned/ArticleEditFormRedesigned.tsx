@@ -2,6 +2,7 @@ import {
   memo, useMemo, useState, useCallback,
 } from 'react';
 import { useTranslation } from 'react-i18next';
+import { BrowserView, MobileView } from 'react-device-detect';
 import { getVstack } from '@/shared/lib/stack/getVstack/getVstack';
 import { Text } from '@/shared/ui/redesigned/Text';
 import { Input } from '@/shared/ui/redesigned/Input';
@@ -20,6 +21,7 @@ import ImageIcon from '@/shared/assets/icons/image-icon.svg';
 import CodeIcon from '@/shared/assets/icons/code-icon.svg';
 import { BlockPreview } from '../../BlockPreview/BlockPreview';
 import { UploadFile } from '@/shared/ui/redesigned/UploadFile';
+import { Flex } from '@/shared/ui/redesigned/Stack/Flex/Flex';
 
 export const ArticleEditFormRedesigned = memo((props: ArticleEditFormProps) => {
   const {
@@ -63,23 +65,29 @@ export const ArticleEditFormRedesigned = memo((props: ArticleEditFormProps) => {
 
   const typeTabs = useMemo<TabItem[]>(() => {
     const tabTextContent = (
-      <VStack gap="8" align="center">
+      <VStack tag="span" gap="8" align="center">
         <Icon Svg={TextIcon} />
-        {t('Create new text block')}
+        <BrowserView renderWithFragment>
+          {t('Create new text block')}
+        </BrowserView>
       </VStack>
     );
 
     const tabImageContent = (
-      <VStack gap="8" align="center">
+      <VStack tag="span" gap="8" align="center">
         <Icon Svg={ImageIcon} />
-        {t('Create new image block')}
+        <BrowserView renderWithFragment>
+          {t('Create new image block')}
+        </BrowserView>
       </VStack>
     );
 
     const tabCodeContent = (
-      <VStack gap="8" align="center">
+      <VStack tag="span" gap="8" align="center">
         <Icon Svg={CodeIcon} />
-        {t('Create new code block')}
+        <BrowserView renderWithFragment>
+          {t('Create new code block')}
+        </BrowserView>
       </VStack>
     );
 
@@ -138,7 +146,7 @@ export const ArticleEditFormRedesigned = memo((props: ArticleEditFormProps) => {
         placeholder={t('Enter the description of the article')}
         data-testid="ArticleEditForm.Description"
       />
-      <HStack gap="16">
+      <Flex gap="16" flexWrap="wrap" direction="initial">
         {articleTypes.map((type) => {
           const isActive = types?.includes(type.value);
           return (
@@ -151,7 +159,7 @@ export const ArticleEditFormRedesigned = memo((props: ArticleEditFormProps) => {
             </Button>
           );
         })}
-      </HStack>
+      </Flex>
 
       {savedBlocks && savedBlocks.length > 0 && (
         <>
@@ -200,14 +208,26 @@ export const ArticleEditFormRedesigned = memo((props: ArticleEditFormProps) => {
         />
       )}
 
-      <Card max tag="div" position="sticky" positionCorner="bottom">
-        <Tabs
-          fullWidth
-          tabs={typeTabs}
-          value={tabValue ?? ''}
-          onTabClick={handleTabChange}
-        />
-      </Card>
+      <BrowserView renderWithFragment>
+        <Card max tag="div" position="sticky" positionCorner="bottom">
+          <Tabs
+            fullWidth
+            tabs={typeTabs}
+            value={tabValue ?? ''}
+            onTabClick={handleTabChange}
+          />
+        </Card>
+      </BrowserView>
+      <MobileView renderWithFragment>
+        <Card max tag="div" position="sticky" style={{ bottom: 114 }}>
+          <Tabs
+            fullWidth
+            tabs={typeTabs}
+            value={tabValue ?? ''}
+            onTabClick={handleTabChange}
+          />
+        </Card>
+      </MobileView>
     </Card>
   );
 });

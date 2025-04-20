@@ -79,6 +79,7 @@ export const NotificationButton = (props: NotificationButtonProps) => {
         {trigger}
         <Drawer lazy isOpen={isOpen} onClose={onCloseDrower}>
           <NotificationList
+            onCloseDrawer={onCloseDrower}
             uiSwitcher={uiSwitcher}
             notifications={notifications}
             isLoading={isLoading}

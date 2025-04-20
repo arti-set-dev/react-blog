@@ -16,10 +16,22 @@
 
   &.size-l {
     font-size: var(--font-size-l);
+
+    @media (max-width: 1024px) {
+      font-size: var(--font-size-m);
+    }
   }
 
   &.size-xl {
     font-size: var(--font-size-xl);
+  }
+
+  &.size-xxl {
+    font-size: var(--font-size-xxl);
+
+    @media (max-width: 1024px) {
+      font-size: var(--font-size-xl);
+    }
   }
 
   &.primary {

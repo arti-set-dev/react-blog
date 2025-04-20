@@ -54,7 +54,12 @@
 
 .InputWrapper {
   position: relative;
+  overflow: hidden;
   width: 100%;
+
+  &:has(.InputPlaceholder) {
+    padding-top: 5px;
+  }
 
   &.readonly {
     opacity: 0.7;
@@ -83,6 +88,7 @@
   left: 0;
   top: 0;
   display: inline-block;
+  width: max-content;
   font-weight: 400;
   font-size: var(--font-size-m);
   line-height: 100%;
@@ -100,10 +106,10 @@
     margin-left: var(--input-offset);
     padding: 3px;
     background-color: var(--bg-color);
-    transform: translateY(8px);
+    transform: translateY(12px);
 
     &.focused {
-      transform: translateY(-7px);
+      transform: translateY(-4px);
     }
   }
 
@@ -113,7 +119,7 @@
 
   &.focused {
     font-size: var(--font-size-s);
-    transform: translateY(-5px);
+    transform: translateY(0);
   }
 }
 

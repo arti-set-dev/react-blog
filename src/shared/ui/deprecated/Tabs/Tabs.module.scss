@@ -1,4 +1,12 @@
 .Tabs {
   display: flex;
   gap: var(--gap-mini);
+
+  &.wrap {
+    flex-wrap: wrap;
+  }
+
+  &.nowrap {
+    flex-wrap: nowrap;
+  }
 }

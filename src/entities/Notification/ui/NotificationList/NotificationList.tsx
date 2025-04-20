@@ -18,11 +18,12 @@ interface NotificationListProps {
   isLoading?: boolean;
   error?: FetchBaseQueryError | string | SerializedError | undefined;
   uiSwitcher?: ReactElement;
+  onCloseDrawer?: () => void;
 }
 
 export const NotificationList = (props: NotificationListProps) => {
   const {
-    className, id, notifications, isLoading, error, uiSwitcher,
+    className, id, notifications, isLoading, error, uiSwitcher, onCloseDrawer,
   } = props;
   const { t } = useTranslation();
 
@@ -114,7 +115,12 @@ export const NotificationList = (props: NotificationListProps) => {
       gap="16"
     >
       {notifications?.map((notification) => (
-        <NotificationItem uiSwitcher={uiSwitcher} notification={notification} key={notification.id} />
+        <NotificationItem
+          onCloseDrawer={onCloseDrawer}
+          uiSwitcher={uiSwitcher}
+          notification={notification}
+          key={notification.id}
+        />
       ))}
     </VStack>
   );

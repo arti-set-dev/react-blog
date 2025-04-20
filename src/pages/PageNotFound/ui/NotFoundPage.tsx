@@ -3,6 +3,8 @@ import { useTranslation } from 'react-i18next';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Page } from '@/widgets/Page';
 import cl from './NotFoundPage.module.scss';
+import { Text } from '@/shared/ui/redesigned/Text';
+import { getVstack } from '@/shared/lib/stack/getVstack/getVstack';
 
 interface NotFoundPageProps {
   className?: string;
@@ -15,9 +17,15 @@ export const NotFoundPage = (props: NotFoundPageProps) => {
   return (
     <Page
       data-testid="NotFoundPage"
-      className={classNames(cl.NotFoundPage, {}, [className])}
+      className={classNames(cl.NotFoundPage, {}, [className, getVstack({ align: 'center', justify: 'center' })])}
     >
-      <h1>{t('Page not found')}</h1>
+      <Text
+        tag="h1"
+        size="l"
+        weight="bold"
+      >
+        {t('Page not found')}
+      </Text>
     </Page>
   );
 };

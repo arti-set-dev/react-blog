@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { memo, useState } from 'react';
 import { useSelector } from 'react-redux';
+import { BrowserView, MobileView } from 'react-device-detect';
 import { Listbox } from '@/shared/ui/redesigned/Popups';
 import { Text } from '@/shared/ui/redesigned/Text';
 import { getFeatureFlag, ToggleFeatures, updateFeatureFlag } from '@/shared/lib/features';
@@ -114,7 +115,14 @@ export const UiDesignSwitcher = memo((props: UiDesignSwitcherProps) => {
               isLoading ? (
                 <Skeleton border="8" width="100%" height={40} />
               ) : (
-                <Button variant="clear" onClick={onToggleTheme}>{t('Return to old theme')}</Button>
+                <>
+                  <BrowserView renderWithFragment>
+                    <Button variant="clear" onClick={onToggleTheme}>{t('Return to old theme')}</Button>
+                  </BrowserView>
+                  <MobileView renderWithFragment>
+                    <Button variant="text-primary" onClick={onToggleTheme}>{t('Return to old theme')}</Button>
+                  </MobileView>
+                </>
               )
             }
             off={

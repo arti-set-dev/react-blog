@@ -2,6 +2,7 @@ import {
   memo, useMemo, useState, useCallback,
 } from 'react';
 import { useTranslation } from 'react-i18next';
+import { BrowserView, MobileView } from 'react-device-detect';
 import { ArticleEditFormProps } from '../ArticleEditForm';
 import { TabItem } from '@/shared/ui/deprecated/Tabs';
 import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
@@ -20,6 +21,7 @@ import { Card } from '@/shared/ui/redesigned/Card';
 import { Tabs } from '@/shared/ui/deprecated/Tabs/Tabs';
 import { ArticleBlockType, ArticleType } from '../../../../../model/types/articleType';
 import { UploadFile } from '@/shared/ui/redesigned/UploadFile';
+import { Flex } from '@/shared/ui/redesigned/Stack/Flex/Flex';
 
 export const ArticleEditFormDeprecated = memo((props: ArticleEditFormProps) => {
   const {
@@ -65,21 +67,27 @@ export const ArticleEditFormDeprecated = memo((props: ArticleEditFormProps) => {
     const tabTextContent = (
       <VStack gap="8" align="center">
         <Icon Svg={TextIcon} />
-        {t('Create new text block')}
+        <BrowserView renderWithFragment>
+          {t('Create new text block')}
+        </BrowserView>
       </VStack>
     );
 
     const tabImageContent = (
       <VStack gap="8" align="center">
         <Icon Svg={ImageIcon} />
-        {t('Create new image block')}
+        <BrowserView renderWithFragment>
+          {t('Create new image block')}
+        </BrowserView>
       </VStack>
     );
 
     const tabCodeContent = (
       <VStack gap="8" align="center">
         <Icon Svg={CodeIcon} />
-        {t('Create new code block')}
+        <BrowserView renderWithFragment>
+          {t('Create new code block')}
+        </BrowserView>
       </VStack>
     );
 
@@ -132,7 +140,7 @@ export const ArticleEditFormDeprecated = memo((props: ArticleEditFormProps) => {
         onChange={setArticleDescription}
         placeholder={t('Enter the description of the article')}
       />
-      <HStack gap="16">
+      <Flex gap="16" flexWrap="wrap" direction="initial">
         {articleTypes.map((type) => {
           const isActive = types?.includes(type.value);
           return (
@@ -145,7 +153,7 @@ export const ArticleEditFormDeprecated = memo((props: ArticleEditFormProps) => {
             </Button>
           );
         })}
-      </HStack>
+      </Flex>
 
       {savedBlocks && savedBlocks.length > 0 && (
         <>
@@ -194,14 +202,27 @@ export const ArticleEditFormDeprecated = memo((props: ArticleEditFormProps) => {
         />
       )}
 
-      <Card border="0" max tag="div" position="sticky" positionCorner="bottom">
-        <Tabs
-          fullWidth
-          tabs={typeTabs}
-          value={tabValue ?? ''}
-          onTabClick={handleTabChange}
-        />
-      </Card>
+      <BrowserView renderWithFragment>
+        <Card border="0" max tag="div" position="sticky" positionCorner="bottom">
+          <Tabs
+            fullWidth
+            tabs={typeTabs}
+            value={tabValue ?? ''}
+            onTabClick={handleTabChange}
+          />
+        </Card>
+      </BrowserView>
+
+      <MobileView renderWithFragment>
+        <Card border="0" max tag="div" position="sticky" positionOffset={77}>
+          <Tabs
+            fullWidth
+            tabs={typeTabs}
+            value={tabValue ?? ''}
+            onTabClick={handleTabChange}
+          />
+        </Card>
+      </MobileView>
     </Card>
   );
 });

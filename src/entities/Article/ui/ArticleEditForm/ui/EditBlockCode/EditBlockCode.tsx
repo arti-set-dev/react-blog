@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next';
+import { MobileView, BrowserView } from 'react-device-detect';
 import { validateBlock } from '../../../../lib/validation/validateArticleBlocks';
 import { Card } from '@/shared/ui/redesigned/Card';
 import { getVstack } from '@/shared/lib/stack/getVstack/getVstack';
@@ -38,62 +39,128 @@ export const EditBlockCode = ({
     <ToggleFeatures
       feature="isAppRedesigned"
       on={(
-        <Card
-          position="sticky"
-          positionOffset={100}
-          tag="div"
-          max
-          variant="outline-inverted-bg"
-          offset="16"
-          className={getVstack({ gap: 16 })}
-        >
-          <Input
-            textarea
-            value={block.code}
-            onChange={handleCodeChange}
-            placeholder={t('Insert a fragment of the code')}
-            data-testid="BlockForm.Code"
-          />
-          <HStack gap="8">
-            <Button variant="outline-red" onClick={onCancel}>{t('Cancel')}</Button>
-            <Button variant="outline" onClick={onSave} disabled={!isValid}>{t('Save')}</Button>
-          </HStack>
-        </Card>
+        <>
+          <BrowserView renderWithFragment>
+            <Card
+              position="sticky"
+              positionOffset={100}
+              tag="div"
+              max
+              variant="outline-inverted-bg"
+              offset="16"
+              className={getVstack({ gap: 16 })}
+            >
+              <Input
+                textarea
+                value={block.code}
+                onChange={handleCodeChange}
+                placeholder={t('Insert a fragment of the code')}
+                data-testid="BlockForm.Code"
+              />
+              <HStack gap="8">
+                <Button variant="outline-red" onClick={onCancel}>{t('Cancel')}</Button>
+                <Button variant="outline" onClick={onSave} disabled={!isValid}>{t('Save')}</Button>
+              </HStack>
+            </Card>
+          </BrowserView>
+          <MobileView renderWithFragment>
+            <Card
+              position="sticky"
+              positionOffset={200}
+              tag="div"
+              max
+              variant="outline-inverted-bg"
+              offset="16"
+              className={getVstack({ gap: 16 })}
+            >
+              <Input
+                textarea
+                value={block.code}
+                onChange={handleCodeChange}
+                placeholder={t('Insert a fragment of the code')}
+                data-testid="BlockForm.Code"
+              />
+              <HStack gap="8">
+                <Button variant="outline-red" onClick={onCancel}>{t('Cancel')}</Button>
+                <Button variant="outline" onClick={onSave} disabled={!isValid}>{t('Save')}</Button>
+              </HStack>
+            </Card>
+          </MobileView>
+        </>
       )}
       off={(
-        <Card
-          position="sticky"
-          positionOffset={100}
-          tag="div"
-          max
-          border="0"
-          variant="outline-inverted-bg"
-          offset="16"
-          className={getVstack({ gap: 16 })}
-        >
-          <InputDeprecated
-            textarea
-            value={block.code}
-            onChange={handleCodeChange}
-            placeholder={t('Insert a fragment of the code')}
-            data-testid="BlockForm.Code"
-          />
-          <HStack gap="8">
-            <ButtonDeprecated
-              theme={ButtonTheme.OUTLINE_RED}
-              onClick={onCancel}
+        <>
+          <BrowserView renderWithFragment>
+            <Card
+              position="sticky"
+              positionOffset={100}
+              tag="div"
+              max
+              border="0"
+              variant="outline-inverted-bg"
+              offset="16"
+              className={getVstack({ gap: 16 })}
             >
-              {t('Cancel')}
-            </ButtonDeprecated>
-            <ButtonDeprecated
-              theme={ButtonTheme.OUTLINE}
-              onClick={onSave}
-              disabled={!isValid}
+              <InputDeprecated
+                textarea
+                value={block.code}
+                onChange={handleCodeChange}
+                placeholder={t('Insert a fragment of the code')}
+                data-testid="BlockForm.Code"
+              />
+              <HStack gap="8">
+                <ButtonDeprecated
+                  theme={ButtonTheme.OUTLINE_RED}
+                  onClick={onCancel}
+                >
+                  {t('Cancel')}
+                </ButtonDeprecated>
+                <ButtonDeprecated
+                  theme={ButtonTheme.OUTLINE}
+                  onClick={onSave}
+                  disabled={!isValid}
+                >
+                  {t('Save')}
+                </ButtonDeprecated>
+              </HStack>
+            </Card>
+          </BrowserView>
+          <MobileView renderWithFragment>
+            <Card
+              position="sticky"
+              positionOffset={150}
+              tag="div"
+              max
+              border="0"
+              variant="outline-inverted-bg"
+              offset="16"
+              className={getVstack({ gap: 16 })}
             >
-              {t('Save')}
-            </ButtonDeprecated>
-          </HStack>
-        </Card>
+              <InputDeprecated
+                textarea
+                value={block.code}
+                onChange={handleCodeChange}
+                placeholder={t('Insert a fragment of the code')}
+                data-testid="BlockForm.Code"
+              />
+              <HStack gap="8">
+                <ButtonDeprecated
+                  theme={ButtonTheme.OUTLINE_RED}
+                  onClick={onCancel}
+                >
+                  {t('Cancel')}
+                </ButtonDeprecated>
+                <ButtonDeprecated
+                  theme={ButtonTheme.OUTLINE}
+                  onClick={onSave}
+                  disabled={!isValid}
+                >
+                  {t('Save')}
+                </ButtonDeprecated>
+              </HStack>
+            </Card>
+          </MobileView>
+        </>
       )}
     />
   );

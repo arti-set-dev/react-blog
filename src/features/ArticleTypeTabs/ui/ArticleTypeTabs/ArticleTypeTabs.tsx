@@ -2,12 +2,13 @@ import { memo, useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ToggleFeatures } from '@/shared/lib/features';
 import { Tabs } from '@/shared/ui/redesigned/Tabs/Tabs';
-import { TabItem, Tabs as TabsDeprecated } from '@/shared/ui/deprecated/Tabs';
+import { FlexWrap, TabItem, Tabs as TabsDeprecated } from '@/shared/ui/deprecated/Tabs';
 import { ArticleType } from '@/entities/Article';
 import { FlexDirection } from '@/shared/ui/redesigned/Stack/Flex/Flex';
 
 interface ArticleTypeTabsProps {
   className?: string;
+  flexWrap?: FlexWrap;
   value: ArticleType;
   direction?: FlexDirection;
   onChangeType: (type: ArticleType) => void;
@@ -15,7 +16,7 @@ interface ArticleTypeTabsProps {
 
 export const ArticleTypeTabs = memo((props: ArticleTypeTabsProps) => {
   const {
-    className, value, direction = 'column', onChangeType,
+    className, value, direction = 'column', flexWrap = 'wrap', onChangeType,
   } = props;
   const { t } = useTranslation('article');
 
@@ -56,10 +57,10 @@ export const ArticleTypeTabs = memo((props: ArticleTypeTabsProps) => {
     <ToggleFeatures
       feature="isAppRedesigned"
       on={(
-        <Tabs direction={direction} tabs={typeTabs} value={value} onTabClick={onTabClick} />
+        <Tabs direction={direction} flexWrap={flexWrap} tabs={typeTabs} value={value} onTabClick={onTabClick} />
       )}
       off={(
-        <TabsDeprecated tabs={typeTabs} value={value} onTabClick={onTabClick} />
+        <TabsDeprecated flexWrap="wrap" tabs={typeTabs} value={value} onTabClick={onTabClick} />
       )}
     />
   );

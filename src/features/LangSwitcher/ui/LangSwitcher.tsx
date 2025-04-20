@@ -1,5 +1,6 @@
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
+import { BrowserView, MobileView } from 'react-device-detect';
 import { Button as ButtonDeprecated, ButtonTheme } from '@/shared/ui/deprecated/Button';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { ToggleFeatures } from '@/shared/lib/features';
@@ -28,7 +29,12 @@ export const LangSwitcher = memo((props: LangSwitcherProps) => {
           onClick={toggleLanguage}
           className={classNames('', {}, [className])}
         >
-          {short ? t('Lang') : t('Language')}
+          <BrowserView>
+            {short ? t('Lang') : t('Language')}
+          </BrowserView>
+          <MobileView>
+            {t('Lang')}
+          </MobileView>
         </Button>
       )}
       off={(

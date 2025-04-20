@@ -24,5 +24,6 @@
   "Edit": "Редактировать",
   "Delete": "Удалить",
   "You want to delete the article?": "Вы хотите удалить статью?",
-  "An error occurred": "Произошла ошибка"
+  "An error occurred": "Произошла ошибка",
+  "Article not found": "Статья не найдена"
 }

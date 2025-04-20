@@ -1,0 +1,152 @@
+.Flex {
+  display: flex;
+}
+
+// Базовые классы
+.justifyStart { justify-content: start; }
+.justifyCenter { justify-content: center; }
+.justifyEnd { justify-content: end; }
+.justifyBetween { justify-content: space-between; }
+.justifyAround { justify-content: space-around; }
+
+.directionRow { flex-direction: row; }
+.directionColumn { flex-direction: column; }
+
+.alignStart { align-items: start; }
+.alignCenter { align-items: center; }
+.alignEnd { align-items: end; }
+.alignStretch { align-items: stretch; }
+
+.gap0 { gap: 0; }
+.gap4 { gap: 4px; }
+.gap8 { gap: 8px; }
+.gap16 { gap: 16px; }
+.gap24 { gap: 24px; }
+.gap32 { gap: 32px; }
+
+.fullWidth { width: 100%; }
+.fullHeight { height: 100%; }
+
+.overflowInitial { overflow: initial; }
+.overflowHidden { overflow: hidden; }
+.overflowScroll { overflow: scroll; }
+.overflowAuto { overflow: auto; }
+
+.number { list-style-type: number; }
+.marker { list-style-type: disc; }
+
+// Медиа-запросы
+@media (max-width: 1600px) {
+  .xl_direction_row { flex-direction: row; }
+  .xl_direction_column { flex-direction: column; }
+
+  .xl_justify_start { justify-content: start; }
+  .xl_justify_center { justify-content: center; }
+  .xl_justify_end { justify-content: end; }
+  .xl_justify_between { justify-content: space-between; }
+  .xl_justify_around { justify-content: space-around; }
+
+  .xl_align_start { align-items: start; }
+  .xl_align_center { align-items: center; }
+  .xl_align_end { align-items: end; }
+  .xl_align_stretch { align-items: stretch; }
+
+  .xl_gap_0 { gap: 0; }
+  .xl_gap_4 { gap: 4px; }
+  .xl_gap_8 { gap: 8px; }
+  .xl_gap_16 { gap: 16px; }
+  .xl_gap_24 { gap: 24px; }
+  .xl_gap_32 { gap: 32px; }
+}
+
+@media (max-width: 1440px) {
+  .lg_direction_row { flex-direction: row; }
+  .lg_direction_column { flex-direction: column; }
+
+  .lg_justify_start { justify-content: start; }
+  .lg_justify_center { justify-content: center; }
+  .lg_justify_end { justify-content: end; }
+  .lg_justify_between { justify-content: space-between; }
+  .lg_justify_around { justify-content: space-around; }
+
+  .lg_align_start { align-items: start; }
+  .lg_align_center { align-items: center; }
+  .lg_align_end { align-items: end; }
+  .lg_align_stretch { align-items: stretch; }
+
+  .lg_gap_0 { gap: 0; }
+  .lg_gap_4 { gap: 4px; }
+  .lg_gap_8 { gap: 8px; }
+  .lg_gap_16 { gap: 16px; }
+  .lg_gap_24 { gap: 24px; }
+  .lg_gap_32 { gap: 32px; }
+}
+
+@media (max-width: 1024px) {
+  .md_direction_row { flex-direction: row; }
+  .md_direction_column { flex-direction: column; }
+
+  .md_justify_start { justify-content: start; }
+  .md_justify_center { justify-content: center; }
+  .md_justify_end { justify-content: end; }
+  .md_justify_between { justify-content: space-between; }
+  .md_justify_around { justify-content: space-around; }
+
+  .md_align_start { align-items: start; }
+  .md_align_center { align-items: center; }
+  .md_align_end { align-items: end; }
+  .md_align_stretch { align-items: stretch; }
+
+  .md_gap_0 { gap: 0; }
+  .md_gap_4 { gap: 4px; }
+  .md_gap_8 { gap: 8px; }
+  .md_gap_16 { gap: 16px; }
+  .md_gap_24 { gap: 24px; }
+  .md_gap_32 { gap: 32px; }
+}
+
+@media (max-width: 768px) {
+  .sm_direction_row { flex-direction: row; }
+  .sm_direction_column { flex-direction: column; }
+
+  .sm_justify_start { justify-content: start; }
+  .sm_justify_center { justify-content: center; }
+  .sm_justify_end { justify-content: end; }
+  .sm_justify_between { justify-content: space-between; }
+  .sm_justify_around { justify-content: space-around; }
+
+  .sm_align_start { align-items: start; }
+  .sm_align_center { align-items: center; }
+  .sm_align_end { align-items: end; }
+  .sm_align_stretch { align-items: stretch; }
+
+  .sm_gap_0 { gap: 0; }
+  .sm_gap_4 { gap: 4px; }
+  .sm_gap_8 { gap: 8px; }
+  .sm_gap_16 { gap: 16px; }
+  .sm_gap_24 { gap: 24px; }
+  .sm_gap_32 { gap: 32px; }
+}
+
+@media (max-width: 576px) {
+  .xs_direction_row { flex-direction: row; }
+  .xs_direction_column { flex-direction: column; }
+
+  .xs_justify_start { justify-content: start; }
+  .xs_justify_center { justify-content: center; }
+  .xs_justify_end { justify-content: end; }
+  .xs_justify_between { justify-content: space-between; }
+  .xs_justify_around { justify-content: space-around; }
+
+  .xs_align_start { align-items: start; }
+  .xs_align_center { align-items: center; }
+  .xs_align_end { align-items: end; }
+  .xs_align_stretch { align-items: stretch; }
+
+  .xs_gap_0 { gap: 0; }
+  .xs_gap_4 { gap: 4px; }
+  .xs_gap_8 { gap: 8px; }
+  .xs_gap_16 { gap: 16px; }
+  .xs_gap_24 { gap: 24px; }
+  .xs_gap_32 { gap: 32px; }
+}

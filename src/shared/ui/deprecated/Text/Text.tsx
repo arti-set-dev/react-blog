@@ -14,6 +14,7 @@ export enum TextSize {
   M = 'size-m',
   L = 'size-l',
   XL = 'size-xl',
+  XXL = 'size-xxl',
 }
 
 export enum TextTheme {

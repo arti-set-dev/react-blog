@@ -39,7 +39,7 @@ export const ProfileCardErrorRedesigned = () => {
   const { t } = useTranslation('profile');
 
   return (
-    <VStack gap="16">
+    <VStack gap="16" align="center">
       <Text variant="error" size="l">
         {t('Profile error')}
       </Text>

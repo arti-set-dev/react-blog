@@ -1,7 +1,7 @@
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { Text } from '@/shared/ui/deprecated/Text';
+import { Text, TextAlign, TextSize } from '@/shared/ui/deprecated/Text';
 import {
   ArticleList, getArticlesListError, getArticlesListIsLoading, getArticlesListView,
   getArticles,
@@ -13,14 +13,14 @@ interface ArticleListContainerProps {
 
 export const ArticleListContainer = memo((props: ArticleListContainerProps) => {
   const { onScrollEnd } = props;
-  const { t } = useTranslation();
+  const { t } = useTranslation('article');
   const articles = useSelector(getArticles.selectAll);
   const isLoading = useSelector(getArticlesListIsLoading);
   const error = useSelector(getArticlesListError);
   const view = useSelector(getArticlesListView);
 
   if (error) {
-    return <Text>{t('Data boot error')}</Text>;
+    return <Text align={TextAlign.CENTER} size={TextSize.L}>{t('Data boot error')}</Text>;
   }
 
   return (

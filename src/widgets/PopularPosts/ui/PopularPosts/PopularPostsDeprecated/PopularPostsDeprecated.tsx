@@ -17,7 +17,7 @@ export const PopularPostsDeprecated = memo((props: PopularPostsDeprecatedProps) 
   const { t } = useTranslation('main');
 
   return (
-    <Card variant="transparent" border="0" tag="section" offset="24">
+    <Card variant="transparent" border="0" tag="section" offset="0">
       <Container max className={getVstack({ gap: 24 })}>
         <Text
           tag="h2"

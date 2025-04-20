@@ -25,7 +25,7 @@ export const ArticleImageBlockComponent = memo(
         feature="isAppRedesigned"
         on={(
           <VStack tag="figure" gap="16" align="center" fullWidth>
-            <LazyImage src={block.src} alt={block.title} height={height} width="100%" />
+            <LazyImage aspectRatio="16/9" src={block.src} alt={block.title} width="100%" />
             {block.title && (
               <Text align="center" size="xs">
                 {block.title}
@@ -37,7 +37,7 @@ export const ArticleImageBlockComponent = memo(
           <figure
             className={classNames(cl.ArticleImageBlockComponent, {}, [className])}
           >
-            <img height={height} width="100%" className={cl.Image} src={block.src} alt={block.title} />
+            <img width="100%" className={cl.Image} src={block.src} alt={block.title} />
             {block.title && (
               <TextDeprecated align={TextAlign.CENTER} size={TextSize.XS}>
                 {block.title}

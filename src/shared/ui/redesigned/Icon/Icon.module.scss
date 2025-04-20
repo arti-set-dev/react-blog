@@ -23,6 +23,10 @@
   &.normal {
     color: var(--text-primary-color);
   }
+
+  &.success {
+    color: var(--success-color);
+  }
 }
 
 .button {

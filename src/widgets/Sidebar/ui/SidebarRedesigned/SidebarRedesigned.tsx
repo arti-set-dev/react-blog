@@ -1,7 +1,6 @@
 import { memo, useState, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { VStack } from '@/shared/ui/redesigned/Stack';
 import { getNavigationItems } from '../../model/selector/getSidebarItems';
 import { SidebarItem } from '../SidebarItem/SidebarItem';
 import { LangSwitcher } from '@/features/LangSwitcher';
@@ -10,6 +9,7 @@ import ArrIcon from '@/shared/assets/icons/arrow-icon.svg';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cl from './SidebarRedesigned.module.scss';
 import { Button } from '@/shared/ui/redesigned/Button';
+import { Flex } from '@/shared/ui/redesigned/Stack/Flex/Flex';
 
 interface SidebarRedesignedProps {
   className?: string;
@@ -51,9 +51,18 @@ export const SidebarRedesigned = memo((props: SidebarRedesignedProps) => {
         aria-label={t('toggle sidebar')}
       />
       <nav>
-        <VStack tag="ul">
+        <Flex
+          tag="ul"
+          direction="column"
+          responsive={{
+            xl: {
+              direction: 'row',
+              gap: '8',
+            },
+          }}
+        >
           {itemsList}
-        </VStack>
+        </Flex>
       </nav>
       <div className={cl.Switchers}>
         <ThemeSwitcher />

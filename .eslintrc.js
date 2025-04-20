@@ -39,7 +39,9 @@ module.exports = {
       ignoreAttribute:
         ['data-testid',
           'feature',
+          'objectFit',
           'role',
+          'flexWrap',
           'overflow',
           'position',
           'color',

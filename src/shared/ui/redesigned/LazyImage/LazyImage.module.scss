@@ -6,4 +6,24 @@
   &.radius_xs {
     border-radius: var(--radius-xs);
   }
+
+  &.aspect_ratio_16_9 {
+    aspect-ratio: 16 / 9;
+  }
+
+  &.aspect_ratio_4_3 {
+    aspect-ratio: 4 / 3;
+  }
+
+  &.aspect_ratio_1_1 {
+    aspect-ratio: 1 / 1;
+  }
+
+  &.cover {
+    object-fit: cover;
+  }
+
+  &.contain {
+    object-fit: contain;
+  }
 }

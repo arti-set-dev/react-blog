@@ -4,7 +4,7 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import cl from './Icon.module.scss';
 
 type SvgProps = Omit<React.SVGProps<SVGSVGElement>, 'onClick'>
-export type IconColor = 'primary' | 'error' | 'inverted' | 'normal';
+export type IconColor = 'primary' | 'error' | 'inverted' | 'normal' | 'success';
 export type IconAnimation = 'show';
 
 interface IconBaseProps extends SvgProps {

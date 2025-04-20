@@ -1,6 +1,6 @@
 import { memo, ReactNode, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
-import { FlexDirection, Flex } from '../Stack/Flex/Flex';
+import { FlexDirection, Flex, FlexWrap } from '../Stack/Flex/Flex';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cl from './Tabs.module.scss';
 import { Button } from '../Button/Button';
@@ -16,12 +16,13 @@ interface TabsProps {
   value: string;
   onTabClick?: (tab: TabItem) => void;
   direction?: FlexDirection;
+  flexWrap?: FlexWrap;
   fullWidth?: boolean;
 }
 
 export const Tabs = memo((props: TabsProps) => {
   const {
-    className, tabs, value, onTabClick, direction = 'row', fullWidth,
+    className, tabs, value, onTabClick, direction = 'row', fullWidth, flexWrap = 'nowrap',
   } = props;
   const { t } = useTranslation();
 
@@ -39,6 +40,7 @@ export const Tabs = memo((props: TabsProps) => {
       gap="4"
       className={classNames(cl.Tabs, {}, [className])}
       data-testid="Tabs"
+      flexWrap={flexWrap}
     >
       {tabs.map((tab) => (
         <Button

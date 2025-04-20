@@ -29,7 +29,7 @@ export const ArticleDetailsDeprecated = memo((props: ArticleDetailsDeprecatedPro
   const {
     className, error, isLoading, article,
   } = props;
-  const { t } = useTranslation();
+  const { t } = useTranslation('article-details');
 
   const renderBlock = useCallback((block: ArticleBlock) => {
     switch (block.type) {

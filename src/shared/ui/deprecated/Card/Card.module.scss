@@ -4,6 +4,10 @@
 
   &.offset {
     padding: var(--inner-offset);
+
+    @media (max-width: 1024px) {
+      padding: 16px;
+    }
   }
 
   &.hovered {

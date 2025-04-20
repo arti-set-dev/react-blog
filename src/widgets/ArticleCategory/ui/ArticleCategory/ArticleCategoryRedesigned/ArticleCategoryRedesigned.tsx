@@ -18,7 +18,7 @@ export const ArticleCategoryRedesigned = memo((props: ArticleCategoryProps) => {
   const {
     articles, isLoading, onChangeType, type, error,
   } = props;
-  const { t } = useTranslation();
+  const { t } = useTranslation('main');
 
   return (
     <Card tag="section" offset="24" className={getVstack({ gap: 24 })}>
@@ -30,7 +30,7 @@ export const ArticleCategoryRedesigned = memo((props: ArticleCategoryProps) => {
       >
         {t('Popular categories')}
       </Text>
-      <ArticleTypeTabs direction="row" value={type} onChangeType={onChangeType} />
+      <ArticleTypeTabs flexWrap="wrap" direction="initial" value={type} onChangeType={onChangeType} />
       <ArticleList
         invertOnHover
         articles={articles}

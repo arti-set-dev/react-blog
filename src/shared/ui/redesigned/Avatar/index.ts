@@ -1,1 +1,1 @@
-export * from '@/shared/ui/deprecated/Avatar/Avatar';
+export * from '@/shared/ui/redesigned/Avatar/Avatar';

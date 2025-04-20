@@ -82,7 +82,7 @@ export const BlockPreview = memo(({
           on={(
             <>
               <LazyImage
-                height={350}
+                aspectRatio="16/9"
                 src={block.src}
                 alt={block.title}
               />
@@ -94,7 +94,7 @@ export const BlockPreview = memo(({
           off={(
             <>
               <LazyImage
-                height={350}
+                aspectRatio="16/9"
                 src={block.src}
                 alt={block.title}
               />

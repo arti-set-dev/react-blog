@@ -3,9 +3,10 @@ import { useTranslation } from 'react-i18next';
 import { getVstack } from '@/shared/lib/stack/getVstack/getVstack';
 import { Card } from '@/shared/ui/redesigned/Card';
 import { LazyImage } from '@/shared/ui/redesigned/LazyImage';
-import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
+import { VStack } from '@/shared/ui/redesigned/Stack';
 import { Text } from '@/shared/ui/redesigned/Text';
 import { RulesProps } from '../Rules';
+import { Grid } from '@/shared/ui/redesigned/Stack/Grid/Grid';
 
 export const RulesRedesigned = memo((props: RulesProps) => {
   const { className, isHead } = props;
@@ -21,29 +22,29 @@ export const RulesRedesigned = memo((props: RulesProps) => {
       >
         {t('Publication rules')}
       </Text>
-      <HStack tag="ul" gap="16" justify="between" align="start">
-        <VStack flexBasis="33%" tag="li" gap="16" align="center">
+      <Grid tag="ul" gap="16" minmax={{ min: 282, max: '1fr' }}>
+        <VStack tag="li" gap="16" align="center">
           <VStack align="center" width="325px" gap="16">
             <Text weight="bold" size="l" align="center" style={{ minHeight: '50px' }}>{t('Rule 1')}</Text>
             <Text align="center" style={{ minHeight: '28px' }}>{t('Rule desc 1')}</Text>
           </VStack>
           <LazyImage height={300} alt="" aria-hidden src="/images/rule-Image-1.svg" />
         </VStack>
-        <VStack flexBasis="33%" tag="li" gap="16" align="center">
+        <VStack tag="li" gap="16" align="center">
           <VStack align="center" width="325px" gap="16">
             <Text weight="bold" size="l" align="center" style={{ minHeight: '50px' }}>{t('Rule 2')}</Text>
             <Text align="center" style={{ minHeight: '28px' }}>{t('Rule desc 2')}</Text>
           </VStack>
           <LazyImage height={300} alt="" aria-hidden src="/images/rule-Image-2.svg" />
         </VStack>
-        <VStack flexBasis="33%" tag="li" gap="16" align="center">
+        <VStack tag="li" gap="16" align="center">
           <VStack align="center" width="325px" gap="16">
             <Text weight="bold" size="l" align="center" style={{ minHeight: '50px' }}>{t('Rule 3')}</Text>
             <Text align="center" style={{ minHeight: '28px' }}>{t('Rule desc 3')}</Text>
           </VStack>
           <LazyImage height={300} alt="" aria-hidden src="/images/rule-Image-3.svg" />
         </VStack>
-      </HStack>
+      </Grid>
     </Card>
   );
 });

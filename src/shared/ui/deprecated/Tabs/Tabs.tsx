@@ -9,9 +9,12 @@ export interface TabItem {
   content: ReactNode;
 }
 
+export type FlexWrap = 'wrap' | 'nowrap';
+
 interface TabsProps {
   className?: string;
   tabs: TabItem[];
+  flexWrap?: FlexWrap;
   value: string;
   onTabClick?: (tab: TabItem) => void;
   fullWidth?: boolean;
@@ -23,7 +26,7 @@ interface TabsProps {
  */
 export const Tabs = memo((props: TabsProps) => {
   const {
-    className, tabs, value, onTabClick, fullWidth,
+    className, tabs, value, onTabClick, fullWidth, flexWrap = 'nowrap',
   } = props;
   const { t } = useTranslation();
 
@@ -35,7 +38,7 @@ export const Tabs = memo((props: TabsProps) => {
   );
 
   return (
-    <div className={classNames(cl.Tabs, {}, [className])}>
+    <div className={classNames(cl.Tabs, {}, [className, cl[flexWrap]])}>
       {tabs.map((tab) => (
         <Button
           fullWidth={fullWidth}

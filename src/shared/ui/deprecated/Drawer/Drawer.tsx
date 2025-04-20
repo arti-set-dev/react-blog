@@ -5,7 +5,6 @@ import {
   AnimationProvider,
 } from '@/shared/lib/components/AnimationProvider';
 import { useModal } from '@/shared/lib/hooks/useModal/useModal';
-import { Loader } from '../Loader/Loader';
 import { Portal } from '../../redesigned/Portal/Portal';
 import { Overlay } from '../../redesigned/Overlay/Overlay';
 import cl from './Drawer.module.scss';
@@ -113,7 +112,7 @@ const DrawerAsync = (props: DrawerProps) => {
   const { isLoaded } = useAnimationLibs();
 
   if (!isLoaded) {
-    return <Loader />;
+    return null;
   }
 
   return <DrawerContent {...props} />;

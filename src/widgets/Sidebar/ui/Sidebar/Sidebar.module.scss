@@ -13,6 +13,24 @@
   transition: max-width var(--ui-transition) ease;
   gap: var(--gap);
 
+  @media (max-width: 1440px) {
+    position: fixed;
+    left: 50%;
+    top: auto;
+    bottom: 0;
+    z-index: var(--sidebar-z-index);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0;
+    padding: var(--inner-offset);
+    width: 100%;
+    height: 77px;
+    max-width: var(--container-width);
+    transform: translateX(-50%);
+  }
+
   &.collapsed {
     max-width: var(--sidebar-width-collapsed);
 
@@ -28,16 +46,31 @@
   }
 }
 
+// .SidebarList {
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   justify-content: center;
+// }
+
 .Switchers {
   display: flex;
   align-items: center;
   margin-top: auto;
   width: max-content;
   gap: var(--gap-mini);
+
+  @media (max-width: 1440px) {
+    margin-top: 0;
+  }
 }
 
 .CollapseBtn {
   background-color: var(--bg-light-color);
+
+  @media (max-width: 1440px) {
+    display: none;
+  }
 
   svg {
     transition: transform var(--ui-transition) ease;

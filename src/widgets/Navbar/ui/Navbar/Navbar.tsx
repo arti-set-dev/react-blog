@@ -29,8 +29,8 @@ export const Navbar = memo((props: NavbarProps) => {
     return (
       <ToggleFeatures
         feature="isAppRedesigned"
-        on={<NavbarAuthDataRedesigned />}
-        off={<NavbarAuthDataDeprecated />}
+        on={<NavbarAuthDataRedesigned authData={authData} onCloseModal={onCloseModal} />}
+        off={<NavbarAuthDataDeprecated authData={authData} onCloseModal={onCloseModal} />}
       />
     );
   }

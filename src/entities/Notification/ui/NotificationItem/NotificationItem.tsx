@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { ReactElement } from 'react';
+import { BrowserView, MobileView } from 'react-device-detect';
 import { VStack } from '@/shared/ui/redesigned/Stack';
 import { AppLink as AppLinkDeprecated } from '@/shared/ui/deprecated/AppLink';
 import { Text as TextDeprecated, TextSize } from '@/shared/ui/deprecated/Text';
@@ -16,10 +17,13 @@ interface NotificationItemProps {
   className?: string;
   notification: Notification;
   uiSwitcher?: ReactElement;
+  onCloseDrawer?: () => void;
 }
 
 export const NotificationItem = (props: NotificationItemProps) => {
-  const { className, notification, uiSwitcher } = props;
+  const {
+    className, notification, uiSwitcher, onCloseDrawer,
+  } = props;
   const { t } = useTranslation();
 
   return (
@@ -34,9 +38,22 @@ export const NotificationItem = (props: NotificationItemProps) => {
         >
           <Text size="m">{notification.title}</Text>
           <Text>{notification.description}</Text>
-          {notification.href && (
-            <AppLink to={notification.href}>{notification.hrefDescr}</AppLink>
-          )}
+          <BrowserView>
+            {notification.href && (
+              <AppLink to={notification.href}>{notification.hrefDescr}</AppLink>
+            )}
+          </BrowserView>
+          <MobileView>
+            {notification.href && (
+              <AppLink
+                isHovered
+                to={notification.href}
+                onClick={onCloseDrawer}
+              >
+                {notification.hrefDescr}
+              </AppLink>
+            )}
+          </MobileView>
           {notification.isUiSwitch && (
             uiSwitcher
           )}
@@ -50,9 +67,21 @@ export const NotificationItem = (props: NotificationItemProps) => {
         >
           <TextDeprecated size={TextSize.M}>{notification.title}</TextDeprecated>
           <TextDeprecated>{notification.description}</TextDeprecated>
-          {notification.href && (
-            <AppLinkDeprecated to={notification.href}>{notification.hrefDescr}</AppLinkDeprecated>
-          )}
+          <BrowserView>
+            {notification.href && (
+              <AppLinkDeprecated to={notification.href}>{notification.hrefDescr}</AppLinkDeprecated>
+            )}
+          </BrowserView>
+          <MobileView>
+            {notification.href && (
+              <AppLinkDeprecated
+                to={notification.href}
+                onClick={onCloseDrawer}
+              >
+                {notification.hrefDescr}
+              </AppLinkDeprecated>
+            )}
+          </MobileView>
           {notification.isUiSwitch && (
             uiSwitcher
           )}

@@ -2,6 +2,10 @@
   display: flex;
   justify-content: flex-end;
   gap: var(--gap-mini);
+
+  @media (max-width: 576px) {
+    display: none;
+  }
 }
 
 .Button {

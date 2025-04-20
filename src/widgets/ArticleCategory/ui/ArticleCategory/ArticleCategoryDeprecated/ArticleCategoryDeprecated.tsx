@@ -12,10 +12,10 @@ export const ArticleCategoryDeprecated = memo((props: ArticleCategoryProps) => {
   const {
     articles, onChangeType, type, isLoading, error,
   } = props;
-  const { t } = useTranslation();
+  const { t } = useTranslation('main');
 
   return (
-    <Card variant="transparent" border="0" tag="section" offset="24" className={getVstack({ gap: 24 })}>
+    <Card variant="transparent" border="0" tag="section" offset="0" className={getVstack({ gap: 24 })}>
       <Container max className={getVstack({ gap: 24 })}>
         <Text
           tag="h2"

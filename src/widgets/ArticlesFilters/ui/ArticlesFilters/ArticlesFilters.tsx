@@ -30,7 +30,7 @@ export const ArticlesFilters = memo((props: ArticlesFiltersProps) => {
   const { t } = useTranslation();
 
   return (
-    <Card offset="16" className={classNames('', {}, [className, getVstack({ gap: 24 })])}>
+    <Card tag="div" offset="16" className={classNames('', {}, [className, getVstack({ gap: 24 })])}>
       <Input
         background="light"
         value={search}

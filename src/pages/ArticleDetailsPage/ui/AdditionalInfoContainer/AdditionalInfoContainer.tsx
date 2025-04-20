@@ -6,12 +6,13 @@ import { ArticleAdditionalInfo } from '@/widgets/ArticleAdditionalInfo';
 import { Skeleton } from '@/shared/ui/redesigned/Skeleton';
 import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
 import { getRouteArticleEdit, getRouteArticles } from '@/shared/const/router';
-import { articleListActions, getArticleDetailsData, getCanEditArticle } from '@/entities/Article';
+import {
+  articleListActions, getArticleDetailsData, getCanEditArticle, useDeleteArticle,
+} from '@/entities/Article';
 import { Card } from '@/shared/ui/redesigned/Card';
 import { Modal } from '@/shared/ui/redesigned/Modal';
 import { Text } from '@/shared/ui/redesigned/Text';
 import { Button } from '@/shared/ui/redesigned/Button';
-import { useDeleteArticle } from '@/features/articleDelete';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 
 interface AdditionalInfoContainerProps {
@@ -84,16 +85,14 @@ export const AdditionalInfoContainer = memo((props: AdditionalInfoContainerProps
   }
 
   return (
-    <Card offset="16">
-      <ArticleAdditionalInfo
-        canEdit={canEdit}
-        onEdit={onEditArticle}
-        onDelete={onOpenModal}
-        author={article.author}
-        createdAt={article?.createdAt}
-        views={article?.views}
-        modalContent={modalContent}
-      />
-    </Card>
+    <ArticleAdditionalInfo
+      canEdit={canEdit}
+      onEdit={onEditArticle}
+      onDelete={onOpenModal}
+      author={article.author}
+      createdAt={article?.createdAt}
+      views={article?.views}
+      modalContent={modalContent}
+    />
   );
 });

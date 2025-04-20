@@ -221,7 +221,6 @@ There are only two functions:
 
 - [addNewComment](./src/features/addNewComment)
 - [articleCreate](./src/features/articleCreate)
-- [articleDelete](./src/features/articleDelete)
 - [articleEdit](./src/features/articleEdit)
 - [articleRating](./src/features/articleRating)
 - [articleRecommendationsList](./src/features/articleRecommendationsList)

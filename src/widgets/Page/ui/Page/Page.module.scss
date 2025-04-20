@@ -2,13 +2,19 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: var(--inner-offset);
+  padding: var(--container-offset) 0;
   width: 100%;
+  min-height: calc(100vh - var(--navbar-height));
   gap: var(--gap);
+
+  *:last-child {
+    margin-top: auto;
+  }
 }
 
 .PageRedesigned {
   display: flex;
+  flex: 1 1 auto;
   flex-direction: column;
   padding: 0 var(--container-offset);
   width: 100%;

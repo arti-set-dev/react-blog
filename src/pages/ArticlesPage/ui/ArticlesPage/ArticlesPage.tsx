@@ -6,7 +6,6 @@ import { FiltersContainer } from '../FiltersContainer/FiltersContainer';
 import { ViewSwitcherContainer } from '../ViewSwitherContainer/ViewSwitcherContainer';
 import { StickyContentLayout } from '@/shared/layouts/SticlyContentLayout';
 import { ToggleFeatures } from '@/shared/lib/features';
-import { Text } from '@/shared/ui/deprecated/Text';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import {
   DynamicModuleLoader,
@@ -31,14 +30,9 @@ const reducers: ReducerList = {
 
 const ArticlesPage = (props: ArticlesPageProps) => {
   const { className } = props;
-  const { t } = useTranslation();
+  const { t } = useTranslation('article');
   const dispatch = useAppDispatch();
   const error = useSelector(getArticlesListError);
-  // const [articles, setArticles] = useState<Article[]>([]);
-
-  // useEffect(() => {
-  //   dispatch(fetchArticlesList({}));
-  // }, [dispatch]);
 
   const onLoadNextPart = useCallback(() => {
     dispatch(fetchNextArticlesPage());
@@ -57,7 +51,6 @@ const ArticlesPage = (props: ArticlesPageProps) => {
               onScrollEnd={onLoadNextPart}
             >
               <ArticleListContainer onScrollEnd={onLoadNextPart} />
-              {error && <Text>{t('Data boot error')}</Text>}
             </Page>
           )}
         />
@@ -71,7 +64,6 @@ const ArticlesPage = (props: ArticlesPageProps) => {
           <Container max>
             <ArticlesPageFilters />
             <ArticleListContainer onScrollEnd={onLoadNextPart} />
-            {error && <Text>{t('Data boot error')}</Text>}
           </Container>
         </Page>
       )}
