@@ -4,6 +4,8 @@ import { MainLayout } from '../MainLayout';
 import { Skeleton } from '@/shared/ui/redesigned/Skeleton';
 import { Container } from '@/shared/ui/redesigned/Container';
 import { getVstack } from '@/shared/lib/stack/getVstack/getVstack';
+import cls from './AppLoaderLayout.module.scss';
+import { VStack } from '@/shared/ui/redesigned/Stack';
 
 interface AppLoaderLayoutProps {
   className?: string;
@@ -19,7 +21,9 @@ export const AppLoaderLayout = memo((props: AppLoaderLayoutProps) => {
         <Skeleton width="100%" height={70} />
       )}
       sidebar={(
-        <Skeleton width={305} height="100%" />
+        <VStack width={305} height="100%" className={cls.sidebar}>
+          <Skeleton width="100%" height="100%" />
+        </VStack>
       )}
       content={(
         <Container max className={getVstack({ gap: 24 })}>

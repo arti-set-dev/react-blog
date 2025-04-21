@@ -55,7 +55,12 @@
 .InputWrapper {
   position: relative;
   overflow: hidden;
+  padding-bottom: 1em;
   width: 100%;
+
+  @media (max-width: 576px) {
+    padding-bottom: 2em;
+  }
 
   &:has(.InputPlaceholder) {
     padding-top: 5px;
@@ -80,7 +85,7 @@
   position: absolute;
   left: 8px;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translateY(-71%);
 }
 
 .InputPlaceholder {
@@ -129,5 +134,5 @@
 
 .ErrorMessage {
   position: absolute;
-  bottom: -18px;
+  bottom: 0;
 }

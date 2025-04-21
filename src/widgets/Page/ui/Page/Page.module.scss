@@ -7,8 +7,8 @@
   min-height: calc(100vh - var(--navbar-height));
   gap: var(--gap);
 
-  *:last-child {
-    margin-top: auto;
+  @media (max-width: 1440px) {
+    padding-bottom: 100px;
   }
 }
 

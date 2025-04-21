@@ -34,6 +34,10 @@
   &.collapsed {
     max-width: var(--sidebar-width-collapsed);
 
+    @media (max-width: 1440px) {
+      max-width: var(--container-width);
+    }
+
     .CollapseBtn {
       svg {
         transform: scaleX(-1);
@@ -42,16 +46,13 @@
 
     .Switchers {
       flex-direction: column;
+
+      @media (max-width: 1440px) {
+        flex-direction: row;
+      }
     }
   }
 }
-
-// .SidebarList {
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   justify-content: center;
-// }
 
 .Switchers {
   display: flex;
