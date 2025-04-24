@@ -10,3 +10,14 @@ export const ThemeDecorator = (theme: Theme) => (StoryComponent: Story) => (
     </div>
   </ThemeProvider>
 );
+
+export const ThemeAndAppDecorator = (Story: Story, { globals }: { globals: any }) => {
+  const themeFromGlobals = globals.themes;
+  const themeClass = themeFromGlobals || Theme.LIGHT;
+
+  return (
+    <div className={`app ${themeClass}`}>
+      <Story />
+    </div>
+  );
+};

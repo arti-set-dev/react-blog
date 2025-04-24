@@ -1,12 +1,12 @@
 import { addDecorator } from '@storybook/react';
 import { StyleDecorator } from '../../src/shared/config/storybook/StyleDecorator/StyleDecorator';
-import { ThemeDecorator } from '../../src/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { RouterDecorator } from '../../src/shared/config/storybook/RouterDecorator/RouterDecorator';
 import { SuspenseDecorator } from '../../src/shared/config/storybook/SuspenseDecorator/SuspenseDecorator';
 import { FeatureFlagsDecorator }
   from '../../src/shared/config/storybook/FeatureFlagsDecorator/FeatureFlagsDecorator';
 import { StoreDecorator } from '../../src/shared/config/storybook/StoreDecorator/StoreDecorator';
 import { Theme } from '../../src/shared/const/theme';
+import { ThemeAndAppDecorator } from '../../src/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
@@ -17,18 +17,26 @@ export const parameters = {
     },
   },
   layout: 'fullscreen',
+};
+
+export const globalTypes = {
   themes: {
-    default: 'light',
-    list: [
-      { name: 'light', class: Theme.LIGHT, color: '#ffffff' },
-      { name: 'dark', class: Theme.DARK, color: '#000000' },
-      { name: 'orange', class: Theme.ORANGE, color: '#ffb005' },
-    ],
+    name: 'Themes',
+    description: 'Global theme switcher',
+    defaultValue: Theme.LIGHT,
+    toolbar: {
+      icon: 'paintbrush',
+      items: [
+        { value: Theme.LIGHT, title: 'Light' },
+        { value: Theme.DARK, title: 'Dark' },
+        { value: Theme.ORANGE, title: 'Orange' },
+      ],
+    },
   },
 };
 
 addDecorator(StyleDecorator);
-addDecorator(ThemeDecorator(Theme.LIGHT));
+addDecorator(ThemeAndAppDecorator);
 addDecorator(RouterDecorator);
 addDecorator(SuspenseDecorator);
 addDecorator(FeatureFlagsDecorator({}));
