@@ -5,6 +5,9 @@ import { ArticleView } from '../../model/consts/consts';
 import { Article } from '../../model/types/article';
 import storybookImage from './storybook.jpg';
 import { ArticleItem } from './ArticleItem';
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
+import { ArticleType, ArticleBlockType } from '../../model/types/articleType';
 
 export default {
   title: 'entities/ArticleItem',
@@ -30,11 +33,11 @@ const article = {
     username: 'Roman',
     avatar: storybookImage,
   },
-  type: ['IT'],
+  type: [ArticleType.IT],
   blocks: [
     {
       id: '1',
-      type: 'TEXT',
+      type: ArticleBlockType.TEXT,
       title: 'Заголовок этого блока',
       paragraphs: [
         'Программа, которую по традиции называют «Hello, world!», очень проста. Она выводит куда-либо фразу «Hello, world!», или другую подобную, средствами некоего языка.',
@@ -44,12 +47,12 @@ const article = {
     },
     {
       id: '2',
-      type: 'CODE',
+      type: ArticleBlockType.CODE,
       code: '<!DOCTYPE html>\n<html>\n  <body>\n    <p id="hello"></p>\n\n    <script>\n      document.getElementById("hello").innerHTML = "Hello, world!";\n    </script>\n  </body>\n</html>;',
     },
     {
       id: '3',
-      type: 'TEXT',
+      type: ArticleBlockType.TEXT,
       title: 'Заголовок этого блока',
       paragraphs: [
         'Программа, которую по традиции называют «Hello, world!», очень проста. Она выводит куда-либо фразу «Hello, world!», или другую подобную, средствами некоего языка.',
@@ -58,18 +61,18 @@ const article = {
     },
     {
       id: '4',
-      type: 'IMAGE',
+      type: ArticleBlockType.IMAGE,
       src: 'https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png',
       title: 'Рисунок 1 - скриншот сайта',
     },
     {
       id: '5',
-      type: 'CODE',
+      type: ArticleBlockType.CODE,
       code: "consts path = require('path');\n\nconsts server = jsonServer.create();\n\nconsts router = jsonServer.router(path.resolve(__dirname, 'db.json'));\n\nserver.use(jsonServer.defaults({}));\nserver.use(jsonServer.bodyParser);",
     },
     {
       id: '6',
-      type: 'TEXT',
+      type: ArticleBlockType.TEXT,
       title: 'Заголовок этого блока',
       paragraphs: [
         'JavaScript — это язык, программы на котором можно выполнять в разных средах. В нашем случае речь идёт о браузерах и о серверной платформе Node.js. Если до сих пор вы не написали ни строчки кода на JS и читаете этот текст в браузере, на настольном компьютере, это значит, что вы буквально в считанных секундах от своей первой JavaScript-программы.',
@@ -78,13 +81,13 @@ const article = {
     },
     {
       id: '7',
-      type: 'IMAGE',
+      type: ArticleBlockType.IMAGE,
       src: 'https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png',
       title: 'Рисунок 1 - скриншот сайта',
     },
     {
       id: '8',
-      type: 'TEXT',
+      type: ArticleBlockType.TEXT,
       title: 'Заголовок этого блока',
       paragraphs: [
         'JavaScript — это язык, программы на котором можно выполнять в разных средах. В нашем случае речь идёт о браузерах и о серверной платформе Node.js. Если до сих пор вы не написали ни строчки кода на JS и читаете этот текст в браузере, на настольном компьютере, это значит, что вы буквально в считанных секундах от своей первой JavaScript-программы.',
@@ -93,14 +96,80 @@ const article = {
   ],
 } as Article;
 
-export const Default = Template.bind({});
-Default.args = {
+// Стандартный дизайн (старый)
+export const GridView = Template.bind({});
+GridView.args = {
   article,
   view: ArticleView.GRID,
 };
+GridView.decorators = [StoreDecorator({})];
 
-export const Column = Template.bind({});
-Column.args = {
+export const ColumnView = Template.bind({});
+ColumnView.args = {
   article,
   view: ArticleView.COLUMN,
 };
+ColumnView.decorators = [StoreDecorator({})];
+
+export const GridViewBlank = Template.bind({});
+GridViewBlank.args = {
+  article,
+  view: ArticleView.GRID,
+  blank: true,
+};
+GridViewBlank.decorators = [StoreDecorator({})];
+
+export const ColumnViewBlank = Template.bind({});
+ColumnViewBlank.args = {
+  article,
+  view: ArticleView.COLUMN,
+  blank: true,
+};
+ColumnViewBlank.decorators = [StoreDecorator({})];
+
+// Новый дизайн (редизайн)
+export const GridViewRedesigned = Template.bind({});
+GridViewRedesigned.args = {
+  article,
+  view: ArticleView.GRID,
+};
+GridViewRedesigned.decorators = [NewDesignDecorator, StoreDecorator({})];
+
+export const ColumnViewRedesigned = Template.bind({});
+ColumnViewRedesigned.args = {
+  article,
+  view: ArticleView.COLUMN,
+};
+ColumnViewRedesigned.decorators = [NewDesignDecorator, StoreDecorator({})];
+
+export const GridViewBlankRedesigned = Template.bind({});
+GridViewBlankRedesigned.args = {
+  article,
+  view: ArticleView.GRID,
+  blank: true,
+};
+GridViewBlankRedesigned.decorators = [NewDesignDecorator, StoreDecorator({})];
+
+export const ColumnViewBlankRedesigned = Template.bind({});
+ColumnViewBlankRedesigned.args = {
+  article,
+  view: ArticleView.COLUMN,
+  blank: true,
+};
+ColumnViewBlankRedesigned.decorators = [NewDesignDecorator, StoreDecorator({})];
+
+export const GridViewInvertedOnHover = Template.bind({});
+GridViewInvertedOnHover.args = {
+  article,
+  view: ArticleView.GRID,
+  invertOnHover: true,
+};
+GridViewInvertedOnHover.decorators = [StoreDecorator({})];
+
+export const GridViewInvertedOnHoverRedesigned = Template.bind({});
+GridViewInvertedOnHoverRedesigned.args = {
+  article,
+  view: ArticleView.GRID,
+  invertOnHover: true,
+};
+GridViewInvertedOnHoverRedesigned.decorators = [NewDesignDecorator, StoreDecorator({})];

@@ -10,10 +10,10 @@ import { Input } from '@/shared/ui/deprecated/Input';
 import {
   Text, TextSize, TextTheme,
 } from '@/shared/ui/deprecated/Text';
-import { VStack } from '@/shared/ui/redesigned/Stack';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cl from './AddCommentFormDeprecated.module.scss';
 import { getUserAuthData } from '@/entities/User';
+import { VStack } from '@/shared/ui/redesigned/Stack';
 
 export const AddCommentFormDeprecated = memo((props: AddCommentFormProps) => {
   const { className, onSendComment } = props;
@@ -51,24 +51,19 @@ export const AddCommentFormDeprecated = memo((props: AddCommentFormProps) => {
       data-testid="AddCommentForm"
       className={classNames(cl.AddCommentFormDeprecated, {}, [className])}
     >
-      <Input
-        data-testid="AddCommentForm.Input"
-        value={text}
-        onChange={onCommentTextChange}
-        placeholder={t('Write your comment')}
-      />
-      {error && (
-        <VStack gap="8">
-          <Input
-            value={text}
-            onChange={onCommentTextChange}
-            placeholder={t('Write your comment')}
-          />
+      <VStack gap="16" fullWidth>
+        <Input
+          data-testid="AddCommentForm.Input"
+          value={text}
+          onChange={onCommentTextChange}
+          placeholder={t('Write your comment')}
+        />
+        {error && (
           <Text theme={TextTheme.ERROR}>
             {t('There was an error when sending a message')}
           </Text>
-        </VStack>
-      )}
+        )}
+      </VStack>
       <Button
         data-testid="AddCommentForm.Button"
         onClick={onSendHandler}

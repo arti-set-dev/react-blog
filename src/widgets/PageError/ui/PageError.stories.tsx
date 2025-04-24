@@ -5,7 +5,7 @@ import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDe
 import { PageError } from './PageError';
 
 export default {
-  title: 'widget/PageError',
+  title: 'widgets/PageError',
   component: PageError,
   argTypes: {
     backgroundColor: { control: 'color' },
@@ -16,9 +16,24 @@ const Template: ComponentStory<typeof PageError> = (args) => (
   <PageError {...args} />
 );
 
+// Стандартный вид ошибки (светлая тема)
 export const Light = Template.bind({});
 Light.args = {};
 
+// Ошибка в темной теме
 export const Dark = Template.bind({});
 Dark.args = {};
 Dark.decorators = [ThemeDecorator(Theme.DARK)];
+
+// Ошибка с дополнительным текстом
+export const WithContent = Template.bind({});
+WithContent.args = {
+  children: <p>Дополнительная информация об ошибке может быть показана здесь.</p>,
+};
+
+// Ошибка с дополнительным текстом в темной теме
+export const WithContentDark = Template.bind({});
+WithContentDark.args = {
+  children: <p>Дополнительная информация об ошибке может быть показана здесь.</p>,
+};
+WithContentDark.decorators = [ThemeDecorator(Theme.DARK)];

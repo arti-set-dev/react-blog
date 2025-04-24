@@ -22,8 +22,7 @@ export const ProfileCardLoaderRedesigned = () => (
       <Skeleton width={80} height={30} />
       <Skeleton width={80} height={30} />
     </HStack>
-    <div className={cl.data}>
-      <Skeleton width="100%" border="10" height={40} />
+    <div className={cl.dataLoader}>
       <Skeleton width="100%" border="10" height={40} />
       <Skeleton width="100%" border="10" height={40} />
       <Skeleton width="100%" border="10" height={40} />
@@ -114,7 +113,6 @@ export const ProfileCardRedesigned = memo((props: ProfileCardProps) => {
       </HStack>
       <div className={cl.data}>
         <Input
-          className={cl.input}
           background="light"
           variant="outlined"
           onChange={onChangeFirstname}
@@ -125,7 +123,6 @@ export const ProfileCardRedesigned = memo((props: ProfileCardProps) => {
           data-testid="ProfileCard.firstname"
         />
         <Input
-          className={cl.input}
           background="light"
           variant="outlined"
           onChange={onChangeLastname}
@@ -136,7 +133,6 @@ export const ProfileCardRedesigned = memo((props: ProfileCardProps) => {
           data-testid="ProfileCard.lastname"
         />
         <Input
-          className={cl.input}
           background="light"
           variant="outlined"
           onChange={onChangeAge}
@@ -145,7 +141,6 @@ export const ProfileCardRedesigned = memo((props: ProfileCardProps) => {
           value={data?.age?.toString()}
         />
         <Input
-          className={cl.input}
           background="light"
           variant="outlined"
           onChange={onChangeCity}
@@ -155,21 +150,18 @@ export const ProfileCardRedesigned = memo((props: ProfileCardProps) => {
           error={fieldErrors?.city}
         />
         <CurrencySelect
-          className={cl.input}
           background="light"
           readonly={canEdit ? readonly : true}
           onChange={onChangeCurrency}
           currValue={data?.currency}
         />
         <CountrySelect
-          className={cl.input}
           background="light"
           readonly={canEdit ? readonly : true}
           onChange={onChangeCountry}
           currValue={data?.country}
         />
         <Input
-          className={cl.input}
           background="light"
           variant="outlined"
           onChange={onChangeUsername}

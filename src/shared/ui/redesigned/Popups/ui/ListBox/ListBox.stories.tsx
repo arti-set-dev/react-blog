@@ -4,7 +4,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Listbox } from './ListBox';
 
 export default {
-  title: 'shared/ListBox',
+  title: 'shared/redesigned/ListBox',
   component: Listbox,
   argTypes: {
     backgroundColor: { control: 'color' },

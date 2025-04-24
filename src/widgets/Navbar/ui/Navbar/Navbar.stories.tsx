@@ -1,59 +1,76 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-
-import { Theme } from '@/shared/const/theme';
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 import { Navbar } from './Navbar';
-import avatarImage from './storybook.jpg';
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
+import avatar from './storybook.jpg';
 
 export default {
-  title: 'widget/Navbar',
+  title: 'widgets/Navbar',
   component: Navbar,
   argTypes: {
     backgroundColor: { control: 'color' },
+  },
+  parameters: {
+    mockData: [
+      {
+        url: `${__API__}/notifications`,
+        method: 'GET',
+        status: 200,
+        response: [],
+      },
+    ],
   },
 } as ComponentMeta<typeof Navbar>;
 
 const Template: ComponentStory<typeof Navbar> = (args) => <Navbar {...args} />;
 
-const notification = {
-  id: '1',
-  title: 'notification',
-  description: 'notification description',
-  href: 'href',
-};
+// Неавторизованный пользователь (стандартный дизайн)
+export const NotAuthenticated = Template.bind({});
+NotAuthenticated.args = {};
+NotAuthenticated.decorators = [
+  StoreDecorator({
+    user: {},
+  }),
+];
 
-export const Light = Template.bind({});
-Light.args = {};
-Light.decorators = [StoreDecorator({})];
-
-export const Dark = Template.bind({});
-Dark.args = {};
-Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({})];
-
-export const AuthNavbar = Template.bind({});
-AuthNavbar.args = {};
-AuthNavbar.decorators = [
+// Авторизованный пользователь (стандартный дизайн)
+export const Authenticated = Template.bind({});
+Authenticated.args = {};
+Authenticated.decorators = [
   StoreDecorator({
     user: {
       authData: {
-        avatar: avatarImage,
+        id: '1',
+        username: 'admin',
+        avatar,
       },
     },
   }),
 ];
-AuthNavbar.parameters = {
-  mockData: [
-    {
-      url: `${__API__}/notifications`,
-      method: 'GET',
-      status: 200,
-      response: [
-        { ...notification, id: '1' },
-        { ...notification, id: '2' },
-        { ...notification, id: '3' },
-      ],
+
+// Неавторизованный пользователь (редизайн)
+export const NotAuthenticatedRedesigned = Template.bind({});
+NotAuthenticatedRedesigned.args = {};
+NotAuthenticatedRedesigned.decorators = [
+  NewDesignDecorator,
+  StoreDecorator({
+    user: {},
+  }),
+];
+
+// Авторизованный пользователь (редизайн)
+export const AuthenticatedRedesigned = Template.bind({});
+AuthenticatedRedesigned.args = {};
+AuthenticatedRedesigned.decorators = [
+  NewDesignDecorator,
+  StoreDecorator({
+    user: {
+      authData: {
+        id: '1',
+        username: 'admin',
+        avatar,
+      },
     },
-  ],
-};
+  }),
+];

@@ -3,6 +3,7 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { UserRole } from '@/entities/User';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
 import { ArticleType, ArticleBlockType } from '../../model/types/articleType';
 import { Article } from '../../model/types/article';
 import { ArticleDetails } from './ArticleDetails';
@@ -12,6 +13,16 @@ export default {
   component: ArticleDetails,
   argTypes: {
     backgroundColor: { control: 'color' },
+  },
+  parameters: {
+    mockData: [
+      {
+        url: `${__API__}/articles/1`,
+        method: 'GET',
+        status: 200,
+        response: [],
+      },
+    ],
   },
 } as ComponentMeta<typeof ArticleDetails>;
 
@@ -96,7 +107,9 @@ const article: Article = {
 };
 
 export const Default = Template.bind({});
-Default.args = {};
+Default.args = {
+  id: '1',
+};
 Default.decorators = [
   StoreDecorator({
     articleDetails: {
@@ -105,8 +118,23 @@ Default.decorators = [
   }),
 ];
 
+export const DefaultRedesigned = Template.bind({});
+DefaultRedesigned.args = {
+  id: '1',
+};
+DefaultRedesigned.decorators = [
+  NewDesignDecorator,
+  StoreDecorator({
+    articleDetails: {
+      data: article,
+    },
+  }),
+];
+
 export const Loading = Template.bind({});
-Loading.args = {};
+Loading.args = {
+  id: '1',
+};
 Loading.decorators = [
   StoreDecorator({
     articleDetails: {
@@ -115,12 +143,40 @@ Loading.decorators = [
   }),
 ];
 
+export const LoadingRedesigned = Template.bind({});
+LoadingRedesigned.args = {
+  id: '1',
+};
+LoadingRedesigned.decorators = [
+  NewDesignDecorator,
+  StoreDecorator({
+    articleDetails: {
+      isLoading: true,
+    },
+  }),
+];
+
 export const Error = Template.bind({});
-Error.args = {};
+Error.args = {
+  id: '1',
+};
 Error.decorators = [
   StoreDecorator({
     articleDetails: {
-      error: 'error',
+      error: 'Произошла ошибка при загрузке статьи',
+    },
+  }),
+];
+
+export const ErrorRedesigned = Template.bind({});
+ErrorRedesigned.args = {
+  id: '1',
+};
+ErrorRedesigned.decorators = [
+  NewDesignDecorator,
+  StoreDecorator({
+    articleDetails: {
+      error: 'Произошла ошибка при загрузке статьи',
     },
   }),
 ];

@@ -54,17 +54,15 @@
 
 .InputWrapper {
   position: relative;
-  overflow: hidden;
-  padding-bottom: 1em;
   width: 100%;
 
-  @media (max-width: 576px) {
-    padding-bottom: 2em;
-  }
+  // &:has(.ErrorMessage) {
+  //   padding-bottom: 1em;
 
-  &:has(.InputPlaceholder) {
-    padding-top: 5px;
-  }
+  //   @media (max-width: 576px) {
+  //     padding-bottom: 2em;
+  //   }
+  // }
 
   &.readonly {
     opacity: 0.7;
@@ -85,20 +83,20 @@
   position: absolute;
   left: 8px;
   top: 50%;
-  transform: translateY(-71%);
+  transform: translateY(-50%);
 }
 
 .InputPlaceholder {
   position: absolute;
   left: 0;
-  top: 0;
+  top: 50%;
   display: inline-block;
   width: max-content;
   font-weight: 400;
   font-size: var(--font-size-m);
   line-height: 100%;
   color: var(--text-primary-color);
-  transform: translateY(10px);
+  transform: translateY(-50%);
   transition: transform var(--ui-transition) ease, font-size var(--ui-transition) ease;
   pointer-events: none;
 
@@ -111,11 +109,6 @@
     margin-left: var(--input-offset);
     padding: 3px;
     background-color: var(--bg-color);
-    transform: translateY(12px);
-
-    &.focused {
-      transform: translateY(-4px);
-    }
   }
 
   &.light {
@@ -124,7 +117,11 @@
 
   &.focused {
     font-size: var(--font-size-s);
-    transform: translateY(0);
+    transform: translateY(-140%);
+
+    &.lined {
+      transform: translateY(-160%);
+    }
   }
 }
 
@@ -134,5 +131,8 @@
 
 .ErrorMessage {
   position: absolute;
-  bottom: 0;
+  bottom: -1em;
+  overflow: hidden;
+  width: 100%;
+  white-space: nowrap;
 }

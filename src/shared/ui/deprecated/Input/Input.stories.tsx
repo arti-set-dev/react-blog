@@ -1,72 +1,101 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Theme } from '@/shared/const/theme';
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import { Input } from './Input';
+import { Theme } from '@/shared/const/theme';
+import { Input, InputType } from './Input';
 
 export default {
-  title: 'shared/Input',
+  title: 'shared/deprecated/Input',
   component: Input,
   argTypes: {
     backgroundColor: { control: 'color' },
   },
+  decorators: [
+    (Story) => (
+      <div style={{ padding: '20px', maxWidth: '400px' }}>
+        <Story />
+      </div>
+    ),
+  ],
 } as ComponentMeta<typeof Input>;
 
 const Template: ComponentStory<typeof Input> = (args) => <Input {...args} />;
 
-export const Default = Template.bind({});
-Default.args = {};
-
-export const DefaultDark = Template.bind({});
-DefaultDark.args = {};
-DefaultDark.decorators = [ThemeDecorator(Theme.DARK)];
-
-export const DefaultError = Template.bind({});
-DefaultError.args = {
-  error: 'Invalid value',
+export const Primary = Template.bind({});
+Primary.args = {
+  placeholder: 'Введите текст',
+  value: '',
 };
 
-export const DefaultErrorDark = Template.bind({});
-DefaultErrorDark.args = {
-  error: 'Invalid value',
-};
-DefaultErrorDark.decorators = [ThemeDecorator(Theme.DARK)];
-
-export const Placeholder = Template.bind({});
-Placeholder.args = {
-  placeholder: 'text',
+export const WithValue = Template.bind({});
+WithValue.args = {
+  placeholder: 'Введите текст',
+  value: 'Значение поля ввода',
 };
 
-export const PlaceholderDark = Template.bind({});
-PlaceholderDark.args = {
-  placeholder: 'text',
-};
-PlaceholderDark.decorators = [ThemeDecorator(Theme.DARK)];
-
-export const PlaceholderError = Template.bind({});
-PlaceholderError.args = {
-  placeholder: 'text',
-  error: 'Invalid value',
+export const WithError = Template.bind({});
+WithError.args = {
+  placeholder: 'Введите текст',
+  value: 'Значение с ошибкой',
+  error: 'Текст ошибки',
 };
 
-export const PlaceholderErrorDark = Template.bind({});
-PlaceholderErrorDark.args = {
-  placeholder: 'text',
-  error: 'Invalid value',
-};
-PlaceholderErrorDark.decorators = [ThemeDecorator(Theme.DARK)];
-
-export const PlaceholderReadonly = Template.bind({});
-PlaceholderReadonly.args = {
-  placeholder: 'text',
+export const Readonly = Template.bind({});
+Readonly.args = {
+  placeholder: 'Только для чтения',
+  value: 'Нельзя изменить',
   readonly: true,
-  value: 'some text',
 };
 
-export const PlaceholderReadonlyDark = Template.bind({});
-PlaceholderReadonlyDark.args = {
-  placeholder: 'text',
-  readonly: true,
-  value: 'some text',
+export const Password = Template.bind({});
+Password.args = {
+  placeholder: 'Введите пароль',
+  type: InputType.PASSWORD,
+  value: 'secretpassword',
 };
-PlaceholderReadonlyDark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const Number = Template.bind({});
+Number.args = {
+  placeholder: 'Введите число',
+  type: InputType.NUMBER,
+  value: '42',
+};
+
+export const Textarea = Template.bind({});
+Textarea.args = {
+  placeholder: 'Введите длинный текст',
+  textarea: true,
+  value: 'Это многострочное текстовое поле для ввода длинных текстов и комментариев.'
+    + ' Оно автоматически подстраивается под количество текста.',
+};
+
+export const TextareaWithError = Template.bind({});
+TextareaWithError.args = {
+  placeholder: 'Введите длинный текст',
+  textarea: true,
+  value: 'Неправильный текст',
+  error: 'Текст не соответствует требованиям',
+};
+
+export const Dark = Template.bind({});
+Dark.args = {
+  placeholder: 'Введите текст',
+  value: 'Текст в темной теме',
+};
+Dark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const DarkWithError = Template.bind({});
+DarkWithError.args = {
+  placeholder: 'Введите текст',
+  value: 'Текст с ошибкой',
+  error: 'Текст ошибки',
+};
+DarkWithError.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const DarkTextarea = Template.bind({});
+DarkTextarea.args = {
+  placeholder: 'Введите длинный текст',
+  textarea: true,
+  value: 'Многострочное поле в темной теме',
+};
+DarkTextarea.decorators = [ThemeDecorator(Theme.DARK)];

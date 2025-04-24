@@ -120,6 +120,7 @@ export const CommentCard = memo((props: CommentCardProps) => {
               <Skeleton width={30} height={30} border="circle" />
               <Skeleton width="100%" height={20} />
             </HStack>
+            <Skeleton width="100%" height={30} />
           </Card>
         )}
         off={(

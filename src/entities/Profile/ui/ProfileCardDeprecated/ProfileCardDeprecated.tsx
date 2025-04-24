@@ -26,7 +26,6 @@ export const ProfileCardLoaderDeprecated = () => (
       <Skeleton width="100%" height={40} />
       <Skeleton width="100%" height={40} />
       <Skeleton width="100%" height={40} />
-      <Skeleton width="100%" height={40} />
     </div>
   </div>
 );

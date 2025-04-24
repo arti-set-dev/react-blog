@@ -1,7 +1,10 @@
 .AppLink {
+  display: flex;
+  align-items: center;
   font-size: var(--font-size-xs);
   line-height: 100%;
   transition: color var(--ui-transition);
+  gap: var(--gap-mini);
 
   &.hovered {
     @media (any-hover: hover) {

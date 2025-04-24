@@ -1,4 +1,4 @@
-import { HStack } from '@/shared/ui/redesigned/Stack';
+import { HStack, VStack } from '@/shared/ui/redesigned/Stack';
 import { Skeleton } from '@/shared/ui/redesigned/Skeleton';
 import { Card } from '@/shared/ui/redesigned/Card';
 import { getVstack } from '@/shared/lib/stack/getVstack/getVstack';
@@ -10,7 +10,7 @@ interface CommentsSkeletonProps {
 export const CommentsSkeleton = (props: CommentsSkeletonProps) => {
   const { className } = props;
   return (
-    <>
+    <VStack gap="16" fullWidth>
       <Card
         className={getVstack({ gap: 16 })}
         max
@@ -44,6 +44,6 @@ export const CommentsSkeleton = (props: CommentsSkeletonProps) => {
         </HStack>
         <Skeleton width="100%" height={20} />
       </Card>
-    </>
+    </VStack>
   );
 };

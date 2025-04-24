@@ -1,13 +1,16 @@
 import React from 'react';
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
+import { Theme } from '@/shared/const/theme';
+import { ProfileCard } from './ProfileCard';
 import { Country } from '@/entities/Country';
 import { Currency } from '@/entities/Currency';
-import { ProfileCard } from './ProfileCard';
-import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
+import avatar from './avatar.jpg';
 
 export default {
-  title: 'entities/ProfileCard',
+  title: 'entities/Profile/ProfileCard',
   component: ProfileCard,
   argTypes: {
     backgroundColor: { control: 'color' },
@@ -18,38 +21,100 @@ const Template: ComponentStory<typeof ProfileCard> = (args) => (
   <ProfileCard {...args} />
 );
 
-export const Primary = Template.bind({});
-
-const primaryArgs = {
-  data: {
-    username: 'admin',
-    age: 22,
-    country: Country.Germany,
-    city: 'New York',
-    currency: Currency.EUR,
-    firstname: 'Firstname',
-    lastname: 'Lastname',
-    avatar:
-      // eslint-disable-next-line max-len
-      'https://images.unsplash.com/photo-1511367461989-f85a21fda167?q=80&w=1931&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-  },
+const profile = {
+  id: '1',
+  firstname: 'Иван',
+  lastname: 'Иванов',
+  age: 25,
+  currency: Currency.USD,
+  country: Country.USA,
+  city: 'Москва',
+  username: 'ivan123',
+  avatar,
 };
 
-Primary.args = primaryArgs;
-Primary.decorators = [StoreDecorator({})];
-
-export const withError = Template.bind({});
-withError.args = {
-  error: 'true',
+// Старый дизайн (deprecated)
+export const Normal = Template.bind({});
+Normal.args = {
+  data: profile,
 };
-withError.decorators = [StoreDecorator({})];
-
-export const PrimaryRedesigned = Template.bind({});
-PrimaryRedesigned.args = primaryArgs;
-PrimaryRedesigned.decorators = [NewDesignDecorator, StoreDecorator({})];
+Normal.decorators = [StoreDecorator({})];
 
 export const Loading = Template.bind({});
 Loading.args = {
   isLoading: true,
 };
 Loading.decorators = [StoreDecorator({})];
+
+export const Error = Template.bind({});
+Error.args = {
+  error: 'Ошибка загрузки профиля',
+};
+Error.decorators = [StoreDecorator({})];
+
+export const Editable = Template.bind({});
+Editable.args = {
+  data: profile,
+  readonly: false,
+};
+Editable.decorators = [StoreDecorator({})];
+
+export const NormalDark = Template.bind({});
+NormalDark.args = {
+  data: profile,
+};
+NormalDark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({})];
+
+export const WithErrors = Template.bind({});
+WithErrors.args = {
+  data: profile,
+  readonly: false,
+  fieldErrors: {
+    firstname: 'Имя обязательно',
+    age: 'Некорректный возраст',
+  },
+};
+WithErrors.decorators = [StoreDecorator({})];
+
+// Новый дизайн (redesigned)
+export const NormalRedesigned = Template.bind({});
+NormalRedesigned.args = {
+  data: profile,
+};
+NormalRedesigned.decorators = [NewDesignDecorator, StoreDecorator({})];
+
+export const LoadingRedesigned = Template.bind({});
+LoadingRedesigned.args = {
+  isLoading: true,
+};
+LoadingRedesigned.decorators = [NewDesignDecorator, StoreDecorator({})];
+
+export const ErrorRedesigned = Template.bind({});
+ErrorRedesigned.args = {
+  error: 'Ошибка загрузки профиля',
+};
+ErrorRedesigned.decorators = [NewDesignDecorator, StoreDecorator({})];
+
+export const EditableRedesigned = Template.bind({});
+EditableRedesigned.args = {
+  data: profile,
+  readonly: false,
+};
+EditableRedesigned.decorators = [NewDesignDecorator, StoreDecorator({})];
+
+export const NormalDarkRedesigned = Template.bind({});
+NormalDarkRedesigned.args = {
+  data: profile,
+};
+NormalDarkRedesigned.decorators = [NewDesignDecorator, ThemeDecorator(Theme.DARK), StoreDecorator({})];
+
+export const WithErrorsRedesigned = Template.bind({});
+WithErrorsRedesigned.args = {
+  data: profile,
+  readonly: false,
+  fieldErrors: {
+    firstname: 'Имя обязательно',
+    age: 'Некорректный возраст',
+  },
+};
+WithErrorsRedesigned.decorators = [NewDesignDecorator, StoreDecorator({})];

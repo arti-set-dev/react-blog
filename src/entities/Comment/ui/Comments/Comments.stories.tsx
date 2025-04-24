@@ -1,8 +1,12 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { action } from '@storybook/addon-actions';
 import { UserRole } from '@/entities/User';
 
 import { Comments } from './Comments';
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
+import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
+import avatar from '../CommentCard/avatar.jpg';
 
 export default {
   title: 'entities/Comments',
@@ -16,28 +20,94 @@ const Template: ComponentStory<typeof Comments> = (args) => (
   <Comments {...args} />
 );
 
-export const Normal = Template.bind({});
-Normal.args = {
+const baseArgs = {
   comments: [
     {
       id: '1',
-      text: 'hello world',
+      text: 'Привет! Это первый комментарий в ветке обсуждения.',
       user: {
-        id: '1', username: 'Vasya', email: 'test@test.com', roles: [UserRole.ADMIN],
+        id: '1',
+        username: 'Василий',
+        email: 'vasya@test.com',
+        roles: [UserRole.ADMIN],
+        avatar,
       },
     },
     {
       id: '2',
-      text: 'Comment 2',
+      text: 'А это второй комментарий с более длинным текстом для того, чтобы проверить как работает '
+        + 'перенос строк и отображение длинных сообщений в списке комментариев.',
       user: {
-        id: '1', username: 'Petya', email: 'test@test.com', roles: [UserRole.ADMIN],
+        id: '2',
+        username: 'Петр',
+        email: 'petr@test.com',
+        roles: [UserRole.USER],
       },
     },
   ],
 };
+
+const userStateWithAuth = {
+  user: {
+    authData: {
+      id: '1',
+      username: 'Василий',
+    },
+  },
+};
+
+export const Normal = Template.bind({});
+Normal.args = baseArgs;
+Normal.decorators = [StoreDecorator({})];
+
+export const NormalRedesigned = Template.bind({});
+NormalRedesigned.args = baseArgs;
+NormalRedesigned.decorators = [NewDesignDecorator, StoreDecorator({})];
+
+export const WithAuthUser = Template.bind({});
+WithAuthUser.args = {
+  ...baseArgs,
+  onEditComment: action('onEditComment'),
+  onDeleteComment: action('onDeleteComment'),
+};
+WithAuthUser.decorators = [StoreDecorator(userStateWithAuth)];
+
+export const WithAuthUserRedesigned = Template.bind({});
+WithAuthUserRedesigned.args = {
+  ...baseArgs,
+  onEditComment: action('onEditComment'),
+  onDeleteComment: action('onDeleteComment'),
+};
+WithAuthUserRedesigned.decorators = [NewDesignDecorator, StoreDecorator(userStateWithAuth)];
 
 export const Loading = Template.bind({});
 Loading.args = {
   comments: [],
   isLoading: true,
 };
+Loading.decorators = [StoreDecorator({})];
+
+export const LoadingRedesigned = Template.bind({});
+LoadingRedesigned.args = {
+  comments: [],
+  isLoading: true,
+};
+LoadingRedesigned.decorators = [NewDesignDecorator, StoreDecorator({})];
+
+export const NoComments = Template.bind({});
+NoComments.args = {
+  comments: [],
+};
+NoComments.decorators = [StoreDecorator({})];
+
+export const Error = Template.bind({});
+Error.args = {
+  error: 'Произошла ошибка при загрузке комментариев',
+};
+Error.decorators = [StoreDecorator({})];
+
+export const ErrorRedesigned = Template.bind({});
+ErrorRedesigned.args = {
+  error: 'Произошла ошибка при загрузке комментариев',
+};
+ErrorRedesigned.decorators = [NewDesignDecorator, StoreDecorator({})];

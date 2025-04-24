@@ -153,7 +153,7 @@ export const ArticleDetailsRedesigned = memo((props: ArticleDetailsRedesignedPro
     );
   } else if (error) {
     content = (
-      <HStack justify="center">
+      <HStack justify="center" align="center">
         <Text size="l" variant="error">
           {t('There was an error loading the article')}
         </Text>

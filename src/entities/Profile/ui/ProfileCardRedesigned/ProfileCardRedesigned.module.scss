@@ -1,8 +1,8 @@
 .data {
   display: grid;
-  column-gap: var(--gap);
   grid-template-columns: repeat(2, 1fr);
   width: 100%;
+  gap: var(--gap);
 
   * {
     &:last-child {
@@ -11,10 +11,15 @@
   }
 }
 
-.input {
-  padding-bottom: 1em;
+.dataLoader {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 100%;
+  gap: var(--gap);
 
-  @media (max-width: 576px) {
-    padding-bottom: 2em;
+  * {
+    &:last-child {
+      grid-column: 1 / 3;
+    }
   }
 }

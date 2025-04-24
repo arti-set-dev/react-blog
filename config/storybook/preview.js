@@ -5,6 +5,7 @@ import { RouterDecorator } from '../../src/shared/config/storybook/RouterDecorat
 import { SuspenseDecorator } from '../../src/shared/config/storybook/SuspenseDecorator/SuspenseDecorator';
 import { FeatureFlagsDecorator }
   from '../../src/shared/config/storybook/FeatureFlagsDecorator/FeatureFlagsDecorator';
+import { StoreDecorator } from '../../src/shared/config/storybook/StoreDecorator/StoreDecorator';
 import { Theme } from '../../src/shared/const/theme';
 
 export const parameters = {
@@ -31,3 +32,4 @@ addDecorator(ThemeDecorator(Theme.LIGHT));
 addDecorator(RouterDecorator);
 addDecorator(SuspenseDecorator);
 addDecorator(FeatureFlagsDecorator({}));
+addDecorator(StoreDecorator({}));

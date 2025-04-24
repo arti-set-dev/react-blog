@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Rules } from './Rules';
 
 export default {
-  title: 'shared/Rules',
+  title: 'widgets/Rules',
   component: Rules,
   argTypes: {
     backgroundColor: { control: 'color' },
@@ -12,5 +12,10 @@ export default {
 
 const Template: ComponentStory<typeof Rules> = (args) => <Rules {...args} />;
 
-export const Default = Template.bind({});
-Default.args = {};
+export const Normal = Template.bind({});
+Normal.args = {};
+
+export const Head = Template.bind({});
+Head.args = {
+  isHead: true,
+};
