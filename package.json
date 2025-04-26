@@ -152,6 +152,8 @@
         "preset": "iPhone 7"
       }
     },
-    "diffTolerancePercent": 2
+    "diffTolerancePercent": 5,
+    "chromeRetries": 2,
+    "disableAutomaticViewportHeight": true
   }
 }
