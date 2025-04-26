@@ -1,6 +1,5 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
 
 import { ArticleAdditionalInfo } from './ArticleAdditionalInfo';
 import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
@@ -29,22 +28,6 @@ const defaultArgs = {
   createdAt: '15.05.2022',
   views: 1022,
 };
-
-export const WithEditButtons = Template.bind({});
-WithEditButtons.args = {
-  ...defaultArgs,
-  canEdit: true,
-  onEdit: action('onEdit'),
-  onDelete: action('onDelete'),
-};
-WithEditButtons.decorators = [NewDesignDecorator, StoreDecorator({
-  user: {
-    authData: {
-      id: '1',
-      username: 'Админ',
-    },
-  },
-})];
 
 export const NoAvatar = Template.bind({});
 NoAvatar.args = {

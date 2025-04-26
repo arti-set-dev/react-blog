@@ -1,9 +1,7 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
-import { Theme } from '@/shared/const/theme';
 import { ProfileCard } from './ProfileCard';
 import { Country } from '@/entities/Country';
 import { Currency } from '@/entities/Currency';
@@ -32,8 +30,6 @@ const profile = {
   username: 'ivan123',
   avatar,
 };
-
-// Старый дизайн (deprecated)
 
 export const Loading = Template.bind({});
 Loading.args = {
@@ -65,8 +61,6 @@ WithErrors.args = {
 };
 WithErrors.decorators = [StoreDecorator({})];
 
-// Новый дизайн (redesigned)
-
 export const LoadingRedesigned = Template.bind({});
 LoadingRedesigned.args = {
   isLoading: true,
@@ -85,12 +79,6 @@ EditableRedesigned.args = {
   readonly: false,
 };
 EditableRedesigned.decorators = [NewDesignDecorator, StoreDecorator({})];
-
-export const NormalDarkRedesigned = Template.bind({});
-NormalDarkRedesigned.args = {
-  data: profile,
-};
-NormalDarkRedesigned.decorators = [NewDesignDecorator, ThemeDecorator(Theme.DARK), StoreDecorator({})];
 
 export const WithErrorsRedesigned = Template.bind({});
 WithErrorsRedesigned.args = {
