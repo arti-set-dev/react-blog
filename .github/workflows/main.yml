@@ -27,6 +27,9 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
+      - uses: actions/upload-artifact@v3
+        with:
+          path: .
       - name: install modules
         run: npm ci --force
       - name: build production project
