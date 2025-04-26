@@ -15,4 +15,5 @@ export const notificationApi = rtkApi.injectEndpoints({
 export const
   useNotificationList = (userId: string | null) => notificationApi.useGetNotificationListQuery(userId ?? null, {
     pollingInterval: 5000,
+    skip: __PROJECT__ === 'storybook',
   });

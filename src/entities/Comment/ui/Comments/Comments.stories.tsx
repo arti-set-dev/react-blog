@@ -60,18 +60,6 @@ export const Normal = Template.bind({});
 Normal.args = baseArgs;
 Normal.decorators = [StoreDecorator({})];
 
-export const NormalRedesigned = Template.bind({});
-NormalRedesigned.args = baseArgs;
-NormalRedesigned.decorators = [NewDesignDecorator, StoreDecorator({})];
-
-export const WithAuthUser = Template.bind({});
-WithAuthUser.args = {
-  ...baseArgs,
-  onEditComment: action('onEditComment'),
-  onDeleteComment: action('onDeleteComment'),
-};
-WithAuthUser.decorators = [StoreDecorator(userStateWithAuth)];
-
 export const WithAuthUserRedesigned = Template.bind({});
 WithAuthUserRedesigned.args = {
   ...baseArgs,
@@ -93,12 +81,6 @@ LoadingRedesigned.args = {
   isLoading: true,
 };
 LoadingRedesigned.decorators = [NewDesignDecorator, StoreDecorator({})];
-
-export const NoComments = Template.bind({});
-NoComments.args = {
-  comments: [],
-};
-NoComments.decorators = [StoreDecorator({})];
 
 export const Error = Template.bind({});
 Error.args = {

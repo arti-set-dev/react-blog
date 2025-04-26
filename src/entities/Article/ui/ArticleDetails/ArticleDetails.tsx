@@ -44,7 +44,9 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
       dispatch(fetchArticleById(id));
     }
 
-    dispatch(updateViewsArticle(id ?? ''));
+    if (__PROJECT__ !== 'storybook') {
+      dispatch(updateViewsArticle(id ?? ''));
+    }
   }, [dispatch, id]);
 
   return (

@@ -23,7 +23,7 @@ const articles = [
     id: '1',
     title: 'Javascript news',
     subtitle: 'Что нового в JS за 2022 год?',
-    img: 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
+    img: storybook,
     views: 1022,
     createdAt: '26.02.2022',
     userId: '1',
@@ -46,7 +46,7 @@ const articles = [
       {
         id: '4',
         type: ArticleBlockType.IMAGE,
-        src: 'https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png',
+        src: storybook,
         title: 'Рисунок 1 - скриншот сайта',
       },
     ],
@@ -55,7 +55,7 @@ const articles = [
     id: '2',
     title: 'Python news',
     subtitle: 'Что нового в Python за 2022 год?',
-    img: 'https://cdn.hashnode.com/res/hashnode/image/upload/v1647490619965/P1dsNgj-f1.png',
+    img: storybook,
     views: 812,
     createdAt: '10.03.2022',
     user: {
@@ -84,7 +84,7 @@ const articles = [
     id: '3',
     title: 'Новости фронтенда',
     subtitle: 'Что нового в мире фронтенд-разработки?',
-    img: 'https://www.lighthouselabs.ca/uploads/post/open_graph_image/459/frontend-development.jpg',
+    img: storybook,
     views: 1587,
     createdAt: '05.04.2022',
     user: {
@@ -105,7 +105,7 @@ const articles = [
       {
         id: '4',
         type: ArticleBlockType.IMAGE,
-        src: 'https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png',
+        src: storybook,
         title: 'Современные фреймворки',
       },
     ],
@@ -178,7 +178,7 @@ GridVirtualized.args = {
   isLoading: false,
   articles,
   view: ArticleView.GRID,
-  virtualized: true,
+  virtualized: __PROJECT__ !== 'storybook' && true,
   onScrollEnd: action('onScrollEnd'),
 };
 GridVirtualized.decorators = [StoreDecorator({})];
@@ -254,7 +254,7 @@ GridVirtualizedRedesigned.args = {
   isLoading: false,
   articles,
   view: ArticleView.GRID,
-  virtualized: true,
+  virtualized: __PROJECT__ !== 'storybook' && true,
   onScrollEnd: action('onScrollEnd'),
 };
 GridVirtualizedRedesigned.decorators = [NewDesignDecorator, StoreDecorator({})];

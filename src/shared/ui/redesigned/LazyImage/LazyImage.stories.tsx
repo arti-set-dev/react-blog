@@ -45,7 +45,6 @@ WithFallback.args = {
 // С использованием errorFallback
 export const WithErrorFallback = Template.bind({});
 WithErrorFallback.args = {
-  src: 'invalid/image/url.jpg',
   alt: 'Изображение с ошибкой',
   width: 300,
   height: 200,

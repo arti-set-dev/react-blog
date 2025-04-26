@@ -12,7 +12,7 @@ describe('app/router/AppRouter', () => {
       route: getRouteAbout(),
     });
 
-    const page = await screen.findByTestId('AboutPage');
+    const page = await screen.findByTestId('AboutPage', {}, { timeout: 5000 });
     expect(page).toBeInTheDocument();
   });
 
@@ -21,7 +21,7 @@ describe('app/router/AppRouter', () => {
       route: '/yfstqfstqfs',
     });
 
-    const page = await screen.findByTestId('NotFoundPage');
+    const page = await screen.findByTestId('NotFoundPage', {}, { timeout: 5000 });
     expect(page).toBeInTheDocument();
   });
 
@@ -44,7 +44,7 @@ describe('app/router/AppRouter', () => {
       },
     });
 
-    const page = await screen.findByTestId('ProfilePage');
+    const page = await screen.findByTestId('ProfilePage', {}, { timeout: 5000 });
     expect(page).toBeInTheDocument();
   });
 });

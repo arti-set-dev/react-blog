@@ -4,6 +4,7 @@
     "noImplicitAny": true,
     "module": "ESNext",
     "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext", "es2022"],
     "jsx": "react-jsx",
     "baseUrl": ".",
     "paths": {

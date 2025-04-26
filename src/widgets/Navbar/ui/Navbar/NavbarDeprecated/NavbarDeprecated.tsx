@@ -67,7 +67,7 @@ export const NavbarAuthDataDeprecated = (props: NavbarDeprecatedProps) => {
             uiSwitcher={<UiDesignSwitcher variant="button" />}
           />
           <BrowserView renderWithFragment>
-            <AvatarDropdown />
+            <AvatarDropdown data-testid="Navbar.AvatarDropdown" />
           </BrowserView>
           <MobileView>
             <AvatarDrower isOpen={isOpen} onClose={onCloseDrawer} onOpen={onOpenDrawer}>

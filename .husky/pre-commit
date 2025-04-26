@@ -4,3 +4,6 @@
 npm run build
 npx lint-staged
 npm run lint:scss
+npm run unit
+npm run build:storybook
+npm run screen-test

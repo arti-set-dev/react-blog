@@ -6,6 +6,8 @@ import { StoreProvider } from '@/app/providers/StoreProvider';
 import App from './app/App';
 import '@/app/styles/index.scss';
 import '@/shared/config/i18n/i18n';
+// Импортируем полифилл
+import '@/shared/lib/polyfills/objectHasOwn';
 
 const container = document.getElementById('root');
 

@@ -8,6 +8,13 @@ import { StoreDecorator } from '../../src/shared/config/storybook/StoreDecorator
 import { Theme } from '../../src/shared/const/theme';
 import { ThemeAndAppDecorator } from '../../src/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 
+// Полифилл для Object.hasOwn
+if (!Object.hasOwn) {
+  Object.hasOwn = function (obj, prop) {
+    return Object.prototype.hasOwnProperty.call(obj, prop);
+  };
+}
+
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
   controls: {

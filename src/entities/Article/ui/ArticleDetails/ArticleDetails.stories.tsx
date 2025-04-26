@@ -7,34 +7,13 @@ import { NewDesignDecorator } from '@/shared/config/storybook/NewDesignDecorator
 import { ArticleType, ArticleBlockType } from '../../model/types/articleType';
 import { Article } from '../../model/types/article';
 import { ArticleDetails } from './ArticleDetails';
-
-export default {
-  title: 'entities/ArticleDetails',
-  component: ArticleDetails,
-  argTypes: {
-    backgroundColor: { control: 'color' },
-  },
-  parameters: {
-    mockData: [
-      {
-        url: `${__API__}/articles/1`,
-        method: 'GET',
-        status: 200,
-        response: [],
-      },
-    ],
-  },
-} as ComponentMeta<typeof ArticleDetails>;
-
-const Template: ComponentStory<typeof ArticleDetails> = (args) => (
-  <ArticleDetails {...args} />
-);
+import storybook from '../ArticleList/storybook.jpg';
 
 const article: Article = {
   id: '1',
   title: 'Javascript news',
   subtitle: 'Что нового в JS за 2022 год?',
-  img: 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
+  img: storybook,
   views: 1022,
   createdAt: '26.02.2022',
   author: {
@@ -72,7 +51,7 @@ const article: Article = {
     {
       id: '4',
       type: ArticleBlockType.IMAGE,
-      src: 'https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png',
+      src: storybook,
       title: 'Рисунок 1 - скриншот сайта',
     },
     {
@@ -92,7 +71,7 @@ const article: Article = {
     {
       id: '7',
       type: ArticleBlockType.IMAGE,
-      src: 'https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png',
+      src: storybook,
       title: 'Рисунок 1 - скриншот сайта',
     },
     {
@@ -105,6 +84,28 @@ const article: Article = {
     },
   ],
 };
+
+export default {
+  title: 'entities/ArticleDetails',
+  component: ArticleDetails,
+  argTypes: {
+    backgroundColor: { control: 'color' },
+  },
+  parameters: {
+    mockData: [
+      {
+        url: `${__API__}/posts/1`,
+        method: 'GET',
+        status: 200,
+        response: article,
+      },
+    ],
+  },
+} as ComponentMeta<typeof ArticleDetails>;
+
+const Template: ComponentStory<typeof ArticleDetails> = (args) => (
+  <ArticleDetails {...args} />
+);
 
 export const Default = Template.bind({});
 Default.args = {

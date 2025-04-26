@@ -100,8 +100,8 @@ describe('ArticleEditFormDeprecated', () => {
         types={[ArticleType.IT, ArticleType.SCIENCE]}
       />,
     );
-    expect(screen.getByText(ArticleType.IT)).toBeInTheDocument();
-    expect(screen.getByText(ArticleType.SCIENCE)).toBeInTheDocument();
+    expect(screen.getByText('IT')).toBeInTheDocument();
+    expect(screen.getByText('Science')).toBeInTheDocument();
   });
 
   test('Взаимодействие с формой', async () => {
@@ -140,7 +140,7 @@ describe('ArticleEditFormDeprecated', () => {
       />,
     );
 
-    const itButton = screen.getByText(ArticleType.IT);
+    const itButton = screen.getByText('IT');
     await userEvent.click(itButton);
 
     expect(handleAddType).toHaveBeenCalledWith(ArticleType.IT);

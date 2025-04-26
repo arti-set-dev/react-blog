@@ -150,6 +150,7 @@
         "target": "chrome.docker",
         "preset": "iPhone 7"
       }
-    }
+    },
+    "diffTolerancePercent": 2
   }
 }

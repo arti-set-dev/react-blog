@@ -103,7 +103,7 @@ WithNotifications.decorators = [
 ];
 WithNotifications.parameters = {
   mockData: [{
-    url: '/notifications',
+    url: `${__API__}/notifications?userId=1`,
     method: 'GET',
     status: 200,
     response: mockNotifications,
@@ -131,7 +131,7 @@ WithoutNotifications.decorators = [
 ];
 WithoutNotifications.parameters = {
   mockData: [{
-    url: '/notifications',
+    url: `${__API__}/notifications?userId=1`,
     method: 'GET',
     status: 200,
     response: [],
@@ -159,7 +159,7 @@ WithError.decorators = [
 ];
 WithError.parameters = {
   mockData: [{
-    url: '/notifications',
+    url: `${__API__}/notifications?userId=1`,
     method: 'GET',
     status: 500,
     response: null,
@@ -186,7 +186,7 @@ Dark.decorators = [
 ];
 Dark.parameters = {
   mockData: [{
-    url: '/notifications',
+    url: `${__API__}/notifications?userId=1`,
     method: 'GET',
     status: 200,
     response: mockNotifications,
@@ -213,7 +213,7 @@ Redesigned.decorators = [
 ];
 Redesigned.parameters = {
   mockData: [{
-    url: '/notifications',
+    url: `${__API__}/notifications?userId=1`,
     method: 'GET',
     status: 200,
     response: mockNotifications,
@@ -241,19 +241,19 @@ WithUiSwitcher.decorators = [
 ];
 WithUiSwitcher.parameters = {
   mockData: [{
-    url: '/notifications',
+    url: `${__API__}/notifications?userId=1`,
     method: 'GET',
     status: 200,
     response: mockNotifications,
   }],
   docs: {
     description: {
-      story: 'Кнопка с UI переключателем',
+      story: 'Кнопка с элементом переключения UI',
     },
   },
 };
 
-// Не авторизованный пользователь
+// Неавторизованный пользователь
 export const Unauthorized = Template.bind({});
 Unauthorized.args = {};
 Unauthorized.decorators = [
@@ -262,9 +262,15 @@ Unauthorized.decorators = [
   }),
 ];
 Unauthorized.parameters = {
+  mockData: [{
+    url: `${__API__}/notifications`,
+    method: 'GET',
+    status: 401,
+    response: null,
+  }],
   docs: {
     description: {
-      story: 'Состояние для неавторизованного пользователя',
+      story: 'Неавторизованный пользователь',
     },
   },
 };
