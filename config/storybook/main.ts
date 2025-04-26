@@ -42,6 +42,10 @@ export default {
         return { ...rule, exclude: /\.svg$/i };
       }
 
+      if (/\.(png|jpg|jpeg|gif|webp|avif)$/.test(rule.test as string)) {
+        return { ...rule, use: [] };
+      }
+
       return rule;
     });
 
@@ -64,6 +68,15 @@ export default {
         },
       }],
     });
+
+    config!.module!.rules.push({
+      test: /\.(png|jpe?g|gif|webp|avif)$/i,
+      type: 'asset/resource',
+      generator: {
+        filename: 'static/media/[name][ext]',
+      },
+    });
+
     config!.module!.rules.push(buildCssLoader(true));
 
     config!.plugins!.push(
