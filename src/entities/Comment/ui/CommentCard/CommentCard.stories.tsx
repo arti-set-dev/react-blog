@@ -53,10 +53,6 @@ export const Normal = Template.bind({});
 Normal.args = normalArgs;
 Normal.decorators = [StoreDecorator({})];
 
-export const WithAvatar = Template.bind({});
-WithAvatar.args = commentWithAvatar;
-WithAvatar.decorators = [StoreDecorator({})];
-
 export const WithAvatarRedesigned = Template.bind({});
 WithAvatarRedesigned.args = commentWithAvatar;
 WithAvatarRedesigned.decorators = [NewDesignDecorator, StoreDecorator({})];

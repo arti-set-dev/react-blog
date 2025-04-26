@@ -75,14 +75,6 @@ EagerLoading.args = {
   loading: 'eager',
 };
 
-export const DarkTheme = Template.bind({});
-DarkTheme.args = {
-  src: avatar,
-  alt: 'Аватар пользователя',
-  size: 100,
-};
-DarkTheme.decorators = [ThemeDecorator(Theme.DARK)];
-
 export const DarkThemeAdmin = Template.bind({});
 DarkThemeAdmin.args = {
   src: avatar,

@@ -36,21 +36,12 @@ export default {
       '@': paths.src,
     };
 
-    // Удаляем стандартные обработчики изображений
-    // @ts-ignore
-    config!.module!.rules = config!.module!.rules!.filter((rule: RuleSetRule) => {
-      if (rule.test instanceof RegExp) {
-        return !rule.test.toString().includes('(ico|jpg|jpeg|png|gif|webp|avif)$');
-      }
-      return true;
-    });
-
-    // Удаляем стандартный обработчик SVG и добавляем свой
     // @ts-ignore
     config!.module!.rules = config!.module!.rules!.map((rule: RuleSetRule) => {
       if (/svg/.test(rule.test as string)) {
         return { ...rule, exclude: /\.svg$/i };
       }
+
       return rule;
     });
 
@@ -73,22 +64,7 @@ export default {
         },
       }],
     });
-
-    // Используем собственный file-loader для изображений с четкими настройками
-    config!.module!.rules.push({
-      test: /\.(png|jpe?g|gif|webp|avif)$/i,
-      type: 'asset/resource',
-      generator: {
-        filename: 'static/media/[name].[hash:8][ext]',
-      },
-    });
-
     config!.module!.rules.push(buildCssLoader(true));
-
-    // Добавляем настройку для отключения минимизации изображений
-    if (config!.optimization) {
-      config!.optimization.minimizer = [];
-    }
 
     config!.plugins!.push(
       new DefinePlugin({

@@ -34,11 +34,6 @@ const profile = {
 };
 
 // Старый дизайн (deprecated)
-export const Normal = Template.bind({});
-Normal.args = {
-  data: profile,
-};
-Normal.decorators = [StoreDecorator({})];
 
 export const Loading = Template.bind({});
 Loading.args = {
@@ -77,11 +72,6 @@ WithErrors.args = {
 WithErrors.decorators = [StoreDecorator({})];
 
 // Новый дизайн (redesigned)
-export const NormalRedesigned = Template.bind({});
-NormalRedesigned.args = {
-  data: profile,
-};
-NormalRedesigned.decorators = [NewDesignDecorator, StoreDecorator({})];
 
 export const LoadingRedesigned = Template.bind({});
 LoadingRedesigned.args = {
