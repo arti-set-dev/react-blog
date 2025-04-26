@@ -1,6 +1,5 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
 import { UserRole } from '@/entities/User';
 
 import { Comments } from './Comments';
@@ -47,26 +46,9 @@ const baseArgs = {
   ],
 };
 
-const userStateWithAuth = {
-  user: {
-    authData: {
-      id: '1',
-      username: 'Василий',
-    },
-  },
-};
-
 export const Normal = Template.bind({});
 Normal.args = baseArgs;
 Normal.decorators = [StoreDecorator({})];
-
-export const WithAuthUserRedesigned = Template.bind({});
-WithAuthUserRedesigned.args = {
-  ...baseArgs,
-  onEditComment: action('onEditComment'),
-  onDeleteComment: action('onDeleteComment'),
-};
-WithAuthUserRedesigned.decorators = [NewDesignDecorator, StoreDecorator(userStateWithAuth)];
 
 export const Loading = Template.bind({});
 Loading.args = {

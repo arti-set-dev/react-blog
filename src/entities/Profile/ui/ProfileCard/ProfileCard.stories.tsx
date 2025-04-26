@@ -54,12 +54,6 @@ Editable.args = {
 };
 Editable.decorators = [StoreDecorator({})];
 
-export const NormalDark = Template.bind({});
-NormalDark.args = {
-  data: profile,
-};
-NormalDark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({})];
-
 export const WithErrors = Template.bind({});
 WithErrors.args = {
   data: profile,

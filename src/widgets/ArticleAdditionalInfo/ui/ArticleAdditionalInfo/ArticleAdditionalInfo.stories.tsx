@@ -30,10 +30,6 @@ const defaultArgs = {
   views: 1022,
 };
 
-export const Default = Template.bind({});
-Default.args = defaultArgs;
-Default.decorators = [NewDesignDecorator, StoreDecorator({})];
-
 export const WithEditButtons = Template.bind({});
 WithEditButtons.args = {
   ...defaultArgs,
@@ -67,20 +63,3 @@ LowViews.args = {
   views: 5,
 };
 LowViews.decorators = [NewDesignDecorator, StoreDecorator({})];
-
-export const WithModalContent = Template.bind({});
-WithModalContent.args = {
-  ...defaultArgs,
-  canEdit: true,
-  onEdit: action('onEdit'),
-  onDelete: action('onDelete'),
-  modalContent: <div>Модальное окно для редактирования</div>,
-};
-WithModalContent.decorators = [NewDesignDecorator, StoreDecorator({
-  user: {
-    authData: {
-      id: '1',
-      username: 'Админ',
-    },
-  },
-})];
