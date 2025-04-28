@@ -82,7 +82,7 @@ export const ArticleItemRedesigned = memo((props: ArticleItemProps) => {
           </HStack>
           <AppLink to={getRouteArticleDetails(article.id ?? '')}>
             <VStack gap="16">
-              <Text cropped="1" isHovered size="xl">
+              <Text tag="h2" cropped="1" isHovered size="xl">
                 {article.title}
               </Text>
               <Text cropped="1" size="m">
@@ -155,7 +155,7 @@ export const ArticleItemRedesigned = memo((props: ArticleItemProps) => {
               to={getRouteArticleDetails(article.id ?? '')}
               target="_blank"
             >
-              <Text cropped="1" isHovered size="m" weight="bold">
+              <Text tag="h2" cropped="1" isHovered size="m" weight="bold">
                 {article.title}
               </Text>
             </AppLink>
@@ -197,7 +197,7 @@ export const ArticleItemRedesigned = memo((props: ArticleItemProps) => {
             <AppLink
               to={getRouteArticleDetails(article.id ?? '')}
             >
-              <Text cropped="1" isHovered size="m" weight="bold">
+              <Text tag="h2" cropped="1" isHovered size="m" weight="bold">
                 {article.title}
               </Text>
             </AppLink>

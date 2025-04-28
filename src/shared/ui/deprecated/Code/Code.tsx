@@ -29,7 +29,43 @@ export const Code = memo((props: CodeProps) => {
     undefined,
   );
 
+  const fallbackCopyTextToClipboard = useCallback((text: string) => {
+    try {
+      const textArea = document.createElement('textarea');
+      textArea.value = text;
+
+      // Avoid scrolling to bottom
+      textArea.style.top = '0';
+      textArea.style.left = '0';
+      textArea.style.position = 'fixed';
+      textArea.style.opacity = '0';
+
+      document.body.appendChild(textArea);
+      textArea.focus();
+      textArea.select();
+
+      const successful = document.execCommand('copy');
+      document.body.removeChild(textArea);
+
+      if (successful) {
+        setCopySuccess(CopyStatus.SUCCESS);
+      } else {
+        setCopySuccess(CopyStatus.ERROR);
+      }
+
+      setTimeout(() => setCopySuccess(undefined), 2000);
+    } catch (err) {
+      setCopySuccess(CopyStatus.ERROR);
+      setTimeout(() => setCopySuccess(undefined), 2000);
+    }
+  }, []);
+
   const onCopy = useCallback(() => {
+    if (!navigator.clipboard) {
+      fallbackCopyTextToClipboard(text);
+      return;
+    }
+
     navigator.clipboard
       .writeText(text)
       .then(() => {
@@ -37,10 +73,9 @@ export const Code = memo((props: CodeProps) => {
         setTimeout(() => setCopySuccess(undefined), 2000);
       })
       .catch((err) => {
-        setCopySuccess(CopyStatus.ERROR);
-        console.error('Failed to copy: ', err);
+        fallbackCopyTextToClipboard(text);
       });
-  }, [text]);
+  }, [text, fallbackCopyTextToClipboard]);
 
   return (
     <pre className={classNames(cl.Code, {}, [className])}>

@@ -50,6 +50,7 @@ const ArticlesPage = (props: ArticlesPageProps) => {
               data-testid="ArticlesPage"
               onScrollEnd={onLoadNextPart}
             >
+              <h1 className="visually-hidden">{t('Articles')}</h1>
               <ArticleListContainer onScrollEnd={onLoadNextPart} />
             </Page>
           )}
@@ -61,6 +62,7 @@ const ArticlesPage = (props: ArticlesPageProps) => {
           onScrollEnd={onLoadNextPart}
           className={classNames(cl.ArticlesPage, {}, [className])}
         >
+          <h1 className="visually-hidden">{t('Articles')}</h1>
           <Container max>
             <ArticlesPageFilters />
             <ArticleListContainer onScrollEnd={onLoadNextPart} />

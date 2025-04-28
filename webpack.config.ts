@@ -12,7 +12,7 @@ function getApiUrl(mode: BuildMode, apiUrl?: string) {
     return '/api';
   }
 
-  return 'http://localhost:5000';
+  return 'http://192.168.1.33:5000';
 }
 
 export default (env: BuildEnv) => {

@@ -14,10 +14,12 @@
 
   &.sticky {
     position: sticky;
+    z-index: var(--sidebar-z-index);
   }
 
   &.fixed {
     position: fixed;
+    z-index: var(--sidebar-z-index);
   }
 
   &.top-left {

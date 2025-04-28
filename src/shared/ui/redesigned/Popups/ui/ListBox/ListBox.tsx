@@ -64,7 +64,9 @@ export const Listbox = <T extends string>(props: ListBoxProps<T>) => {
             {({ active, selected }) => (
               <li
                 className={classNames(cl.Option, {
-                  [cl.active]: active,
+                  [cl.active]: active || selected,
+                  [cl.selected]: active,
+                  [cl.selected]: (item.value.toLowerCase() === defaultValue?.toLowerCase()),
                   [cl.disabled]: item.disabled,
                 })}
               >

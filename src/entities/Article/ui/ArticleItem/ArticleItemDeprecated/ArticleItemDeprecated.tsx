@@ -72,7 +72,7 @@ export const ArticleItemDeprecated = memo((props: ArticleItemProps) => {
             <Text size={TextSize.S}>{article.createdAt}</Text>
           </HStack>
           <AppLink to={getRouteArticleDetails(article.id ?? '')}>
-            <Text cropped="1" className={cl.Title} size={TextSize.XL}>
+            <Text tag="h2" cropped="1" className={cl.Title} size={TextSize.XL}>
               {article.title}
             </Text>
             <Text cropped="1" className={cl.Subtitle} size={TextSize.M}>
@@ -144,7 +144,7 @@ export const ArticleItemDeprecated = memo((props: ArticleItemProps) => {
               className={cl.Link}
               to={getRouteArticleDetails(article.id ?? '')}
             >
-              <Text cropped="1" size={TextSize.M} weight={TextWeight.BOLD}>
+              <Text tag="h2" cropped="1" size={TextSize.M} weight={TextWeight.BOLD}>
                 {article.title}
               </Text>
             </AppLink>
@@ -176,7 +176,7 @@ export const ArticleItemDeprecated = memo((props: ArticleItemProps) => {
               className={cl.Link}
               to={getRouteArticleDetails(article.id ?? '')}
             >
-              <Text cropped="1" size={TextSize.M} weight={TextWeight.BOLD}>
+              <Text tag="h2" cropped="1" size={TextSize.M} weight={TextWeight.BOLD}>
                 {article.title}
               </Text>
             </AppLink>

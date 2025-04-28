@@ -60,6 +60,7 @@
     "@types/react": "^18.0.17",
     "@types/react-dom": "^18.0.6",
     "@types/react-router-dom": "^5.3.3",
+    "@types/uuid": "^10.0.0",
     "@types/webpack": "^5.28.0",
     "@types/webpack-bundle-analyzer": "^4.4.1",
     "@types/webpack-dev-server": "^4.7.2",
@@ -136,7 +137,8 @@
     "react-i18next": "^11.18.3",
     "react-redux": "^8.0.5",
     "react-router-dom": "^6.2.1",
-    "react-virtuoso": "^4.12.5"
+    "react-virtuoso": "^4.12.5",
+    "uuid": "^11.1.0"
   },
   "loki": {
     "configurations": {
