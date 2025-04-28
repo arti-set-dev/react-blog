@@ -49,6 +49,7 @@ export const Code = memo((props: CodeProps) => {
       setTimeout(() => setCopySuccess(undefined), 2000);
     } catch (err) {
       setCopySuccess('error');
+      console.error('Ошибка при запасном копировании:', err);
       setTimeout(() => setCopySuccess(undefined), 2000);
     }
   }, []);
@@ -66,6 +67,7 @@ export const Code = memo((props: CodeProps) => {
         setTimeout(() => setCopySuccess(undefined), 2000);
       })
       .catch((err) => {
+        console.error('Ошибка при копировании:', err);
         fallbackCopyTextToClipboard(text);
       });
   }, [text, fallbackCopyTextToClipboard]);
