@@ -156,6 +156,8 @@
     },
     "diffTolerancePercent": 5,
     "chromeRetries": 2,
+    "chromeSelector": "#root > *",
+    "chromeSelectorTimeout": 5000,
     "disableAutomaticViewportHeight": true
   }
 }
