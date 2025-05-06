@@ -7,6 +7,10 @@ export interface BuildPaths {
     src: string;
     locales: string;
     buildLocales: string;
+    images: string;
+    buildImages: string;
+    favicons: string;
+    buildFavicons: string;
 }
 
 export interface BuildEnv {

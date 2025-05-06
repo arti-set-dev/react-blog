@@ -23,6 +23,10 @@ export default (env: BuildEnv) => {
     src: path.resolve(__dirname, 'src'),
     locales: path.resolve(__dirname, 'public', 'locales'),
     buildLocales: path.resolve(__dirname, 'build', 'locales'),
+    images: path.resolve(__dirname, 'public', 'images'),
+    buildImages: path.resolve(__dirname, 'build', 'images'),
+    favicons: path.resolve(__dirname, 'public', 'favicons'),
+    buildFavicons: path.resolve(__dirname, 'build', 'favicons'),
   };
 
   const mode = env?.mode || 'development';
