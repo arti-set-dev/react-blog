@@ -29,9 +29,9 @@ describe('updateViewsArticle', () => {
     const result = await thunk.callThunk('1');
 
     expect(thunk.api.get).toHaveBeenCalled();
-    expect(thunk.api.get).toHaveBeenCalledWith('/posts/1');
+    expect(thunk.api.get).toHaveBeenCalledWith('/articles/1');
     expect(thunk.api.patch).toHaveBeenCalled();
-    expect(thunk.api.patch).toHaveBeenCalledWith('/posts/1', { views: 101 });
+    expect(thunk.api.patch).toHaveBeenCalledWith('/articles/1', { views: 101 });
     expect(result.meta.requestStatus).toBe('fulfilled');
     expect(result.payload).toBe(101);
   });

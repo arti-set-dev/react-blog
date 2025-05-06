@@ -15,6 +15,22 @@ export default {
   argTypes: {
     backgroundColor: { control: 'color' },
   },
+  parameters: {
+    mockData: [
+      {
+        url: 'https://testapi.ru/users/',
+        method: 'GET',
+        status: 200,
+        response: [
+          {
+            id: '1',
+            username: 'Roman',
+            avatar: storybookImage,
+          },
+        ],
+      },
+    ],
+  },
 } as ComponentMeta<typeof ArticleItem>;
 
 const Template: ComponentStory<typeof ArticleItem> = (args) => (

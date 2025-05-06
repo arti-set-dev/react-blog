@@ -28,7 +28,7 @@ describe('fetchArticleById', () => {
     const result = await thunk.callThunk('1');
 
     expect(thunk.api.get).toHaveBeenCalled();
-    expect(thunk.api.get).toHaveBeenCalledWith('/posts/1', {
+    expect(thunk.api.get).toHaveBeenCalledWith('/articles/1', {
       params: {
         _expand: 'user',
       },

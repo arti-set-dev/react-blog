@@ -1,4 +1,6 @@
-import { userActions, User, UserRole } from '@/entities/User';
+import {
+  userActions, User, UserRole,
+} from '@/entities/User';
 import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
 import { loginByUsername } from './loginByUsername';
 
@@ -23,10 +25,11 @@ describe('loginByUsername.test', () => {
       username: '123',
       id: '1',
       roles: [UserRole.ADMIN],
+      accessToken: 'token',
     };
 
     const thunk = new TestAsyncThunk(loginByUsername);
-    thunk.api.post.mockResolvedValueOnce({ data: { user: userValue, accessToken: 'token' } });
+    thunk.api.post.mockResolvedValueOnce({ data: userValue });
     const result = await thunk.callThunk({ username: '123', password: '123' });
 
     const dispatchCalls = thunk.dispatch.mock.calls;
@@ -42,12 +45,12 @@ describe('loginByUsername.test', () => {
     }
 
     expect(thunk.dispatch).toHaveBeenCalledTimes(3);
-    expect(thunk.api.post).toHaveBeenCalledWith('/auth/login', {
+    expect(thunk.api.post).toHaveBeenCalledWith('/login', {
       username: '123',
       password: '123',
     });
     expect(result.meta.requestStatus).toBe('fulfilled');
-    expect(result.payload).toBe(userValue);
+    expect(result.payload).toEqual(userValue);
   });
 
   test('rejected login', async () => {
@@ -56,7 +59,7 @@ describe('loginByUsername.test', () => {
     const result = await thunk.callThunk({ username: '123', password: '123' });
 
     expect(thunk.dispatch).toHaveBeenCalledTimes(2);
-    expect(thunk.api.post).toHaveBeenCalledWith('/auth/login', {
+    expect(thunk.api.post).toHaveBeenCalledWith('/login', {
       username: '123',
       password: '123',
     });

@@ -39,7 +39,7 @@ describe('updateArticleData', () => {
     const result = await thunk.callThunk(mockFormData);
 
     expect(thunk.api.patch).toHaveBeenCalled();
-    expect(thunk.api.patch).toHaveBeenCalledWith(`/posts/${mockArticle.id}`, mockFormData);
+    expect(thunk.api.patch).toHaveBeenCalledWith(`/articles/${mockArticle.id}`, mockFormData);
     expect(result.meta.requestStatus).toBe('fulfilled');
     expect(result.payload).toEqual(mockArticle);
   });

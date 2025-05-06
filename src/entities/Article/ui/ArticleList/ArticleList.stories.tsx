@@ -16,6 +16,42 @@ export default {
   argTypes: {
     backgroundColor: { control: 'color' },
   },
+  parameters: {
+    mockData: [
+      {
+        url: 'https://testapi.ru/users/',
+        method: 'GET',
+        status: 200,
+        response: [
+          {
+            id: '1',
+            username: 'Roman',
+            avatar: storybook,
+          },
+          {
+            id: '2',
+            username: 'Roman',
+            avatar: storybook,
+          },
+          {
+            id: '3',
+            username: 'Roman',
+            avatar: storybook,
+          },
+        ],
+      },
+      {
+        url: 'https://testapi.ru/users/1',
+        method: 'GET',
+        status: 200,
+        response: {
+          id: '1',
+          username: 'Roman',
+          avatar: storybook,
+        },
+      },
+    ],
+  },
 } as ComponentMeta<typeof ArticleList>;
 
 const articles = [

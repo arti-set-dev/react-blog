@@ -61,25 +61,19 @@ describe('fetchArticlesList', () => {
   test('success fetch articles list', async () => {
     const thunk = new TestAsyncThunk(fetchArticlesList);
     thunk.api.get.mockReturnValue(Promise.resolve({
-      data: {
-        items: mockArticles,
-        total: 2,
-        page: 1,
-        limit: 10,
-        totalPages: 1,
-      },
+      data: mockArticles,
     }));
 
     const result = await thunk.callThunk({});
 
     expect(thunk.api.get).toHaveBeenCalled();
-    expect(thunk.api.get).toHaveBeenCalledWith('/posts', {
+    expect(thunk.api.get).toHaveBeenCalledWith('/articles', {
       params: {
-        limit: 9,
-        page: 1,
-        sort: ArticleSortField.CREATED,
-        order: 'asc',
-        search: '',
+        _limit: 9,
+        _page: 1,
+        _sort: ArticleSortField.CREATED,
+        _order: 'asc',
+        q: '',
       },
     });
     expect(result.meta.requestStatus).toBe('fulfilled');
@@ -90,25 +84,19 @@ describe('fetchArticlesList', () => {
     (getArticlesListType as jest.Mock).mockReturnValue(ArticleType.IT);
     const thunk = new TestAsyncThunk(fetchArticlesList);
     thunk.api.get.mockReturnValue(Promise.resolve({
-      data: {
-        items: mockArticles,
-        total: 2,
-        page: 1,
-        limit: 10,
-        totalPages: 1,
-      },
+      data: mockArticles,
     }));
 
     const result = await thunk.callThunk({});
 
     expect(thunk.api.get).toHaveBeenCalled();
-    expect(thunk.api.get).toHaveBeenCalledWith('/posts', {
+    expect(thunk.api.get).toHaveBeenCalledWith('/articles', {
       params: {
-        limit: 9,
-        page: 1,
-        sort: ArticleSortField.CREATED,
-        order: 'asc',
-        search: '',
+        _limit: 9,
+        _page: 1,
+        _sort: ArticleSortField.CREATED,
+        _order: 'asc',
+        q: '',
       },
     });
     expect(result.meta.requestStatus).toBe('fulfilled');

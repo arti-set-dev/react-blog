@@ -15,6 +15,37 @@ export default {
   argTypes: {
     backgroundColor: { control: 'color' },
   },
+  parameters: {
+    mockData: [
+      {
+        url: 'https://testapi.ru/users/',
+        method: 'GET',
+        status: 200,
+        response: [
+          {
+            id: '1',
+            username: 'JSDeveloper',
+            avatar: 'https://i.pravatar.cc/150?img=1',
+          },
+          {
+            id: '2',
+            username: 'WebDeveloper',
+            avatar: 'https://i.pravatar.cc/150?img=2',
+          },
+          {
+            id: '3',
+            username: 'EconomistPro',
+            avatar: 'https://i.pravatar.cc/150?img=3',
+          },
+          {
+            id: '4',
+            username: 'ScienceExplorer',
+            avatar: 'https://i.pravatar.cc/150?img=4',
+          },
+        ],
+      },
+    ],
+  },
   decorators: [StoreDecorator({})],
 } as ComponentMeta<typeof PopularPostsRedesigned>;
 
