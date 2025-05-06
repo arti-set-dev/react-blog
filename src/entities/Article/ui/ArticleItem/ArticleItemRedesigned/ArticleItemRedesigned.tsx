@@ -21,7 +21,7 @@ import cl from './ArticleItemRedesigned.module.scss';
 import { useArticle } from '../../../lib/hooks/useArticle';
 import { ArticleItemProps } from '../ArticleItem';
 import { getHstack } from '@/shared/lib/stack/getHstack/getHstack';
-import { UserRole } from '@/entities/User';
+import { UserRole, useGetUserDataById } from '@/entities/User';
 
 export const ArticleItemRedesigned = memo((props: ArticleItemProps) => {
   const {
@@ -29,7 +29,8 @@ export const ArticleItemRedesigned = memo((props: ArticleItemProps) => {
   } = props;
   const { t } = useTranslation();
   const { onOpenArticle } = useArticle(article.id ?? '');
-  const isAdmin = article.author?.roles?.some((role) => role === UserRole.ADMIN);
+  const { data: userData, isLoading } = useGetUserDataById(article.userId ?? '');
+  const isAdmin = userData?.roles?.includes(UserRole.ADMIN);
 
   const articleTypes = useMemo(
     () => (
@@ -64,18 +65,22 @@ export const ArticleItemRedesigned = memo((props: ArticleItemProps) => {
       >
         <Card max isOverflow offset="24" className={getVstack({ gap: 16 })}>
           <HStack gap="8">
-            <AppLink to={getRouteProfile(article.author?.id ?? '')} className={getHstack({ gap: 8, align: 'center' })}>
-              <Avatar
-                isAdmin={isAdmin}
-                size={30}
-                src={article.author?.avatar}
-                alt={article.author?.username}
-              />
+            <AppLink to={getRouteProfile(article.userId ?? '')} className={getHstack({ gap: 8, align: 'center' })}>
+              {isLoading ? (
+                <Skeleton width={30} height={30} border="circle" />
+              ) : (
+                <Avatar
+                  isAdmin={isAdmin}
+                  size={30}
+                  src={userData?.avatar}
+                  alt={userData?.username}
+                />
+              )}
               <Text
                 size="m"
                 weight="bold"
               >
-                {article.author?.username}
+                {userData?.username}
               </Text>
             </AppLink>
             <Text size="s">{article.createdAt}</Text>

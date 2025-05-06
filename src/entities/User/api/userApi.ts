@@ -39,3 +39,5 @@ export const getUserDataByIdQuery = (userId: string) => ({
   type: 'getUserDataById',
   payload: userId,
 });
+
+export const useGetUserDataById = userApi.useGetUserDataByIdQuery;

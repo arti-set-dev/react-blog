@@ -36,7 +36,7 @@ export const ArticleDetailsDeprecated = memo((props: ArticleDetailsDeprecatedPro
     case ArticleBlockType.CODE:
       return (
         <ArticleCodeBlockComponent
-          key={block.id}
+          key={`${block.id}-${Math.random().toString(36).substring(2, 9)}`}
           className={cl.Block}
           block={block}
         />
@@ -44,7 +44,7 @@ export const ArticleDetailsDeprecated = memo((props: ArticleDetailsDeprecatedPro
     case ArticleBlockType.IMAGE:
       return (
         <ArticleImageBlockComponent
-          key={block.id}
+          key={`${block.id}-${Math.random().toString(36).substring(2, 9)}`}
           className={cl.Block}
           block={block}
         />
@@ -52,7 +52,7 @@ export const ArticleDetailsDeprecated = memo((props: ArticleDetailsDeprecatedPro
     case ArticleBlockType.TEXT:
       return (
         <ArticleTextBlockComponent
-          key={block.id}
+          key={`${block.id}-${Math.random().toString(36).substring(2, 9)}`}
           className={cl.Block}
           block={block}
         />

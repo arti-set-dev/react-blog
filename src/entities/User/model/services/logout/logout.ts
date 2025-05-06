@@ -10,7 +10,7 @@ export const logout = createAsyncThunk<
   const { extra, dispatch, rejectWithValue } = thunkAPI;
 
   try {
-    await extra.api.post('auth/logout');
+    // await extra.api.post('auth/logout');
 
     dispatch(userActions.logout());
 

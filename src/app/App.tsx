@@ -15,7 +15,7 @@ import { ToggleFeatures } from '@/shared/lib/features';
 import { Footer } from '@/widgets/Footer';
 import { useAppTitle } from './lib/useAppTitle';
 import { AppLoaderLayout } from '@/shared/layouts/AppLoaderLayout';
-import { checkAuth, getUserInited, initAuthData } from '@/entities/User';
+import { getUserInited, initAuthData } from '@/entities/User';
 
 const App = memo(() => {
   const { theme } = useTheme();
@@ -26,9 +26,6 @@ const App = memo(() => {
   useAppTitle();
 
   useEffect(() => {
-    if (localStorage.getItem('token')) {
-      dispatch(checkAuth());
-    }
     dispatch(initAuthData());
   }, [dispatch]);
 

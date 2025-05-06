@@ -10,7 +10,7 @@ export const updateViewsArticle = createAsyncThunk<
   const { extra, rejectWithValue } = thunkAPI;
 
   try {
-    const response = await extra.api.get<Article>(`/posts/${articleId}`);
+    const response = await extra.api.get<Article>(`/articles/${articleId}`);
 
     if (!response.data || Object.keys(response.data).length === 0) {
       throw new Error('Article not found or empty');
@@ -21,7 +21,7 @@ export const updateViewsArticle = createAsyncThunk<
     const updatedViews = article.views + 1;
 
     const patchResponse = await extra.api.patch<{ views: number }>(
-      `/posts/${articleId}`,
+      `/articles/${articleId}`,
       { views: updatedViews },
     );
 

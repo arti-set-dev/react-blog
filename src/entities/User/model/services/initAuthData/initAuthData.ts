@@ -1,5 +1,4 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { jwtDecode } from 'jwt-decode';
 import { USER_LOCALSTORAGE_KEY } from '@/shared/const/localstorage';
 import { ThunkConfig } from '@/app/providers/StoreProvider';
 import { User } from '../../types/user';
@@ -18,7 +17,7 @@ export const initAuthData = createAsyncThunk<
   }
 
   try {
-    const payload: { id?: string } = jwtDecode(token);
+    const payload: { id?: string } = JSON.parse(token);
 
     if (!payload.id) {
       return rejectWithValue('Invalid token payload');

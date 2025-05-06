@@ -48,6 +48,14 @@ server.use((req, res, next) => {
     return next();
   }
 
+  if (req.method === 'GET' && req.path.startsWith('/users')) {
+    return next();
+  }
+
+  if (req.method === 'GET' && req.path.startsWith('/articleRatings')) {
+    return next();
+  }
+
   if (!req.headers.authorization) {
     return res.status(403).json({ message: 'AUTH ERROR' });
   }

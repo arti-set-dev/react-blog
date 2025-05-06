@@ -39,19 +39,13 @@ export const fetchArticlesList = createAsyncThunk<
       type,
     });
 
-    const response = await extra.api.get<{
-      items: Article[];
-      total: number;
-      page: number;
-      limit: number;
-      totalPages: number;
-    }>('/posts', {
+    const response = await extra.api.get<Article[]>('/articles', {
       params: {
-        limit,
-        page,
-        sort,
-        order,
-        search,
+        _limit: limit,
+        _page: page,
+        _sort: sort,
+        _order: order,
+        q: search,
       },
     });
 
@@ -60,8 +54,8 @@ export const fetchArticlesList = createAsyncThunk<
     }
 
     const filteredData = type === ArticleType.ALL
-      ? response.data.items
-      : response.data.items.filter((article) => article.type.includes(type));
+      ? response.data
+      : response.data.filter((article) => article.type.includes(type));
 
     return filteredData;
   } catch (error) {

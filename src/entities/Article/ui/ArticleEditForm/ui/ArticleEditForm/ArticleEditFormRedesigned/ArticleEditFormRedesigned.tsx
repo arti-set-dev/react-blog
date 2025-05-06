@@ -102,7 +102,7 @@ export const ArticleEditFormRedesigned = memo((props: ArticleEditFormProps) => {
     <VStack gap="16" fullWidth>
       {savedBlocks?.map((block) => (
         <BlockPreview
-          key={block.id}
+          key={`${block.id}-${Math.random().toString(36).substring(2, 9)}`}
           block={block}
           onEdit={handleEditBlock}
           onDelete={handleDeleteBlock}

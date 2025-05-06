@@ -19,9 +19,9 @@ const recommendationsApi = rtkApi.injectEndpoints({
       query: ({
         limit = 15,
       }) => ({
-        url: '/posts',
+        url: '/articles',
         params: {
-          limit,
+          _limit: limit,
         },
       }),
       transformResponse: (response: ArticlesResponse, meta, arg) => response.items,

@@ -4,7 +4,7 @@ const articleApi = rtkApi.injectEndpoints({
   endpoints: (build) => ({
     deleteArticle: build.mutation<void, string>({
       query: (articleId) => ({
-        url: `/posts/${articleId}`,
+        url: `/articles/${articleId}`,
         method: 'DELETE',
       }),
     }),

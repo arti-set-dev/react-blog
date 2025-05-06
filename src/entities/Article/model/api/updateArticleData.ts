@@ -5,7 +5,7 @@ export const articleApi = rtkApi.injectEndpoints({
   endpoints: (build) => ({
     updateArticle: build.mutation<Article, { id: string; data: Partial<Article> }>({
       query: ({ id, data }) => ({
-        url: `/posts/${id}`,
+        url: `/articles/${id}`,
         method: 'PATCH',
         body: data,
       }),

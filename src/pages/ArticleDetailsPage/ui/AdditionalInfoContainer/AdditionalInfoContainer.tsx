@@ -14,6 +14,7 @@ import { Modal } from '@/shared/ui/redesigned/Modal';
 import { Text } from '@/shared/ui/redesigned/Text';
 import { Button } from '@/shared/ui/redesigned/Button';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { useGetUserDataById } from '@/entities/User';
 
 interface AdditionalInfoContainerProps {
   className?: string;
@@ -28,6 +29,7 @@ export const AdditionalInfoContainer = memo((props: AdditionalInfoContainerProps
   const navigate = useNavigate();
   const canEdit = useSelector(getCanEditArticle);
   const [deleteArticle, { isLoading, error }] = useDeleteArticle();
+  const { data: userData, isLoading: isUserDataLoading } = useGetUserDataById(article?.userId ?? '');
 
   const onEditArticle = useCallback(() => {
     if (article) {
@@ -86,10 +88,11 @@ export const AdditionalInfoContainer = memo((props: AdditionalInfoContainerProps
 
   return (
     <ArticleAdditionalInfo
+      isLoading={isUserDataLoading}
       canEdit={canEdit}
       onEdit={onEditArticle}
       onDelete={onOpenModal}
-      author={article.author}
+      author={userData}
       createdAt={article?.createdAt}
       views={article?.views}
       modalContent={modalContent}

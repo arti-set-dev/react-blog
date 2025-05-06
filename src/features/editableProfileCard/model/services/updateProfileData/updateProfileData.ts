@@ -23,27 +23,17 @@ export const updateProfileData = createAsyncThunk<
   }
 
   try {
-    const profileFormData = new FormData();
-
-    profileFormData.append('username', formData?.username || '');
-    profileFormData.append('firstname', formData?.firstname || '');
-    profileFormData.append('lastname', formData?.lastname || '');
-    profileFormData.append('age', formData?.age?.toString() || '');
-    profileFormData.append('city', formData?.city || '');
-    profileFormData.append('country', formData?.country || '');
-    profileFormData.append('currency', formData?.currency || '');
-
-    if (file) {
-      profileFormData.append('avatar', file);
-    }
-
     const response = await extra.api.patch<Profile>(
-      `/profiles/${formData?.id}`,
-      profileFormData,
+      `/profile/${formData?.id}`,
       {
-        headers: {
-          'Content-Type': 'multipart/form-data',
-        },
+        username: formData?.username || '',
+        firstname: formData?.firstname || '',
+        lastname: formData?.lastname || '',
+        age: formData?.age || 0,
+        city: formData?.city || '',
+        country: formData?.country || '',
+        currency: formData?.currency || '',
+        avatar: formData?.avatar || '',
       },
     );
 

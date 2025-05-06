@@ -11,7 +11,7 @@ import { userReducer, userActions } from './model/slice/userSlice';
 import type { UserSchema, User, AuthResponse } from './model/types/user';
 import { logout } from './model/services/logout/logout';
 import { saveJsonSettings } from './model/services/saveJsonSettings/saveJsonSettings';
-import { getUserDataByIdQuery } from './api/userApi';
+import { getUserDataByIdQuery, useGetUserDataById } from './api/userApi';
 import { initAuthData } from './model/services/initAuthData/initAuthData';
 import { checkAuth } from './model/services/checkAuth/checkAuth';
 
@@ -33,4 +33,5 @@ export {
   getUserDataByIdQuery,
   checkAuth,
   initAuthData,
+  useGetUserDataById,
 };

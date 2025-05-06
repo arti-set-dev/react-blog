@@ -1,6 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { ThunkConfig } from '@/app/providers/StoreProvider';
-import { AuthResponse, User, userActions } from '@/entities/User';
+import { User, userActions } from '@/entities/User';
 import { USER_LOCALSTORAGE_KEY } from '@/shared/const/localstorage';
 
 interface LoginByUsernameProps {
@@ -16,7 +16,7 @@ export const loginByUsername = createAsyncThunk<
   const { extra, dispatch, rejectWithValue } = thunkAPI;
 
   try {
-    const response = await extra.api.post<AuthResponse>('/auth/login', {
+    const response = await extra.api.post<User>('/login', {
       username: authData.username,
       password: authData.password,
     });
@@ -25,13 +25,11 @@ export const loginByUsername = createAsyncThunk<
       throw new Error();
     }
 
-    const { user, accessToken } = response.data;
+    dispatch(userActions.setAuthData(response.data));
 
-    dispatch(userActions.setAuthData(user));
+    localStorage.setItem(USER_LOCALSTORAGE_KEY, JSON.stringify(response.data));
 
-    localStorage.setItem(USER_LOCALSTORAGE_KEY, accessToken);
-
-    return user;
+    return response.data;
   } catch (error) {
     console.log(error);
     return rejectWithValue('Authentication error');

@@ -18,6 +18,7 @@ import { LazyImage } from '@/shared/ui/redesigned/LazyImage';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cl from './ArticleItemDeprecated.module.scss';
 import { HStack } from '@/shared/ui/redesigned/Stack';
+import { useGetUserDataById } from '@/entities/User';
 
 export const ArticleItemDeprecated = memo((props: ArticleItemProps) => {
   const {
@@ -25,6 +26,7 @@ export const ArticleItemDeprecated = memo((props: ArticleItemProps) => {
   } = props;
   const { t } = useTranslation();
   const { onOpenArticle } = useArticle(article.id ?? '');
+  const { data: userData, isLoading } = useGetUserDataById(article.userId ?? '');
 
   const articleTypes = useMemo(
     () => (
@@ -60,14 +62,14 @@ export const ArticleItemDeprecated = memo((props: ArticleItemProps) => {
           <HStack gap="8">
             <Avatar
               size={30}
-              src={article.author?.avatar}
-              alt={article.author?.username}
+              src={userData?.avatar}
+              alt={userData?.username}
             />
             <Text
               size={TextSize.M}
               weight={TextWeight.BOLD}
             >
-              {article.author?.username}
+              {userData?.username}
             </Text>
             <Text size={TextSize.S}>{article.createdAt}</Text>
           </HStack>

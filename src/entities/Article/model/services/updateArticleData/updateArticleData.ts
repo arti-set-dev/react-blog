@@ -19,7 +19,7 @@ export const updateArticleData = createAsyncThunk<
     }
 
     try {
-      const response = await extra.api.patch<Article>(`/posts/${article.id}`, formData);
+      const response = await extra.api.patch<Article>(`/articles/${article.id}`, formData);
 
       if (!response.data) {
         throw new Error('No data returned');
