@@ -21,6 +21,7 @@ import {
   getArticleDetailsIsLoading,
 } from '../../model/selectors/articleDetails/articleDetails';
 import { updateViewsArticle } from '../../model/services/updateViewsArticle/updateViewsArticle';
+import { useGetUserDataById } from '@/entities/User';
 
 export interface ArticleDetailsProps {
   className?: string;
@@ -38,6 +39,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
   const isLoading = useSelector(getArticleDetailsIsLoading);
   const error = useSelector(getArticleDetailsError);
   const article = useSelector(getArticleDetailsData);
+  const { data: author } = useGetUserDataById(article?.userId ?? '');
 
   useEffect(() => {
     if (__PROJECT__ !== 'storybook') {
@@ -54,7 +56,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
       <ToggleFeatures
         feature="isAppRedesigned"
         on={(
-          <ArticleDetailsRedesigned article={article} id={id} error={error} isLoading={isLoading} />
+          <ArticleDetailsRedesigned article={article} id={id} error={error} isLoading={isLoading} author={author} />
         )}
         off={
           <ArticleDetailsDeprecated article={article} id={id} error={error} isLoading={isLoading} />

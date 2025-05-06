@@ -94,10 +94,23 @@ export default {
   parameters: {
     mockData: [
       {
-        url: `${__API__}/posts/1`,
+        url: 'https://testapi.ru/articles/1',
         method: 'GET',
         status: 200,
         response: article,
+      },
+      {
+        url: 'https://testapi.ru/users/',
+        method: 'GET',
+        status: 200,
+        response: [
+          {
+            id: '1',
+            username: 'Roman',
+            avatar: storybook,
+            roles: [UserRole.ADMIN],
+          },
+        ],
       },
     ],
   },

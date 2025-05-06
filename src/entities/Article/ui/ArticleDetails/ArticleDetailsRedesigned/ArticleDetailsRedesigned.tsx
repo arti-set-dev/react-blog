@@ -33,17 +33,19 @@ import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch
 import { articleListActions } from '../../../model/slice/articleListSlice/articleListSlice';
 import { Modal } from '@/shared/ui/redesigned/Modal';
 import { useDeleteArticle } from '../../../model/api/deleteArticleApi/articleDeleteApi';
+import { User } from '@/entities/User';
 
 interface ArticleDetailsRedesignedProps extends ArticleDetailsProps {
   className?: string;
   isLoading?: boolean;
   error?: string;
   article?: Article;
+  author?: User;
 }
 
 export const ArticleDetailsRedesigned = memo((props: ArticleDetailsRedesignedProps) => {
   const {
-    className, error, isLoading, article,
+    className, error, isLoading, article, author,
   } = props;
   const { t } = useTranslation('article');
   const canEdit = useSelector(getCanEditArticle);
@@ -206,11 +208,11 @@ export const ArticleDetailsRedesigned = memo((props: ArticleDetailsRedesignedPro
           <VStack gap="8">
             <MobileView renderWithFragment>
               <AppLink
-                to={getRouteProfile(article?.author?.id || '')}
+                to={getRouteProfile(article?.userId || '')}
                 className={getHstack({ align: 'center', gap: 8 })}
               >
-                <Avatar size={32} src={article?.author?.avatar} />
-                <Text>{article?.author?.username}</Text>
+                <Avatar size={32} src={author?.avatar} />
+                <Text>{author?.username}</Text>
               </AppLink>
             </MobileView>
             <Text size="xs" className={getHstack({ align: 'center', gap: 8 })}>
