@@ -1,16 +1,8 @@
-import { Article } from '@/entities/Article';
 import { rtkApi } from '@/shared/api/rtkApi';
+import { Article } from '@/entities/Article';
 
 interface FetchArticlesParams {
   limit?: number;
-}
-
-interface ArticlesResponse {
-  items: Article[];
-  total: number;
-  page: number;
-  limit: number;
-  totalPages: number;
 }
 
 const recommendationsApi = rtkApi.injectEndpoints({
@@ -24,7 +16,6 @@ const recommendationsApi = rtkApi.injectEndpoints({
           _limit: limit,
         },
       }),
-      transformResponse: (response: ArticlesResponse, meta, arg) => response.items,
     }),
   }),
 });
